@@ -3,12 +3,6 @@ body {
   padding: 0;
 }
 
-.headerContainer {
-  height: 85px;
-  background-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/img_header_1600-2.png);
-  background: black !important;
-}
-
 
 .songsContainer {
     z-index: 0;
@@ -28,6 +22,8 @@ body {
   display: flex;
   padding:15;
   z-index: 5;
+  border-bottom: 30px solid transparent;
+  border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
 }
 
 .topContentContainer {
@@ -42,6 +38,8 @@ img.songImage {
     max-width: 330px;
     max-height: 330px;
     height: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+    border: 1px solid lightgray !important;
 }
 
 .imageContainer {
@@ -254,7 +252,7 @@ flex: 0 0 contain;
 background: transparent;
 }
 #player-control-button-back {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/back.png);
+background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/back.png);
 
 }
 #player-control-button-play {
@@ -264,7 +262,7 @@ height: 40px;
 margin: 0px;
 }
 #player-control-button-next {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/next.png);
+background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png);
 }
 .player-control-button {
 background-repeat: no-repeat;
@@ -378,4 +376,47 @@ z-index: -1;
     border-left: 2px solid #fafafa;
     height: calc(100% - 50px - 75px);
     padding: 15px;
+}
+
+
+
+/*header*/
+
+.headerContainer {
+  height: 85px;
+  background-image: url('https://rockwiththis.com/wp-content/uploads/2017/10/no-drop-shdow.png');
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  background-position: bottom !important;
+  background-size: cover;
+  -webkit-background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+#headerLogo {
+  display: flex;
+max-width: 300px;
+max-height: 30px;
+margin: 0 auto;
+    margin-top: -10px;
+}
+
+
+
+.socialLinks {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    padding-right: 15px;
+}
+
+
+.socialLinks a img {
+    width: 25px;
+    margin: 5px;
 }

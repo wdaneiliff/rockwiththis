@@ -13,7 +13,7 @@ class Homepage extends Component {
     }
   }
 componentDidMount() {
-    let dataURL = "https://rockwiththis.com/wp-json/wp/v2/songs?_embed";
+    let dataURL = "https://rockwiththis.com/wp-json/wp/v2/songs?_embed[posts_per_page]=-1";
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
