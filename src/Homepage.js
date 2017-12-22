@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import styles from './Homepage.css';
+import SongsContainer from './SongsContainer.js';
+import Header from './Header.js';
+import MainPlayer from './MainPlayer.js';
+import Sidebar from './Sidebar.js';
+
 class Homepage extends Component {
   constructor() {
     super();
@@ -16,22 +22,17 @@ componentDidMount() {
         })
       })
   }
+
 render() {
-    let songs = this.state.songs.map((song, index) => {
-      return (
-        <div key={index}>
-          <p><strong>Post Title:</strong>{song.title.rendered}</p>
-          <p><strong>Song Name:</strong>{song.acf.song_name}</p>
-          <p><strong>Artist Name:</strong>{song.acf.artist_name}</p>
-          <p><strong>Description:</strong>{song.content.rendered}</p>
-        </div>
-      )
-    });
+  const { songs } = this.state;
+
 return (
-      <div>
-        <h2>Rock With This</h2>
-          {songs}
-      </div>
+  <div className="homeContainer">
+    <Header />
+    <SongsContainer songs={songs}/>
+    <Sidebar />
+    <MainPlayer />
+  </div>
     )
   }
 }
