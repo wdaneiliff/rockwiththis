@@ -15,13 +15,13 @@ render() {
               <div className="songInfo">
                 <p className="postTitle" dangerouslySetInnerHTML={ {__html: song.title.rendered} }/>
                 <p className="postAuthor">By {song._embedded.author[0].name}</p>
-                  <div className="singlePostPlayer">
-                    <button className="singlePostPlayerButton"/>
-                    <div className="singlePostPlayerInfo">
-                      <p className="songName"><strong>Song Name</strong>{song.acf.song_name}</p>
-                      <p className="artistName"> by <strong>Artist Name</strong>{song.acf.artist_name}</p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div className="singlePostPlayer">
+              <button className="singlePostPlayerButton"/>
+              <div className="singlePostPlayerInfo">
+                <p className="songName"><strong>Song Name</strong>{song.acf.song_name}</p>
+                <p className="artistName"> by <strong>Artist Name</strong>{song.acf.artist_name}</p>
               </div>
             </div>
             <div className="bottomContentContainer">

@@ -24,11 +24,19 @@ body {
   z-index: 5;
   border-bottom: 30px solid transparent;
   border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+  max-width: 1000px;
+    margin: 0 auto;
 }
 
 .topContentContainer {
   display: flex;
   flex-flow: row wrap;
+}
+.bottomContentContainer {
+    padding: 5px;
+}
+p.songDescription {
+    margin-top: 0;
 }
 
 
@@ -44,6 +52,7 @@ img.songImage {
 
 .imageContainer {
   display: flex;
+  margin-right: 15px;
 }
 
 .postTitle {
@@ -57,6 +66,8 @@ img.songImage {
   border:2px solid grey;
   border-radius: 8px;
   padding: 10px;
+  border: 1px solid lightgray !important;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
 }
 
 button.singlePostPlayerButton {

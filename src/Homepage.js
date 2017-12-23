@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Homepage.css';
 import SongsContainer from './SongsContainer.js';
-import Header from './Header.js';
-import MainPlayer from './MainPlayer.js';
 import Sidebar from './Sidebar.js';
 
 class Homepage extends Component {
@@ -28,10 +26,8 @@ render() {
 
 return (
   <div className="homeContainer">
-    <Header />
     <SongsContainer songs={songs}/>
     <Sidebar />
-    <MainPlayer />
   </div>
     )
   }
