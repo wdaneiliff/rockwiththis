@@ -381,8 +381,8 @@ z-index: -1;
 
 /*sidebar*/
 .sidebar {
-    display: flex;
-    flex: auto;
+    display: block;
+    /* flex: auto; */
     width: 20%;
     position: fixed;
     top: 85px;
