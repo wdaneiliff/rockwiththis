@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import styles from './SongsContainer.css';
+import $ from 'jquery';
+import {Icon} from 'react-fa';
 
 class SongsContainer extends Component {
+
+toggleDescription() {
+  $(".bottomContentContainer").toggleClass( "collapsed" );
+}
+
 
 render() {
     let songs = this.props.songs.map((song, index) => {
@@ -24,9 +31,10 @@ render() {
                 <p className="artistName"> by <strong>Artist Name</strong>{song.acf.artist_name}</p>
               </div>
             </div>
-            <div className="bottomContentContainer">
+            <div className="bottomContentContainer collapsed">
               <p className="songDescription" dangerouslySetInnerHTML={ {__html: song.content.rendered} } />
             </div>
+            <p onClick={this.toggleDescription} className="expand">More<br/> <Icon name="angle-down"/></p>
           </div>
         </div>
       )
