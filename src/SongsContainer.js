@@ -21,7 +21,11 @@ render() {
             <div className="topContentContainer">
               <div className="songInfo">
                 <p className="postTitle" dangerouslySetInnerHTML={ {__html: song.title.rendered} }/>
-                <p className="postAuthor">By {song._embedded.author[0].name}</p>
+                  <div className="metaInfo">
+                    <span className="postAuthor">By {song._embedded.author[0].name} | </span>
+                    <span className="postDate">{song.date} | </span>
+                    <span className="postTags">{song.tags}</span>
+                  </div>
               </div>
             </div>
             <div className="singlePostPlayer">
