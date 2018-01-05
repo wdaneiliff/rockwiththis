@@ -516,3 +516,7 @@ p.emailAddress {
   text-transform: uppercase;
   letter-spacing:1px;
 }
+
+.tag {
+  padding-right: 5px;
+}

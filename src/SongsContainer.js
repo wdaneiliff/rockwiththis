@@ -21,7 +21,12 @@ class SongsContainer extends Component {
                     <div className="topContentContainer">
                         <div className="songInfo">
                             <p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} />
-                            <p className="metaInfo"><span className="postAuthor">By {song._embedded.author[0].name}</span> | <span className="postDate"><Moment format={'ll'} date={song.date} /></span></p>
+                            <p className="metaInfo"><span className="postAuthor">By {song._embedded.author[0].name}</span> | <span className="postDate"><Moment format={'ll'} date={song.date} /> | </span>
+                              <span className="postTags">
+                                  <span className="tag" dangerouslySetInnerHTML={{__html: song._embedded['wp:term'][0][0].name}} />
+                                  <span className="tag" dangerouslySetInnerHTML={{__html: song._embedded['wp:term'][0][0].name}} />
+                              </span>
+                            </p>
                         </div>
                     </div>
                     <div className="singlePostPlayer">
