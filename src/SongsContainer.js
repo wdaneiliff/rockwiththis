@@ -52,12 +52,11 @@ class SongsContainer extends Component {
     }
 
     renderTags(song) {
-        return null // TODO: remove
-
+        const tags = song._embedded['wp:term'][1].map(tag =>
+            <span className="tag" dangerouslySetInnerHTML={{ __html: tag.name }} />)
         return (
             <span className="postTags">
-                <span className="tag" dangerouslySetInnerHTML={{ __html: song._embedded['wp:term'][0][0].name }} />
-                <span className="tag" dangerouslySetInnerHTML={{ __html: song._embedded['wp:term'][0][0].name }} />
+                {tags}
             </span>
         )
     }
