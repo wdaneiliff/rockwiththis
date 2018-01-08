@@ -48,7 +48,6 @@ class SongsContainer extends Component {
     }
 
     toggleDescription() {
-        $('.bottomContentContainer').toggleClass('collapsed')
     }
 
     renderTags(song) {
@@ -124,7 +123,7 @@ class SongsContainer extends Component {
                             <p className="artistName"><span className="by">by</span>{song.acf.artist_name}</p>
                         </div>
                     </div>
-                    <div className="bottomContentContainer collapsed">
+                    <div className="bottomContentContainer">
                         <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
                     </div>
                     <p onClick={this.toggleDescription} className="expand">More<br /> <Icon name="angle-down" /></p>

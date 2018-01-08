@@ -521,3 +521,8 @@ p.emailAddress {
   padding-right: 5px;
       color: #f1782d !important;
 }
+
+
+.toggleDescriptionText {
+  height: auto !important;
+}
