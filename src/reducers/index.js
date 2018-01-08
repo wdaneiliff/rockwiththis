@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { FETCH_POSTS } from '../actions/index'
 import posts from './posts'
+import queue from './queue'
 
 const isFetchingPosts = (state = false, action) => {
     switch (action.type) {
@@ -25,6 +26,7 @@ const currentlyFetchedPageNumber = (state = 0, action) => {
 
 export default combineReducers({
     posts,
+    queue,
     isFetchingPosts,
     currentlyFetchedPageNumber,
 })

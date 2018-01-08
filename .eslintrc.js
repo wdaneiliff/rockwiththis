@@ -22,6 +22,7 @@ module.exports = {
         'no-else-return': 0,
         'no-fallthrough': [1],
         'no-plusplus': 0,
+        'no-undef': 0,
         'no-underscore-dangle': 0,
         'no-unused-vars': 0,
         'no-use-before-define': 0,
