@@ -20,6 +20,8 @@ class SongsContainer extends Component {
         if (this.props.queue.isPlaying !== nextProps.queue.isPlaying ||
             this.props.queue.currentlyPlayingSong !== nextProps.queue.currentlyPlayingSong) {
 
+            // if not playing anymore, then pause current song
+            // if new song, then stop last song and start next song
         }
     }
 
