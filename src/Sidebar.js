@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import './Sidebar.css';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import './Sidebar.css'
 import SubscribeFrom from 'react-mailchimp-subscribe'
 
 class Sidebar extends Component {
@@ -35,6 +36,7 @@ return (
         <div className="topTrackContainer">
           <h3>Top Tracks</h3>
           <p>Dive a bit deeper. Explore top tracks we've featured in the past.</p>
+
         </div>
         <div className="newsletterContainer">
           <h3>Heads up</h3>
