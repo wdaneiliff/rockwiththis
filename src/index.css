@@ -505,3 +505,19 @@ button[type="submit"]:hover {
 p.emailAddress {
   margin-top: 15px;
 }
+
+
+
+
+.by {
+  padding-right: 5px;
+}
+.singlePostPlayerInfo {
+  text-transform: uppercase;
+  letter-spacing:1px;
+}
+
+.tag {
+  padding-right: 5px;
+      color: #f1782d !important;
+}

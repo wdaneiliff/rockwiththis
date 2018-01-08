@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import $ from 'jquery'
+import Moment from 'react-moment'
 import { Icon } from 'react-fa'
 import styles from './SongsContainer.css'
 
@@ -20,14 +21,19 @@ class SongsContainer extends Component {
                     <div className="topContentContainer">
                         <div className="songInfo">
                             <p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} />
-                            <p className="postAuthor">By {song._embedded.author[0].name}</p>
+                            <p className="metaInfo"><span className="postAuthor">By {song._embedded.author[0].name}</span> | <span className="postDate"><Moment format={'ll'} date={song.date} /> | </span>
+                              <span className="postTags">
+                                  <span className="tag" dangerouslySetInnerHTML={{__html: song._embedded['wp:term'][0][0].name}} />
+                                  <span className="tag" dangerouslySetInnerHTML={{__html: song._embedded['wp:term'][0][0].name}} />
+                              </span>
+                            </p>
                         </div>
                     </div>
                     <div className="singlePostPlayer">
                         <button className="singlePostPlayerButton" />
                         <div className="singlePostPlayerInfo">
-                            <p className="songName"><strong>Song Name</strong>{song.acf.song_name}</p>
-                            <p className="artistName"> by <strong>Artist Name</strong>{song.acf.artist_name}</p>
+                            <p className="songName">{song.acf.song_name}</p>
+                            <p className="artistName"><span className="by">by</span>{song.acf.artist_name}</p>
                         </div>
                     </div>
                     <div className="bottomContentContainer collapsed">
