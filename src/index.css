@@ -55,12 +55,27 @@ img.songImage {
   margin-right: 15px;
 }
 
-.postTitle {
+p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+
+p.postTitle {
   font-size: 40px;
-  font-weight: bold;
+  line-height: 1.1;
+  font-weight: normal;
   margin-bottom: 0;
   font-family: 'Changa One', sans-serif;
+  letter-spacing: 1px;
 }
+
+.sidebar h3 {
+  font-family: 'Changa One', sans-serif;
+  line-height: 1.1;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
 
 .singlePostPlayer {
   border:2px solid grey;
@@ -68,6 +83,8 @@ img.songImage {
   padding: 10px;
   border: 1px solid lightgray !important;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+      align-items: center;
+          display: flex;
 }
 
 button.singlePostPlayerButton {
@@ -83,7 +100,7 @@ background-size: cover !important;
 }
 
 .singlePostPlayerInfo {
-  display: flex;
+  /* display: flex; */
 }
 
 .songName {
@@ -473,7 +490,7 @@ input[type="email"] {
 }
 
 button[type="submit"] {
-  background: #f1782d !important;
+    background: #f1782d !important;
     color: #fff !important;
     border: 2px solid #f1782d !important;
     font-weight: 800;
@@ -482,16 +499,23 @@ button[type="submit"] {
     border-radius: 8px !important;
     width: 100%;
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 18px;
     transition: all .3s ease;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.1;
+    font-weight: normal;
+    letter-spacing: 1px;
 }
 
 button[type="submit"]:hover {
   background: #fff !important;
     color: #f1782d !important;
     border: 2px solid #f1782d !important;
-    font-weight: 800;
     cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.1;
+    font-weight: normal;
+    letter-spacing: 1px;
 }
 
 .sidebar h3 {

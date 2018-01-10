@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './Sidebar.css'
 import SubscribeFrom from 'react-mailchimp-subscribe'
+import './Sidebar.css'
 
 class Sidebar extends Component {
 

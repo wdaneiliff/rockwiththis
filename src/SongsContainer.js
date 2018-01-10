@@ -118,10 +118,10 @@ class SongsContainer extends Component {
                             className="singlePostPlayerButton"
                             onClick={() => this.onPressPlay(song)}
                         />
-                        <div className="singlePostPlayerInfo">
-                            <p className="songName">{song.acf.song_name}</p>
-                            <p className="artistName"><span className="by">by</span>{song.acf.artist_name}</p>
-                        </div>
+                        <p className="singlePostPlayerInfo">
+                            <span className="songName">{song.acf.song_name}</span>
+                            <span className="artistName"><span className="by">by</span>{song.acf.artist_name}</span>
+                        </p>
                     </div>
                     <div className="bottomContentContainer">
                         <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
