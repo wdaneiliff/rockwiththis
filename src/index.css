@@ -101,6 +101,7 @@ background-size: cover !important;
 
 .singlePostPlayerInfo {
   /* display: flex; */
+  font-weight: bold !important;
 }
 
 .songName {
@@ -549,4 +550,42 @@ p.emailAddress {
 
 .toggleDescriptionText {
   height: auto !important;
+}
+
+
+
+
+/* SIDEBAR FEATURED SONGS */
+.sidebar .songImage {
+    border-radius: 8px;
+    max-width: 50px;
+    max-height: 50px;
+    height: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+    border: 1px solid lightgray;
+    float: left;
+    margin: 0;
+}
+
+
+.sidebar .songContainer {
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.sidebar .songInfo {
+  float: left;
+    margin-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+
+.topTrackContainer {
+  margin-bottom: 25px;
 }
