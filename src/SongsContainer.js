@@ -48,6 +48,7 @@ class SongsContainer extends Component {
     }
 
     toggleDescription() {
+
     }
 
     renderTags(song) {
@@ -121,17 +122,18 @@ class SongsContainer extends Component {
                         </button>
                         <p className="singlePostPlayerInfo">
                             <span className="songName">{song.acf.song_name}</span>
-                            <span className="artistName"><span className="by">by</span>{song.acf.artist_name}</span>
+                            <span className="by">-</span>
+                            <span className="artistName">{song.acf.artist_name}</span>
                         </p>
                         <div className="singlePostPlayerLinks">
-                          <a href="#" className="shareButton"><i class="fa fa-share-alt" aria-hidden="true" /></a>
-                          <a href="#" className="spotifyLink"><i class="fa fa-spotify" aria-hidden="true" /></a>
+                            <a href="#" className="shareButton"><i class="fa fa-share-alt" aria-hidden="true" /></a>
+                            <a href="#" className="spotifyLink"><i class="fa fa-spotify" aria-hidden="true" /></a>
                         </div>
                     </div>
                     <div className="bottomContentContainer">
                         <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
                     </div>
-                    <p onClick={this.toggleDescription} className="expand">More<br /> <Icon name="angle-down" /></p>
+                    <p onClick={this.toggleDescription} className="toggleDescription">More <br/><Icon name="angle-down" /></p>
                 </div>
                 {this.renderMedia(song)}
             </div>

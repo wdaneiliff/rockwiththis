@@ -496,12 +496,12 @@ margin: 0 auto;
 
 
 
-.bottomContentContainer.collapsed {
-  height: 115px;
-  overflow: hidden;
+.bottomContentContainer {
+  /* height: 115px;
+  overflow: hidden; */
 }
 
-.expand {
+.toggleDescription {
     text-align: center;
     display: block;
     margin: 0 auto;
@@ -513,11 +513,12 @@ margin: 0 auto;
     font-size: 16px;
 }
 
-.expand:hover {
+.toggleDescription:hover {
   cursor: pointer;
+  font-weight: 800;
 }
 
-.expand .fa {
+.toggleDescription .fa {
   font-size: 30px;
 }
 
@@ -707,4 +708,21 @@ a.spotifyLink {
 
 .singlePostPlayerLinks a {
   margin: 0 10px;
+}
+
+.sidebar .songName {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+
+.singlePostPlayerInfo {
+  text-transform: none;
+}
+
+.singlePostPlayerInfo .by {
+  text-transform: none !important;
+}
+.singlePostPlayerInfo span.artistName{
+  color: #adb2a9;
 }
