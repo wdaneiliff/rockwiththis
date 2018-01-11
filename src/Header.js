@@ -7,7 +7,10 @@ render() {
 
 return (
       <div className="headerContainer">
-        <div className="searchContainer">
+        <button className="filterButton">
+          Filters +
+        </button>
+        <div className="filtersContainer">
 
         </div>
         <img id="headerLogo" src="https://rockwiththis.com/wp-content/uploads/2017/09/logo_horiz_wh.png" />

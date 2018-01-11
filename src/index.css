@@ -683,10 +683,20 @@ p.metaInfo {
 a.shareButton {
     color: #f1782d;
     font-size: 30px;
-    /* padding-left: 10px; */
+    transition: all .3s ease;
+}
+a.shareButton:hover {
+    color: #a65200;
+    font-size: 30px;
 }
 
 a.spotifyLink {
+    /* margin-left: 10px; */
+    font-size: 32px;
+    color: #6AE368;
+    transition: all .3s ease;
+}
+a.spotifyLink:hover {
     /* margin-left: 10px; */
     font-size: 32px;
     color: green;
@@ -725,4 +735,39 @@ a.spotifyLink {
 }
 .singlePostPlayerInfo span.artistName{
   color: #adb2a9;
+}
+
+
+
+:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+
+button.filterButton {
+  left: 25px;
+  position: absolute;
+  padding: 12px 20px;
+  background: rgba(0,0,0,0) !important;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all .3s ease;
+  font-size: 14px;
+}
+button.filterButton:hover {
+  left: 25px;
+  position: absolute;
+  padding: 12px 20px;
+  background: #f1782d !important;
+  border: 2px solid #f1782d;
+  border-radius: 20px;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
 }

@@ -11,6 +11,7 @@
     "react-jsx": "^1.0.0",
     "react-mailchimp-subscribe": "^1.0.3",
     "react-moment": "^0.6.8",
+    "react-player-controls": "^0.5.17",
     "react-redux": "^5.0.6",
     "react-scripts": "0.9.5",
     "react-youtube": "^7.5.0",
