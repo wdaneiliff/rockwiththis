@@ -123,7 +123,10 @@ class SongsContainer extends Component {
                             <span className="songName">{song.acf.song_name}</span>
                             <span className="artistName"><span className="by">by</span>{song.acf.artist_name}</span>
                         </p>
-                        <a href="#" className="shareButton"><i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
+                        <div className="singlePostPlayerLinks">
+                          <a href="#" className="shareButton"><i class="fa fa-share-alt" aria-hidden="true" /></a>
+                          <a href="#" className="spotifyLink"><i class="fa fa-spotify" aria-hidden="true" /></a>
+                        </div>
                     </div>
                     <div className="bottomContentContainer">
                         <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />

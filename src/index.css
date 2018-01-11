@@ -92,7 +92,7 @@ button.singlePostPlayerButton {
 display: block !important;
 border-radius: 50%;
 display: flex;
-margin-right: 15px;
+margin-right: 0px;
 background: #282828 !important;
 /* background: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
 background-size: cover !important;
@@ -100,6 +100,8 @@ border: none !important;
 color: #fff !important;
 font-size: 50px;
 transition: all .3s ease;
+flex-basis: 10%;
+max-width: 10%;
 }
 
 button.singlePostPlayerButton:hover {
@@ -680,5 +682,29 @@ p.metaInfo {
 a.shareButton {
     color: #f1782d;
     font-size: 30px;
-    padding-left: 10px;
+    /* padding-left: 10px; */
+}
+
+a.spotifyLink {
+    /* margin-left: 10px; */
+    font-size: 32px;
+    color: green;
+}
+
+
+.singlePostPlayerInfo {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex-basis: 70%;
+    max-width: 70%;
+}
+
+
+.singlePostPlayerLinks {
+  flex-basis: 20%;
+  max-width: 20%;
+}
+
+.singlePostPlayerLinks a {
+  margin: 0 10px;
 }
