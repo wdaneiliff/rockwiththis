@@ -172,17 +172,19 @@ flex: 0 0 contain;
 background: transparent;
 }
 #player-control-button-back {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/back.png);
+/* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/back.png); */
 
 }
 #player-control-button-play {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png);
+/* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
 flex: 0 0 40px;
-height: 40px;
+height: auto;
 margin: 0px;
+font-size: 30px;
+display: flex;
 }
 #player-control-button-next {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/next.png);
+/* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/next.png); */
 }
 .player-control-button {
 background-repeat: no-repeat;
@@ -190,8 +192,9 @@ background-position: center;
 background-size: 100%;
 cursor: pointer;
 flex: 0 0 10px;
-height: 10px;
-margin: 0 20px 0 20px;
+height: auto;
+margin: 0;
+font-size: 20px;
 }
 .player-controls-buttons {
 display: flex;

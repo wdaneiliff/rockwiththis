@@ -116,12 +116,14 @@ class SongsContainer extends Component {
                     <div className="singlePostPlayer">
                         <button
                             className="singlePostPlayerButton"
-                            onClick={() => this.onPressPlay(song)}
-                        />
+                            onClick={() => this.onPressPlay(song)}>
+                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                        </button>
                         <p className="singlePostPlayerInfo">
                             <span className="songName">{song.acf.song_name}</span>
                             <span className="artistName"><span className="by">by</span>{song.acf.artist_name}</span>
                         </p>
+                        <a href="#" className="shareButton"><i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
                     </div>
                     <div className="bottomContentContainer">
                         <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />

@@ -88,15 +88,31 @@ p.postTitle {
 }
 
 button.singlePostPlayerButton {
-  width: 50px;
-  height: 50px;
   float: left !important;
 display: block !important;
 border-radius: 50%;
 display: flex;
 margin-right: 15px;
-background: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png);
+background: #282828 !important;
+/* background: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
 background-size: cover !important;
+border: none !important;
+color: #fff !important;
+font-size: 50px;
+transition: all .3s ease;
+}
+
+button.singlePostPlayerButton:hover {
+  cursor: pointer;
+}
+
+button.singlePostPlayerButton:hover {
+}
+button.singlePostPlayerButton i{
+transition: all .3s ease;
+}
+button.singlePostPlayerButton:hover i{
+  color: #adb2a9 !important;
 }
 
 .singlePostPlayerInfo {
@@ -283,18 +299,30 @@ display: flex;
 flex: 0 0 contain;
 background: transparent;
 }
-#player-control-button-back {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/back.png);
 
+#player-control-button-back, #player-control-button-play, #player-control-button-next {
+  transition: all .3s ease;
+}
+#player-control-button-back:hover, #player-control-button-play:hover, #player-control-button-next:hover {
+  color: #adb2a9 !important;
+}
+
+#player-control-button-back {
+/* background-image: url(https://rockwiththis.com/wp-content/uploads/2018/01/back-button-grey.png); */
+margin: 0 !important;
 }
 #player-control-button-play {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png);
+/* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
 flex: 0 0 40px;
-height: 40px;
 margin: 0px;
+align-items: center;
+    justify-content: center;
+    margin: 0 20px;
 }
 #player-control-button-next {
-background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png);
+/* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png); */
+margin: 0 !important;
+
 }
 .player-control-button {
 background-repeat: no-repeat;
@@ -302,13 +330,23 @@ background-position: center;
 background-size: 100%;
 cursor: pointer;
 flex: 0 0 10px;
-height: 10px;
-margin: 0 20px 0 20px;
+font-size: 18px;
+}
+
+.singlePostPlayer {
+    background: #282828 !important;
+    color: #fff !important;
+}
+
+.player-duration-bar-current-time, .player-duration-bar-song-duration {
+  font-family: Open Sans;
+  letter-spacing: 2px;
 }
 .player-controls-buttons {
 display: flex;
 align-items: center;
 justify-content: center;
+margin-bottom: 5px;
 }
 .player-controls {
 display: flex;
@@ -588,4 +626,59 @@ p.emailAddress {
 
 .topTrackContainer {
   margin-bottom: 25px;
+}
+
+
+
+/* FOOTER PLAYER */
+.footer-player {
+  background: #282828 !important;
+}
+
+.footer-player {
+  color: #fff;
+}
+
+
+.footer-player span.artist-title {
+    color: #adb2a9;
+}
+
+
+
+
+
+.tag {
+    border: 2px solid #f1782d !important;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: all .3s ease;
+    color: #f1782d !important;
+    background: #fff !important;
+}
+.tag:hover {
+    color: #fff !important;
+    background: #f1782d !important;
+    border: 2px solid #f1782d !important;
+    cursor: pointer;
+}
+
+p.metaInfo {
+    padding-left: 5px;
+}
+
+.sidebar {
+  overflow: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none !important;
+}
+
+
+a.shareButton {
+    color: #f1782d;
+    font-size: 30px;
+    padding-left: 10px;
 }
