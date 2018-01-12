@@ -60,6 +60,10 @@ p {
   line-height: 1.5;
 }
 
+p.postAuthor {
+  font-weight: bold;
+}
+
 p.postTitle {
   font-size: 40px;
   line-height: 1.1;
@@ -67,6 +71,7 @@ p.postTitle {
   margin-bottom: 0;
   font-family: 'Changa One', sans-serif;
   letter-spacing: 1px;
+  color: #282828 !important;
 }
 
 .sidebar h3 {
@@ -118,8 +123,8 @@ button.singlePostPlayerButton:hover i{
 }
 
 .singlePostPlayerInfo {
-  /* display: flex; */
   font-weight: bold !important;
+  padding-left: 10px;
 }
 
 .songName {

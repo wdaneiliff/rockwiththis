@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import $ from 'jquery'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
+import VisibilitySensor from 'react-visibility-sensor'
 import { Icon } from 'react-fa'
 import styles from './SongsContainer.css'
 import { toggleSong } from './actions/queue'
@@ -109,7 +110,7 @@ class SongsContainer extends Component {
                     <div className="topContentContainer">
                         <div className="songInfo">
                             <p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} />
-                            <p className="metaInfo"><span className="postAuthor">By {song._embedded.author[0].name}</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span>
+                            <p className="metaInfo"><span>By </span><span className="postAuthor">{song._embedded.author[0].name}</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span>
                                 {this.renderTags(song)}
                             </p>
                         </div>
