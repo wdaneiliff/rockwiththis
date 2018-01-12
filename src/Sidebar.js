@@ -49,9 +49,7 @@ class Sidebar extends Component {
                     {featuredPosts}
                 </div>
                 <div className="newsletterContainer">
-                    <h3>Heads up</h3>
-                    <p>Expand your mind with new music and concert updates around the area.</p>
-                    <p className="emailAddress">Email Address</p>
+                    <h3>Heads up <i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Enter your email address for new music and concert updates around the area.</span></i></h3>
                     <SubscribeFrom {...formProps} />
                 </div>
             </div>
