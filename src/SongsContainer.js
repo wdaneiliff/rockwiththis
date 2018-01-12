@@ -4,6 +4,7 @@ import $ from 'jquery'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
 import { spring, Motion } from 'react-motion'
+import AnimateHeight from 'react-animate-height';
 import VisibilitySensor from 'react-visibility-sensor'
 import { Icon } from 'react-fa'
 import styles from './SongsContainer.css'
