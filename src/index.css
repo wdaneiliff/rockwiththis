@@ -776,3 +776,10 @@ button.filterButton:hover {
   letter-spacing: 2px;
   cursor: pointer;
 }
+
+
+
+.sidebar {
+    overflow: scroll;
+    height: calc(100vh - 200px) !important;
+}
