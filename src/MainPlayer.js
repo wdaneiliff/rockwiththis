@@ -40,6 +40,10 @@ return (
               <div className="player-duration-bar-song-duration">00:00</div>
             </div>
           </div>
+          <div className="songSourceContainer">
+            <i class="fa fa-soundcloud" aria-hidden="true"></i>
+            <i class="fa fa-youtube-square" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
     </footer>

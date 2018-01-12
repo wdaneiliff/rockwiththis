@@ -107,7 +107,7 @@ class SongsContainer extends Component {
 
     renderSong(song, index) {
         return (
-            <div className="songContainer" key={index}>
+            <div id={song.slug} className="songContainer" key={index}>
                 <div className="imageContainer">
                     <img className="songImage" src={song._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} />
                 </div>

@@ -859,3 +859,20 @@ input[type="email"] {
     margin-bottom: 5px;
     margin-top: 0;
 }
+
+
+.socialLinks i {
+  font-size: 24px;
+  margin: 15px;
+  color: #fff !important;
+}
+
+
+.songSourceContainer {
+  display: flex;
+    align-items: center;
+}
+.songSourceContainer i{
+  margin: 0 20px;
+  font-size: 35px;
+}
