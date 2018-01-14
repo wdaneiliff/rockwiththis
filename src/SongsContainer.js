@@ -59,7 +59,7 @@ class SongsContainer extends Component {
 
     renderTags(song) {
         const tags = song._embedded['wp:term'][1].map(tag =>
-            <span className="tag" dangerouslySetInnerHTML={{ __html: tag.name }} />)
+            <a href="#" className="tag" dangerouslySetInnerHTML={{ __html: tag.name }} />)
         return (
             <span className="postTags">
                 {tags}
@@ -116,8 +116,8 @@ class SongsContainer extends Component {
                         <div className="songInfo">
                             <p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} />
                             <p className="metaInfo"><span>By </span><span className="postAuthor">{song._embedded.author[0].name}</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span>
-                                {this.renderTags(song)}
-                            </p>
+                            {this.renderTags(song)}
+                          </p>
                         </div>
                     </div>
                     <div className="singlePostPlayer">
