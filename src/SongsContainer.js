@@ -4,11 +4,12 @@ import $ from 'jquery'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
 import { spring, Motion } from 'react-motion'
-import AnimateHeight from 'react-animate-height';
+import AnimateHeight from 'react-animate-height'
 import VisibilitySensor from 'react-visibility-sensor'
 import { Icon } from 'react-fa'
 import styles from './SongsContainer.css'
 import { toggleSong } from './actions/queue'
+import Song from './Song'
 
 class SongsContainer extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class SongsContainer extends Component {
 
         this.renderSong = this.renderSong.bind(this)
 
-        this.ytPlayers = {}
+        this.songs = {}
     }
 
     componentWillReceiveProps(nextProps) {
@@ -28,121 +29,14 @@ class SongsContainer extends Component {
         }
     }
 
-    onPressPlay(song) {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
-
-        if (youtube_track_id) {
-            const player = this.ytPlayers[youtube_track_id].internalPlayer
-            player.playVideo()
-        } else if (sc_track_id) {
-            if (window.SC) {
-                window.SC.Widget(`sc-${sc_track_id}`).toggle()
-            }
-        }
-
-        this.props.toggleSong(id)
-    }
-
-    toggleDescription() {
-      $('article').readmore({
-        speed: 75,
-        lessLink: '<a href="#">Read less</a>'
-      });
-    }
-
-    renderTags(song) {
-        const tags = song._embedded['wp:term'][1].map(tag =>
-            <span className="tag" dangerouslySetInnerHTML={{ __html: tag.name }} />)
-        return (
-            <span className="postTags">
-                {tags}
-            </span>
-        )
-    }
-
-    renderMedia(song) {
-        const {
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
-
-        if (youtube_track_id) {
-            return (
-                <div style={{ position: 'absolute', top: -500 }}>
-                    <YouTube
-                        ref={(ytPlayer) => { this.ytPlayers[youtube_track_id] = ytPlayer }}
-                        videoId={youtube_track_id}
-                        id={`yt-${youtube_track_id}`}
-                    />
-                </div>
-            )
-        } else if (sc_track_id) {
-            return (
-                <div style={{ position: 'absolute', top: -500 }}>
-                    <iframe
-                        id={`sc-${sc_track_id}`}
-                        title={song_name}
-                        width="100%"
-                        height="166"
-                        scrolling="no"
-                        frameBorder="no"
-                        src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${sc_track_id}`}
-                    />
-                </div>
-            )
-        } else {
-            return null
-        }
-    }
 
     renderSong(song, index) {
         return (
-            <div id={song.slug} className="songContainer" key={index}>
-                <div className="imageContainer">
-                    <img className="songImage" src={song._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} />
-                </div>
-                <div className="postContent" >
-                    <div className="topContentContainer">
-                        <div className="songInfo">
-                            <p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} />
-                            <p className="metaInfo"><span>By </span><span className="postAuthor">{song._embedded.author[0].name}</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span>
-                                {this.renderTags(song)}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="singlePostPlayer">
-                        <button
-                            className="singlePostPlayerButton"
-                            onClick={() => this.onPressPlay(song)}>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-                        </button>
-                        <p className="singlePostPlayerInfo">
-                            <span className="songName">{song.acf.song_name}</span>
-                            <span className="by">-</span>
-                            <span className="artistName">{song.acf.artist_name}</span>
-                        </p>
-                        <div className="singlePostPlayerLinks">
-                            <a href="#" className="shareButton"><i class="fa fa-share-alt" aria-hidden="true" /></a>
-                            <a href="#" className="spotifyLink"><i class="fa fa-spotify" aria-hidden="true" /></a>
-                        </div>
-                    </div>
-                    <div className="bottomContentContainer">
-                        <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
-                    </div>
-                    <p onClick={this.toggleDescription} className="toggleDescription">More <br/><Icon name="angle-down" /></p>
-                </div>
-                {this.renderMedia(song)}
-            </div>
+            <Song
+                key={`${song.id}`}
+                ref={(ref) => { this.songs[song.id] = ref }}
+                song={song}
+            />
         )
     }
 
