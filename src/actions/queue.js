@@ -12,13 +12,7 @@ export const toggleSong = postId => (dispatch, getState) => {
 
     const isCurrentlyPlaying = getState().queue.isPlaying
     const queue = getState().posts.map(post => post.id).slice(postIndex + 1)
-    const isPlaying = !isCurrentlyPlaying
-
-    // if (youtubeId) {
-    //
-    // } else if (
-    //
-    // )
+    const isPlaying = postId === getState().queue.currentlyPlayingSong ? !isCurrentlyPlaying : true
 
     dispatch({
         type: TOGGLE_SONG,

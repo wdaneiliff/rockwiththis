@@ -3,9 +3,10 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-import Homepage from './Homepage.js'
-import Header from './Header.js'
-import MainPlayer from './MainPlayer.js'
+import Homepage from './Homepage'
+import Header from './Header'
+import MainPlayer from './MainPlayer'
+import Media from './Media'
 
 import appReducer from './reducers/index'
 
@@ -23,6 +24,7 @@ class App extends Component {
                     <Header />
                     <Homepage />
                     <MainPlayer />
+                    <Media />
                 </div>
             </Provider>
         )

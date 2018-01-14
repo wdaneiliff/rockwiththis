@@ -39,4 +39,5 @@ export default combineReducers({
     queue,
     currentlyPlayingSong,
     seekTime,
+    isPlaying,
 })
