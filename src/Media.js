@@ -30,6 +30,7 @@ class Media extends Component {
     }
 
     pause() {
+      console.log('pause()')
         const {
             id,
             acf: {
@@ -48,21 +49,22 @@ class Media extends Component {
     }
 
     play() {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = this.props.post
+      console.log('play()')
+      const {
+          id,
+          acf: {
+              song_name,
+              youtube_track_id,
+              sc_track_id,
+          },
+      } = this.props.post
 
-        if (youtube_track_id) {
-            const player = this.ytPlayer.internalPlayer
-            player.playVideo()
-        } else if (sc_track_id && window.SC) {
-            window.SC.Widget('sc-player').play()
-        }
+      if (youtube_track_id) {
+          const player = this.ytPlayer.internalPlayer
+          player.playVideo()
+      } else if (sc_track_id && window.SC) {
+          window.SC.Widget('sc-player').play()
+      }
     }
 
     seek() {

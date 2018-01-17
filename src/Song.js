@@ -21,23 +21,20 @@ class Song extends Component {
     }
 
     onPressPlay(song) {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
+      const {
+          id,
+          acf: {
+              song_name,
+              youtube_track_id,
+              sc_track_id,
+          },
+      } = song
 
-        this.props.toggleSong(id)
+      this.props.toggleSong(id)
     }
 
     toggleDescription() {
-        $('article').readmore({
-            speed: 75,
-            lessLink: '<a href="#">Read less</a>',
-        })
+
     }
 
     renderTags() {
@@ -145,7 +142,8 @@ class Song extends Component {
             <div className="topContentContainer">
                 <div className="songInfo">
                     <p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} />
-                    <p className="metaInfo"><span>By </span><span className="postAuthor">{song._embedded.author[0].name}</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span>
+                    <p className="metaInfo">
+                      <p className="leftInfo"><span>By </span><span className="postAuthor">{song._embedded.author[0].name}</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
                         {this.renderTags(song)}
                     </p>
                 </div>

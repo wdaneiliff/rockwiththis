@@ -8,7 +8,8 @@ render() {
 return (
       <div className="headerContainer">
         <button className="filterButton">
-          Filters +
+          Filters
+          <i class="fa fa-filter" aria-hidden="true"></i>
         </button>
         <div className="filtersContainer">
         </div>
@@ -17,7 +18,6 @@ return (
     				<a target="_blank" href="https://www.facebook.com/rockwiththis/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
     				<a target="_blank" href="https://soundcloud.com/rockwiththis/sets/rock-with-this"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
     				<a target="_blank" href="https://open.spotify.com/user/jaredp21/playlist/2eWK5PGSTEl8I5ZvMG5VPS"><i class="fa fa-spotify" aria-hidden="true"></i>
-
     				</a>
     			</div>
       </div>

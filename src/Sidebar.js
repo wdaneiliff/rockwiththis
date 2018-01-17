@@ -44,8 +44,7 @@ class Sidebar extends Component {
         return (
             <div className="sidebar">
                 <div className="topTrackContainer">
-                    <h3>Top Tracks</h3>
-                    <p>Dive a bit deeper. Explore top tracks we've featured in the past.</p>
+                    <h3>Top Tracks <i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>
                     {featuredPosts}
                 </div>
                 <div className="newsletterContainer">
