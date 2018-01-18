@@ -43,7 +43,7 @@ class SongsContainer extends Component {
     render() {
         const posts = this.props.posts.map(this.renderSong)
         return (
-            <div className="songsContainer">
+            <div className="songsContainer clearfix">
                 {posts}
             </div>
         )

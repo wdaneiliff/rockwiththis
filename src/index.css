@@ -1170,4 +1170,57 @@ button.filterButton:hover {
     transition: all .3s ease;
     font-size: 12px;
 }
+
+.songContainer {
+  border: 1px solid #fff;
+  -webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.songsContainer {
+    height: calc(100vh - 50px - 100px);
+    overflow: scroll !important;
+    /* border: 1px solid #fff !important; */
+box-sizing: border-box;
+margin-bottom: -4px !important;
+}
+
+.songsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.imageContainer {
+    margin-bottom: -4px;
+}
+
+img.songImage {
+
+    box-shadow: 0 !important;
+    border: 0px !important;
+}
+
+.songSourceContainer {
+    display: none;
+}
+}
+
+
+
+.clearfix {
+    overflow: hidden;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.songsContainer {
+    height: calc(100vh - 50px - 100px);
+    overflow: scroll !important;
+}
+
+.songsContainer::-webkit-scrollbar {
+  display: none;
 }

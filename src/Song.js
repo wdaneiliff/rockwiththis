@@ -158,6 +158,7 @@ class Song extends Component {
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
+              <div className="mobile"></div>
                 <div className="imageContainer">
                     <img className="songImage" src={song._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} />
                 </div>
