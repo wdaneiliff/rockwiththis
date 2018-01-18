@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-
-import Homepage from './Homepage'
+import Routes from './Routes'
 import Header from './Header'
 import MainPlayer from './MainPlayer'
 import Media from './Media'
@@ -22,7 +21,7 @@ class App extends Component {
             <Provider store={store}>
                 <div>
                     <Header />
-                    <Homepage />
+                    <Routes />
                     <MainPlayer />
                     <Media />
                 </div>
