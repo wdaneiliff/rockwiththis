@@ -9,7 +9,7 @@ export const fetchPosts = (pageNumber = 1) => (dispatch, getState) => {
     dispatch({
         type: FETCH_POSTS.IN_PROGRESS,
     })
-    const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed[posts_per_page]=100'
+    const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=51'
     fetch(dataURL).then(res => res.json()).then((res) => {
         dispatch({
             type: FETCH_POSTS.SUCCESS,
