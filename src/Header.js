@@ -7,10 +7,6 @@ render() {
 
 return (
       <div className="headerContainer">
-        <button className="filterButton">
-          Filters
-          <i class="fa fa-filter" aria-hidden="true"></i>
-        </button>
         <div className="filtersContainer">
         </div>
         <img id="headerLogo" src="https://rockwiththis.com/wp-content/uploads/2017/09/logo_horiz_wh.png" />

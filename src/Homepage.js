@@ -9,6 +9,7 @@ import { fetchFeaturedPosts } from './actions/featuredPosts'
 
 
 class Homepage extends Component {
+
     componentDidMount() {
         this.props.fetchPosts()
         this.props.fetchFeaturedPosts()
@@ -17,6 +18,10 @@ class Homepage extends Component {
     render() {
         return (
             <div className="homeContainer">
+              <button className="filterButton">
+                Filters
+                <i class="fa fa-filter" aria-hidden="true"></i>
+              </button>
                 <SongsContainer />
                 <Sidebar />
             </div>

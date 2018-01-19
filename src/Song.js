@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 import $ from 'jquery'
 import Moment from 'react-moment'
 import { spring, Motion } from 'react-motion'
@@ -141,7 +142,7 @@ class Song extends Component {
         return (
             <div className="topContentContainer">
                 <div className="songInfo">
-                    <p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} />
+                    <Link className="postTitleLink" to="/song"><p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} /></Link>
                     <p className="metaInfo">
                       <p className="leftInfo"><span>By </span><span className="postAuthor">{song._embedded.author[0].name}</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
                         {this.renderTags(song)}
@@ -160,7 +161,7 @@ class Song extends Component {
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
               <div className="mobile"></div>
                 <div className="imageContainer">
-                    <img className="songImage" src={song._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} />
+                    <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>
                 <div className="postContent" >
                     {this.renderTop()}

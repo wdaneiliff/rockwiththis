@@ -771,6 +771,8 @@ button.filterButton {
   letter-spacing: 2px;
   transition: all .3s ease;
   font-size: 14px;
+      top: 20px;
+      z-index: 7000;
 }
 
 button.filterButton i {
@@ -1223,4 +1225,15 @@ img.songImage {
 
 .songsContainer::-webkit-scrollbar {
   display: none;
+}
+
+
+.postTitleLink {
+  text-decoration: none !important;
+}
+.postTitleLink p {
+  transition: all .3s ease;
+}
+.postTitleLink:hover p {
+  color: black;
 }
