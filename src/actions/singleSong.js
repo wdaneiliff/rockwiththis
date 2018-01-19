@@ -1,0 +1,23 @@
+export const FETCH_SINGLE_SONG = {
+    IN_PROGRESS: 'FETCH_SINGLE_SONG_IN_PROGRESS',
+    SUCCESS: 'FETCH_SINGLE_SONG_SUCCESS',
+    FAILURE: 'FETCH_SINGLE_SONG_FAILURE',
+}
+
+
+export const fetchSingleSong = slug => (dispatch, getState) => {
+    dispatch({
+        type: FETCH_SINGLE_SONG.IN_PROGRESS,
+    })
+    const dataURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${slug}?_embed`
+    fetch(dataURL).then(res => res.json()).then((res) => {
+        dispatch({
+            type: FETCH_SINGLE_SONG.SUCCESS,
+            song: res
+        })
+    }).catch((er) => {
+        dispatch({
+            type: FETCH_SINGLE_SONG.FAILURE,
+        })
+    })
+}
