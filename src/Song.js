@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import $ from 'jquery'
 import Moment from 'react-moment'
-import { spring, Motion } from 'react-motion'
 import AnimateHeight from 'react-animate-height'
-import VisibilitySensor from 'react-visibility-sensor'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 import styles from './SongsContainer.css'
@@ -19,6 +17,11 @@ class Song extends Component {
         this.ytPlayer = null
 
         this.toggleDescription = this.toggleDescription.bind(this)
+
+        this.state = {
+          height: 114,
+        };
+
     }
 
     onPressPlay(song) {
@@ -35,7 +38,11 @@ class Song extends Component {
     }
 
     toggleDescription() {
+      const { height } = this.state;
 
+      this.setState({
+        height: height === 114 ? 'auto' : 114,
+      });
     }
 
     renderTags() {
@@ -131,9 +138,14 @@ class Song extends Component {
     renderDescription() {
         const { song } = this.props
         return (
+          <AnimateHeight
+          duration={ 500 }
+          height={ this.state.height }
+          >
             <div className="bottomContentContainer">
                 <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
             </div>
+          </AnimateHeight>
         )
     }
 
@@ -157,6 +169,8 @@ class Song extends Component {
             song,
         } = this.props
 
+        const { height } = this.state;
+
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
               <div className="mobile"></div>
@@ -167,7 +181,13 @@ class Song extends Component {
                     {this.renderTop()}
                     {this.renderPlayer()}
                     {this.renderDescription()}
-                    <p onClick={this.toggleDescription} className="toggleDescription">More <br /><Icon name="angle-down" /></p>
+                    <p onClick={this.toggleDescription} className="toggleDescription">
+                      { height === 114 ? (
+                          <p>More <br /><Icon name="angle-down" /></p>
+                      ) : (
+                          <p>Less <br /><Icon name="angle-up" /></p>
+                      ) }
+                      </p>
                 </div>
                 {this.renderMedia(song)}
             </div>
