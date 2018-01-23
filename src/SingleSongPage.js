@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchSingleSong } from './actions/singleSong'
 import SingleSong from './SingleSong'
-import Sidebar from './Sidebar'
+import SidebarRight from './SidebarRight'
 
 
 class SingleSongPage extends Component {
@@ -13,14 +13,14 @@ class SingleSongPage extends Component {
 
   componentDidMount() {
         this.props.fetchSingleSong()
-    }
+  }
 
     render() {
       const slug = this.props.match.params.songId;
         return (
           <div className="singleSongPage">
             <SingleSong slug={slug}/>
-            <Sidebar />
+            <SidebarRight />
           </div>
         )
     }

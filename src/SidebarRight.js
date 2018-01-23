@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SubscribeFrom from 'react-mailchimp-subscribe'
-import './Sidebar.css'
 
-class Sidebar extends Component {
+class SidebarRight extends Component {
     renderFeaturedSong(song, index) {
         return (
             <div className="songContainer" key={index}>
@@ -42,7 +41,7 @@ class Sidebar extends Component {
         }
         const featuredPosts = this.props.featuredPosts.map(this.renderFeaturedSong)
         return (
-            <div className="sidebar">
+            <div className="sidebarRight">
                 <div className="topTrackContainer">
                     <h3>Top Tracks <i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>
                     {featuredPosts}
@@ -68,4 +67,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(Sidebar)
+)(SidebarRight)

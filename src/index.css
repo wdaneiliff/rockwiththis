@@ -11,10 +11,11 @@ body {
     position: absolute;
     top: 85px;
     left: 0;
-    width: 75%;
+    width: 80%;
     height: calc(100% - 50px - 75px);
     flex-flow: row wrap;
     padding:15px;
+    padding-right: 5%;
 }
 
 .songsContainer .songContainer {
@@ -68,13 +69,13 @@ p.postTitle {
   font-size: 40px;
   line-height: 1.1;
   font-weight: normal;
-  margin-bottom: 0;
+  margin-bottom: 10px !important;
   font-family: 'Changa One', sans-serif;
   letter-spacing: 1px;
   color: #282828 !important;
 }
 
-.sidebar h3 {
+.sidebarRight h3 {
   font-family: 'Changa One', sans-serif;
   line-height: 1.1;
   font-weight: normal;
@@ -442,8 +443,8 @@ z-index: -1;
 
 
 
-/*sidebar*/
-.sidebar {
+/*sidebarRight*/
+.sidebarRight {
     display: block;
     /* flex: auto; */
     width: 20%;
@@ -565,11 +566,11 @@ button[type="submit"]:hover {
     letter-spacing: 1px;
 }
 
-.sidebar h3 {
+.sidebarRight h3 {
   margin-bottom: 5px;
 }
 
-.sidebar p {
+.sidebarRight p {
   margin: 0;
 }
 
@@ -601,8 +602,8 @@ p.emailAddress {
 
 
 
-/* SIDEBAR FEATURED SONGS */
-.sidebar .songImage {
+/* sidebarRight FEATURED SONGS */
+.sidebarRight .songImage {
     border-radius: 8px;
     max-width: 50px;
     max-height: 50px;
@@ -614,7 +615,7 @@ p.emailAddress {
 }
 
 
-.sidebar .songContainer {
+.sidebarRight .songContainer {
     display: flex;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 0px;
@@ -623,7 +624,7 @@ p.emailAddress {
     align-items: center;
 }
 
-.sidebar .songInfo {
+.sidebarRight .songInfo {
   float: left;
     margin-left: 15px;
     font-family: 'Open Sans', sans-serif;
@@ -683,13 +684,14 @@ p.leftInfo {
 
 p.metaInfo {
     padding-left: 5px;
+    margin: 0 !important;
 }
 
-.sidebar {
+.sidebarRight {
   overflow: scroll;
 }
 
-.sidebar::-webkit-scrollbar {
+.sidebarRight::-webkit-scrollbar {
     display: none !important;
 }
 
@@ -734,7 +736,7 @@ a.spotifyLink:hover {
   margin: 0 10px;
 }
 
-.sidebar .songName {
+.sidebarRight .songName {
     margin-right: 5px;
     font-size: 16px;
 }
@@ -792,7 +794,7 @@ button.filterButton:hover {
 
 
 
-.sidebar {
+.sidebarRight {
     overflow: scroll;
     height: calc(100vh - 200px) !important;
 }
@@ -819,7 +821,7 @@ input[type="email"] {
 
 
 
-/* SIDEBAR TOOLTIP */
+/* sidebarRight TOOLTIP */
 
 
 
@@ -874,7 +876,7 @@ input[type="email"] {
   display: none !important;
 }
 
-.sidebar h3 {
+.sidebarRight h3 {
     margin-bottom: 5px;
     margin-top: 0;
 }
@@ -947,7 +949,7 @@ span.tag:nth-of-type(1) {
 }
 
 @media(max-width: 950px) {
-  .sidebar {
+  .sidebarRight {
     display: none;
   }
 
@@ -958,7 +960,7 @@ span.tag:nth-of-type(1) {
 }
 
 
-.sidebar input[type="email"] {
+.sidebarRight input[type="email"] {
     width: 94%;
     border-radius: 4px;
     border: 1px solid #ddd;
@@ -970,19 +972,19 @@ span.tag:nth-of-type(1) {
 
 
 @media(max-width: 1100px) {
-  .sidebar {
+  .sidebarRight {
     width: 18%;
 }
 }
 
 @media(max-width: 1000px) {
-  .sidebar {
+  .sidebarRight {
     width: 16%;
 }
-.sidebar .songContainer .songName {
+.sidebarRight .songContainer .songName {
     font-size: 14px;
 }
-.sidebar .songContainer .artistName {
+.sidebarRight .songContainer .artistName {
     font-size: 13px;
 }
 }
@@ -1020,6 +1022,8 @@ span.tag:nth-of-type(1) {
   }
   p.songDescription {
       margin-top: 0;
+      font-size: 16px;
+      margin-bottom: 10px;
   }
 
 
@@ -1051,7 +1055,7 @@ span.tag:nth-of-type(1) {
     font-size: 40px;
     line-height: 1.1;
     font-weight: normal;
-    margin-bottom: 0;
+    margin-bottom: 10px !important;
     font-family: 'Changa One', sans-serif;
     letter-spacing: 1px;
     color: #282828 !important;
@@ -1243,6 +1247,49 @@ img.songImage {
     margin-top: 0 !important;
 }
 
+
+
+/* FILTER SIDEBAR STYLES */
+.homeContainer {
+    height: calc(100vh);
+}
+
+.ui.left.sidebar {
+    width: 260px !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+}
+.ui.inverted.menu {
+    border: 0 solid transparent;
+    background: #fff !important;
+
+}
+
+.filters {
+  margin-top: 85px;
+height: calc(100vh - 160px);
+border-right: 2px solid #fafafa;
+padding: 10px;
+}
+
+.filters .filterTag {
+  border: 2px solid #f1782d !important;
+  margin: 0 5px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: all .3s ease;
+  color: #f1782d !important;
+  background: #fff !important;
+  display: inline-block;
+margin: 4px !important;
+}
+
+
+.filters .filterTag:hover {
+    color: #fff !important;
+    background: #f1782d !important;
+    border: 2px solid #f1782d !important;
+    cursor: pointer;
+}
 
 
 /* SONG DETAIL CSS */
