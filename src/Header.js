@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 class Header extends Component {
@@ -9,7 +10,7 @@ return (
       <div className="headerContainer">
         <div className="filtersContainer">
         </div>
-        <img id="headerLogo" src="https://rockwiththis.com/wp-content/uploads/2017/09/logo_horiz_wh.png" />
+        <Link id="headerLogo" to="/"><img src="https://rockwiththis.com/wp-content/uploads/2017/09/logo_horiz_wh.png" /></Link>
           <div className="socialLinks">
     				<a target="_blank" href="https://www.facebook.com/rockwiththis/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
     				<a target="_blank" href="https://soundcloud.com/rockwiththis/sets/rock-with-this"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>

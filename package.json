@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "history": "^4.7.2",
     "jquery": "^3.2.1",
+    "mixitup": "^3.2.2",
     "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-animate-height": "^0.10.9",
