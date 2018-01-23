@@ -120,7 +120,7 @@ class Media extends Component {
         }
 
         return (
-            <div style={{ position: 'fixed', top: -500, width: 1000, height: 500 }}>
+            <div style={{ opacity: 0, position: 'fixed', top: -500, width: 1000, height: 500 }}>
                 <YouTube
                     id="yt-player"
                     ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
