@@ -10,7 +10,7 @@ return (
       <div className="headerContainer">
         <div className="filtersContainer">
         </div>
-        <Link id="headerLogo" to="/"><img src="https://rockwiththis.com/wp-content/uploads/2017/09/logo_horiz_wh.png" /></Link>
+        <Link id="headerLogo" to="/"><img src="https://rockwiththis.info/wp-content/uploads/2017/09/logo_horiz_wh.png" /></Link>
           <div className="socialLinks">
     				<a target="_blank" href="https://www.facebook.com/rockwiththis/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
     				<a target="_blank" href="https://soundcloud.com/rockwiththis/sets/rock-with-this"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>

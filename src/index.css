@@ -1292,6 +1292,13 @@ margin: 4px !important;
 }
 
 
+@media(min-width: 650px) {
+  .songsContainer .songContainer {
+    margin-bottom: 30px;
+  }
+}
+
+
 /* SONG DETAIL CSS */
 .singleSongPage {
   height: calc(100vh - 50px - 100px);
