@@ -126,6 +126,7 @@ button.singlePostPlayerButton:hover i{
 .singlePostPlayerInfo {
   font-weight: bold !important;
   padding-left: 10px;
+  margin-bottom: 0 !important;
 }
 
 .songName {
