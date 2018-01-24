@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Sharp-Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/SharpSans-No1-Black.otf'); /* IE9 Compat Modes */
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -70,13 +78,15 @@ p.postTitle {
   line-height: 1.1;
   font-weight: normal;
   margin-bottom: 10px !important;
-  font-family: 'Changa One', sans-serif;
+  /* font-family: 'Changa One', sans-serif; */
+  font-family: 'Sharp-Sans' !important;
   letter-spacing: 1px;
   color: #282828 !important;
 }
 
 .sidebarRight h3 {
-  font-family: 'Changa One', sans-serif;
+  /* font-family: 'Changa One', sans-serif; */
+  font-family: 'Sharp-Sans' !important;
   line-height: 1.1;
   font-weight: normal;
   letter-spacing: 1px;
@@ -1057,7 +1067,8 @@ span.tag:nth-of-type(1) {
     line-height: 1.1;
     font-weight: normal;
     margin-bottom: 10px !important;
-    font-family: 'Changa One', sans-serif;
+    /* font-family: 'Changa One', sans-serif; */
+    font-family: 'Sharp-Sans' !important;
     letter-spacing: 1px;
     color: #282828 !important;
   }
