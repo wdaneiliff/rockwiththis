@@ -32,7 +32,7 @@ body {
   padding:15;
   z-index: 5;
   border-bottom: 30px solid transparent;
-  border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+  border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
   max-width: 1000px;
     margin: 0 auto;
 }
@@ -1020,7 +1020,7 @@ span.tag:nth-of-type(1) {
     padding:15;
     z-index: 5;
     border-bottom: none !important;
-    border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+    border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
     max-width: none;
       margin: 0 auto;
   }
@@ -1094,7 +1094,7 @@ span.tag:nth-of-type(1) {
   display: block;
   margin-right: 0px;
   background: #282828 !important;
-  /* background: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
+  /* background: url(https://rockwiththis.info/wp-content/uploads/2017/11/play-button-2.png); */
   background-size: cover !important;
   border: none !important;
   color: #fff !important;
