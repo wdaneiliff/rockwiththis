@@ -9,6 +9,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: black !important;
 }
 
 
@@ -1313,6 +1314,7 @@ margin: 4px !important;
 
 /* SONG DETAIL CSS */
 .singleSongPage {
-  height: calc(100vh - 50px - 100px);
-  margin-top: 100px;
+  height: calc(100vh - 50px - 90px);
+margin-top: 70px;
+background: #fff;
 }

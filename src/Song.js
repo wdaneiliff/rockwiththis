@@ -154,7 +154,7 @@ class Song extends Component {
         return (
             <div className="topContentContainer">
                 <div className="songInfo">
-                    <Link className="postTitleLink" to={`/songs/${song.title.rendered}`}><p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} /></Link>
+                    <Link className="postTitleLink" to={`/songs/${song.id}`}><p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} /></Link>
                     <p className="metaInfo">
                       <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
                         {this.renderTags(song)}
