@@ -71,6 +71,7 @@ export default combineReducers({
     queue,
     featuredPosts,
     filters,
+    singleSong,
     isFetchingFeaturedPosts,
     isFetchingPosts,
     currentlyFetchedPageNumber,

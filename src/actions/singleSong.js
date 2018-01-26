@@ -14,11 +14,10 @@ export const fetchSingleSong = slug => (dispatch, getState) => {
     })
 
     const dataURL = `https://rockwiththis.info/wp-json/wp/v2/songs/${slug}?_embed`
-    console.log(dataURL)
     fetch(dataURL).then(res => res.json()).then((res) => {
         dispatch({
             type: FETCH_SINGLE_SONG.SUCCESS,
-            song: res
+            singleSong: res
         })
     }).catch((er) => {
         dispatch({

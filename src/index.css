@@ -716,15 +716,15 @@ p.metaInfo {
 }
 
 
-a.shareButton {
-    color: #f1782d;
-    font-size: 30px;
+a.shareButton img {
     transition: all .3s ease;
+    max-width: 25px;
 }
-a.shareButton:hover {
-    color: #a65200;
-    font-size: 30px;
+a.shareButton:hover img{
+  opacity:.7;
 }
+
+
 
 a.spotifyLink {
     /* margin-left: 10px; */
@@ -1119,7 +1119,14 @@ span.tag:nth-of-type(1) {
     font-family: 'Sharp-Sans' !important;
     letter-spacing: 1px;
     color: #282828 !important;
+    transition: all .3s ease;
   }
+
+  /* p.postTitle:hover {
+    opacity: .7;
+  } */
+
+
   .imageContainer, .postContent {
       width: 100% !important;
   }
@@ -1301,7 +1308,7 @@ img.songImage {
   transition: all .3s ease;
 }
 .postTitleLink:hover p {
-  color: black;
+  opacity: .8;
 }
 
 

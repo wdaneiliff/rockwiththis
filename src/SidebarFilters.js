@@ -11,16 +11,11 @@ class SidebarFilters extends Component {
       super(props)
   }
 
-    componentDidMount() {
-        console.log("this.props")
-        console.log(this.props)
-    }
-
-    renderFilter(tag, index) {
-        return (
-            <span className="filterTag">{tag.name}</span>
-        )
-    }
+  renderFilter(tag, index) {
+      return (
+          <span className="filterTag">{tag.name}</span>
+      )
+  }
 
     render() {
       const filterTags = this.props.filters.map(this.renderFilter)
