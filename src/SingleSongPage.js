@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchSingleSong } from './actions/singleSong'
 import SingleSong from './SingleSong'
@@ -23,8 +24,14 @@ class SingleSongPage extends Component {
     const slug = this.props.match.params.id;
       return (
         <div className="singleSongPage">
-          <SingleSong slug={slug}/>
           <SidebarRight />
+
+            <button className="backpageButton">
+              <Link to="/">
+                <img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
+              </Link>
+            </button>
+          <SingleSong slug={slug}/>
         </div>
       )
   }

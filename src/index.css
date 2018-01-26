@@ -815,6 +815,36 @@ button.filterButton:hover {
   letter-spacing: 2px;
   cursor: pointer;
 }
+.backpageButton {
+  left: 25px;
+  position: absolute;
+  padding: 0px;
+  background: rgba(0,0,0,0) !important;
+  border: none;
+  border-radius: 20px;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all .3s ease;
+  font-size: 30px;
+      top: 20px;
+      z-index: 7000;
+}
+
+.backpageButton img {
+  width: 35px !important
+}
+
+.backpageButton:hover {
+  left: 25px;
+  position: absolute;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
 
 
 
