@@ -19,7 +19,7 @@ class Song extends Component {
         this.toggleDescription = this.toggleDescription.bind(this)
 
         this.state = {
-          height: 114,
+          height: 80
         };
 
     }
@@ -41,7 +41,7 @@ class Song extends Component {
       const { height } = this.state;
 
       this.setState({
-        height: height === 114 ? 'auto' : 114,
+        height: height === 80 ? 'auto' : 80,
       });
     }
 
@@ -124,7 +124,6 @@ class Song extends Component {
                 </button>
                 <p className="singlePostPlayerInfo">
                     <span className="songName">{song.acf.song_name}</span>
-                    <span className="by">-</span>
                     <span className="artistName">{song.acf.artist_name}</span>
                 </p>
                 <div className="singlePostPlayerLinks">
@@ -182,10 +181,10 @@ class Song extends Component {
                     {this.renderPlayer()}
                     {this.renderDescription()}
                     <p onClick={this.toggleDescription} className="toggleDescription">
-                      { height === 114 ? (
-                          <p>More <br /><Icon name="angle-down" /></p>
+                      { height === 80 ? (
+                          <p><Icon name="angle-double-down" /></p>
                       ) : (
-                          <p>Less <br /><Icon name="angle-up" /></p>
+                          <p><Icon name="angle-double-up" /></p>
                       ) }
                       </p>
                 </div>
