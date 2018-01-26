@@ -110,9 +110,9 @@ class Song extends Component {
         } = this.props
 
         const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
-            <i className="fa fa-pause-circle-o" aria-hidden="true" />
+          <img src="http://rockwiththis.info/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
         ) : (
-            <i className="fa fa-play-circle-o" aria-hidden="true" />
+            <img src="http://rockwiththis.info/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
         )
         return (
             <div className="singlePostPlayer">
