@@ -815,6 +815,36 @@ button.filterButton:hover {
   letter-spacing: 2px;
   cursor: pointer;
 }
+.backpageButton {
+  left: 25px;
+  position: absolute;
+  padding: 0px;
+  background: rgba(0,0,0,0) !important;
+  border: none;
+  border-radius: 20px;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all .3s ease;
+  font-size: 30px;
+      top: 20px;
+      z-index: 7000;
+}
+
+.backpageButton img {
+  width: 35px !important
+}
+
+.backpageButton:hover {
+  left: 25px;
+  position: absolute;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
 
 
 
@@ -1346,4 +1376,39 @@ p.songDescription p {
     font-size: 16px !important;
     color: #282828 !important;
     margin-bottom: 0 !important;
+}
+
+.footer-player {
+    color: #fff;
+    border-top: 2px solid #fff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+}
+
+
+.playButton, .pauseButton {
+  display: flex !important;
+  transition: all 0.3s ease;
+}
+.playButton:hover, .pauseButton:hover {
+  opacity: .7;
+}
+
+
+.playButton.main, .pauseButton {
+width: 40px;
+}
+
+
+
+.songsContainer .songContainer {
+
+    border-bottom: 2px solid transparent;
+    -o-border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+    border-image: url(http://rockwiththis.info/wp-content/uploads/2018/01/divider.png) 36;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 15px 20px;
+    margin-bottom: 0 !important;
+    padding-top: 15px !important;
+    margin-top: 15px !important;
 }
