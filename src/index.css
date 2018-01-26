@@ -532,11 +532,13 @@ margin: 0 auto;
     font-weight: 400 !important;
     font-size: 16px;
     margin-top: 5px;
+    transition: all .3s ease;
 }
 
 .toggleDescription:hover {
   cursor: pointer;
   font-weight: 800;
+  opacity: .7;
 }
 
 .toggleDescription .fa {
@@ -1382,6 +1384,7 @@ p.songDescription p {
     color: #fff;
     border-top: 2px solid #fff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+padding-top: 8px;
 }
 
 
