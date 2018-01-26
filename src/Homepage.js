@@ -39,8 +39,7 @@ class Homepage extends Component {
         return (
           <div>
             <button onClick={this.toggleFilters} className="filterButton">
-              Filters
-              <i class="fa fa-filter" aria-hidden="true"></i>
+              <i class="fa fa-sliders" aria-hidden="true"></i>
             </button>
             <Sidebar.Pushable as={Segment} attached="bottom" >
               <Sidebar as={Menu} animation="uncover" visible={this.state.showFilters} icon="labeled" vertical inline inverted>

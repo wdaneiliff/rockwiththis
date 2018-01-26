@@ -12,18 +12,22 @@ class SingleSongPage extends Component {
   }
 
   componentDidMount() {
-        this.props.fetchSingleSong()
+
+    this.props.fetchSingleSong(this.props.match.params.id)
+
   }
 
-    render() {
-      const slug = this.props.match.params.songId;
-        return (
-          <div className="singleSongPage">
-            <SingleSong slug={slug}/>
-            <SidebarRight />
-          </div>
-        )
-    }
+
+
+  render() {
+    const slug = this.props.match.params.id;
+      return (
+        <div className="singleSongPage">
+          <SingleSong slug={slug}/>
+          <SidebarRight />
+        </div>
+      )
+  }
 }
 
 
@@ -41,9 +45,11 @@ const mapStateToProps = (state, ownProps) => {
       }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchSingleSong: () => dispatch(fetchSingleSong()),
-})
+// const mapDispatchToProps = (dispatch, ownProps) => ({
+//   fetchSingleSong: () => dispatch(fetchSingleSong()),
+//
+// })
+const mapDispatchToProps = { fetchSingleSong };
 
 export default connect(
     mapStateToProps,

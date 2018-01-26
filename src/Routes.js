@@ -11,7 +11,7 @@ return (
       <main>
         <Switch>
           <Route exact path='/' component={Homepage}/>
-          <Route  path='/songs/:songId' component={SingleSongPage}/>
+          <Route  path='/songs/:id' component={SingleSongPage}/>
         </Switch>
       </main>
 
