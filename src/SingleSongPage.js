@@ -12,26 +12,24 @@ class SingleSongPage extends Component {
     super(props);
   }
 
-  componentDidMount() {
-
+  componentWillMount() {
     this.props.fetchSingleSong(this.props.match.params.id)
 
   }
 
 
 
+
   render() {
-    const slug = this.props.match.params.id;
       return (
         <div className="singleSongPage">
           <SidebarRight />
-
             <button className="backpageButton">
               <Link to="/">
                 <img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
               </Link>
             </button>
-          <SingleSong slug={slug}/>
+            <SingleSong />
         </div>
       )
   }
@@ -44,18 +42,14 @@ SingleSongPage.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
   const {
-        song
+        singleSong
     } = state
 
     return {
-          song
+        singleSong
       }
 }
 
-// const mapDispatchToProps = (dispatch, ownProps) => ({
-//   fetchSingleSong: () => dispatch(fetchSingleSong()),
-//
-// })
 const mapDispatchToProps = { fetchSingleSong };
 
 export default connect(

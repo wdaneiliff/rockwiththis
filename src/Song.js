@@ -2,24 +2,24 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import $ from 'jquery'
 import Moment from 'react-moment'
 import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
-import styles from './SongsContainer.css'
 import { toggleSong } from './actions/queue'
 
 class Song extends Component {
     constructor(props) {
         super(props)
 
+        console.log(this.props)
+
         this.ytPlayer = null
 
         this.toggleDescription = this.toggleDescription.bind(this)
 
         this.state = {
-          height: 80
+          height: 80,
         };
 
     }
@@ -61,46 +61,46 @@ class Song extends Component {
     }
 
     renderMedia() {
-        // const {
-        //     song
-        // } = this.props
-        //
-        // const {
-        //     acf: {
-        //         song_name,
-        //         youtube_track_id,
-        //         sc_track_id,
-        //     },
-        // } = song
-        //
-        // if (youtube_track_id) {
-        //     return (
-        //         <div style={{ position: 'absolute', top: -500 }}>
-        //             <YouTube
-        //                 ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
-        //                 videoId={youtube_track_id}
-        //                 id={`yt-${youtube_track_id}`}
-        //             />
-        //         </div>
-        //     )
-        // } else if (sc_track_id) {
-        //     return (
-        //         <div style={{ position: 'absolute', top: -500 }}>
-        //             <iframe
-        //                 id={`sc-${sc_track_id}`}
-        //                 title={song_name}
-        //                 width="100%"
-        //                 height="166"
-        //                 scrolling="no"
-        //                 frameBorder="no"
-        //                 src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${sc_track_id}`}
-        //             />
-        //         </div>
-        //     )
-        // } else {
-            return null
-        // }
-    }
+       // const {
+       //     song
+       // } = this.props
+       //
+       // const {
+       //     acf: {
+       //         song_name,
+       //         youtube_track_id,
+       //         sc_track_id,
+       //     },
+       // } = song
+       //
+       // if (youtube_track_id) {
+       //     return (
+       //         <div style={{ position: 'absolute', top: -500 }}>
+       //             <YouTube
+       //                 ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
+       //                 videoId={youtube_track_id}
+       //                 id={`yt-${youtube_track_id}`}
+       //             />
+       //         </div>
+       //     )
+       // } else if (sc_track_id) {
+       //     return (
+       //         <div style={{ position: 'absolute', top: -500 }}>
+       //             <iframe
+       //                 id={`sc-${sc_track_id}`}
+       //                 title={song_name}
+       //                 width="100%"
+       //                 height="166"
+       //                 scrolling="no"
+       //                 frameBorder="no"
+       //                 src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${sc_track_id}`}
+       //             />
+       //         </div>
+       //     )
+       // } else {
+           return null
+       // }
+   }
 
     renderPlayer() {
         const {
@@ -127,7 +127,7 @@ class Song extends Component {
                     <span className="artistName">{song.acf.artist_name}</span>
                 </p>
                 <div className="singlePostPlayerLinks">
-                    <a href="#" className="shareButton"><i className="fa fa-share-alt" aria-hidden="true" /></a>
+                    <a href="#" className="shareButton"><img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" /></a>
                     <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
                 </div>
             </div>

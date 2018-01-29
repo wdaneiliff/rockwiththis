@@ -11,32 +11,25 @@ class SingleSong extends Component {
     }
 
 
-
     render() {
-        return (
+      const singleSong = this.props.singleSong
+      return (
             <div className="SingleSongContainer">
-              <p>{this.props.slug}</p>
+              <p>{singleSong.id}</p>
+              <p>{singleSong.slug}</p>
+              <Song song={singleSong} />
             </div>
         )
     }
 }
 
-SingleSong.propTypes = {
-    slug: PropTypes.string.isRequired,
-}
 
-const mapStateToProps = (state, ownProps) => {
-  const {
-        song
-    } = state
-
-    return {
-          song
-      }
-}
+const mapStateToProps = (state, ownProps) => ({
+    singleSong: state.singleSong,
+})
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchSingleSong: () => dispatch(fetchSingleSong()),
+
 })
 
 export default connect(
