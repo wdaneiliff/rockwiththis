@@ -39,7 +39,7 @@ class Homepage extends Component {
         return (
           <div>
             <button onClick={this.toggleFilters} className="filterButton">
-              <i class="fa fa-sliders" aria-hidden="true"></i>
+              <img src="http://rockwiththis.info/wp-content/uploads/2018/01/filters-button.png" />
             </button>
             <Sidebar.Pushable as={Segment} attached="bottom" >
               <Sidebar as={Menu} animation="uncover" visible={this.state.showFilters} icon="labeled" vertical inline inverted>

@@ -475,8 +475,8 @@ z-index: -1;
 /*header*/
 
 .headerContainer {
-  height: 85px;
-  background-image: url('https://rockwiththis.info/wp-content/uploads/2017/10/no-drop-shdow.png');
+  height: 86px;
+  background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
   background-attachment: scroll;
   background-position: bottom !important;
@@ -485,6 +485,7 @@ z-index: -1;
   position: fixed;
   top: 0;
   width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -800,13 +801,22 @@ button.filterButton {
   letter-spacing: 2px;
   transition: all .3s ease;
   font-size: 30px;
-      top: 20px;
+      top: 25px;
       z-index: 7000;
 }
 
-button.filterButton i {
+
+
+button.filterButton img {
   margin-left: 5px;
+  width: 35px;
+  transition: all .3s ease;
 }
+
+button.filterButton:hover img {
+  opacity: .8;
+}
+
 
 button.filterButton:hover {
   left: 25px;
@@ -1050,6 +1060,10 @@ span.tag:nth-of-type(1) {
 /* MOBILE STYLEZ */
 
 @media(max-width: 650px) {
+
+  #headerLogo  img {
+  max-width: 200px;
+  }
   .songsContainer {
       z-index: 0;
       display: block;
@@ -1223,10 +1237,11 @@ button.filterButton {
     letter-spacing: 2px;
     transition: all .3s ease;
     font-size: 12px;
+    top: 15px;
 }
 
-button.filterButton i {
-  margin-left: 5px;
+button.filterButton img {
+  max-width: 30px;
 }
 
 button.filterButton:hover {
@@ -1409,16 +1424,28 @@ width: 40px;
 }
 
 
+@media(min-width: 650px) {
+  .songsContainer .songContainer {
 
-.songsContainer .songContainer {
+      border-bottom: 2px solid transparent;
+      -o-border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+      border-image: url(http://rockwiththis.info/wp-content/uploads/2018/01/divider.png) 36;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 15px 20px;
+      margin-bottom: 0 !important;
+      padding-top: 15px !important;
+      margin-top: 15px !important;
+  }
+}
 
-    border-bottom: 2px solid transparent;
-    -o-border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
-    border-image: url(http://rockwiththis.info/wp-content/uploads/2018/01/divider.png) 36;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 15px 20px;
-    margin-bottom: 0 !important;
-    padding-top: 15px !important;
-    margin-top: 15px !important;
+.mobileTopIntro {
+  display: none;
+}
+
+@media(max-width: 650px) {
+  .mobileTopIntro {
+    display: block;
+    margin-top: 86px;
+  }
 }

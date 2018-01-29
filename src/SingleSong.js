@@ -11,13 +11,13 @@ class SingleSong extends Component {
     }
 
 
-
     render() {
       const singleSong = this.props.singleSong
       return (
             <div className="SingleSongContainer">
               <p>{singleSong.id}</p>
               <p>{singleSong.slug}</p>
+              <Song song={singleSong} />
             </div>
         )
     }

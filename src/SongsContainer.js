@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import $ from 'jquery'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
 import { spring, Motion } from 'react-motion'
@@ -10,6 +9,8 @@ import { Icon } from 'react-fa'
 import styles from './SongsContainer.css'
 import { toggleSong } from './actions/queue'
 import Song from './Song'
+import MobileTopIntro from './MobileTopIntro.js'
+
 
 class SongsContainer extends Component {
     constructor(props) {
@@ -44,6 +45,7 @@ class SongsContainer extends Component {
         const posts = this.props.posts.map(this.renderSong)
         return (
             <div className="songsContainer clearfix">
+                <MobileTopIntro />
                 {posts}
             </div>
         )

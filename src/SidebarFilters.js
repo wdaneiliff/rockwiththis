@@ -11,6 +11,7 @@ class SidebarFilters extends Component {
       super(props)
   }
 
+
   renderFilter(tag, index) {
       return (
           <span className="filterTag">{tag.name}</span>
