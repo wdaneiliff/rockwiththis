@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchSingleSong } from './actions/singleSong'
+import { fetchFeaturedPosts } from './actions/featuredPosts'
 import SingleSong from './SingleSong'
 import SidebarRight from './SidebarRight'
 
@@ -23,13 +24,13 @@ class SingleSongPage extends Component {
   render() {
       return (
         <div className="singleSongPage">
-          <SidebarRight />
             <button className="backpageButton">
               <Link to="/">
                 <img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
               </Link>
             </button>
             <SingleSong />
+            <SidebarRight />
         </div>
       )
   }
@@ -38,19 +39,22 @@ class SingleSongPage extends Component {
 
 SingleSongPage.propTypes = {
       fetchSingleSong: PropTypes.func.isRequired,
+      fetchFeaturedPosts: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state, ownProps) => {
   const {
-        singleSong
+        singleSong,
+        featuredPosts
     } = state
 
     return {
-        singleSong
+        singleSong,
+        featuredPosts
       }
 }
 
-const mapDispatchToProps = { fetchSingleSong };
+const mapDispatchToProps = { fetchSingleSong, fetchFeaturedPosts };
 
 export default connect(
     mapStateToProps,

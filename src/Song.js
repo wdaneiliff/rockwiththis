@@ -12,6 +12,7 @@ class Song extends Component {
     constructor(props) {
         super(props)
 
+        console.log("*******")
         console.log(this.props)
 
         this.ytPlayer = null
@@ -127,8 +128,10 @@ class Song extends Component {
                     <span className="artistName">{song.acf.artist_name}</span>
                 </p>
                 <div className="singlePostPlayerLinks">
-                    <a href="#" className="shareButton"><img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" /></a>
-                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                  <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                    <a href="#" className="shareButton"><img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
+
+                    </a>
                 </div>
             </div>
         )
@@ -174,7 +177,9 @@ class Song extends Component {
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
               <div className="mobile"></div>
                 <div className="imageContainer">
+                  <Link className="songImageLink" to={`/songs/${song.id}`}>
                     <img className="songImage" src={song.better_featured_image.source_url} />
+                  </Link>
                 </div>
                 <div className="postContent" >
                     {this.renderTop()}

@@ -12,12 +12,14 @@ class SingleSong extends Component {
 
 
     render() {
-      const singleSong = this.props.singleSong
+      if (this.props.singleSong.id) {
+        var singleSong = <Song song={this.props.singleSong} />
+      } else {
+        var singleSong = <p> </p>
+      }
       return (
-            <div className="SingleSongContainer">
-              <p>{singleSong.id}</p>
-              <p>{singleSong.slug}</p>
-              <Song song={singleSong} />
+            <div className="singleSongContainer">
+              {singleSong}
             </div>
         )
     }

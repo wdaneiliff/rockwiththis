@@ -9,9 +9,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: black !important;
+  /* background: black !important; */
 }
-
 
 .songsContainer {
     z-index: 0;
@@ -36,7 +35,7 @@ body {
   border-bottom: 30px solid transparent;
   border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
   max-width: 1000px;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .topContentContainer {
@@ -806,21 +805,8 @@ button.filterButton {
 }
 
 
-
-button.filterButton img {
-  margin-left: 5px;
-  width: 35px;
-  transition: all .3s ease;
-}
-
-button.filterButton:hover img {
-  opacity: .8;
-}
-
-
 button.filterButton:hover {
   left: 25px;
-  position: absolute;
   border-radius: 20px;
   text-transform: uppercase;
   font-weight: bold;
@@ -829,7 +815,7 @@ button.filterButton:hover {
 }
 .backpageButton {
   left: 25px;
-  position: absolute;
+  position: fixed;
   padding: 0px;
   background: rgba(0,0,0,0) !important;
   border: none;
@@ -846,6 +832,16 @@ button.filterButton:hover {
 
 .backpageButton img {
   width: 35px !important
+}
+
+button.filterButton img {
+  margin-left: 5px;
+  width: 35px;
+  transition: all .3s ease;
+}
+
+button.filterButton:hover img {
+  opacity: .8;
 }
 
 .backpageButton:hover {
@@ -1019,8 +1015,8 @@ span.tag:nth-of-type(1) {
     display: none;
   }
 
-  .songsContainer {
-    width: 95% !important;
+  .songsContainer, .singleSongContainer {
+    width: 100% !important;
     padding: 0 !important;
   }
 }
@@ -1040,6 +1036,9 @@ span.tag:nth-of-type(1) {
 @media(max-width: 1100px) {
   .sidebarRight {
     width: 18%;
+}
+.songsContainer, .singleSongContainer {
+  /* width: 82% !important; */
 }
 }
 
@@ -1125,7 +1124,7 @@ span.tag:nth-of-type(1) {
   }
 
   p.postTitle {
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.1;
     font-weight: normal;
     margin-bottom: 10px !important;
@@ -1135,6 +1134,8 @@ span.tag:nth-of-type(1) {
     color: #282828 !important;
     transition: all .3s ease;
   }
+
+
 
   /* p.postTitle:hover {
     opacity: .7;
@@ -1199,12 +1200,12 @@ span.tag:nth-of-type(1) {
     padding: 0 !important;
     top: 73px;
 }
-.postContent {
+.homeContainer .postContent {
   padding: 15px;
   display: none;
 }
 
-.songContainer {
+.homeContainer .songContainer {
   width: 33.33%;
   display: inline-block;
   float: left;
@@ -1284,10 +1285,14 @@ padding-right: 5%;
     margin-bottom: -4px;
 }
 
-img.songImage {
-
+.img.songImage {
     box-shadow: 0 !important;
     border: 0px !important;
+}
+.singleSongPage .img.songImage {
+    box-shadow: 0 !important;
+    border: 0px !important;
+    margin: 15px 0;
 }
 
 .songSourceContainer {
@@ -1386,15 +1391,58 @@ margin: 4px !important;
 
 /* SONG DETAIL CSS */
 .singleSongPage {
-  height: calc(100vh - 50px - 90px);
 margin-top: 70px;
 background: #fff;
+min-height: 100vh !important;
 }
 
+.singleSongPage p.toggleDescription {
+    display: none !important;
+}
 
+.singleSongPage .songContainer .rah-static.rah-static--height-specific {
+    height: auto !important;
+}
 
+.singleSongContainer {
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 80%;
+    height: calc(100% - 50px - 75px);
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    padding: 15px;
+    padding-right: 3% !important;
+    padding-left: 3% !important;
+}
 
-
+@media(min-width: 650px) {
+.singleSongContainer  .songContainer {
+      border-bottom: 2px solid transparent;
+      -o-border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+      border-image: url(http://rockwiththis.info/wp-content/uploads/2018/01/divider.png) 36;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 15px 20px;
+      margin-bottom: 0 !important;
+      padding-top: 15px !important;
+      margin-top: 15px !important;
+      display: flex;
+      -webkit-box-flex: 1;
+      -ms-flex: auto;
+      flex: auto;
+  }
+}
 
 p.songDescription p {
     font-size: 16px !important;
@@ -1446,6 +1494,78 @@ width: 40px;
 @media(max-width: 650px) {
   .mobileTopIntro {
     display: block;
-    margin-top: 86px;
+    margin-top: 12px;
+    padding: 15px 10px;
+}
+.mobileTopIntro .rwtLogo {
+  max-width: 70px;
+    border-radius: 50%;
+}
+.mobileTopIntro .intro-text {
+  display: inline-block;
+position: absolute;
+top: 55px !important;
+padding-left: 15px;
+text-transform: uppercase;
+font-size: 12px;
+font-weight: bold !important;
+font-family: 'Sharp-Sans' !important;
+letter-spacing: 1px;
+}
+
+  .singlePostPlayerInfo span.songName {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    display: block;
+}
+
+.singleSongPage img.songImage {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.singlePostPlayerInfo span.artistName {
+    color: #adb2a9;
+    font-size: 14px !important;
+    font-weight: 100 !important;
+    display: block;
+}
+button.singlePostPlayerButton {
+  padding: 0 !important;
+}
+
+.singleSongContainer {
+  height: auto !important;
+  margin-bottom: 100px;
+}
+}
+
+@media(max-width: 950px) {
+  button.singlePostPlayerButton {
+    padding: 0 !important;
+    max-width: 35px;
   }
+}
+
+button.singlePostPlayerButton {
+  max-width: 40px;
+  margin-right: 5px;
+  padding: 0 !important;
+
+}
+
+
+.rah-static.rah-static--height-specific {
+  position: relative !important;
+}
+.rah-static.rah-static--height-specific:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+    width: 100%;
+    height: 25px;
 }
