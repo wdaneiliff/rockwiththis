@@ -1555,10 +1555,10 @@ button.singlePostPlayerButton {
 }
 
 
-.rah-static.rah-static--height-specific {
+.homeContainer .rah-static.rah-static--height-specific {
   position: relative !important;
 }
-.rah-static.rah-static--height-specific:after {
+.homeContainer .rah-static.rah-static--height-specific:after {
     content: "";
     position: absolute;
     z-index: 1;
