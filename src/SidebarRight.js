@@ -43,11 +43,12 @@ class SidebarRight extends Component {
         return (
             <div className="sidebarRight">
                 <div className="topTrackContainer">
-                    <h3>Top Tracks <i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>
+                    <h3>TRENDING<i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>
                     {featuredPosts}
                 </div>
                 <div className="newsletterContainer">
-                    <h3>Heads up <i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Enter your email address for new music and concert updates around the area.</span></i></h3>
+                    <h3>HEADS UP</h3>
+                    <p className="email">Join our fanbase to win tickets to sold out shows, receive our weekly song recaps, and more!</p>
                     <SubscribeFrom {...formProps} />
                 </div>
             </div>
