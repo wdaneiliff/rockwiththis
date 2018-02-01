@@ -6,6 +6,7 @@ import { fetchSingleSong } from './actions/singleSong'
 import { fetchFeaturedPosts } from './actions/featuredPosts'
 import SingleSong from './SingleSong'
 import SidebarRight from './SidebarRight'
+import RelatedSongs from './RelatedSongs'
 
 
 class SingleSongPage extends Component {
@@ -45,7 +46,7 @@ SingleSongPage.propTypes = {
 const mapStateToProps = (state, ownProps) => {
   const {
         singleSong,
-        featuredPosts
+        featuredPosts,
     } = state
 
     return {

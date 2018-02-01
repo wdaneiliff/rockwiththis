@@ -12,6 +12,10 @@ body {
   /* background: black !important; */
 }
 
+main {
+  padding-bottom: 150px !important;
+}
+
 .songsContainer {
     z-index: 0;
     display: flex;
@@ -132,6 +136,10 @@ transition: all .3s ease;
 }
 button.singlePostPlayerButton:hover i{
   color: #adb2a9 !important;
+}
+
+.singlePostPlayerButton img.playButton {
+  max-width: 35px !important;
 }
 
 .singlePostPlayerInfo {
@@ -622,7 +630,7 @@ p.emailAddress {
 
 /* sidebarRight FEATURED SONGS */
 .sidebarRight .songImage {
-    border-radius: 8px;
+    border-radius: 50%;
     max-width: 50px;
     max-height: 50px;
     height: auto;
@@ -718,7 +726,7 @@ p.metaInfo {
 
 a.shareButton img {
     transition: all .3s ease;
-    max-width: 25px;
+    max-width: 20px;
 }
 a.shareButton:hover img{
   opacity:.7;
@@ -728,13 +736,13 @@ a.shareButton:hover img{
 
 a.spotifyLink {
     /* margin-left: 10px; */
-    font-size: 32px;
+    font-size: 24px;
     color: #6AE368;
     transition: all .3s ease;
 }
 a.spotifyLink:hover {
     /* margin-left: 10px; */
-    font-size: 32px;
+    font-size: 24px;
     color: green;
 }
 
@@ -967,7 +975,7 @@ input[type="email"] {
 }
 
 .singlePostPlayerLinks {
-    text-align: center;
+    text-align: right;
 }
 
 
@@ -1023,7 +1031,7 @@ span.tag:nth-of-type(1) {
 
 
 .sidebarRight input[type="email"] {
-    width: 94%;
+    width: 100%;
     border-radius: 4px;
     border: 1px solid #ddd;
     border-color: #ddd;
@@ -1393,7 +1401,8 @@ margin: 4px !important;
 .singleSongPage {
 margin-top: 70px;
 background: #fff;
-min-height: 100vh !important;
+padding-bottom: 200px;
+/* min-height: 100vh !important; */
 }
 
 .singleSongPage p.toggleDescription {
@@ -1416,7 +1425,7 @@ min-height: 100vh !important;
     top: 85px;
     left: 0;
     width: 80%;
-    height: calc(100% - 50px - 75px);
+    /* height: calc(100% - 50px - 75px); */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
@@ -1543,14 +1552,15 @@ button.singlePostPlayerButton {
 @media(max-width: 950px) {
   button.singlePostPlayerButton {
     padding: 0 !important;
-    max-width: 35px;
+    max-width: 38px;
   }
 }
 
 button.singlePostPlayerButton {
   max-width: 40px;
-  margin-right: 5px;
+  margin-right: 1px;
   padding: 0 !important;
+  padding-left: 4px !important;
 
 }
 
@@ -1559,7 +1569,7 @@ button.singlePostPlayerButton {
   position: relative !important;
 }
 .homeContainer .rah-static.rah-static--height-specific:after {
-    content: "";
+    content: "pm ";
     position: absolute;
     z-index: 1;
     bottom: 0;
@@ -1568,4 +1578,40 @@ button.singlePostPlayerButton {
     background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
     width: 100%;
     height: 25px;
+}
+
+
+@media(min-width:650px) {
+  .imageContainer {
+    margin-top: -21px;
+  }
+}
+
+
+
+
+
+.songInfo span.artistName {
+    color: #adb2a9 !important;
+    font-size: 16px !important;
+    font-weight: 100 !important;
+}
+
+.songInfo span.songName {
+    font-size: 18px;
+    font-weight: 800 !important;
+}
+
+.sidebarRight {
+    overflow: scroll;
+    height: calc(100vh - 200px) !important;
+    margin-top: 30px;
+}
+
+ .topTrackContainer {
+    margin-bottom: 40px !important;
+}
+
+.newsletterContainer p.email {
+  margin-bottom: 10px !important;
 }
