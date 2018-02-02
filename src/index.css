@@ -20,7 +20,7 @@ main {
     display: flex;
     flex: auto;
     position: absolute;
-    top: 85px;
+    top: 54px;
     left: 0;
     width: 80%;
     height: calc(100% - 50px - 75px);
@@ -481,7 +481,7 @@ z-index: -1;
 /*header*/
 
 .headerContainer {
-  height: 86px;
+  height: 55px;
   background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
   background-attachment: scroll;
@@ -502,7 +502,7 @@ z-index: -1;
 max-width: 300px;
 max-height: 30px;
 margin: 0 auto;
-    margin-top: -10px;
+    margin-top: 0px;
 }
 
 
@@ -510,7 +510,7 @@ margin: 0 auto;
 .socialLinks {
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 0px;
     padding-right: 15px;
 }
 
@@ -807,7 +807,7 @@ button.filterButton {
   letter-spacing: 2px;
   transition: all .3s ease;
   font-size: 30px;
-      top: 25px;
+      top: 15px;
       z-index: 7000;
 }
 
@@ -838,12 +838,12 @@ button.filterButton:hover {
 }
 
 .backpageButton img {
-  width: 35px !important
+  width: 30px !important
 }
 
 button.filterButton img {
   margin-left: 5px;
-  width: 35px;
+  width: 30px;
   transition: all .3s ease;
 }
 
@@ -1074,7 +1074,7 @@ span.tag:nth-of-type(1) {
       z-index: 0;
       display: block;
       position: relative;
-      top: 85px;
+      top: 54px;
       left: 0;
       height: calc(100% - 50px - 75px);
       padding:15px;
@@ -1245,7 +1245,7 @@ button.filterButton {
     letter-spacing: 2px;
     transition: all .3s ease;
     font-size: 12px;
-    top: 15px;
+    top: 14px ;
 }
 
 button.filterButton img {
@@ -1275,7 +1275,7 @@ box-sizing: border-box;
 }
 
 .songsContainer {
-    height: calc(100vh - 50px - 100px);
+    height: calc(100vh - 100px);
     overflow: scroll !important;
     /* border: 1px solid #fff !important; */
 box-sizing: border-box;
@@ -1319,7 +1319,7 @@ padding-right: 5%;
 }
 
 .songsContainer {
-    height: calc(100vh - 50px - 100px);
+    height: calc(100vh - 100px);
     overflow: scroll !important;
 }
 
@@ -1603,8 +1603,8 @@ button.singlePostPlayerButton {
 
 .sidebarRight {
     overflow: scroll;
-    height: calc(100vh - 190px) !important;
-    margin-top: 20px;
+    height: calc(100vh - 220px) !important;
+    margin-top: 0px;
 }
 
  .newsletterContainer {
