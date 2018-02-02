@@ -42,15 +42,16 @@ class SidebarRight extends Component {
         const featuredPosts = this.props.featuredPosts.map(this.renderFeaturedSong)
         return (
             <div className="sidebarRight">
+              <div className="newsletterContainer">
+                  <h3>HEADS UP</h3>
+                  <p className="email">Join our fanbase to win tickets to sold out shows, receive our weekly song recaps, and more!</p>
+                  <SubscribeFrom {...formProps} />
+              </div>
                 <div className="topTrackContainer">
                     <h3>TRENDING<i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>
                     {featuredPosts}
                 </div>
-                <div className="newsletterContainer">
-                    <h3>HEADS UP</h3>
-                    <p className="email">Join our fanbase to win tickets to sold out shows, receive our weekly song recaps, and more!</p>
-                    <SubscribeFrom {...formProps} />
-                </div>
+
             </div>
         )
     }

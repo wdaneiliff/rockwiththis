@@ -13,7 +13,6 @@ body {
 }
 
 main {
-  padding-bottom: 150px !important;
 }
 
 .songsContainer {
@@ -138,7 +137,7 @@ button.singlePostPlayerButton:hover i{
   color: #adb2a9 !important;
 }
 
-.singlePostPlayerButton img.playButton {
+.singlePostPlayerButton img.playButton, .singlePostPlayerButton img.pauseButton {
   max-width: 35px !important;
 }
 
@@ -1569,7 +1568,7 @@ button.singlePostPlayerButton {
   position: relative !important;
 }
 .homeContainer .rah-static.rah-static--height-specific:after {
-    content: "pm ";
+    content: "  ";
     position: absolute;
     z-index: 1;
     bottom: 0;
@@ -1593,25 +1592,40 @@ button.singlePostPlayerButton {
 
 .songInfo span.artistName {
     color: #adb2a9 !important;
-    font-size: 16px !important;
+    font-size: 12px !important;
     font-weight: 100 !important;
 }
 
 .songInfo span.songName {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 800 !important;
 }
 
 .sidebarRight {
     overflow: scroll;
-    height: calc(100vh - 200px) !important;
-    margin-top: 30px;
+    height: calc(100vh - 190px) !important;
+    margin-top: 20px;
 }
 
- .topTrackContainer {
-    margin-bottom: 40px !important;
+ .newsletterContainer {
+    margin-bottom: 20px !important;
 }
 
 .newsletterContainer p.email {
   margin-bottom: 10px !important;
+  font-size: 12px;
+}
+
+.sidebarRight input[type="email"] {
+    border: 1px solid #ddd;
+    height: 25px !important;
+    font-size: 12px;
+    border-radius: 8px !important;
+
+}
+button[type="submit"] {
+    font-size: 12px !important;
+    font-family: "Open Sans", sans-serif;
+    height: 25px !important;
+    border-radius: 8px !important;
 }
