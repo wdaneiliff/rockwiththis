@@ -44,7 +44,7 @@ class SingleSongPage extends Component {
 SingleSongPage.propTypes = {
       fetchSingleSong: PropTypes.func.isRequired,
       fetchFeaturedPosts: PropTypes.func.isRequired,
-      fetchRelatedSongs: PropTypes.func.isRequired
+      fetchRelatedSongs: PropTypes.func.isRequired,
       isFetchingSingleSong: PropTypes.bool.isRequired,
       singleSong: PropTypes.shape({}).isRequired,
 }

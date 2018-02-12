@@ -19,9 +19,13 @@ class RelatedSongs extends Component {
 
     render() {
       const relatedSongs = this.props.relatedSongs.map(this.renderRelatedSong)
+      const tagName = this.props.relatedSongs
       return (
             <div className="relatedSongs">
+              <p className="title">Similar Tracks</p>
+              <div className="relatedSongsContainer">
               {relatedSongs}
+            </div>
             </div>
         )
     }
