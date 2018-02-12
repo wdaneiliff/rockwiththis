@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
@@ -12,7 +12,7 @@ class Song extends Component {
     constructor(props) {
         super(props)
 
-        console.log("*******")
+        console.log('*******')
         console.log(this.props)
 
         this.ytPlayer = null
@@ -20,35 +20,34 @@ class Song extends Component {
         this.toggleDescription = this.toggleDescription.bind(this)
 
         this.state = {
-          height: 80,
-        };
-
+            height: 80,
+        }
     }
 
     onPressPlay(song) {
-      const {
-          id,
-          acf: {
-              song_name,
-              youtube_track_id,
-              sc_track_id,
-          },
-      } = song
+        const {
+            id,
+            acf: {
+                song_name,
+                youtube_track_id,
+                sc_track_id,
+            },
+        } = song
 
-      this.props.toggleSong(id)
+        this.props.toggleSong(id)
     }
 
     toggleDescription() {
-      const { height } = this.state;
+        const { height } = this.state
 
-      this.setState({
-        height: height === 80 ? 'auto' : 80,
-      });
+        this.setState({
+            height: height === 80 ? 'auto' : 80,
+        })
     }
 
     renderTags() {
         const {
-            song
+            song,
         } = this.props
 
         const tags = song._embedded['wp:term'][1].map(tag =>
@@ -61,48 +60,6 @@ class Song extends Component {
         )
     }
 
-    renderMedia() {
-       // const {
-       //     song
-       // } = this.props
-       //
-       // const {
-       //     acf: {
-       //         song_name,
-       //         youtube_track_id,
-       //         sc_track_id,
-       //     },
-       // } = song
-       //
-       // if (youtube_track_id) {
-       //     return (
-       //         <div style={{ position: 'absolute', top: -500 }}>
-       //             <YouTube
-       //                 ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
-       //                 videoId={youtube_track_id}
-       //                 id={`yt-${youtube_track_id}`}
-       //             />
-       //         </div>
-       //     )
-       // } else if (sc_track_id) {
-       //     return (
-       //         <div style={{ position: 'absolute', top: -500 }}>
-       //             <iframe
-       //                 id={`sc-${sc_track_id}`}
-       //                 title={song_name}
-       //                 width="100%"
-       //                 height="166"
-       //                 scrolling="no"
-       //                 frameBorder="no"
-       //                 src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${sc_track_id}`}
-       //             />
-       //         </div>
-       //     )
-       // } else {
-           return null
-       // }
-   }
-
     renderPlayer() {
         const {
             song,
@@ -111,7 +68,7 @@ class Song extends Component {
         } = this.props
 
         const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
-          <img src="http://rockwiththis.info/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
+            <img src="http://rockwiththis.info/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
         ) : (
             <img src="http://rockwiththis.info/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
         )
@@ -128,7 +85,7 @@ class Song extends Component {
                     <span className="artistName">{song.acf.artist_name}</span>
                 </p>
                 <div className="singlePostPlayerLinks">
-                  <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
                     <a href="#" className="shareButton"><img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
 
                     </a>
@@ -140,14 +97,14 @@ class Song extends Component {
     renderDescription() {
         const { song } = this.props
         return (
-          <AnimateHeight
-          duration={ 500 }
-          height={ this.state.height }
-          >
-            <div className="bottomContentContainer">
-                <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
-            </div>
-          </AnimateHeight>
+            <AnimateHeight
+                duration={500}
+                height={this.state.height}
+            >
+                <div className="bottomContentContainer">
+                    <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
+                </div>
+            </AnimateHeight>
         )
     }
 
@@ -158,7 +115,7 @@ class Song extends Component {
                 <div className="songInfo">
                     <Link className="postTitleLink" to={`/songs/${song.id}`}><p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} /></Link>
                     <p className="metaInfo">
-                      <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
+                        <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
                         {this.renderTags(song)}
                     </p>
                 </div>
@@ -171,29 +128,28 @@ class Song extends Component {
             song,
         } = this.props
 
-        const { height } = this.state;
+        const { height } = this.state
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
-              <div className="mobile"></div>
+                <div className="mobile" />
                 <div className="imageContainer">
-                  <Link className="songImageLink" to={`/songs/${song.id}`}>
-                    <img className="songImage" src={song.better_featured_image.source_url} />
-                  </Link>
+                    <Link className="songImageLink" to={`/songs/${song.id}`}>
+                        <img className="songImage" src={song.better_featured_image.source_url} />
+                    </Link>
                 </div>
                 <div className="postContent" >
                     {this.renderTop()}
                     {this.renderPlayer()}
                     {this.renderDescription()}
                     <p onClick={this.toggleDescription} className="toggleDescription">
-                      { height === 80 ? (
-                          <p><Icon name="angle-double-down" /></p>
-                      ) : (
-                          <p><Icon name="angle-double-up" /></p>
-                      ) }
-                      </p>
+                        { height === 80 ? (
+                            <p><Icon name="angle-double-down" /></p>
+                        ) : (
+                            <p><Icon name="angle-double-up" /></p>
+                        ) }
+                    </p>
                 </div>
-                {this.renderMedia(song)}
             </div>
         )
     }

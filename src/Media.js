@@ -1,27 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-
+import { Link } from 'react-router-dom'
+import Moment from 'react-moment'
+import AnimateHeight from 'react-animate-height'
+import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
+import { toggleSong } from './actions/queue'
 
 class Media extends Component {
     constructor(props) {
         super(props)
 
         this.ytPlayer = null
-
-        this.toggleSong = this.toggleSong.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.post !== nextProps.post && this.props.post) {
-            this.pause()
-        }
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (this.props.post !== prevProps.post && this.props.isPlaying !== prevProps.isPlaying) {
-            if (this.props.isPlaying) {
+        if (this.props.currentlyPlayingSong !== nextProps.currentlyPlayingSong ||
+            this.props.isPlaying !== nextProps.isPlaying
+        ) {
+            if (nextProps.currentlyPlayingSong === nextProps.song.id && nextProps.isPlaying) {
                 this.play()
             } else {
                 this.pause()
@@ -30,7 +28,7 @@ class Media extends Component {
     }
 
     pause() {
-      console.log('pause()')
+        console.log('pause()')
         const {
             id,
             acf: {
@@ -38,36 +36,18 @@ class Media extends Component {
                 youtube_track_id,
                 sc_track_id,
             },
-        } = this.props.post
+        } = this.props.song
 
         if (youtube_track_id) {
             const player = this.ytPlayer.internalPlayer
             player.pauseVideo()
         } else if (sc_track_id && window.SC) {
-            window.SC.Widget('sc-player').pause()
+            window.SC.Widget(`sc-${sc_track_id}`).pause()
         }
     }
 
     play() {
-      console.log('play()')
-      const {
-          id,
-          acf: {
-              song_name,
-              youtube_track_id,
-              sc_track_id,
-          },
-      } = this.props.post
-
-      if (youtube_track_id) {
-          const player = this.ytPlayer.internalPlayer
-          player.playVideo()
-      } else if (sc_track_id && window.SC) {
-          window.SC.Widget('sc-player').play()
-      }
-    }
-
-    seek() {
+        console.log('play()')
         const {
             id,
             acf: {
@@ -75,82 +55,105 @@ class Media extends Component {
                 youtube_track_id,
                 sc_track_id,
             },
-        } = this.props.post
-
-        if (youtube_track_id) {
-            const player = this.ytPlayer.internalPlayer
-            // do something
-        } else if (sc_track_id && window.SC) {
-            // do something
-        }
-    }
-
-    toggleSong() {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = this.props.post
+        } = this.props.song
 
         if (youtube_track_id) {
             const player = this.ytPlayer.internalPlayer
             player.playVideo()
-        } else if (sc_track_id) {
-            if (window.SC) {
-                window.SC.Widget('sc-player').toggle()
-            }
+        } else if (sc_track_id && window.SC) {
+            window.SC.Widget(`sc-${sc_track_id}`).play()
+        }
+    }
+
+    getDuration(callback) {
+        console.log('get duration()')
+        const {
+            id,
+            acf: {
+                song_name,
+                youtube_track_id,
+                sc_track_id,
+            },
+        } = this.props.song
+
+        if (youtube_track_id) {
+            const player = this.ytPlayer.internalPlayer
+            callback(player.getDuration())
+        } else if (sc_track_id && window.SC) {
+            window.SC.Widget(`sc-${sc_track_id}`).getDuration(milliseconds => callback(milliseconds / 1000))
+        }
+    }
+
+    getPosition(callback) {
+        console.log('get duration()')
+        const {
+            id,
+            acf: {
+                song_name,
+                youtube_track_id,
+                sc_track_id,
+            },
+        } = this.props.song
+
+        if (youtube_track_id) {
+            const player = this.ytPlayer.internalPlayer
+            callback(player.getCurrentTime())
+        } else if (sc_track_id && window.SC) {
+            window.SC.Widget(`sc-${sc_track_id}`).getPosition(milliseconds => callback(milliseconds / 1000))
         }
     }
 
     render() {
         const {
-            post,
+            song,
         } = this.props
 
-        let sc_track_id = null
-        let youtube_track_id = null
-        let song_name = null
-        if (post) {
-            sc_track_id = post.acf.sc_track_id
-            youtube_track_id = post.acf.youtube_track_id
-            song_name = post.acf.song_name
-        }
+        const {
+            acf: {
+                song_name,
+                youtube_track_id,
+                sc_track_id,
+            },
+        } = song
 
-        return (
-            <div style={{ opacity: 0, position: 'fixed', top: -500, width: 1000, height: 500 }}>
-                <YouTube
-                    id="yt-player"
-                    ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
-                    videoId={youtube_track_id || null}
-                    onReady={() => {
-                        if (this.props.post) {
-                            this.play()
-                        }
-                    }}
-                />
-                <iframe
-                    id="sc-player"
-                    title="sc-player"
-                    width="100%"
-                    height="166"
-                    scrolling="no"
-                    frameBorder="no"
-                    src={sc_track_id ? `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${sc_track_id}&auto_play=true` : ''}
-                />
-            </div>
-        )
+        if (youtube_track_id) {
+            return (
+                <div style={{ position: 'absolute', top: -500 }}>
+                    <YouTube
+                        ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
+                        videoId={youtube_track_id}
+                        id={`yt-${youtube_track_id}`}
+                    />
+                </div>
+            )
+        } else if (sc_track_id) {
+            return (
+                <div style={{ position: 'absolute', top: -500 }}>
+                    <iframe
+                        id={`sc-${sc_track_id}`}
+                        title={song_name}
+                        width="100%"
+                        height="166"
+                        scrolling="no"
+                        frameBorder="no"
+                        src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${sc_track_id}`}
+                    />
+                </div>
+            )
+        } else {
+            return null
+        }
     }
 }
 
 Media.propTypes = {
-    post: PropTypes.object,
+    song: PropTypes.object.isRequired,
+    isPlaying: PropTypes.bool.isRequired,
+    currentlyPlayingSong: PropTypes.number,
 }
 
 Media.defaultProps = {
-    post: null,
+    currentlyPlayingSong: null,
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -159,18 +162,20 @@ const mapStateToProps = (state, ownProps) => {
         currentlyPlayingSong,
     } = state.queue
 
-    const post = currentlyPlayingSong ? state.posts.find(obj => obj.id === currentlyPlayingSong) : null
-
     return {
         isPlaying,
-        post,
+        currentlyPlayingSong,
     }
 }
 
+
 const mapDispatchToProps = (dispatch, ownProps) => ({
+    toggleSong: postId => dispatch(toggleSong(postId)),
 })
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
+    null,
+    { withRef: true },
 )(Media)

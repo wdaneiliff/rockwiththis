@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 import Routes from './Routes'
 import Header from './Header'
 import MainPlayer from './MainPlayer'
-import Media from './Media'
+import MediaContainer from './MediaContainer'
 
 import appReducer from './reducers/index'
 
@@ -23,7 +23,6 @@ class App extends Component {
                     <Header />
                     <Routes />
                     <MainPlayer />
-                    <Media />
                 </div>
             </Provider>
         )
