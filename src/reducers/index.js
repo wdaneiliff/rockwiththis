@@ -3,10 +3,12 @@ import { FETCH_POSTS } from '../actions/index'
 import { FETCH_FEATURED_POSTS } from '../actions/featuredPosts'
 import { FETCH_FILTERS } from '../actions/filters'
 import { FETCH_SINGLE_SONG } from '../actions/singleSong'
+import { FETCH_RELATED_SONGS } from '../actions/relatedSongs'
 import posts from './posts'
 import featuredPosts from './featuredPosts'
 import queue from './queue'
 import singleSong from './singleSong'
+import relatedSongs from './relatedSongs'
 import filters from './filters'
 
 const isFetchingPosts = (state = false, action) => {
@@ -72,6 +74,7 @@ export default combineReducers({
     featuredPosts,
     filters,
     singleSong,
+    relatedSongs,
     isFetchingFeaturedPosts,
     isFetchingPosts,
     currentlyFetchedPageNumber,

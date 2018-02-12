@@ -1401,6 +1401,10 @@ margin: 4px !important;
 
 
 /* SONG DETAIL CSS */
+.singleSongPage .singleSongContainer {
+  position: relative !important;
+}
+
 .singleSongPage {
 /* margin-top: 70px; */
 background: #fff;
@@ -1632,4 +1636,28 @@ button[type="submit"] {
     font-family: "Open Sans", sans-serif;
     height: 25px !important;
     border-radius: 8px !important;
+}
+
+
+
+/* RELATED SONGS */
+
+.singleSongPage {
+  padding-bottom: 100px;
+}
+.relatedSongs {
+      padding-top: 75px;
+    display: flex;
+    -webkit-box-flex: 1;
+    position: relative;
+    left: 0px;
+    width: 80%;
+}
+
+.relatedSongs .songsContainer {
+  display: inline-block;
+}
+
+.relatedSongs .songContainer img.songImage {
+  max-width: 100px !important;
 }
