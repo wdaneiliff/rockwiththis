@@ -34,13 +34,23 @@ class Homepage extends Component {
       this.setState({ showFilters: !this.state.showFilters })
     }
 
+
     render() {
       const { showFilters } = this.state
+
+      const filterButton = showFilters ? (
+        <button onClick={this.toggleFilters} className="filterButton">
+          <img src="http://rockwiththis.info/wp-content/uploads/2018/02/close.png" />
+        </button>
+      ) : (
+        <button onClick={this.toggleFilters} className="filterButton">
+          <img src="http://rockwiththis.info/wp-content/uploads/2018/01/filters-button.png" />
+        </button>
+      )
+
         return (
           <div>
-            <button onClick={this.toggleFilters} className="filterButton">
-              <img src="http://rockwiththis.info/wp-content/uploads/2018/01/filters-button.png" />
-            </button>
+            {filterButton}
             <Sidebar.Pushable as={Segment} attached="bottom" >
               <Sidebar as={Menu} animation="uncover" visible={this.state.showFilters} icon="labeled" vertical inline inverted>
                 <SidebarFilters />

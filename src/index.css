@@ -484,7 +484,7 @@ z-index: -1;
 /*header*/
 
 .headerContainer {
-  height: 55px;
+  height: 65px;
   background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
   background-attachment: scroll;
@@ -513,7 +513,7 @@ margin: 0 auto;
 .socialLinks {
     position: absolute;
     right: 0;
-    top: 0px;
+    top: 7px;
     padding-right: 15px;
 }
 
@@ -522,7 +522,6 @@ margin: 0 auto;
     width: 25px;
     margin: 5px;
 }
-
 
 
 
@@ -809,9 +808,17 @@ button.filterButton {
   font-weight: bold;
   letter-spacing: 2px;
   transition: all .3s ease;
-  font-size: 30px;
-      top: 15px;
+  font-size: 20px;
+      top: 20px;
       z-index: 7000;
+}
+
+.filterButton span {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    text-transform: none;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -846,7 +853,7 @@ button.filterButton:hover {
 
 button.filterButton img {
   margin-left: 5px;
-  width: 30px;
+  width: 20px;
   transition: all .3s ease;
 }
 
@@ -1370,27 +1377,29 @@ padding-right: 5%;
     height: calc(100vh - 130px);
     border-right: 2px solid #fafafa;
     padding: 10px;
-    background: #fff;
+    background: #f1f1f1 !important;
     text-align: left;
 }
 
 .filters .filterTag {
-  border: 2px solid #f1782d !important;
+  border: 1px solid #f1782d !important;
   margin: 0 5px;
-  padding: 4px 6px;
+  padding: 2px 4px;
   border-radius: 8px;
   transition: all .3s ease;
   color: #f1782d !important;
   background: #fff !important;
   display: inline-block;
 margin: 4px !important;
+font-size: 12px;
+font-weight: 100
 }
 
 
 .filters .filterTag:hover {
     color: #fff !important;
     background: #f1782d !important;
-    border: 2px solid #f1782d !important;
+    border: 1px solid #f1782d !important;
     cursor: pointer;
 }
 
@@ -1681,4 +1690,64 @@ padding: 0 25px;
 .relatedSongs .songContainer {
     width: 33%;
     text-align: center;
+}
+
+
+
+
+/* FILTER SIDEBAR STYLES */
+
+button.filterButton img {
+    margin-left: 5px;
+    width: 30px;
+    transition: all .3s ease;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+
+
+.filters input[type=search] {
+    margin: 20px 0;
+    display: block;
+    background-color: rgba(0,0,0,0);
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 1px;
+    border-style: inset;
+    -o-border-image: none;
+    border-image: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    padding: 10px;
+    color: #f1782d !important;
+}
+
+.filters input[type=search]::-webkit-input-placeholder {
+    color: #f1782d !important;
+    font-family: "Open Sans", sans-serif;
+}
+.filters input[type=search]:before{
+    content: url('http://rockwiththis.info/wp-content/uploads/2018/02/seach.png');
+}
+
+
+button.clearAll {
+    margin-top: 15px !important;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #f1782d !important;
+    border-radius: 8px;
+    transition: all .3s ease;
+    color: #f1782d !important;
+    display: inline-block;
+  font-size: 12px;
+  font-weight: 100;
+  padding: 8px !important;
 }

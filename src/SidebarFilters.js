@@ -22,7 +22,9 @@ class SidebarFilters extends Component {
       const filterTags = this.props.filters.map(this.renderFilter)
       return (
           <div className="filters clearfix">
+            <input placeholder="Search" type="search" />
             {filterTags}
+            <button className="clearAll filterTag">Clear All</button>
           </div>
       )
     }
