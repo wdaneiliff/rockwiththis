@@ -12,9 +12,6 @@ class Song extends Component {
     constructor(props) {
         super(props)
 
-        console.log('*******')
-        console.log(this.props)
-
         this.ytPlayer = null
 
         this.toggleDescription = this.toggleDescription.bind(this)

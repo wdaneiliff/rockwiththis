@@ -6,13 +6,33 @@ import Moment from 'react-moment'
 import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
-import { toggleSong } from './actions/queue'
+import { toggleSong, playNextSong } from './actions/queue'
 
 class Media extends Component {
     constructor(props) {
         super(props)
 
         this.ytPlayer = null
+    }
+
+    componentDidMount() {
+        const {
+            id,
+            acf: {
+                song_name,
+                youtube_track_id,
+                sc_track_id,
+            },
+        } = this.props.song
+
+        if (sc_track_id) {
+            const widget = window.SC.Widget(`sc-${sc_track_id}`)
+            if (widget) {
+                widget.bind(window.SC.Widget.Events.FINISH, () => {
+                    this.props.playNextSong()
+                })
+            }
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -66,7 +86,6 @@ class Media extends Component {
     }
 
     getDuration(callback) {
-        console.log('get duration()')
         const {
             id,
             acf: {
@@ -85,7 +104,6 @@ class Media extends Component {
     }
 
     getPosition(callback) {
-        console.log('get duration()')
         const {
             id,
             acf: {
@@ -100,6 +118,24 @@ class Media extends Component {
             callback(player.getCurrentTime())
         } else if (sc_track_id && window.SC) {
             window.SC.Widget(`sc-${sc_track_id}`).getPosition(milliseconds => callback(milliseconds / 1000))
+        }
+    }
+
+    seekTo(numSeconds) {
+        const {
+            id,
+            acf: {
+                song_name,
+                youtube_track_id,
+                sc_track_id,
+            },
+        } = this.props.song
+
+        if (youtube_track_id) {
+            const player = this.ytPlayer.internalPlayer
+            player.seekTo(numSeconds)
+        } else if (sc_track_id && window.SC) {
+            window.SC.Widget(`sc-${sc_track_id}`).seekTo(numSeconds * 1000.0)
         }
     }
 
@@ -123,6 +159,7 @@ class Media extends Component {
                         ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
                         videoId={youtube_track_id}
                         id={`yt-${youtube_track_id}`}
+                        onEnd={() => this.props.playNextSong()}
                     />
                 </div>
             )
@@ -171,6 +208,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     toggleSong: postId => dispatch(toggleSong(postId)),
+    playNextSong: () => dispatch(playNextSong()),
 })
 
 export default connect(

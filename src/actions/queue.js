@@ -22,3 +22,8 @@ export const toggleSong = postId => (dispatch, getState) => {
         isPlaying,
     })
 }
+
+export const playNextSong = () => (dispatch, getState) => {
+    const nextSong = getState().queue.queue[0]
+    dispatch(toggleSong(nextSong))
+}
