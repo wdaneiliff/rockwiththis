@@ -1392,7 +1392,6 @@ padding-right: 5%;
   display: inline-block;
 margin: 4px !important;
 font-size: 12px;
-font-weight: 100
 }
 
 
@@ -1748,6 +1747,5 @@ button.clearAll {
     color: #f1782d !important;
     display: inline-block;
   font-size: 12px;
-  font-weight: 100;
   padding: 8px !important;
 }

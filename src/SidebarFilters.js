@@ -14,7 +14,7 @@ class SidebarFilters extends Component {
 
   renderFilter(tag, index) {
       return (
-          <span className="filterTag">{tag.name}</span>
+          <span className="filterTag" onClick={() => this.props.onFilter(tag.id)}>{tag.name}</span>
       )
   }
 
