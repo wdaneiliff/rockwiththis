@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Slider from 'rc-slider'
+import 'rc-slider/assets/index.css'
 import { toggleSong } from './actions/queue'
 import MediaContainer from './MediaContainer'
 import './MainPlayer.css'
@@ -16,37 +18,81 @@ class MainPlayer extends Component {
         super(props)
 
         this.state = {
-            currentlyPlayingSongDuration: null,
+            currentlyPlayingSongDuration: 0,
             seekPosition: null,
+            rcSliderValue: 0,
         }
 
         this.checkSeekPosition = this.checkSeekPosition.bind(this)
+        this.onAfterChangeSlider = this.onAfterChangeSlider.bind(this)
+        this.onChangeSlider = this.onChangeSlider.bind(this)
+        this.setDurationForSongId = this.setDurationForSongId.bind(this)
 
         setTimeout(this.checkSeekPosition, 1000)
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong && this.mediaContainer) {
-            const mediaContainer = this.mediaContainer.getWrappedInstance()
-            const media = mediaContainer.medias[nextProps.currentlyPlayingSong.id].getWrappedInstance()
-            media.getDuration((duration) => {
-                this.setState({ currentlyPlayingSongDuration: duration, seekPosition: 0 })
-            })
+        if ((nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong ||
+             nextProps.isPlaying !== this.props.isPlaying) &&
+             this.mediaContainer
+         ) {
+            this.setDurationForSongId(nextProps.currentlyPlayingSong.id)
         }
     }
 
-    checkSeekPosition() {
+    onChangeSlider(progress) {
+        this.setState({
+            rcSliderValue: progress,
+        })
+    }
+
+
+    onAfterChangeSlider(progress) {
+        if (this.props.currentlyPlayingSong) {
+            const newTime = this.state.currentlyPlayingSongDuration * (progress / 100.0)
+
+            const mediaContainer = this.mediaContainer.getWrappedInstance()
+            const media = mediaContainer.medias[this.props.currentlyPlayingSong.id].getWrappedInstance()
+            media.seekTo(newTime)
+
+            this.setRcSliderValueForProgress(newTime, this.state.currentlyPlayingSongDuration)
+
+            this.checkSeekPosition(false)
+        }
+    }
+
+    setDurationForSongId(songId) {
+        const mediaContainer = this.mediaContainer.getWrappedInstance()
+        const media = mediaContainer.medias[songId].getWrappedInstance()
+        media.getDuration((duration) => {
+            this.setState({ currentlyPlayingSongDuration: duration, seekPosition: 0 })
+        })
+    }
+
+    setRcSliderValueForProgress(seekPosition, duration) {
+        this.setState({
+            rcSliderValue: (seekPosition / duration) * 100,
+        })
+    }
+
+    checkSeekPosition(repeat = true) {
         if (this.props.currentlyPlayingSong && this.mediaContainer) {
             const mediaContainer = this.mediaContainer.getWrappedInstance()
             const media = mediaContainer.medias[this.props.currentlyPlayingSong.id].getWrappedInstance()
             media.getPosition((position) => {
-                console.log(position)
+                if (this.state.currentlyPlayingSongDuration) {
+                    this.setRcSliderValueForProgress(position, this.state.currentlyPlayingSongDuration)
+                }
+
                 this.setState({ seekPosition: position })
             })
         }
 
-        setTimeout(this.checkSeekPosition, 1000)
+        if (repeat) {
+            setTimeout(this.checkSeekPosition, 1000)
+        }
     }
+
 
     renderInfo() {
         const { currentlyPlayingSong } = this.props
@@ -97,18 +143,28 @@ class MainPlayer extends Component {
                 <div className="player-duration-bar-wrapper">
                     <div className="player-duration-bar-current-time">{formatTime(this.state.seekPosition)}</div>
                     <div className="player-duration-bar">
-                        <div className="rc-slider">
-                            <div className="rc-slider-rail" />
-                            <div className="rc-slider-track" />
-                            <div className="rc-slider-step" />
-                            <div className="rc-slider-handle" />
-                            <div className="rc-slider-mark" />
-                        </div>
+                        <Slider
+                            min={0}
+                            max={100}
+                            step={0.5}
+                            value={this.state.rcSliderValue}
+                            onAfterChange={this.onAfterChangeSlider}
+                            onChange={this.onChangeSlider}
+                        />
                     </div>
                     <div className="player-duration-bar-song-duration">{formatTime(this.state.currentlyPlayingSongDuration)}</div>
                 </div>
             </div>
         )
+        /**
+        <div className="rc-slider">
+             <div className="rc-slider-rail" />
+             <div className="rc-slider-track" />
+             <div className="rc-slider-step" />
+             <div className="rc-slider-handle" />
+             <div className="rc-slider-mark" />
+         </div>
+         */
     }
 
     renderShareButtons() {

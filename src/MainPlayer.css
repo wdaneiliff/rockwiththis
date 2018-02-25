@@ -117,7 +117,7 @@ background: transparent;
 
 .rc-slider .rc-slider-track {
 height: 5px;
-background-color: #E8E9EA;
+background-color: #f1782d !important;
 z-index: 4;
 visibility: visible;
 left: 0%;
