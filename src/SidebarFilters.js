@@ -39,5 +39,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 export default connect(
     mapStateToProps,
-    null,
+    mapDispatchToProps,
 )(SidebarFilters)

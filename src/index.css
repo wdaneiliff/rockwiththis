@@ -20,7 +20,7 @@ main {
     display: flex;
     flex: auto;
     position: absolute;
-    top: 54px;
+    top: 84px;
     left: 0;
     width: 80%;
     height: calc(100% - 50px - 75px);
@@ -484,12 +484,13 @@ z-index: -1;
 /*header*/
 
 .headerContainer {
-  height: 65px;
-  background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
+  height: 90px;
+  background-color: #07497D;
+  /* background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
   background-attachment: scroll;
   background-position: bottom !important;
-  background-size: cover;
+  background-size: cover; */
   -webkit-background-size: cover;
   position: fixed;
   top: 0;
@@ -501,11 +502,10 @@ z-index: -1;
 }
 
 #headerLogo {
-  display: flex;
-max-width: 300px;
-max-height: 30px;
-margin: 0 auto;
-    margin-top: 0px;
+  max-width: 300px;
+  max-height: 34px;
+  margin: 0 auto;
+  margin-top: 0px;
 }
 
 
@@ -513,14 +513,15 @@ margin: 0 auto;
 .socialLinks {
     position: absolute;
     right: 0;
-    top: 7px;
     padding-right: 15px;
+    padding-top: 10px;
+    line-height: 90px;
 }
 
 
 .socialLinks a img {
     width: 25px;
-    margin: 5px;
+    /* margin: 5px; */
 }
 
 
@@ -1752,22 +1753,15 @@ button.clearAll {
 
 
 
-
-
-
-
-
-
-
 .sidebar-filters-wrapper {
   position: absolute;
-  max-width: 0;
-  transition: .4s ease all;
+  width: 300px;
   z-index: 1;
-  white-space: nowrap;
+  margin-left: -300px;
+  transition: .4s ease all;
 }
 
 .sidebar-filters-wrapper.expanded {
-  max-width: 300px;
-  white-space: normal;
+  margin-left: 0;
+  transition: .2s ease all;
 }

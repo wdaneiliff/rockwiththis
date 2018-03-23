@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Sidebar, Segment, Menu } from 'semantic-ui-react'
 import styles from './Homepage.css'
 import SongsContainer from './SongsContainer.js'
 import SidebarRight from './SidebarRight.js'
