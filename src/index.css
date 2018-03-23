@@ -495,7 +495,7 @@ z-index: -1;
   top: 0;
   width: 100%;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   align-items: center;
 }
@@ -1746,6 +1746,28 @@ button.clearAll {
     transition: all .3s ease;
     color: #f1782d !important;
     display: inline-block;
-  font-size: 12px;
-  padding: 8px !important;
+    font-size: 12px;
+    padding: 8px !important;
+}
+
+
+
+
+
+
+
+
+
+
+.sidebar-filters-wrapper {
+  position: absolute;
+  max-width: 0;
+  transition: .4s ease all;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.sidebar-filters-wrapper.expanded {
+  max-width: 300px;
+  white-space: normal;
 }
