@@ -527,8 +527,14 @@ z-index: -1;
 
 
 .bottomContentContainer {
-  /* height: 115px;
-  overflow: hidden; */
+  max-height: 115px;
+  overflow: hidden;
+  transition: 0.5s ease all;
+}
+
+.bottomContentContainer.expanded {
+  max-height: 1000px;
+  overflow: hidden;
 }
 
 .toggleDescription {

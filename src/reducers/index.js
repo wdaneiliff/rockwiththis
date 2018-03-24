@@ -68,6 +68,15 @@ const currentlyFetchedPageNumber = (state = 0, action) => {
     }
 }
 
+const sidebarExpanded = (state = false, action) => {
+  switch(action.type) {
+    case 'TOGGLE_SIDEBAR':
+      return action.expanded
+    default:
+    return state
+  }
+}
+
 export default combineReducers({
     posts,
     queue,
@@ -79,5 +88,6 @@ export default combineReducers({
     isFetchingPosts,
     currentlyFetchedPageNumber,
     isFetchingSingleSong,
-    isFetchingFilters
+    isFetchingFilters,
+    sidebarExpanded
 })

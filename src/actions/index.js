@@ -9,7 +9,8 @@ export const fetchPosts = (pageNumber = 1) => (dispatch, getState) => {
     dispatch({
         type: FETCH_POSTS.IN_PROGRESS,
     })
-    const dataURL = 'https://rockwiththis.info/wp-json/wp/v2/songs?_embed&per_page=21'
+    // changed to 1 song just to make the page load quicker during dev
+    const dataURL = 'https://rockwiththis.info/wp-json/wp/v2/songs?_embed&per_page=1'
     fetch(dataURL).then(res => res.json()).then((res) => {
         dispatch({
             type: FETCH_POSTS.SUCCESS,
@@ -21,4 +22,14 @@ export const fetchPosts = (pageNumber = 1) => (dispatch, getState) => {
             type: FETCH_POSTS.FAILURE,
         })
     })
+}
+
+export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
+export const toggleSidebar = (expanded) => {
+  return dispatch => {
+    dispatch({
+      type: TOGGLE_SIDEBAR,
+      expanded
+    })
+  }
 }
