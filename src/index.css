@@ -20,7 +20,7 @@ main {
     display: flex;
     flex: auto;
     position: absolute;
-    top: 54px;
+    top: 84px;
     left: 0;
     width: 80%;
     height: calc(100% - 50px - 75px);
@@ -484,28 +484,28 @@ z-index: -1;
 /*header*/
 
 .headerContainer {
-  height: 65px;
-  background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
+  height: 90px;
+  background-color: #07497D;
+  /* background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
   background-attachment: scroll;
   background-position: bottom !important;
-  background-size: cover;
+  background-size: cover; */
   -webkit-background-size: cover;
   position: fixed;
   top: 0;
   width: 100%;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   align-items: center;
 }
 
 #headerLogo {
-  display: flex;
-max-width: 300px;
-max-height: 30px;
-margin: 0 auto;
-    margin-top: 0px;
+  max-width: 300px;
+  max-height: 34px;
+  margin: 0 auto;
+  margin-top: 0px;
 }
 
 
@@ -513,21 +513,28 @@ margin: 0 auto;
 .socialLinks {
     position: absolute;
     right: 0;
-    top: 7px;
     padding-right: 15px;
+    padding-top: 10px;
+    line-height: 90px;
 }
 
 
 .socialLinks a img {
     width: 25px;
-    margin: 5px;
+    /* margin: 5px; */
 }
 
 
 
 .bottomContentContainer {
-  /* height: 115px;
-  overflow: hidden; */
+  max-height: 115px;
+  overflow: hidden;
+  transition: 0.5s ease all;
+}
+
+.bottomContentContainer.expanded {
+  max-height: 1000px;
+  overflow: hidden;
 }
 
 .toggleDescription {
@@ -809,7 +816,7 @@ button.filterButton {
   letter-spacing: 2px;
   transition: all .3s ease;
   font-size: 20px;
-      top: 20px;
+      top: 30px;
       z-index: 7000;
 }
 
@@ -1746,6 +1753,21 @@ button.clearAll {
     transition: all .3s ease;
     color: #f1782d !important;
     display: inline-block;
-  font-size: 12px;
-  padding: 8px !important;
+    font-size: 12px;
+    padding: 8px !important;
+}
+
+
+
+.sidebar-filters-wrapper {
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+  margin-left: -300px;
+  transition: .4s ease all;
+}
+
+.sidebar-filters-wrapper.expanded {
+  margin-left: 0;
+  transition: .2s ease all;
 }

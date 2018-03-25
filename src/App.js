@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import Routes from './Routes'
 import Header from './Header'
 import MainPlayer from './MainPlayer'
-import MediaContainer from './MediaContainer'
-
+import AppChild from './AppChild'
 import appReducer from './reducers/index'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -19,14 +18,14 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <div>
-                    <Header />
-                    <Routes />
-                    <MainPlayer />
-                </div>
+                <AppChild />
             </Provider>
         )
     }
 }
+
+// const mapStateToProps = (state, ownProps) => Object.assign(state, ownProps)
+//
+// export default connect(mapStateToProps, null)(App)
 
 export default App

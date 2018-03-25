@@ -17,7 +17,7 @@ class Song extends Component {
         this.toggleDescription = this.toggleDescription.bind(this)
 
         this.state = {
-            height: 80,
+            expanded: false
         }
     }
 
@@ -38,7 +38,7 @@ class Song extends Component {
         const { height } = this.state
 
         this.setState({
-            height: height === 80 ? 'auto' : 80,
+            expanded: !this.state.expanded
         })
     }
 
@@ -94,14 +94,9 @@ class Song extends Component {
     renderDescription() {
         const { song } = this.props
         return (
-            <AnimateHeight
-                duration={500}
-                height={this.state.height}
-            >
-                <div className="bottomContentContainer">
-                    <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
-                </div>
-            </AnimateHeight>
+              <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
+                  <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
+              </div>
         )
     }
 
@@ -140,7 +135,7 @@ class Song extends Component {
                     {this.renderPlayer()}
                     {this.renderDescription()}
                     <p onClick={this.toggleDescription} className="toggleDescription">
-                        { height === 80 ? (
+                        { !this.state.expanded ? (
                             <p><Icon name="angle-double-down" /></p>
                         ) : (
                             <p><Icon name="angle-double-up" /></p>
