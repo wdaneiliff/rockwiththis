@@ -20,7 +20,7 @@ main {
     display: flex;
     flex: auto;
     position: absolute;
-    top: 84px;
+    top: 78px;
     left: 0;
     width: 80%;
     height: calc(100% - 50px - 75px);
@@ -883,6 +883,7 @@ button.filterButton:hover img {
 .sidebarRight {
     overflow: scroll;
     height: calc(100vh - 200px) !important;
+    padding-top: 25px;
 }
 
 
@@ -1093,7 +1094,7 @@ span.tag:nth-of-type(1) {
       z-index: 0;
       display: block;
       position: relative;
-      top: 55px !important;
+          top: 78px !important;
       left: 0;
       height: calc(100% - 50px - 75px);
       padding:15px;
@@ -1380,11 +1381,11 @@ padding-right: 5%;
 }
 
 .filters {
-    margin-top: 55px;
+    margin-top: 70px;
     height: calc(100vh - 130px);
     border-right: 2px solid #fafafa;
     padding: 10px;
-    background: #f1f1f1 !important;
+    background: #fff !important;
     text-align: left;
 }
 
@@ -1604,6 +1605,20 @@ button.singlePostPlayerButton {
     width: 100%;
     height: 25px;
 }
+/* .homeContainer .bottomContentContainer  {
+  position: relative !important;
+}
+.homeContainer .bottomContentContainer :after {
+    content: "  ";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+    width: 100%;
+    height: 25px;
+} */
 
 
 @media(min-width:650px) {
