@@ -69,6 +69,8 @@ class Song extends Component {
         ) : (
             <img src="http://rockwiththis.info/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
         )
+
+
         return (
             <div className="singlePostPlayer">
                 <button
@@ -118,17 +120,26 @@ class Song extends Component {
     render() {
         const {
             song,
+            currentlyPlayingSong,
+            isPlaying,
         } = this.props
 
         const { height } = this.state
+
+        const imagePlayPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+            <img src="http://rockwiththis.info/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
+        ) : (
+            <img src="http://rockwiththis.info/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
+        )
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
                 <div className="mobile" />
                 <div className="imageContainer">
-                    <Link className="songImageLink" to={`/songs/${song.id}`}>
+                    <div className="songImageButton" onClick={() => this.onPressPlay(song)}>
+                      {imagePlayPauseButton}
                         <img className="songImage" src={song.better_featured_image.source_url} />
-                    </Link>
+                    </div>
                 </div>
                 <div className="postContent" >
                     {this.renderTop()}

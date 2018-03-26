@@ -1850,3 +1850,42 @@ button.clearAll {
   margin-left: 0;
   transition: .2s ease all;
 }
+
+
+.imageContainer, .songImageButton {
+  position: relative;
+}
+
+.imageContainer .imageButton {
+  position: absolute;
+}
+
+.imageContainer .imageButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.imagePlayButton {
+  opacity: 0;
+}
+
+.songImageButton:hover {
+  cursor: pointer;
+}
+.songImageButton:hover .imagePlayButton{
+  opacity: .75;
+}
+.songImageButton .imagePauseButton{
+  opacity: .75;
+}
+
+/* .songImageButton {
+    max-width: 330px;
+    max-height: 330px;
+} */
+
+.songsContainer, .sidebarRight {
+  -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
+}
