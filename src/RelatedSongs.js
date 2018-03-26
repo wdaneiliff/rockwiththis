@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class RelatedSongs extends Component {
@@ -9,7 +10,9 @@ class RelatedSongs extends Component {
             <div className="songContainer" key={index}>
                 <img alt="songImage" className="songImage" src={song.better_featured_image.source_url} />
                 <div className="songInfo">
+                  <Link className="songImageLink" to={`/songs/${song.id}`}>
                     <span className="songName">{song.acf.song_name}</span> <br />
+                    </Link>
                     <span className="artistName">{song.acf.artist_name}</span>
                 </div>
             </div>

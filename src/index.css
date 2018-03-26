@@ -96,6 +96,10 @@ p.postTitle {
   letter-spacing: 1px;
 }
 
+.sidebarRight .songImageLink {
+  color: #282828 !important;
+}
+
 
 .singlePostPlayer {
   border:2px solid grey;
@@ -272,7 +276,7 @@ background: transparent;
 
 .rc-slider .rc-slider-track {
 height: 5px;
-background-color: #E8E9EA;
+background-color: #975de8;
 z-index: 4;
 visibility: visible;
 left: 0%;
@@ -362,6 +366,7 @@ font-size: 18px;
 
 .singlePostPlayer {
     background: #282828 !important;
+    background: #110C4D !important;
     color: #fff !important;
 }
 
@@ -486,6 +491,7 @@ z-index: -1;
 .headerContainer {
   height: 90px;
   background-color: #07497D;
+  background-color: #110C4D;
   /* background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
   background-attachment: scroll;
@@ -521,7 +527,7 @@ z-index: -1;
 
 .socialLinks a img {
     width: 25px;
-    /* margin: 5px; */
+    margin: 5px;
 }
 
 
@@ -676,6 +682,7 @@ p.emailAddress {
 /* FOOTER PLAYER */
 .footer-player {
   background: #282828 !important;
+  background: #110C4D !important;
 }
 
 .footer-player {
@@ -1448,7 +1455,7 @@ background: #fff;
     -ms-flex: auto;
     flex: auto;
     position: absolute;
-    top: 55px;
+    top: 90px;
     left: 0;
     width: 80%;
     /* height: calc(100% - 50px - 75px); */
@@ -1459,6 +1466,12 @@ background: #fff;
     padding: 15px;
     padding-right: 3% !important;
     padding-left: 3% !important;
+}
+
+.singleSongContainer .bottomContentContainer {
+    max-height: none !important;
+    overflow: hidden;
+    transition: 0.5s ease all;
 }
 
 @media(min-width: 650px) {
@@ -1591,10 +1604,21 @@ button.singlePostPlayerButton {
 }
 
 
-.homeContainer .rah-static.rah-static--height-specific {
+.homeContainer .bottomContentContainer {
   position: relative !important;
 }
-.homeContainer .rah-static.rah-static--height-specific:after {
+.homeContainer .bottomContentContainer::after {
+    content: "  ";
+    position: absolute;
+    z-index: 1;
+    bottom: -5px;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+    width: 100%;
+    height: 25px;
+}
+.homeContainer .expanded.bottomContentContainer::after {
     content: "  ";
     position: absolute;
     z-index: 1;
@@ -1603,7 +1627,7 @@ button.singlePostPlayerButton {
     pointer-events: none;
     background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
     width: 100%;
-    height: 25px;
+    height: 0px;
 }
 /* .homeContainer .bottomContentContainer  {
   position: relative !important;
@@ -1678,13 +1702,19 @@ button[type="submit"] {
 .singleSongPage {
   padding-bottom: 100px;
 }
+
+.singleSongPage p.songDescription p {
+    margin-top: 15px;
+}
 .relatedSongs {
-      padding-top: 50px;
-    display: flex;
-    -webkit-box-flex: 1;
-    position: relative;
-    left: 0px;
+      padding-top: 25px;
+    /* display: flex; */
+    /* -webkit-box-flex: 1; */
+    /* position: relative; */
+    /* left: 0px; */
     width: 80%;
+    margin-top: 100px;
+    display: block;
 }
 
 .relatedSongs .title {
@@ -1696,7 +1726,7 @@ button[type="submit"] {
 }
 
 .relatedSongs .songContainer img.songImage {
-  max-width: 100px !important;
+  max-width: 150px !important;
 }
 
 .relatedSongsContainer {
@@ -1713,8 +1743,42 @@ padding: 0 25px;
     text-align: center;
 }
 
+.relatedSongs .title {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Sharp-Sans' !important;
+    letter-spacing: 1px;
+}
+
+.relatedSongs .songInfo {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.relatedSongs .songInfo span.songName {
+    font-size: 18px;
+    font-weight: 800 !important;
+}
+.relatedSongs .songInfo span.artistName {
+    color: #adb2a9 !important;
+    font-size: 18px !important;
+    font-weight: 100 !important;
+    margin-top: 5px;
+    display: block;
+}
+
+.relatedSongs .songImageLink {
+  color: #282828 !important;
+}
 
 
+footer .songImageLink {
+  color: #fff !important;
+  transition: all .3s ease;
+}
+footer .songImageLink:hover {
+  opacity: .75;
+}
 
 /* FILTER SIDEBAR STYLES */
 
