@@ -37,14 +37,7 @@ class Header extends Component {
     return (
         <div className="headerContainer">
           {filterButton}
-          <Link id="headerLogo" to="/"><img src="https://rockwiththis.info/wp-content/uploads/2017/09/logo_horiz_wh.png" /></Link>
-            <div className="socialLinks">
-      				<a target="_blank" href="https://www.facebook.com/rockwiththis/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/fb-icon.png"/></a>
-      				<a target="_blank" href="https://www.instagram.com/rockwiththismusic/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/insta-icon.png"/></a>
-      				<a target="_blank" href="https://open.spotify.com/user/jaredp21/playlist/2eWK5PGSTEl8I5ZvMG5VPS"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/spotify-icon.png"/></a>
-              <a target="_blank" href="https://soundcloud.com/rockwiththis/sets/rock-with-this"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/sc-icon.png"/></a>
-
-      			</div>
+          <Link id="headerLogo" to="/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/logo-hi-res.png" /></Link>
         </div>
       )
     }

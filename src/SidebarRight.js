@@ -7,7 +7,10 @@ class SidebarRight extends Component {
     renderFeaturedSong(song, index) {
         return (
             <div className="songContainer" key={index}>
+              <div className="songImageContainer">
                 <img alt="songImage" className="songImage" src={song.better_featured_image.source_url} />
+              </div>
+
                 <div className="songInfo">
                   <Link className="songImageLink" to={`/songs/${song.id}`}>
                     <span className="songName">{song.acf.song_name}</span> <br />
@@ -21,8 +24,8 @@ class SidebarRight extends Component {
         const formProps = {
             action: 'https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2" method="post" id="mc-embedded-subscribe-form',
             messages: {
-                inputPlaceholder: '',
-                btnLabel: 'Subscribe',
+                inputPlaceholder: 'your email here',
+                btnLabel: 'Sign Up',
                 sending: 'Sending',
                 success: 'Thanks!',
                 error: 'Woops... something went wrong.'
@@ -46,9 +49,17 @@ class SidebarRight extends Component {
         return (
             <div className="sidebarRight">
               <div className="newsletterContainer">
-                  <h3>HEADS UP</h3>
-                  <p className="email">Join our fanbase to win tickets to sold out shows, receive our weekly song recaps, and more!</p>
-                  <SubscribeFrom {...formProps} />
+                <SubscribeFrom {...formProps} />
+                  <div className="socialLinks">
+        				<a target="_blank" href="https://www.facebook.com/rockwiththis/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/facebook-black.png"/></a>
+        				<a target="_blank" href="https://www.instagram.com/rockwiththismusic/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/instagram-black.png"/></a>
+        				<a target="_blank" href="https://open.spotify.com/user/jaredp21/playlist/2eWK5PGSTEl8I5ZvMG5VPS"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/spotify-black.png"/></a>
+                <a target="_blank" href="https://soundcloud.com/rockwiththis/sets/rock-with-this"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/soundcloud-black.png"/></a>
+
+        			</div>
+                  <h3>HUMAN RHYTHMS. NOT ALGORITHMS</h3>
+                  <p>Our mission is simple, to help you <b>discover</b> your new <b>favorite songs</b>. We deliver the best of what's <b>breaking</b> and uncover the <b>left-behind</b> tracks that need to be heard. <b>One song a day</b>, hopefully that you haven't heard, but will <b>love</b>.</p>
+
               </div>
                 <div className="topTrackContainer">
                     <h3>TRENDING<i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>

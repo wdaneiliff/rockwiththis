@@ -22,7 +22,7 @@ main {
     position: absolute;
     top: 78px;
     left: 0;
-    width: 80%;
+    width: 75%;
     height: calc(100% - 50px - 75px);
     flex-flow: row wrap;
     padding:15px;
@@ -94,6 +94,9 @@ p.postTitle {
   line-height: 1.1;
   font-weight: normal;
   letter-spacing: 1px;
+  margin-bottom: 5px;
+margin-top: 0px;
+font-size: 14px;
 }
 
 .sidebarRight .songImageLink {
@@ -161,7 +164,8 @@ button.singlePostPlayerButton:hover i{
 
 .rc-slider .rc-slider-track {
 height: 5px !important;
-background-color: #975de8 !important;
+/* background-color: #975de8 !important; */
+background-color: #30baf8 !important;
 }
 
 .player-controls-wrapper {
@@ -276,7 +280,7 @@ background: transparent;
 
 .rc-slider .rc-slider-track {
 height: 5px;
-background-color: #975de8;
+background-color: #30baf8 !important;
 z-index: 4;
 visibility: visible;
 left: 0%;
@@ -365,8 +369,8 @@ font-size: 18px;
 }
 
 .singlePostPlayer {
-    background: #282828 !important;
-    background: #110C4D !important;
+    /* background: #282828 !important; */
+    background: #120745 !important;
     color: #fff !important;
 }
 
@@ -474,13 +478,14 @@ z-index: -1;
 .sidebarRight {
     display: block;
     /* flex: auto; */
-    width: 20%;
+    width: 25%;
     position: fixed;
     top: 85px;
     right: 0;
     border-left: 2px solid #fafafa;
     height: calc(100% - 50px - 75px);
     padding: 15px;
+    background: #fff;
     /* padding-top: 60px; */
 }
 
@@ -490,8 +495,7 @@ z-index: -1;
 
 .headerContainer {
   height: 90px;
-  background-color: #07497D;
-  background-color: #110C4D;
+  background: linear-gradient(to right, #1e0c49, #0097d5);
   /* background-image: url('http://rockwiththis.info/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
   background-attachment: scroll;
@@ -514,23 +518,39 @@ z-index: -1;
   margin-top: 0px;
 }
 
+#headerLogo img {
+  max-width: 350px !important;
+}
+
 
 
 .socialLinks {
-    position: absolute;
+    position: relative;
     right: 0;
-    padding-right: 15px;
-    padding-top: 10px;
-    line-height: 90px;
+    padding-right: 0;
+    padding-top: 0;
+    line-height: 0px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 5px;
 }
 
 
 .socialLinks a img {
-    width: 25px;
-    margin: 5px;
+    width: 32px;
+    margin: 15px;
+    transition: all .3s ease;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+    border-radius: 50%;
+}
+.socialLinks a img:hover {
+    opacity: .8;
 }
 
-
+.newsletterContainer form {
+  height: 40px;
+}
 
 .bottomContentContainer {
   max-height: 115px;
@@ -575,6 +595,8 @@ input[type="email"] {
     border: 1px solid #ddd;
     border-color: #ddd;
     height: 40px;
+    border-top-right-radius: 0 !important;
+border-bottom-right-radius: 0 !important;
 }
 
 button[type="submit"] {
@@ -585,14 +607,17 @@ button[type="submit"] {
     transition: all .3s ease;
     height: 46px !important;
     border-radius: 8px !important;
-    width: 100%;
-    margin-top: 10px;
+    width: 30%;
+    float: left;
+    margin-top: 0px;
     font-size: 18px;
     transition: all .3s ease;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.1;
     font-weight: normal;
     letter-spacing: 1px;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 }
 
 button[type="submit"]:hover {
@@ -682,7 +707,9 @@ p.emailAddress {
 /* FOOTER PLAYER */
 .footer-player {
   background: #282828 !important;
-  background: #110C4D !important;
+  background: #120745 !important;
+  /* background: linear-gradient(to right, #220c51, #00b1fa); */
+  /* background: #12023f !important; */
 }
 
 .footer-player {
@@ -889,7 +916,7 @@ button.filterButton:hover img {
 
 .sidebarRight {
     overflow: scroll;
-    height: calc(100vh - 200px) !important;
+    height: calc(100vh - 160px) !important;
     padding-top: 25px;
 }
 
@@ -1057,13 +1084,16 @@ span.tag:nth-of-type(1) {
 
 
 .sidebarRight input[type="email"] {
-    width: 100%;
+    width: 70%;
     border-radius: 4px;
     border: 1px solid #ddd;
     border-color: #ddd;
     height: 40px;
     padding-left: 10px;
     font-size: 14px;
+    float: left;
+    border-top-right-radius: 0 !important;
+border-bottom-right-radius: 0 !important;
 }
 
 
@@ -1668,7 +1698,7 @@ button.singlePostPlayerButton {
 
 .sidebarRight {
     overflow: scroll;
-    height: calc(100vh - 220px) !important;
+height: calc(100vh - 160px) !important;
     margin-top: 0px;
 }
 
@@ -1683,16 +1713,24 @@ button.singlePostPlayerButton {
 
 .sidebarRight input[type="email"] {
     border: 1px solid #ddd;
-    height: 25px !important;
+    height: 35px !important;
     font-size: 12px;
     border-radius: 8px !important;
+    border-top-right-radius: 0 !important;
+border-bottom-right-radius: 0 !important;
+margin-bottom: 15px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
 
 }
 button[type="submit"] {
     font-size: 12px !important;
     font-family: "Open Sans", sans-serif;
-    height: 25px !important;
+    height: 35px !important;
     border-radius: 8px !important;
+    border-top-left-radius: 0 !important;
+border-bottom-left-radius: 0 !important;
+margin-bottom: 15px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
 }
 
 

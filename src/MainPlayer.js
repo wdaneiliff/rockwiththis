@@ -40,7 +40,7 @@ class MainPlayer extends Component {
         }
     }
 
-    onChangeSlider(progress) {
+      onChangeSlider(progress) {
         this.setState({
             rcSliderValue: progress,
         })
