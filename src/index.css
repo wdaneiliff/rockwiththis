@@ -1969,16 +1969,65 @@ p.leftInfo {
 p.postTitle {
   margin-bottom: 3px !important;
 }
+@media(min-height: 650px) {
+  img.songImage {
+      border-radius: 50%;
+      margin: 10px;
+      max-width: 280px;
+      max-height: 280px;
+      height: auto;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+      border: 1px solid lightgray !important;
+      text-align: center;
+display: block;
+float: right;
+margin-right: 20px;
+  }
 
-img.songImage {
-    border-radius: 50%;
-    margin: 10px;
-    max-width: 280px;
-    max-height: 280px;
-    height: auto;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
-    border: 1px solid lightgray !important;
+  .imageContainer {
+    margin-right: 0;
+    display: inline;
+    width: 35%;
+    padding-right: 0;
 }
+
+.songsContainer .songContainer {
+      max-width: 900px !important;
+}
+
+.songsContainer {
+    z-index: 0;
+    display: block;
+    position: relative;
+    width: 75%;
+    height: calc(100% - 50px - 75px);
+    padding: 15px;
+    padding-right: 15px !important;
+    padding-left: 0px !important;
+    display: inline-block;
+}
+
+
+.homeContainer {
+    height: calc(100vh);
+    max-width: 1200px;
+    position: relative;
+        margin: 0 auto;
+}
+
+.sidebarRight {
+    display: inline-block;
+    width: 25%;
+    position: inherit;
+    top: 70px;
+    right: 0;
+    border-left: 2px solid #fafafa;
+    padding: 15px;
+    background: #fff;
+    padding-bottom: 50px;
+}
+}
+
 
 .singlePostPlayer {
     /* background: #282828 !important; */
