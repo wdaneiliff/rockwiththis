@@ -136,7 +136,7 @@ class Song extends Component {
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
                 <div className="mobile" />
                 <div className="imageContainer">
-                    <div className="songImageButton" onClick={() => this.onPressPlay(song)}>
+                    <div className="songImageButton clearfix" onClick={() => this.onPressPlay(song)}>
                       {imagePlayPauseButton}
                         <img className="songImage" src={song.better_featured_image.source_url} />
                     </div>

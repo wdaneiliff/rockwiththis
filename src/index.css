@@ -539,7 +539,7 @@ z-index: -1;
 
 
 .socialLinks a img {
-    width: 32px;
+    width: 30px;
     margin: 15px;
     transition: all .3s ease;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
@@ -900,7 +900,7 @@ button.filterButton img {
 }
 
 button.filterButton:hover img {
-  opacity: .8;
+  /* opacity: .8; */
 }
 
 .backpageButton:hover {
@@ -1136,6 +1136,8 @@ border-bottom-right-radius: 0 !important;
       left: 0;
       height: calc(100% - 50px - 75px);
       padding:15px;
+      padding-right: 15px !important;
+padding-left: 15px !important;
   }
 
   .songsContainer .songContainer {
@@ -1825,11 +1827,7 @@ button.filterButton img {
     margin-left: 5px;
     width: 30px;
     transition: all .3s ease;
-    transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
+
 }
 
 
@@ -1902,7 +1900,7 @@ button.clearAll {
 .imageContainer .imageButton {
     position: absolute;
     top: 50%;
-    left: 50%;
+        left: calc(50% - 10px);
     transform: translate(-50%,-50%);
 }
 
@@ -1987,7 +1985,7 @@ margin-right: 20px;
   .imageContainer {
     margin-right: 0;
     display: inline;
-    width: 35%;
+    width: 36%;
     padding-right: 0;
 }
 
@@ -2003,7 +2001,7 @@ margin-right: 20px;
     height: calc(100% - 50px - 75px);
     padding: 15px;
     padding-right: 15px !important;
-    padding-left: 0px !important;
+    padding-left: 15px !important;
     display: inline-block;
 }
 

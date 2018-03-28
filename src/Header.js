@@ -30,7 +30,7 @@ class Header extends Component {
 
     const filterButton = (
       <button onClick={this.toggleSidebar} className='filterButton'>
-        <img src={this.props.sidebarExpanded ? 'http://rockwiththis.info/wp-content/uploads/2018/02/close.png' : 'http://rockwiththis.info/wp-content/uploads/2018/01/filters-button.png'} />
+        <img src={this.props.sidebarExpanded ? 'http://rockwiththis.info/wp-content/uploads/2018/02/close.png' : 'http://rockwiththis.info/wp-content/uploads/2018/03/filter-list-icon.png'} />
       </button>
     )
 
