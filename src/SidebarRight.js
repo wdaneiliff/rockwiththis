@@ -62,7 +62,7 @@ class SidebarRight extends Component {
 
               </div>
                 <div className="topTrackContainer">
-                    <h3>TRENDING<i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>
+                    <h3>TRENDING TRACKS<i className="fa fa-question-circle tooltip" aria-hidden="true"><span className="tooltiptext">Dive a bit deeper. Explore top tracks we've featured in the past.</span></i></h3>
                     {featuredPosts}
                 </div>
 

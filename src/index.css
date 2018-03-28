@@ -97,6 +97,7 @@ p.postTitle {
   margin-bottom: 5px;
 margin-top: 0px;
 font-size: 14px;
+text-align: center;
 }
 
 .sidebarRight .songImageLink {
@@ -1926,4 +1927,62 @@ button.clearAll {
 
 .songsContainer, .sidebarRight {
   -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
+}
+
+
+
+
+
+
+
+/* NEW POSTS SIZES:  */
+p.postTitle {
+    font-size: 32px;
+}
+
+.singlePostPlayerInfo span.songName {
+    font-size: 14px;
+}
+.singlePostPlayerInfo span.artistName {
+    color: #adb2a9;
+    font-size: 14px;
+}
+
+p.songDescription p {
+    font-size: 14px !important;
+    color: #282828 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.5 !important;
+}
+
+.postTags .tag {
+  margin-bottom: 5px;
+}
+
+p.leftInfo {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-right: 6px;
+}
+
+p.postTitle {
+  margin-bottom: 3px !important;
+}
+
+img.songImage {
+    border-radius: 50%;
+    margin: 10px;
+    max-width: 280px;
+    max-height: 280px;
+    height: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+    border: 1px solid lightgray !important;
+}
+
+.singlePostPlayer {
+    /* background: #282828 !important; */
+    background: #120745 !important;
+    color: #fff !important;
+    margin-bottom: 5px;
 }
