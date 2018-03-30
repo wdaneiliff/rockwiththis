@@ -1827,8 +1827,8 @@ button.clearAll {
     max-height: 330px;
 } */
 
-.songsContainer, .sidebarRight {
-  -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
+.songsContainer, .sidebarRight, body, main {
+  -webkit-overflow-scrolling: touch !important; /* Lets it scroll lazy */
 }
 
 
@@ -2110,7 +2110,5 @@ button.filterButton {
   .songsContainer .songContainer {
     max-width: 500px !important;
 }
-
-
 
 }
