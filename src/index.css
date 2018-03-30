@@ -540,7 +540,7 @@ z-index: -1;
 
 .socialLinks a img {
     width: 30px;
-    margin: 15px;
+    margin: 10px;
     transition: all .3s ease;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
     border-radius: 50%;
@@ -1123,7 +1123,7 @@ border-bottom-right-radius: 0 !important;
 
 /* MOBILE STYLEZ */
 
-@media(max-width: 650px) {
+@media(max-width: 720px) {
 
   #headerLogo  img {
   max-width: 200px;
@@ -1572,7 +1572,7 @@ width: 40px;
   display: none;
 }
 
-@media(max-width: 650px) {
+@media(max-width: 720px) {
   .mobileTopIntro {
     display: block;
     margin-top: 12px;
@@ -1967,19 +1967,20 @@ p.leftInfo {
 p.postTitle {
   margin-bottom: 3px !important;
 }
-@media(min-height: 650px) {
+@media(min-width: 650px) {
   img.songImage {
       border-radius: 50%;
       margin: 10px;
-      max-width: 280px;
-      max-height: 280px;
+      max-width: 330px;
+      max-height: 330px;
       height: auto;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
       border: 1px solid lightgray !important;
       text-align: center;
 display: block;
 float: right;
-margin-right: 20px;
+margin-right: 10px;
+width: 96% !important;
   }
 
   .imageContainer {
@@ -1991,6 +1992,7 @@ margin-right: 20px;
 
 .songsContainer .songContainer {
       max-width: 900px !important;
+      padding: 20px 0 20px;
 }
 
 .songsContainer {
@@ -2024,6 +2026,13 @@ margin-right: 20px;
     background: #fff;
     padding-bottom: 50px;
 }
+
+.imageContainer {
+    overflow: visible;
+    width: 40%;
+    max-width: 330px;
+    max-height: 330px;
+}
 }
 
 
@@ -2032,4 +2041,16 @@ margin-right: 20px;
     background: #120745 !important;
     color: #fff !important;
     margin-bottom: 5px;
+}
+
+.imageContainer {
+  overflow: visible;
+  width: 40%;
+}
+
+@media(max-width: 1050px) and (min-width: 650px) {
+img.songImage {
+  max-width: 250px;
+  max-height: 250px;
+}
 }
