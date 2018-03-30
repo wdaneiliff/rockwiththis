@@ -864,14 +864,7 @@ button.filterButton {
 }
 
 
-button.filterButton:hover {
-  left: 25px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
+
 .backpageButton {
   left: 25px;
   position: fixed;
@@ -898,21 +891,6 @@ button.filterButton img {
   width: 20px;
   transition: all .3s ease;
 }
-
-button.filterButton:hover img {
-  /* opacity: .8; */
-}
-
-.backpageButton:hover {
-  left: 25px;
-  position: absolute;
-  border-radius: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-
 
 
 .sidebarRight {
@@ -1124,10 +1102,7 @@ border-bottom-right-radius: 0 !important;
 /* MOBILE STYLEZ */
 
 @media(max-width: 720px) {
-
-  #headerLogo  img {
-  max-width: 200px;
-  }
+/*
   .songsContainer {
       z-index: 0;
       display: block;
@@ -1138,7 +1113,7 @@ border-bottom-right-radius: 0 !important;
       padding:15px;
       padding-right: 15px !important;
 padding-left: 15px !important;
-  }
+  } */
 
   .songsContainer .songContainer {
     display: block;
@@ -1262,35 +1237,6 @@ padding-left: 15px !important;
     margin-right: 5px;
   }
 
-  .songsContainer {
-    width: 100% !important;
-    padding: 0 !important;
-    top: 55px;
-}
-.homeContainer .postContent {
-  padding: 15px;
-  display: none;
-}
-
-.homeContainer .songContainer {
-  width: 33.33%;
-  display: inline-block;
-  float: left;
-}
-
-.socialLinks {
-  display: none;
-}
-
-#headerLogo {
-    display: block;
-    margin: 0 auto;
-    margin-top: 0px;
-    max-width: 200px;
-    /* float: right; */
-    position: absolute;
-    right: 15px;
-}
 
 button.filterButton {
     left: 0px;
@@ -1312,20 +1258,7 @@ button.filterButton img {
   max-width: 26px;
 }
 
-button.filterButton:hover {
-    left: 0px;
-    position: absolute;
-    padding: 12px 15px;
-    background: rgba(0,0,0,0) !important;
-    border: none;
-    border-radius: 20px;
-    color: #fff !important;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    transition: all .3s ease;
-    font-size: 12px;
-}
+
 
 .songContainer {
   border: 1px solid #fff;
@@ -1507,7 +1440,6 @@ background: #fff;
     transition: 0.5s ease all;
 }
 
-@media(min-width: 650px) {
 .singleSongContainer  .songContainer {
       border-bottom: 2px solid transparent;
       -o-border-image: url(https://rockwiththis.info/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
@@ -1523,7 +1455,6 @@ background: #fff;
       -ms-flex: auto;
       flex: auto;
   }
-}
 
 p.songDescription p {
     font-size: 16px !important;
@@ -1553,7 +1484,6 @@ width: 40px;
 }
 
 
-@media(min-width: 650px) {
   .songsContainer .songContainer {
 
       border-bottom: 2px solid transparent;
@@ -1566,33 +1496,14 @@ width: 40px;
       padding-top: 15px !important;
       margin-top: 15px !important;
   }
-}
 
 .mobileTopIntro {
   display: none;
 }
 
+
+/* SINGLE SONG PAGE */
 @media(max-width: 720px) {
-  .mobileTopIntro {
-    display: block;
-    margin-top: 12px;
-    padding: 15px 10px;
-}
-.mobileTopIntro .rwtLogo {
-  max-width: 70px;
-    border-radius: 50%;
-}
-.mobileTopIntro .intro-text {
-  display: inline-block;
-position: absolute;
-top: 55px !important;
-padding-left: 15px;
-text-transform: uppercase;
-font-size: 12px;
-font-weight: bold !important;
-font-family: 'Sharp-Sans' !important;
-letter-spacing: 1px;
-}
 
   .singlePostPlayerInfo span.songName {
     font-size: 14px !important;
@@ -1676,13 +1587,6 @@ button.singlePostPlayerButton {
     width: 100%;
     height: 25px;
 } */
-
-
-@media(min-width:650px) {
-  .imageContainer {
-    margin-top: -21px;
-  }
-}
 
 
 
@@ -1967,7 +1871,6 @@ p.leftInfo {
 p.postTitle {
   margin-bottom: 3px !important;
 }
-@media(min-width: 650px) {
   img.songImage {
       border-radius: 50%;
       margin: 10px;
@@ -2033,7 +1936,6 @@ width: 96% !important;
     max-width: 330px;
     max-height: 330px;
 }
-}
 
 
 .singlePostPlayer {
@@ -2048,9 +1950,167 @@ width: 96% !important;
   width: 40%;
 }
 
-@media(max-width: 1050px) and (min-width: 650px) {
-img.songImage {
-  max-width: 250px;
-  max-height: 250px;
+
+
+@media(max-width: 950px) {
+  .topTrackContainer {
+    display: none;
+  }
+  .sidebarRight {
+    display: flex;
+    width: 100% !important;
+    order: 1;
+        height: auto !important;
+        padding: 0;
+            top: 90px;
 }
+.newsletterContainer {
+    margin-bottom: 20px !important;
+    display: flex;
+    width: 100% !important;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    height: auto !important;
+    flex-wrap: wrap;
+}
+.songsContainer {
+  display: flex;
+  width: 100% !important;
+  order: 2;
+}
+.homeContainer {
+    display: flex;
+     flex-wrap: wrap;
+}
+
+.newsletterContainer > div:first-child {
+    width: 100% !important;
+    max-width: none !important;
+        order: 4;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.sidebarRight h3 {
+    text-align: center !important;
+    width: 100%;
+        order: 2;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+       margin: 15px 0 5px;
+           font-size: 18px;
+}
+.sidebarRight .mission {
+    padding: 5px 15px;
+    max-width: 600px;
+    margin: 0 auto;
+        order: 3;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin-bottom: 15px;
+
+}
+
+.sidebarRight .mission p {
+  text-align: center;
+}
+
+.socialLinks {
+    padding: 5px;
+    background: #ececec;
+        order: 1;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+   max-width: none !important;
+   width: 100%;
+}
+
+.newsletterContainer form {
+    height: 40px;
+    width: 320px !important;
+}
+
+.songsContainer {
+  height: auto !important;
+  overflow: hidden;
+}
+
+
+#headerLogo {
+    display: block;
+    margin: 0 auto;
+    margin-top: 0px;
+    max-width: 200px;
+    position: relative;
+    right: 15px;
+}
+
+#headerLogo img {
+    max-width: 250px !important;
+}
+
+button.filterButton {
+  top: 19px;
+}
+
+.filters {
+  top: 100px !important;
+  position: absolute;
+}
+}
+
+.sidebarRight input[type="email"] {
+    border: 2px solid #f1782d;
+}
+
+
+
+@media(max-width: 720px) {
+  .imageContainer .imageButton {
+    display: none;
+  }
+  p.postTitle {
+    font-size: 24px;
+}
+  .songsContainer {
+        padding-bottom: 100px !important;
+}
+
+  .imageContainer .songImage {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 250px !important;
+    float: none;
+    margin-bottom: 15px !important;
+  }
+  .songsContainer .songContainer {
+    max-width: 500px !important;
+}
+}
+
+@media(max-width: 400px) {
+  .imageContainer .imageButton {
+    display: none;
+  }
+
+  .imageContainer .songImage {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    float: none;
+    margin-bottom: 15px !important;
+    border-radius: 8px !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+  .songsContainer .songContainer {
+    max-width: 500px !important;
+}
+
+
+
 }

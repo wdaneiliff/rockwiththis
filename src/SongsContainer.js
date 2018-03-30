@@ -9,7 +9,6 @@ import { Icon } from 'react-fa'
 import styles from './SongsContainer.css'
 import { toggleSong } from './actions/queue'
 import Song from './Song'
-import MobileTopIntro from './MobileTopIntro.js'
 
 
 class SongsContainer extends Component {
@@ -45,7 +44,6 @@ class SongsContainer extends Component {
         const posts = this.props.posts.map(this.renderSong)
         return (
             <div className="songsContainer clearfix">
-                <MobileTopIntro />
                 {posts}
             </div>
         )

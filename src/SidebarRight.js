@@ -24,7 +24,7 @@ class SidebarRight extends Component {
         const formProps = {
             action: 'https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2" method="post" id="mc-embedded-subscribe-form',
             messages: {
-                inputPlaceholder: 'your email here',
+                inputPlaceholder: 'Your email here',
                 btnLabel: 'Sign Up',
                 sending: 'Sending',
                 success: 'Thanks!',
@@ -58,7 +58,9 @@ class SidebarRight extends Component {
 
         			</div>
                   <h3>HUMAN RHYTHMS. NOT ALGORITHMS</h3>
-                  <p>Our mission is simple, to help you <b>discover</b> your new <b>favorite songs</b>. We deliver the best of what's <b>breaking</b> and uncover the <b>left-behind</b> tracks that need to be heard. <b>One song a day</b>, hopefully that you haven't heard, but will <b>love</b>.</p>
+                  <div className="mission">
+                    <p>Our mission is simple, to help you <b>discover</b> your new <b>favorite songs</b>. We deliver the best of what's <b>breaking</b> and uncover the <b>left-behind</b> tracks that need to be heard. <b>One song a day</b>, hopefully that you haven't heard, but will <b>love</b>.</p>
+                  </div>
 
               </div>
                 <div className="topTrackContainer">
