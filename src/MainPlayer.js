@@ -25,6 +25,7 @@ class MainPlayer extends Component {
         }
 
         this.checkSeekPosition = this.checkSeekPosition.bind(this)
+        this.renderButtons = this.renderButtons.bind(this)
         this.onAfterChangeSlider = this.onAfterChangeSlider.bind(this)
         this.onChangeSlider = this.onChangeSlider.bind(this)
         this.setDurationForSongId = this.setDurationForSongId.bind(this)
@@ -41,17 +42,17 @@ class MainPlayer extends Component {
     onChangeSlider(progress) {
         this.setState({
             rcSliderValue: progress,
-        })
+        }, this.onAfterChangeSlider)
     }
 
 
-    onAfterChangeSlider(progress) {
+    onAfterChangeSlider() {
         if (this.props.currentlyPlayingSong) {
-            const newTime = this.state.currentlyPlayingSongDuration * (progress / 100.0)
+            const newTime = this.state.currentlyPlayingSongDuration * (this.state.rcSliderValue / 100.0)
             console.log(newTime)
-            window.SC.Widget('sc-player').seekTo(newTime)
+            window.SC.Widget('sc-player').seekTo(newTime * 1000)
 
-            this.setRcSliderValueForProgress(newTime, this.state.currentlyPlayingSongDuration)
+            this.setRcSliderValueForProgress(this.state.rcSliderValue, this.state.currentlyPlayingSongDuration)
             this.checkSeekPosition(false)
         }
     }
@@ -61,6 +62,7 @@ class MainPlayer extends Component {
     }
 
     setRcSliderValueForProgress(seekPosition, duration) {
+
         this.setState({
             rcSliderValue: (seekPosition / duration) * 100,
         })
@@ -72,12 +74,15 @@ class MainPlayer extends Component {
 
     checkSeekPosition(repeat = true) {
         if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id) {
+            window.SC.Widget('sc-player').getDuration((position) => {
+                const currentlyPlayingSongDuration = position / 1000
+                this.setState({ currentlyPlayingSongDuration })
+            })
             window.SC.Widget('sc-player').getPosition((position) => {
                 const seekPosition = position / 1000
                 if (this.state.currentlyPlayingSongDuration) {
                     this.setRcSliderValueForProgress(seekPosition, this.state.currentlyPlayingSongDuration)
                 }
-
                 this.setState({ seekPosition })
             })
         }
@@ -143,7 +148,6 @@ class MainPlayer extends Component {
                             max={100}
                             step={0.5}
                             value={this.state.rcSliderValue}
-                            onAfterChange={this.onAfterChangeSlider}
                             onChange={this.onChangeSlider}
                         />
                     </div>
