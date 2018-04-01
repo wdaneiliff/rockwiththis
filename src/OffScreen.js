@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import YouTube from 'react-youtube'
 
 class OffScreen extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -16,12 +18,8 @@ class OffScreen extends Component {
         }
 
         if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id && nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong) {
-            setTimeout(() => window.SC.Widget('sc-player').play(), 300)
+            this.setState({ autoplay: true })
         }
-    }
-
-    componentDidUpdate() {
-
     }
 
     render() {
@@ -32,9 +30,17 @@ class OffScreen extends Component {
                     id="sc-player"
                     className="sc-player"
                     title={currentlyPlayingSong && currentlyPlayingSong.acf.song_name}
+                    width="100"
+                    height="100"
                     scrolling="no"
                     frameBorder="no"
-                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${currentlyPlayingSong && currentlyPlayingSong.acf.sc_track_id}`}
+                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${currentlyPlayingSong && currentlyPlayingSong.acf.sc_track_id}?auto_play=${this.state.autoplay}`}
+                />
+                <YouTube
+                    ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
+                    videoId={currentlyPlayingSong && currentlyPlayingSong.youtube_track_id}
+                    id="yt-player"
+                    onEnd={() => this.props.playNextSong()}
                 />
             </div>
         )

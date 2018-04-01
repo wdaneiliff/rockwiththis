@@ -57,7 +57,7 @@ class MainPlayer extends Component {
     }
 
     setDurationForSongId(songId) {
-        window.SC.Widget('sc-player').getDuration(d => this.setState({ currentlyPlayingSongDuration: d }))
+        window.SC.Widget('sc-player').getDuration(d => this.setState({ currentlyPlayingSongDuration: d/1000 }))
     }
 
     setRcSliderValueForProgress(seekPosition, duration) {
@@ -183,7 +183,11 @@ class MainPlayer extends Component {
                 </footer>
             )
         }
-
+        window.SC.Widget('sc-player').isPaused((p) => {
+            if (p && this.props.isPlaying) {
+                window.SC.Widget('sc-player').play()
+            }
+        })
         return (
             <footer>
                 <div className="footer-player">
