@@ -183,11 +183,7 @@ class MainPlayer extends Component {
                 </footer>
             )
         }
-        window.SC.Widget('sc-player').isPaused((p) => {
-            if (p && this.props.isPlaying) {
-                window.SC.Widget('sc-player').play()
-            }
-        })
+
         return (
             <footer>
                 <div className="footer-player">

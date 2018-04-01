@@ -31,8 +31,8 @@ class Song extends Component {
                 sc_track_id,
             },
         } = song
-
-        this.updateStorePlayPause(song !== this.props.currentlyPlayingSong)
+        // debugger
+        this.updateStorePlayPause(id !== this.props.currentlyPlayingSong)
         this.props.toggleSong(id)
     }
 
