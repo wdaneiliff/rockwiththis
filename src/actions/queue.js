@@ -21,7 +21,7 @@ export const toggleSong = postId => (dispatch, getState) => {
             sc_track_id,
         },
     } = post
-    
+
     const isPlaying = getState().queue.isPlaying
     const queue = getState().posts.map(post => post.id).slice(postIndex + 1)
     // const isPlaying = postId === getState().queue.currentlyPlayingSong ? !isCurrentlyPlaying : true

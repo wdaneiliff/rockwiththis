@@ -38,7 +38,7 @@ class MainPlayer extends Component {
         }
     }
 
-      onChangeSlider(progress) {
+    onChangeSlider(progress) {
         this.setState({
             rcSliderValue: progress,
         })
@@ -48,16 +48,16 @@ class MainPlayer extends Component {
     onAfterChangeSlider(progress) {
         if (this.props.currentlyPlayingSong) {
             const newTime = this.state.currentlyPlayingSongDuration * (progress / 100.0)
+            console.log(newTime)
             window.SC.Widget('sc-player').seekTo(newTime)
 
             this.setRcSliderValueForProgress(newTime, this.state.currentlyPlayingSongDuration)
-
             this.checkSeekPosition(false)
         }
     }
 
     setDurationForSongId(songId) {
-        window.SC.Widget('sc-player').getDuration(d => this.setState({ currentlyPlayingSongDuration: d/1000 }))
+        window.SC.Widget('sc-player').getDuration(d => this.setState({ currentlyPlayingSongDuration: (d / 1000) }))
     }
 
     setRcSliderValueForProgress(seekPosition, duration) {
@@ -71,15 +71,14 @@ class MainPlayer extends Component {
     }
 
     checkSeekPosition(repeat = true) {
-        if (this.props.currentlyPlayingSong && this.mediaContainer) {
-            const mediaContainer = this.mediaContainer.getWrappedInstance()
-            const media = mediaContainer.medias[this.props.currentlyPlayingSong.id].getWrappedInstance()
-            media.getPosition((position) => {
+        if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id) {
+            window.SC.Widget('sc-player').getPosition((position) => {
+                const seekPosition = position / 1000
                 if (this.state.currentlyPlayingSongDuration) {
-                    this.setRcSliderValueForProgress(position, this.state.currentlyPlayingSongDuration)
+                    this.setRcSliderValueForProgress(seekPosition, this.state.currentlyPlayingSongDuration)
                 }
 
-                this.setState({ seekPosition: position })
+                this.setState({ seekPosition })
             })
         }
 
@@ -101,9 +100,9 @@ class MainPlayer extends Component {
                     </div>
                 </div>
                 <p className="artist-info">
-                  <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
-                    <span className="song-title">{currentlyPlayingSong.acf.song_name}</span> <br />
-                  </Link>
+                    <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
+                        <span className="song-title">{currentlyPlayingSong.acf.song_name}</span> <br />
+                    </Link>
                     <span className="artist-title">{currentlyPlayingSong.acf.artist_name}</span>
                 </p>
             </div>
