@@ -1,5 +1,16 @@
 export const TOGGLE_SONG = 'TOGGLE_SONG'
 export const SET_CURRENT_SONG_DURATION = 'SET_CURRENT_SONG_DURATION'
+export const TOGGLE_PLAY_PAUSE = 'TOGGLE_PLAY_PAUSE'
+
+
+export const togglePlayPause = (playPause) => {
+    return (dispatch) => {
+        dispatch({
+            type: TOGGLE_PLAY_PAUSE,
+            playPause
+        })
+    }
+}
 
 export const toggleSong = postId => (dispatch, getState) => {
     const postIndex = getState().posts.findIndex(obj => obj.id === postId)
@@ -10,10 +21,10 @@ export const toggleSong = postId => (dispatch, getState) => {
             sc_track_id,
         },
     } = post
-
-    const isCurrentlyPlaying = getState().queue.isPlaying
+    
+    const isPlaying = getState().queue.isPlaying
     const queue = getState().posts.map(post => post.id).slice(postIndex + 1)
-    const isPlaying = postId === getState().queue.currentlyPlayingSong ? !isCurrentlyPlaying : true
+    // const isPlaying = postId === getState().queue.currentlyPlayingSong ? !isCurrentlyPlaying : true
 
     dispatch({
         type: TOGGLE_SONG,

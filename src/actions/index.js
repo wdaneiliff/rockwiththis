@@ -26,10 +26,10 @@ export const fetchPosts = (pageNumber = 1) => (dispatch, getState) => {
 
 export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 export const toggleSidebar = (expanded) => {
-  return dispatch => {
-    dispatch({
-      type: TOGGLE_SIDEBAR,
-      expanded
-    })
-  }
+    return (dispatch) => {
+        dispatch({
+            type: TOGGLE_SIDEBAR,
+            expanded
+        })
+    }
 }

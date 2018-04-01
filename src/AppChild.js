@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
-import Routes from './Routes'
+import OffScreen from './OffScreen'
 import Header from './Header'
+import Routes from './Routes'
 import MainPlayer from './MainPlayer'
 
 class AppChild extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Routes />
-        <MainPlayer />
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <OffScreen />
+                <Header />
+                <Routes />
+                <MainPlayer />
+            </div>
+        )
+    }
 }
 
 export default AppChild

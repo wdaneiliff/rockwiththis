@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { toggleSong } from './actions/queue'
+import { toggleSong, togglePlayPause } from './actions/queue'
 import MediaContainer from './MediaContainer'
 import './MainPlayer.css'
 
@@ -21,22 +21,24 @@ class MainPlayer extends Component {
             currentlyPlayingSongDuration: 0,
             seekPosition: null,
             rcSliderValue: 0,
+            isPlaying: this.props.isPlaying,
         }
 
         this.checkSeekPosition = this.checkSeekPosition.bind(this)
         this.onAfterChangeSlider = this.onAfterChangeSlider.bind(this)
         this.onChangeSlider = this.onChangeSlider.bind(this)
         this.setDurationForSongId = this.setDurationForSongId.bind(this)
-
+        this.updateStorePlayPause = this.updateStorePlayPause.bind(this)
         setTimeout(this.checkSeekPosition, 1000)
     }
 
     componentWillReceiveProps(nextProps) {
-        if ((nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong ||
-             nextProps.isPlaying !== this.props.isPlaying) &&
-             this.mediaContainer
-         ) {
+        if (this.props.isPlaying !== nextProps.isPlaying) {
+            nextProps.isPlaying ? window.SC.Widget('sc-player').play() : window.SC.Widget('sc-player').pause()
+        }
+        if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id && nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong) {
             this.setDurationForSongId(nextProps.currentlyPlayingSong.id)
+            this.props.togglePlayPause(true)
         }
     }
 
@@ -50,10 +52,7 @@ class MainPlayer extends Component {
     onAfterChangeSlider(progress) {
         if (this.props.currentlyPlayingSong) {
             const newTime = this.state.currentlyPlayingSongDuration * (progress / 100.0)
-
-            const mediaContainer = this.mediaContainer.getWrappedInstance()
-            const media = mediaContainer.medias[this.props.currentlyPlayingSong.id].getWrappedInstance()
-            media.seekTo(newTime)
+            window.SC.Widget('sc-player').seekTo(newTime)
 
             this.setRcSliderValueForProgress(newTime, this.state.currentlyPlayingSongDuration)
 
@@ -62,17 +61,17 @@ class MainPlayer extends Component {
     }
 
     setDurationForSongId(songId) {
-        const mediaContainer = this.mediaContainer.getWrappedInstance()
-        const media = mediaContainer.medias[songId].getWrappedInstance()
-        media.getDuration((duration) => {
-            this.setState({ currentlyPlayingSongDuration: duration, seekPosition: 0 })
-        })
+        window.SC.Widget('sc-player').getDuration(d => this.setState({ currentlyPlayingSongDuration: d }))
     }
 
     setRcSliderValueForProgress(seekPosition, duration) {
         this.setState({
             rcSliderValue: (seekPosition / duration) * 100,
         })
+    }
+
+    updateStorePlayPause() {
+        this.props.togglePlayPause(!this.props.isPlaying)
     }
 
     checkSeekPosition(repeat = true) {
@@ -96,7 +95,6 @@ class MainPlayer extends Component {
 
     renderInfo() {
         const { currentlyPlayingSong } = this.props
-
         return (
             <div className="player-info">
                 <div className="player-info-image-wrapper">
@@ -136,7 +134,7 @@ class MainPlayer extends Component {
                     <div
                         id="player-control-button-play"
                         className="player-control-button"
-                        onClick={() => this.props.toggleSong(currentlyPlayingSong.id)}
+                        onClick={this.updateStorePlayPause}
                     >
                         {playPauseButton}
                     </div>
@@ -199,7 +197,6 @@ class MainPlayer extends Component {
                         {this.renderShareButtons()}
                     </div>
                 </div>
-                <MediaContainer ref={(mediaContainer) => { this.mediaContainer = mediaContainer }} />
             </footer>
         )
     }
@@ -218,6 +215,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     toggleSong: postId => dispatch(toggleSong(postId)),
+    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
 })
 
 export default connect(

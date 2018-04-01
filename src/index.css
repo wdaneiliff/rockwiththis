@@ -1782,6 +1782,7 @@ button.clearAll {
 .sidebar-filters-wrapper {
   position: absolute;
   width: 300px;
+  min-width: 300px;
   z-index: 1;
   margin-left: -300px;
   transition: .4s ease all;
@@ -1789,7 +1790,7 @@ button.clearAll {
 
 .sidebar-filters-wrapper.expanded {
   margin-left: 0;
-  transition: .2s ease all;
+  transition: .4s ease all;
 }
 
 
