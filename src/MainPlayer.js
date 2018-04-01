@@ -33,12 +33,8 @@ class MainPlayer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.isPlaying !== nextProps.isPlaying) {
-            nextProps.isPlaying ? window.SC.Widget('sc-player').play() : window.SC.Widget('sc-player').pause()
-        }
         if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id && nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong) {
             this.setDurationForSongId(nextProps.currentlyPlayingSong.id)
-            this.props.togglePlayPause(true)
         }
     }
 

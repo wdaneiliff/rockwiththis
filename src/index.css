@@ -15,6 +15,10 @@ body {
 main {
 }
 
+.sc-player {
+  display: none;
+}
+
 .songsContainer {
     z-index: 0;
     display: flex;

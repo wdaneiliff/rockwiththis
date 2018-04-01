@@ -32,12 +32,12 @@ class Song extends Component {
             },
         } = song
 
+        this.updateStorePlayPause(song !== this.props.currentlyPlayingSong)
         this.props.toggleSong(id)
-        this.updateStorePlayPause()
     }
 
-    updateStorePlayPause() {
-        this.props.togglePlayPause(!this.props.isPlaying)
+    updateStorePlayPause(newSong) {
+        this.props.togglePlayPause(newSong ? true : !this.props.isPlaying)
     }
 
     toggleDescription() {
