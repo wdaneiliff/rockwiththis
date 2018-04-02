@@ -670,7 +670,7 @@ p.emailAddress {
 
 /* sidebarRight FEATURED SONGS */
 .sidebarRight .songImage {
-    border-radius: 50%;
+    border-radius: 8px;
     max-width: 50px;
     max-height: 50px;
     height: auto;
@@ -2111,4 +2111,12 @@ button.filterButton {
     max-width: 500px !important;
 }
 
+}
+
+.footer-player .player-info-image-wrapper img {
+    height: 60px;
+    width: 60px;
+    margin: 0!important;
+    border: 2px solid #fff!important;
+    border-radius: 8px;
 }
