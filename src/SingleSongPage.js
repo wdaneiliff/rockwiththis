@@ -29,7 +29,7 @@ class SingleSongPage extends Component {
         <div className="singleSongPage">
             <button className="backpageButton">
               <Link to="/">
-                <img src="http://rockwiththis.info/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
+                <img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
               </Link>
             </button>
             <SingleSong />

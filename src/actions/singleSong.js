@@ -13,7 +13,7 @@ export const fetchSingleSong = slug => (dispatch, getState) => {
         type: FETCH_SINGLE_SONG.IN_PROGRESS,
     })
 
-    const dataURL = `https://rockwiththis.info/wp-json/wp/v2/songs/${slug}?_embed`
+    const dataURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${slug}?_embed`
 
     fetch(dataURL).then(res => res.json()).then((res) => {
 

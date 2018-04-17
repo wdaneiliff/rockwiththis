@@ -20,24 +20,24 @@ class Header extends Component {
     // old filter button code
     // const filterButton = this.props.sidebarExpanded ? (
     //   <button onClick={this.toggleSidebar} className="filterButton">
-    //     <img src="http://rockwiththis.info/wp-content/uploads/2018/02/close.png" />
+    //     <img src="http://rockwiththis.com/wp-content/uploads/2018/02/close.png" />
     //   </button>
     // ) : (
     //   <button onClick={this.toggleSidebar} className="filterButton">
-    //     <img src="http://rockwiththis.info/wp-content/uploads/2018/01/filters-button.png" />
+    //     <img src="http://rockwiththis.com/wp-content/uploads/2018/01/filters-button.png" />
     //   </button>
     // )
 
     const filterButton = (
       <button onClick={this.toggleSidebar} className='filterButton'>
-        <img src={this.props.sidebarExpanded ? 'http://rockwiththis.info/wp-content/uploads/2018/02/close.png' : 'http://rockwiththis.info/wp-content/uploads/2018/03/filter-list-icon.png'} />
+        <img src={this.props.sidebarExpanded ? 'http://rockwiththis.com/wp-content/uploads/2018/02/close.png' : 'http://rockwiththis.com/wp-content/uploads/2018/03/filter-list-icon.png'} />
       </button>
     )
 
     return (
         <div className="headerContainer">
           {filterButton}
-          <Link id="headerLogo" to="/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/logo-hi-res.png" /></Link>
+          <Link id="headerLogo" to="/"><img src="http://rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" /></Link>
         </div>
       )
     }

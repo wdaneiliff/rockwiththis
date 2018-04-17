@@ -10,7 +10,7 @@ export const fetchFilters = (pageNumber = 1) => (dispatch, getState) => {
     dispatch({
         type: FETCH_FILTERS.IN_PROGRESS,
     })
-    const dataURL = 'https://rockwiththis.info/wp-json/wp/v2/all-terms'
+    const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/all-terms'
     axios.get(dataURL).then(res => {
       dispatch({
               type: FETCH_FILTERS.SUCCESS,

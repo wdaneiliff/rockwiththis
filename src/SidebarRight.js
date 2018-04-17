@@ -51,10 +51,10 @@ class SidebarRight extends Component {
               <div className="newsletterContainer">
                 <SubscribeFrom {...formProps} />
                   <div className="socialLinks">
-        				<a target="_blank" href="https://www.facebook.com/rockwiththis/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/facebook-black.png"/></a>
-        				<a target="_blank" href="https://www.instagram.com/rockwiththismusic/"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/instagram-black.png"/></a>
-        				<a target="_blank" href="https://open.spotify.com/user/jaredp21/playlist/2eWK5PGSTEl8I5ZvMG5VPS"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/spotify-black.png"/></a>
-                <a target="_blank" href="https://soundcloud.com/rockwiththis/sets/rock-with-this"><img src="http://rockwiththis.info/wp-content/uploads/2018/03/soundcloud-black.png"/></a>
+        				<a target="_blank" href="https://www.facebook.com/rockwiththis/"><img src="http://rockwiththis.com/wp-content/uploads/2018/03/facebook-black.png"/></a>
+        				<a target="_blank" href="https://www.instagram.com/rockwiththismusic/"><img src="http://rockwiththis.com/wp-content/uploads/2018/03/instagram-black.png"/></a>
+        				<a target="_blank" href="https://open.spotify.com/user/jaredp21/playlist/2eWK5PGSTEl8I5ZvMG5VPS"><img src="http://rockwiththis.com/wp-content/uploads/2018/03/spotify-black.png"/></a>
+                <a target="_blank" href="https://soundcloud.com/rockwiththis/sets/rock-with-this"><img src="http://rockwiththis.com/wp-content/uploads/2018/03/soundcloud-black.png"/></a>
 
         			</div>
                   <h3>HUMAN RHYTHMS. NOT ALGORITHMS</h3>

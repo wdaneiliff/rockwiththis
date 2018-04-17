@@ -124,9 +124,9 @@ class MainPlayer extends Component {
         } = this.props
 
         const playPauseButton = isPlaying ? (
-            <img src="http://rockwiththis.info/wp-content/uploads/2018/01/pause-thin.svg" className="main playButton" />
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="main playButton" />
         ) : (
-            <img src="http://rockwiththis.info/wp-content/uploads/2018/01/play-white.svg" className="main playButton" />
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="main playButton" />
         )
 
         return (
