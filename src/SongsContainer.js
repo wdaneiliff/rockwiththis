@@ -7,6 +7,7 @@ import AnimateHeight from 'react-animate-height'
 import VisibilitySensor from 'react-visibility-sensor'
 import { Icon } from 'react-fa'
 import styles from './SongsContainer.css'
+import HeroPosts from './HeroPosts'
 import { toggleSong } from './actions/queue'
 import Song from './Song'
 
@@ -41,9 +42,14 @@ class SongsContainer extends Component {
     }
 
     render() {
-        const posts = this.props.posts.map(this.renderSong)
+        const heroPosts = this.props.posts.slice(0,7)
+        const posts = this.props.posts.slice(7).map(this.renderSong)
+
         return (
             <div className="songsContainer clearfix">
+                <HeroPosts
+                    posts={heroPosts}
+                />
                 {posts}
             </div>
         )

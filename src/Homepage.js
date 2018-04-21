@@ -28,7 +28,7 @@ class Homepage extends Component {
               />
              <div className="homeContainer">
                 <SongsContainer />
-                <SidebarRight />
+                {/*<SidebarRight />*/}
              </div>
         </div>
         )

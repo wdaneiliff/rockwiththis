@@ -26,7 +26,7 @@ main {
     position: absolute;
     top: 78px;
     left: 0;
-    width: 75%;
+    width: 100%;
     height: calc(100% - 50px - 75px);
     flex-flow: row wrap;
     padding:15px;
@@ -2124,4 +2124,19 @@ button.filterButton {
     margin: 0!important;
     border: 2px solid #fff!important;
     border-radius: 8px;
+}
+
+
+
+
+
+.hero-posts {
+  width: 100%;
+  height: 100vh;
+}
+
+.featured-track {
+  border: 1px solid black;
+  width: 80vh;
+  height: 80vh;
 }
