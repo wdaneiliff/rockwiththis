@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { toggleSidebar } from './actions/index'
-import './Header.css'
 
 class Header extends Component {
     constructor(props) {

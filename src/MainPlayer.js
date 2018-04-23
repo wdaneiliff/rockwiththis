@@ -5,7 +5,6 @@ import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { toggleSong, togglePlayPause } from './actions/queue'
 import MediaContainer from './MediaContainer'
-import './MainPlayer.css'
 
 const formatTime = (seconds = 0) => {
     const numMinutes = Math.floor(seconds / 60)
