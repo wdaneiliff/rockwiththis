@@ -25,7 +25,6 @@ class Header extends Component {
 
         return (
             <div className="headerContainer">
-                {filterButton}
                 <Link id="headerLogo" to="/"><img src="http://rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" /></Link>
             </div>
         )

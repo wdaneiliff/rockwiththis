@@ -20,7 +20,7 @@ class OffScreen extends Component {
         if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id && nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong) {
             this.setState({ autoplay: true })
         }
-    }
+    }   
 
     render() {
         const { currentlyPlayingSong } = this.props
