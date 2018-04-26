@@ -1,8 +1,56 @@
 // LANDING PAGE STYLES
 
+body {
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.headerContainer {
+  height: 90px;
+  background: linear-gradient(to right, #1e0c49, #0097d5);
+  /* background-image: url('http://rockwiththis.com/wp-content/uploads/2018/01/light-to-dark-header.jpg');
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  background-position: bottom !important;
+  background-size: cover; */
+  -webkit-background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+  z-index: 5;
+  display: flex;
+  align-items: center; }
+
+#headerLogo {
+  max-width: 400px;
+  max-height: 34px;
+  margin: 0 auto;
+  margin-top: 0px; }
+
+#headerLogo img {
+  max-width: 400px !important;
+}
 
 
+.socialLinks {
+  ul {
+    width: 390px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
 
+      li {
+      display: inline-block;
+      margin: 11px 30px 0;
+      img {
+        width: 18px;
+        height: auto;
+      }
+    }
+  }
+}
 
 .homeContainer {
   margin-top: 90px;
@@ -71,6 +119,7 @@
   p.song-info {
     display: inline-block;
     padding: 10px;
+    margin: 0;
 
     .song-title {
       font-size: 24px;
@@ -102,6 +151,7 @@
 
   .feature-post.small {
     width: 33%;
+    height: 50%;
     display: inline-block;
 
     img {
@@ -549,31 +599,7 @@ body {
 //   /* padding-top: 60px; */ }
 
 /*header*/
-.headerContainer {
-  height: 90px;
-  background: linear-gradient(to right, #1e0c49, #0097d5);
-  /* background-image: url('http://rockwiththis.com/wp-content/uploads/2018/01/light-to-dark-header.jpg');
-  background-repeat: repeat-x;
-  background-attachment: scroll;
-  background-position: bottom !important;
-  background-size: cover; */
-  -webkit-background-size: cover;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
-  z-index: 5;
-  display: flex;
-  align-items: center; }
 
-#headerLogo {
-  max-width: 300px;
-  max-height: 34px;
-  margin: 0 auto;
-  margin-top: 0px; }
-
-#headerLogo img {
-  max-width: 350px !important; }
 
 //
 // .bottomContentContainer {
