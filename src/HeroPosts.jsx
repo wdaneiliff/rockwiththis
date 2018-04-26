@@ -11,13 +11,21 @@ class HeroPosts extends React.Component {
     }
 
     render() {
-        const featuredPost = this.props.posts[0] || { better_featured_image: 'string', date: moment(), acf: { song_name: 'Loading (feat. Slow App)', artist_name: 'React' } }
+        const placeholderSong = {
+            better_featured_image: 'string',
+            date: moment(),
+            acf: {
+                song_name: 'Loading (feat. Slow App)',
+                artist_name: 'React'
+            }
+        }
+        const { posts } = this.props
+        const featuredPost = posts[0] || placeholderSong
         const featuredImage = featuredPost.better_featured_image.source_url
         const featuredMonth = moment(featuredPost.date).format('MMM')
         const featuredDate = moment(featuredPost.date).format('D')
         const featuredTitle = featuredPost.acf.song_name
         const featuredArtist = featuredPost.acf.artist_name
-        const posts = this.props.posts
         const otherPosts = this.props.posts.slice(6)
 
         const previousWeekPosts = otherPosts.map((post) => {
