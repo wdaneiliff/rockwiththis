@@ -1,7 +1,6 @@
-import React from 'react';
+import React from 'react'
+import moment from 'moment'
 import Song from './Song'
-
-
 
 class HeroPosts extends React.Component {
     constructor(props) {
@@ -12,7 +11,12 @@ class HeroPosts extends React.Component {
     }
 
     render() {
-        const featuredPost = this.props.posts[0]
+        const featuredPost = this.props.posts[0] || { better_featured_image: 'string', date: moment(), acf: { song_name: 'Loading (feat. Slow App)', artist_name: 'React' } }
+        const featuredImage = featuredPost.better_featured_image.source_url
+        const featuredMonth = moment(featuredPost.date).format('MMM')
+        const featuredDate = moment(featuredPost.date).format('D')
+        const featuredTitle = featuredPost.acf.song_name
+        const featuredArtist = featuredPost.acf.artist_name
         const posts = this.props.posts
         const otherPosts = this.props.posts.slice(6)
 
@@ -27,13 +31,13 @@ class HeroPosts extends React.Component {
                 <div className='hero-posts'>
                     <div className='featured-track'>
                       <div className='feature-post large'>
-                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/01/Bounce-Town.png" />
+                        <img src={featuredImage} />
                         <span className="song-of-day-tag">Song of the day</span>
                         <div className="post-info">
-                        <span className="post-date"><span className="month">June</span><br /><span className="day">13</span></span>
+                        <span className="post-date"><span className="month">{featuredMonth}</span><br /><span className="day">{featuredDate}</span></span>
                         <p className="song-info">
-                        <span className="song-title">Pancake (feat. Ashnikko)</span><br/>
-                        <span className="song-artist">Jaded</span>
+                        <span className="song-title">{featuredTitle}</span><br/>
+                        <span className="song-artist">{featuredArtist}</span>
                         </p>
                         <img className="play-button" src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" />
                         </div>
@@ -65,8 +69,9 @@ class HeroPosts extends React.Component {
     }
 }
 
-
-
+HeroPosts.defaultProps = {
+  posts: [{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'}]
+}
 
 
 export default HeroPosts
