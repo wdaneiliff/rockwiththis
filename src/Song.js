@@ -97,7 +97,7 @@ class Song extends Component {
                 </div>
             </div>
         )
-    }
+      }
 
     renderDescription() {
         const { song } = this.props

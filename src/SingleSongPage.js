@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import { fetchSingleSong } from './actions/singleSong'
 import { fetchRelatedSongs } from './actions/relatedSongs'
 import { fetchFeaturedPosts } from './actions/featuredPosts'
-import SingleSong from './SingleSong'
-import SidebarRight from './SidebarRight'
-import RelatedSongs from './RelatedSongs'
+import SingleSongContainer from './SingleSongContainer'
+import SocialLinks from './SocialLinks.js'
+
 
 
 class SingleSongPage extends Component {
@@ -24,15 +24,9 @@ class SingleSongPage extends Component {
         }
 
         return (
-          <div className="singleSongPage">
-              <button className="backpageButton">
-                <Link to="/">
-                  <img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
-                </Link>
-              </button>
-              <SingleSong />
-              <RelatedSongs />
-              <SidebarRight />
+          <div className="singleSongPage page">
+              <SocialLinks />
+              <SingleSongContainer />
           </div>
         )
     }

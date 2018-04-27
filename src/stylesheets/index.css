@@ -1,6 +1,24 @@
 body {
   font-family: 'Roboto', sans-serif; }
 
+.page {
+  margin-top: 90px;
+  height: calc(100vh - 165px); }
+  .page .socialLinks {
+    background: #d8d8d8;
+    height: 45px; }
+    .page .socialLinks ul {
+      width: 390px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none; }
+      .page .socialLinks ul li {
+        display: inline-block;
+        margin: 11px 30px 0; }
+        .page .socialLinks ul li img {
+          width: 18px;
+          height: auto; }
+
 .headerContainer {
   height: 90px;
   background: linear-gradient(to right, #1e0c49, #0097d5);
