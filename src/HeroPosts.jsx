@@ -38,18 +38,21 @@ class HeroPosts extends React.Component {
             <div>
                 <div className='hero-posts'>
                     <div className='featured-track'>
-                      <div className='feature-post large'>
-                        <img src={featuredImage} />
-                        <span className="song-of-day-tag">Song of the day</span>
-                        <div className="post-info">
-                        <span className="post-date"><span className="month">{featuredMonth}</span><br /><span className="day">{featuredDate}</span></span>
-                        <p className="song-info">
-                        <span className="song-title">{featuredTitle}</span><br/>
-                        <span className="song-artist">{featuredArtist}</span>
-                        </p>
-                        <img className="play-button" src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" />
+                        <div className='feature-post large'>
+                            <img src={featuredImage} />
+                            <span className="song-of-day-tag">Song of the day</span>
+                            <div className="post-info">
+                                <div className="post-date">
+                                    <span className="month">{featuredMonth}</span><br />
+                                    <span className="day">{featuredDate}</span>
+                                </div>
+                                <p className="song-info">
+                                    <span className="song-title">{featuredTitle}</span><br/>
+                                    <span className="song-artist">{featuredArtist}</span>
+                                </p>
+                                <img className="play-button" src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" />
+                            </div>
                         </div>
-                      </div>
                     </div>
                     <div className='previous-week'>
                       <div className='feature-post small'>
