@@ -8,7 +8,7 @@ import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
 
-class OldSong extends Component {
+class SingleSong extends Component {
     constructor(props) {
         super(props)
 
@@ -70,33 +70,17 @@ class OldSong extends Component {
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
-        ) : (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
-        )
+
 
 
         return (
             <div className="singlePostPlayer">
 
-                <img
-                    src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png"
-                    className="singlePostPlayerButton play-button"
-                    onClick={() => this.onPressPlay(song)}
-                >
-                    {playPauseButton}
-                </img>
                 <p className="singlePostPlayerInfo">
                     <span className="songName">{song.acf.song_name}</span>
                     <span className="artistName">{song.acf.artist_name}</span>
                 </p>
-                <div className="singlePostPlayerLinks">
-                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
-                    <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
 
-                    </a>
-                </div>
             </div>
         )
       }
@@ -110,20 +94,6 @@ class OldSong extends Component {
         )
     }
 
-    renderTop() {
-        const { song } = this.props
-        return (
-            <div className="topContentContainer">
-                <div className="songInfo">
-                    <Link className="postTitleLink" to={`/songs/${song.id}`}><p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} /></Link>
-                    <p className="metaInfo">
-                        <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
-                        {this.renderTags(song)}
-                    </p>
-                </div>
-            </div>
-        )
-    }
 
     render() {
         const {
@@ -132,21 +102,49 @@ class OldSong extends Component {
             isPlaying,
         } = this.props
 
+        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
+        ) : (
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
+        )
+
         const { height } = this.state
 
-        // const imagePlayPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
-        //     <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
-        // ) : (
-        //     <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
-        // )
+        const imagePlayPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
+        ) : (
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
+        )
 
         return (
-            <div id={song.slug} className="singleSongContainer" key={`${song.id}`}>
-                <img className="singleSongImage" src={song.better_featured_image.source_url} />
+            <div id={song.slug} className="singleSong" key={`${song.id}`}>
+                <div className="imageContainer">
+                  <img className="songImage" src={song.better_featured_image.source_url} />
+                </div>
                 <div className="postContent" >
-                    // {this.renderTop()}
-                    // {this.renderPlayer()}
-                    // {this.renderDescription()}
+                <button
+                    className="singlePostPlayerButton"
+                    onClick={() => this.onPressPlay(song)}
+                >
+                    {playPauseButton}
+                </button>
+                    <div className="songInfo">
+                    <span className="songName">{song.acf.song_name}</span><br/>
+                    <span className="artistName">{song.acf.artist_name}</span>
+                        <p className="metaInfo">
+                            <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} />  |  <span className="postAuthor">Jared Paul</span> | </span></p>
+                            {this.renderTags(song)}
+                        </p>
+                    </div>
+                    <div className="singlePostPlayerLinks">
+                        <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                        <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
+
+                        </a>
+                    </div>
+
+
+                    {this.renderDescription()}
 
                 </div>
             </div>
@@ -154,14 +152,14 @@ class OldSong extends Component {
     }
 }
 
-Song.propTypes = {
+SingleSong.propTypes = {
     song: PropTypes.object.isRequired,
     toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
     currentlyPlayingSong: PropTypes.number,
 }
 
-Song.defaultProps = {
+SingleSong.defaultProps = {
     currentlyPlayingSong: null,
 }
 
@@ -186,4 +184,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(OldSong)
+)(SingleSong)

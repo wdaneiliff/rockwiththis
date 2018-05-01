@@ -26,12 +26,15 @@ class HeroPosts extends React.Component {
         const featuredDate = moment(featuredPost.date).format('D')
         const featuredTitle = featuredPost.acf.song_name
         const featuredArtist = featuredPost.acf.artist_name
-        const otherPosts = this.props.posts.slice(6)
+        const otherPosts = this.props.posts.slice(1,7)
 
         const previousWeekPosts = otherPosts.map((post) => {
+          return (
           <div className='feature-post small'>
-            <img src="https://www.rockwiththis.com/wp-admin/upload.php?item=12679" />
+            <img src={post.better_featured_image.source_url} />
           </div>
+        )
+
         })
 
         return (
@@ -55,24 +58,7 @@ class HeroPosts extends React.Component {
                         </div>
                     </div>
                     <div className='previous-week'>
-                      <div className='feature-post small'>
-                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/01/Daydream.png" />
-                      </div>
-                      <div className='feature-post small'>
-                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/01/Daydream.png" />
-                      </div>
-                      <div className='feature-post small'>
-                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/01/Daydream.png" />
-                      </div>
-                      <div className='feature-post small'>
-                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/01/Daydream.png" />
-                      </div>
-                      <div className='feature-post small'>
-                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/01/Daydream.png" />
-                      </div>
-                      <div className='feature-post small'>
-                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/01/Daydream.png" />
-                      </div>
+                      {previousWeekPosts}
                     </div>
                 </div>
             </div>

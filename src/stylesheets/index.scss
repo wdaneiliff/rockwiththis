@@ -1,4 +1,5 @@
 $landing-height: calc(100vh - 220px);
+$small-post-landing-height: calc(50vh - 110px);
 
 // LANDING PAGE STYLES
 
@@ -173,8 +174,8 @@ body {
         vertical-align: top;
 
     .feature-post.small {
-      width: 33%;
-      height: 50%;
+      width: $small-post-landing-height;
+      height: $small-post-landing-height;
       display: inline-block;
 
       img {
@@ -198,7 +199,27 @@ body {
 
 
 
+.singleSongContainer {
+      height: calc(100vh - 200px);
+  .singleSong {
+        height: calc(100vh - 200px);
+    .imageContainer {
+      width: 40%;
+display: inline-block;
+height: calc(100vh - 200px);
+vertical-align: top;
 
+      img.songImage {
+        // height: calc(50vw)
+      }
+    }
+    .postContent {
+      width: 40%;
+      display: inline-block;
+    }
+  }
+
+}
 
 
 

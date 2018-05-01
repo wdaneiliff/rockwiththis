@@ -127,8 +127,8 @@ body {
     margin: 0;
     vertical-align: top; }
     .homeContainer .previous-week .feature-post.small {
-      width: 33%;
-      height: 50%;
+      width: calc(50vh - 110px);
+      height: calc(50vh - 110px);
       display: inline-block; }
       .homeContainer .previous-week .feature-post.small img {
         width: 100%;
@@ -137,6 +137,19 @@ body {
 
 .footer-player {
   background: #282828 !important; }
+
+.singleSongContainer {
+  height: calc(100vh - 200px); }
+  .singleSongContainer .singleSong {
+    height: calc(100vh - 200px); }
+    .singleSongContainer .singleSong .imageContainer {
+      width: 40%;
+      display: inline-block;
+      height: calc(100vh - 200px);
+      vertical-align: top; }
+    .singleSongContainer .singleSong .postContent {
+      width: 40%;
+      display: inline-block; }
 
 @font-face {
   font-family: 'Sharp-Sans';
