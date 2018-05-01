@@ -1,6 +1,9 @@
 body {
   font-family: 'Roboto', sans-serif; }
 
+.post-info {
+  display: none; }
+
 .page {
   margin-top: 90px;
   height: calc(100vh - 165px); }
@@ -64,20 +67,13 @@ body {
     height: 45px; }
   .homeContainer .hero-posts {
     width: 100%;
-    height: calc(100vh - 220px);
     margin-bottom: 100px; }
     .homeContainer .hero-posts .featured-track {
-      width: calc(100vh - 220px);
       height: 100%;
       display: inline-block;
       margin: 0; }
   .homeContainer .feature-post {
-    position: relative;
-    width: 100%;
-    height: 100%; }
-    .homeContainer .feature-post img {
-      height: 100%;
-      width: 100%; }
+    position: relative; }
     .homeContainer .feature-post span.song-of-day-tag {
       position: absolute;
       bottom: 75px;
@@ -121,14 +117,11 @@ body {
         width: 60px;
         float: right; }
   .homeContainer .previous-week {
-    width: 60%;
     height: 100%;
     display: inline-block;
     margin: 0;
     vertical-align: top; }
     .homeContainer .previous-week .feature-post.small {
-      width: calc(50vh - 110px);
-      height: calc(50vh - 110px);
       display: inline-block; }
       .homeContainer .previous-week .feature-post.small img {
         width: 100%;
