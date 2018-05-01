@@ -63,21 +63,23 @@ body {
     background: #d8d8d8;
     height: 45px; }
   .homeContainer .hero-posts {
-    width: 100%;
-    height: calc(100vh - 220px);
-    margin-bottom: 100px; }
+    margin-bottom: 100px;
+    margin: 0 auto 50px;
+    max-width: 90vw;
+    max-height: calc(100vh - 220px);
+    text-align: center; }
     .homeContainer .hero-posts .featured-track {
-      width: calc(100vh - 220px);
-      height: 100%;
+      width: 45vw;
+      height: 45vw;
       display: inline-block;
-      margin: 0; }
+      margin: 0;
+      max-height: calc(100vh - 220px);
+      max-width: calc(100vh - 220px); }
+      .homeContainer .hero-posts .featured-track img {
+        width: 100%;
+        max-height: calc(100vh - 220px); }
   .homeContainer .feature-post {
-    position: relative;
-    width: 100%;
-    height: 100%; }
-    .homeContainer .feature-post img {
-      height: 100%;
-      width: 100%; }
+    position: relative; }
     .homeContainer .feature-post span.song-of-day-tag {
       position: absolute;
       bottom: 75px;
@@ -121,19 +123,24 @@ body {
         width: 60px;
         float: right; }
   .homeContainer .previous-week {
-    width: 60%;
-    height: 100%;
+    width: 45vw;
+    height: 45vw;
     display: inline-block;
+    vertical-align: top;
     margin: 0;
-    vertical-align: top; }
+    position: relative;
+    max-height: calc(100vh - 220px);
+    max-width: calc(100vh - 220px); }
     .homeContainer .previous-week .feature-post.small {
-      width: calc(50vh - 110px);
-      height: calc(50vh - 110px);
-      display: inline-block; }
+      display: inline-block;
+      width: 50%;
+      height: 50%;
+      max-height: calc(50vh - 110px);
+      max-width: calc(50vh - 110px); }
       .homeContainer .previous-week .feature-post.small img {
         width: 100%;
-        height: 100%;
-        display: inline-block; }
+        max-height: calc(50vh - 110px);
+        max-width: calc(50vh - 110px); }
 
 .footer-player {
   background: #282828 !important; }

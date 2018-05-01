@@ -49,7 +49,7 @@ class SongsContainer extends Component {
                 <HeroPosts
                     posts={heroPosts}
                 />
-                {posts}
+                
             </div>
         )
     }
