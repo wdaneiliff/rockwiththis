@@ -1,5 +1,6 @@
-$landing-height: calc(100vh - 220px);
-$small-post-landing-height: calc(50vh - 110px);
+$big-featured-height: calc(100vh - 220px);
+$small-featured-height: calc(50vh - 110px);
+
 
 // LANDING PAGE STYLES
 
@@ -8,9 +9,7 @@ body {
   font-family: 'Roboto', sans-serif;
 
 }
-.post-info {
-  display: none;
-}
+
 
 .page {
   margin-top: 90px;
@@ -92,14 +91,36 @@ body {
   }
 
   .hero-posts {
-    width: 100%;
+    // width: 100%;
     // height: $landing-height;
     margin-bottom: 100px;
+    margin: 0 auto 50px;
+    max-width: 90vw;
+        max-height: $big-featured-height;
+        text-align: center;
+        min-height: 800px;
+
     .featured-track {
+      // display: flex;
+      // flex-basis: 50%;
       // width: $landing-height;
-      height: 100%;
+      // height: 100%;
+      // display: inline-block;
+      width: 45vw;
+      height: 45vw;
       display: inline-block;
       margin: 0;
+          max-height: $big-featured-height
+          max-width: $big-featured-height
+          min-height: 700px;
+  
+
+      img {
+        width: 100%;
+            max-height: calc(100vh - 220px);
+            min-height: 700px;
+
+      }
     }
   }
 
@@ -110,6 +131,8 @@ body {
     img {
       // height: 100%;
       // width: 100%;
+  //     display: flex;
+  // flex-basis: 50%;
     }
     span.song-of-day-tag {
       position: absolute;
@@ -170,20 +193,31 @@ body {
 
   .previous-week {
     // width: 60%;
-    height: 100%;
+    width: 45vw;
+    height: 45vw;
     display: inline-block;
-    margin: 0;
         vertical-align: top;
+        margin: 0;
+        position: relative;
+            max-height: calc(100vh - 220px);
+                max-width: calc(100vh - 220px);
 
     .feature-post.small {
       // width: $small-post-landing-height;
       // height: $small-post-landing-height;
+      // display: inline-block;
       display: inline-block;
+      width: 50%;
+      height: 50%;
+      max-height: calc(50vh - 110px);
+      max-width: calc(50vh - 110px);
 
       img {
         width: 100%;
-        height: 100%;
-        display: inline-block;
+            max-height: calc(50vh - 110px);
+            max-width: calc(50vh - 110px);
+        // height: 100%;
+        // display: inline-block;
       }
     }
   }
