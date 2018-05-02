@@ -65,18 +65,22 @@ p {
       width: calc(50vh - 111px);
       padding: 1px;
       vertical-align: top; }
-      .homeContainer .hero-posts .less-featured-track-wrapper .post-info {
+      .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info {
         height: 15%; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .post-info .post-square-wrapper {
+        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-square-wrapper {
           width: 15%; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .post-info .post-date .month {
+        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-date .month {
           font-size: .7em;
           line-height: 16px; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .post-info .post-date .day {
+        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-date .day {
           font-size: .9em; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .post-info .song-info {
+        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
           font-size: .9em;
           line-height: 20px; }
+      .homeContainer .hero-posts .less-featured-track-wrapper .feature-track:hover .post-info {
+        height: 16.5%; }
+        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track:hover .post-info .post-square-wrapper.play {
+          width: 16.5%; }
     .homeContainer .hero-posts .previous-week {
       width: calc(150vh - 327px);
       white-space: normal; }
@@ -91,7 +95,16 @@ p {
     position: relative;
     width: 100%;
     height: 100%; }
+    .homeContainer .feature-track:hover {
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65); }
+      .homeContainer .feature-track:hover .post-info {
+        height: 14%; }
+        .homeContainer .feature-track:hover .post-info .post-square-wrapper.play {
+          width: 14%; }
     .homeContainer .feature-track img {
+      position: relative;
       height: 100%;
       width: 100%; }
     .homeContainer .feature-track span.song-of-day-tag {
@@ -110,14 +123,16 @@ p {
       bottom: 0;
       width: 100%;
       height: 12%;
-      background: rgba(255, 255, 255, 0.7); }
+      background: rgba(255, 255, 255, 0.7);
+      transition: .2s ease all; }
       .homeContainer .feature-track .post-info .post-square-wrapper {
         display: inline-block;
         height: 100%;
         width: 12%;
         color: #fff;
         text-align: center;
-        vertical-align: top; }
+        vertical-align: top;
+        transition: .2s ease all; }
         .homeContainer .feature-track .post-info .post-square-wrapper.date {
           background: black; }
           .homeContainer .feature-track .post-info .post-square-wrapper.date .post-date {
