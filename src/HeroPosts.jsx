@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import moment from 'moment'
 import Song from './Song'
 
@@ -6,7 +6,7 @@ class HeroPosts extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            scrollPercentage: 0,
         }
     }
 
@@ -56,24 +56,20 @@ class HeroPosts extends React.Component {
 
         const otherPosts = this.props.posts.slice(1).map(post => trackDisplay(post, true))
 
-
-
         return (
             <div>
-                <div className='hero-posts'>
+                <div className='hero-posts' ref={node => this.postsWrapper = node}>
                     {featuredPost}
                     <div className='previous-week'>
                         {otherPosts}
                     </div>
                 </div>
+                <div className='hero-scroll-bar-wrapper'>
+                  <div style={{marginLeft: this.state.scrollPercentage + '%'}} className='hero-scroll-bar' />
+                </div>
             </div>
         )
     }
 }
-
-HeroPosts.defaultProps = {
-  posts: [{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'},{better_featured_image: 'string'}]
-}
-
 
 export default HeroPosts

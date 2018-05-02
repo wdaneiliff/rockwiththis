@@ -16,7 +16,6 @@ class Header extends Component {
     }
 
     render() {
-
         const filterButton = (
             <button onClick={this.toggleSidebar} className='filterButton'>
                 <img src={this.props.sidebarExpanded ? 'http://rockwiththis.com/wp-content/uploads/2018/02/close.png' : 'http://rockwiththis.com/wp-content/uploads/2018/03/filter-list-icon.png'} />
@@ -24,8 +23,10 @@ class Header extends Component {
         )
 
         return (
-            <div className="headerContainer">
-                <Link id="headerLogo" to="/"><img src="http://rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" /></Link>
+            <div className={`headerContainer ${this.props.shrinkHeader ? 'shrunk' : ''}`}>
+                <Link id="headerLogo" to="/">
+                  <img src="http://rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />
+                </Link>
             </div>
         )
     }
