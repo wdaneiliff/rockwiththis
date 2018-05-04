@@ -71,21 +71,24 @@ p {
   }
 
   .hero-posts {
-    overflow-y: hidden;
-    overflow-x: scroll;
-    white-space: nowrap;
-    height: $landing-height;
+    width: 100vw;
     .featured-track-wrapper {
-      width: calc(100vh - 220px);
-      height: calc(100%);
+      width: 40vw;
+      height: 40vw;
       display: inline-block;
-      padding-top: 1px;
+    }
+    .previous-week {
+      width: 60%;
+      height: 100%;
+      display: inline-block;
+      margin: 0;
+      vertical-align: top;
     }
     .less-featured-track-wrapper {
+      width: 19.8vw;
+      height: 19.8vw;
       display: inline-block;
-      height: calc(50vh - 111px);
-      width: calc(50vh - 111px);
-      padding: 1px;
+      padding: .1vw;
       vertical-align: top;
       .feature-track {
         .post-info {
@@ -107,45 +110,96 @@ p {
             line-height: 20px;
           }
         }
-        &:hover {
-          .post-info {
-            height: 16.5%;
-            .post-square-wrapper.play {
-              width: 16.5%;
-            }
-          }
-        }
       }
     }
-    .previous-week {
-      width: calc(150vh - 327px);
-      white-space: normal;
+    @media screen and (max-width: 1130px) {
+      .featured-track-wrapper {
+        width: 50vw;
+        height: 50vw;
+        display: inline-block;
+      }
+      .previous-week {
+        width: 50%;
+        height: 100%;
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+      }
+      .less-featured-track-wrapper {
+        display: inline-block;
+        width: 24.8vw;
+        height: 24.8vw;
+      }
     }
   }
-  .hero-scroll-bar-wrapper {
-    width: 100%;
-    height: 10px;
-    .hero-scroll-bar {
-      width: 33%;
-      height: 100%;
-      background-color: #198ec9;
-    }
-  }
+
+  // .hero-posts {
+  //   overflow-y: hidden;
+  //   overflow-x: scroll;
+  //   white-space: nowrap;
+  //   height: $landing-height;
+  //   .featured-track-wrapper {
+  //     width: calc(100vh - 220px);
+  //     height: calc(100%);
+  //     display: inline-block;
+  //     padding-top: 1px;
+  //   }
+  //   .less-featured-track-wrapper {
+  //     display: inline-block;
+  //     height: calc(50vh - 111px);
+  //     width: calc(50vh - 111px);
+  //     padding: 1px;
+  //     vertical-align: top;
+  //     .feature-track {
+  //       .post-info {
+  //         height: 15%;
+  //         .post-square-wrapper {
+  //           width: 15%;
+  //         }
+  //         .post-date {
+  //           .month {
+  //             font-size: .7em;
+  //             line-height: 16px;
+  //           }
+  //           .day {
+  //             font-size: .9em;
+  //           }
+  //         }
+  //         .song-info {
+  //           font-size: .9em;
+  //           line-height: 20px;
+  //         }
+  //       }
+  //       &:hover {
+  //         .post-info {
+  //           height: 16.5%;
+  //           .post-square-wrapper.play {
+  //             width: 16.5%;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .previous-week {
+  //     width: calc(150vh - 327px);
+  //     white-space: normal;
+  //   }
+  // }
   .feature-track {
     position: relative;
     width:100%;
     height: 100%;
-    &:hover {
-      cursor: pointer;
-      z-index: 10;
-      box-shadow: 0 10px 40px rgba(0,0,0,.65);
-      .post-info {
-        height: 14%;
-        .post-square-wrapper.play {
-          width: 14%;
-        }
-      }
-    }
+    // &:hover {
+    //   cursor: pointer;
+    //   z-index: 10;
+    //   box-shadow: 0 10px 40px rgba(0,0,0,.65);
+    //   .post-info {
+    //     height: 14%;
+    //     .post-square-wrapper.play {
+    //       width: 14%;
+    //     }
+    //   }
+    // }
     img {
       position: relative;
       height: 100%;
@@ -216,14 +270,6 @@ p {
         }
       }
     }
-  }
-
-  .previous-week {
-    width: 60%;
-    height: 100%;
-    display: inline-block;
-    margin: 0;
-    vertical-align: top;
   }
 }
 

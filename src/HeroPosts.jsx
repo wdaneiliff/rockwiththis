@@ -50,11 +50,11 @@ class HeroPosts extends React.Component {
                 </div>
             )
         }
-        const { posts } = this.props
+        const posts = [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
         const featuredPostArg = posts[0] || placeholderSong
         const featuredPost = trackDisplay(featuredPostArg, false)
 
-        const otherPosts = this.props.posts.slice(1).map(post => trackDisplay(post, true))
+        const otherPosts = posts.slice(1).map(post => trackDisplay(post, true))
 
         return (
             <div>
@@ -63,9 +63,6 @@ class HeroPosts extends React.Component {
                     <div className='previous-week'>
                         {otherPosts}
                     </div>
-                </div>
-                <div className='hero-scroll-bar-wrapper'>
-                  <div style={{marginLeft: this.state.scrollPercentage + '%'}} className='hero-scroll-bar' />
                 </div>
             </div>
         )

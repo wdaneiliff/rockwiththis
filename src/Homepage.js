@@ -29,11 +29,10 @@ class Homepage extends Component {
               />
              <div className="homeContainer">
              <SocialLinks />
-
-                <SongsContainer />
-                {/*<SidebarRight />*/}
-             </div>
-        </div>
+                    <SongsContainer />
+                    {/*<SidebarRight />*/}
+                 </div>
+           </div>
         )
     }
 }
