@@ -94,6 +94,19 @@ p {
         display: inline-block;
         width: 24.8vw;
         height: 24.8vw; } }
+    @media screen and (max-width: 800px) {
+      .homeContainer .hero-posts .featured-track-wrapper {
+        width: 100vw;
+        height: 100vw; }
+      .homeContainer .hero-posts .less-featured-track-wrapper {
+        width: 49.8vw;
+        height: 49.8vw; }
+      .homeContainer .hero-posts .previous-week {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        margin: 0;
+        vertical-align: top; } }
   .homeContainer .feature-track {
     position: relative;
     width: 100%;
