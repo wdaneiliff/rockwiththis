@@ -122,6 +122,10 @@ p {
       .featured-track-wrapper {
         width: 50vw;
         height: 50vw;
+        .feature-track {
+          width: calc(100% - 1px);
+          height: calc(100% - 1px);
+        }
       }
       .previous-week {
         width: 50%;
@@ -155,59 +159,6 @@ p {
       }
     }
   }
-
-  // .hero-posts {
-  //   overflow-y: hidden;
-  //   overflow-x: scroll;
-  //   white-space: nowrap;
-  //   height: $landing-height;
-  //   .featured-track-wrapper {
-  //     width: calc(100vh - 220px);
-  //     height: calc(100%);
-  //     display: inline-block;
-  //     padding-top: 1px;
-  //   }
-  //   .less-featured-track-wrapper {
-  //     display: inline-block;
-  //     height: calc(50vh - 111px);
-  //     width: calc(50vh - 111px);
-  //     padding: 1px;
-  //     vertical-align: top;
-  //     .feature-track {
-  //       .post-info {
-  //         height: 15%;
-  //         .post-square-wrapper {
-  //           width: 15%;
-  //         }
-  //         .post-date {
-  //           .month {
-  //             font-size: .7em;
-  //             line-height: 16px;
-  //           }
-  //           .day {
-  //             font-size: .9em;
-  //           }
-  //         }
-  //         .song-info {
-  //           font-size: .9em;
-  //           line-height: 20px;
-  //         }
-  //       }
-  //       &:hover {
-  //         .post-info {
-  //           height: 16.5%;
-  //           .post-square-wrapper.play {
-  //             width: 16.5%;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  //   .previous-week {
-  //     width: calc(150vh - 327px);
-  //     white-space: normal;
-  //   }
-  // }
   .feature-track {
     position: relative;
     width: calc(100% - 1px);

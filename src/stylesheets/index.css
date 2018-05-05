@@ -89,6 +89,9 @@ p {
       .homeContainer .hero-posts .featured-track-wrapper {
         width: 50vw;
         height: 50vw; }
+        .homeContainer .hero-posts .featured-track-wrapper .feature-track {
+          width: calc(100% - 1px);
+          height: calc(100% - 1px); }
       .homeContainer .hero-posts .previous-week {
         width: 50%;
         height: 100%;
