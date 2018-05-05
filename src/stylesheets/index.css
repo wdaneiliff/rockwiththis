@@ -52,7 +52,8 @@ p {
   .homeContainer .hero-posts {
     width: 100vw;
     white-space: nowrap;
-    overflow: hidden; }
+    overflow: hidden;
+    height: calc(40vw - 3px); }
     .homeContainer .hero-posts .featured-track-wrapper {
       width: 40vw;
       height: 40vw;
@@ -85,23 +86,25 @@ p {
           .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
             font-size: .9em;
             line-height: 20px; }
-    @media screen and (max-width: 1130px) {
-      .homeContainer .hero-posts .featured-track-wrapper {
-        width: 50vw;
-        height: 50vw; }
-        .homeContainer .hero-posts .featured-track-wrapper .feature-track {
-          width: calc(100% - 1px);
-          height: calc(100% - 1px); }
-      .homeContainer .hero-posts .previous-week {
-        width: 50%;
-        height: 100%;
-        margin: 0;
-        vertical-align: top; }
-      .homeContainer .hero-posts .less-featured-track-wrapper {
-        width: 25vw;
-        height: 25vw; }
-        .homeContainer .hero-posts .less-featured-track-wrapper.index-4, .homeContainer .hero-posts .less-featured-track-wrapper.index-5 {
-          display: none; } }
+    @media screen and (max-width: 1200px) {
+      .homeContainer .hero-posts {
+        height: calc(50vw - 2px); }
+        .homeContainer .hero-posts .featured-track-wrapper {
+          width: 50vw;
+          height: 50vw; }
+          .homeContainer .hero-posts .featured-track-wrapper .feature-track {
+            width: calc(100% - 1px);
+            height: calc(100% - 1px); }
+        .homeContainer .hero-posts .previous-week {
+          width: 50%;
+          height: 100%;
+          margin: 0;
+          vertical-align: top; }
+        .homeContainer .hero-posts .less-featured-track-wrapper {
+          width: 25vw;
+          height: 25vw; }
+          .homeContainer .hero-posts .less-featured-track-wrapper.index-4, .homeContainer .hero-posts .less-featured-track-wrapper.index-5 {
+            display: none; } }
     @media screen and (max-width: 800px) {
       .homeContainer .hero-posts .featured-track-wrapper {
         width: 100vw;

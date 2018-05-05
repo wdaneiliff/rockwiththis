@@ -74,11 +74,11 @@ p {
     width: 100vw;
     white-space: nowrap;
     overflow: hidden;
+    height: calc(40vw - 3px);
     .featured-track-wrapper {
       width: 40vw;
       height: 40vw;
       display: inline-block;
-      // margin-right: 1px;
     }
     .previous-week {
       width: 60%;
@@ -118,7 +118,8 @@ p {
         }
       }
     }
-    @media screen and (max-width: 1130px) {
+    @media screen and (max-width: 1200px) {
+      height: calc(50vw - 2px);
       .featured-track-wrapper {
         width: 50vw;
         height: 50vw;
