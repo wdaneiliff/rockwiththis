@@ -20,14 +20,14 @@ class HeroPosts extends React.Component {
             }
         }
 
-        const trackDisplay = (post, isSmall) => {
+        const trackDisplay = (post, i, isSmall) => {
             const image = post.better_featured_image.source_url
             const month = moment(post.date).format('MMM')
             const date = moment(post.date).format('D')
             const title = post.acf.song_name
             const artist = post.acf.artist_name
             return (
-                <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper`}>
+                <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`}>
                     <div className='feature-track'>
                         <img src={image} />
                         {!isSmall && <span className="song-of-day-tag">Song of the day</span>}
@@ -50,11 +50,11 @@ class HeroPosts extends React.Component {
                 </div>
             )
         }
-        const posts = [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
+        const { posts } = this.props || [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
         const featuredPostArg = posts[0] || placeholderSong
         const featuredPost = trackDisplay(featuredPostArg, false)
 
-        const otherPosts = posts.slice(1).map(post => trackDisplay(post, true))
+        const otherPosts = posts.slice(1).map((post, i) => trackDisplay(post, i, true))
 
         return (
             <div>

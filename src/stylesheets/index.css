@@ -50,7 +50,9 @@ p {
     background: #d8d8d8;
     height: 45px; }
   .homeContainer .hero-posts {
-    width: 100vw; }
+    width: 100vw;
+    white-space: nowrap;
+    overflow: hidden; }
     .homeContainer .hero-posts .featured-track-wrapper {
       width: 40vw;
       height: 40vw;
@@ -60,40 +62,43 @@ p {
       height: 100%;
       display: inline-block;
       margin: 0;
-      vertical-align: top; }
+      vertical-align: top;
+      white-space: normal; }
     .homeContainer .hero-posts .less-featured-track-wrapper {
-      width: 19.8vw;
-      height: 19.8vw;
+      width: 20vw;
+      height: 20vw;
       display: inline-block;
-      padding: .1vw;
       vertical-align: top; }
-      .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info {
-        height: 15%; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-square-wrapper {
-          width: 15%; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-date .month {
-          font-size: .7em;
-          line-height: 16px; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-date .day {
-          font-size: .9em; }
-        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
-          font-size: .9em;
-          line-height: 20px; }
+      .homeContainer .hero-posts .less-featured-track-wrapper .feature-track {
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        margin: 0 auto; }
+        .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info {
+          height: 15%; }
+          .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-square-wrapper {
+            width: 15%; }
+          .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-date .month {
+            font-size: .7em;
+            line-height: 16px; }
+          .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .post-date .day {
+            font-size: .9em; }
+          .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
+            font-size: .9em;
+            line-height: 20px; }
     @media screen and (max-width: 1130px) {
       .homeContainer .hero-posts .featured-track-wrapper {
         width: 50vw;
-        height: 50vw;
-        display: inline-block; }
+        height: 50vw; }
       .homeContainer .hero-posts .previous-week {
         width: 50%;
         height: 100%;
-        display: inline-block;
         margin: 0;
         vertical-align: top; }
       .homeContainer .hero-posts .less-featured-track-wrapper {
-        display: inline-block;
-        width: 24.8vw;
-        height: 24.8vw; } }
+        width: 25vw;
+        height: 25vw; }
+        .homeContainer .hero-posts .less-featured-track-wrapper.index-4, .homeContainer .hero-posts .less-featured-track-wrapper.index-5 {
+          display: none; } }
     @media screen and (max-width: 800px) {
       .homeContainer .hero-posts .featured-track-wrapper {
         width: 100vw;
@@ -104,13 +109,17 @@ p {
       .homeContainer .hero-posts .previous-week {
         width: 100%;
         height: 100%;
-        display: inline-block;
+        display: block;
         margin: 0;
         vertical-align: top; } }
   .homeContainer .feature-track {
     position: relative;
-    width: 100%;
-    height: 100%; }
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+    filter: brightness(0.9); }
+    .homeContainer .feature-track:hover {
+      cursor: pointer;
+      filter: brightness(1); }
     .homeContainer .feature-track img {
       position: relative;
       height: 100%;
