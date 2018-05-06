@@ -5,6 +5,7 @@ $landing-height: calc(100vh - 220px);
 body {
   // font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 p {
@@ -73,14 +74,20 @@ p {
   .hero-posts {
     width: 100vw;
     white-space: nowrap;
-    overflow: hidden;
+    max-height: 674px;
+    max-width: 1685px;
+    // overflow: hidden;
     height: calc(40vw - 3px);
+    margin: 0 auto;
     .featured-track-wrapper {
       width: 40vw;
       height: 40vw;
       display: inline-block;
+      max-height: 674px;
+      max-width: 674px;
     }
     .previous-week {
+      max-height: 674px;
       width: 60%;
       height: 100%;
       display: inline-block;
@@ -89,6 +96,8 @@ p {
       white-space: normal;
     }
     .less-featured-track-wrapper {
+      max-height: 337px;
+      max-width: 337px;
       width: 20vw;
       height: 20vw;
       display: inline-block;
@@ -96,6 +105,8 @@ p {
       .feature-track {
         width: calc(100% - 2px);
         height: calc(100% - 2px);
+        max-height: 337px;
+        max-width: 337px;
         margin: 0 auto;
         .post-info {
           height: 15%;
@@ -143,6 +154,11 @@ p {
       }
     }
     @media screen and (max-width: 800px) {
+
+      .homeContainer .heroPosts {
+        height: calc(100vh - 220px) !important;
+        overflow: visible !important;
+      }
       .featured-track-wrapper {
         width: 100vw;
         height: 100vw;
@@ -157,6 +173,12 @@ p {
         display: block;
         margin: 0;
         vertical-align: top;
+
+        .less-featured-track-wrapper {
+          &.index-4, &.index-5 {
+            display: inline-block;
+          }
+        }
       }
     }
   }

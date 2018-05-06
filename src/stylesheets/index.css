@@ -1,5 +1,6 @@
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; }
 
 p {
   margin: 0; }
@@ -52,13 +53,18 @@ p {
   .homeContainer .hero-posts {
     width: 100vw;
     white-space: nowrap;
-    overflow: hidden;
-    height: calc(40vw - 3px); }
+    max-height: 674px;
+    max-width: 1685px;
+    height: calc(40vw - 3px);
+    margin: 0 auto; }
     .homeContainer .hero-posts .featured-track-wrapper {
       width: 40vw;
       height: 40vw;
-      display: inline-block; }
+      display: inline-block;
+      max-height: 674px;
+      max-width: 674px; }
     .homeContainer .hero-posts .previous-week {
+      max-height: 674px;
       width: 60%;
       height: 100%;
       display: inline-block;
@@ -66,6 +72,8 @@ p {
       vertical-align: top;
       white-space: normal; }
     .homeContainer .hero-posts .less-featured-track-wrapper {
+      max-height: 337px;
+      max-width: 337px;
       width: 20vw;
       height: 20vw;
       display: inline-block;
@@ -73,6 +81,8 @@ p {
       .homeContainer .hero-posts .less-featured-track-wrapper .feature-track {
         width: calc(100% - 2px);
         height: calc(100% - 2px);
+        max-height: 337px;
+        max-width: 337px;
         margin: 0 auto; }
         .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info {
           height: 15%; }
@@ -106,6 +116,9 @@ p {
           .homeContainer .hero-posts .less-featured-track-wrapper.index-4, .homeContainer .hero-posts .less-featured-track-wrapper.index-5 {
             display: none; } }
     @media screen and (max-width: 800px) {
+      .homeContainer .hero-posts .homeContainer .heroPosts {
+        height: calc(100vh - 220px) !important;
+        overflow: visible !important; }
       .homeContainer .hero-posts .featured-track-wrapper {
         width: 100vw;
         height: 100vw; }
@@ -117,7 +130,9 @@ p {
         height: 100%;
         display: block;
         margin: 0;
-        vertical-align: top; } }
+        vertical-align: top; }
+        .homeContainer .hero-posts .previous-week .less-featured-track-wrapper.index-4, .homeContainer .hero-posts .previous-week .less-featured-track-wrapper.index-5 {
+          display: inline-block; } }
   .homeContainer .feature-track {
     position: relative;
     width: calc(100% - 1px);
