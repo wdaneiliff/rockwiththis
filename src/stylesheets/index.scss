@@ -12,6 +12,8 @@ p {
   margin: 0;
 }
 
+
+
 .headerContainer {
   height: 90px;
   background: linear-gradient(to right, #1e0c49, #0097d5);
@@ -63,6 +65,16 @@ p {
     }
   }
 }
+@media screen and (max-width: 800px) and (min-width: 688px) {
+  .homeContainer .hero-posts .featured-track-wrapper {
+    max-height: none !important;
+    max-width: none !important;
+  }
+  .homeContainer .hero-posts .less-featured-track-wrapper {
+    max-height: none !important;
+    max-width: none !important;
+  }
+}
 
 .homeContainer {
   margin-top: 90px;
@@ -79,6 +91,29 @@ p {
     // overflow: hidden;
     height: calc(40vw - 3px);
     margin: 0 auto;
+      .post-info {
+        height: auto;
+        .post-square-wrapper.date {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 15%;
+        }
+
+        .song-info  {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 60%;
+          left: 15%;
+        }
+        .post-square-wrapper.play {
+          width: 15%;
+          // position: absolute;
+          right: 0;
+        }
+      }
+
     .featured-track-wrapper {
       width: 40vw;
       height: 40vw;
@@ -109,7 +144,7 @@ p {
         max-width: 337px;
         margin: 0 auto;
         .post-info {
-          height: 15%;
+          height: auto;
           .post-square-wrapper {
             width: 15%;
           }
@@ -125,6 +160,7 @@ p {
           .song-info {
             font-size: .9em;
             line-height: 20px;
+            width: 66%;
           }
         }
       }
@@ -162,6 +198,17 @@ p {
       .featured-track-wrapper {
         width: 100vw;
         height: 100vw;
+
+        .feature-track {
+
+          .post-info {
+            height: auto;
+
+            .song-info {
+              width: 70%;
+            }
+          }
+        }
       }
       .less-featured-track-wrapper {
         width: 49.8vw;
@@ -181,6 +228,8 @@ p {
         }
       }
     }
+
+
   }
   .feature-track {
     position: relative;
@@ -198,10 +247,10 @@ p {
     }
     span.song-of-day-tag {
       position: absolute;
-      bottom: 12%;
+      top: -35px;
       display: inline-block;
       padding: 10px;
-      background: rgba(236,33,33,.8);
+      background: rgba(236, 33, 33, 0.8);
       color: #fff !important;
       left: 0;
       font-size: .8em;
@@ -212,7 +261,7 @@ p {
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 12%;
+      height: auto;
       background: rgba(255,255,255,.7);
       transition: .15s linear all;
       .post-square-wrapper {
