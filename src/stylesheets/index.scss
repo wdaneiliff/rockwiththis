@@ -30,6 +30,7 @@ p {
   display: flex;
   align-items: center;
   transition: 0.3s ease all;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5) !important;
   #headerLogo {
     width: 400px;
     margin: 0 auto;
@@ -84,6 +85,7 @@ p {
   }
 
   .hero-posts {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5) !important;
     width: 100vw;
     white-space: nowrap;
     max-height: 674px;
@@ -91,25 +93,38 @@ p {
     // overflow: hidden;
     height: calc(40vw - 3px);
     margin: 0 auto;
+
+    .post-square-wrapper.date {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      padding: 4px 8px;
+      background: rgba(0,0,0,.75);
+      height: 15%;
+      width: 14%;
+      text-align: center;
+      border-bottom-right-radius: 6px;
+            .post-date {
+              background: transparent;
+              transform: translate(-50%, -50%);
+              top: 50%;
+              left: 50%;
+              position: absolute;
+      }
+    }
       .post-info {
         height: auto;
-        .post-square-wrapper.date {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 15%;
-        }
-
         .song-info  {
           position: absolute;
           top: 0;
           bottom: 0;
-          width: 60%;
-          left: 15%;
+          width: 80%;
+          left: 0;
+          height: auto !important;
         }
         .post-square-wrapper.play {
-          width: 15%;
-          // position: absolute;
+
           right: 0;
         }
       }
@@ -143,24 +158,26 @@ p {
         max-height: 337px;
         max-width: 337px;
         margin: 0 auto;
+        .post-date {
+          background: rgba(0,0,0,0);
+          .month {
+            font-size: .7em;
+            line-height: 16px;
+          }
+          .day {
+            font-size: .9em;
+          }
+        }
         .post-info {
           height: auto;
           .post-square-wrapper {
             width: 15%;
           }
-          .post-date {
-            .month {
-              font-size: .7em;
-              line-height: 16px;
-            }
-            .day {
-              font-size: .9em;
-            }
-          }
+
           .song-info {
             font-size: .9em;
             line-height: 20px;
-            width: 66%;
+            width: 80%;
           }
         }
       }
@@ -230,7 +247,10 @@ p {
     }
 
 
+
+
   }
+
   .feature-track {
     position: relative;
     width: calc(100% - 1px);
@@ -256,6 +276,7 @@ p {
       font-size: .8em;
       letter-spacing: 5px;
       text-transform: uppercase;
+      border-top-right-radius: 6px;
     }
     .post-info {
       position: absolute;
@@ -274,6 +295,7 @@ p {
         transition: .15s linear all;
         &.date {
           background: black;
+          border-bottom-right-radius: 6px;
           .post-date {
             width: 70%;
             height: 70%;
@@ -310,6 +332,16 @@ p {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homeContainer .feature-track .post-info .song-info {
+      display: inline-block;
+      height: 100%;
+      margin: 1.5%;
+      font-size: 1.2em;
+      line-height: 1.2em;
   }
 }
 
