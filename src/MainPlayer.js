@@ -105,7 +105,7 @@ class MainPlayer extends Component {
                 </div>
                 <p className="artist-info">
                     <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
-                        <span className="song-title">{currentlyPlayingSong.acf.song_name}</span> <br />
+                        <span className="song-title">{currentlyPlayingSong.acf.song_name}</span>
                     </Link>
                     <span className="artist-title">{currentlyPlayingSong.acf.artist_name}</span>
                 </p>
@@ -169,7 +169,6 @@ class MainPlayer extends Component {
         return (
             <div className="songSourceContainer">
                 <i className="fa fa-soundcloud" aria-hidden="true" />
-                <i className="fa fa-youtube-square" aria-hidden="true" />
             </div>
         )
     }

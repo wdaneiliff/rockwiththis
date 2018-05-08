@@ -85,7 +85,6 @@ p {
   }
 
   .hero-posts {
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5) !important;
     width: 100vw;
     white-space: nowrap;
     max-height: 674px;
@@ -207,11 +206,22 @@ p {
       }
     }
     @media screen and (max-width: 800px) {
+      .homeContainer .hero-posts {
+          width: 100vw;
+          white-space: nowrap;
+          max-height: none !important;
+          max-width: none !important;
+          height: auto !important;
+          margin: 0 auto;
+          padding-bottom: 75px;
+      }
 
       .homeContainer .heroPosts {
         height: calc(100vh - 220px) !important;
         overflow: visible !important;
       }
+
+
       .featured-track-wrapper {
         width: 100vw;
         height: 100vw;
@@ -335,14 +345,80 @@ p {
   }
 }
 
+@media (max-width:800px) {
+  .homeContainer .hero-posts {
+      width: 100vw;
+      white-space: nowrap;
+      max-height: none !important;
+      max-width: none !important;
+      height: auto !important;
+      margin: 0 auto;
+      padding-bottom: 75px;
+  }
+}
+
+
+@media screen and (max-width: 800px) and (min-width: 700px) {
+  .homeContainer .hero-posts .featured-track-wrapper {
+      width: 100vw;
+      height: calc(100vw - 75px);
+  }
+
+}
 @media screen and (max-width: 600px) {
+
+
+
+  .headerContainer #headerLogo img {
+    width: 100%;
+    max-width: 225px;
+    display: block;
+    margin: 0 auto;
+}
+
   .homeContainer .feature-track .post-info .song-info {
       display: inline-block;
       height: 100%;
       margin: 1.5%;
       font-size: 1.2em;
-      line-height: 1.2em;
+      line-height: 22px;
   }
+
+  .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
+    font-size: .7em;
+    line-height: 14px;
+    width: 80%;
+}
+
+.songSourceContainer i {
+  display: none;
+}
+
+.footer-player {
+  .artist-info {
+    float: left;
+    margin-left: 0px;
+    margin-bottom: 8px !important;
+
+    a.songImageLink {
+    text-decoration: none;
+    display: block;
+
+    span.song-title {
+      display: block;
+      margin-top: 3px;
+      line-height: 18px;
+      margin-bottom: 5px;
+    }
+    span.artist-title {
+      display: block;
+    }
+    }
+}
+.player-info-image-wrapper {
+  margin: 0 10px 5px;
+}
+}
 }
 
 
