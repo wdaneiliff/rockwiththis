@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import SongsContainer from './SongsContainer.js'
+import SocialLinks from './SocialLinks.js'
 import SidebarRight from './SidebarRight.js'
 import SidebarFiltersWrapper from './SidebarFiltersWrapper.js'
 import { fetchPosts } from './actions/index'
@@ -27,10 +28,11 @@ class Homepage extends Component {
                 expanded={this.props.sidebarExpanded}
               />
              <div className="homeContainer">
-                <SongsContainer />
-                <SidebarRight />
-             </div>
-        </div>
+             <SocialLinks />
+                    <SongsContainer />
+                    {/*<SidebarRight />*/}
+                 </div>
+           </div>
         )
     }
 }

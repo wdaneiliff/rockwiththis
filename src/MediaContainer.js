@@ -26,7 +26,12 @@ class MediaContainer extends Component {
         const media = this.props.posts.map(this.renderMedia)
         return (
             <div>
-                {media}
+                <Media
+                    key={this.props.posts[0].id}
+                    ref={(ref) => { this.medias[this.props.posts[0].id] = ref }}
+                    song={this.props.posts[0]}
+                />
+                {/*media*/}
             </div>
         )
     }
@@ -41,7 +46,6 @@ MediaContainer.defaultProps = {
 
 const mapStateToProps = (state, ownProps) => ({
     posts: state.posts,
-    queue: state.posts,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

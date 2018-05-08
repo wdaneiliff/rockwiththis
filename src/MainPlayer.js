@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { toggleSong } from './actions/queue'
+import { toggleSong, togglePlayPause } from './actions/queue'
 import MediaContainer from './MediaContainer'
-import './MainPlayer.css'
 
 const formatTime = (seconds = 0) => {
     const numMinutes = Math.floor(seconds / 60)
@@ -21,70 +20,69 @@ class MainPlayer extends Component {
             currentlyPlayingSongDuration: 0,
             seekPosition: null,
             rcSliderValue: 0,
+            isPlaying: this.props.isPlaying,
         }
 
         this.checkSeekPosition = this.checkSeekPosition.bind(this)
+        this.renderButtons = this.renderButtons.bind(this)
         this.onAfterChangeSlider = this.onAfterChangeSlider.bind(this)
         this.onChangeSlider = this.onChangeSlider.bind(this)
         this.setDurationForSongId = this.setDurationForSongId.bind(this)
-
+        this.updateStorePlayPause = this.updateStorePlayPause.bind(this)
         setTimeout(this.checkSeekPosition, 1000)
     }
 
     componentWillReceiveProps(nextProps) {
-        if ((nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong ||
-             nextProps.isPlaying !== this.props.isPlaying) &&
-             this.mediaContainer
-         ) {
+        if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id && nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong) {
             this.setDurationForSongId(nextProps.currentlyPlayingSong.id)
         }
     }
 
-      onChangeSlider(progress) {
+    onChangeSlider(progress) {
         this.setState({
             rcSliderValue: progress,
-        })
+        }, this.onAfterChangeSlider)
     }
 
 
-    onAfterChangeSlider(progress) {
+    onAfterChangeSlider() {
         if (this.props.currentlyPlayingSong) {
-            const newTime = this.state.currentlyPlayingSongDuration * (progress / 100.0)
+            const newTime = this.state.currentlyPlayingSongDuration * (this.state.rcSliderValue / 100.0)
+            console.log(newTime)
+            window.SC.Widget('sc-player').seekTo(newTime * 1000)
 
-            const mediaContainer = this.mediaContainer.getWrappedInstance()
-            const media = mediaContainer.medias[this.props.currentlyPlayingSong.id].getWrappedInstance()
-            media.seekTo(newTime)
-
-            this.setRcSliderValueForProgress(newTime, this.state.currentlyPlayingSongDuration)
-
+            this.setRcSliderValueForProgress(this.state.rcSliderValue, this.state.currentlyPlayingSongDuration)
             this.checkSeekPosition(false)
         }
     }
 
     setDurationForSongId(songId) {
-        const mediaContainer = this.mediaContainer.getWrappedInstance()
-        const media = mediaContainer.medias[songId].getWrappedInstance()
-        media.getDuration((duration) => {
-            this.setState({ currentlyPlayingSongDuration: duration, seekPosition: 0 })
-        })
+        window.SC.Widget('sc-player').getDuration(d => this.setState({ currentlyPlayingSongDuration: (d / 1000) }))
     }
 
     setRcSliderValueForProgress(seekPosition, duration) {
+
         this.setState({
             rcSliderValue: (seekPosition / duration) * 100,
         })
     }
 
-    checkSeekPosition(repeat = true) {
-        if (this.props.currentlyPlayingSong && this.mediaContainer) {
-            const mediaContainer = this.mediaContainer.getWrappedInstance()
-            const media = mediaContainer.medias[this.props.currentlyPlayingSong.id].getWrappedInstance()
-            media.getPosition((position) => {
-                if (this.state.currentlyPlayingSongDuration) {
-                    this.setRcSliderValueForProgress(position, this.state.currentlyPlayingSongDuration)
-                }
+    updateStorePlayPause() {
+        this.props.togglePlayPause(!this.props.isPlaying)
+    }
 
-                this.setState({ seekPosition: position })
+    checkSeekPosition(repeat = true) {
+        if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id) {
+            window.SC.Widget('sc-player').getDuration((position) => {
+                const currentlyPlayingSongDuration = position / 1000
+                this.setState({ currentlyPlayingSongDuration })
+            })
+            window.SC.Widget('sc-player').getPosition((position) => {
+                const seekPosition = position / 1000
+                if (this.state.currentlyPlayingSongDuration) {
+                    this.setRcSliderValueForProgress(seekPosition, this.state.currentlyPlayingSongDuration)
+                }
+                this.setState({ seekPosition })
             })
         }
 
@@ -96,7 +94,6 @@ class MainPlayer extends Component {
 
     renderInfo() {
         const { currentlyPlayingSong } = this.props
-
         return (
             <div className="player-info">
                 <div className="player-info-image-wrapper">
@@ -107,9 +104,9 @@ class MainPlayer extends Component {
                     </div>
                 </div>
                 <p className="artist-info">
-                  <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
-                    <span className="song-title">{currentlyPlayingSong.acf.song_name}</span> <br />
-                  </Link>
+                    <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
+                        <span className="song-title">{currentlyPlayingSong.acf.song_name}</span>
+                    </Link>
                     <span className="artist-title">{currentlyPlayingSong.acf.artist_name}</span>
                 </p>
             </div>
@@ -136,7 +133,7 @@ class MainPlayer extends Component {
                     <div
                         id="player-control-button-play"
                         className="player-control-button"
-                        onClick={() => this.props.toggleSong(currentlyPlayingSong.id)}
+                        onClick={this.updateStorePlayPause}
                     >
                         {playPauseButton}
                     </div>
@@ -150,7 +147,6 @@ class MainPlayer extends Component {
                             max={100}
                             step={0.5}
                             value={this.state.rcSliderValue}
-                            onAfterChange={this.onAfterChangeSlider}
                             onChange={this.onChangeSlider}
                         />
                     </div>
@@ -173,7 +169,6 @@ class MainPlayer extends Component {
         return (
             <div className="songSourceContainer">
                 <i className="fa fa-soundcloud" aria-hidden="true" />
-                <i className="fa fa-youtube-square" aria-hidden="true" />
             </div>
         )
     }
@@ -199,7 +194,6 @@ class MainPlayer extends Component {
                         {this.renderShareButtons()}
                     </div>
                 </div>
-                <MediaContainer ref={(mediaContainer) => { this.mediaContainer = mediaContainer }} />
             </footer>
         )
     }
@@ -218,6 +212,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     toggleSong: postId => dispatch(toggleSong(postId)),
+    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
 })
 
 export default connect(

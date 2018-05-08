@@ -1,18 +1,38 @@
 import React, { Component } from 'react'
-import Routes from './Routes'
+import OffScreen from './OffScreen'
 import Header from './Header'
+import Routes from './Routes'
 import MainPlayer from './MainPlayer'
 
 class AppChild extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Routes />
-        <MainPlayer />
-      </div>
-    )
-  }
+    constructor(props) {
+        super(props)
+        this.state = {
+            shrinkHeader: false
+        }
+
+        this.handleScroll = this.handleScroll.bind(this)
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll)
+    }
+
+    handleScroll() {
+        const shrinkHeader = window.scrollY > 70
+        this.setState({ shrinkHeader })
+    }
+
+    render() {
+        return (
+            <div>
+                <OffScreen />
+                <Header shrinkHeader={this.state.shrinkHeader} />
+                <Routes />
+                <MainPlayer />
+            </div>
+        )
+    }
 }
 
 export default AppChild

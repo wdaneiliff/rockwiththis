@@ -1,0 +1,2003 @@
+$landing-height: calc(100vh - 220px);
+
+// LANDING PAGE STYLES
+
+body {
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+
+
+.headerContainer {
+  height: 90px;
+  background: linear-gradient(to right, #1e0c49, #0097d5);
+  /* background-image: url('http://rockwiththis.com/wp-content/uploads/2018/01/light-to-dark-header.jpg');
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  background-position: bottom !important;
+  background-size: cover; */
+  -webkit-background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease all;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5) !important;
+  #headerLogo {
+    width: 400px;
+    margin: 0 auto;
+    transition: 0.3s ease all;
+  }
+  #headerLogo img {
+    width: 100%;
+  }
+  &.shrunk {
+    height: 70px;
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    #headerLogo {
+      width: 340px;
+    }
+  }
+}
+
+
+.socialLinks {
+  ul {
+    width: 390px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+      li {
+      display: inline-block;
+      margin: 11px 30px 0;
+      img {
+        width: 18px;
+        height: auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 688px) {
+  .homeContainer .hero-posts .featured-track-wrapper {
+    max-height: none !important;
+    max-width: none !important;
+  }
+  .homeContainer .hero-posts .less-featured-track-wrapper {
+    max-height: none !important;
+    max-width: none !important;
+  }
+}
+
+.homeContainer {
+  margin-top: 90px;
+  .socialLinks {
+    background: #d8d8d8;
+    height: 45px;
+  }
+
+  .hero-posts {
+    width: 100vw;
+    white-space: nowrap;
+    max-height: 674px;
+    max-width: 1685px;
+    // overflow: hidden;
+    height: calc(40vw - 3px);
+    margin: 0 auto;
+
+    .post-square-wrapper.date {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      padding: 4px 8px;
+      background: rgba(0,0,0,.75);
+      height: 15%;
+      width: 14%;
+      text-align: center;
+      border-bottom-right-radius: 6px;
+            .post-date {
+              background: transparent;
+              transform: translate(-50%, -50%);
+              top: 50%;
+              left: 50%;
+              position: absolute;
+      }
+    }
+      .post-info {
+        height: auto;
+        .song-info  {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 80%;
+          left: 0;
+          height: auto !important;
+        }
+        .post-square-wrapper.play {
+
+          right: 0;
+        }
+      }
+
+    .featured-track-wrapper {
+      width: 40vw;
+      height: 40vw;
+      display: inline-block;
+      max-height: 674px;
+      max-width: 674px;
+    }
+    .previous-week {
+      max-height: 674px;
+      width: 60%;
+      height: 100%;
+      display: inline-block;
+      margin: 0;
+      vertical-align: top;
+      white-space: normal;
+    }
+    .less-featured-track-wrapper {
+      max-height: 337px;
+      max-width: 337px;
+      width: 20vw;
+      height: 20vw;
+      display: inline-block;
+      vertical-align: top;
+      .feature-track {
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        max-height: 337px;
+        max-width: 337px;
+        margin: 0 auto;
+        .post-date {
+          background: rgba(0,0,0,0);
+          .month {
+            font-size: .7em;
+            line-height: 16px;
+          }
+          .day {
+            font-size: .9em;
+          }
+        }
+        .post-info {
+          height: auto;
+          .post-square-wrapper {
+            width: 15%;
+          }
+
+          .song-info {
+            font-size: .9em;
+            line-height: 20px;
+            width: 80%;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      height: calc(50vw - 2px);
+      .featured-track-wrapper {
+        width: 50vw;
+        height: 50vw;
+        .feature-track {
+          width: calc(100% - 1px);
+          height: calc(100% - 1px);
+        }
+      }
+      .previous-week {
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        vertical-align: top;
+      }
+      .less-featured-track-wrapper {
+        width: 25vw;
+        height: 25vw;
+        &.index-4, &.index-5 {
+          display: none;
+        }
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .homeContainer .hero-posts {
+          width: 100vw;
+          white-space: nowrap;
+          max-height: none !important;
+          max-width: none !important;
+          height: auto !important;
+          margin: 0 auto;
+          padding-bottom: 75px;
+      }
+
+      .homeContainer .heroPosts {
+        height: calc(100vh - 220px) !important;
+        overflow: visible !important;
+      }
+
+
+      .featured-track-wrapper {
+        width: 100vw;
+        height: 100vw;
+
+        .feature-track {
+
+          .post-info {
+            height: auto;
+
+            .song-info {
+              width: 70%;
+            }
+          }
+        }
+      }
+      .less-featured-track-wrapper {
+        width: 49.8vw;
+        height: 49.8vw;
+      }
+      .previous-week {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: 0;
+        vertical-align: top;
+
+        .less-featured-track-wrapper {
+          &.index-4, &.index-5 {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+
+
+
+  }
+
+  .feature-track {
+    position: relative;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+    filter: brightness(.9);
+    &:hover {
+      cursor: pointer;
+      filter: brightness(1);
+    }
+    img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+    span.song-of-day-tag {
+      position: absolute;
+      top: -35px;
+      display: inline-block;
+      padding: 10px;
+      background: rgba(236, 33, 33, 0.8);
+      color: #fff !important;
+      left: 0;
+      font-size: .8em;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      border-top-right-radius: 6px;
+    }
+    .post-info {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      background: rgba(255,255,255,.7);
+      transition: .15s linear all;
+      .post-square-wrapper {
+        display: inline-block;
+        height: 100%;
+        width: 12%;
+        color: #fff;
+        text-align: center;
+        vertical-align: top;
+        transition: .15s linear all;
+        &.date {
+          background: black;
+          border-bottom-right-radius: 6px;
+          .post-date {
+            width: 70%;
+            height: 70%;
+            margin: 15%;
+          }
+        }
+        &.play {
+          float: right;
+          img {
+            width: 80%;
+            height: 80%;
+            margin: 10%;
+          }
+        }
+        p.month {
+          margin: 0;
+        }
+        p.day {
+          margin: 0;
+          font-size: 28px;
+        }
+      }
+      .song-info {
+        display: inline-block;
+        height: 100%;
+        margin: 1.5%;
+        font-size: 1.5em;
+        line-height: 28px;
+        .song-title {
+          font-weight: bold;
+        }
+        .song-artist {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:800px) {
+  .homeContainer .hero-posts {
+      width: 100vw;
+      white-space: nowrap;
+      max-height: none !important;
+      max-width: none !important;
+      height: auto !important;
+      margin: 0 auto;
+      padding-bottom: 75px;
+  }
+}
+
+
+@media screen and (max-width: 800px) and (min-width: 700px) {
+  .homeContainer .hero-posts .featured-track-wrapper {
+      width: 100vw;
+      height: calc(100vw - 75px);
+  }
+
+}
+@media screen and (max-width: 600px) {
+
+
+
+  .headerContainer #headerLogo img {
+    width: 100%;
+    max-width: 225px;
+    display: block;
+    margin: 0 auto;
+}
+
+  .homeContainer .feature-track .post-info .song-info {
+      display: inline-block;
+      height: 100%;
+      margin: 1.5%;
+      font-size: 1.2em;
+      line-height: 22px;
+  }
+
+  .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
+    font-size: .7em;
+    line-height: 14px;
+    width: 80%;
+}
+
+.songSourceContainer i {
+  display: none;
+}
+
+.footer-player {
+  .artist-info {
+    float: left;
+    margin-left: 0px;
+    margin-bottom: 8px !important;
+
+    a.songImageLink {
+    text-decoration: none;
+    display: block;
+
+    span.song-title {
+      display: block;
+      margin-top: 3px;
+      line-height: 18px;
+      margin-bottom: 5px;
+    }
+    span.artist-title {
+      display: block;
+    }
+    }
+}
+.player-info-image-wrapper {
+  margin: 0 10px 5px;
+}
+}
+}
+
+
+.footer-player {
+  background: #282828 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Sharp-Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/SharpSans-No1-Extrabold.otf");
+  /* IE9 Compat Modes */ }
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: black !important; */ }
+
+.iframe-and-youtube-wrapper {
+  display: none; }
+//
+// .songsContainer {
+//   z-index: 0;
+//   display: flex;
+//   flex: auto;
+//   position: absolute;
+//   top: 78px;
+//   left: 0;
+//   width: 100%;
+//   height: calc(100% - 50px - 75px);
+//   flex-flow: row wrap;
+//   padding: 15px;
+//   padding-right: 3% !important;
+//   padding-left: 3% !important; }
+//
+// .songsContainer .songContainer {
+//   flex: auto;
+//   display: flex;
+//   padding: 15;
+//   z-index: 5;
+//   border-bottom: 30px solid transparent;
+//   border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+//   max-width: 1000px;
+//   margin: 0 auto; }
+//
+// .topContentContainer {
+//   display: flex;
+//   flex-flow: row wrap; }
+//
+// .bottomContentContainer {
+//   padding: 5px; }
+//
+// p.songDescription {
+//   margin-top: 0; }
+//
+// img.songImage {
+//   border-radius: 50%;
+//   margin: 10px;
+//   max-width: 330px;
+//   max-height: 330px;
+//   height: auto;
+//   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+//   border: 1px solid lightgray !important; }
+//
+// .imageContainer {
+//   display: flex;
+//   padding-right: 15px; }
+//
+// p {
+//   font-family: 'Open Sans', sans-serif;
+//   line-height: 1.5; }
+//
+// p.postAuthor {
+//   font-weight: bold; }
+//
+// p.postTitle {
+//   font-size: 40px;
+//   line-height: 1.2 !important;
+//   font-weight: normal;
+//   margin-bottom: 10px !important;
+//   /* font-family: 'Changa One', sans-serif; */
+//   font-family: 'Sharp-Sans' !important;
+//   letter-spacing: 1px;
+//   color: #282828 !important; }
+//
+// .sidebarRight h3 {
+//   /* font-family: 'Changa One', sans-serif; */
+//   font-family: 'Sharp-Sans' !important;
+//   line-height: 1.1;
+//   font-weight: normal;
+//   letter-spacing: 1px;
+//   margin-bottom: 5px;
+//   margin-top: 0px;
+//   font-size: 14px;
+//   text-align: center; }
+//
+// .sidebarRight .songImageLink {
+//   color: #282828 !important; }
+//
+// .singlePostPlayer {
+//   border: 2px solid grey;
+//   border-radius: 8px;
+//   padding: 8px !important;
+//   border: 1px solid lightgray !important;
+//   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+//   align-items: center;
+//   display: flex; }
+//
+// button.singlePostPlayerButton {
+//   float: left !important;
+//   display: block !important;
+//   border-radius: 50%;
+//   display: flex;
+//   margin-right: 0px;
+//   background: #282828 !important;
+//   /* background: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
+//   background-size: cover !important;
+//   border: none !important;
+//   color: #fff !important;
+//   font-size: 50px;
+//   transition: all .3s ease;
+//   flex-basis: 10%;
+//   /* max-width: 10%; */ }
+//
+// button.singlePostPlayerButton:hover {
+//   cursor: pointer; }
+//
+// button.singlePostPlayerButton i {
+//   transition: all .3s ease; }
+//
+// button.singlePostPlayerButton:hover i {
+//   color: #adb2a9 !important; }
+//
+// .singlePostPlayerButton img.playButton, .singlePostPlayerButton img.pauseButton {
+//   max-width: 35px !important; }
+//
+// .singlePostPlayerInfo {
+//   font-weight: bold !important;
+//   padding-left: 10px;
+//   margin-bottom: 0 !important; }
+//
+// .songName {
+//   margin-right: 5px; }
+
+/*MainPlayer*/
+@media (max-width: 1000px) {
+  .rc-slider .rc-slider-track {
+    height: 5px !important;
+    /* background-color: #975de8 !important; */
+    background-color: #30baf8 !important; }
+  .player-controls-wrapper {
+    flex: 0 0 100px !important;
+    margin-right: 10px !important; }
+  .rc-slider .rc-slider-handle {
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+    display: block !important;
+    border: 1px solid #E8E9EA !important;
+    z-index: 5 !important; }
+  .rc-slider .rc-slider-step {
+    background-color: #E8E9EA !important; }
+  .rc-slider {
+    border-radius: 0 !important; }
+  .player-duration-bar {
+    margin-right: 0 !important; }
+  .player-duration-bar-current-time, .player-duration-bar-song-duration {
+    display: none !important; }
+  .player-duration-bar-wrapper {
+    position: absolute !important;
+    padding: 0 !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: -5px !important;
+    height: auto !important; }
+  .player-controls {
+    flex: 1 1 0 !important;
+    margin-right: 0px !important;
+    height: inherit !important; }
+  .player-controls-wrapper {
+    flex: 0 0 100px !important;
+    margin-right: 10px !important; }
+  .player-info {
+    flex: 1 !important;
+    padding-right: 0 !important;
+    margin-right: 18px !important; } }
+
+.player-info-image-wrapper {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.15s ease-in, -webkit-box-shadow 0.15s ease-in, transform 0.15s ease-in, opacity 0.15s ease-in, -webkit-box-shadow 0.15s ease-in, box-shadow 0.15s ease-in;
+  -moz-transition: -webkit-transform 0.15s ease-in, -webkit-box-shadow 0.15s ease-in, transform 0.15s ease-in, opacity 0.15s ease-in, -webkit-box-shadow 0.15s ease-in, box-shadow 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in, -webkit-box-shadow 0.15s ease-in, transform 0.15s ease-in, opacity 0.15s ease-in, -webkit-box-shadow 0.15s ease-in, box-shadow 0.15s ease-in;
+  border-radius: 8px;
+  flex: 0 0 60px;
+  height: 60px;
+  margin: 0 18px 5px 20px;
+  overflow: hidden;
+  cursor: pointer; }
+
+.player-duration-bar-current-time, .player-duration-bar-song-duration {
+  /*font-family: sf-ui-text-bold;*/
+  font-size: 13px;
+  flex: 0 0 60px; }
+
+.rc-slider-mark {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  font-size: 12px; }
+
+.rc-slider-handle {
+  position: absolute;
+  margin-left: -7px;
+  margin-top: -5px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: solid 2px #96dbfa;
+  background-color: #fff; }
+
+.rc-tooltip, .rc-slider-handle {
+  display: none; }
+
+.rc-slider .rc-slider-step {
+  height: 5px;
+  background-color: white;
+  border: 1px solid #E8E9EA;
+  border-radius: 6px;
+  position: absolute;
+  width: 100%;
+  background: transparent; }
+
+.rc-slider .rc-slider-track {
+  height: 5px;
+  background-color: #30baf8 !important;
+  z-index: 4;
+  visibility: visible;
+  left: 0%;
+  width: 0%;
+  position: absolute;
+  border-radius: 6px; }
+
+.rc-slider-rail {
+  position: absolute;
+  width: 100%; }
+
+.rc-slider * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; }
+
+.rc-slider .rc-slider-rail {
+  height: 5px;
+  background-color: white; }
+
+.rc-slider {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  height: 5px;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px; }
+
+.player-duration-bar {
+  flex: 1;
+  height: 100%;
+  margin-right: 18px;
+  align-self: center;
+  height: 5px;
+  cursor: pointer; }
+
+.player-duration-bar-song-duration {
+  font-size: 13px;
+  flex: 0 0 60px; }
+
+.player-duration-bar-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 0 0 contain;
+  background: transparent; }
+
+#player-control-button-back, #player-control-button-play, #player-control-button-next {
+  transition: all .3s ease; }
+
+#player-control-button-back:hover, #player-control-button-play:hover, #player-control-button-next:hover {
+  color: #adb2a9 !important; }
+
+#player-control-button-back {
+  /* background-image: url(https://rockwiththis.com/wp-content/uploads/2018/01/back-button-grey.png); */
+  margin: 0 !important; }
+
+#player-control-button-play {
+  /* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
+  flex: 0 0 40px;
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px; }
+
+#player-control-button-next {
+  /* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png); */
+  margin: 0 !important; }
+
+.player-control-button {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  cursor: pointer;
+  flex: 0 0 10px;
+  font-size: 18px; }
+
+.singlePostPlayer {
+  /* background: #282828 !important; */
+  background: #120745 !important;
+  color: #fff !important; }
+
+.player-duration-bar-current-time, .player-duration-bar-song-duration {
+  font-family: Open Sans;
+  letter-spacing: 2px; }
+
+.player-controls-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px; }
+
+.player-controls {
+  display: flex;
+  flex: 0 0 550px;
+  flex-direction: column;
+  height: inherit;
+  justify-content: center;
+  margin-right: auto; }
+
+.player-controls-wrapper {
+  display: flex;
+  flex: 1 1 550px; }
+
+.footer-player {
+  position: fixed !important;
+  z-index: 7000 !important;
+  height: 75px !important;
+  bottom: 0 !important;
+  width: 100%;
+  margin: 0 !important;
+  border-top: 2px solid black;
+  /*padding: 10px 20px;*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: stretch;
+  background-color: white;
+  border-top: 1px solid #E8E9EA; }
+
+.footer-player .player-info {
+  font-size: 15px;
+  align-items: center;
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  padding-right: 18px; }
+
+.footer-player .player-info-image-wrapper {
+  width: 60px;
+  float: left;
+  background: transparent !important; }
+
+.footer-player .player-info-image-wrapper img {
+  height: 60px;
+  width: 60px;
+  margin: 0 !important;
+  border: 0px solid #fff !important; }
+
+.artist-info {
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 8px !important; }
+
+.player-info-image-wrapper .player-img {
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+
+.player-img img {
+  object-fit: contain;
+  width: 100%;
+  height: auto; }
+
+#player-control-button-play {
+  border-radius: 50% !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11); }
+//
+// /*sidebarRight*/
+// .sidebarRight {
+//   display: block;
+//   /* flex: auto; */
+//   width: 25%;
+//   position: fixed;
+//   top: 85px;
+//   right: 0;
+//   border-left: 2px solid #fafafa;
+//   height: calc(100% - 50px - 75px);
+//   padding: 15px;
+//   background: #fff;
+//   /* padding-top: 60px; */ }
+
+/*header*/
+
+
+//
+// .bottomContentContainer {
+//   max-height: 115px;
+//   overflow: hidden;
+//   transition: 0.5s ease all; }
+//
+// .bottomContentContainer.expanded {
+//   max-height: 1000px;
+//   overflow: hidden; }
+//
+// .toggleDescription {
+//   text-align: center;
+//   display: block;
+//   margin: 0 auto;
+//   background: transparent;
+//   border: none !important;
+//   margin-top: 25px;
+//   color: #f1782d !important;
+//   font-weight: 400 !important;
+//   font-size: 16px;
+//   margin-top: 5px;
+//   transition: all .3s ease; }
+//
+// .toggleDescription:hover {
+//   cursor: pointer;
+//   font-weight: 800;
+//   opacity: .7; }
+//
+// .toggleDescription .fa {
+//   font-size: 30px;
+//   margin-top: 5px; }
+//
+// input[type="email"] {
+//   width: 100%;
+//   border-radius: 4px;
+//   border: 1px solid #ddd;
+//   border-color: #ddd;
+//   height: 40px;
+//   border-top-right-radius: 0 !important;
+//   border-bottom-right-radius: 0 !important; }
+//
+// button[type="submit"] {
+//   background: #f1782d !important;
+//   color: #fff !important;
+//   border: 2px solid #f1782d !important;
+//   font-weight: 800;
+//   transition: all .3s ease;
+//   height: 46px !important;
+//   border-radius: 8px !important;
+//   width: 30%;
+//   float: left;
+//   margin-top: 0px;
+//   font-size: 18px;
+//   transition: all .3s ease;
+//   font-family: 'Open Sans', sans-serif;
+//   line-height: 1.1;
+//   font-weight: normal;
+//   letter-spacing: 1px;
+//   border-top-left-radius: 0 !important;
+//   border-bottom-left-radius: 0 !important; }
+//
+// button[type="submit"]:hover {
+//   background: #fff !important;
+//   color: #f1782d !important;
+//   border: 2px solid #f1782d !important;
+//   cursor: pointer;
+//   font-family: 'Open Sans', sans-serif;
+//   line-height: 1.1;
+//   font-weight: normal;
+//   letter-spacing: 1px; }
+//
+// .sidebarRight h3 {
+//   margin-bottom: 5px; }
+//
+// .sidebarRight p {
+//   margin: 0; }
+//
+// p.emailAddress {
+//   margin-top: 15px; }
+//
+// .by {
+//   padding-right: 5px; }
+//
+// .singlePostPlayerInfo {
+//   text-transform: uppercase;
+//   letter-spacing: 1px; }
+//
+// .tag {
+//   padding-right: 5px;
+//   color: #f1782d !important; }
+//
+// .toggleDescriptionText {
+//   height: auto !important; }
+
+/* sidebarRight FEATURED SONGS */
+// .sidebarRight .songImage {
+//   border-radius: 8px;
+//   max-width: 50px;
+//   max-height: 50px;
+//   height: auto;
+//   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+//   border: 1px solid lightgray;
+//   float: left;
+//   margin: 0; }
+//
+// .sidebarRight .songContainer {
+//   display: flex;
+//   -webkit-box-flex: 1;
+//   -ms-flex: 1 1 0px;
+//   flex: 1 1 0;
+//   margin: 15px 0;
+//   align-items: center; }
+//
+// .sidebarRight .songInfo {
+//   float: left;
+//   margin-left: 15px;
+//   font-family: 'Open Sans', sans-serif;
+//   line-height: 1.5;
+//   font-weight: bold; }
+//
+// .topTrackContainer {
+//   margin-bottom: 25px; }
+
+/* FOOTER PLAYER */
+.footer-player {
+  background: #282828 !important;
+  /* background: linear-gradient(to right, #220c51, #00b1fa); */
+  /* background: #12023f !important; */ }
+
+.footer-player {
+  color: #fff; }
+
+.footer-player span.artist-title {
+  color: #adb2a9; }
+
+.postTags {
+  display: inline-block;
+  margin: 0; }
+
+p.leftInfo {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 15px;
+  margin-right: 6px; }
+
+.tag {
+  border: 2px solid #f1782d !important;
+  margin: 0 3px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: all .3s ease;
+  color: #f1782d !important;
+  background: #fff !important;
+  font-size: 13px; }
+
+.tag:hover {
+  color: #fff !important;
+  background: #f1782d !important;
+  border: 2px solid #f1782d !important;
+  cursor: pointer; }
+
+p.metaInfo {
+  padding-left: 5px;
+  margin: 0 !important; }
+//
+// .sidebarRight {
+//   overflow: scroll; }
+//
+// .sidebarRight::-webkit-scrollbar {
+//   display: none !important; }
+
+a.shareButton img {
+  transition: all .3s ease;
+  max-width: 20px; }
+
+a.shareButton:hover img {
+  opacity: .7; }
+
+a.spotifyLink {
+  /* margin-left: 10px; */
+  font-size: 24px;
+  color: #6AE368;
+  transition: all .3s ease; }
+
+a.spotifyLink:hover {
+  /* margin-left: 10px; */
+  font-size: 24px;
+  color: green; }
+
+.singlePostPlayerInfo {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex-basis: 70%;
+  max-width: 70%; }
+
+.singlePostPlayerLinks {
+  flex-basis: 20%;
+  max-width: 20%; }
+
+.singlePostPlayerLinks a {
+  margin: 0 10px; }
+
+.sidebarRight .songName {
+  margin-right: 5px; }
+
+.singlePostPlayerInfo {
+  text-transform: none; }
+
+.singlePostPlayerInfo .by {
+  text-transform: none !important; }
+
+.singlePostPlayerInfo span.artistName {
+  color: #adb2a9;
+  font-size: 16px;
+  font-weight: 100 !important;
+  display: block; }
+
+.singlePostPlayerInfo span.songName {
+  font-size: 18px;
+  font-weight: 400 !important;
+  display: block; }
+
+:focus {
+  outline: -webkit-focus-ring-color auto 0px !important; }
+
+/* EMAIL FORM */
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: #fff !important;
+  background-image: none;
+  color: black; }
+
+input[type="email"] {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-color: #ddd;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 14px; }
+
+/* sidebarRight TOOLTIP */
+.newsletterContainer .tooltip, .topTrackContainer .tooltip {
+  position: relative;
+  display: inline-block; }
+
+.newsletterContainer .tooltip:hover, .topTrackContainer .tooltip:hover {
+  cursor: pointer; }
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #f1782d transparent transparent transparent; }
+
+.newsletterContainer .tooltip .tooltiptext, .topTrackContainer .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #f1782d;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 6px;
+  width: 200px;
+  bottom: 30px;
+  position: absolute;
+  z-index: 1;
+  left: -100px;
+  font-size: 16px;
+  font-family: 'Open Sans';
+  line-height: 20px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1; }
+
+.newsletterContainer .tooltip:hover .tooltiptext, .topTrackContainer .tooltip:hover .tooltiptext {
+  visibility: visible; }
+
+.topTrackContainer .tooltip {
+  display: none !important; }
+
+.sidebarRight h3 {
+  margin-bottom: 5px;
+  margin-top: 0; }
+
+.socialLinks i {
+  font-size: 24px;
+  margin: 15px;
+  color: #fff !important; }
+
+.songSourceContainer {
+  display: flex;
+  align-items: center; }
+
+.songSourceContainer i {
+  margin: 0 20px;
+  font-size: 35px; }
+
+.tag {
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block; }
+
+.singlePostPlayerLinks {
+  text-align: right; }
+//
+// @media (max-width: 1100px) {
+//   p.postTitle {
+//     font-size: 36px; }
+//   .singlePostPlayerLinks a {
+//     margin: 0px 6px;
+//     font-size: 26px; } }
+//
+// p.singlePostPlayerInfo span {
+//   display: inline-block; }
+//
+// .imageContainer {
+//   /* display: -webkit-box; */
+//   display: -ms-flexbox;
+//   /* display: flex; */
+//   margin-right: 15px;
+//   display: inline;
+//   width: 40%; }
+//
+// img.songImage {
+//   width: 100% !important;
+//   height: auto; }
+//
+// .postContent {
+//   width: 60% !important; }
+//
+// span.tag:nth-of-type(1) {
+//   margin-left: 0; }
+//
+// @media (max-width: 950px) {
+//   .sidebarRight {
+//     display: none; }
+//   .songsContainer, .singleSongContainer {
+//     width: 100% !important;
+//     padding: 0 !important; } }
+//
+// .sidebarRight input[type="email"] {
+//   width: 70%;
+//   border-radius: 4px;
+//   border: 1px solid #ddd;
+//   border-color: #ddd;
+//   height: 40px;
+//   padding-left: 10px;
+//   font-size: 14px;
+//   float: left;
+//   border-top-right-radius: 0 !important;
+//   border-bottom-right-radius: 0 !important; }
+//
+// @media (max-width: 1100px) {
+//   .sidebarRight {
+//     width: 18%; }
+//   .songsContainer, .singleSongContainer {
+//     /* width: 82% !important; */ } }
+//
+// @media (max-width: 1000px) {
+//   .sidebarRight {
+//     width: 16%; }
+//   .sidebarRight .songContainer .songName {
+//     font-size: 14px; }
+//   .sidebarRight .songContainer .artistName {
+//     font-size: 13px; } }
+//
+// /* MOBILE STYLEZ */
+// @media (max-width: 720px) {
+//   /*
+//   .songsContainer {
+//       z-index: 0;
+//       display: block;
+//       position: relative;
+//           top: 78px !important;
+//       left: 0;
+//       height: calc(100% - 50px - 75px);
+//       padding:15px;
+//       padding-right: 15px !important;
+// padding-left: 15px !important;
+//   } */
+//   .songsContainer .songContainer {
+//     display: block;
+//     padding: 15;
+//     z-index: 5;
+//     border-bottom: none !important;
+//     border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+//     max-width: none;
+//     margin: 0 auto; }
+//   .topContentContainer {
+//     display: block; }
+//   .bottomContentContainer {
+//     padding: 5px; }
+//   p.songDescription {
+//     margin-top: 10px;
+//     font-size: 16px !important;
+//     margin-bottom: 10px;
+//     color: #282828 !important; }
+//   img.songImage {
+//     border-radius: 0;
+//     margin: 0px;
+//     max-width: none;
+//     max-height: none;
+//     height: auto;
+//     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+//     border: 1px solid lightgray !important; }
+//   .imageContainer {
+//     display: block;
+//     padding-right: 0px; }
+//   p {
+//     font-family: 'Open Sans', sans-serif;
+//     line-height: 1.5; }
+//   p.postAuthor {
+//     font-weight: bold; }
+//   p.postTitle {
+//     font-size: 30px;
+//     line-height: 1.1;
+//     font-weight: normal;
+//     margin-bottom: 10px !important;
+//     /* font-family: 'Changa One', sans-serif; */
+//     font-family: 'Sharp-Sans' !important;
+//     letter-spacing: 1px;
+//     color: #282828 !important;
+//     transition: all .3s ease; }
+//   /* p.postTitle:hover {
+//     opacity: .7;
+//   } */
+//   .imageContainer, .postContent {
+//     width: 100% !important; }
+//   .singlePostPlayer {
+//     border: 2px solid grey;
+//     border-radius: 8px;
+//     padding: 8px !important;
+//     border: 1px solid lightgray !important;
+//     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+//     align-items: center;
+//     display: flex; }
+//   button.singlePostPlayerButton {
+//     float: left !important;
+//     display: block !important;
+//     border-radius: 50%;
+//     display: block;
+//     margin-right: 0px;
+//     background: #282828 !important;
+//     /* background: url(https://rockwiththis.com/wp-content/uploads/2017/11/play-button-2.png); */
+//     background-size: cover !important;
+//     border: none !important;
+//     color: #fff !important;
+//     font-size: 50px;
+//     transition: all .3s ease;
+//     /* max-width: 10%; */ }
+//   button.singlePostPlayerButton:hover {
+//     cursor: pointer; }
+//   button.singlePostPlayerButton i {
+//     transition: all .3s ease; }
+//   button.singlePostPlayerButton:hover i {
+//     color: #adb2a9 !important; }
+//   .singlePostPlayerInfo {
+//     font-weight: bold !important;
+//     padding-left: 10px; }
+//   .songName {
+//     margin-right: 5px; }
+//   button.filterButton {
+//     left: 0px;
+//     position: absolute;
+//     padding: 12px 15px;
+//     background: transparent !important;
+//     border: none;
+//     border-radius: 20px;
+//     color: #fff !important;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     letter-spacing: 2px;
+//     transition: all .3s ease;
+//     font-size: 12px;
+//     top: 0px; }
+//   button.filterButton img {
+//     max-width: 26px; }
+//   .songContainer {
+//     border: 1px solid #fff;
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box; }
+//   .songsContainer {
+//     height: calc(100vh - 100px);
+//     overflow: scroll !important;
+//     /* border: 1px solid #fff !important; */
+//     box-sizing: border-box;
+//     margin-bottom: -4px !important;
+//     padding-right: 5%; }
+//   .songsContainer::-webkit-scrollbar {
+//     display: none; }
+//   .imageContainer {
+//     margin-bottom: -4px; }
+//   .img.songImage {
+//     box-shadow: 0 !important;
+//     border: 0px !important; }
+//   .singleSongPage .img.songImage {
+//     box-shadow: 0 !important;
+//     border: 0px !important;
+//     margin: 15px 0; }
+//   .songSourceContainer {
+//     display: none; } }
+//
+// .clearfix {
+//   overflow: hidden; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+// .songsContainer {
+//   height: calc(100vh - 100px);
+//   overflow: scroll !important; }
+
+.songsContainer::-webkit-scrollbar {
+  display: none; }
+
+.postTitleLink {
+  text-decoration: none !important; }
+
+.postTitleLink p {
+  transition: all .3s ease; }
+
+.postTitleLink:hover p {
+  opacity: .8; }
+
+.toggleDescription {
+  margin-top: 0 !important; }
+
+/* FILTER SIDEBAR STYLES */
+// .homeContainer {
+//   height: calc(100vh); }
+
+.ui.left.sidebar {
+  width: 260px !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important; }
+
+.ui.inverted.menu {
+  border: 0 solid transparent;
+  background: #fff !important; }
+
+.filters {
+  margin-top: 70px;
+  height: calc(100vh - 130px);
+  border-right: 2px solid #fafafa;
+  padding: 10px;
+  background: #fff !important;
+  text-align: left; }
+
+.filters .filterTag {
+  border: 1px solid #f1782d !important;
+  margin: 0 5px;
+  padding: 2px 4px;
+  border-radius: 8px;
+  transition: all .3s ease;
+  color: #f1782d !important;
+  background: #fff !important;
+  display: inline-block;
+  margin: 4px !important;
+  font-size: 12px; }
+
+.filters .filterTag:hover {
+  color: #fff !important;
+  background: #f1782d !important;
+  border: 1px solid #f1782d !important;
+  cursor: pointer; }
+
+// @media (min-width: 650px) {
+//   .songsContainer .songContainer {
+//     margin-bottom: 30px;
+//     padding-top: 40px; } }
+//
+// /* SONG DETAIL CSS */
+// .singleSongPage .singleSongContainer {
+//   position: relative !important; }
+//
+// .singleSongPage {
+//   /* margin-top: 70px; */
+//   background: #fff;
+//   /* padding-bottom: 200px; */
+//   /* min-height: 100vh !important; */ }
+//
+// .singleSongPage p.toggleDescription {
+//   display: none !important; }
+//
+// .singleSongPage .songContainer .rah-static.rah-static--height-specific {
+//   height: auto !important; }
+//
+// .singleSongContainer {
+//   z-index: 0;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-flex: 1;
+//   -ms-flex: auto;
+//   flex: auto;
+//   position: absolute;
+//   top: 90px;
+//   left: 0;
+//   width: 80%;
+//   /* height: calc(100% - 50px - 75px); */
+//   -webkit-box-orient: horizontal;
+//   -webkit-box-direction: normal;
+//   -ms-flex-flow: row wrap;
+//   flex-flow: row wrap;
+//   padding: 15px;
+//   padding-right: 3% !important;
+//   padding-left: 3% !important; }
+//
+// .singleSongContainer .bottomContentContainer {
+//   max-height: none !important;
+//   overflow: hidden;
+//   transition: 0.5s ease all; }
+//
+// .singleSongContainer .songContainer {
+//   border-bottom: 2px solid transparent;
+//   -o-border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+//   border-image: url(http://rockwiththis.com/wp-content/uploads/2018/01/divider.png) 36;
+//   max-width: 1000px;
+//   margin: 0 auto;
+//   padding: 20px 15px 20px;
+//   margin-bottom: 0 !important;
+//   padding-top: 15px !important;
+//   margin-top: 15px !important;
+//   display: flex;
+//   -webkit-box-flex: 1;
+//   -ms-flex: auto;
+//   flex: auto; }
+//
+// p.songDescription p {
+//   font-size: 16px !important;
+//   color: #282828 !important;
+//   margin-bottom: 0 !important; }
+
+.footer-player {
+  color: #fff;
+  border-top: 0px solid #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+  padding-top: 8px; }
+
+.playButton, .pauseButton {
+  display: flex !important;
+  transition: all 0.3s ease; }
+
+.playButton:hover, .pauseButton:hover {
+  opacity: .7; }
+
+.playButton.main, .pauseButton {
+  width: 40px; }
+
+// .songsContainer .songContainer {
+//   border-bottom: 2px solid transparent;
+//   -o-border-image: url(https://rockwiththis.com/wp-content/uploads/2017/10/10_web_rockwiththis_splices_26.png) 29;
+//   border-image: url(http://rockwiththis.com/wp-content/uploads/2018/01/divider.png) 36;
+//   max-width: 1000px;
+//   margin: 0 auto;
+//   padding: 20px 15px 20px;
+//   margin-bottom: 0 !important;
+//   padding-top: 15px !important;
+//   margin-top: 15px !important; }
+
+
+/* SINGLE SONG PAGE */
+// @media (max-width: 720px) {
+//   .singlePostPlayerInfo span.songName {
+//     font-size: 14px !important;
+//     font-weight: 400 !important;
+//     display: block; }
+//   .singleSongPage img.songImage {
+//     margin-bottom: 15px;
+//     margin-top: 15px; }
+//   .singlePostPlayerInfo span.artistName {
+//     color: #adb2a9;
+//     font-size: 14px !important;
+//     font-weight: 100 !important;
+//     display: block; }
+//   button.singlePostPlayerButton {
+//     padding: 0 !important; }
+//   .singleSongContainer {
+//     height: auto !important;
+//     margin-bottom: 100px; } }
+
+// @media (max-width: 950px) {
+//   button.singlePostPlayerButton {
+//     padding: 0 !important;
+//     max-width: 38px; } }
+//
+// button.singlePostPlayerButton {
+//   max-width: 40px;
+//   margin-right: 1px;
+//   padding: 0 !important;
+//   padding-left: 4px !important; }
+//
+// .homeContainer .bottomContentContainer {
+//   position: relative !important; }
+//
+// .homeContainer .bottomContentContainer::after {
+//   content: "  ";
+//   position: absolute;
+//   z-index: 1;
+//   bottom: -5px;
+//   left: 0;
+//   pointer-events: none;
+//   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 90%);
+//   width: 100%;
+//   height: 25px; }
+//
+// .homeContainer .expanded.bottomContentContainer::after {
+//   content: "  ";
+//   position: absolute;
+//   z-index: 1;
+//   bottom: 0;
+//   left: 0;
+//   pointer-events: none;
+//   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 90%);
+//   width: 100%;
+//   height: 0px; }
+//
+// /* .homeContainer .bottomContentContainer  {
+//   position: relative !important;
+// }
+// .homeContainer .bottomContentContainer :after {
+//     content: "  ";
+//     position: absolute;
+//     z-index: 1;
+//     bottom: 0;
+//     left: 0;
+//     pointer-events: none;
+//     background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+//     width: 100%;
+//     height: 25px;
+// } */
+// .songInfo span.artistName {
+//   color: #adb2a9 !important;
+//   font-size: 12px !important;
+//   font-weight: 100 !important; }
+//
+// .songInfo span.songName {
+//   font-size: 14px;
+//   font-weight: 800 !important; }
+//
+// .sidebarRight {
+//   overflow: scroll;
+//   height: calc(100vh - 160px) !important;
+//   margin-top: 0px; }
+//
+// .newsletterContainer {
+//   margin-bottom: 20px !important; }
+//
+// .newsletterContainer p.email {
+//   margin-bottom: 10px !important;
+//   font-size: 12px; }
+//
+// .sidebarRight input[type="email"] {
+//   border: 1px solid #ddd;
+//   height: 35px !important;
+//   font-size: 12px;
+//   border-radius: 8px !important;
+//   border-top-right-radius: 0 !important;
+//   border-bottom-right-radius: 0 !important;
+//   margin-bottom: 15px;
+//   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important; }
+
+button[type="submit"] {
+  font-size: 12px !important;
+  font-family: "Open Sans", sans-serif;
+  height: 35px !important;
+  border-radius: 8px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important; }
+
+// /* RELATED SONGS */
+// .singleSongPage {
+//   padding-bottom: 100px; }
+//
+// .singleSongPage p.songDescription p {
+//   margin-top: 15px; }
+//
+// .relatedSongs {
+//   padding-top: 25px;
+//   /* display: flex; */
+//   /* -webkit-box-flex: 1; */
+//   /* position: relative; */
+//   /* left: 0px; */
+//   width: 80%;
+//   margin-top: 100px;
+//   display: block; }
+//
+// .relatedSongs .title {
+//   text-align: center; }
+//
+// .relatedSongs .songsContainer {
+//   display: inline-block; }
+//
+// .relatedSongs .songContainer img.songImage {
+//   max-width: 150px !important; }
+//
+// .relatedSongsContainer {
+//   display: flex;
+//   -webkit-box-flex: 1;
+//   position: relative;
+//   left: 0px;
+//   width: 100%;
+//   padding: 0 25px; }
+//
+// .relatedSongs .songContainer {
+//   width: 33%;
+//   text-align: center; }
+//
+// .relatedSongs .title {
+//   text-align: center;
+//   font-size: 24px;
+//   font-family: 'Sharp-Sans' !important;
+//   letter-spacing: 1px; }
+//
+// .relatedSongs .songInfo {
+//   max-width: 200px;
+//   margin: 0 auto; }
+//
+// .relatedSongs .songInfo span.songName {
+//   font-size: 18px;
+//   font-weight: 800 !important; }
+//
+// .relatedSongs .songInfo span.artistName {
+//   color: #adb2a9 !important;
+//   font-size: 18px !important;
+//   font-weight: 100 !important;
+//   margin-top: 5px;
+//   display: block; }
+//
+// .relatedSongs .songImageLink {
+//   color: #282828 !important; }
+
+footer .songImageLink {
+  color: #fff !important;
+  transition: all .3s ease; }
+
+footer .songImageLink:hover {
+  opacity: .75; }
+
+// /* FILTER SIDEBAR STYLES */
+// button.filterButton img {
+//   margin-left: 5px;
+//   width: 30px;
+//   transition: all .3s ease; }
+//
+// .filters input[type=search] {
+//   margin: 20px 0;
+//   display: block;
+//   background-color: transparent;
+//   -webkit-rtl-ordering: logical;
+//   cursor: text;
+//   padding: 1px;
+//   border-width: 1px;
+//   border-style: inset;
+//   -o-border-image: none;
+//   border-image: none;
+//   border: none;
+//   border-bottom: 1px solid #fff;
+//   width: 100%;
+//   padding: 10px;
+//   color: #f1782d !important; }
+//
+// .filters input[type=search]::-webkit-input-placeholder {
+//   color: #f1782d !important;
+//   font-family: "Open Sans", sans-serif; }
+//
+// .filters input[type=search]:before {
+//   content: url("http://rockwiththis.com/wp-content/uploads/2018/02/seach.png"); }
+//
+// button.clearAll {
+//   margin-top: 15px !important;
+//   width: 100%;
+//   padding: 8px;
+//   border-radius: 8px;
+//   border: 1px solid #f1782d !important;
+//   border-radius: 8px;
+//   transition: all .3s ease;
+//   color: #f1782d !important;
+//   display: inline-block;
+//   font-size: 12px;
+//   padding: 8px !important; }
+//
+// .sidebar-filters-wrapper {
+//   position: absolute;
+//   width: 300px;
+//   min-width: 300px;
+//   z-index: 1;
+//   margin-left: -300px;
+//   transition: .4s ease all; }
+//
+// .sidebar-filters-wrapper.expanded {
+//   margin-left: 0;
+//   transition: .4s ease all; }
+//
+// .imageContainer, .songImageButton {
+//   position: relative; }
+//
+// .imageContainer .imageButton {
+//   position: absolute; }
+//
+// .imageContainer .imageButton {
+//   position: absolute;
+//   top: 50%;
+//   left: calc(50% - 10px);
+//   transform: translate(-50%, -50%); }
+//
+// .imagePlayButton {
+//   opacity: 0; }
+//
+// .songImageButton:hover {
+//   cursor: pointer; }
+//
+// .songImageButton:hover .imagePlayButton {
+//   opacity: .75; }
+//
+// .songImageButton .imagePauseButton {
+//   opacity: .75; }
+//
+// /* .songImageButton {
+//     max-width: 330px;
+//     max-height: 330px;
+// } */
+// .songsContainer, .sidebarRight, body, main {
+//   -webkit-overflow-scrolling: touch !important;
+//   /* Lets it scroll lazy */ }
+//
+/* NEW POSTS SIZES:  */
+// p.postTitle {
+//   font-size: 32px; }
+//
+// .singlePostPlayerInfo span.songName {
+//   font-size: 14px; }
+//
+// .singlePostPlayerInfo span.artistName {
+//   color: #adb2a9;
+//   font-size: 14px; }
+//
+// p.songDescription p {
+//   font-size: 14px !important;
+//   color: #282828 !important;
+//   margin-bottom: 0 !important;
+//   line-height: 1.5 !important; }
+//
+// .postTags .tag {
+//   margin-bottom: 5px; }
+//
+// p.leftInfo {
+//   display: inline-block;
+//   margin: 0;
+//   margin-bottom: 15px;
+//   margin-right: 6px; }
+//
+// p.postTitle {
+//   margin-bottom: 3px !important; }
+//
+// img.songImage {
+//   border-radius: 50%;
+//   margin: 10px;
+//   max-width: 330px;
+//   max-height: 330px;
+//   height: auto;
+//   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
+//   border: 1px solid lightgray !important;
+//   text-align: center;
+//   display: block;
+//   float: right;
+//   margin-right: 10px;
+//   width: 96% !important; }
+//
+// .imageContainer {
+//   margin-right: 0;
+//   display: inline;
+//   width: 36%;
+//   padding-right: 0; }
+//
+// .songsContainer .songContainer {
+//   max-width: 900px !important;
+//   padding: 20px 0 20px; }
+//
+// .songsContainer {
+//   z-index: 0;
+//   display: block;
+//   position: relative;
+//   width: 75%;
+//   height: calc(100% - 50px - 75px);
+//   padding: 15px;
+//   padding-right: 15px !important;
+//   padding-left: 15px !important;
+//   display: inline-block; }
+//
+// .homeContainer {
+//   height: calc(100vh);
+//   max-width: 1200px;
+//   position: relative;
+//   margin: 0 auto; }
+//
+// .sidebarRight {
+//   display: inline-block;
+//   width: 25%;
+//   position: inherit;
+//   top: 70px;
+//   right: 0;
+//   border-left: 2px solid #fafafa;
+//   padding: 15px;
+//   background: #fff;
+//   padding-bottom: 50px; }
+//
+// .imageContainer {
+//   overflow: visible;
+//   width: 40%;
+//   max-width: 330px;
+//   max-height: 330px; }
+//
+// .singlePostPlayer {
+//   /* background: #282828 !important; */
+//   background: #120745 !important;
+//   color: #fff !important;
+//   margin-bottom: 5px; }
+//
+// .imageContainer {
+//   overflow: visible;
+//   width: 40%; }
+
+// @media (max-width: 950px) {
+  // .topTrackContainer {
+  //   display: none; }
+  // .sidebarRight {
+  //   display: flex;
+  //   width: 100% !important;
+  //   order: 1;
+  //   height: auto !important;
+  //   padding: 0;
+  //   top: 90px; }
+  // .newsletterContainer {
+  //   margin-bottom: 20px !important;
+  //   display: flex;
+  //   width: 100% !important;
+  //   -webkit-box-ordinal-group: 2;
+  //   -ms-flex-order: 1;
+  //   height: auto !important;
+  //   flex-wrap: wrap; }
+  // .songsContainer {
+  //   display: flex;
+  //   width: 100% !important;
+  //   order: 2; }
+  // .homeContainer {
+  //   display: flex;
+  //   flex-wrap: wrap; }
+  // .newsletterContainer > div:first-child {
+  //   width: 100% !important;
+  //   max-width: none !important;
+  //   order: 4;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center; }
+  // .sidebarRight h3 {
+  //   text-align: center !important;
+  //   width: 100%;
+  //   order: 2;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   margin: 15px 0 5px;
+  //   font-size: 18px; }
+  // .sidebarRight .mission {
+  //   padding: 5px 15px;
+  //   max-width: 600px;
+  //   margin: 0 auto;
+  //   order: 3;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  //   margin-bottom: 15px; }
+  // .sidebarRight .mission p {
+  //   text-align: center; }
+  // .socialLinks {
+  //   padding: 5px;
+  //   background: #ececec;
+  //   order: 1;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   max-width: none !important;
+  //   width: 100%; }
+  // .newsletterContainer form {
+  //   height: 40px;
+  //   width: 320px !important; }
+  // .songsContainer {
+  //   height: auto !important;
+  //   overflow: hidden; }
+  // #headerLogo {
+  //   display: block;
+  //   margin: 0 auto;
+  //   margin-top: 0px;
+  //   max-width: 200px;
+  //   position: relative;
+  //   right: 15px; }
+  // #headerLogo img {
+  //   max-width: 250px !important; }
+  // button.filterButton {
+  //   top: 19px; }
+  // .filters {
+  //   top: 100px !important;
+  //   position: absolute; }
+  // }
+
+
+// @media (max-width: 720px) {
+//   .imageContainer .imageButton {
+//     display: none; }
+//   p.postTitle {
+//     font-size: 24px; }
+//   .songsContainer {
+//     padding-bottom: 100px !important; }
+//   .imageContainer .songImage {
+//     text-align: center !important;
+//     margin: 0 auto !important;
+//     width: 250px !important;
+//     float: none;
+//     margin-bottom: 15px !important; }
+//   .songsContainer .songContainer {
+//     max-width: 500px !important; }
+//    }
+
+
+
+// .footer-player .player-info-image-wrapper img {
+//   height: 60px;
+//   width: 60px;
+//   margin: 0 !important;
+//   border: 2px solid #fff !important;
+//   border-radius: 8px;
+//
+// }

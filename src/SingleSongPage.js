@@ -11,33 +11,31 @@ import RelatedSongs from './RelatedSongs'
 
 
 class SingleSongPage extends Component {
-  componentWillMount() {
-    this.props.fetchSingleSong(this.props.match.params.id)
-    this.props.fetchRelatedSongs(this.props.match.params.id)
+    componentWillMount() {
+      this.props.fetchSingleSong(this.props.match.params.id)
+      this.props.fetchRelatedSongs(this.props.match.params.id)
+    }
 
-  }
+    render() {
+        if (!this.props.singleSong || this.props.isFetchingSingleSong) {
+            return (
+                <div>LOADING...</div>
+            )
+        }
 
-
-  render() {
-      if (!this.props.singleSong || this.props.isFetchingSingleSong) {
-          return (
-              <div>LOADING...</div>
-          )
-      }
-
-      return (
-        <div className="singleSongPage">
-            <button className="backpageButton">
-              <Link to="/">
-                <img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
-              </Link>
-            </button>
-            <SingleSong />
-            <RelatedSongs />
-            <SidebarRight />
-        </div>
-      )
-  }
+        return (
+          <div className="singleSongPage">
+              <button className="backpageButton">
+                <Link to="/">
+                  <img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-arrow-72-48.png" />
+                </Link>
+              </button>
+              <SingleSong />
+              <RelatedSongs />
+              <SidebarRight />
+          </div>
+        )
+    }
 }
 
 

@@ -6,7 +6,7 @@ import Moment from 'react-moment'
 import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
-import { toggleSong } from './actions/queue'
+import { toggleSong, togglePlayPause } from './actions/queue'
 
 class Song extends Component {
     constructor(props) {
@@ -19,6 +19,7 @@ class Song extends Component {
         this.state = {
             expanded: false
         }
+        this.updateStorePlayPause = this.updateStorePlayPause.bind(this)
     }
 
     onPressPlay(song) {
@@ -30,8 +31,13 @@ class Song extends Component {
                 sc_track_id,
             },
         } = song
-
+        // debugger
+        this.updateStorePlayPause(id !== this.props.currentlyPlayingSong)
         this.props.toggleSong(id)
+    }
+
+    updateStorePlayPause(newSong) {
+        this.props.togglePlayPause(newSong ? true : !this.props.isPlaying)
     }
 
     toggleDescription() {
@@ -183,6 +189,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     toggleSong: postId => dispatch(toggleSong(postId)),
+    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
 })
 
 export default connect(
