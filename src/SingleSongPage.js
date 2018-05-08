@@ -27,6 +27,7 @@ class SingleSongPage extends Component {
         return (
           <div className="singleSongPage page">
               <SingleSongContainer />
+              <RelatedSongs />
           </div>
         )
     }

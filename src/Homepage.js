@@ -25,7 +25,6 @@ class Homepage extends Component {
         return (
           <div>
              <div className="homeContainer">
-             <SocialLinks />
                     <SongsContainer />
                     {/*<SidebarRight />*/}
                  </div>

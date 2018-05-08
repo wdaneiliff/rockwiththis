@@ -121,27 +121,27 @@ class SingleSong extends Component {
                 </div>
                 <div className="postContent" >
 
-                <div className="topContentContainer">
+                <div>
                     <div className="songInfo">
-                    <p className="singleSongInfo">
-                        <span className="songName">{song.acf.song_name}</span>
+                    <div className="topSection">
+                    <div className='player-button'>
+                        <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" />
+                    </div>
+                    <div className="singleSongInfo">
+                        <span className="songName">{song.acf.song_name}</span><br />
                         <span className="artistName">{song.acf.artist_name}</span>
-                    </p>
-
+                    </div>
+                    <div className="singleSongLinks">
+                    <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" /></a>
+                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>    
+                    </div>
+                    </div>
                         <p className="metaInfo">
-                            <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
+                            <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> | </p>
                             {this.renderTags(song)}
                         </p>
                     </div>
                 </div>
-
-
-                    <div className="singlePostPlayerLinks">
-                        <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
-                        <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
-
-                        </a>
-                    </div>
                     {this.renderDescription()}
                 </div>
             </div>

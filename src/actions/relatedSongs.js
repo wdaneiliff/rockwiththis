@@ -20,7 +20,7 @@ export const fetchRelatedSongs = slug => (dispatch, getState) => {
         const tag1Songs = `https://rockwiththis.com/wp-json/wp/v2/songs?tags=${tag1}`
 
         fetch(tag1Songs).then(res => res.json()).then((res) => {
-            const relatedSongs = res.slice(0,3)
+            const relatedSongs = res.slice(1,7)
             console.log(relatedSongs)
 
             dispatch({

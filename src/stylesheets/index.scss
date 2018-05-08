@@ -3,7 +3,6 @@ $landing-height: calc(100vh - 220px);
 // LANDING PAGE STYLES
 
 body {
-  // font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
 }
@@ -13,9 +12,8 @@ p {
 }
 
 .page {
-  margin-top: 90px;
       max-width: 1685px;
-  margin: 90px auto 0
+  margin: 0px auto 50px;
 }
 
 
@@ -86,10 +84,10 @@ p {
 .socialLinks {
   background: #d8d8d8;
   height: 45px;
+  margin-top: 90px;
 }
 
 .homeContainer {
-  margin-top: 90px;
 
 
   .hero-posts {
@@ -465,6 +463,8 @@ p {
 .singleSongPage {
 
   .singleSongContainer {
+    width: 86%;
+    display: inline-block;
 
     .songContainer {
 
@@ -487,8 +487,84 @@ p {
           display: inline-block;
           vertical-align: top;
           padding: 25px;
+
+          .songInfo {
+
+            .singleSongInfo {
+
+              .songName {
+                font-weight: bold;
+                font-size: 28px;
+                display: inline-block;
+                margin-bottom: 5px;
+              }
+              .artistName {
+                font-size: 25px;
+                display: inline-block;
+                color: #545151;
+              }
+            }
+          }
+          .metaInfo {
+            margin-top: 15px !important;
+
+            .postDate, .postAuthor {
+              font-weight: bold;
+              font-size: 18px;
+            }
+          }
+
+          .songDescription {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+            line-height: 28px;
+            margin-top: 10px;
+
+          }
+          .player-button {
+              width: 10%;
+              display: inline-block;
+          }
+
+          .singleSongInfo {
+              width: auto;
+              display: inline-block;
+              max-width: 80%;
+          }
+
+          .singleSongLinks {
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 15px;
+
+            a {
+              margin: 0 10px;
+              font-size: 40px;
+
+              &.shareButton img {
+                  max-width: 30px;
+              }
+            }
+          }
       }
     }
+  }
+
+  .relatedSongs {
+    width: 14%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 25px;
+
+    .songImageLink {
+      img.songImage {
+      max-width: 100px;
+      margin: 0 !important;
+    }
+
+    }
+
   }
 }
 
@@ -1084,7 +1160,7 @@ p.leftInfo {
   cursor: pointer; }
 
 p.metaInfo {
-  padding-left: 5px;
+  // padding-left: 5px;
   margin: 0 !important; }
 //
 // .sidebarRight {
@@ -1117,12 +1193,12 @@ a.spotifyLink:hover {
   flex-basis: 70%;
   max-width: 70%; }
 
-.singlePostPlayerLinks {
-  flex-basis: 20%;
-  max-width: 20%; }
+// .singlePostPlayerLinks {
+//   flex-basis: 20%;
+//   max-width: 20%; }
 
-.singlePostPlayerLinks a {
-  margin: 0 10px; }
+// .singlePostPlayerLinks a {
+//   margin: 0 10px; }
 
 .sidebarRight .songName {
   margin-right: 5px; }
@@ -1230,8 +1306,7 @@ input[type="email"] {
   margin-bottom: 10px;
   display: inline-block; }
 
-.singlePostPlayerLinks {
-  text-align: right; }
+
 //
 // @media (max-width: 1100px) {
 //   p.postTitle {

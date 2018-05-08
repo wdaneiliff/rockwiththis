@@ -8,13 +8,9 @@ class RelatedSongs extends Component {
     renderRelatedSong(song, index) {
         return (
             <div className="songContainer" key={index}>
-                <img alt="songImage" className="songImage" src={song.better_featured_image.source_url} />
-                <div className="songInfo">
                   <Link className="songImageLink" to={`/songs/${song.id}`}>
-                    <span className="songName">{song.acf.song_name}</span> <br />
-                    </Link>
-                    <span className="artistName">{song.acf.artist_name}</span>
-                </div>
+                  <img alt="songImage" className="songImage" src={song.better_featured_image.source_url} />
+                  </Link>
             </div>
         )
     }
@@ -25,7 +21,6 @@ class RelatedSongs extends Component {
       const tagName = this.props.relatedSongs
       return (
             <div className="relatedSongs">
-              <p className="title">Similar Tracks</p>
               <div className="relatedSongsContainer">
               {relatedSongs}
             </div>
