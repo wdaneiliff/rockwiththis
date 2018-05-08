@@ -106,7 +106,7 @@ class MainPlayer extends Component {
                 <p className="artist-info">
                     <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
                         <span className="song-title">{currentlyPlayingSong.acf.song_name}</span>
-                    </Link>
+                    </Link> <br />
                     <span className="artist-title">{currentlyPlayingSong.acf.artist_name}</span>
                 </p>
             </div>

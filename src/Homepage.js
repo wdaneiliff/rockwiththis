@@ -24,9 +24,6 @@ class Homepage extends Component {
     render() {
         return (
           <div>
-              <SidebarFiltersWrapper
-                expanded={this.props.sidebarExpanded}
-              />
              <div className="homeContainer">
              <SocialLinks />
                     <SongsContainer />

@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { fetchSingleSong } from './actions/singleSong'
 import { fetchRelatedSongs } from './actions/relatedSongs'
 import { fetchFeaturedPosts } from './actions/featuredPosts'
+import SocialLinks from './SocialLinks'
 import SingleSongContainer from './SingleSongContainer'
 import SidebarRight from './SidebarRight'
 import RelatedSongs from './RelatedSongs'
@@ -24,7 +25,7 @@ class SingleSongPage extends Component {
         }
 
         return (
-          <div className="singleSongPage">
+          <div className="singleSongPage page">
               <SingleSongContainer />
           </div>
         )

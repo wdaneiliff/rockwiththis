@@ -85,16 +85,7 @@ class SingleSong extends Component {
                 >
                     {playPauseButton}
                 </button>
-                <p className="singlePostPlayerInfo">
-                    <span className="songName">{song.acf.song_name}</span>
-                    <span className="artistName">{song.acf.artist_name}</span>
-                </p>
-                <div className="singlePostPlayerLinks">
-                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
-                    <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
 
-                    </a>
-                </div>
             </div>
         )
     }
@@ -105,21 +96,6 @@ class SingleSong extends Component {
               <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
                   <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
               </div>
-        )
-    }
-
-    renderTop() {
-        const { song } = this.props
-        return (
-            <div className="topContentContainer">
-                <div className="songInfo">
-                    <Link className="postTitleLink" to={`/songs/${song.id}`}><p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} /></Link>
-                    <p className="metaInfo">
-                        <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
-                        {this.renderTags(song)}
-                    </p>
-                </div>
-            </div>
         )
     }
 
@@ -144,16 +120,29 @@ class SingleSong extends Component {
                   <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>
                 <div className="postContent" >
-                    {this.renderTop()}
-                    {this.renderPlayer()}
-                    {this.renderDescription()}
-                    <p onClick={this.toggleDescription} className="toggleDescription">
-                        { !this.state.expanded ? (
-                            <p><Icon name="angle-double-down" /></p>
-                        ) : (
-                            <p><Icon name="angle-double-up" /></p>
-                        ) }
+
+                <div className="topContentContainer">
+                    <div className="songInfo">
+                    <p className="singleSongInfo">
+                        <span className="songName">{song.acf.song_name}</span>
+                        <span className="artistName">{song.acf.artist_name}</span>
                     </p>
+
+                        <p className="metaInfo">
+                            <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
+                            {this.renderTags(song)}
+                        </p>
+                    </div>
+                </div>
+
+
+                    <div className="singlePostPlayerLinks">
+                        <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                        <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
+
+                        </a>
+                    </div>
+                    {this.renderDescription()}
                 </div>
             </div>
         )

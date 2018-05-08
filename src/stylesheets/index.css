@@ -5,6 +5,11 @@ body {
 p {
   margin: 0; }
 
+.page {
+  margin-top: 90px;
+  max-width: 1685px;
+  margin: 90px auto 0; }
+
 .headerContainer {
   height: 90px;
   background: linear-gradient(to right, #1e0c49, #0097d5);
@@ -54,11 +59,12 @@ p {
     max-height: none !important;
     max-width: none !important; } }
 
+.socialLinks {
+  background: #d8d8d8;
+  height: 45px; }
+
 .homeContainer {
   margin-top: 90px; }
-  .homeContainer .socialLinks {
-    background: #d8d8d8;
-    height: 45px; }
   .homeContainer .hero-posts {
     width: 100vw;
     white-space: nowrap;
@@ -290,6 +296,8 @@ p {
     float: left;
     margin-left: 0px;
     margin-bottom: 8px !important; }
+    .footer-player .artist-info br {
+      display: none; }
     .footer-player .artist-info a.songImageLink {
       text-decoration: none;
       display: block; }
@@ -305,6 +313,25 @@ p {
 
 .footer-player {
   background: #282828 !important; }
+  .footer-player .artist-info a.songImageLink {
+    text-decoration: none; }
+
+.singleSongPage .singleSongContainer .songContainer .imageContainer {
+  width: 40vw;
+  display: inline-block;
+  max-height: 674px;
+  max-width: 674px; }
+  .singleSongPage .singleSongContainer .songContainer .imageContainer img {
+    width: 100%;
+    height: 100%;
+    max-height: 674px;
+    max-width: 674px; }
+
+.singleSongPage .singleSongContainer .songContainer .postContent {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 25px; }
 
 @font-face {
   font-family: 'Sharp-Sans';
