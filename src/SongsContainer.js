@@ -8,14 +8,14 @@ import VisibilitySensor from 'react-visibility-sensor'
 import { Icon } from 'react-fa'
 import HeroPosts from './HeroPosts'
 import { toggleSong } from './actions/queue'
-import Song from './Song'
+import SongGrid from './SongGrid'
 
 
 class SongsContainer extends Component {
     constructor(props) {
         super(props)
 
-        this.renderSong = this.renderSong.bind(this)
+        this.renderSongGrid = this.renderSongGrid.bind(this)
 
         this.songs = {}
     }
@@ -30,10 +30,10 @@ class SongsContainer extends Component {
     }
 
 
-    renderSong(song, index) {
+    renderSongGrid(song, index) {
 
         return (
-            <Song
+            <SongGrid
                 key={`${song.id}`}
                 ref={(ref) => { this.songs[song.id] = ref }}
                 song={song}
@@ -44,15 +44,21 @@ class SongsContainer extends Component {
     render() {
         const heroPosts = this.props.posts.slice(0,7)
 
-        const posts = this.props.posts.slice(7).map(this.renderSong)
+        const songGrid = this.props.posts.slice(7).map(this.renderSongGrid)
+        // const posts = this.props.posts.map(this.renderSong)
 
         return (
             <div className="songsContainer clearfix">
                 <HeroPosts
                     posts={heroPosts}
                 />
+            <div className="discovery-section">
+              <div className="songGrid">
+                {songGrid}
+              </div>
+            </div>
 
-                {posts}
+
 
             </div>
         )
