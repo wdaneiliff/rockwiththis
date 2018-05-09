@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import moment from 'moment'
 import Song from './Song'
+import SingleSong from './SingleSong'
+
 
 class HeroPosts extends React.Component {
     constructor(props) {
@@ -17,6 +19,15 @@ class HeroPosts extends React.Component {
             acf: {
                 song_name: 'Loading (feat. Slow App)',
                 artist_name: 'React'
+            },
+            content: {
+              rendered: 'Loading Description...'
+            },
+            _embedded: {
+              'wp:term': [
+                {name: "tag"},
+                {name:"tag"}
+              ]
             }
         }
 
@@ -54,7 +65,7 @@ class HeroPosts extends React.Component {
         const { posts } = this.props || [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
         const featuredPostArg = posts[0] || placeholderSong
         const featuredPost = trackDisplay(featuredPostArg, false)
-
+        console.log(featuredPostArg)
         const otherPosts = posts.slice(1).map((post, i) => trackDisplay(post, i, true))
 
         return (
@@ -64,6 +75,9 @@ class HeroPosts extends React.Component {
                     <div className='previous-week'>
                         {otherPosts}
                     </div>
+                </div>
+                <div className="song-of-day-description">
+                <SingleSong song={featuredPostArg} />
                 </div>
             </div>
         )
