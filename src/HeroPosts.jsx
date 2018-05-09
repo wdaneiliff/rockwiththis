@@ -65,7 +65,6 @@ class HeroPosts extends React.Component {
         const { posts } = this.props || [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
         const featuredPostArg = posts[0] || placeholderSong
         const featuredPost = trackDisplay(featuredPostArg, false)
-        console.log(featuredPostArg)
         const otherPosts = posts.slice(1).map((post, i) => trackDisplay(post, i, true))
 
         return (

@@ -16,6 +16,7 @@ background: #fff;
 
 body {
   background: linear-gradient(to right, #1e0c49, #0097d5);
+  padding-bottom: 75px !important;
 }
 .songsContainer {
   background: #fff;
@@ -605,7 +606,7 @@ p {
 
     .song-of-day-description {
       padding-bottom: 50px;
-      
+
       .imageContainer {
         width: 40vw;
         display: inline-block;
@@ -708,6 +709,26 @@ p {
 
 
 
+// DISCOVERY SECTION
+
+// SONG GRID
+.discovery-section {
+  .songGrid {
+      width: 40%;
+      display: inline-block;
+
+      .songContainer {
+        width: 25%;
+        display: inline-block;
+        .imageContainer {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+  }
+}
 
 
 

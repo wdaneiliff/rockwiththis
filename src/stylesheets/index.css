@@ -7,7 +7,8 @@ body {
   background: #fff; }
 
 body {
-  background: linear-gradient(to right, #1e0c49, #0097d5); }
+  background: linear-gradient(to right, #1e0c49, #0097d5);
+  padding-bottom: 75px !important; }
 
 .songsContainer {
   background: #fff; }
@@ -461,6 +462,17 @@ p {
     max-width: 75px;
     margin: 0 !important;
     border-radius: 6px; }
+
+.discovery-section .songGrid {
+  width: 40%;
+  display: inline-block; }
+  .discovery-section .songGrid .songContainer {
+    width: 25%;
+    display: inline-block; }
+    .discovery-section .songGrid .songContainer .imageContainer {
+      width: 100%; }
+      .discovery-section .songGrid .songContainer .imageContainer img {
+        width: 100%; }
 
 @font-face {
   font-family: 'Sharp-Sans';
