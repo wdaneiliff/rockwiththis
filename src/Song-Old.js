@@ -71,9 +71,9 @@ class Song extends Component {
         } = this.props
 
         const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
-            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/pause.png" className="pauseButton" />
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
         ) : (
-            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
+            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
         )
 
 
@@ -85,7 +85,16 @@ class Song extends Component {
                 >
                     {playPauseButton}
                 </button>
+                <p className="singlePostPlayerInfo">
+                    <span className="songName">{song.acf.song_name}</span>
+                    <span className="artistName">{song.acf.artist_name}</span>
+                </p>
+                <div className="singlePostPlayerLinks">
+                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                    <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
 
+                    </a>
+                </div>
             </div>
         )
     }
@@ -104,8 +113,11 @@ class Song extends Component {
         return (
             <div className="topContentContainer">
                 <div className="songInfo">
-                    <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
-                    <span className="artistName">{song.acf.artist_name}</span>
+                    <Link className="postTitleLink" to={`/songs/${song.id}`}><p className="postTitle" dangerouslySetInnerHTML={{ __html: song.title.rendered }} /></Link>
+                    <p className="metaInfo">
+                        <p className="leftInfo"><span>By </span><span className="postAuthor">Jared Paul</span> | <span className="postDate"><Moment format="ll" date={song.date} /> | </span></p>
+                        {this.renderTags(song)}
+                    </p>
                 </div>
             </div>
         )
@@ -129,17 +141,22 @@ class Song extends Component {
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
                 <div className="imageContainer">
+                    <div className="songImageButton clearfix" onClick={() => this.onPressPlay(song)}>
+                      {imagePlayPauseButton}
                         <img className="songImage" src={song.better_featured_image.source_url} />
+                    </div>
                 </div>
                 <div className="postContent" >
-                  {this.renderPlayer()}
                     {this.renderTop()}
-                    <p className="metaInfo">
-                        <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span></p>
-                        {this.renderTags(song)}
-                    </p>
+                    {this.renderPlayer()}
                     {this.renderDescription()}
-
+                    <p onClick={this.toggleDescription} className="toggleDescription">
+                        { !this.state.expanded ? (
+                            <p><Icon name="angle-double-down" /></p>
+                        ) : (
+                            <p><Icon name="angle-double-up" /></p>
+                        ) }
+                    </p>
                 </div>
             </div>
         )
