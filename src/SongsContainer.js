@@ -9,6 +9,7 @@ import { Icon } from 'react-fa'
 import HeroPosts from './HeroPosts'
 import { toggleSong } from './actions/queue'
 import SongGrid from './SongGrid'
+import Song from './Song'
 
 
 class SongsContainer extends Component {
@@ -16,6 +17,7 @@ class SongsContainer extends Component {
         super(props)
 
         this.renderSongGrid = this.renderSongGrid.bind(this)
+        this.renderSongList = this.renderSongList.bind(this)
 
         this.songs = {}
     }
@@ -40,11 +42,21 @@ class SongsContainer extends Component {
             />
         )
     }
+    renderSongList(song, index) {
+        return (
+            <Song
+                key={`${song.id}`}
+                ref={(ref) => { this.songs[song.id] = ref }}
+                song={song}
+            />
+        )
+    }
 
     render() {
         const heroPosts = this.props.posts.slice(0,7)
 
         const songGrid = this.props.posts.slice(7).map(this.renderSongGrid)
+        const songList = this.props.posts.slice(7).map(this.renderSongList)
         // const posts = this.props.posts.map(this.renderSong)
 
         return (
@@ -53,8 +65,12 @@ class SongsContainer extends Component {
                     posts={heroPosts}
                 />
             <div className="discovery-section">
+            <div className="filterBar"></div>
               <div className="songGrid">
                 {songGrid}
+              </div>
+              <div className="songList">
+                {songList}
               </div>
             </div>
 
