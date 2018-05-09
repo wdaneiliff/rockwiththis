@@ -62,6 +62,19 @@ class SingleSong extends Component {
             </span>
         )
     }
+    renderShareBox() {
+        const {
+            song,
+        } = this.props
+
+
+        return (
+          <div className="singleSongLinks">
+          <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" /></a>
+          <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
+          </div>
+        )
+    }
 
     renderPlayer() {
         const {
@@ -131,14 +144,10 @@ class SingleSong extends Component {
                         <span className="songName">{song.acf.song_name}</span><br />
                         <span className="artistName">{song.acf.artist_name}</span>
                     </div>
-                    <div className="singleSongLinks">
-                    <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" /></a>
-                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>    
-                    </div>
                     </div>
                         <p className="metaInfo">
                             <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> | </p>
-                            {this.renderTags(song)}
+                            | <span className="BPM">BPM</span>
                         </p>
                     </div>
                 </div>

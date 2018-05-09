@@ -43,13 +43,17 @@ class SongsContainer extends Component {
 
     render() {
         const heroPosts = this.props.posts.slice(0,7)
+
         const posts = this.props.posts.slice(7).map(this.renderSong)
+
         return (
             <div className="songsContainer clearfix">
                 <HeroPosts
                     posts={heroPosts}
                 />
-                
+
+                {posts}
+
             </div>
         )
     }
