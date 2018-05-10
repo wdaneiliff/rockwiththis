@@ -10,7 +10,7 @@ body {
 
 // EXPERIMENT *****
 .hero-posts {
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 background: #fff;
 }
 
@@ -605,9 +605,20 @@ p {
 
 
     .song-of-day-description {
+      background: #fafafa;
+      padding: 50px 25px;
+
+      .wrapper {
+        text-align: center;
+      }
+
+      .songContainer{
+        width: 80%;
+        margin: 0px auto;
+      }
 
       .imageContainer {
-        width: 40vw;
+        width: 40%;
         display: inline-block;
         max-height: 674px;
         max-width: 674px;
@@ -621,30 +632,37 @@ p {
       }
 
       .postContent {
-          width: 45%;
+          width: 55%;
           display: inline-block;
           vertical-align: top;
           padding: 25px;
+              max-width: 600px;
 
           .songInfo {
 
             .singleSongInfo {
+              text-align: left;
 
               .songName {
                 font-weight: bold;
                 font-size: 28px;
                 display: inline-block;
                 margin-bottom: 5px;
+                text-align: left;
               }
               .artistName {
                 font-size: 25px;
                 display: inline-block;
                 color: #545151;
+                text-align: left;
+
               }
             }
           }
           .metaInfo {
             margin-top: 15px !important;
+            text-align: left;
+
 
             .postDate, .postAuthor {
               font-weight: bold;
@@ -657,6 +675,8 @@ p {
             font-size: 17px;
             line-height: 28px;
             margin-top: 10px;
+            text-align: left;
+
 
           }
           .player-button {
@@ -669,6 +689,10 @@ p {
               display: inline-block;
               max-width: 88%;
               width: 88%;
+
+              .songName, .artistName {
+                padding-left: 10px;
+              }
           }
 
           .singleSongLinks {
