@@ -168,7 +168,7 @@ class MainPlayer extends Component {
     renderShareButtons() {
         return (
             <div className="songSourceContainer">
-                <i className="fa fa-soundcloud" aria-hidden="true" />
+                <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/soundcloud.png" />
             </div>
         )
     }

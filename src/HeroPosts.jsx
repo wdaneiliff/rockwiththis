@@ -55,6 +55,7 @@ class HeroPosts extends React.Component {
                                 <p className="song-title">{title}</p>
                                 <p className="song-artist">{artist}</p>
                             </div>
+
                                 <HeroSong song={post} />
                         </div>
                     </div>
