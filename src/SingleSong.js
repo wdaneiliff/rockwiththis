@@ -129,6 +129,7 @@ class SingleSong extends Component {
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
+            <div classname="wrapper">
                 <div className="imageContainer">
                   <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>
@@ -154,6 +155,7 @@ class SingleSong extends Component {
                     {this.renderDescription()}
                 </div>
             </div>
+          </div>
         )
     }
 }
