@@ -40,9 +40,11 @@ p {
 
 .page {
       max-width: 1685px;
-  margin: 0px auto 50px;
+  margin: 0px auto;
   background: #fff;
 }
+
+
 
 
 
@@ -127,6 +129,8 @@ p {
     height: calc(40vw - 3px);
     margin: 0 auto;
 
+
+
     .post-square-wrapper.date {
       position: absolute;
       top: 0;
@@ -168,6 +172,16 @@ p {
       display: inline-block;
       max-height: 674px;
       max-width: 674px;
+
+      .pauseButton, .playButton {
+        max-width: 48px !important;
+        max-height: 48px !important;
+      }
+
+      .heroSongPlayerButton {
+        width: 80%;
+        height: 80%;
+      }
     }
     .previous-week {
       max-height: 674px;
@@ -185,6 +199,17 @@ p {
       height: 20vw;
       display: inline-block;
       vertical-align: top;
+
+
+      .pauseButton, .playButton {
+        width: 40px !important;
+        height: 40px !important;
+      }
+
+      .heroSongPlayerButton {
+        width: 80%;
+        height: 80%;
+      }
       .feature-track {
         width: calc(100% - 2px);
         height: calc(100% - 2px);
@@ -552,6 +577,11 @@ p {
           .player-button {
               width: 12%;
               display: inline-block;
+
+              img {
+                width: 60px;
+                height: 60px;
+              }
           }
 
           .singleSongInfo {
@@ -682,6 +712,11 @@ p {
           .player-button {
               width: 12%;
               display: inline-block;
+
+              img {
+                width: 60px;
+                height: 60px;
+              }
           }
 
           .singleSongInfo {
@@ -851,6 +886,11 @@ button {
     border-style: none;
     border-width: 0px;
     padding: 0;
+    background: none !important;
+}
+
+button:focus {
+      outline: none !important;
 }
 
 
@@ -869,6 +909,14 @@ body {
       line-height: 26px;
   }
 
+
+.songSourceContainer {
+
+  img {
+    width: 75px;
+margin-right: 15px;
+  }
+}
 /*MainPlayer*/
 @media (max-width: 1000px) {
   .rc-slider .rc-slider-track {

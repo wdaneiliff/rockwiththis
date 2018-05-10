@@ -71,7 +71,7 @@ class Song extends Component {
         } = this.props
 
         const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
-            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/pause.png" className="pauseButton" />
+            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
         )
@@ -119,12 +119,6 @@ class Song extends Component {
         } = this.props
 
         const { height } = this.state
-
-        const imagePlayPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
-        ) : (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
-        )
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
