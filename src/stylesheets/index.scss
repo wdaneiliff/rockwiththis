@@ -127,6 +127,8 @@ p {
     height: calc(40vw - 3px);
     margin: 0 auto;
 
+
+
     .post-square-wrapper.date {
       position: absolute;
       top: 0;
@@ -168,6 +170,16 @@ p {
       display: inline-block;
       max-height: 674px;
       max-width: 674px;
+
+      .pauseButton, .playButton {
+        max-width: 48px !important;
+        max-height: 48px !important;
+      }
+
+      .heroSongPlayerButton {
+        width: 80%;
+        height: 80%;
+      }
     }
     .previous-week {
       max-height: 674px;
@@ -185,6 +197,17 @@ p {
       height: 20vw;
       display: inline-block;
       vertical-align: top;
+
+
+      .pauseButton, .playButton {
+        width: 40px !important;
+        height: 40px !important;
+      }
+
+      .heroSongPlayerButton {
+        width: 80%;
+        height: 80%;
+      }
       .feature-track {
         width: calc(100% - 2px);
         height: calc(100% - 2px);
@@ -851,6 +874,11 @@ button {
     border-style: none;
     border-width: 0px;
     padding: 0;
+    background: none !important;
+}
+
+button:focus {
+      outline: none !important;
 }
 
 

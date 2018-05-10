@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import moment from 'moment'
 import Song from './Song'
 import SingleSong from './SingleSong'
+import HeroSong from './HeroSong'
 
 
 class HeroPosts extends React.Component {
@@ -54,9 +55,7 @@ class HeroPosts extends React.Component {
                                 <p className="song-title">{title}</p>
                                 <p className="song-artist">{artist}</p>
                             </div>
-                            <div className='post-square-wrapper play'>
-                                <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" />
-                            </div>
+                                <HeroSong song={post} />
                         </div>
                     </div>
                 </div>

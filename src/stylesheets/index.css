@@ -123,6 +123,12 @@ p {
     display: inline-block;
     max-height: 674px;
     max-width: 674px; }
+    .homeContainer .hero-posts .featured-track-wrapper .pauseButton, .homeContainer .hero-posts .featured-track-wrapper .playButton {
+      max-width: 48px !important;
+      max-height: 48px !important; }
+    .homeContainer .hero-posts .featured-track-wrapper .heroSongPlayerButton {
+      width: 80%;
+      height: 80%; }
   .homeContainer .hero-posts .previous-week {
     max-height: 674px;
     width: 60%;
@@ -138,6 +144,12 @@ p {
     height: 20vw;
     display: inline-block;
     vertical-align: top; }
+    .homeContainer .hero-posts .less-featured-track-wrapper .pauseButton, .homeContainer .hero-posts .less-featured-track-wrapper .playButton {
+      width: 40px !important;
+      height: 40px !important; }
+    .homeContainer .hero-posts .less-featured-track-wrapper .heroSongPlayerButton {
+      width: 80%;
+      height: 80%; }
     .homeContainer .hero-posts .less-featured-track-wrapper .feature-track {
       width: calc(100% - 2px);
       height: calc(100% - 2px);
@@ -557,7 +569,11 @@ button {
   border-color: none;
   border-style: none;
   border-width: 0px;
-  padding: 0; }
+  padding: 0;
+  background: none !important; }
+
+button:focus {
+  outline: none !important; }
 
 body {
   margin: 0;
