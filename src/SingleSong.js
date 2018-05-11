@@ -7,6 +7,7 @@ import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
+import ShareBox from './ShareBox'
 
 class SingleSong extends Component {
     constructor(props) {
@@ -136,6 +137,7 @@ class SingleSong extends Component {
                         <span className="songName">{song.acf.song_name}</span><br />
                         <span className="artistName">{song.acf.artist_name}</span>
                     </div>
+                    <ShareBox />
                     </div>
                         <p className="metaInfo">
                             <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> | </p>
