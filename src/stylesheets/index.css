@@ -346,6 +346,16 @@ p {
   .footer-player .artist-info a.songImageLink {
     text-decoration: none; }
 
+.ShareBox a {
+  margin: 10px; }
+
+.SocialMediaShareButton {
+  display: inline-block;
+  margin: 10px; }
+
+.SocialMediaShareButton:hover {
+  cursor: pointer; }
+
 .singleSongPage .singleSongContainer {
   width: 86%;
   display: inline-block; }

@@ -22,6 +22,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-scripts": "0.9.5",
+    "react-share": "^2.1.1",
     "react-visibility-sensor": "^3.11.0",
     "react-youtube": "^7.5.0",
     "readmore": "0.0.2",
