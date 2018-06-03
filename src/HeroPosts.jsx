@@ -51,12 +51,13 @@ class HeroPosts extends React.Component {
 
                         <div className="post-info">
                         {!isSmall && <span className="song-of-day-tag">Song of the day</span>}
+                            <HeroSong song={post} />
                             <div className="song-info">
                                 <p className="song-title">{title}</p>
                                 <p className="song-artist">{artist}</p>
                             </div>
 
-                                <HeroSong song={post} />
+
                         </div>
                     </div>
                 </div>
@@ -75,9 +76,7 @@ class HeroPosts extends React.Component {
                         {otherPosts}
                     </div>
                 </div>
-                <div className="song-of-day-description">
-                <SingleSong song={featuredPostArg} />
-                </div>
+
             </div>
         )
     }

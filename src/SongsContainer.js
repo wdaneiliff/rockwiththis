@@ -65,7 +65,6 @@ class SongsContainer extends Component {
                     posts={heroPosts}
                 />
             <div className="discovery-section">
-            <div className="filterBar"></div>
 
               <div className="songGrid">
                 {songGrid}
