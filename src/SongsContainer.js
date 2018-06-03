@@ -58,7 +58,7 @@ class SongsContainer extends Component {
         // const songGrid = this.props.posts.slice(7).map(this.renderSongGrid)
         const songGrid = this.props.posts.map(this.renderSongGrid)
         // const songList = this.props.posts.slice(7).map(this.renderSongList)
-        const songList = this.props.posts.slice(0,1).map(this.renderSongList)
+        const songList = this.props.posts.map(this.renderSongList)
         // const posts = this.props.posts.map(this.renderSong)
 
         return (

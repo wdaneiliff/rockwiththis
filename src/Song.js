@@ -63,7 +63,7 @@ class Song extends Component {
         )
     }
 
-    renderPlayer() {
+    renderTop() {
         const {
             song,
             currentlyPlayingSong,
@@ -78,38 +78,41 @@ class Song extends Component {
 
 
         return (
-            <div className="singlePostPlayer">
-                <button
-                    className="singlePostPlayerButton"
-                    onClick={() => this.onPressPlay(song)}
-                >
-                    {playPauseButton}
-                </button>
 
-            </div>
-        )
-    }
+            <div className="topContentContainer">
+              <div className="singlePostPlayer">
+                  <button
+                      className="singlePostPlayerButton"
+                      onClick={() => this.onPressPlay(song)}
+                  >
+                      {playPauseButton}
+                  </button>
 
-    renderDescription() {
-        const { song } = this.props
-        return (
+              </div>
+
+              <div className="songInfo">
+                  <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
+                    <span className="artistName">{song.acf.artist_name}</span>
+              </div>
+              <p className="metaInfo">
+                  <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span></p>
+                  {this.renderTags(song)}
+              </p>
               <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
                   <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
               </div>
-        )
-    }
-
-    renderTop() {
-        const { song } = this.props
-        return (
-            <div className="topContentContainer">
-                <div className="songInfo">
-                    <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
-                    <span className="artistName">{song.acf.artist_name}</span>
-                </div>
             </div>
         )
     }
+
+    // renderDescription() {
+    //     const { song } = this.props
+    //     return (
+    //           <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
+    //               <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
+    //           </div>
+    //     )
+    // }
 
     render() {
         const {
@@ -123,20 +126,14 @@ class Song extends Component {
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
             <div className="wrapper">
+                <div className="postContent" >
                 <div className="imageContainer">
                         <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>
-                <div className="postContent" >
-                  {this.renderPlayer()}
                     {this.renderTop()}
-                    <p className="metaInfo">
-                        <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span></p>
-                        {this.renderTags(song)}
-                    </p>
-                    {this.renderDescription()}
-
                 </div>
             </div>
+            <hr />
             </div>
         )
     }

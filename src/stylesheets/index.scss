@@ -559,7 +559,7 @@ $discovery-parallax-padding: calc(100vw + 115px);
     z-index: 2 !important;
     top: 70px;
   }
-  
+
   .discovery-section {
     position: relative;
     z-index: 1000;
@@ -906,17 +906,17 @@ margin: 10px;
           }
       }
       .songList {
-        width: calc(60% - 50px);
-        display: inline-block;
-        overflow: scroll;
-        background: #fff;
+        // width: calc(60% - 50px);
+        // display: inline-block;
+        // overflow: scroll;
+        // background: #fff;
       }
 
       .songList .songContainer {
-          height: 200px;
-          margin-bottom: 25px;
-          display: inline-block;
-          vertical-align: top;
+          // height: 200px;
+          // margin-bottom: 25px;
+          // display: inline-block;
+          // vertical-align: top;
 
           .postContent {
             display: inline-block;
@@ -999,77 +999,131 @@ margin: 10px;
           display: inline-block;
           background: #fff;
           vertical-align: top;
+          padding-top: 15px;
         }
 
         .songList .songContainer {
-            height: 200px;
-            margin-bottom: 25px;
             display: inline-block;
             vertical-align: top;
+            padding: 0 0;
+
+            hr {
+              width: 95%;
+              border-style: solid;
+              border-width: 1px;
+              height: 1px;
+              background: #C9C6CB;
+              border: 0;
+              margin: 15px auto;
+                  margin-top: 12px;
+            }
 
             .postContent {
               display: inline-block;
-              width: 50%;
-              height: 200px;
-              overflow: hidden;
+              width: calc(100%);
+              height: auto;
 
 
               p.metaInfo {
-                margin-top: 10px !important;
+                margin-top: 10px;
+                width: calc(100% - 150px);
             }
 
               .playButton, .pauseButton {
-                width: 60px;
-                height: 60px;
+                width: 40px;
+                height: 40px;
                }
                button:focus {
                     outline: none;
                 }
 
               .singlePostPlayer {
-                  width: 60px;
+                  width: 40px;
                   display: inline-block;
                   text-align: left;
               }
 
               .topContentContainer {
                   display: inline-block;
-                  width: calc(100% - 70px);
+                  width: calc(100% - 135px);
                   vertical-align: top;
                   height: auto;
-                  padding-left: 10px;
+                  padding-left: 0px;
+
+                  .songInfo {
+                      width: calc(100% - 40px);
+                      display: inline-block;
+                  }
+
+                  .metaInfo {
+                    width: 100%;
+                    display: inline-block;
+                    margin-left: 5px !important;
+                    margin-top: 0px !important;
+                        margin-top: 3px !important;
+
+                    p.leftInfo {
+                        display: inline-block;
+                        margin: 0;
+                        margin-bottom: 5px;
+                        margin-right: 0px;
+
+                        .postDate {
+                          font-size: 12px;
+                        }
+                    }
+
+                    .postTags {
+                        display: inline-block;
+                        margin: 0;
+
+                        .tag {
+                          border: 0px solid #f1782d !important;
+                          margin: 0;
+                          margin-left: 3px;
+                          padding: 0px;
+                          transition: all .3s ease;
+                          color: #f1782d !important;
+                          background: #fff !important;
+                          font-size: 10px;
+                      }
+                    }
+                  }
               }
 
               a.postTitleLink {
                   text-decoration: none;
                   color: black;
                   font-weight: bold;
-                  font-size: 24px;
-                  line-height: 34px;
+                  font-size: 14px;
+                  line-height: 20px;
               }
 
               .artistName {
                 color: #545151;
-                font-size: 18px;
+                font-size: 14px;
               }
 
               p.songDescription {
-                  font-family: 'Open Sans', sans-serif;
-                  font-size: 17px;
-                  line-height: 28px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 10px;
+                line-height: 20px;
+                max-height: 55px;
+                padding: 5px;
+                margin-top: -5px;
               }
 
             }
 
             .imageContainer {
-                max-height: 200px;
+                max-height: 130px;
                 display: inline-block;
                 vertical-align: top;
-                padding-right: 25px;
+                padding-right: 5px;
 
 
                 img {
-                  max-height: 200px;
+                  max-height: 130px;
                   border-radius: 4px;
                 }
             }
