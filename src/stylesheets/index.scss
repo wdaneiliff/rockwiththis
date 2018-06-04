@@ -1583,14 +1583,11 @@ a.shareButton:hover img {
 
 a.spotifyLink {
   /* margin-left: 10px; */
-  font-size: 24px;
+  font-size: 45px;
   color: #6AE368;
-  transition: all .3s ease; }
-
-a.spotifyLink:hover {
-  /* margin-left: 10px; */
-  font-size: 24px;
-  color: green; }
+  transition: all .3s ease;
+  margin-top: -5px;
+}
 
 .tag {
   text-decoration: none;
@@ -1624,6 +1621,13 @@ a.spotifyLink:hover {
   .filters-bar {
         max-width: 1685px;
         margin: 0 auto;
+
+        .toggle-view {
+          height: 30px;
+          img {
+            height: 30px;
+          }
+        }
   }
 
   .headerContainer {
@@ -1674,5 +1678,118 @@ a.spotifyLink:hover {
       display: inline-block;
       vertical-align: top;
     }
+
+    .discover-full-song {
+      width: calc(60% - 70px);
+      display: inline-block;
+      height: calc(100vh - 145px);
+      padding-left: 35px;
+      padding-right: 35px;
+
+      .ShareBox {
+        display: block;
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+
+
+
+        .shareButton {
+          display: none;
+
+          a.spotifyLink {
+              font-size: 45px;
+              color: #6AE368;
+              transition: all .3s ease;
+              font-size: 45px !important;
+              display: block;
+
+          }
+        }
+      }
+
+    .songContainer {
+      height: calc(100vh - 145px);
+
+      .imageContainer {
+        width: 30%;
+        float: left;
+        padding-right: 15px;
+
+        img {
+          width: 100%;
+          border-radius: 4px;
+        }
+      }
+
+      .topContentContainer {
+
+
+          .singlePostPlayer {
+            display: inline-block;
+            padding-right: 5px;
+          }
+
+          .songInfo {
+            display: inline-block;
+            vertical-align: top;
+            // padding-top: 10px;
+
+            a.postTitleLink {
+                font-size: 24px;
+                line-height: 34px;
+                text-decoration: none;
+                color: black;
+            }
+
+          }
+
+          .metaInfo {
+
+            span.artistName {
+                font-size: 22px;
+                line-height: 32px;
+                color: #545151;
+            }
+
+            span.postDate {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .tag {
+                border: 2px solid #f1782d !important;
+                margin: 0 3px;
+                padding: 4px 6px;
+                border-radius: 8px;
+                transition: all .3s ease;
+                color: #f1782d !important;
+                background: #fff !important;
+                font-size: 14px;
+            }
+          }
+
+        .songDescription {
+            font-size: 16px;
+            line-height: 28px;
+            font-weight: 100 !important;
+        }
+      }
+
+      hr {
+        display: none;
+      }
+    }
+    }
 }
+}
+
+
+.songDescription {
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 100;
+}
+
+.ShareBox {
+  display: none;
 }

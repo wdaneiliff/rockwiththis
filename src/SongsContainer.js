@@ -10,6 +10,7 @@ import HeroPosts from './HeroPosts'
 import { toggleSong } from './actions/queue'
 import SongGrid from './SongGrid'
 import Song from './Song'
+import ShareBox from './ShareBox'
 
 
 class SongsContainer extends Component {
@@ -59,6 +60,8 @@ class SongsContainer extends Component {
         const songGrid = this.props.posts.map(this.renderSongGrid)
         // const songList = this.props.posts.slice(7).map(this.renderSongList)
         const songList = this.props.posts.map(this.renderSongList)
+
+        const discoverFullSong = this.props.posts.slice(0,1).map(this.renderSongList)
         // const posts = this.props.posts.map(this.renderSong)
 
         return (
@@ -86,6 +89,9 @@ class SongsContainer extends Component {
                 </div>
                 <div className="songList">
                   {songList}
+                </div>
+                <div className="discover-full-song">
+                {discoverFullSong}
                 </div>
               </div>
 

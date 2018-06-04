@@ -7,6 +7,7 @@ import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
+import ShareBox from './ShareBox'
 
 class Song extends Component {
     constructor(props) {
@@ -134,6 +135,8 @@ class Song extends Component {
                 </div>
             </div>
             <hr />
+              <ShareBox props={song.slug} />
+
             </div>
         )
     }
