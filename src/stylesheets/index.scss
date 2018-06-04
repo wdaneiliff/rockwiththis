@@ -1158,6 +1158,7 @@ margin: 10px;
                   .songInfo {
                       width: calc(100% - 40px);
                       display: inline-block;
+                          vertical-align: top;
                   }
 
                   .metaInfo {
@@ -1669,22 +1670,30 @@ a.spotifyLink {
 
 
     .songGrid {
-      width: 40%;
-    // height: 40vw;
-    display: inline-block;
-    max-height: 674px;
-    // max-width: 674px;
+      width: calc( 40% - 35px);
+      display: inline-block;
+      max-height: 674px;
       padding: 0px;
       display: inline-block;
       vertical-align: top;
+      padding-left: 35px;
+
+      .songContainer {
+        width: calc(25% - 2px);
+        display: inline-block;
+        margin: 1px;
+        margin-top: -3px;
+      }
     }
 
     .discover-full-song {
-      width: calc(60% - 70px);
+      width: calc(46% - 0px);
       display: inline-block;
       height: calc(100vh - 145px);
-      padding-left: 35px;
-      padding-right: 35px;
+      padding-left: 7%;
+      padding-right: 7%;
+      margin: 0 auto;
+      left: 50%;
 
       .ShareBox {
         display: block;
@@ -1792,4 +1801,109 @@ a.spotifyLink {
 
 .ShareBox {
   display: none;
+}
+
+
+@media(max-width: 800px) {
+  a.nav-link {
+    display: none;
+  }
+
+  .singleSongPage.page {
+
+    .relatedSongs {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 25px;
+
+        .relatedSongsContainer .songContainer {
+            width: 33%;
+            display: inline-block;
+            .songImageLink {
+              width: 100%;
+            }
+
+            img.songImage {
+              max-width: calc(100% - 2px);
+              border-radius: 0;
+              margin-top: -3px !important;
+          }
+        }
+    }
+
+    .singleSongContainer {
+      width: 100%;
+      display: inline-block;
+          margin-top: 115px;
+
+          .imageContainer {
+              width: 100%;
+              display: inline-block;
+              max-height: 674px;
+              max-width: 674px;
+          }
+
+          .postContent {
+              width: calc(100% - 30px);
+              display: inline-block;
+              vertical-align: top;
+              padding: 15px;
+
+              .singleSongInfo {
+                  width: auto;
+                  display: inline-block;
+                  width: calc(100% - 60px);
+
+                  .songName {
+                      font-weight: bold;
+                      font-size: 16px !important;
+                      display: inline-block;
+                      margin-bottom: 5px;
+                  }
+                  .artistName {
+                      font-size: 16px !important;
+                      display: inline-block;
+                      color: #545151;
+                  }
+              }
+
+              .metaInfo {
+                span.postDate, .postAuthor {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+              }
+
+              .songDescription {
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 14px;
+                  line-height: 26px;
+                  margin-top: 0;
+              }
+
+
+              .player-button {
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 5px;
+
+
+                button {
+                  width: 50px;
+                  height: 50px;
+                  text-align: center;
+                }
+
+                img {
+                  width: 50px;
+                  height: 50px;
+                  text-align: center;
+                }
+            }
+          }
+    }
+  }
 }

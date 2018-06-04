@@ -92,6 +92,7 @@ class SongsContainer extends Component {
                 </div>
                 <div className="discover-full-song">
                 {discoverFullSong}
+
                 </div>
               </div>
 

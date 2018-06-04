@@ -26,12 +26,12 @@ export const fetchRelatedSongs = slug => (dispatch, getState) => {
 
 
         fetch(tag1Songs).then(res => res.json()).then((res) => {
-            const relatedSongs = res.slice(0,8)
+            const relatedSongs = res.slice(0,9)
             // console.log(relatedSongs1)
             // relatedSongs.push([relatedSongs1]);
 
           fetch(tag2Songs).then(res => res.json()).then((res) => {
-            const relatedSongs2 = res.slice(0,8)
+            const relatedSongs2 = res.slice(0,9)
 
             // const relatedSongs = [relatedSongs1, relatedSongs2]
             // console.log(relatedSongs)
