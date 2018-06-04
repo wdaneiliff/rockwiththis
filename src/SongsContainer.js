@@ -67,14 +67,28 @@ class SongsContainer extends Component {
                     posts={heroPosts}
                 />
             <div className="discovery-section">
-              <div className="filters-bar"></div>
+              <div className="filters-bar">
+              <div className="toggle-view"><img src="http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-menu-2-48.png" />
+              <br />
+              <span>Toggle View</span>
+              </div>
+              <button className="filters-button">
+              Filters
+              </button>
+              <div class="search-wrapper">
+                    <input class="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
+                </div>
+              </div>
 
-              <div className="songGrid">
-                {songGrid}
+              <div className="discovery-container">
+                <div className="songGrid">
+                  {songGrid}
+                </div>
+                <div className="songList">
+                  {songList}
+                </div>
               </div>
-              <div className="songList">
-                {songList}
-              </div>
+
             </div>
 
 

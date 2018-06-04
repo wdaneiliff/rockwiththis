@@ -70,6 +70,9 @@ p {
     margin: 0 auto;
     transition: 0.3s ease all;
   }
+  #headerLogoMobile {
+    display: none;
+  }
   #headerLogo img {
     width: 100%;
   }
@@ -291,6 +294,8 @@ p {
       }
     }
     @media screen and (max-width: 800px) {
+
+
       .homeContainer .hero-posts {
           width: 100vw;
           white-space: nowrap;
@@ -309,6 +314,10 @@ p {
       .featured-track-wrapper {
         width: 100vw;
         height: 100vw;
+
+        .post-square-wrapper.date {
+          display: none;
+        }
 
         .feature-track {
 
@@ -373,6 +382,7 @@ p {
       letter-spacing: 5px;
       text-transform: uppercase;
       border-top-right-radius: 6px;
+          padding-left: 15px;
     }
     .post-info {
       position: absolute;
@@ -435,6 +445,20 @@ p {
 }
 
 @media (max-width:800px) {
+  #headerLogo {
+    display: none;
+  }
+  #headerLogoMobile {
+    display: inline-block !important;
+    max-width: 70px;
+    margin: 0 auto;
+    width: 70px;
+    img {
+      max-width: 70px;
+      margin: 0 auto;
+      width: 70px;
+    }
+  }
   .homeContainer .hero-posts {
       width: 100vw;
       white-space: nowrap;
@@ -450,7 +474,10 @@ p {
   }
 
     .discovery-section {
-
+      .toggle-view {
+    width: 48px;
+    padding: 13px;
+    }
     }
 }
 
@@ -530,6 +557,25 @@ p {
 $discovery-parallax-padding: calc(100vw + 115px);
 
 @media screen and (max-width: 400px) {
+
+  .filters-bar {
+    .toggle-view {
+      display: inline-block;
+    width: 50px;
+    padding: 15px;
+    img {
+      max-width: 30px;
+    }
+  }
+  button.filters-button {
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #4A4A4A;
+    border-radius: 3px;
+    padding: 5px 8px;
+    color: #4A4A4A;
+  }
+  }
 
   .headerContainer{
       height: 70px;
@@ -884,8 +930,63 @@ margin: 10px;
 
   .filters-bar {
     width: 100%;
-    height: 72px;
-    background: #f1f1f1;
+    height: 70px;
+    background: #fff;
+    position: relative;
+    border-bottom: 1px solid #C9C6CB;
+    box-shadow: 0 3px 2px -2px #C9C6CB;
+
+
+
+    .toggle-view {
+      padding: 15px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+
+      span {
+        font-size: 8px;
+
+      }
+    }
+
+    button.filters-button {
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #4A4A4A;
+    border-radius: 3px;
+    padding: 5px 8px;
+    color: #4A4A4A;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+    transition: all .3s ease;
+    }
+
+    button.filters-button:hover {
+    border: 1px solid #4A4A4A;
+    padding: 5px 8px;
+    background: #4A4A4A;
+    color: #fff;
+    transition: all .3s ease;
+    cursor: pointer;
+    }
+
+    .search-wrapper {
+      float: none;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 200px;
+
+        input {
+          height: 25px;
+
+        }
+    }
 }
 
       .songGrid {
@@ -957,6 +1058,7 @@ margin: 10px;
                 font-weight: bold;
                 font-size: 24px;
                 line-height: 34px;
+
             }
 
             .artistName {
@@ -986,6 +1088,9 @@ margin: 10px;
           }
       }
 }
+
+
+
 
 
 @media (max-width: 800px) {
@@ -1097,6 +1202,8 @@ margin: 10px;
                   font-weight: bold;
                   font-size: 14px;
                   line-height: 20px;
+                  max-height: 20px;
+                  overflow-y: hidden;
               }
 
               .artistName {
@@ -1136,7 +1243,7 @@ button {
     border-style: none;
     border-width: 0px;
     padding: 0;
-    background: none !important;
+    background: none;
 }
 
 button:focus {
@@ -1509,4 +1616,63 @@ a.spotifyLink:hover {
 
 .playButton:hover, .pauseButton:hover {
   opacity: .7;
+}
+
+
+@media (min-width: 800px) {
+
+  .filters-bar {
+        max-width: 1685px;
+        margin: 0 auto;
+  }
+
+  .headerContainer {
+
+    a.nav-link {
+    text-decoration: none;
+    color: rgba(255,255,255,.75);
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 5%;
+    padding: 5px 10px;
+    border: 2px solid rgba(255,255,255,0);
+    border-bottom: 2px solid rgba(255,255,255,.75);
+    transition: all .3s ease;
+    }
+    a.nav-link:hover {
+    border-bottom: 2px solid rgba(255,255,255,1);
+    border: 2px solid rgba(255,255,255,1);
+    color: rgba(255,255,255,1);
+    cursor: pointer;
+    }
+  }
+
+  .songList {
+    display: none;
+  }
+
+  .discovery-section {
+    padding-bottom: 35px;
+  }
+  .discovery-container {
+    padding-top: 35px;
+    width: 100vw;
+    max-height: 674px;
+    max-width: 1685px;
+    height: calc(100vh - 145px);
+    margin: 0 auto;
+        overflow: hidden;
+
+
+    .songGrid {
+      width: 40%;
+    // height: 40vw;
+    display: inline-block;
+    max-height: 674px;
+    // max-width: 674px;
+      padding: 0px;
+      display: inline-block;
+      vertical-align: top;
+    }
+}
 }
