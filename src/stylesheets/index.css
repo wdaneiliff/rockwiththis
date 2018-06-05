@@ -726,9 +726,10 @@ p {
         height: auto;
         padding-left: 0px; }
         .discovery-section .songList .songContainer .postContent .topContentContainer .songInfo {
-          width: calc(100% - 40px);
+          width: calc(100% - 45px);
           display: inline-block;
-          vertical-align: top; }
+          vertical-align: top;
+          padding-left: 5px !important; }
         .discovery-section .songList .songContainer .postContent .topContentContainer .metaInfo {
           width: 100%;
           display: inline-block;
@@ -1196,11 +1197,25 @@ a.spotifyLink {
     .discovery-container .discover-full-song {
       width: calc(46% - 0px);
       display: inline-block;
-      height: calc(100vh - 145px);
+      height: auto;
       padding-left: 7%;
       padding-right: 7%;
       margin: 0 auto;
-      left: 50%; }
+      position: relative; }
+      .discovery-container .discover-full-song button.toggle-song {
+        position: absolute;
+        top: 50%;
+        height: 30px;
+        width: 30px;
+        background-size: contain; }
+      .discovery-container .discover-full-song button.toggle-song.previous {
+        left: 40px;
+        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg); }
+      .discovery-container .discover-full-song button.toggle-song.next {
+        right: 40px;
+        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png); }
       .discovery-container .discover-full-song .ShareBox {
         display: block;
         width: 300px;
@@ -1215,7 +1230,7 @@ a.spotifyLink {
             font-size: 45px !important;
             display: block; }
       .discovery-container .discover-full-song .songContainer {
-        height: calc(100vh - 145px); }
+        height: auto; }
         .discovery-container .discover-full-song .songContainer .imageContainer {
           width: 30%;
           float: left;
@@ -1265,6 +1280,8 @@ a.spotifyLink {
   display: none; }
 
 @media (max-width: 800px) {
+  img.main.playButton {
+    max-width: 40px !important; }
   a.nav-link {
     display: none; }
   .singleSongPage.page .relatedSongs {
@@ -1330,3 +1347,8 @@ a.spotifyLink {
           width: 50px;
           height: 50px;
           text-align: center; } }
+
+button {
+  padding: 0;
+  background: none;
+  border: 0 !important; }

@@ -1156,9 +1156,10 @@ margin: 10px;
                   padding-left: 0px;
 
                   .songInfo {
-                      width: calc(100% - 40px);
-                      display: inline-block;
-                          vertical-align: top;
+                    width: calc(100% - 45px);
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-left: 5px !important;
                   }
 
                   .metaInfo {
@@ -1689,11 +1690,32 @@ a.spotifyLink {
     .discover-full-song {
       width: calc(46% - 0px);
       display: inline-block;
-      height: calc(100vh - 145px);
+      height: auto;
       padding-left: 7%;
       padding-right: 7%;
       margin: 0 auto;
-      left: 50%;
+      position: relative;
+
+
+      button.toggle-song {
+        position: absolute;
+        top: 50%;
+        height: 30px;
+        width: 30px;
+            background-size: contain;
+    }
+      button.toggle-song.previous {
+        left: 40px;
+        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
+        -webkit-transform:rotate(180deg);
+        -moz-transform:rotate(180deg);
+
+
+    }
+      button.toggle-song.next {
+        right: 40px;
+        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
+    }
 
       .ShareBox {
         display: block;
@@ -1718,7 +1740,7 @@ a.spotifyLink {
       }
 
     .songContainer {
-      height: calc(100vh - 145px);
+      height: auto;
 
       .imageContainer {
         width: 30%;
@@ -1805,6 +1827,10 @@ a.spotifyLink {
 
 
 @media(max-width: 800px) {
+
+  img.main.playButton {
+    max-width: 40px !important;
+}
   a.nav-link {
     display: none;
   }
@@ -1906,4 +1932,10 @@ a.spotifyLink {
           }
     }
   }
+}
+
+button {
+    padding: 0;
+    background: none;
+    border: 0 !important;
 }

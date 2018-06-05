@@ -21,6 +21,10 @@ class SongsContainer extends Component {
         this.renderSongList = this.renderSongList.bind(this)
 
         this.songs = {}
+
+        this.state = {
+            discoverFullSongIndex: 1
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -91,7 +95,9 @@ class SongsContainer extends Component {
                   {songList}
                 </div>
                 <div className="discover-full-song">
+                <button className="toggle-song previous" />
                 {discoverFullSong}
+                <button className="toggle-song next" />
 
                 </div>
               </div>
