@@ -42,12 +42,7 @@ class HeroPosts extends React.Component {
                 <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`}>
                     <div className='feature-track'>
                         <img src={image} />
-                        <div className="post-square-wrapper date">
-                            <div className='post-date'>
-                                <p className="month">{month}</p>
-                                <p className="day">{date}</p>
-                            </div>
-                        </div>
+
 
                         <div className="post-info">
                         {!isSmall && <span className="song-of-day-tag">Song of the day</span>}
@@ -55,6 +50,12 @@ class HeroPosts extends React.Component {
                             <div className="song-info">
                                 <p className="song-title">{title}</p>
                                 <p className="song-artist">{artist}</p>
+                            </div>
+                            <div className="post-square-wrapper date">
+                                <div className='post-date'>
+                                    <p className="month">{month}</p>
+                                    <p className="day">{date}</p>
+                                </div>
                             </div>
 
 

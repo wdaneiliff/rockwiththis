@@ -61,7 +61,7 @@ class SongsContainer extends Component {
         const heroPosts = this.props.posts.slice(0,7)
 
         // const songGrid = this.props.posts.slice(7).map(this.renderSongGrid)
-        const songGrid = this.props.posts.map(this.renderSongGrid)
+        const songGrid = this.props.posts.slice(0,16).map(this.renderSongGrid)
         // const songList = this.props.posts.slice(7).map(this.renderSongList)
         const songList = this.props.posts.map(this.renderSongList)
 
@@ -89,7 +89,9 @@ class SongsContainer extends Component {
 
               <div className="discovery-container">
                 <div className="songGrid">
+                <button className="toggle-song previous" />
                   {songGrid}
+                  <button className="toggle-song next" />
                 </div>
                 <div className="songList">
                   {songList}

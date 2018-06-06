@@ -118,12 +118,6 @@ p {
     overflow-x: hidden;
   }
 
-
-  .featured-track-wrapper .post-square-wrapper.date {
-      height: 50px !important;
-      width: 45px !important;
-  }
-
 }
 
 .homeContainer .hero-posts .less-featured-track-wrapper .pauseButton, .homeContainer .hero-posts .less-featured-track-wrapper .playButton {
@@ -161,33 +155,51 @@ p {
     height: calc(40vw - 3px);
     margin: 0 auto;
 
+    .featured-track-wrapper{
+      .post-square-wrapper.date {
+        .month {
+          font-size: 1.3em !important;
+          line-height: 28px !important;
+        }
+        .day {
+          font-size: 1.2em !important;
+        }
+      }
+    }
+
 
 
     .post-square-wrapper.date {
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: #000;
-      padding: 4px;
-      background: rgba(255,255,255,.7);
-      height: 50px !important;
-      width: 45px !important;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      color: #000 !important;
+      // padding: 4px;
+      height: auto;
+      width: 18% !important;
+      display: inline-block;
       text-align: center;
       font-weight: bold;
-            .post-date {
-              background: transparent;
-              transform: translate(-50%, -50%);
-              top: 50%;
-              left: 50%;
-              position: absolute;
+      float: right;
+      .post-date {
+        background: rgba(0,0,0,0);
+        margin: 12.5%;
+        .month {
+          font-size: .7em;
+          line-height: 16px;
+        }
+        .day {
+          font-size: .9em;
+        }
       }
     }
       .post-info {
         height: auto;
         .song-info  {
 
-          width: 85%;
+          width: 68% !important;
           height: auto !important;
+          margin-right: 0 !important;
         }
         .post-square-wrapper.play {
 
@@ -245,16 +257,7 @@ p {
         max-height: 337px;
         max-width: 337px;
         margin: 0 auto;
-        .post-date {
-          background: rgba(0,0,0,0);
-          .month {
-            font-size: .7em;
-            line-height: 16px;
-          }
-          .day {
-            font-size: .9em;
-          }
-        }
+
         .post-info {
           height: auto;
           .post-square-wrapper {
@@ -399,15 +402,7 @@ p {
         text-align: center;
         vertical-align: top;
         transition: .15s linear all;
-        &.date {
-          background: black;
-          border-bottom-right-radius: 6px;
-          .post-date {
-            width: 70%;
-            height: 70%;
-            margin: 15%;
-          }
-        }
+
         &.play {
           float: left;
           img {
@@ -1659,11 +1654,12 @@ a.spotifyLink {
 
   .discovery-section {
     padding-bottom: 35px;
+    height: calc(100vh - 110px);
   }
   .discovery-container {
     padding-top: 35px;
     width: 100vw;
-    max-height: 674px;
+    max-height: calc(100vh - 135px);
     max-width: 1685px;
     height: calc(100vh - 145px);
     margin: 0 auto;
@@ -1678,6 +1674,36 @@ a.spotifyLink {
       display: inline-block;
       vertical-align: top;
       padding-left: 35px;
+          padding-top: 20px;
+          padding-bottom: 35px;
+          position: relative;
+          z-index: 3;
+
+
+
+          button.toggle-song {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 30px;
+            width: 30px;
+                background-size: contain;
+                z-index: 6;
+        }
+          button.toggle-song.previous {
+            top: -20px;
+            background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
+            -webkit-transform:rotate(-90deg);
+            -moz-transform:rotate(-90deg);
+
+
+        }
+          button.toggle-song.next {
+            bottom: 0px;
+            background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
+            -webkit-transform:rotate(90deg);
+            -moz-transform:rotate(90deg);
+        }
 
       .songContainer {
         width: calc(25% - 2px);
@@ -1695,6 +1721,13 @@ a.spotifyLink {
       padding-right: 7%;
       margin: 0 auto;
       position: relative;
+          padding-top: 20px;
+          padding-bottom: 35px;
+
+          .pauseButton {
+              max-width: 60px !important;
+
+          }
 
 
       button.toggle-song {
