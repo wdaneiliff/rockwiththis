@@ -1412,3 +1412,19 @@ button {
         max-width: 100%;
         margin: 0 !important;
         border-radius: 0px; } }
+
+@media screen and (max-width: 600px) {
+  .footer-player .artist-info a.songImageLink span.song-title {
+    display: block;
+    margin-top: 3px;
+    line-height: 18px;
+    margin-bottom: 5px;
+    font-size: 12px; }
+  .footer-player span.artist-title {
+    color: #adb2a9;
+    font-size: 12px; }
+  .songSourceContainer {
+    max-width: 40px;
+    display: none; }
+    .songSourceContainer img {
+      max-width: 40px; } }
