@@ -664,8 +664,18 @@ margin: 10px;
 
 .singleSongPage {
 
+
+  .relatedSongs {
+    margin-top: 85px;
+    p.related-songs-title {
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-align: center;
+  }
+  }
+
   .singleSongContainer {
-    width: 86%;
+    width: 85%;
     display: inline-block;
 
     .songContainer {
@@ -695,7 +705,6 @@ margin: 10px;
             .singleSongInfo {
 
               .songName {
-                font-weight: bold;
                 font-size: 28px;
                 display: inline-block;
                 margin-bottom: 5px;
@@ -711,13 +720,12 @@ margin: 10px;
             margin-top: 15px !important;
 
             .postDate, .postAuthor {
-              font-weight: bold;
+              // font-weight: bold;
               font-size: 18px;
             }
           }
 
           .songDescription {
-            font-family: 'Open Sans', sans-serif;
             font-size: 17px;
             line-height: 28px;
             margin-top: 10px;
@@ -736,8 +744,10 @@ margin: 10px;
           .singleSongInfo {
               width: auto;
               display: inline-block;
-              max-width: 88%;
-              width: 88%;
+              max-width: 85%;
+              width: 85%;
+              padding-left: 15px;
+
           }
 
           .singleSongLinks {
@@ -1180,14 +1190,24 @@ margin: 10px;
                         margin: 0;
 
                         .tag {
+                          // border: 0px solid #f1782d !important;
+                          // margin: 0;
+                          // margin-left: 3px;
+                          // padding: 0px;
+                          // transition: all .3s ease;
+                          // color: #f1782d !important;
+                          // background: #fff !important;
+                          // font-size: 10px;
                           border: 0px solid #f1782d !important;
-                          margin: 0;
-                          margin-left: 3px;
-                          padding: 0px;
+                          margin: 0 5px;
+                          padding: 0;
+                          border-radius: 8px;
                           transition: all .3s ease;
-                          color: #f1782d !important;
+                          color: #fc3326!important;
                           background: #fff !important;
                           font-size: 10px;
+                          font-family: 'Sedgwick Ave', cursive;
+                          letter-spacing: 1.5px;
                       }
                     }
                   }
@@ -1552,14 +1572,26 @@ p.leftInfo {
   margin-right: 6px; }
 
 .tag {
-  border: 2px solid #f1782d !important;
-  margin: 0 3px;
-  padding: 4px 6px;
+  // border: 2px solid #f1782d !important;
+  // margin: 0 3px;
+  // padding: 4px 6px;
+  // border-radius: 8px;
+  // transition: all .3s ease;
+  // color: #f1782d !important;
+  // background: #fff !important;
+  // font-size: 13px;
+  border: 0px solid #f1782d !important;
+  margin: 0 5px;
+  padding: 0;
   border-radius: 8px;
   transition: all .3s ease;
-  color: #f1782d !important;
+  color: #fc3326!important;
   background: #fff !important;
-  font-size: 13px; }
+  font-size: 16px;
+  font-family: 'Sedgwick Ave', cursive;
+  letter-spacing: 1.5px;
+
+}
 
 .tag:hover {
   color: #fff !important;
@@ -1797,13 +1829,18 @@ a.spotifyLink {
           .songInfo {
             display: inline-block;
             vertical-align: top;
-            // padding-top: 10px;
+            margin-bottom: 15px;
 
             a.postTitleLink {
                 font-size: 24px;
                 line-height: 34px;
                 text-decoration: none;
                 color: black;
+            }
+
+            span.artistName {
+                font-size: 22px;
+                line-height: 30px;
             }
 
           }
@@ -1822,14 +1859,24 @@ a.spotifyLink {
             }
 
             .tag {
-                border: 2px solid #f1782d !important;
-                margin: 0 3px;
-                padding: 4px 6px;
+                // border: 2px solid #f1782d !important;
+                // margin: 0 3px;
+                // padding: 4px 6px;
+                // border-radius: 8px;
+                // transition: all .3s ease;
+                // color: #f1782d !important;
+                // background: #fff !important;
+                // font-size: 14px;
+                border: 0px solid #f1782d !important;
+                margin: 0 5px;
+                padding: 0;
                 border-radius: 8px;
                 transition: all .3s ease;
-                color: #f1782d !important;
+                color: #fc3326!important;
                 background: #fff !important;
-                font-size: 14px;
+                font-size: 16px;
+                font-family: 'Sedgwick Ave', cursive;
+                letter-spacing: 1.5px;
             }
           }
 
@@ -1877,7 +1924,7 @@ a.spotifyLink {
         padding-top: 25px;
 
         .relatedSongsContainer .songContainer {
-            width: 33%;
+            width: 100%;
             display: inline-block;
             .songImageLink {
               width: 100%;
@@ -1904,7 +1951,7 @@ a.spotifyLink {
           }
 
           .postContent {
-              width: calc(100% - 30px);
+              width: calc(100%) !important;
               display: inline-block;
               vertical-align: top;
               padding: 15px;
@@ -1912,7 +1959,7 @@ a.spotifyLink {
               .singleSongInfo {
                   width: auto;
                   display: inline-block;
-                  width: calc(100% - 60px);
+                  width: calc(100% - 70px);
 
                   .songName {
                       font-weight: bold;
@@ -1971,4 +2018,57 @@ button {
     padding: 0;
     background: none;
     border: 0 !important;
+}
+
+
+@media(max-width: 1200px) {
+
+.singleSongPage {
+
+  .singleSongContainer {
+    width: 100%;
+
+    .songContainer .postContent {
+      width: 50%;
+    }
+  }
+
+  .relatedSongs {
+    margin-top: 20px;
+    p.related-songs-title {
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-align: center;
+  }
+  }
+
+
+     .relatedSongs {
+      width: 100%;
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 25px;
+      padding-left: 0%;
+      padding-right: 0%;
+
+      .related-songs-title {
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+
+      .songContainer {
+        max-width: calc(20% - 2px );
+        display: inline-block;
+        margin: 1px;
+
+
+        .songImageLink img.songImage {
+            max-width: 100%;
+            margin: 0 !important;
+            border-radius: 0px;
+        }
+      }
+    }
+}
+
 }

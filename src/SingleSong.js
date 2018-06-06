@@ -140,8 +140,8 @@ class SingleSong extends Component {
                     <ShareBox />
                     </div>
                         <p className="metaInfo">
-                            <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> | </p>
-                            | <span className="BPM">BPM</span>
+                            <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> </p>|
+                            {this.renderTags(song)}
                         </p>
                     </div>
                 </div>

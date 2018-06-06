@@ -25,6 +25,7 @@ class RelatedSongs extends Component {
       return (
             <div className="relatedSongs">
               <div className="relatedSongsContainer">
+              <p className="related-songs-title">Related Songs</p>
               {relatedSongs}
             </div>
             </div>
