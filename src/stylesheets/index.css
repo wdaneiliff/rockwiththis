@@ -579,6 +579,20 @@ p {
   position: relative;
   border-bottom: 1px solid #C9C6CB;
   box-shadow: 0 3px 2px -2px #C9C6CB; }
+  .discovery-section .filters-bar .SubgenreFiltersDropDown {
+    position: absolute;
+    border: 1px solid #C9C6CB;
+    border-top: 0;
+    padding: 15px;
+    left: 75px;
+    background: #fff;
+    z-index: 1000;
+    max-width: 300px;
+    top: 72px;
+    border-radius: 4px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    box-shadow: 0 3px 2px -2px #C9C6CB; }
   .discovery-section .filters-bar .toggle-view {
     padding: 15px;
     position: absolute;
@@ -600,9 +614,9 @@ p {
     left: 100px;
     transition: all .3s ease; }
   .discovery-section .filters-bar button.filters-button:hover {
-    border: 1px solid #4A4A4A;
+    border: 1px solid #fc3326;
     padding: 5px 8px;
-    background: #4A4A4A;
+    background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
     color: #fff;
     transition: all .3s ease;
     cursor: pointer; }
@@ -740,16 +754,14 @@ p {
             display: inline-block;
             margin: 0; }
             .discovery-section .songList .songContainer .postContent .topContentContainer .metaInfo .postTags .tag {
-              border: 0px solid #f1782d !important;
+              border: 1px solid #fc3326 !important;
               margin: 0 5px;
-              padding: 0;
-              border-radius: 8px;
+              padding: 6px 6px;
+              border-radius: 4px;
               transition: all .3s ease;
-              color: #fc3326 !important;
-              background: #fff !important;
-              font-size: 10px;
-              font-family: 'Sedgwick Ave', cursive;
-              letter-spacing: 1.5px; }
+              color: #fc3326;
+              background: #fff;
+              font-size: 10px; }
       .discovery-section .songList .songContainer .postContent a.postTitleLink {
         text-decoration: none;
         color: black;
@@ -1086,21 +1098,19 @@ p.leftInfo {
   margin-right: 6px; }
 
 .tag {
-  border: 0px solid #f1782d !important;
+  border: 1px solid #fc3326 !important;
   margin: 0 5px;
-  padding: 0;
-  border-radius: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
   transition: all .3s ease;
-  color: #fc3326 !important;
-  background: #fff !important;
-  font-size: 16px;
-  font-family: 'Sedgwick Ave', cursive;
-  letter-spacing: 1.5px; }
+  color: #fc3326;
+  background: #fff;
+  font-size: 12px; }
 
 .tag:hover {
   color: #fff !important;
-  background: #f1782d !important;
-  border: 2px solid #f1782d !important;
+  background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
+  border: 1px solid #fc3326 !important;
   cursor: pointer; }
 
 p.metaInfo {
@@ -1285,16 +1295,13 @@ a.spotifyLink {
           font-size: 16px;
           line-height: 24px; }
         .discovery-container .discover-full-song .songContainer .topContentContainer .metaInfo .tag {
-          border: 0px solid #f1782d !important;
           margin: 0 5px;
-          padding: 0;
-          border-radius: 8px;
+          padding: 6px 6px;
+          border-radius: 4px;
           transition: all .3s ease;
-          color: #fc3326 !important;
-          background: #fff !important;
-          font-size: 16px;
-          font-family: 'Sedgwick Ave', cursive;
-          letter-spacing: 1.5px; }
+          color: #fc3326;
+          background: #fff;
+          font-size: 12px; }
         .discovery-container .discover-full-song .songContainer .topContentContainer .songDescription {
           font-size: 16px;
           line-height: 28px;
