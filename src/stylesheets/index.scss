@@ -1171,7 +1171,7 @@ margin: 10px;
 
               .topContentContainer {
                   display: inline-block;
-                  width: calc(100% - 135px);
+                  width: calc(100% - 140px);
                   vertical-align: top;
                   height: auto;
                   padding-left: 0px;
@@ -1591,15 +1591,19 @@ p.leftInfo {
       padding: 4px 6px;
       border-radius: 6px;
       transition: all .3s ease;
-      color: #fc3326;
-      background: #fff;
+      // color: #fc3326;
+      // background: #fff;
       font-size: 12px;
 
+      color: #fff !important;
+      background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
+      border: 1px solid #fc3326 !important;
+      cursor: pointer;
 }
 
 .tag:hover {
   color: #fff !important;
-  background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
+  background: linear-gradient(to right, #fc3326, #fc3326) !important;
   border: 1px solid #fc3326 !important;
   cursor: pointer;
 }
@@ -1691,14 +1695,14 @@ a.spotifyLink {
 
   .discovery-section {
     padding-bottom: 35px;
-    height: calc(100vh - 110px);
+    // height: calc(100vh - 110px);
+        height: calc(100vh - 174px);
   }
   .discovery-container {
-    padding-top: 35px;
     width: 100vw;
     max-height: calc(100vh - 135px);
     max-width: 1685px;
-    height: calc(100vh - 145px);
+    height: calc(100vh - 75px);
     margin: 0 auto;
         overflow: hidden;
 
@@ -1719,13 +1723,14 @@ a.spotifyLink {
 
 
           button.toggle-song {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 30px;
-            width: 30px;
-                background-size: contain;
-                z-index: 6;
+            // position: absolute;
+            // left: 50%;
+            // transform: translateX(-50%);
+            // height: 30px;
+            // width: 30px;
+            //     background-size: contain;
+            //     z-index: 6;
+            display: none;
         }
           button.toggle-song.previous {
             top: -20px;
@@ -2099,4 +2104,21 @@ button {
       max-width: 40px;
     }
 }
+}
+
+
+
+.postTags .tag:nth-of-type(3) {
+  display: none;
+}
+
+@media(max-width: 800px) {
+  .fixedFiltersBar {
+    position: fixed !important;
+    top: 70px;
+  }
+
+  .fixedFiltersBar + .discovery-container {
+        padding-top: 75px;
+  }
 }

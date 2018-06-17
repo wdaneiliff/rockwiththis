@@ -9,10 +9,24 @@ class FiltersBar extends Component {
 
         this.state = {
           showSubGenreFilters: false,
+          fixedFilterBar: false
         }
 
         this.showSubGenreFilters = this.showSubGenreFilters.bind(this);
         this.closeSubGenreFilters = this.closeSubGenreFilters.bind(this);
+        this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.fixedFiltersBar)
+        window.addEventListener("resize", this.fixedFiltersBar);
+
+    }
+
+    fixedFiltersBar() {
+        const scrollHeight = document.getElementById('hero-post').clientHeight + 45
+        const fixedFilterBar = window.scrollY > scrollHeight
+        this.setState({ fixedFilterBar })
     }
 
     renderFilter(tag, index) {
@@ -46,8 +60,7 @@ class FiltersBar extends Component {
         const filterTags = this.props.filters.map(this.renderFilter)
 
         return (
-
-          <div className="filters-bar">
+          <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
             <button className="toggle-view"><img src="http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-menu-2-48.png" /></button>
             <button onClick={this.showSubGenreFilters} className="filters-button">
               Filters
