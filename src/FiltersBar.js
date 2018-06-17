@@ -9,9 +9,12 @@ class FiltersBar extends Component {
 
         this.state = {
           showSubGenreFilters: false,
+          showToggleViewsDropdown: false,
           fixedFilterBar: false
         }
 
+        this.showToggleViewsDropdown = this.showToggleViewsDropdown.bind(this);
+        this.closeToggleViewsDropdown = this.closeToggleViewsDropdown.bind(this);
         this.showSubGenreFilters = this.showSubGenreFilters.bind(this);
         this.closeSubGenreFilters = this.closeSubGenreFilters.bind(this);
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
@@ -56,12 +59,35 @@ class FiltersBar extends Component {
       }
   }
 
+
+    showToggleViewsDropdown(event) {
+      event.preventDefault();
+
+      this.setState({
+        showToggleViewsDropdown: true,
+      });
+
+      document.addEventListener('click', this.closeToggleViewsDropdown);
+    }
+
+    closeToggleViewsDropdown() {
+
+      if (!this.ToggleViewsDropDown.contains(event.target)) {
+
+        this.setState({ showToggleViewsDropdown: false }, () => {
+          document.removeEventListener('click', this.closeToggleViewsDropdown);
+        });
+
+      }
+  }
+
+
     render() {
         const filterTags = this.props.filters.map(this.renderFilter)
 
         return (
           <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
-            <button className="toggle-view"><img src="http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-menu-2-48.png" /></button>
+            <button onClick={this.showToggleViewsDropdown} className="toggle-view"><i class="im im-menu-list"></i></button>
             <button onClick={this.showSubGenreFilters} className="filters-button">
               Filters
             </button>
@@ -80,6 +106,24 @@ class FiltersBar extends Component {
                     >
                     {filterTags}
                     <button className="clearAll tag">Clear All</button>
+                  </div>
+                )
+                : (
+                  null
+                )
+            }
+
+            {
+              this.state.showToggleViewsDropdown
+                ? (
+                  <div
+                    className="ToggleViewsDropDown"
+                    ref={(element) => {
+                      this.ToggleViewsDropDown = element;
+                    }}
+                    >
+                    <button>Grid</button><br/>
+                    <button>Song List</button>
                   </div>
                 )
                 : (
