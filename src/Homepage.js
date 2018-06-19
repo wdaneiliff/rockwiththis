@@ -25,7 +25,7 @@ class Homepage extends Component {
         return (
           <div>
              <div className="homeContainer">
-                    <SongsContainer />
+                    <SongsContainer discoverLayout={this.props.discoverLayout} />
                     {/*<SidebarRight />*/}
                  </div>
            </div>

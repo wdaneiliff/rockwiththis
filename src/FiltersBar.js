@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchFilters } from './actions/filters'
+import { changeToPreviewScrollLayout } from './actions/discoverLayout'
+import { changeToNormalLayout } from './actions/discoverLayout'
 
 class FiltersBar extends Component {
     constructor(props) {
@@ -18,6 +20,9 @@ class FiltersBar extends Component {
         this.showSubGenreFilters = this.showSubGenreFilters.bind(this);
         this.closeSubGenreFilters = this.closeSubGenreFilters.bind(this);
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
+
+        this.previewScrollLayout = this.previewScrollLayout.bind(this)
+        // this.changeToNormalLayout = this.changeToNormalLayout.bind(this)
     }
 
     componentDidMount() {
@@ -58,6 +63,14 @@ class FiltersBar extends Component {
 
       }
   }
+
+  previewScrollLayout() {
+    this.props.changeToPreviewScrollLayout()
+
+  }
+
+
+
 
 
     showToggleViewsDropdown(event) {
@@ -123,7 +136,7 @@ class FiltersBar extends Component {
                     }}
                     >
                     <button>Grid</button><br/>
-                    <button>Song List</button>
+                    <button onClick={this.previewScrollLayout} >Song List</button>
                   </div>
                 )
                 : (
@@ -135,13 +148,28 @@ class FiltersBar extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    filters: state.filters
-})
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+  const {
+      filters,
+      changeToPreviewScrollLayout,
+      changeToNormalLayout
+  } = state
 
-})
+  return {
+      filters,
+      changeToPreviewScrollLayout,
+      changeToNormalLayout
+    }
+}
+
+
+
+
+
+const mapDispatchToProps = { changeToPreviewScrollLayout, changeToNormalLayout }
+
+
 
 export default connect(
     mapStateToProps,

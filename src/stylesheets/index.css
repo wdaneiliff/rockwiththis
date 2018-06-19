@@ -1456,3 +1456,9 @@ button {
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
   box-shadow: 0 3px 2px -2px #C9C6CB; }
+
+.previewScrollLayout .discover-full-song {
+  display: none; }
+
+.previewScrollLayout .songGrid {
+  width: calc( 96% - 35px); }

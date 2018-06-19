@@ -35,6 +35,8 @@ class SongsContainer extends Component {
             // if not playing anymore, then pause current song
             // if new song, then stop last song and start next song
         }
+
+console.log(this.props.discoverLayout)
     }
 
 
@@ -77,7 +79,7 @@ class SongsContainer extends Component {
             <div className="discovery-section">
               <FiltersBar />
 
-              <div className="discovery-container">
+              <div className={`discovery-container ${this.props.discoverLayout.previewScrollLayout ? 'previewScrollLayout' : ''}`}>
                 <div className="songGrid">
                 <button className="toggle-song previous" />
                   {songGrid}
@@ -86,6 +88,7 @@ class SongsContainer extends Component {
                 <div className="songList">
                   {songList}
                 </div>
+
                 <div className="discover-full-song">
                 <button className="toggle-song previous" />
                 {discoverFullSong}
