@@ -2195,7 +2195,7 @@ button {
 // PREVIEW SCROLL Layout DESKTOP
 @media (min-width: 1000px) {
 
-  .discovery-container {
+  .discovery-container.previewScrollLayout {
     width: calc(100vw - 30px);
     max-height: calc(100vh - 135px);
     max-width: 1685px;
@@ -2222,7 +2222,7 @@ button {
   }
 
 
-  .discovery-section .songList .songContainer  {
+  .discovery-section .discovery-container.previewScrollLayout .songList .songContainer  {
       width: calc(50% - 30px);
       padding: 15px 15px;
       display: inline-block;
@@ -2348,7 +2348,7 @@ button {
 
 @media only screen and (min-width: 800px) and (max-width: 1000px){
 
-  .discovery-container {
+  .discovery-container.previewScrollLayout {
     width: calc(100vw - 30px);
     max-height: calc(100vh - 135px);
     max-width: 1685px;
@@ -2397,7 +2397,7 @@ button {
   }
 
 
-  .discovery-section .songList .songContainer  {
+  .discovery-section .discovery-container.previewScrollLayout .songList .songContainer  {
       width: calc(50% - 30px);
       padding: 15px 15px;
       display: inline-block;
@@ -2524,4 +2524,61 @@ button {
     }
   }
 
+}
+
+
+// FULL GRID LAYOUT DESKTOP
+
+@media only screen and (min-width: 800px){
+  .discovery-container.fullGridLayout {
+    .songGrid {
+      display: none;
+    }
+    .discover-full-song {
+      display: none;
+    }
+    .songList {
+      display: block;
+      text-align: center;
+
+      .topContentContainer {
+        display: none !important;
+      }
+
+      .songContainer {
+        width: 19vw;
+        height: 19vw;
+        padding: 0 !important;
+        display: inline-block;
+        max-width: none;
+        margin: 0 auto;
+
+        hr {
+          display: none;
+        }
+
+        .postContent {
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .imageContainer {
+            height: 19vw;
+            width: 19vw;
+            display: inline-block;
+            vertical-align: top;
+            padding-right: 0px;
+            max-height: none;
+
+            img {
+              max-width: 19vw;
+              max-height: 19vw;
+            }
+        }
+    }
+    }
+
+  }
 }
