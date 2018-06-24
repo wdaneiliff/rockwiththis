@@ -76,10 +76,10 @@ console.log(this.props.discoverLayout)
                 <HeroPosts
                     posts={heroPosts}
                 />
-            <div className="discovery-section">
+            <div id="discover" className="discovery-section">
               <FiltersBar />
 
-              <div className={`discovery-container ${this.props.discoverLayout.previewScrollLayout ? 'previewScrollLayout' : ''}`}>
+              <div className={`discovery-container ${this.props.discoverLayout.previewScrollLayout ? 'previewScrollLayout' : ''} ${this.props.discoverLayout.fullGridLayout ? 'fullGridLayout' : ''}`}>
                 <div className="songGrid">
                 <button className="toggle-song previous" />
                   {songGrid}
@@ -91,16 +91,13 @@ console.log(this.props.discoverLayout)
 
                 <div className="discover-full-song">
                 <button className="toggle-song previous" />
-                {discoverFullSong}
+                  {discoverFullSong}
                 <button className="toggle-song next" />
 
                 </div>
               </div>
 
             </div>
-
-
-
             </div>
         )
     }

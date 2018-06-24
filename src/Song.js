@@ -55,7 +55,7 @@ class Song extends Component {
         } = this.props
 
         const tags = song._embedded['wp:term'][1].map(tag =>
-            <span key={tag.name} className="tag" dangerouslySetInnerHTML={{ __html: tag.name }} />)
+            <span key={tag.name} className="tag">#{tag.name}</span>)
 
         return (
             <span className="postTags">

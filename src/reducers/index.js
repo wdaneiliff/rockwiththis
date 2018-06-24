@@ -6,6 +6,7 @@ import { FETCH_SINGLE_SONG } from '../actions/singleSong'
 import { FETCH_RELATED_SONGS } from '../actions/relatedSongs'
 import { PREVIEW_SCROLL_LAYOUT } from '../actions/discoverLayout'
 import { NORMAL_LAYOUT } from '../actions/discoverLayout'
+import { FULL_GRID_LAYOUT } from '../actions/discoverLayout'
 import posts from './posts'
 import featuredPosts from './featuredPosts'
 import queue from './queue'
@@ -83,10 +84,13 @@ const sidebarExpanded = (state = false, action) => {
 const discoverLayout = (state = {previewScrollLayout: false}, action) => {
   switch(action.type) {
     case PREVIEW_SCROLL_LAYOUT:
-        return Object.assign({}, state, {previewScrollLayout: true})
+        return Object.assign({}, state, {previewScrollLayout: true, fullGridLayout: false})
+
+    case FULL_GRID_LAYOUT:
+        return Object.assign({}, state, {previewScrollLayout: false, fullGridLayout: true})
 
     case NORMAL_LAYOUT:
-        return Object.assign({}, state, {previewScrollLayout: false})
+        return Object.assign({}, state, {previewScrollLayout: false, fullGridLayout: false})
     default:
     return state
   }

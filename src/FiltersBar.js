@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchFilters } from './actions/filters'
 import { changeToPreviewScrollLayout } from './actions/discoverLayout'
+import { changeToFullGridLayout } from './actions/discoverLayout'
 import { changeToNormalLayout } from './actions/discoverLayout'
 
 class FiltersBar extends Component {
@@ -22,7 +23,8 @@ class FiltersBar extends Component {
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
 
         this.previewScrollLayout = this.previewScrollLayout.bind(this)
-        // this.changeToNormalLayout = this.changeToNormalLayout.bind(this)
+        this.fullGridLayout = this.fullGridLayout.bind(this)
+        this.normalLayout = this.normalLayout.bind(this)
     }
 
     componentDidMount() {
@@ -66,6 +68,15 @@ class FiltersBar extends Component {
 
   previewScrollLayout() {
     this.props.changeToPreviewScrollLayout()
+
+  }
+  fullGridLayout() {
+    this.props.changeToFullGridLayout()
+
+  }
+
+  normalLayout(){
+    this.props.changeToNormalLayout()
 
   }
 
@@ -135,8 +146,9 @@ class FiltersBar extends Component {
                       this.ToggleViewsDropDown = element;
                     }}
                     >
-                    <button>Grid</button><br/>
-                    <button onClick={this.previewScrollLayout} >Song List</button>
+                    <button onClick={this.normalLayout}>Expanded Layout</button><br/>
+                    <button onClick={this.previewScrollLayout} >Snapshot Layout</button><br/>
+                    <button onClick={this.fullGridLayout} >Full Grid</button>
                   </div>
                 )
                 : (
@@ -153,13 +165,15 @@ const mapStateToProps = (state, ownProps) => {
   const {
       filters,
       changeToPreviewScrollLayout,
-      changeToNormalLayout
+      changeToNormalLayout,
+      changeToFullGridLayout
   } = state
 
   return {
       filters,
       changeToPreviewScrollLayout,
-      changeToNormalLayout
+      changeToNormalLayout,
+      changeToFullGridLayout
     }
 }
 
@@ -167,7 +181,7 @@ const mapStateToProps = (state, ownProps) => {
 
 
 
-const mapDispatchToProps = { changeToPreviewScrollLayout, changeToNormalLayout }
+const mapDispatchToProps = { changeToPreviewScrollLayout, changeToNormalLayout, changeToFullGridLayout }
 
 
 
