@@ -81,7 +81,7 @@ class Song extends Component {
         return (
 
             <div className="topContentContainer">
-              <div className="singlePostPlayer">
+              <div className="singlePostPlayer hideMobile">
                   <button
                       className="singlePostPlayerButton"
                       onClick={() => this.onPressPlay(song)}
@@ -95,6 +95,7 @@ class Song extends Component {
                   <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
                     <span className="artistName">{song.acf.artist_name}</span>
               </div>
+
               <p className="metaInfo">
                   <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span></p>
                   {this.renderTags(song)}
@@ -126,7 +127,7 @@ class Song extends Component {
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
-            <div className="wrapper">
+            <div className="wrapper" onClick={ () => this.onPressPlay(song)} >  
                 <div className="postContent" >
                 <div className="imageContainer">
                         <img className="songImage" src={song.better_featured_image.source_url} />
@@ -134,6 +135,9 @@ class Song extends Component {
                     {this.renderTop()}
                 </div>
             </div>
+            <Link className="goToSongPage" to={`/songs/${song.id}`}>
+            <i class="im im-arrow-right-circle"></i>
+            </Link>
             <hr />
               <ShareBox props={song.slug} />
 

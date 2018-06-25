@@ -146,9 +146,13 @@ class FiltersBar extends Component {
                       this.ToggleViewsDropDown = element;
                     }}
                     >
-                    <button onClick={this.normalLayout}>Expanded Layout</button><br/>
-                    <button onClick={this.previewScrollLayout} >Snapshot Layout</button><br/>
-                    <button onClick={this.fullGridLayout} >Full Grid</button>
+                    <button className="desktop" onClick={this.normalLayout}>Expanded</button><br/>
+                    <button className="desktop" onClick={this.previewScrollLayout} >Snapshot</button><br/>
+                    <button className="desktop" onClick={this.fullGridLayout} >Full Grid</button>
+
+                    <button className="mobile" onClick={this.normalLayout}>Snapshot</button><br/>
+                    <button className="mobile" onClick={this.previewScrollLayout} >Playlist</button><br/>
+                    <button className="mobile" onClick={this.fullGridLayout} >Grid</button>
                   </div>
                 )
                 : (
