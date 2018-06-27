@@ -63,19 +63,7 @@ class SingleSong extends Component {
             </span>
         )
     }
-    renderShareBox() {
-        const {
-            song,
-        } = this.props
 
-
-        return (
-          <div className="singleSongLinks">
-          <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" /></a>
-          <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
-          </div>
-        )
-    }
 
     renderPlayer() {
         const {
@@ -126,6 +114,13 @@ class SingleSong extends Component {
             <div classname="wrapper">
                 <div className="imageContainer">
                   <img className="songImage" src={song.better_featured_image.source_url} />
+                  <div className="songImageInfoContainer">
+                  {this.renderPlayer()}
+                    <div className="song-info">
+                        <p className="song-title">{song.acf.song_name}</p>
+                        <p className="song-artist">{song.acf.artist_name}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="postContent" >
 
@@ -137,12 +132,12 @@ class SingleSong extends Component {
                         <span className="songName">{song.acf.song_name}</span><br />
                         <span className="artistName">{song.acf.artist_name}</span>
                     </div>
-                    <ShareBox />
                     </div>
                         <p className="metaInfo">
                             <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> </p>|
                             {this.renderTags(song)}
                         </p>
+                        <ShareBox props={song.slug} />
                     </div>
                 </div>
                     {this.renderDescription()}

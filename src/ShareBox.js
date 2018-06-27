@@ -3,8 +3,11 @@ import {
   FacebookShareButton,
   TwitterShareButton,
   EmailShareButton,
+  WhatsappShareButton,
   FacebookIcon,
   TwitterIcon,
+  EmailIcon,
+  WhatsappIcon
 } from 'react-share';
 
 class ShareBox extends Component {
@@ -18,7 +21,6 @@ class ShareBox extends Component {
 
         return (
           <div className="ShareBox">
-              <a className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" /></a>
               <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
               <FacebookShareButton url={url}>
                 <FacebookIcon size={40} round={true} />
@@ -26,6 +28,14 @@ class ShareBox extends Component {
               <TwitterShareButton url={url}>
                 <TwitterIcon size={40} round={true} />
               </TwitterShareButton>
+              <WhatsappShareButton url={url}>
+                <WhatsappIcon size={40} round={true} />
+              </WhatsappShareButton>
+              <EmailShareButton url={url}>
+                <EmailIcon size={40} round={true} />
+              </EmailShareButton>
+              <a className="smsLink" href="sms:?body=Rock with this song"><img src="http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-sms-1-240.png" /></a>
+
           </div>
         )
     }
