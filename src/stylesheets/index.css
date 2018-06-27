@@ -1,6 +1,8 @@
 body {
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* Lets it scroll lazy */ }
 
 body {
   overflow: scroll;
