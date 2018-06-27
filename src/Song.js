@@ -99,6 +99,7 @@ class Song extends Component {
               <p className="metaInfo">
                   <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span></p>
                   {this.renderTags(song)}
+                  <ShareBox props={song.slug} />
               </p>
               <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
                   <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
@@ -127,7 +128,7 @@ class Song extends Component {
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
-            <div className="wrapper" onClick={ () => this.onPressPlay(song)} >  
+            <div className="wrapper" onClick={ () => this.onPressPlay(song)} >
                 <div className="postContent" >
                 <div className="imageContainer">
                         <img className="songImage" src={song.better_featured_image.source_url} />
@@ -139,7 +140,7 @@ class Song extends Component {
             <i class="im im-arrow-right-circle"></i>
             </Link>
             <hr />
-              <ShareBox props={song.slug} />
+
 
             </div>
         )

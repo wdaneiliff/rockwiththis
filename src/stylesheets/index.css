@@ -16,8 +16,21 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #FF0000; }
 
+button {
+  border-color: none;
+  border-style: none;
+  border-width: 0px;
+  padding: 0;
+  background: none; }
+
+button:focus {
+  outline: none !important; }
+
 .discovery-container::-webkit-scrollbar-thumb {
   background: red; }
+
+.discover-full-song .toggle-song {
+  display: none !important; }
 
 .hero-posts {
   padding-bottom: 0px;
@@ -386,7 +399,8 @@ p {
   .filters-bar button.filters-button {
     display: inline-block;
     font-size: 14px;
-    border: 1px solid #4A4A4A;
+    border: 1px solid #4A4A4A !important;
+    border-width: 1px !important;
     border-radius: 3px;
     padding: 5px 8px;
     color: #4A4A4A; }
@@ -616,7 +630,7 @@ p {
     border-top-left-radius: 0px;
     box-shadow: 0 3px 2px -2px #C9C6CB; }
   .discovery-section .filters-bar .toggle-view {
-    color: #4A4A4A;
+    color: #869194;
     left: 30px;
     position: absolute;
     top: 50%;
@@ -627,19 +641,19 @@ p {
   .discovery-section .filters-bar button.filters-button {
     display: inline-block;
     font-size: 14px;
-    border: 1px solid #4A4A4A;
-    border-radius: 3px;
-    padding: 5px 8px;
-    color: #4A4A4A;
+    border: 1px solid #869194 !important;
+    border-width: 1px !important;
+    border-radius: 4px;
+    padding: 6px 8px;
+    color: #869194;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 100px;
     transition: all .3s ease; }
   .discovery-section .filters-bar button.filters-button:hover {
-    border: 1px solid #fc3326;
-    padding: 5px 8px;
-    background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
+    border: 1px solid #869194 !important;
+    background: #869194 !important;
     color: #fff;
     transition: all .3s ease;
     cursor: pointer; }
@@ -778,14 +792,20 @@ p {
             display: inline-block;
             margin: 0; }
             .discovery-section .songList .songContainer .postContent .topContentContainer .metaInfo .postTags .tag {
-              border: 1px solid #fc3326 !important;
               margin: 0 5px;
               padding: 6px 6px;
-              border-radius: 2px;
               transition: all .3s ease;
-              color: #fc3326;
               background: #fff;
-              font-size: 10px; }
+              font-size: 10px;
+              border-radius: 6px !important;
+              transition: all .3s ease;
+              color: #fff !important;
+              background: #1a6ea9 !important;
+              border: 1px solid #1a6ea9 !important;
+              cursor: pointer;
+              letter-spacing: .7px;
+              font-weight: 100;
+              box-shadow: 0 3px 2px -2px #C9C6CB; }
       .discovery-section .songList .songContainer .postContent a.postTitleLink {
         text-decoration: none;
         color: black;
@@ -812,16 +832,6 @@ p {
       .discovery-section .songList .songContainer .imageContainer img {
         max-height: 130px;
         border-radius: 4px; } }
-
-button {
-  border-color: none;
-  border-style: none;
-  border-width: 0px;
-  padding: 0;
-  background: none; }
-
-button:focus {
-  outline: none !important; }
 
 body {
   margin: 0;
@@ -1122,22 +1132,17 @@ p.leftInfo {
   margin-right: 6px; }
 
 .tag {
-  border: 1px solid #fc3326 !important;
-  margin: 0 5px;
-  padding: 4px 6px;
-  border-radius: 2px;
-  transition: all .3s ease;
+  margin: 0 2px;
   font-size: 12px;
-  color: #fc3326 !important;
-  background: #fff !important;
-  border: 1px solid #fc3326 !important;
-  cursor: pointer; }
-
-.tag:hover {
+  border-radius: 6px !important;
+  transition: all .3s ease;
   color: #fff !important;
-  background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
-  border: 1px solid #fc3326 !important;
-  cursor: pointer; }
+  background: #1a6ea9 !important;
+  border: 1px solid #1a6ea9 !important;
+  cursor: pointer;
+  letter-spacing: .7px;
+  font-weight: 100;
+  box-shadow: 0 3px 2px -2px #C9C6CB; }
 
 p.metaInfo {
   margin: 0 !important; }
@@ -1314,13 +1319,20 @@ a.spotifyLink {
           font-size: 16px;
           line-height: 24px; }
         .discovery-container .discover-full-song .songContainer .topContentContainer .metaInfo .tag {
-          margin: 0 5px;
-          padding: 6px 6px;
+          margin: 0 2px;
+          padding: 6px 6px !important;
           border-radius: 2px;
           transition: all .3s ease;
-          color: #fc3326;
-          background: #fff;
-          font-size: 12px; }
+          font-size: 12px;
+          border-radius: 6px !important;
+          transition: all .3s ease;
+          color: #fff !important;
+          background: #1a6ea9 !important;
+          border: 1px solid #1a6ea9 !important;
+          cursor: pointer;
+          letter-spacing: .7px;
+          font-weight: 100;
+          box-shadow: 0 3px 2px -2px #C9C6CB; }
         .discovery-container .discover-full-song .songContainer .topContentContainer .songDescription {
           font-size: 16px;
           line-height: 28px;
@@ -1455,7 +1467,7 @@ button {
     .songSourceContainer img {
       max-width: 40px; } }
 
-.postTags .tag:nth-of-type(3) {
+.tag:nth-of-type(3) {
   display: none; }
 
 @media (max-width: 800px) {
@@ -1889,3 +1901,44 @@ button {
     .fullGridLayout.discovery-container .imageContainer img {
       max-height: 130px;
       border-radius: 0 !important; } }
+
+.SubgenreFiltersDropDown {
+  max-width: 350px !important; }
+  .SubgenreFiltersDropDown .tag {
+    margin: 5px;
+    font-size: 12px;
+    border-radius: 6px !important;
+    transition: all .3s ease;
+    color: #1a6ea9 !important;
+    background: #fff !important;
+    border: 1px solid #1a6ea9 !important;
+    cursor: pointer;
+    letter-spacing: .7px;
+    font-weight: 100;
+    box-shadow: 0 3px 2px -2px #C9C6CB;
+    padding: 6px;
+    display: inline-block; }
+  .SubgenreFiltersDropDown .tag:hover {
+    margin: 5px;
+    font-size: 12px;
+    border-radius: 6px !important;
+    transition: all .3s ease;
+    color: #fff !important;
+    background: #1a6ea9 !important;
+    border: 1px solid #1a6ea9 !important;
+    cursor: pointer;
+    letter-spacing: .7px;
+    font-weight: 100;
+    box-shadow: none !important;
+    padding: 6px;
+    display: inline-block; }
+
+button.clearAll.tag {
+  width: 100%;
+  font-weight: 400;
+  padding: 10px; }
+
+button.clearAll.tag:hover {
+  width: 100%;
+  font-weight: 400;
+  padding: 10px !important; }

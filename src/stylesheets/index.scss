@@ -20,10 +20,27 @@ body::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
 
+button {
+  border-color: none;
+    border-style: none;
+    border-width: 0px;
+    padding: 0;
+    background: none;
+}
+
+button:focus {
+      outline: none !important;
+}
+
 
 .discovery-container::-webkit-scrollbar-thumb {
   background: red;
 
+}
+
+// TOGGLE ARROWS HIDE FOR NOW
+.discover-full-song .toggle-song {
+  display: none !important;
 }
 
 
@@ -590,7 +607,9 @@ $discovery-parallax-padding: calc(100vw + 115px);
   button.filters-button {
     display: inline-block;
     font-size: 14px;
-    border: 1px solid #4A4A4A;
+    border: 1px solid #4A4A4A !important;
+    border-width: 1px !important;
+
     border-radius: 3px;
     padding: 5px 8px;
     color: #4A4A4A;
@@ -987,7 +1006,7 @@ margin: 10px;
 
 
     .toggle-view {
-      color: #4A4A4A;
+      color: #869194;
       left: 30px;
       position: absolute;
       top: 50%;
@@ -1003,10 +1022,12 @@ margin: 10px;
     button.filters-button {
     display: inline-block;
     font-size: 14px;
-    border: 1px solid #4A4A4A;
-    border-radius: 3px;
-    padding: 5px 8px;
-    color: #4A4A4A;
+    border: 1px solid #869194 !important;
+    border-width: 1px !important;
+
+    border-radius: 4px;
+    padding: 6px 8px;
+    color: #869194;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1015,9 +1036,8 @@ margin: 10px;
     }
 
     button.filters-button:hover {
-    border: 1px solid #fc3326;
-    padding: 5px 8px;
-    background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
+    border: 1px solid #869194 !important;
+    background: #869194 !important;
     color: #fff;
     transition: all .3s ease;
     cursor: pointer;
@@ -1235,14 +1255,20 @@ margin: 10px;
                         margin: 0;
 
                         .tag {
-                          border: 1px solid #fc3326 !important;
                           margin: 0 5px;
                           padding: 6px 6px;
-                          border-radius: 2px;
                           transition: all .3s ease;
-                          color: #fc3326;
                           background: #fff;
                           font-size: 10px;
+                          border-radius: 6px !important;
+                          transition: all .3s ease;
+                          color: #fff !important;
+                          background: #1a6ea9 !important;
+                          border: 1px solid #1a6ea9 !important;
+                          cursor: pointer;
+                          letter-spacing: .7px;
+                          font-weight: 100;
+                          box-shadow: 0 3px 2px -2px #C9C6CB;
                       }
                     }
                   }
@@ -1290,17 +1316,7 @@ margin: 10px;
   }
 }
 
-button {
-  border-color: none;
-    border-style: none;
-    border-width: 0px;
-    padding: 0;
-    background: none;
-}
 
-button:focus {
-      outline: none !important;
-}
 
 
 body {
@@ -1607,35 +1623,27 @@ p.leftInfo {
   margin-right: 6px; }
 
 .tag {
-  // border: 2px solid #f1782d !important;
-  // margin: 0 3px;
-  // padding: 4px 6px;
-  // border-radius: 8px;
-  // transition: all .3s ease;
-  // color: #f1782d !important;
-  // background: #fff !important;
-  // font-size: 13px;
-  border: 1px solid #fc3326 !important;
-      margin: 0 5px;
-      padding: 4px 6px;
-      border-radius: 2px;
-      transition: all .3s ease;
-      // color: #fc3326;
-      // background: #fff;
+
+      margin: 0 2px;
+
       font-size: 12px;
-
-      color: #fc3326 !important;
-      background: #fff !important;
-      border: 1px solid #fc3326 !important;
+      border-radius: 6px !important;
+      transition: all .3s ease;
+      color: #fff !important;
+      background: #1a6ea9 !important;
+      border: 1px solid #1a6ea9 !important;
       cursor: pointer;
+      letter-spacing: .7px;
+      font-weight: 100;
+      box-shadow: 0 3px 2px -2px #C9C6CB;
 }
 
-.tag:hover {
-  color: #fff !important;
-  background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
-  border: 1px solid #fc3326 !important;
-  cursor: pointer;
-}
+// .tag:hover {
+//   color: #fff !important;
+//   background: linear-gradient(to right, #fc3326, #fa7d4f) !important;
+//   border: 1px solid #fc3326 !important;
+//   cursor: pointer;
+// }
 
 p.metaInfo {
   // padding-left: 5px;
@@ -1899,21 +1907,21 @@ a.spotifyLink {
             }
 
             .tag {
-                // border: 2px solid #f1782d !important;
-                // margin: 0 3px;
-                // padding: 4px 6px;
-                // border-radius: 8px;
-                // transition: all .3s ease;
-                // color: #f1782d !important;
-                // background: #fff !important;
-                // font-size: 14px;
-                margin: 0 5px;
-                padding: 6px 6px;
+
+                margin: 0 2px;
+                padding: 6px 6px !important;
                 border-radius: 2px;
                 transition: all .3s ease;
-                color: #fc3326;
-                background: #fff;
                 font-size: 12px;
+                border-radius: 6px !important;
+                transition: all .3s ease;
+                color: #fff !important;
+                background: #1a6ea9 !important;
+                border: 1px solid #1a6ea9 !important;
+                cursor: pointer;
+                letter-spacing: .7px;
+                font-weight: 100;
+                box-shadow: 0 3px 2px -2px #C9C6CB;
             }
           }
 
@@ -2138,7 +2146,7 @@ button {
 
 
 
-.postTags .tag:nth-of-type(3) {
+ .tag:nth-of-type(3) {
   display: none;
 }
 
@@ -2814,4 +2822,53 @@ button {
       }
     }
   }
+}
+
+
+
+
+// DROPDOWN FILTER TAG STYLES
+.SubgenreFiltersDropDown {
+  max-width: 350px !important;
+  .tag {
+      margin: 5px;
+      font-size: 12px;
+      border-radius: 6px !important;
+      transition: all .3s ease;
+      color: #1a6ea9 !important;
+      background: #fff !important;
+      border: 1px solid #1a6ea9 !important;
+      cursor: pointer;
+      letter-spacing: .7px;
+      font-weight: 100;
+      box-shadow: 0 3px 2px -2px #C9C6CB;
+      padding: 6px;
+      display: inline-block;
+    }
+  .tag:hover {
+      margin: 5px;
+      font-size: 12px;
+      border-radius: 6px !important;
+      transition: all .3s ease;
+      color: #fff !important;
+      background: #1a6ea9 !important;
+      border: 1px solid #1a6ea9 !important;
+      cursor: pointer;
+      letter-spacing: .7px;
+      font-weight: 100;
+      box-shadow: none !important;
+      padding: 6px;
+      display: inline-block;
+    }
+}
+
+button.clearAll.tag {
+    width: 100%;
+    font-weight: 400;
+    padding: 10px;
+}
+button.clearAll.tag:hover {
+    width: 100%;
+    font-weight: 400;
+    padding: 10px !important;
 }
