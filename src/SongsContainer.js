@@ -85,9 +85,9 @@ console.log(this.props.discoverLayout)
                   {songGrid}
                   <button className="toggle-song next" />
                 </div>
-                <div className="songList">
+                {/*<div className="songList">
                   {songList}
-                </div>
+                </div>*/}
 
                 <div className="discover-full-song">
                 <button className="toggle-song previous" />

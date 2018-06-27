@@ -1565,7 +1565,11 @@ margin-right: 15px;
   background-size: 100%;
   cursor: pointer;
   flex: 0 0 10px;
-  font-size: 18px; }
+  font-size: 18px;
+  i {
+    color: white;
+  }
+}
 
 .player-duration-bar-current-time, .player-duration-bar-song-duration {
   font-family: Open Sans;
@@ -1746,10 +1750,9 @@ a.spotifyLink {
   display: flex !important;
   transition: all 0.3s ease; }
 
-.playButton:hover, .pauseButton:hover {
+.player-control-button:hover {
   opacity: .7;
 }
-
 
 @media (min-width: 800px) {
 

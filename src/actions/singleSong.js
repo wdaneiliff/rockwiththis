@@ -5,18 +5,12 @@ export const FETCH_SINGLE_SONG = {
     UPDATE_SONG_ID: 'UPDATE_SONG_ID'
 }
 
-
-
 export const fetchSingleSong = slug => (dispatch, getState) => {
-
     dispatch({
         type: FETCH_SINGLE_SONG.IN_PROGRESS,
     })
-
     const dataURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${slug}?_embed`
-
     fetch(dataURL).then(res => res.json()).then((res) => {
-
         dispatch({
             type: FETCH_SINGLE_SONG.SUCCESS,
             singleSong: res,

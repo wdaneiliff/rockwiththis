@@ -4,16 +4,11 @@ export const FETCH_RELATED_SONGS = {
     FAILURE: 'FETCH_RELATED_SONGS_FAILURE',
 }
 
-
-
 export const fetchRelatedSongs = slug => (dispatch, getState) => {
-
     dispatch({
         type: FETCH_RELATED_SONGS.IN_PROGRESS,
     })
-
     const dataURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${slug}?_embed`
-
     fetch(dataURL).then(res => res.json()).then((res) => {
         const tags = res.tags
         const tag1 = tags[0]
@@ -24,24 +19,23 @@ export const fetchRelatedSongs = slug => (dispatch, getState) => {
         console.log(tag1Songs)
         console.log(dataURL)
 
-
         fetch(tag1Songs).then(res => res.json()).then((res) => {
             const relatedSongs = res.slice(0,5)
             // console.log(relatedSongs1)
             // relatedSongs.push([relatedSongs1]);
 
-          fetch(tag2Songs).then(res => res.json()).then((res) => {
-            const relatedSongs2 = res.slice(0,5)
+            fetch(tag2Songs).then(res => res.json()).then((res) => {
+                const relatedSongs2 = res.slice(0,5)
 
-            // const relatedSongs = [relatedSongs1, relatedSongs2]
-            // console.log(relatedSongs)
+                // const relatedSongs = [relatedSongs1, relatedSongs2]
+                // console.log(relatedSongs)
 
-            dispatch({
-                type: FETCH_RELATED_SONGS.SUCCESS,
-                relatedSongs,
+                dispatch({
+                    type: FETCH_RELATED_SONGS.SUCCESS,
+                    relatedSongs,
+                })
             })
-          })
-          })
+        })
     }).catch((er) => {
         dispatch({
             type: FETCH_RELATED_SONGS.FAILURE,

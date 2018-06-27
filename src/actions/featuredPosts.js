@@ -4,7 +4,6 @@ export const FETCH_FEATURED_POSTS = {
     FAILURE: 'FETCH_FEATURED_POSTS_FAILURE',
 }
 
-
 export const fetchFeaturedPosts = (pageNumber = 1) => (dispatch, getState) => {
     dispatch({
         type: FETCH_FEATURED_POSTS.IN_PROGRESS,

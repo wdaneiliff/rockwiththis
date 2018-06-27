@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const FETCH_FILTERS = {
     IN_PROGRESS: 'FETCH_FILTERS_IN_PROGRESS',
     SUCCESS: 'FETCH_FILTERS_SUCCESS',
@@ -11,10 +9,10 @@ export const fetchFilters = (pageNumber = 1) => (dispatch, getState) => {
         type: FETCH_FILTERS.IN_PROGRESS,
     })
     const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/all-terms'
-    axios.get(dataURL).then(res => {
+    fetch(dataURL).then(res => res.json()).then(res => {
       dispatch({
               type: FETCH_FILTERS.SUCCESS,
-              filters: res.data.tags,
+              filters: res.tags,
       })
     }).catch((er) => {
         dispatch({

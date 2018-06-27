@@ -20,11 +20,11 @@ class MainPlayer extends Component {
             currentlyPlayingSongDuration: 0,
             seekPosition: null,
             rcSliderValue: 0,
-            isPlaying: this.props.isPlaying,
         }
 
         this.checkSeekPosition = this.checkSeekPosition.bind(this)
         this.renderButtons = this.renderButtons.bind(this)
+        this.changeSong = this.changeSong.bind(this)
         this.onAfterChangeSlider = this.onAfterChangeSlider.bind(this)
         this.onChangeSlider = this.onChangeSlider.bind(this)
         this.setDurationForSongId = this.setDurationForSongId.bind(this)
@@ -62,14 +62,13 @@ class MainPlayer extends Component {
     }
 
     setRcSliderValueForProgress(seekPosition, duration) {
-
         this.setState({
             rcSliderValue: (seekPosition / duration) * 100,
         })
     }
 
     updateStorePlayPause() {
-        this.props.togglePlayPause(!this.props.isPlaying)
+        this.props.actions.togglePlayPause(!this.props.queue.isPlaying)
     }
 
     checkSeekPosition(repeat = true) {
@@ -83,6 +82,9 @@ class MainPlayer extends Component {
                 if (this.state.currentlyPlayingSongDuration) {
                     this.setRcSliderValueForProgress(seekPosition, this.state.currentlyPlayingSongDuration)
                 }
+                if (Math.floor(this.state.currentlyPlayingSongDuration) < Math.floor(this.state.seekPosition)) {
+                  debugger
+                }
                 this.setState({ seekPosition })
             })
         }
@@ -92,6 +94,14 @@ class MainPlayer extends Component {
         }
     }
 
+    changeSong(next) {
+        this.props.posts.find((post, i, arr) => {
+            const queuePosition = next ? i + 1 : i - 1
+            if (post === this.props.currentlyPlayingSong) {
+                this.props.actions.toggleSong(arr[queuePosition].id)
+            }
+        })
+    }
 
     renderInfo() {
         const { currentlyPlayingSong } = this.props
@@ -117,11 +127,10 @@ class MainPlayer extends Component {
 
     renderButtons() {
         const {
-            currentlyPlayingSong,
-            isPlaying,
+            currentlyPlayingSong
         } = this.props
 
-        const playPauseButton = isPlaying ? (
+        const playPauseButton = this.props.queue.isPlaying ? (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="main playButton" />
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="main playButton" />
@@ -130,7 +139,13 @@ class MainPlayer extends Component {
         return (
             <div className="player-controls">
                 <div className="player-controls-buttons">
-                    <div id="player-control-button-back" className="player-control-button"><i className="fa fa-step-backward" aria-hidden="true" /></div>
+                    <button
+                        id="player-control-button-back"
+                        className="player-control-button"
+                        onClick={() => this.changeSong(false)}
+                    >
+                      <i className="fa fa-step-backward" aria-hidden="true" />
+                    </button>
                     <div
                         id="player-control-button-play"
                         className="player-control-button"
@@ -138,7 +153,13 @@ class MainPlayer extends Component {
                     >
                         {playPauseButton}
                     </div>
-                    <div id="player-control-button-next" className="player-control-button"><i className="fa fa-step-forward" aria-hidden="true" /></div>
+                    <button
+                        id="player-control-button-next"
+                        className="player-control-button"
+                        onClick={() => this.changeSong(true)}
+                    >
+                        <i className="fa fa-step-forward" aria-hidden="true" />
+                    </button>
                 </div>
                 <div className="player-duration-bar-wrapper">
                     <div className="player-duration-bar-current-time">{formatTime(this.state.seekPosition)}</div>
@@ -155,15 +176,6 @@ class MainPlayer extends Component {
                 </div>
             </div>
         )
-        /**
-        <div className="rc-slider">
-             <div className="rc-slider-rail" />
-             <div className="rc-slider-track" />
-             <div className="rc-slider-step" />
-             <div className="rc-slider-handle" />
-             <div className="rc-slider-mark" />
-         </div>
-         */
     }
 
     renderShareButtons() {
@@ -207,23 +219,4 @@ class MainPlayer extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    let currentlyPlayingSong = state.posts.find(post => post.id === state.queue.currentlyPlayingSong)
-    if (!currentlyPlayingSong) {
-        currentlyPlayingSong = state.posts[0]
-    }
-    return {
-        currentlyPlayingSong,
-        isPlaying: state.queue.isPlaying,
-    }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleSong: postId => dispatch(toggleSong(postId)),
-    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(MainPlayer)
+export default MainPlayer
