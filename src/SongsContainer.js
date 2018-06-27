@@ -112,16 +112,11 @@ class SongsContainer extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    posts: state.posts,
-    queue: state.posts,
-})
-
 const mapDispatchToProps = (dispatch, ownProps) => ({
     toggleSong: postId => dispatch(toggleSong(postId)),
 })
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps,
 )(SongsContainer)
