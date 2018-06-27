@@ -34,8 +34,6 @@ class SongsContainer extends Component {
         if (this.props.queue.isPlaying !== nextProps.queue.isPlaying ||
             this.props.queue.currentlyPlayingSong !== nextProps.queue.currentlyPlayingSong) {
         }
-
-        console.log(this.props.discoverLayout)
     }
 
     changeDiscoverSong() {
@@ -47,6 +45,7 @@ class SongsContainer extends Component {
         return (
             <SongGrid
                 key={`${song.id}`}
+                ref={(ref) => { this.songs[song.id] = ref }}
                 song={song}
             />
         )
@@ -55,6 +54,7 @@ class SongsContainer extends Component {
         return (
             <Song
                 key={`${song.id}`}
+                ref={(ref) => { this.songs[song.id] = ref }}
                 song={song}
             />
         )
