@@ -15,17 +15,11 @@ class Homepage extends Component {
 
     }
 
-    componentDidMount() {
-        this.props.fetchPosts()
-        this.props.fetchFeaturedPosts()
-        this.props.fetchFilters()
-    }
-
     render() {
         return (
           <div>
              <div className="homeContainer">
-                    <SongsContainer discoverLayout={this.props.discoverLayout} />
+                    <SongsContainer {...this.props} />
                     {/*<SidebarRight />*/}
                  </div>
            </div>
@@ -33,22 +27,6 @@ class Homepage extends Component {
     }
 }
 
-Homepage.propTypes = {
-    fetchPosts: PropTypes.func.isRequired,
-    fetchFeaturedPosts: PropTypes.func.isRequired,
-    fetchFilters: PropTypes.func.isRequired,
-}
-
-
 const mapStateToProps = (state, ownProps) => Object.assign(state, ownProps)
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    fetchPosts: () => dispatch(fetchPosts()),
-    fetchFeaturedPosts: () => dispatch(fetchFeaturedPosts()),
-    fetchFilters: () => dispatch(fetchFilters()),
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(Homepage)
+export default connect(mapStateToProps)(Homepage)

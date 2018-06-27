@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { toggleSong, togglePlayPause } from './actions/queue'

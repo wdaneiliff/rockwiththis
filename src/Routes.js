@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Homepage from './Homepage'
 import SingleSongPage from './SingleSongPage'
 
-class Routes extends Component {
-
-render() {
-
-return (
-      <main>
-        <Switch>
-          <Route exact path='/' component={Homepage}/>
-          <Route  path='/songs/:id' component={SingleSongPage}/>
-        </Switch>
-      </main>
-
+const Routes = (props) => {
+    return (
+        <main>
+            <Switch>
+                <Route exact path='/' component={Homepage} />
+                <Route path='/songs/:id' component={SingleSongPage} />
+            </Switch>
+        </main>
     )
-  }
 }
+
 export default Routes;

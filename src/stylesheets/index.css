@@ -1330,18 +1330,21 @@ a.spotifyLink {
         max-width: 60px !important; }
       .discovery-container .discover-full-song button.toggle-song {
         position: absolute;
-        top: 50%;
-        height: 30px;
+        top: 0;
+        height: 100%;
+        max-height: 674px;
         width: 30px;
         background-size: contain; }
+        .discovery-container .discover-full-song button.toggle-song img {
+          top: 50%;
+          height: 30px; }
       .discovery-container .discover-full-song button.toggle-song.previous {
-        left: 40px;
-        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg); }
+        left: 40px; }
+        .discovery-container .discover-full-song button.toggle-song.previous img {
+          transform: rotate(180deg);
+          transform: rotate(180deg); }
       .discovery-container .discover-full-song button.toggle-song.next {
-        right: 40px;
-        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png); }
+        right: 40px; }
       .discovery-container .discover-full-song .ShareBox {
         display: block;
         width: 70%;

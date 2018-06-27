@@ -64,25 +64,19 @@ class FiltersBar extends Component {
         });
 
       }
-  }
+    }
 
-  previewScrollLayout() {
-    this.props.changeToPreviewScrollLayout()
+    previewScrollLayout() {
+      this.props.changeToPreviewScrollLayout()
+    }
 
-  }
-  fullGridLayout() {
-    this.props.changeToFullGridLayout()
+    fullGridLayout() {
+      this.props.changeToFullGridLayout()
+    }
 
-  }
-
-  normalLayout(){
-    this.props.changeToNormalLayout()
-
-  }
-
-
-
-
+    normalLayout(){
+      this.props.changeToNormalLayout()
+    }
 
     showToggleViewsDropdown(event) {
       event.preventDefault();
@@ -179,13 +173,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-
-
-
-
 const mapDispatchToProps = { changeToPreviewScrollLayout, changeToNormalLayout, changeToFullGridLayout }
-
-
 
 export default connect(
     mapStateToProps,

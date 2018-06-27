@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import YouTube from 'react-youtube'
 
 class OffScreen extends Component {

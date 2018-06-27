@@ -18,6 +18,12 @@ class AppChild extends Component {
         this.handleScroll = this.handleScroll.bind(this)
     }
 
+    componentWillMount() {
+      this.props.actions.fetchPosts()
+      this.props.actions.fetchFeaturedPosts()
+      this.props.actions.fetchFilters()
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll)
     }
