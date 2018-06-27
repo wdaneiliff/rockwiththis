@@ -127,7 +127,7 @@ class Song extends Component {
         const { height } = this.state
 
         return (
-            <div id={song.slug} className="songContainer" key={`${song.id}`}>
+            <div id={song.slug} className="songContainer clearfix" key={`${song.id}`}>
             <div className="wrapper" onClick={ () => this.onPressPlay(song)} >
                 <div className="postContent" >
                 <div className="imageContainer">

@@ -15,10 +15,18 @@ class RelatedSongs extends Component {
         )
     }
 
+    relatedSongsStack () {
+      const relatedSongs = this.props.relatedSongs.map(this.renderRelatedSong)
+
+      return (
+        <div className="stack">{relatedSongs}</div>
+      )
+    }
+
 
     render() {
       // const relatedSongs = this.props.relatedSongs
-      const relatedSongs = this.props.relatedSongs.map(this.renderRelatedSong)
+      // const relatedSongs = this.props.relatedSongs.map(this.renderRelatedSong)
 
       // const relatedSongs = this.props.relatedSongs.map(this.renderRelatedSong)
       // const tagName = this.props.relatedSongs
@@ -26,7 +34,8 @@ class RelatedSongs extends Component {
             <div className="relatedSongs">
               <div className="relatedSongsContainer">
               <p className="related-songs-title">Related Songs</p>
-              {relatedSongs}
+              {this.relatedSongsStack()}
+              {this.relatedSongsStack()}
             </div>
             </div>
         )
