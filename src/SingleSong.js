@@ -138,6 +138,8 @@ class SingleSong extends Component {
                             {this.renderTags(song)}
                         </p>
                         <ShareBox props={song.slug} />
+                        <a href="#" className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+
                     </div>
                 </div>
                     {this.renderDescription()}

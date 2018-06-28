@@ -95,14 +95,10 @@ class FiltersBar extends Component {
     }
 
     closeToggleViewsDropdown() {
-
-      if (!this.ToggleViewsDropDown.contains(event.target)) {
-
         this.setState({ showToggleViewsDropdown: false }, () => {
           document.removeEventListener('click', this.closeToggleViewsDropdown);
         });
 
-      }
   }
 
 
@@ -115,7 +111,7 @@ class FiltersBar extends Component {
                 <input class="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
           </div>
           <button onClick={this.showSubGenreFilters} className="filters-button">
-            #Filters
+            Subgenres
           </button>
             <button onClick={this.showToggleViewsDropdown} className="toggle-view"><i class="im im-menu-list"></i></button>
 

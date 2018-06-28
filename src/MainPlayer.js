@@ -38,6 +38,7 @@ class MainPlayer extends Component {
         }
     }
 
+
     onChangeSlider(progress) {
         this.setState({
             rcSliderValue: progress,
@@ -168,7 +169,13 @@ class MainPlayer extends Component {
     renderShareButtons() {
         return (
             <div className="songSourceContainer">
-                <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/soundcloud.png" />
+            <a className="source soundcloud">
+              <span>Playing from</span>
+              <br/>
+              <i className="im im-soundcloud"></i>
+            </a>
+
+
             </div>
         )
     }
@@ -191,8 +198,9 @@ class MainPlayer extends Component {
                     {this.renderInfo()}
                     <div className="player-controls-wrapper">
                         {this.renderButtons()}
-                        {this.renderShareButtons()}
+
                     </div>
+                    {this.renderShareButtons()}
                 </div>
             </footer>
         )
