@@ -41,7 +41,6 @@ class SongsContainer extends Component {
     }
 
     renderSongGrid(song, index) {
-
         return (
             <SongGrid
                 key={`${song.id}`}
@@ -50,6 +49,7 @@ class SongsContainer extends Component {
             />
         )
     }
+
     renderSongList(song, index) {
         return (
             <Song

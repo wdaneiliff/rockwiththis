@@ -81,9 +81,6 @@ class MainPlayer extends Component {
                 if (this.state.currentlyPlayingSongDuration) {
                     this.setRcSliderValueForProgress(seekPosition, this.state.currentlyPlayingSongDuration)
                 }
-                if (Math.floor(this.state.currentlyPlayingSongDuration) < Math.floor(this.state.seekPosition)) {
-                  debugger
-                }
                 this.setState({ seekPosition })
             })
         }
