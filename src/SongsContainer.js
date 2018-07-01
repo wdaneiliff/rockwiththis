@@ -84,9 +84,9 @@ class SongsContainer extends Component {
                   {songGrid}
                   <button className="toggle-song next" />
                 </div>
-                {/*<div className="songList">
+                <div className="songList">
                   {songList}
-                </div>*/}
+                </div>
 
                 <div className="discover-full-song">
                 {this.props.posts[discoverFullSongIndex] &&
