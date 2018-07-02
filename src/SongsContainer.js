@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
@@ -24,24 +24,23 @@ class SongsContainer extends Component {
         this.songs = {}
 
         this.state = {
-            discoverFullSongIndex: 1
+            discoverFullSongIndex: 0
         }
+
+        this.changeDiscoverSong = this.changeDiscoverSong.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.queue.isPlaying !== nextProps.queue.isPlaying ||
             this.props.queue.currentlyPlayingSong !== nextProps.queue.currentlyPlayingSong) {
-
-            // if not playing anymore, then pause current song
-            // if new song, then stop last song and start next song
         }
-
-console.log(this.props.discoverLayout)
     }
 
+    changeDiscoverSong() {
+        this.setState({ discoverFullSongIndex: this.state.discoverFullSongIndex + 1 })
+    }
 
     renderSongGrid(song, index) {
-
         return (
             <SongGrid
                 key={`${song.id}`}
@@ -50,6 +49,7 @@ console.log(this.props.discoverLayout)
             />
         )
     }
+
     renderSongList(song, index) {
         return (
             <Song
@@ -61,14 +61,13 @@ console.log(this.props.discoverLayout)
     }
 
     render() {
+        const { discoverFullSongIndex } = this.state
         const heroPosts = this.props.posts.slice(0,7)
 
         // const songGrid = this.props.posts.slice(7).map(this.renderSongGrid)
         const songGrid = this.props.posts.slice(0,16).map(this.renderSongGrid)
         // const songList = this.props.posts.slice(7).map(this.renderSongList)
         const songList = this.props.posts.map(this.renderSongList)
-
-        const discoverFullSong = this.props.posts.slice(0,1).map(this.renderSongList)
         // const posts = this.props.posts.map(this.renderSong)
 
         return (
@@ -90,9 +89,19 @@ console.log(this.props.discoverLayout)
                 </div>
 
                 <div className="discover-full-song">
-                <button className="toggle-song previous" />
-                  {discoverFullSong}
-                <button className="toggle-song next" />
+                {this.props.posts[discoverFullSongIndex] &&
+                    <Fragment>
+                      <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(true)}>
+                            <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                      </button>
+                            <Song
+                                song={this.props.posts[discoverFullSongIndex]}
+                            />
+                          <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
+                                <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                          </button>
+                    </Fragment>
+                }
 
                 </div>
               </div>
@@ -103,16 +112,11 @@ console.log(this.props.discoverLayout)
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    posts: state.posts,
-    queue: state.posts,
-})
-
 const mapDispatchToProps = (dispatch, ownProps) => ({
     toggleSong: postId => dispatch(toggleSong(postId)),
 })
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps,
 )(SongsContainer)

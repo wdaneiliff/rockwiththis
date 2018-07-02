@@ -9,13 +9,11 @@ export const changeToPreviewScrollLayout = slug => (dispatch, getState) => {
 }
 
 export const changeToNormalLayout = slug => (dispatch, getState) => {
-
     dispatch({
         type: NORMAL_LAYOUT,
     })
 }
 export const changeToFullGridLayout = slug => (dispatch, getState) => {
-
     dispatch({
         type: FULL_GRID_LAYOUT,
     })

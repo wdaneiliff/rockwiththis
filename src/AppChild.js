@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as Actions from './actions/index'
+import { bindActionCreators } from 'redux'
 import OffScreen from './OffScreen'
 import SocialLinks from './SocialLinks.js'
 import Header from './Header'
@@ -15,6 +18,12 @@ class AppChild extends Component {
         this.handleScroll = this.handleScroll.bind(this)
     }
 
+    componentWillMount() {
+      this.props.actions.fetchPosts()
+      this.props.actions.fetchFeaturedPosts()
+      this.props.actions.fetchFilters()
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll)
     }
@@ -27,14 +36,25 @@ class AppChild extends Component {
     render() {
         return (
             <div>
-                <OffScreen />
+                <OffScreen {...this.props} />
                 <Header shrinkHeader={this.state.shrinkHeader} />
                 <SocialLinks />
                 <Routes />
-                <MainPlayer />
+                <MainPlayer {...this.props} />
             </div>
         )
     }
 }
 
-export default AppChild
+const mapStateToProps = (state, ownProps) => {
+    const currentlyPlayingSong = state.posts.find(post => post.id === state.queue.currentlyPlayingSong) || state.posts[0]
+    return Object.assign(state, ownProps, { currentlyPlayingSong })
+}
+
+const mapDispatch = (dispatch) => {
+    return {
+        actions: bindActionCreators(Actions, dispatch),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatch)(AppChild)

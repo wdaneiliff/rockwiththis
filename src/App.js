@@ -24,8 +24,4 @@ class App extends Component {
     }
 }
 
-// const mapStateToProps = (state, ownProps) => Object.assign(state, ownProps)
-//
-// export default connect(mapStateToProps, null)(App)
-
 export default App

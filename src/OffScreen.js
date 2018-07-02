@@ -1,29 +1,46 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import YouTube from 'react-youtube'
 
 class OffScreen extends Component {
+    static getCurrentlyPlayingSong(posts, queue) {
+        return posts.find(post => post.id === queue.currentlyPlayingSong) || posts[0]
+    }
 
     constructor(props) {
         super(props)
         this.state = {
-            autoplay: false
+            autoplay: true
         }
+        this.bindPlayNext = this.bindPlayNext.bind(this)
+        this.playNextSong = this.playNextSong.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.isPlaying !== nextProps.isPlaying || this.props.currentlyPlayingSong !== nextProps.currentlyPlayingSong) {
-            nextProps.isPlaying ? window.SC.Widget('sc-player').play() : window.SC.Widget('sc-player').pause()
+        const thisCurrentlyPlayingSong = OffScreen.getCurrentlyPlayingSong(this.props.posts, this.props.queue)
+        const nextCurrentlyPlayingSong = OffScreen.getCurrentlyPlayingSong(nextProps.posts, nextProps.queue)
+        if (this.props.queue.isPlaying !== nextProps.queue.isPlaying || thisCurrentlyPlayingSong !== nextCurrentlyPlayingSong) {
+            nextProps.queue.isPlaying ? window.SC.Widget('sc-player').play() : window.SC.Widget('sc-player').pause()
         }
-
-        if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id && nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong) {
+        if (thisCurrentlyPlayingSong && thisCurrentlyPlayingSong.id && thisCurrentlyPlayingSong !== nextCurrentlyPlayingSong) {
             this.setState({ autoplay: true })
         }
-    }   
+    }
+
+    bindPlayNext() {
+        window.SC.Widget('sc-player').bind(window.SC.Widget.Events.FINISH, this.playNextSong)
+    }
+
+    playNextSong() {
+        const thisCurrentlyPlayingSong = OffScreen.getCurrentlyPlayingSong(this.props.posts, this.props.queue)
+        this.props.posts.find((post, i, arr) => {
+            if (post === thisCurrentlyPlayingSong) {
+                this.props.actions.toggleSong(arr[i + 1].id)
+            }
+        })
+    }
 
     render() {
-        const { currentlyPlayingSong } = this.props
+        const currentlyPlayingSong = OffScreen.getCurrentlyPlayingSong(this.props.posts, this.props.queue)
         return (
             <div className='iframe-and-youtube-wrapper'>
                 <iframe
@@ -34,6 +51,7 @@ class OffScreen extends Component {
                     height="100"
                     scrolling="no"
                     frameBorder="no"
+                    onLoad={this.bindPlayNext}
                     src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${currentlyPlayingSong && currentlyPlayingSong.acf.sc_track_id}?auto_play=${this.state.autoplay}`}
                 />
                 <YouTube
@@ -47,15 +65,4 @@ class OffScreen extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    let currentlyPlayingSong = state.posts.find(post => post.id === state.queue.currentlyPlayingSong)
-    if (!currentlyPlayingSong) {
-        currentlyPlayingSong = state.posts[0]
-    }
-    return {
-        currentlyPlayingSong,
-        isPlaying: state.queue.isPlaying,
-    }
-}
-
-export default connect(mapStateToProps, null)(OffScreen);
+export default OffScreen

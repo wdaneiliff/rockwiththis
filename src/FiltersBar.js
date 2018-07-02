@@ -21,7 +21,6 @@ class FiltersBar extends Component {
         this.showSubGenreFilters = this.showSubGenreFilters.bind(this);
         this.closeSubGenreFilters = this.closeSubGenreFilters.bind(this);
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
-
         this.previewScrollLayout = this.previewScrollLayout.bind(this)
         this.fullGridLayout = this.fullGridLayout.bind(this)
         this.normalLayout = this.normalLayout.bind(this)
@@ -64,25 +63,19 @@ class FiltersBar extends Component {
         });
 
       }
-  }
+    }
 
-  previewScrollLayout() {
-    this.props.changeToPreviewScrollLayout()
+    previewScrollLayout() {
+      this.props.changeToPreviewScrollLayout()
+    }
 
-  }
-  fullGridLayout() {
-    this.props.changeToFullGridLayout()
+    fullGridLayout() {
+      this.props.changeToFullGridLayout()
+    }
 
-  }
-
-  normalLayout(){
-    this.props.changeToNormalLayout()
-
-  }
-
-
-
-
+    normalLayout(){
+      this.props.changeToNormalLayout()
+    }
 
     showToggleViewsDropdown(event) {
       event.preventDefault();
@@ -98,8 +91,7 @@ class FiltersBar extends Component {
         this.setState({ showToggleViewsDropdown: false }, () => {
           document.removeEventListener('click', this.closeToggleViewsDropdown);
         });
-
-  }
+    }
 
 
     render() {
@@ -179,13 +171,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-
-
-
-
 const mapDispatchToProps = { changeToPreviewScrollLayout, changeToNormalLayout, changeToFullGridLayout }
-
-
 
 export default connect(
     mapStateToProps,
