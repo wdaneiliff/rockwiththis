@@ -66,20 +66,6 @@ class SingleSong extends Component {
         )
     }
 
-    renderMetaTags() {
-        const {
-            song,
-        } = this.props
-
-        const tags = song._embedded['wp:term'][1].map(tag =>
-            <meta name="tag" content={tag.name} />
-          )
-
-        return (
-            {tags}
-        )
-    }
-
 
     renderPlayer() {
         const {
@@ -137,6 +123,7 @@ class SingleSong extends Component {
               ${song._embedded['wp:term'][1][1] ? <meta name="tag" content={song._embedded['wp:term'][1][1].name} /> : ''}
               ${song._embedded['wp:term'][1][2] ? <meta name="tag" content={song._embedded['wp:term'][1][2].name} /> : ''}
               ${song._embedded['wp:term'][1][3] ? <meta name="tag" content={song._embedded['wp:term'][1][3].name} /> : ''}
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             </Helmet>
             <div classname="wrapper">
                 <div className="imageContainer">
