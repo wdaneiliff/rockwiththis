@@ -8,6 +8,7 @@ import SidebarFiltersWrapper from './SidebarFiltersWrapper.js'
 import { fetchPosts } from './actions/index'
 import { fetchFeaturedPosts } from './actions/featuredPosts'
 import { fetchFilters } from './actions/filters'
+import { Helmet } from "react-helmet";
 
 class Homepage extends Component {
     constructor(props) {
@@ -18,6 +19,9 @@ class Homepage extends Component {
     render() {
         return (
           <div>
+          <Helmet>
+            <title>Rock With This - Your New Favorite Song</title>
+          </Helmet>
              <div className="homeContainer">
                     <SongsContainer {...this.props} />
                     {/*<SidebarRight />*/}

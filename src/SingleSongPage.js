@@ -11,6 +11,7 @@ import SidebarRight from './SidebarRight'
 import RelatedSongs from './RelatedSongs'
 
 
+
 class SingleSongPage extends Component {
     componentWillMount() {
       this.props.fetchSingleSong(this.props.match.params.id)
@@ -18,6 +19,11 @@ class SingleSongPage extends Component {
     }
 
     render() {
+      const {
+          song,
+      } = this.props
+
+
         if (!this.props.singleSong || this.props.isFetchingSingleSong) {
             return (
                 <div>LOADING...</div>

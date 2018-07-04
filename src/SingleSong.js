@@ -8,6 +8,8 @@ import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
 import ShareBox from './ShareBox'
+import { Helmet } from "react-helmet";
+
 
 class SingleSong extends Component {
     constructor(props) {
@@ -64,6 +66,20 @@ class SingleSong extends Component {
         )
     }
 
+    renderMetaTags() {
+        const {
+            song,
+        } = this.props
+
+        const tags = song._embedded['wp:term'][1].map(tag =>
+            <meta name="tag" content={tag.name} />
+          )
+
+        return (
+            {tags}
+        )
+    }
+
 
     renderPlayer() {
         const {
@@ -111,6 +127,17 @@ class SingleSong extends Component {
 
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
+            <Helmet>
+              <title>Rock With This - {song.acf.song_name} by {song.acf.artist_name}</title>
+              <meta name="song" content={song.acf.song_name} />
+              <meta name="artist" content={song.acf.artist_name} />
+              <meta name="description" content={song.content.rendered} />
+              <meta name="og:image" content={song.better_featured_image.source_url} />
+              <meta name="tag" content={song._embedded['wp:term'][1][0].name} />
+              ${song._embedded['wp:term'][1][1] ? <meta name="tag" content={song._embedded['wp:term'][1][1].name} /> : ''}
+              ${song._embedded['wp:term'][1][2] ? <meta name="tag" content={song._embedded['wp:term'][1][2].name} /> : ''}
+              ${song._embedded['wp:term'][1][3] ? <meta name="tag" content={song._embedded['wp:term'][1][3].name} /> : ''}
+            </Helmet>
             <div classname="wrapper">
                 <div className="imageContainer">
                   <img className="songImage" src={song.better_featured_image.source_url} />

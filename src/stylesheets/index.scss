@@ -3582,6 +3582,11 @@ footer .songSourceContainer .source.soundcloud{
 
 
 @media(max-width: 800px) {
+  .discovery-section .filters-bar .search-wrapper input {
+    height: 25px;
+    width: 150px;
+}
+
   .songImageInfoContainer.grid {
     display: none !important;
   }
