@@ -31,22 +31,22 @@ class HeroSong extends Component {
             },
         } = song
         // debugger
-        this.updateStorePlayPause(id !== this.props.currentlyPlayingSong)
-        this.props.toggleSong(id)
+        this.updateStorePlayPause(id !== this.props.activeSong.id)
+        this.props.actions.toggleSong(id)
     }
 
     updateStorePlayPause(newSong) {
-        this.props.togglePlayPause(newSong ? true : !this.props.isPlaying)
+        this.props.actions.togglePlayPause(newSong ? true : !this.props.isPlaying)
     }
 
     render() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const playPauseButton = song.id === activeSong && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
@@ -69,32 +69,11 @@ HeroSong.propTypes = {
     song: PropTypes.object.isRequired,
     toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
-    currentlyPlayingSong: PropTypes.number,
+    activeSong: PropTypes.object,
 }
 
 HeroSong.defaultProps = {
-    currentlyPlayingSong: null,
+    activeSong: {},
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const {
-        isPlaying,
-        currentlyPlayingSong,
-    } = state.queue
-
-    return {
-        isPlaying,
-        currentlyPlayingSong,
-    }
-}
-
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleSong: postId => dispatch(toggleSong(postId)),
-    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(HeroSong)
+export default HeroSong

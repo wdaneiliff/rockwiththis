@@ -13,55 +13,41 @@ import queue from './queue'
 import singleSong from './singleSong'
 import relatedSongs from './relatedSongs'
 import filters from './filters'
+import update from 'react-addons-update'
+import { handleActions } from 'redux-actions'
 // import discoverLayout from './discoverLayout'
 
-const isFetchingPosts = (state = false, action) => {
-    switch (action.type) {
-    case FETCH_POSTS.SUCCESS:
-    case FETCH_POSTS.FAILURE:
-        return false
-    case FETCH_POSTS.IN_PROGRESS:
-        return true
-    default:
-        return state
+export const INITIAL_STATE = {
+  shrinkHeader: false,
+  isPlaying: false,
+  discoverLayout: {
+    expanded: true,
+    snapshot: false,
+    fullGrid: false,
+  },
+  activeSong: {
+    better_featured_image: '',
+    acf: {
+      
     }
+  },
+  featuredPosts: [],
+  posts: [],
+  queue: [],
+  relatedSongs: [],
+  filters: [],
+  currentlyFetchedPageNumber: 0,
+
 }
 
-const isFetchingFeaturedPosts = (state = false, action) => {
-    switch (action.type) {
-    case FETCH_FEATURED_POSTS.SUCCESS:
-    case FETCH_FEATURED_POSTS.FAILURE:
-        return false
-    case FETCH_FEATURED_POSTS.IN_PROGRESS:
-        return true
-    default:
-        return state
-    }
-}
-
-const isFetchingFilters = (state = false, action) => {
-    switch (action.type) {
-    case FETCH_FILTERS.SUCCESS:
-    case FETCH_FILTERS.FAILURE:
-        return false
-    case FETCH_FILTERS.IN_PROGRESS:
-        return true
-    default:
-        return state
-    }
-}
-
-const isFetchingSingleSong = (state = false, action) => {
-    switch (action.type) {
-    case FETCH_SINGLE_SONG.SUCCESS:
-    case FETCH_SINGLE_SONG.FAILURE:
-        return false
-    case FETCH_SINGLE_SONG.IN_PROGRESS:
-        return true
-    default:
-        return state
-    }
-}
+const appReducers = handleActions({
+  'app/FETCH_POSTS': (state, action) => {
+    return update(state, {
+      posts: { $set: action.payload },
+      activeSong: { $set: action.payload[0] },
+    })
+  },
+}, INITIAL_STATE)
 
 const currentlyFetchedPageNumber = (state = 0, action) => {
     switch (action.type) {
@@ -70,15 +56,6 @@ const currentlyFetchedPageNumber = (state = 0, action) => {
     default:
         return state
     }
-}
-
-const sidebarExpanded = (state = false, action) => {
-  switch(action.type) {
-    case 'TOGGLE_SIDEBAR':
-      return action.expanded
-    default:
-    return state
-  }
 }
 
 const discoverLayout = (state = {previewScrollLayout: false}, action) => {
@@ -96,18 +73,15 @@ const discoverLayout = (state = {previewScrollLayout: false}, action) => {
   }
 }
 
-export default combineReducers({
-    posts,
-    queue,
-    featuredPosts,
-    filters,
-    singleSong,
-    relatedSongs,
-    isFetchingFeaturedPosts,
-    isFetchingPosts,
-    currentlyFetchedPageNumber,
-    isFetchingSingleSong,
-    isFetchingFilters,
-    sidebarExpanded,
-    discoverLayout
-})
+export default appReducers
+
+// export default combineReducers({
+//     appReducers,
+//     queue,
+//     featuredPosts,
+//     filters,
+//     singleSong,
+//     relatedSongs,
+//     currentlyFetchedPageNumber,
+//     discoverLayout
+// })

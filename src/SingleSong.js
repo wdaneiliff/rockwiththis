@@ -35,7 +35,7 @@ class SingleSong extends Component {
             },
         } = song
         // debugger
-        this.updateStorePlayPause(id !== this.props.currentlyPlayingSong)
+        this.updateStorePlayPause(id !== this.props.activeSong.id)
         this.props.toggleSong(id)
     }
 
@@ -70,11 +70,11 @@ class SingleSong extends Component {
     renderPlayer() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const playPauseButton = song.id === activeSong.id && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
@@ -105,7 +105,7 @@ class SingleSong extends Component {
     render() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
@@ -168,11 +168,11 @@ SingleSong.propTypes = {
     song: PropTypes.object.isRequired,
     toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
-    currentlyPlayingSong: PropTypes.number,
+    activeSong: PropTypes.object,
 }
 
 SingleSong.defaultProps = {
-    currentlyPlayingSong: null,
+    currentlyPlayingSong: {},
 }
 
 const mapStateToProps = (state, ownProps) => {

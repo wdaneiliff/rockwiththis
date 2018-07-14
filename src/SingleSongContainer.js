@@ -9,22 +9,8 @@ class SingleSongContainer extends Component {
     render() {
       return (
             <div className="singleSongContainer">
-              <SingleSong song={this.props.singleSong} />
+              <SingleSong {...this.props} />
             </div>
         )
     }
 }
-
-
-const mapStateToProps = (state, ownProps) => ({
-    singleSong: state.singleSong,
-})
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(SingleSongContainer)

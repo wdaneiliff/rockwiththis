@@ -46,7 +46,7 @@ class HeroPosts extends React.Component {
 
                         <div className="post-info">
                         {!isSmall && <span className="song-of-day-tag">Song of the day</span>}
-                            <HeroSong song={post} />
+                            <HeroSong {...this.props} song={post} />
                             <div className="song-info">
                                 <p className="song-title">{title}</p>
                                 <p className="song-artist">{artist}</p>
@@ -64,10 +64,10 @@ class HeroPosts extends React.Component {
                 </div>
             )
         }
-        const { posts } = this.props || [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
-        const featuredPostArg = posts[0] || placeholderSong
+        const { heroPosts } = this.props || [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
+        const featuredPostArg = heroPosts[0] || placeholderSong
         const featuredPost = trackDisplay(featuredPostArg, false)
-        const otherPosts = posts.slice(1).map((post, i) => trackDisplay(post, i, true))
+        const otherPosts = heroPosts.slice(1).map((post, i) => trackDisplay(post, i, true))
 
         return (
             <div>

@@ -8,7 +8,7 @@ import Header from './Header'
 import Routes from './Routes'
 import MainPlayer from './MainPlayer'
 
-class AppChild extends Component {
+class AppContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -39,17 +39,14 @@ class AppChild extends Component {
                 <OffScreen {...this.props} />
                 <Header shrinkHeader={this.state.shrinkHeader} />
                 <SocialLinks />
-                <Routes />
+                {this.props.children}
                 <MainPlayer {...this.props} />
             </div>
         )
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const currentlyPlayingSong = state.posts.find(post => post.id === state.queue.currentlyPlayingSong) || state.posts[0]
-    return Object.assign(state, ownProps, { currentlyPlayingSong })
-}
+const mapStateToProps = (state, ownProps) => Object.assign(state, ownProps)
 
 const mapDispatch = (dispatch) => {
     return {
@@ -57,4 +54,4 @@ const mapDispatch = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatch)(AppChild)
+export default connect(mapStateToProps, mapDispatch)(AppContainer)

@@ -32,7 +32,7 @@ class SongGrid extends Component {
             },
         } = song
         // debugger
-        this.updateStorePlayPause(id !== this.props.currentlyPlayingSong)
+        this.updateStorePlayPause(id !== this.props.activeSong)
         this.props.toggleSong(id)
     }
 
@@ -66,11 +66,11 @@ class SongGrid extends Component {
     renderPlayer() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const playPauseButton = song.id === activeSong && isPlaying ? (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
@@ -126,13 +126,13 @@ class SongGrid extends Component {
     render() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
         const { height } = this.state
 
-        const imagePlayPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const imagePlayPauseButton = song.id === activeSong && isPlaying ? (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
@@ -152,22 +152,21 @@ SongGrid.propTypes = {
     song: PropTypes.object.isRequired,
     toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
-    currentlyPlayingSong: PropTypes.number,
+    activeSong: PropTypes.object,
 }
 
 SongGrid.defaultProps = {
-    currentlyPlayingSong: null,
+    activeSong: {},
 }
 
 const mapStateToProps = (state, ownProps) => {
     const {
         isPlaying,
-        currentlyPlayingSong,
+        activeSong,
     } = state.queue
 
     return {
         isPlaying,
-        currentlyPlayingSong,
     }
 }
 

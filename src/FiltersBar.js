@@ -99,13 +99,13 @@ class FiltersBar extends Component {
 
         return (
           <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
-          <div class="search-wrapper">
-                <input class="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
-          </div>
           <button onClick={this.showSubGenreFilters} className="filters-button">
             Subgenres
           </button>
-            <button onClick={this.showToggleViewsDropdown} className="toggle-view"><i class="im im-menu-list"></i></button>
+          <button onClick={this.showToggleViewsDropdown} className="toggle-view"><i class="im im-menu-list"></i></button>
+          <div class="search-wrapper">
+                <input class="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
+          </div>
 
 
 

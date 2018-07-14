@@ -10,8 +10,6 @@ import SingleSongContainer from './SingleSongContainer'
 import SidebarRight from './SidebarRight'
 import RelatedSongs from './RelatedSongs'
 
-
-
 class SingleSongPage extends Component {
     componentWillMount() {
       this.props.fetchSingleSong(this.props.match.params.id)
@@ -32,8 +30,8 @@ class SingleSongPage extends Component {
 
         return (
           <div className="singleSongPage page">
-              <SingleSongContainer />
-              <RelatedSongs />
+              <SingleSongContainer {...this.props} />
+              <RelatedSongs {...this.props} />
           </div>
         )
     }

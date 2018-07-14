@@ -1,33 +1,37 @@
-export const FETCH_POSTS = {
-    IN_PROGRESS: 'FETCH_POSTS_IN_PROGRESS',
-    SUCCESS: 'FETCH_POSTS_SUCCESS',
-    FAILURE: 'FETCH_POSTS_FAILURE',
-}
+import { createAction } from 'redux-actions'
 
-export const fetchPosts = (pageNumber = 1) => (dispatch, getState) => {
-    dispatch({
-        type: FETCH_POSTS.IN_PROGRESS,
-    })
-    const smallDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=7'
-    const bigDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35'
-    fetch(smallDataURL).then(res => res.json()).then((res) => {
-        dispatch({
-            type: FETCH_POSTS.SUCCESS,
-            posts: res,
-            pageNumber,
-        })
-        fetch(bigDataURL).then(resBig => resBig.json()).then((resBig) => {
-            dispatch({
-                type: FETCH_POSTS.SUCCESS,
-                posts: resBig,
-                pageNumber,
-            })
-        })
-    }).catch((er) => {
-        dispatch({
-            type: FETCH_POSTS.FAILURE,
-        })
-    })
+// export const FETCH_POSTS = {
+//     IN_PROGRESS: 'FETCH_POSTS_IN_PROGRESS',
+//     SUCCESS: 'FETCH_POSTS_SUCCESS',
+//     FAILURE: 'FETCH_POSTS_FAILURE',
+// }
+
+export const FETCH_POSTS = createAction('app/FETCH_POSTS')
+export const fetchPosts = (pageNumber = 1) => (dispatch) => {
+  const smallDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=7'
+  const bigDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35'
+  fetch(smallDataURL).then(res => res.json()).then((res) => {
+    dispatch(FETCH_POSTS(res))
+  })
+  // fetch(smallDataURL).then(res => res.json()).then((res) => {
+  //     dispatch({
+  //         type: FETCH_POSTS.SUCCESS,
+  //         queue: res,
+  //         posts: res,
+  //         pageNumber,
+  //     })
+  //     fetch(bigDataURL).then(resBig => resBig.json()).then((resBig) => {
+  //         dispatch({
+  //             type: FETCH_POSTS.SUCCESS,
+  //             posts: resBig,
+  //             pageNumber,
+  //         })
+  //     })
+  // }).catch((er) => {
+  //     dispatch({
+  //         type: FETCH_POSTS.FAILURE,
+  //     })
+  // })
 }
 
 export const FETCH_SINGLE_SONG = {
@@ -169,16 +173,6 @@ export const fetchFilteredPosts = tag => (dispatch, getState) => {
     })
 }
 
-export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
-export const toggleSidebar = (expanded) => {
-    return (dispatch) => {
-        dispatch({
-            type: TOGGLE_SIDEBAR,
-            expanded
-        })
-    }
-}
-
 export const TOGGLE_PLAY_PAUSE = 'TOGGLE_PLAY_PAUSE'
 export const togglePlayPause = (playPause) => {
     return (dispatch) => {
@@ -202,7 +196,6 @@ export const toggleSong = postId => (dispatch, getState) => {
 
     const isPlaying = getState().queue.isPlaying
     const queue = getState().posts.map(post => post.id).slice(postIndex + 1)
-    // const isPlaying = postId === getState().queue.currentlyPlayingSong ? !isCurrentlyPlaying : true
 
     dispatch({
         type: TOGGLE_SONG,

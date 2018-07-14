@@ -31,8 +31,8 @@ class SongsContainer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.queue.isPlaying !== nextProps.queue.isPlaying ||
-            this.props.queue.currentlyPlayingSong !== nextProps.queue.currentlyPlayingSong) {
+        if (this.props.isPlaying !== nextProps.isPlaying ||
+            this.props.activeSong !== nextProps.activeSong) {
         }
     }
 
@@ -43,8 +43,8 @@ class SongsContainer extends Component {
     renderSongGrid(song, index) {
         return (
             <SongGrid
-                key={`${song.id}`}
-                ref={(ref) => { this.songs[song.id] = ref }}
+                {...this.props}
+                key={song.id}
                 song={song}
             />
         )
@@ -54,7 +54,6 @@ class SongsContainer extends Component {
         return (
             <Song
                 key={`${song.id}`}
-                ref={(ref) => { this.songs[song.id] = ref }}
                 song={song}
             />
         )
@@ -73,10 +72,11 @@ class SongsContainer extends Component {
         return (
             <div className="songsContainer clearfix">
                 <HeroPosts
-                    posts={heroPosts}
+                    {...this.props}
+                    heroPosts={heroPosts}
                 />
             <div id="discover" className="discovery-section">
-              <FiltersBar />
+              <FiltersBar {...this.props} />
 
               <div className={`discovery-container ${this.props.discoverLayout.previewScrollLayout ? 'previewScrollLayout' : ''} ${this.props.discoverLayout.fullGridLayout ? 'fullGridLayout' : ''}`}>
                 <div className="songGrid">

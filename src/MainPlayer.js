@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { toggleSong, togglePlayPause } from './actions/queue'
-import MediaContainer from './MediaContainer'
 
 const formatTime = (seconds = 0) => {
     const numMinutes = Math.floor(seconds / 60)
@@ -16,7 +15,7 @@ class MainPlayer extends Component {
         super(props)
 
         this.state = {
-            currentlyPlayingSongDuration: 0,
+            activeSongDuration: 0,
             seekPosition: null,
             rcSliderValue: 0,
         }
@@ -32,8 +31,8 @@ class MainPlayer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id && nextProps.currentlyPlayingSong !== this.props.currentlyPlayingSong) {
-            this.setDurationForSongId(nextProps.currentlyPlayingSong.id)
+        if (this.props.activeSong && this.props.activeSong.id && nextProps.activeSong !== this.props.activeSong) {
+            this.setDurationForSongId(nextProps.activeSong.id)
         }
     }
 
@@ -46,18 +45,18 @@ class MainPlayer extends Component {
 
 
     onAfterChangeSlider() {
-        if (this.props.currentlyPlayingSong) {
-            const newTime = this.state.currentlyPlayingSongDuration * (this.state.rcSliderValue / 100.0)
+        if (this.props.activeSong) {
+            const newTime = this.state.activeSongDuration * (this.state.rcSliderValue / 100.0)
             console.log(newTime)
             window.SC.Widget('sc-player').seekTo(newTime * 1000)
 
-            this.setRcSliderValueForProgress(this.state.rcSliderValue, this.state.currentlyPlayingSongDuration)
+            this.setRcSliderValueForProgress(this.state.rcSliderValue, this.state.activeSongDuration)
             this.checkSeekPosition(false)
         }
     }
 
     setDurationForSongId(songId) {
-        window.SC.Widget('sc-player').getDuration(d => this.setState({ currentlyPlayingSongDuration: (d / 1000) }))
+        window.SC.Widget('sc-player').getDuration(d => this.setState({ activeSongDuration: (d / 1000) }))
     }
 
     setRcSliderValueForProgress(seekPosition, duration) {
@@ -71,15 +70,15 @@ class MainPlayer extends Component {
     }
 
     checkSeekPosition(repeat = true) {
-        if (this.props.currentlyPlayingSong && this.props.currentlyPlayingSong.id) {
+        if (this.props.activeSong && this.props.activeSong.id) {
             window.SC.Widget('sc-player').getDuration((position) => {
-                const currentlyPlayingSongDuration = position / 1000
-                this.setState({ currentlyPlayingSongDuration })
+                const activeSongDuration = position / 1000
+                this.setState({ activeSongDuration })
             })
             window.SC.Widget('sc-player').getPosition((position) => {
                 const seekPosition = position / 1000
-                if (this.state.currentlyPlayingSongDuration) {
-                    this.setRcSliderValueForProgress(seekPosition, this.state.currentlyPlayingSongDuration)
+                if (this.state.activeSongDuration) {
+                    this.setRcSliderValueForProgress(seekPosition, this.state.activeSongDuration)
                 }
                 this.setState({ seekPosition })
             })
@@ -93,28 +92,28 @@ class MainPlayer extends Component {
     changeSong(next) {
         this.props.posts.find((post, i, arr) => {
             const queuePosition = next ? i + 1 : i - 1
-            if (post === this.props.currentlyPlayingSong) {
+            if (post === this.props.activeSong) {
                 this.props.actions.toggleSong(arr[queuePosition].id)
             }
         })
     }
 
     renderInfo() {
-        const { currentlyPlayingSong } = this.props
+        const { activeSong } = this.props
         return (
             <div className="player-info">
                 <div className="player-info-image-wrapper">
                     <div className="player-image">
-                        <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
-                            <img className="songImage" src={currentlyPlayingSong.better_featured_image.source_url} alt="" />
+                        <Link className="songImageLink" to={`/songs/${activeSong.id}`}>
+                            <img className="songImage" src={activeSong.better_featured_image.source_url} alt="" />
                         </Link>
                     </div>
                 </div>
                 <p className="artist-info">
-                    <Link className="songImageLink" to={`/songs/${currentlyPlayingSong.id}`}>
-                        <span className="song-title">{currentlyPlayingSong.acf.song_name}</span>
+                    <Link className="songImageLink" to={`/songs/${activeSong.id}`}>
+                        <span className="song-title">{activeSong.acf.song_name}</span>
                     </Link> <br />
-                    <span className="artist-title">{currentlyPlayingSong.acf.artist_name}</span>
+                  <span className="artist-title">{activeSong.acf.artist_name}</span>
                 </p>
             </div>
         )
@@ -123,7 +122,7 @@ class MainPlayer extends Component {
 
     renderButtons() {
         const {
-            currentlyPlayingSong
+            activeSong
         } = this.props
 
         const playPauseButton = this.props.queue.isPlaying ? (
@@ -168,7 +167,7 @@ class MainPlayer extends Component {
                             onChange={this.onChangeSlider}
                         />
                     </div>
-                    <div className="player-duration-bar-song-duration">{formatTime(this.state.currentlyPlayingSongDuration)}</div>
+                    <div className="player-duration-bar-song-duration">{formatTime(this.state.activeSongDuration)}</div>
                 </div>
             </div>
         )
@@ -189,7 +188,7 @@ class MainPlayer extends Component {
     }
 
     render() {
-        if (!this.props.currentlyPlayingSong) {
+        if (!this.props.activeSong) {
             return (
                 <footer>
                     <div className="footer-player">
