@@ -30,7 +30,7 @@ class OffScreen extends Component {
         const activeSong = this.props.activeSong
         this.props.posts.find((post, i, arr) => {
             if (post === activeSong) {
-                this.props.actions.toggleSong(arr[i + 1].id)
+                this.props.actions.toggleSong(arr[i + 1])
             }
         })
     }

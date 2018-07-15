@@ -26,17 +26,8 @@ class SingleSong extends Component {
     }
 
     onPressPlay(song) {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
-        // debugger
-        this.updateStorePlayPause(id !== this.props.activeSong.id)
-        this.props.toggleSong(id)
+        this.updateStorePlayPause(song.id !== this.props.activeSong.id)
+        this.props.toggleSong(song)
     }
 
     updateStorePlayPause(newSong) {
@@ -69,11 +60,10 @@ class SingleSong extends Component {
 
     renderPlayer() {
         const {
-            song,
             activeSong,
             isPlaying,
         } = this.props
-
+        const song = this.props.singleSong
         const playPauseButton = song.id === activeSong.id && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
@@ -94,7 +84,7 @@ class SingleSong extends Component {
     }
 
     renderDescription() {
-        const { song } = this.props
+        const song = this.props.singleSong
         return (
               <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
                   <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
@@ -104,13 +94,22 @@ class SingleSong extends Component {
 
     render() {
         const {
-            song,
             activeSong,
             isPlaying,
         } = this.props
+        const song = this.props.singleSong
 
         const { height } = this.state
-
+        const songTagsMeta = song.pure_taxonomies.tags.map(tag => {
+          return (<meta name="tag" content={tag.name} />)
+        })
+        const songTags = song.pure_taxonomies.tags.map(tag => {
+          return (
+            <span className="postTags">
+              <span key={tag.id} className="tag">{tag.name}</span>
+            </span>
+          )
+        })
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
             <Helmet>
@@ -119,10 +118,7 @@ class SingleSong extends Component {
               <meta name="artist" content={song.acf.artist_name} />
               <meta name="description" content={song.content.rendered} />
               <meta name="og:image" content={song.better_featured_image.source_url} />
-              <meta name="tag" content={song._embedded['wp:term'][1][0].name} />
-              ${song._embedded['wp:term'][1][1] ? <meta name="tag" content={song._embedded['wp:term'][1][1].name} /> : ''}
-              ${song._embedded['wp:term'][1][2] ? <meta name="tag" content={song._embedded['wp:term'][1][2].name} /> : ''}
-              ${song._embedded['wp:term'][1][3] ? <meta name="tag" content={song._embedded['wp:term'][1][3].name} /> : ''}
+              {songTagsMeta}
               <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             </Helmet>
             <div classname="wrapper">
@@ -149,7 +145,7 @@ class SingleSong extends Component {
                     </div>
                         <p className="metaInfo">
                             <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> </p>|
-                            {this.renderTags(song)}
+                            {songTags}
                         </p>
                         <ShareBox props={song.slug} />
                         <a href="#" className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
@@ -172,28 +168,7 @@ SingleSong.propTypes = {
 }
 
 SingleSong.defaultProps = {
-    currentlyPlayingSong: {},
+    activeSong: {},
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const {
-        isPlaying,
-        currentlyPlayingSong,
-    } = state.queue
-
-    return {
-        isPlaying,
-        currentlyPlayingSong,
-    }
-}
-
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleSong: postId => dispatch(toggleSong(postId)),
-    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(SingleSong)
+export default SingleSong

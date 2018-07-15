@@ -18,16 +18,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #FF0000; }
 
-button {
-  border-color: none;
-  border-style: none;
-  border-width: 0px;
-  padding: 0;
-  background: none; }
-
-button:focus {
-  outline: none !important; }
-
 .discovery-container::-webkit-scrollbar-thumb {
   background: red; }
 
@@ -473,21 +463,11 @@ p {
 .SocialMediaShareButton:hover {
   cursor: pointer; }
 
-.singleSongPage .relatedSongs {
-  margin-top: 0px; }
-  .singleSongPage .relatedSongs p.related-songs-title {
-    margin-bottom: 15px;
-    font-size: 18px;
-    text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .7px; }
-
 .singleSongPage .singleSongContainer {
   width: 85%;
   display: inline-block; }
   .singleSongPage .singleSongContainer .songContainer .imageContainer {
-    width: 40vw;
+    width: 45%;
     display: inline-block;
     max-height: 674px;
     max-width: 674px; }
@@ -497,7 +477,7 @@ p {
       max-height: 674px;
       max-width: 674px; }
   .singleSongPage .singleSongContainer .songContainer .postContent {
-    width: 45%;
+    width: 50%;
     display: inline-block;
     vertical-align: top;
     padding: 25px; }
@@ -548,10 +528,19 @@ p {
           max-width: 30px; }
 
 .singleSongPage .relatedSongs {
-  width: 14%;
+  width: 15%;
   display: inline-block;
   vertical-align: top;
-  padding-top: 15px; }
+  padding-top: 15px;
+  margin-top: 0px;
+  width: 15%; }
+  .singleSongPage .relatedSongs p.related-songs-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .7px; }
   .singleSongPage .relatedSongs .songImageLink img.songImage {
     max-width: 75px;
     margin: 0 !important;
@@ -1181,16 +1170,24 @@ p.leftInfo {
 
 .tag {
   margin: 0 2px;
-  font-size: 14px;
-  border-radius: 6px !important;
-  transition: all .3s ease;
-  color: #fff !important;
-  background: #1a6ea9 !important;
-  border: 1px solid #1a6ea9 !important;
+  font-size: 12px;
+  border-radius: 6px;
+  transition: all .2s ease;
+  color: #1a6ea9;
+  background: #fff;
+  border: 1px solid #1a6ea9;
   cursor: pointer;
   letter-spacing: .7px;
   box-shadow: 0 3px 2px -2px #C9C6CB;
   padding: 6px; }
+  .tag:active {
+    box-shadow: none; }
+  .tag:hover {
+    background: #1f84c7; }
+  .tag:selected {
+    background: #1a6ea9; }
+  .tag:hover, .tag.selected {
+    color: #fff; }
 
 p.metaInfo {
   margin: 0 !important; }
@@ -1211,11 +1208,6 @@ a.spotifyLink {
   a.spotifyLink i {
     transform: translateY(-3px);
     -webkit-transform: translateY(-3px); }
-
-.tag {
-  text-decoration: none;
-  margin-bottom: 10px;
-  display: inline-block; }
 
 .clearfix::after {
   content: "";
@@ -1298,7 +1290,8 @@ a.spotifyLink {
         width: calc(25% - 2px);
         display: inline-block;
         margin: 1px;
-        margin-top: -3px; }
+        margin-top: -3px;
+        cursor: pointer; }
     .discovery-container .discover-full-song {
       width: calc(52% - 0px);
       display: inline-block;
@@ -1529,8 +1522,14 @@ a.spotifyLink {
 
 button {
   padding: 0;
+  border: 0;
   background: none;
-  border: 0 !important; }
+  border-color: none;
+  border-style: none;
+  border-width: 0px;
+  background: none; }
+  button:focus {
+    outline: none !important; }
 
 @media (max-width: 1200px) {
   .singleSongPage .singleSongContainer {
@@ -1631,10 +1630,6 @@ button {
     margin: 0 auto;
     overflow: auto;
     padding: 0 15px; }
-  .previewScrollLayout .discover-full-song {
-    display: none; }
-  .previewScrollLayout .songGrid {
-    display: none; }
   .previewScrollLayout .songList {
     display: block;
     max-width: 1400px;
@@ -2036,38 +2031,21 @@ button {
   max-width: 350px !important; }
   .SubgenreFiltersDropDown .tag {
     margin: 5px;
-    font-size: 12px;
-    border-radius: 6px !important;
-    transition: all .3s ease;
-    color: #1a6ea9 !important;
-    background: #fff !important;
-    border: 1px solid #1a6ea9 !important;
     cursor: pointer;
-    letter-spacing: .7px;
-    box-shadow: 0 3px 2px -2px #C9C6CB;
-    padding: 6px;
     display: inline-block; }
-  .SubgenreFiltersDropDown .tag:hover {
-    margin: 5px;
-    font-size: 12px;
-    border-radius: 6px !important;
-    transition: all .3s ease;
-    color: #fff !important;
-    background: #1a6ea9 !important;
-    border: 1px solid #1a6ea9 !important;
-    cursor: pointer;
-    letter-spacing: .7px;
-    box-shadow: none !important;
-    padding: 6px;
-    display: inline-block; }
+    .SubgenreFiltersDropDown .tag.selected {
+      background: #1a6ea9; }
 
-button.clearAll.tag {
-  width: 100%;
+.bottom-buttons {
+  width: 100%; }
+
+button.large-bottom.tag {
+  width: 45%;
   font-weight: 400;
   padding: 10px; }
 
-button.clearAll.tag:hover {
-  width: 100%;
+button.large-bottom.tag:hover {
+  background: #1a6ea9;
   font-weight: 400;
   padding: 10px !important; }
 
@@ -2107,10 +2085,12 @@ button.clearAll.tag:hover {
   float: right; }
 
 .relatedSongsContainer .stack {
-  width: calc(50% - 2px);
+  width: 100%;
   display: inline-block; }
 
 .relatedSongsContainer .stack .songContainer {
+  width: calc(50% - 2px);
+  display: inline-block;
   margin: 1px; }
 
 .singleSongPage .relatedSongs .songImageLink img.songImage {

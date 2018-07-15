@@ -23,17 +23,8 @@ class SongGrid extends Component {
     }
 
     onPressPlay(song) {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
-        // debugger
-        this.updateStorePlayPause(id !== this.props.activeSong)
-        this.props.toggleSong(id)
+        this.updateStorePlayPause(song.id !== this.props.activeSong.id)
+        this.props.toggleSong(song)
     }
 
     updateStorePlayPause(newSong) {
@@ -139,7 +130,7 @@ class SongGrid extends Component {
         )
 
         return (
-            <div id={song.slug} className="songContainer" key={`${song.id}`}>
+            <div id={song.slug} data-index={this.props.index} className="songContainer" key={`${song.id}`} onClick={this.props.updateDiscoverFullSongIndex}>
                 <div className="imageContainer">
                     <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>
@@ -159,24 +150,4 @@ SongGrid.defaultProps = {
     activeSong: {},
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const {
-        isPlaying,
-        activeSong,
-    } = state.queue
-
-    return {
-        isPlaying,
-    }
-}
-
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleSong: postId => dispatch(toggleSong(postId)),
-    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(SongGrid)
+export default SongGrid

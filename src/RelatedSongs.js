@@ -35,7 +35,6 @@ class RelatedSongs extends Component {
               <div className="relatedSongsContainer">
               <p className="related-songs-title">Related Songs</p>
               {this.relatedSongsStack()}
-              {this.relatedSongsStack()}
             </div>
             </div>
         )

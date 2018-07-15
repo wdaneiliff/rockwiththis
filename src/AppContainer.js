@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import * as Actions from './actions/index'
 import { bindActionCreators } from 'redux'
 import OffScreen from './OffScreen'
 import SocialLinks from './SocialLinks.js'
 import Header from './Header'
-import Routes from './Routes'
 import MainPlayer from './MainPlayer'
 
 class AppContainer extends Component {
@@ -39,7 +39,7 @@ class AppContainer extends Component {
                 <OffScreen {...this.props} />
                 <Header shrinkHeader={this.state.shrinkHeader} />
                 <SocialLinks />
-                {this.props.children}
+                {React.cloneElement(this.props.children, { ...this.props })}
                 <MainPlayer {...this.props} />
             </div>
         )
@@ -54,4 +54,4 @@ const mapDispatch = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatch)(AppContainer)
+export default withRouter(connect(mapStateToProps, mapDispatch)(AppContainer))

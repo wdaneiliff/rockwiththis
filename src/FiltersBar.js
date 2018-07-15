@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchFilters } from './actions/filters'
-import { changeToPreviewScrollLayout } from './actions/discoverLayout'
-import { changeToFullGridLayout } from './actions/discoverLayout'
-import { changeToNormalLayout } from './actions/discoverLayout'
 
 class FiltersBar extends Component {
     constructor(props) {
@@ -21,15 +18,23 @@ class FiltersBar extends Component {
         this.showSubGenreFilters = this.showSubGenreFilters.bind(this);
         this.closeSubGenreFilters = this.closeSubGenreFilters.bind(this);
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
-        this.previewScrollLayout = this.previewScrollLayout.bind(this)
-        this.fullGridLayout = this.fullGridLayout.bind(this)
-        this.normalLayout = this.normalLayout.bind(this)
+        this.changeGridView = this.changeGridView.bind(this)
+        this.fetchCurrentRequest = this.fetchCurrentRequest.bind(this)
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.fixedFiltersBar)
-        window.addEventListener("resize", this.fixedFiltersBar);
+        window.addEventListener('resize', this.fixedFiltersBar);
+    }
 
+    fetchCurrentRequest() {
+      const callback = () => {
+        this.setState({
+          showSubGenreFilters: false,
+          showToggleViewsDropdown: false,
+        })
+      }
+      this.props.actions.fetchCurrentRequest(callback)
     }
 
     fixedFiltersBar() {
@@ -38,15 +43,8 @@ class FiltersBar extends Component {
         this.setState({ fixedFilterBar })
     }
 
-    renderFilter(tag, index) {
-        return (
-            <span className="tag" onClick={() => this.props.onFilter(tag.id)}>{tag.name}</span>
-        )
-    }
-
     showSubGenreFilters(event) {
       event.preventDefault();
-
       this.setState({
         showSubGenreFilters: true,
       });
@@ -55,26 +53,11 @@ class FiltersBar extends Component {
     }
 
     closeSubGenreFilters() {
-
-      if (!this.SubgenreFiltersDropDown.contains(event.target)) {
-
+      if (this.SubgenreFiltersDropDown && !this.SubgenreFiltersDropDown.contains(event.target)) {
         this.setState({ showSubGenreFilters: false }, () => {
           document.removeEventListener('click', this.closeSubGenreFilters);
         });
-
       }
-    }
-
-    previewScrollLayout() {
-      this.props.changeToPreviewScrollLayout()
-    }
-
-    fullGridLayout() {
-      this.props.changeToFullGridLayout()
-    }
-
-    normalLayout(){
-      this.props.changeToNormalLayout()
     }
 
     showToggleViewsDropdown(event) {
@@ -93,9 +76,22 @@ class FiltersBar extends Component {
         });
     }
 
+    changeGridView(e) {
+      this.props.actions.changeGridView(e.target.name)
+    }
+
 
     render() {
-        const filterTags = this.props.filters.map(this.renderFilter)
+        const filterTags = this.props.filters.map((filter, i) => {
+          return (
+            <button
+              className={`tag ${filter.selected ? 'selected' : ''}`}
+              onClick={() => this.props.actions.toggleFilter(filter, i)}
+            >
+              {filter.name}
+            </button>
+          )
+        })
 
         return (
           <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
@@ -107,8 +103,6 @@ class FiltersBar extends Component {
                 <input class="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
           </div>
 
-
-
             {
               this.state.showSubGenreFilters
                 ? (
@@ -119,7 +113,10 @@ class FiltersBar extends Component {
                     }}
                     >
                     {filterTags}
-                    <button className="clearAll tag">Clear All</button>
+                    <div className='bottom-buttons'>
+                      <button className="large-bottom tag" onClick={this.props.actions.clearFilters}>Clear All</button>
+                      <button className="large-bottom tag" onClick={this.fetchCurrentRequest}>Filter</button>
+                    </div>
                   </div>
                 )
                 : (
@@ -136,13 +133,13 @@ class FiltersBar extends Component {
                       this.ToggleViewsDropDown = element;
                     }}
                     >
-                    <button className="desktop" onClick={this.normalLayout}>Expanded</button><br/>
-                    <button className="desktop" onClick={this.previewScrollLayout} >Snapshot</button><br/>
-                    <button className="desktop" onClick={this.fullGridLayout} >Full Grid</button>
+                    <button className="desktop" name='expanded' onClick={this.changeGridView}>Expanded</button><br/>
+                    <button className="desktop" name='snapshot' onClick={this.changeGridView}>Snapshot</button><br/>
+                    <button className="desktop" name='fullGrid' onClick={this.changeGridView}>Full Grid</button>
 
-                    <button className="mobile" onClick={this.normalLayout}>Snapshot</button><br/>
-                    <button className="mobile" onClick={this.previewScrollLayout} >Playlist</button><br/>
-                    <button className="mobile" onClick={this.fullGridLayout} >Grid</button>
+                    <button className="mobile" name='snapshot' onClick={this.changeGridView}>Snapshot</button><br/>
+                    <button className="mobile" name='expanded' onClick={this.changeGridView}>Playlist</button><br/>
+                    <button className="mobile" name='fullGrid' onClick={this.changeGridView}>Grid</button>
                   </div>
                 )
                 : (
@@ -154,26 +151,4 @@ class FiltersBar extends Component {
     }
 }
 
-
-const mapStateToProps = (state, ownProps) => {
-  const {
-      filters,
-      changeToPreviewScrollLayout,
-      changeToNormalLayout,
-      changeToFullGridLayout
-  } = state
-
-  return {
-      filters,
-      changeToPreviewScrollLayout,
-      changeToNormalLayout,
-      changeToFullGridLayout
-    }
-}
-
-const mapDispatchToProps = { changeToPreviewScrollLayout, changeToNormalLayout, changeToFullGridLayout }
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(FiltersBar)
+export default FiltersBar

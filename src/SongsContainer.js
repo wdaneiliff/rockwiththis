@@ -17,17 +17,12 @@ import FiltersBar from './FiltersBar'
 class SongsContainer extends Component {
     constructor(props) {
         super(props)
-
-        this.renderSongGrid = this.renderSongGrid.bind(this)
-        this.renderSongList = this.renderSongList.bind(this)
-
-        this.songs = {}
-
         this.state = {
-            discoverFullSongIndex: 0
+          discoverFullSongIndex: 0
         }
-
+        this.renderSongList = this.renderSongList.bind(this)
         this.changeDiscoverSong = this.changeDiscoverSong.bind(this)
+        this.updateDiscoverFullSongIndex = this.updateDiscoverFullSongIndex.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -40,19 +35,16 @@ class SongsContainer extends Component {
         this.setState({ discoverFullSongIndex: this.state.discoverFullSongIndex + 1 })
     }
 
-    renderSongGrid(song, index) {
-        return (
-            <SongGrid
-                {...this.props}
-                key={song.id}
-                song={song}
-            />
-        )
+    updateDiscoverFullSongIndex(e) {
+        this.setState({
+            discoverFullSongIndex: Number(e.currentTarget.dataset.index)
+        })
     }
 
     renderSongList(song, index) {
         return (
             <Song
+                {...this.props}
                 key={`${song.id}`}
                 song={song}
             />
@@ -62,12 +54,18 @@ class SongsContainer extends Component {
     render() {
         const { discoverFullSongIndex } = this.state
         const heroPosts = this.props.posts.slice(0,7)
-
-        // const songGrid = this.props.posts.slice(7).map(this.renderSongGrid)
-        const songGrid = this.props.posts.slice(0,16).map(this.renderSongGrid)
-        // const songList = this.props.posts.slice(7).map(this.renderSongList)
-        const songList = this.props.posts.map(this.renderSongList)
-        // const posts = this.props.posts.map(this.renderSong)
+        const songGrid = this.props.filteredPosts.slice(0,16).map((song, index) => {
+          return (
+              <SongGrid
+                  {...this.props}
+                  index={index}
+                  updateDiscoverFullSongIndex={this.updateDiscoverFullSongIndex}
+                  key={song.id}
+                  song={song}
+              />
+          )
+        })
+        const songList = this.props.filteredPosts.map(this.renderSongList)
 
         return (
             <div className="songsContainer clearfix">
@@ -77,33 +75,34 @@ class SongsContainer extends Component {
                 />
             <div id="discover" className="discovery-section">
               <FiltersBar {...this.props} />
-
-              <div className={`discovery-container ${this.props.discoverLayout.previewScrollLayout ? 'previewScrollLayout' : ''} ${this.props.discoverLayout.fullGridLayout ? 'fullGridLayout' : ''}`}>
-                <div className="songGrid">
-                <button className="toggle-song previous" />
-                  {songGrid}
-                  <button className="toggle-song next" />
-                </div>
+              <div className={`discovery-container ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
+                {this.props.discoverLayout !== 'snapshot' &&
+                  <div className="songGrid">
+                    <button className="toggle-song previous" />
+                      {songGrid}
+                    <button className="toggle-song next" />
+                  </div>}
                 <div className="songList">
                   {songList}
                 </div>
 
-                <div className="discover-full-song">
-                {this.props.posts[discoverFullSongIndex] &&
-                    <Fragment>
-                      <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(true)}>
-                            <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
-                      </button>
-                            <Song
-                                song={this.props.posts[discoverFullSongIndex]}
-                            />
-                          <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
+                {this.props.discoverLayout !== 'snapshot' &&
+                  <div className="discover-full-song">
+                    {this.props.filteredPosts[discoverFullSongIndex] &&
+                        <Fragment>
+                          <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(true)}>
                                 <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                           </button>
-                    </Fragment>
-                }
-
-                </div>
+                                <Song
+                                    song={this.props.filteredPosts[discoverFullSongIndex]}
+                                />
+                              <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
+                                    <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                              </button>
+                        </Fragment>
+                    }
+                    </div>
+                  }
               </div>
 
             </div>
@@ -112,11 +111,4 @@ class SongsContainer extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleSong: postId => dispatch(toggleSong(postId)),
-})
-
-export default connect(
-    null,
-    mapDispatchToProps,
-)(SongsContainer)
+export default SongsContainer

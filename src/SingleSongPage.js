@@ -12,7 +12,7 @@ import RelatedSongs from './RelatedSongs'
 
 class SingleSongPage extends Component {
     componentWillMount() {
-      this.props.fetchSingleSong(this.props.match.params.id)
+      this.props.actions.fetchSingleSong(this.props.match.params.id)
       this.props.fetchRelatedSongs(this.props.match.params.id)
     }
 

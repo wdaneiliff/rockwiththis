@@ -22,17 +22,8 @@ class HeroSong extends Component {
     }
 
     onPressPlay(song) {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
-        // debugger
-        this.updateStorePlayPause(id !== this.props.activeSong.id)
-        this.props.actions.toggleSong(id)
+        this.updateStorePlayPause(song.id !== this.props.activeSong.id)
+        this.props.actions.toggleSong(song)
     }
 
     updateStorePlayPause(newSong) {

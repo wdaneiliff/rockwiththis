@@ -14,3 +14,5 @@ class SingleSongContainer extends Component {
         )
     }
 }
+
+export default SingleSongContainer

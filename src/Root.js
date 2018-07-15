@@ -6,16 +6,18 @@ import MainPlayer from './MainPlayer'
 import AppContainer from './AppContainer'
 import { BrowserRouter } from 'react-router-dom'
 
-const Root = ({ store, history }) => {
-  return (
-    <Provider store={store}>
-        <BrowserRouter>
-            <AppContainer>
-                <Routes />
-            </AppContainer>
-        </BrowserRouter>
-    </Provider>
-  )
+class Root extends Component {
+  render() {
+    return (
+      <Provider store={this.props.store}>
+          <BrowserRouter>
+              <AppContainer>
+                  <Routes />
+              </AppContainer>
+          </BrowserRouter>
+      </Provider>
+    )
+  }
 }
 
 export default Root

@@ -66,7 +66,7 @@ class MainPlayer extends Component {
     }
 
     updateStorePlayPause() {
-        this.props.actions.togglePlayPause(!this.props.queue.isPlaying)
+        this.props.actions.togglePlayPause(!this.props.isPlaying)
     }
 
     checkSeekPosition(repeat = true) {
@@ -93,7 +93,7 @@ class MainPlayer extends Component {
         this.props.posts.find((post, i, arr) => {
             const queuePosition = next ? i + 1 : i - 1
             if (post === this.props.activeSong) {
-                this.props.actions.toggleSong(arr[queuePosition].id)
+                this.props.actions.toggleSong(arr[queuePosition])
             }
         })
     }
@@ -125,7 +125,7 @@ class MainPlayer extends Component {
             activeSong
         } = this.props
 
-        const playPauseButton = this.props.queue.isPlaying ? (
+        const playPauseButton = this.props.isPlaying ? (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="main playButton" />
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="main playButton" />
