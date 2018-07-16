@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchFilters } from './actions/filters'
+import LoadingComponent from './LoadingComponent'
 
 class FiltersBar extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class FiltersBar extends Component {
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
         this.changeGridView = this.changeGridView.bind(this)
         this.fetchCurrentRequest = this.fetchCurrentRequest.bind(this)
+        this.clearFilters = this.clearFilters.bind(this)
     }
 
     componentDidMount() {
@@ -28,13 +30,29 @@ class FiltersBar extends Component {
     }
 
     fetchCurrentRequest() {
+      this.setState({ loading: true })
       const callback = () => {
+        document.removeEventListener('click', this.closeSubGenreFilters)
         this.setState({
           showSubGenreFilters: false,
           showToggleViewsDropdown: false,
+          loading: false,
         })
       }
       this.props.actions.fetchCurrentRequest(callback)
+    }
+
+    clearFilters() {
+      this.setState({ loading: true })
+      const callback = () => {
+        document.removeEventListener('click', this.closeSubGenreFilters)
+        this.setState({
+          showSubGenreFilters: false,
+          showToggleViewsDropdown: false,
+          loading: false,
+        })
+      }
+      this.props.actions.fetchPosts(false, callback)
     }
 
     fixedFiltersBar() {
@@ -92,7 +110,7 @@ class FiltersBar extends Component {
             </button>
           )
         })
-
+        const disableClearAll = this.props.selectedFilters.length === 0
         return (
           <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
           <button onClick={this.showSubGenreFilters} className="filters-button">
@@ -102,27 +120,23 @@ class FiltersBar extends Component {
           <div class="search-wrapper">
                 <input class="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
           </div>
-
-            {
-              this.state.showSubGenreFilters
-                ? (
-                  <div
-                    className="SubgenreFiltersDropDown"
-                    ref={(element) => {
-                      this.SubgenreFiltersDropDown = element;
-                    }}
-                    >
-                    {filterTags}
-                    <div className='bottom-buttons'>
-                      <button className="large-bottom tag" onClick={this.props.actions.clearFilters}>Clear All</button>
-                      <button className="large-bottom tag" onClick={this.fetchCurrentRequest}>Filter</button>
-                    </div>
+          <div className={`SubgenreFiltersDropDown ${this.state.showSubGenreFilters ? 'expand' : ''}`}>
+            {this.state.loading && <LoadingComponent />}
+            {this.state.showSubGenreFilters &&
+                <div
+                  className='dropdown-internal'
+                  ref={(element) => {
+                    this.SubgenreFiltersDropDown = element;
+                  }}
+                  >
+                  {filterTags}
+                  <div className='bottom-buttons'>
+                    <button className={`large-bottom tag ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.clearFilters}>Clear All</button>
+                    <button className={`large-bottom tag ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.fetchCurrentRequest}>Search Filters {!disableClearAll && <i className='fa fa-arrow-right' />}</button>
                   </div>
-                )
-                : (
-                  null
-                )
+                </div>
             }
+          </div>
 
             {
               this.state.showToggleViewsDropdown
