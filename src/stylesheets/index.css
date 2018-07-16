@@ -21,9 +21,6 @@ body::-webkit-scrollbar-thumb {
 .discovery-container::-webkit-scrollbar-thumb {
   background: red; }
 
-.discover-full-song .toggle-song {
-  display: none !important; }
-
 .hero-posts {
   padding-bottom: 0px;
   background: #fff; }
@@ -50,6 +47,15 @@ p {
   margin: 0px auto;
   background: #fff; }
 
+.loading-bottom {
+  height: 80px;
+  position: relative;
+  margin-bottom: 100px;
+  margin-top: -80px; }
+  .loading-bottom .spinner {
+    top: 0;
+    height: 60px; }
+
 .headerContainer {
   height: 90px;
   background: linear-gradient(to right, #1e0c49, #0097d5);
@@ -62,7 +68,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 500;
   display: flex;
   align-items: center;
   transition: 0.3s ease all; }
@@ -708,6 +714,15 @@ p {
       width: 100%; }
       .discovery-section .songGrid .songContainer .imageContainer img {
         width: 100%; }
+    .discovery-section .songGrid .songContainer:hover {
+      filter: brightness(0.9); }
+    .discovery-section .songGrid .songContainer.activeDiscoverFullSong {
+      filter: brightness(0.6); }
+      .discovery-section .songGrid .songContainer.activeDiscoverFullSong img {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border: 1px solid #1A6EA9; }
 
 .discovery-section .songList .songContainer .postContent {
   display: inline-block;

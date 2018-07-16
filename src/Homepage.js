@@ -11,9 +11,11 @@ import { fetchFilters } from './actions/filters'
 import { Helmet } from "react-helmet";
 
 class Homepage extends Component {
-    constructor(props) {
-        super(props)
-
+    componentWillMount() {
+      this.props.actions.clearSingleSong()
+      if (this.props.filteredPosts.length === 0) {
+        this.props.actions.fetchPosts()
+      }
     }
 
     render() {

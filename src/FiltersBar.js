@@ -116,9 +116,9 @@ class FiltersBar extends Component {
           <button onClick={this.showSubGenreFilters} className="filters-button">
             Subgenres
           </button>
-          <button onClick={this.showToggleViewsDropdown} className="toggle-view"><i class="im im-menu-list"></i></button>
-          <div class="search-wrapper">
-                <input class="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
+          <button onClick={this.showToggleViewsDropdown} className="toggle-view"><i className="im im-menu-list"></i></button>
+          <div className="search-wrapper">
+                <input className="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
           </div>
           <div className={`SubgenreFiltersDropDown ${this.state.showSubGenreFilters ? 'expand' : ''}`}>
             {this.state.loading && <LoadingComponent />}

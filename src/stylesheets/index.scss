@@ -27,7 +27,7 @@ body::-webkit-scrollbar-thumb {
 
 // TOGGLE ARROWS HIDE FOR NOW
 .discover-full-song .toggle-song {
-  display: none !important;
+  // display: none !important;
 }
 
 // EXPERIMENT *****
@@ -54,8 +54,6 @@ body {
 }
 // EXPERIMENT *****
 
-
-
 p {
   margin: 0;
 }
@@ -66,8 +64,16 @@ p {
   background: #fff;
 }
 
-
-
+.loading-bottom {
+  height: 80px;
+  position: relative;
+  margin-bottom: 100px;
+  margin-top: -80px;
+  .spinner {
+    top: 0;
+    height: 60px;
+  }
+}
 
 
 .headerContainer {
@@ -82,7 +88,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 500;
   display: flex;
   align-items: center;
   transition: 0.3s ease all;
@@ -378,10 +384,6 @@ p {
         }
       }
     }
-
-
-
-
   }
 
   .feature-track {
@@ -1067,11 +1069,10 @@ margin: 10px;
 }
 
       .songGrid {
-              width: calc(40% - 50px);
-              padding: 25px;
+          width: calc(40% - 50px);
+          padding: 25px;
           display: inline-block;
           vertical-align: top;
-
           .songContainer {
             width: 25%;
             display: inline-block;
@@ -1080,6 +1081,18 @@ margin: 10px;
               img {
                 width: 100%;
               }
+            }
+            &:hover {
+              filter: brightness(.9);
+            }
+            &.activeDiscoverFullSong {
+              img {
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                border: 1px solid #1A6EA9;
+              }
+              filter: brightness(.6);
             }
           }
       }

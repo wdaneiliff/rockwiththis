@@ -8,7 +8,6 @@ import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
 
-
 class HeroSong extends Component {
     constructor(props) {
         super(props)
@@ -58,7 +57,6 @@ class HeroSong extends Component {
 
 HeroSong.propTypes = {
     song: PropTypes.object.isRequired,
-    toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
     activeSong: PropTypes.object,
 }

@@ -8,9 +8,9 @@ class RelatedSongs extends Component {
     renderRelatedSong(song, index) {
         return (
             <div className="songContainer" key={index}>
-                  <Link className="songImageLink" to={`/songs/${song.id}`}>
-                  <img alt="songImage" className="songImage" src={song.better_featured_image.source_url} />
-                  </Link>
+                <Link className="songImageLink" to={`/songs/${song.id}`}>
+                    <img alt="songImage" className="songImage" src={song.better_featured_image && song.better_featured_image.source_url} />
+                </Link>
             </div>
         )
     }
