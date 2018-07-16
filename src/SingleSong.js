@@ -27,11 +27,11 @@ class SingleSong extends Component {
 
     onPressPlay(song) {
         this.updateStorePlayPause(song.id !== this.props.activeSong.id)
-        this.props.toggleSong(song)
+        this.props.actions.toggleSong(song)
     }
 
     updateStorePlayPause(newSong) {
-        this.props.togglePlayPause(newSong ? true : !this.props.isPlaying)
+        this.props.actions.togglePlayPause(newSong ? true : !this.props.isPlaying)
     }
 
     toggleDescription() {
