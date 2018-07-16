@@ -135,7 +135,7 @@ class Song extends Component {
             <div className="wrapper"  >
                 <div className="postContent" >
                 <div className="imageContainer" onClick={ () => this.onPressPlay(song)}>
-                        <img className="songImage" src={song.better_featured_image.source_url} />
+                        <img className="songImage" src={song.better_featured_image && song.better_featured_image.source_url} />
                         <div className="songImageInfoContainer grid">
                           <button
                               className="singlePostPlayerButton"

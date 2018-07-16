@@ -31,9 +31,10 @@ class SongsContainer extends Component {
 
     loadMoreSongs() {
       this.setState({ loadingMoreSongs: true })
-      const callback = () => {
+      const callback = (noMorePosts) => {
         this.setState({
-          loadingMoreSongs: false
+          loadingMoreSongs: false,
+          noMorePosts,
         })
       }
       if (!this.state.loadingMoreSongs) {
@@ -122,9 +123,14 @@ class SongsContainer extends Component {
                       }
                       </div>
                     }
-                    {this.state.loadingMoreSongs &&
+                    {this.state.loadingMoreSongs && !this.state.noMorePosts &&
                         <div className='loading-bottom'>
                             <LoadingComponent />
+                        </div>
+                    }
+                    {this.state.noMorePosts &&
+                        <div className='loading-bottom'>
+                            <span>No more posts to load.</span>
                         </div>
                     }
                 </div>

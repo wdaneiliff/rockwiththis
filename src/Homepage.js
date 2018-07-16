@@ -13,7 +13,9 @@ import { Helmet } from "react-helmet";
 class Homepage extends Component {
     componentWillMount() {
       this.props.actions.clearSingleSong()
-      this.props.actions.fetchPosts()
+      if (this.props.filteredPosts.length === 0) {
+        this.props.actions.fetchPosts()
+      }
     }
 
     render() {

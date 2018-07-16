@@ -22,8 +22,12 @@ export const fetchCurrentRequest = (callback) => (dispatch, getState) => {
   const filterParamsString = filterIds.join('&tags[]=')
   const fullURL = baseURL + filterParamsString
   fetch(fullURL).then(res => res.json()).then((res) => {
-    dispatch(FETCH_CURRENT_REQUEST(res))
-    if (callback) callback()
+    if (res.length > 0) {
+      dispatch(FETCH_CURRENT_REQUEST(res))
+      if (callback) callback()
+    } else {
+      if (callback) callback(true)
+    }
   })
 }
 
@@ -34,8 +38,12 @@ export const loadMoreSongs = (callback) => (dispatch, getState) => {
   const filterParamsString = filterIds.length > 0 ? '&tags[]=' + filterIds.join('&tags[]=') : ''
   const fullURL = baseURL + filterParamsString
   fetch(fullURL).then(res => res.json()).then((res) => {
-    dispatch(LOAD_MORE_SONGS(res))
-    if (callback) callback()
+    if (res.length > 0) {
+      dispatch(LOAD_MORE_SONGS(res))
+      if (callback) callback()
+    } else {
+      if (callback) callback(true)
+    }
   })
 }
 
