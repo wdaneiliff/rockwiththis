@@ -1,7 +1,6 @@
 import thunk from 'redux-thunk'
 import appReducer from '../reducers/index'
 import { createStore, applyMiddleware, compose } from 'redux'
-import { createTransform } from 'redux-persist'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 

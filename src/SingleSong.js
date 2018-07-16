@@ -121,7 +121,7 @@ class SingleSong extends Component {
               {songTagsMeta}
               <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             </Helmet>
-            <div classname="wrapper">
+            <div className="wrapper">
                 <div className="imageContainer">
                   <img className="songImage" src={song.better_featured_image.source_url} />
                   <div className="songImageInfoContainer">

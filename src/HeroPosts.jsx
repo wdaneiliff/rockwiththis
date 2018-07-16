@@ -40,8 +40,7 @@ class HeroPosts extends React.Component {
             const title = post.acf.song_name
             const artist = post.acf.artist_name
             return (
-
-                  <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`}>
+                  <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`} key={post.id}>
                       <div className='feature-track'>
                           <Link className='move-back-link' to={`/songs/${post.id}`}>
                               <img src={image} />

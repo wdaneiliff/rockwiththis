@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 import * as Scroll from 'react-scroll'
 
 class Header extends Component {

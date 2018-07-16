@@ -57,7 +57,6 @@ class HeroSong extends Component {
 
 HeroSong.propTypes = {
     song: PropTypes.object.isRequired,
-    toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
     activeSong: PropTypes.object,
 }

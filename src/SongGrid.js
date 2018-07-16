@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
-import AnimateHeight from 'react-animate-height'
-import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
-import { toggleSong, togglePlayPause } from './actions/queue'
 
 class SongGrid extends Component {
     constructor(props) {
@@ -128,7 +124,7 @@ class SongGrid extends Component {
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
         )
-        
+
         return (
             <div id={song.slug} data-index={this.props.index} className={`songContainer ${this.props.activeDiscoverFullSong ? 'activeDiscoverFullSong' : ''}`} key={`${song.id}`} onClick={this.props.updateDiscoverFullSongIndex}>
                 <div className="imageContainer">
@@ -141,7 +137,6 @@ class SongGrid extends Component {
 
 SongGrid.propTypes = {
     song: PropTypes.object.isRequired,
-    toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
     activeSong: PropTypes.object,
 }

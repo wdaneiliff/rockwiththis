@@ -153,11 +153,11 @@ class Song extends Component {
                 </div>
             </div>
             <Link className="goToSongPage" to={`/songs/${song.id}`}>
-              <i class="im im-angle-right"></i>
+              <i className="im im-angle-right"></i>
             </Link>
             <Link className="seeMore" to={`/songs/${song.id}`}>
               <span>...see more</span>
-                <i class="im im-angle-right"></i>
+                <i className="im im-angle-right"></i>
             </Link>
             <hr />
 
