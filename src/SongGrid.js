@@ -23,17 +23,8 @@ class SongGrid extends Component {
     }
 
     onPressPlay(song) {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
-        // debugger
-        this.updateStorePlayPause(id !== this.props.currentlyPlayingSong)
-        this.props.toggleSong(id)
+        this.updateStorePlayPause(song.id !== this.props.activeSong.id)
+        this.props.toggleSong(song)
     }
 
     updateStorePlayPause(newSong) {
@@ -66,11 +57,11 @@ class SongGrid extends Component {
     renderPlayer() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const playPauseButton = song.id === activeSong && isPlaying ? (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
@@ -126,20 +117,20 @@ class SongGrid extends Component {
     render() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
         const { height } = this.state
 
-        const imagePlayPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const imagePlayPauseButton = song.id === activeSong && isPlaying ? (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
         )
 
         return (
-            <div id={song.slug} className="songContainer" key={`${song.id}`}>
+            <div id={song.slug} data-index={this.props.index} className="songContainer" key={`${song.id}`} onClick={this.props.updateDiscoverFullSongIndex}>
                 <div className="imageContainer">
                     <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>
@@ -152,32 +143,11 @@ SongGrid.propTypes = {
     song: PropTypes.object.isRequired,
     toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
-    currentlyPlayingSong: PropTypes.number,
+    activeSong: PropTypes.object,
 }
 
 SongGrid.defaultProps = {
-    currentlyPlayingSong: null,
+    activeSong: {},
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const {
-        isPlaying,
-        currentlyPlayingSong,
-    } = state.queue
-
-    return {
-        isPlaying,
-        currentlyPlayingSong,
-    }
-}
-
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleSong: postId => dispatch(toggleSong(postId)),
-    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(SongGrid)
+export default SongGrid

@@ -1,57 +1,84 @@
-export const FETCH_POSTS = {
-    IN_PROGRESS: 'FETCH_POSTS_IN_PROGRESS',
-    SUCCESS: 'FETCH_POSTS_SUCCESS',
-    FAILURE: 'FETCH_POSTS_FAILURE',
+import { createAction } from 'redux-actions'
+
+export const FETCH_POSTS = createAction('app/FETCH_POSTS')
+export const SET_REMAINING_POSTS = createAction('app/SET_REMAINING_POSTS')
+export const fetchPosts = (pageNumber = 1, callback) => (dispatch) => {
+  dispatch(CLEAR_FILTERS())
+  const smallDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=7'
+  const bigDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35&offset=7'
+  fetch(smallDataURL).then(res => res.json()).then((res) => {
+    dispatch(FETCH_POSTS(res))
+    fetch(bigDataURL).then(resBig => resBig.json()).then((resBig) => {
+      if (callback) callback()
+      dispatch(SET_REMAINING_POSTS(resBig))
+    })
+  })
 }
 
-export const fetchPosts = (pageNumber = 1) => (dispatch, getState) => {
-    dispatch({
-        type: FETCH_POSTS.IN_PROGRESS,
-    })
-    const smallDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=7'
-    const bigDataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35'
-    fetch(smallDataURL).then(res => res.json()).then((res) => {
-        dispatch({
-            type: FETCH_POSTS.SUCCESS,
-            posts: res,
-            pageNumber,
-        })
-        fetch(bigDataURL).then(resBig => resBig.json()).then((resBig) => {
-            dispatch({
-                type: FETCH_POSTS.SUCCESS,
-                posts: resBig,
-                pageNumber,
-            })
-        })
-    }).catch((er) => {
-        dispatch({
-            type: FETCH_POSTS.FAILURE,
-        })
-    })
+export const FETCH_CURRENT_REQUEST = createAction('app/FETCH_CURRENT_REQUEST')
+export const fetchCurrentRequest = (callback) => (dispatch, getState) => {
+  const baseURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35&tags[]='
+  const filterIds = getState().selectedFilters.map(filter => filter.term_id)
+  const filterParamsString = filterIds.join('&tags[]=')
+  const fullURL = baseURL + filterParamsString
+  fetch(fullURL).then(res => res.json()).then((res) => {
+    dispatch(FETCH_CURRENT_REQUEST(res))
+    if (callback) callback()
+  })
 }
 
-export const FETCH_SINGLE_SONG = {
-    IN_PROGRESS: 'FETCH_SINGLE_SONG_IN_PROGRESS',
-    SUCCESS: 'FETCH_SINGLE_SONG_SUCCESS',
-    FAILURE: 'FETCH_SINGLE_SONG_FAILURE',
-    UPDATE_SONG_ID: 'UPDATE_SONG_ID'
+export const TOGGLE_PLAY_PAUSE = createAction('app/TOGGLE_PLAY_PAUSE')
+export const togglePlayPause = playPause => (dispatch) => {
+    dispatch(TOGGLE_PLAY_PAUSE(playPause))
 }
 
-export const fetchSingleSong = slug => (dispatch, getState) => {
-    dispatch({
-        type: FETCH_SINGLE_SONG.IN_PROGRESS,
-    })
-    const dataURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${slug}?_embed`
+export const TOGGLE_SONG = createAction('app/TOGGLE_SONG')
+export const toggleSong = song => (dispatch) => {
+    dispatch(TOGGLE_SONG(song))
+}
+
+export const CHANGE_GRID_VIEW = createAction('app/CHANGE_GRID_VIEW')
+export const changeGridView = layout => (dispatch) => {
+    dispatch(CHANGE_GRID_VIEW(layout))
+}
+
+export const FETCH_FILTERS = createAction('app/FETCH_FILTERS')
+export const fetchFilters = () => (dispatch) => {
+    const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/all-terms'
     fetch(dataURL).then(res => res.json()).then((res) => {
-        dispatch({
-            type: FETCH_SINGLE_SONG.SUCCESS,
-            singleSong: res,
-        })
+        dispatch(FETCH_FILTERS(res))
     }).catch((er) => {
         dispatch({
-            type: FETCH_SINGLE_SONG.FAILURE,
+            type: FETCH_FILTERS.FAILURE,
         })
     })
+}
+
+export const TOGGLE_FILTER = createAction('app/TOGGLE_FILTER')
+export const toggleFilter = (filter, i) => (dispatch) => {
+    const payload = { filter, i }
+    dispatch(TOGGLE_FILTER(payload))
+}
+
+export const CLEAR_FILTERS = createAction('app/CLEAR_FILTERS')
+export const clearFilters = () => (dispatch) => {
+    dispatch(CLEAR_FILTERS())
+}
+
+export const FETCH_SINGLE_SONG = createAction('app/FETCH_SINGLE_SONG')
+export const SET_RELATED_SONGS = createAction('app/SET_RELATED_SONGS')
+export const fetchSingleSong = songId => (dispatch) => {
+  const songURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${songId}`
+  fetch(songURL).then(res => res.json()).then((res) => {
+    dispatch(FETCH_SINGLE_SONG(res))
+    const baseURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35&tags[]='
+    const filterIds = res.pure_taxonomies.tags.map(filter => filter.term_id)
+    const filterParamsString = filterIds.join('&tags[]=')
+    const fullURL = baseURL + filterParamsString
+    fetch(fullURL).then(related_res => related_res.json()).then((related_res) => {
+      dispatch(SET_RELATED_SONGS(related_res))
+    })
+  })
 }
 
 export const FETCH_RELATED_SONGS = {
@@ -95,29 +122,6 @@ export const fetchRelatedSongs = slug => (dispatch, getState) => {
     }).catch((er) => {
         dispatch({
             type: FETCH_RELATED_SONGS.FAILURE,
-        })
-    })
-}
-
-export const FETCH_FILTERS = {
-    IN_PROGRESS: 'FETCH_FILTERS_IN_PROGRESS',
-    SUCCESS: 'FETCH_FILTERS_SUCCESS',
-    FAILURE: 'FETCH_FILTERS_FAILURE',
-}
-
-export const fetchFilters = (pageNumber = 1) => (dispatch, getState) => {
-    dispatch({
-        type: FETCH_FILTERS.IN_PROGRESS,
-    })
-    const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/all-terms'
-    fetch(dataURL).then(res => res.json()).then((res) => {
-        dispatch({
-            type: FETCH_FILTERS.SUCCESS,
-            filters: res.tags,
-        })
-    }).catch((er) => {
-        dispatch({
-            type: FETCH_FILTERS.FAILURE,
         })
     })
 }
@@ -169,72 +173,7 @@ export const fetchFilteredPosts = tag => (dispatch, getState) => {
     })
 }
 
-export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
-export const toggleSidebar = (expanded) => {
-    return (dispatch) => {
-        dispatch({
-            type: TOGGLE_SIDEBAR,
-            expanded
-        })
-    }
-}
-
-export const TOGGLE_PLAY_PAUSE = 'TOGGLE_PLAY_PAUSE'
-export const togglePlayPause = (playPause) => {
-    return (dispatch) => {
-        dispatch({
-            type: TOGGLE_PLAY_PAUSE,
-            playPause
-        })
-    }
-}
-
-export const TOGGLE_SONG = 'TOGGLE_SONG'
-export const toggleSong = postId => (dispatch, getState) => {
-    const postIndex = getState().posts.findIndex(obj => obj.id === postId)
-    const post = getState().posts[postIndex]
-    const {
-        acf: {
-            youtube_track_id,
-            sc_track_id,
-        },
-    } = post
-
-    const isPlaying = getState().queue.isPlaying
-    const queue = getState().posts.map(post => post.id).slice(postIndex + 1)
-    // const isPlaying = postId === getState().queue.currentlyPlayingSong ? !isCurrentlyPlaying : true
-
-    dispatch({
-        type: TOGGLE_SONG,
-        postId,
-        queue,
-        isPlaying,
-    })
-}
-
 export const playNextSong = () => (dispatch, getState) => {
-    debugger
     const nextSong = getState().queue.queue[0]
     dispatch(toggleSong(nextSong))
-}
-
-export const PREVIEW_SCROLL_LAYOUT = 'PREVIEW_SCROLL_LAYOUT'
-export const changeToPreviewScrollLayout = slug => (dispatch, getState) => {
-    dispatch({
-        type: PREVIEW_SCROLL_LAYOUT,
-    })
-}
-
-export const NORMAL_LAYOUT = 'NORMAL_LAYOUT'
-export const changeToNormalLayout = slug => (dispatch, getState) => {
-    dispatch({
-        type: NORMAL_LAYOUT,
-    })
-}
-
-export const FULL_GRID_LAYOUT = 'FULL_GRID_LAYOUT'
-export const changeToFullGridLayout = slug => (dispatch, getState) => {
-    dispatch({
-        type: FULL_GRID_LAYOUT,
-    })
 }

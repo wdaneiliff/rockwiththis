@@ -24,17 +24,8 @@ class Song extends Component {
     }
 
     onPressPlay(song) {
-        const {
-            id,
-            acf: {
-                song_name,
-                youtube_track_id,
-                sc_track_id,
-            },
-        } = song
-        // debugger
-        this.updateStorePlayPause(id !== this.props.currentlyPlayingSong)
-        this.props.toggleSong(id)
+        this.updateStorePlayPause(song.id !== this.props.activeSong.id)
+        this.props.toggleSong(song)
     }
 
     updateStorePlayPause(newSong) {
@@ -67,11 +58,11 @@ class Song extends Component {
     renderTop() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const playPauseButton = song.id === activeSong.id && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
@@ -127,11 +118,11 @@ class Song extends Component {
     render() {
         const {
             song,
-            currentlyPlayingSong,
+            activeSong,
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === currentlyPlayingSong && isPlaying ? (
+        const playPauseButton = song.id === activeSong.id && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
@@ -180,22 +171,22 @@ Song.propTypes = {
     song: PropTypes.object.isRequired,
     toggleSong: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
-    currentlyPlayingSong: PropTypes.number,
+    activeSong: PropTypes.object,
 }
 
 Song.defaultProps = {
-    currentlyPlayingSong: null,
+    activeSong: {},
 }
 
 const mapStateToProps = (state, ownProps) => {
     const {
         isPlaying,
-        currentlyPlayingSong,
-    } = state.queue
+        activeSong,
+    } = state
 
     return {
         isPlaying,
-        currentlyPlayingSong,
+        activeSong,
     }
 }
 

@@ -1,19 +1,18 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import Homepage from './Homepage'
 import ConnectPage from './ConnectPage'
 import SingleSongPage from './SingleSongPage'
 
 const Routes = (props) => {
     return (
-        <main>
             <Switch>
-                <Route exact path='/' component={Homepage} />
-                <Route exact path='/connect' component={ConnectPage} />
-                <Route path='/songs/:id' component={SingleSongPage} />
+                <Route exact path='/' render={() => <Homepage {...props} />} />
+                <Route exact path='/connect' render={() => <ConnectPage {...props} />} />
+                <Route path='/songs/:id' render={(p) => <SingleSongPage {...props} {...p} />} />
             </Switch>
-        </main>
     )
 }
 
-export default Routes;
+export default Routes
