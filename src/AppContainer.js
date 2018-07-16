@@ -19,9 +19,8 @@ class AppContainer extends Component {
     }
 
     componentWillMount() {
-      this.props.actions.fetchPosts()
-      this.props.actions.fetchFeaturedPosts()
       this.props.actions.fetchFilters()
+      // this.props.actions.fetchFeaturedPosts()
     }
 
     componentDidMount() {
@@ -37,7 +36,7 @@ class AppContainer extends Component {
         return (
             <div>
                 <OffScreen {...this.props} />
-                <Header shrinkHeader={this.state.shrinkHeader} />
+                <Header {...this.props} shrinkHeader={this.state.shrinkHeader} />
                 <SocialLinks />
                 {React.cloneElement(this.props.children, { ...this.props })}
                 <MainPlayer {...this.props} />

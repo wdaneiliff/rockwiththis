@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import * as Scroll from 'react-scroll'
 
 class Header extends Component {
     constructor(props) {
         super(props)
 
+        this.handleDiscoverClick = this.handleDiscoverClick.bind(this)
+    }
+
+    handleDiscoverClick() {
+      Scroll.scroller.scrollTo('discoverySectionScroll', {
+        duration: 500,
+        smooth: true
+      })
     }
 
     render() {
         return (
             <div className={`headerContainer ${this.props.shrinkHeader ? 'shrunk' : ''}`}>
-                <a className="nav-link" href="#discover">Discover</a>
+                <a className="nav-link" onClick={this.handleDiscoverClick}>Discover</a>
                 <Link id="headerLogo" to="/">
                   <img src="http://rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />
                 </Link>

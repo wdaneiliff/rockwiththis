@@ -67,10 +67,11 @@ export const clearFilters = () => (dispatch) => {
 
 export const FETCH_SINGLE_SONG = createAction('app/FETCH_SINGLE_SONG')
 export const SET_RELATED_SONGS = createAction('app/SET_RELATED_SONGS')
-export const fetchSingleSong = songId => (dispatch) => {
+export const fetchSingleSong = (songId, callback) => (dispatch) => {
   const songURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${songId}`
   fetch(songURL).then(res => res.json()).then((res) => {
     dispatch(FETCH_SINGLE_SONG(res))
+    callback()
     const baseURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35&tags[]='
     const filterIds = res.pure_taxonomies.tags.map(filter => filter.term_id)
     const filterParamsString = filterIds.join('&tags[]=')
@@ -79,6 +80,11 @@ export const fetchSingleSong = songId => (dispatch) => {
       dispatch(SET_RELATED_SONGS(related_res))
     })
   })
+}
+
+export const CLEAR_SINGLE_SONG = createAction('app/CLEAR_SINGLE_SONG')
+export const clearSingleSong = () => (dispatch) => {
+  dispatch(CLEAR_SINGLE_SONG())
 }
 
 export const FETCH_RELATED_SONGS = {

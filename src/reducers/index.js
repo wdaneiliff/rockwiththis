@@ -53,6 +53,11 @@ const appReducers = handleActions({
       singleSong: { $set: action.payload }
     })
   },
+  'app/CLEAR_SINGLE_SONG': (state, action) => {
+    return update(state, {
+      singleSong: { $set: {} }
+    })
+  },
   'app/SET_RELATED_SONGS': (state, action) => {
     return update(state, {
       relatedSongs: { $set: action.payload }

@@ -13,7 +13,6 @@ const formatTime = (seconds = 0) => {
 class MainPlayer extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             activeSongDuration: 0,
             seekPosition: null,
