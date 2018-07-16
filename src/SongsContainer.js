@@ -8,6 +8,7 @@ import SongGrid from './SongGrid'
 import Song from './Song'
 import ShareBox from './ShareBox'
 import FiltersBar from './FiltersBar'
+import LoadingComponent from './LoadingComponent'
 
 class SongsContainer extends Component {
     constructor(props) {
@@ -16,6 +17,8 @@ class SongsContainer extends Component {
           discoverFullSongIndex: 0
         }
 
+        this.handleScroll = this.handleScroll.bind(this)
+        this.loadMoreSongs = this.loadMoreSongs.bind(this)
         this.changeDiscoverSong = this.changeDiscoverSong.bind(this)
         this.updateDiscoverFullSongIndex = this.updateDiscoverFullSongIndex.bind(this)
     }
@@ -23,6 +26,24 @@ class SongsContainer extends Component {
     componentWillReceiveProps(nextProps) {
         if (this.props.isPlaying !== nextProps.isPlaying ||
             this.props.activeSong !== nextProps.activeSong) {
+        }
+    }
+
+    loadMoreSongs() {
+      this.setState({ loadingMoreSongs: true })
+      const callback = () => {
+        this.setState({
+          loadingMoreSongs: false
+        })
+      }
+      if (!this.state.loadingMoreSongs) {
+        this.props.actions.loadMoreSongs(callback)
+      }
+    }
+
+    handleScroll(e) {
+        if (e.target.scrollTop > e.target.scrollHeight - (e.target.offsetHeight + 100)) {
+            this.loadMoreSongs()
         }
     }
 
@@ -36,16 +57,6 @@ class SongsContainer extends Component {
         this.setState({
             discoverFullSongIndex: Number(e.currentTarget.dataset.index)
         })
-    }
-
-    renderSongList(song, index) {
-        return (
-            <Song
-                {...this.props}
-                key={`${song.id}`}
-                song={song}
-            />
-        )
     }
 
     render() {
@@ -83,7 +94,7 @@ class SongsContainer extends Component {
                 <Element name='discoverySectionScroll'>
                   <FiltersBar {...this.props} />
                 </Element>
-                <div className={`discovery-container ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
+                <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
                   {this.props.discoverLayout !== 'snapshot' &&
                     <div className="songGrid">
                       <button className="toggle-song previous" />
@@ -111,8 +122,12 @@ class SongsContainer extends Component {
                       }
                       </div>
                     }
+                    {this.state.loadingMoreSongs &&
+                        <div className='loading-bottom'>
+                            <LoadingComponent />
+                        </div>
+                    }
                 </div>
-
               </div>
             </div>
         )

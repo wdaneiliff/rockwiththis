@@ -48,6 +48,11 @@ const appReducers = handleActions({
       filteredPosts: { $set: action.payload }
     })
   },
+  'app/LOAD_MORE_SONGS': (state, action) => {
+    return update(state, {
+      filteredPosts: { $set: [...state.filteredPosts, ...action.payload]}
+    })
+  },
   'app/FETCH_SINGLE_SONG': (state, action) => {
     return update(state, {
       singleSong: { $set: action.payload }

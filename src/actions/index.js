@@ -17,12 +17,24 @@ export const fetchPosts = (pageNumber = 1, callback) => (dispatch) => {
 
 export const FETCH_CURRENT_REQUEST = createAction('app/FETCH_CURRENT_REQUEST')
 export const fetchCurrentRequest = (callback) => (dispatch, getState) => {
-  const baseURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35&tags[]='
+  const baseURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=16&tags[]='
   const filterIds = getState().selectedFilters.map(filter => filter.term_id)
   const filterParamsString = filterIds.join('&tags[]=')
   const fullURL = baseURL + filterParamsString
   fetch(fullURL).then(res => res.json()).then((res) => {
     dispatch(FETCH_CURRENT_REQUEST(res))
+    if (callback) callback()
+  })
+}
+
+export const LOAD_MORE_SONGS = createAction('app/LOAD_MORE_SONGS')
+export const loadMoreSongs = (callback) => (dispatch, getState) => {
+  const baseURL = `https://rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=16&offset=${getState().filteredPosts.length}`
+  const filterIds = getState().selectedFilters.map(filter => filter.term_id)
+  const filterParamsString = filterIds.length > 0 ? '&tags[]=' + filterIds.join('&tags[]=') : ''
+  const fullURL = baseURL + filterParamsString
+  fetch(fullURL).then(res => res.json()).then((res) => {
+    dispatch(LOAD_MORE_SONGS(res))
     if (callback) callback()
   })
 }

@@ -47,6 +47,15 @@ p {
   margin: 0px auto;
   background: #fff; }
 
+.loading-bottom {
+  height: 80px;
+  position: relative;
+  margin-bottom: 100px;
+  margin-top: -80px; }
+  .loading-bottom .spinner {
+    top: 0;
+    height: 60px; }
+
 .headerContainer {
   height: 90px;
   background: linear-gradient(to right, #1e0c49, #0097d5);
