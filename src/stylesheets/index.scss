@@ -378,10 +378,6 @@ p {
         }
       }
     }
-
-
-
-
   }
 
   .feature-track {
@@ -1067,11 +1063,10 @@ margin: 10px;
 }
 
       .songGrid {
-              width: calc(40% - 50px);
-              padding: 25px;
+          width: calc(40% - 50px);
+          padding: 25px;
           display: inline-block;
           vertical-align: top;
-
           .songContainer {
             width: 25%;
             display: inline-block;
@@ -1080,6 +1075,18 @@ margin: 10px;
               img {
                 width: 100%;
               }
+            }
+            &:hover {
+              filter: brightness(.9);
+            }
+            &.activeDiscoverFullSong {
+              img {
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                border: 1px solid #1A6EA9;
+              }
+              filter: brightness(.6);
             }
           }
       }

@@ -128,9 +128,9 @@ class SongGrid extends Component {
         ) : (
             <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
         )
-
+        
         return (
-            <div id={song.slug} data-index={this.props.index} className="songContainer" key={`${song.id}`} onClick={this.props.updateDiscoverFullSongIndex}>
+            <div id={song.slug} data-index={this.props.index} className={`songContainer ${this.props.activeDiscoverFullSong ? 'activeDiscoverFullSong' : ''}`} key={`${song.id}`} onClick={this.props.updateDiscoverFullSongIndex}>
                 <div className="imageContainer">
                     <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>

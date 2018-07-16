@@ -13,7 +13,6 @@ import Song from './Song'
 import ShareBox from './ShareBox'
 import FiltersBar from './FiltersBar'
 
-
 class SongsContainer extends Component {
     constructor(props) {
         super(props)
@@ -59,6 +58,7 @@ class SongsContainer extends Component {
               <SongGrid
                   {...this.props}
                   index={index}
+                  activeDiscoverFullSong={discoverFullSongIndex === index}
                   updateDiscoverFullSongIndex={this.updateDiscoverFullSongIndex}
                   key={song.id}
                   song={song}

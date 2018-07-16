@@ -8,7 +8,6 @@ import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
 
-
 class HeroSong extends Component {
     constructor(props) {
         super(props)

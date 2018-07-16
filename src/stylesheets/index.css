@@ -708,6 +708,15 @@ p {
       width: 100%; }
       .discovery-section .songGrid .songContainer .imageContainer img {
         width: 100%; }
+    .discovery-section .songGrid .songContainer:hover {
+      filter: brightness(0.9); }
+    .discovery-section .songGrid .songContainer.activeDiscoverFullSong {
+      filter: brightness(0.6); }
+      .discovery-section .songGrid .songContainer.activeDiscoverFullSong img {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border: 1px solid #1A6EA9; }
 
 .discovery-section .songList .songContainer .postContent {
   display: inline-block;

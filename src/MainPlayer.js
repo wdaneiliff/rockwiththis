@@ -205,7 +205,6 @@ class MainPlayer extends Component {
                     {this.renderInfo()}
                     <div className="player-controls-wrapper">
                         {this.renderButtons()}
-
                     </div>
                     {this.renderShareButtons()}
                 </div>
