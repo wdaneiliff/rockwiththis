@@ -8,6 +8,7 @@ import SocialLinks from './SocialLinks'
 import SingleSongContainer from './SingleSongContainer'
 import SidebarRight from './SidebarRight'
 import RelatedSongs from './RelatedSongs'
+import LoadingComponent from './LoadingComponent'
 
 class SingleSongPage extends Component {
     componentWillMount() {
@@ -23,7 +24,7 @@ class SingleSongPage extends Component {
 
         if (!this.props.singleSong || this.props.isFetchingSingleSong) {
             return (
-                <div>LOADING...</div>
+                <LoadingComponent />
             )
         }
 

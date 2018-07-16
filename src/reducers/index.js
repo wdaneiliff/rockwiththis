@@ -82,7 +82,6 @@ const appReducers = handleActions({
     const filters = state.filters
     filters[action.payload.i].selected = !filters[action.payload.i].selected
     const selectedFilters = filters.filter(filter => filter.selected === true)
-    debugger
     return update(state, {
       filters: { $set: filters },
       selectedFilters: { $set: selectedFilters }

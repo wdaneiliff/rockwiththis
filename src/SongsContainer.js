@@ -30,8 +30,10 @@ class SongsContainer extends Component {
         }
     }
 
-    changeDiscoverSong() {
-        this.setState({ discoverFullSongIndex: this.state.discoverFullSongIndex + 1 })
+    changeDiscoverSong(increment) {
+        const newIndex = increment ? this.state.discoverFullSongIndex + 1 :
+          this.state.discoverFullSongIndex - 1
+        this.setState({ discoverFullSongIndex: newIndex })
     }
 
     updateDiscoverFullSongIndex(e) {
@@ -90,7 +92,7 @@ class SongsContainer extends Component {
                   <div className="discover-full-song">
                     {this.props.filteredPosts[discoverFullSongIndex] &&
                         <Fragment>
-                          <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(true)}>
+                          <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
                                 <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                           </button>
                                 <Song
