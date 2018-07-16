@@ -36,8 +36,8 @@ export const toggleSong = song => (dispatch) => {
 }
 
 export const CHANGE_GRID_VIEW = createAction('app/CHANGE_GRID_VIEW')
-export const changeGridView = discoverLayout => (dispatch) => {
-    dispatch(CHANGE_GRID_VIEW(discoverLayout))
+export const changeGridView = layout => (dispatch) => {
+    dispatch(CHANGE_GRID_VIEW(layout))
 }
 
 export const FETCH_FILTERS = createAction('app/FETCH_FILTERS')
@@ -174,25 +174,4 @@ export const fetchFilteredPosts = tag => (dispatch, getState) => {
 export const playNextSong = () => (dispatch, getState) => {
     const nextSong = getState().queue.queue[0]
     dispatch(toggleSong(nextSong))
-}
-
-export const PREVIEW_SCROLL_LAYOUT = 'PREVIEW_SCROLL_LAYOUT'
-export const changeToPreviewScrollLayout = slug => (dispatch, getState) => {
-    dispatch({
-        type: PREVIEW_SCROLL_LAYOUT,
-    })
-}
-
-export const NORMAL_LAYOUT = 'NORMAL_LAYOUT'
-export const changeToNormalLayout = slug => (dispatch, getState) => {
-    dispatch({
-        type: NORMAL_LAYOUT,
-    })
-}
-
-export const FULL_GRID_LAYOUT = 'FULL_GRID_LAYOUT'
-export const changeToFullGridLayout = slug => (dispatch, getState) => {
-    dispatch({
-        type: FULL_GRID_LAYOUT,
-    })
 }

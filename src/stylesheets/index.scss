@@ -23,14 +23,12 @@ body::-webkit-scrollbar-thumb {
 
 .discovery-container::-webkit-scrollbar-thumb {
   background: red;
-
 }
 
 // TOGGLE ARROWS HIDE FOR NOW
 .discover-full-song .toggle-song {
   display: none !important;
 }
-
 
 // EXPERIMENT *****
 .hero-posts {
@@ -170,8 +168,6 @@ p {
 }
 
 .homeContainer {
-
-
   .hero-posts {
     width: 100vw;
     white-space: nowrap;
@@ -182,6 +178,9 @@ p {
     margin: 0 auto;
 
     .featured-track-wrapper{
+      .post-info {
+        height: 16%;
+      }
       .post-square-wrapper.date {
         .month {
           font-size: 1.1em !important;
@@ -230,9 +229,7 @@ p {
       }
     }
       .post-info {
-        height: auto;
         .song-info  {
-
           width: 68% !important;
           height: auto !important;
           margin-right: 0 !important;
@@ -276,8 +273,6 @@ p {
       height: 20vw;
       display: inline-block;
       vertical-align: top;
-
-
       .pauseButton, .playButton {
         width: 30px !important;
         height: 30px !important;
@@ -295,7 +290,6 @@ p {
         margin: 0 auto;
 
         .post-info {
-          height: auto;
           .post-square-wrapper {
             width: 12%;
           }
@@ -333,8 +327,6 @@ p {
       }
     }
     @media screen and (max-width: 800px) {
-
-
       .homeContainer .hero-posts {
           width: 100vw;
           white-space: nowrap;
@@ -359,10 +351,7 @@ p {
         }
 
         .feature-track {
-
           .post-info {
-            height: auto;
-
             .song-info {
               width: 70%;
             }
@@ -427,7 +416,7 @@ p {
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: auto;
+      height: 20%;
       background: rgba(255,255,255,.7);
       transition: .15s linear all;
       .post-square-wrapper {
@@ -523,9 +512,6 @@ p {
 
 }
 @media screen and (max-width: 600px) {
-
-
-
   .headerContainer #headerLogo img {
     width: 100%;
     max-width: 225px;
@@ -545,7 +531,6 @@ p {
     font-size: .7em;
     line-height: 14px;
     width: 80%;
-
 }
 
 .songSourceContainer i {

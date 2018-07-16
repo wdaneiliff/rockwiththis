@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchSingleSong } from './actions/singleSong'
 import { fetchRelatedSongs } from './actions/relatedSongs'
 import { fetchFeaturedPosts } from './actions/featuredPosts'
 import SocialLinks from './SocialLinks'
@@ -13,7 +12,7 @@ import RelatedSongs from './RelatedSongs'
 class SingleSongPage extends Component {
     componentWillMount() {
       this.props.actions.fetchSingleSong(this.props.match.params.id)
-      this.props.fetchRelatedSongs(this.props.match.params.id)
+      // this.props.fetchRelatedSongs(this.props.match.params.id)
     }
 
     render() {
@@ -46,25 +45,4 @@ SingleSongPage.propTypes = {
       singleSong: PropTypes.shape({}).isRequired,
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const {
-        singleSong,
-        featuredPosts,
-        relatedSongs,
-        isFetchingSingleSong,
-    } = state
-
-    return {
-        singleSong,
-        featuredPosts,
-        relatedSongs,
-        isFetchingSingleSong,
-      }
-}
-
-const mapDispatchToProps = { fetchSingleSong, fetchFeaturedPosts, fetchRelatedSongs };
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(SingleSongPage)
+export default SingleSongPage

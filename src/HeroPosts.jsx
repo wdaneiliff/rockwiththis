@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import moment from 'moment'
 import Song from './Song'
 import SingleSong from './SingleSong'
@@ -39,29 +40,30 @@ class HeroPosts extends React.Component {
             const title = post.acf.song_name
             const artist = post.acf.artist_name
             return (
-                <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`}>
-                    <div className='feature-track'>
-                        <img src={image} />
 
-
-                        <div className="post-info">
-                        {!isSmall && <span className="song-of-day-tag">Song of the day</span>}
-                            <HeroSong {...this.props} song={post} />
-                            <div className="song-info">
-                                <p className="song-title">{title}</p>
-                                <p className="song-artist">{artist}</p>
-                            </div>
-                            <div className="post-square-wrapper date">
-                                <div className='post-date'>
-                                    <p className="month">{month}</p>
-                                    <p className="day">{date}</p>
+                  <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`}>
+                      <div className='feature-track'>
+                          <Link className='move-back-link' to={`/songs/${post.id}`}>
+                              <img src={image} />
+                          </Link>
+                          <div className="post-info">
+                          {!isSmall && <span className="song-of-day-tag">Song of the day</span>}
+                              <HeroSong {...this.props} song={post} />
+                              <Link className='move-back-link' to={`/songs/${post.id}`}>
+                                <div className="song-info">
+                                    <p className="song-title">{title}</p>
+                                    <p className="song-artist">{artist}</p>
                                 </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
+                                <div className="post-square-wrapper date">
+                                    <div className='post-date'>
+                                        <p className="month">{month}</p>
+                                        <p className="day">{date}</p>
+                                    </div>
+                                </div>
+                              </Link>
+                          </div>
+                      </div>
+                  </div>
             )
         }
         const { heroPosts } = this.props || [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]

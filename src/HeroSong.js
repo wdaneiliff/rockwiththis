@@ -37,7 +37,7 @@ class HeroSong extends Component {
             isPlaying,
         } = this.props
 
-        const playPauseButton = song.id === activeSong && isPlaying ? (
+        const playPauseButton = song.id === activeSong.id && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
