@@ -105,7 +105,8 @@ p {
 .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
   font-size: .7em;
   line-height: 14px;
-  width: 80%; }
+  width: 80%;
+  margin-bottom: 0 !important; }
   .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info .song-title {
     font-weight: 700 !important;
     color: black !important;
@@ -140,7 +141,7 @@ p {
   height: calc(40vw - 3px);
   margin: 0 auto; }
   .homeContainer .hero-posts .featured-track-wrapper .post-info {
-    height: 16%; }
+    height: auto; }
   .homeContainer .hero-posts .featured-track-wrapper .post-square-wrapper.date .month {
     font-size: 1.1em !important;
     line-height: 28px !important;
@@ -299,7 +300,7 @@ p {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 20%;
+    height: auto;
     background: rgba(255, 255, 255, 0.7);
     transition: .15s linear all; }
     .homeContainer .feature-track .post-info .post-square-wrapper {

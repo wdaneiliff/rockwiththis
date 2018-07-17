@@ -144,6 +144,8 @@ p {
   font-size: .7em;
   line-height: 14px;
   width: 80%;
+  margin-bottom: 0 !important;
+
 
   .song-title {
     font-weight: 700 !important;
@@ -193,7 +195,8 @@ p {
 
     .featured-track-wrapper{
       .post-info {
-        height: 16%;
+        // height: 16%;
+        height: auto;
       }
       .post-square-wrapper.date {
         .month {
@@ -439,7 +442,8 @@ p {
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 20%;
+      // height: 20%;
+      height: auto;
       background: rgba(255,255,255,.7);
       transition: .15s linear all;
       .post-square-wrapper {
