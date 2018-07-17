@@ -270,6 +270,16 @@ p {
         width: 80%;
         height: 80%;
       }
+
+      @media (max-width: 800px) {
+
+        .heroSongPlayerButton {
+          width: 50px;
+          height: 50px;
+          margin-left: 2px;
+        }
+
+      }
     }
     .previous-week {
       max-height: 674px;
@@ -808,6 +818,9 @@ margin: 10px;
               max-width: 80%;
               width: 80%;
               padding-left: 15px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow-x: hidden;
 
           }
 
@@ -1114,7 +1127,7 @@ margin: 10px;
                 box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 -webkit-box-sizing: border-box;
-                border: 1px solid #1A6EA9;
+                border: 3px solid #1A6EA9;
               }
               filter: brightness(.6);
             }
@@ -2023,7 +2036,7 @@ a.spotifyLink {
           width: auto;
           box-shadow: 0 3px 2px -2px #C9C6CB;
           position: absolute;
-          left: -125%;
+          left: -250%;
           border: 1px solid #C9C6CB;
           padding: 15px;
           background: #fff;
@@ -2073,7 +2086,7 @@ a.spotifyLink {
           .songInfo {
             display: inline-block;
             vertical-align: top;
-            margin-bottom: 15px;
+            // margin-bottom: 15px;
             pointer-events: all;
 
             a.postTitleLink {
@@ -2503,8 +2516,8 @@ button {
                   overflow-x: hidden;
 
                   .songName {
-                    font-size: 20px;
-                    line-height: 30px;
+                    font-size: 16px;
+                    line-height: 26px;
                     height: 30px;
                     max-height: 30px;
                     overflow-x: hidden;
@@ -2514,8 +2527,8 @@ button {
               }
               .artistName {
                 color: #545151;
-                font-size: 20px;
-                line-height: 30px;
+                font-size: 16px;
+                line-height: 26px;
                 height: 30px;
                 max-height: 30px;
             }
@@ -2552,7 +2565,10 @@ button {
   }
   }
 
+
 }
+
+
 
 
 @media only screen and (min-width: 800px) and (max-width: 1000px){
@@ -2620,14 +2636,14 @@ button {
       height: 200px;
       overflow: hidden;
       max-height: 200px;
-      min-height: 200px !important;
+      min-height: none !important;
       height: 12vw;
 
 
 
       p.metaInfo {
-         margin-top: 5px !important;
-         height: 25px;
+         margin-top: 0px !important;
+         height: 60px;
          overflow-y: hidden;
          margin-bottom: 5px !important;
          pointer-events: all;
@@ -2642,15 +2658,18 @@ button {
               font-size: 14px;
               line-height: 20px;
             }
+
+            .postTags {
+                display: inline-block;
+                margin: 0;
+                margin-left: 0;
+                pointer-events: none;
+            }
         }
       }
 
       p.songDescription {
-          font-family: 'Open Sans', sans-serif;
-          font-size: 14px;
-          line-height: 24px;
-          height: 100px;
-    overflow: hidden;
+        display: none;
 
           br {
             display: none;
@@ -2677,7 +2696,7 @@ button {
               width: calc(100% - 75px);
               display: inline-block;
               padding-left: 5px;
-              height: 40px;
+              height: 42px;
               overflow: hidden;
               pointer-events: all;
 
@@ -2725,7 +2744,7 @@ button {
 
       display: inline-block;
       vertical-align: top;
-      padding-right: 25px;
+      padding-right: 0px;
 
             img {
           max-height: 200px;
@@ -3355,6 +3374,10 @@ line-height: 22px;
   }
   .songInfo.desktop {
     display: inline-block !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    max-width: 350px !important;
   }
 }
 
@@ -3699,4 +3722,144 @@ footer .songSourceContainer .source.soundcloud{
 
 span.postTags:nth-of-type(3) {
     display: none !important;
+}
+
+
+
+
+@media (max-width: 1275px) and (min-width: 800px) {
+
+
+  .discover-full-song .ShareBox {
+    position: absolute;
+    top: 10px;
+    right: -35px !important;
+    width: auto;
+}
+
+.discover-full-song .songContainer .spotify {
+    right: -35px !important;
+}
+}
+
+
+
+@media (max-width: 1200px)  and (min-width: 1075px){
+  .songInfo.desktop {
+
+    max-width: 300px !important;
+}
+}
+
+@media (max-width: 1075px)  and (min-width: 800px){
+  .songInfo.desktop {
+
+    max-width: 250px !important;
+
+        a.postTitleLink {
+        font-size: 20px !important;
+        line-height: 30px;
+    }
+
+    .artistName {
+    font-size: 20px !important;
+    line-height: 30px;
+  }
+}
+
+.discover-full-song .ShareBox {
+    right: -25px !important;
+}
+
+.discover-full-song .songContainer .spotify {
+    right: -25px !important;
+}
+}
+
+@media (max-width: 930px)  and (min-width: 800px){
+
+
+
+  .songInfo.desktop {
+
+    max-width: 220px !important;
+
+        a.postTitleLink {
+        font-size: 16px !important;
+        line-height: 26px;
+    }
+
+    .artistName {
+    font-size: 16px !important;
+    line-height: 26px;
+  }
+}
+
+.discover-full-song .singlePostPlayerButton .pauseButton, .discover-full-song .singlePostPlayerButton .playButton {
+    max-width: 40px !important;
+    margin-top: 8px;
+}
+
+
+}
+
+
+.ShareBox {
+    z-index: 8 !important;
+    position: absolute;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.ShareBox:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+.spotify {
+    z-index: 7 !important;
+    position: absolute;
+    cursor: pointer;
+}
+
+.toggle-song {
+  z-index: 2;
+}
+
+
+
+.previewScrollLayout .songList .tag {
+    margin: 0 2px;
+    font-size: 10px;
+    border-radius: 6px;
+    transition: all .2s ease;
+    color: #fff;
+    background: #1a6ea9;
+    border: 1px solid #1a6ea9;
+    cursor: pointer;
+    letter-spacing: .7px;
+    box-shadow: 0 3px 2px -2px #C9C6CB;
+    padding: 5px;
+}
+
+.singleSongPage .singleSongContainer .metaInfo .postTags .tag {
+  color: #fff;
+  background: #1a6ea9;
+  border: 1px solid #1a6ea9;
+}
+
+
+
+@media (max-width: 1075px) and (min-width: 800px) {
+  .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent .topContentContainer .songInfo .artistName {
+    color: #545151;
+    font-size: 16px !important;
+    line-height: 26px;
+    height: 30px;
+    max-height: 30px;
+}
+}
+
+
+.discovery-container::-webkit-scrollbar {
+    display: none;
 }

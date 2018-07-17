@@ -188,6 +188,11 @@ p {
     .homeContainer .hero-posts .featured-track-wrapper .heroSongPlayerButton {
       width: 80%;
       height: 80%; }
+    @media (max-width: 800px) {
+      .homeContainer .hero-posts .featured-track-wrapper .heroSongPlayerButton {
+        width: 50px;
+        height: 50px;
+        margin-left: 2px; } }
   .homeContainer .hero-posts .previous-week {
     max-height: 674px;
     width: 60%;
@@ -538,7 +543,10 @@ p {
       display: inline-block;
       max-width: 80%;
       width: 80%;
-      padding-left: 15px; }
+      padding-left: 15px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow-x: hidden; }
     .singleSongPage .singleSongContainer .songContainer .postContent .singleSongLinks {
       display: inline-block;
       vertical-align: top;
@@ -742,7 +750,7 @@ p {
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
-        border: 1px solid #1A6EA9; }
+        border: 3px solid #1A6EA9; }
 
 .discovery-section .songList .songContainer .postContent {
   display: inline-block;
@@ -1455,7 +1463,7 @@ a.spotifyLink {
           width: auto;
           box-shadow: 0 3px 2px -2px #C9C6CB;
           position: absolute;
-          left: -125%;
+          left: -250%;
           border: 1px solid #C9C6CB;
           padding: 15px;
           background: #fff;
@@ -1486,7 +1494,6 @@ a.spotifyLink {
         .discovery-container .discover-full-song .songContainer .topContentContainer .songInfo {
           display: inline-block;
           vertical-align: top;
-          margin-bottom: 15px;
           pointer-events: all; }
           .discovery-container .discover-full-song .songContainer .topContentContainer .songInfo a.postTitleLink {
             font-size: 24px;
@@ -1779,16 +1786,16 @@ button {
             height: 30px;
             overflow-x: hidden; }
             .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent .topContentContainer .songInfo a.postTitleLink .songName {
-              font-size: 20px;
-              line-height: 30px;
+              font-size: 16px;
+              line-height: 26px;
               height: 30px;
               max-height: 30px;
               overflow-x: hidden;
               font-weight: 700 !important; }
           .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent .topContentContainer .songInfo .artistName {
             color: #545151;
-            font-size: 20px;
-            line-height: 30px;
+            font-size: 16px;
+            line-height: 26px;
             height: 30px;
             max-height: 30px; }
         .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent .topContentContainer .singlePostPlayer {
@@ -1853,11 +1860,11 @@ button {
       height: 200px;
       overflow: hidden;
       max-height: 200px;
-      min-height: 200px !important;
+      min-height: none !important;
       height: 12vw; }
       .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent p.metaInfo {
-        margin-top: 5px !important;
-        height: 25px;
+        margin-top: 0px !important;
+        height: 60px;
         overflow-y: hidden;
         margin-bottom: 5px !important;
         pointer-events: all; }
@@ -1869,12 +1876,13 @@ button {
           .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent p.metaInfo p.leftInfo .postDate {
             font-size: 14px;
             line-height: 20px; }
+          .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent p.metaInfo p.leftInfo .postTags {
+            display: inline-block;
+            margin: 0;
+            margin-left: 0;
+            pointer-events: none; }
       .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent p.songDescription {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-        line-height: 24px;
-        height: 100px;
-        overflow: hidden; }
+        display: none; }
         .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent p.songDescription br {
           display: none; }
       .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent .topContentContainer {
@@ -1894,7 +1902,7 @@ button {
           width: calc(100% - 75px);
           display: inline-block;
           padding-left: 5px;
-          height: 40px;
+          height: 42px;
           overflow: hidden;
           pointer-events: all; }
           .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent .topContentContainer .songInfo a.postTitleLink {
@@ -1924,7 +1932,7 @@ button {
       width: 12vw;
       display: inline-block;
       vertical-align: top;
-      padding-right: 25px; }
+      padding-right: 0px; }
       .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .imageContainer img {
         max-height: 200px;
         height: 100%;
@@ -2316,7 +2324,11 @@ a.smsLink, .smsLink img {
   .songInfo.mobile {
     display: none !important; }
   .songInfo.desktop {
-    display: inline-block !important; } }
+    display: inline-block !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    max-width: 350px !important; } }
 
 .shareDropdown {
   width: auto;
@@ -2569,3 +2581,90 @@ footer .songSourceContainer .source.soundcloud {
 
 span.postTags:nth-of-type(3) {
   display: none !important; }
+
+@media (max-width: 1275px) and (min-width: 800px) {
+  .discover-full-song .ShareBox {
+    position: absolute;
+    top: 10px;
+    right: -35px !important;
+    width: auto; }
+  .discover-full-song .songContainer .spotify {
+    right: -35px !important; } }
+
+@media (max-width: 1200px) and (min-width: 1075px) {
+  .songInfo.desktop {
+    max-width: 300px !important; } }
+
+@media (max-width: 1075px) and (min-width: 800px) {
+  .songInfo.desktop {
+    max-width: 250px !important; }
+    .songInfo.desktop a.postTitleLink {
+      font-size: 20px !important;
+      line-height: 30px; }
+    .songInfo.desktop .artistName {
+      font-size: 20px !important;
+      line-height: 30px; }
+  .discover-full-song .ShareBox {
+    right: -25px !important; }
+  .discover-full-song .songContainer .spotify {
+    right: -25px !important; } }
+
+@media (max-width: 930px) and (min-width: 800px) {
+  .songInfo.desktop {
+    max-width: 220px !important; }
+    .songInfo.desktop a.postTitleLink {
+      font-size: 16px !important;
+      line-height: 26px; }
+    .songInfo.desktop .artistName {
+      font-size: 16px !important;
+      line-height: 26px; }
+  .discover-full-song .singlePostPlayerButton .pauseButton, .discover-full-song .singlePostPlayerButton .playButton {
+    max-width: 40px !important;
+    margin-top: 8px; } }
+
+.ShareBox {
+  z-index: 8 !important;
+  position: absolute;
+  cursor: pointer;
+  transition: all .3s ease; }
+
+.ShareBox:hover {
+  cursor: pointer;
+  opacity: .8; }
+
+.spotify {
+  z-index: 7 !important;
+  position: absolute;
+  cursor: pointer; }
+
+.toggle-song {
+  z-index: 2; }
+
+.previewScrollLayout .songList .tag {
+  margin: 0 2px;
+  font-size: 10px;
+  border-radius: 6px;
+  transition: all .2s ease;
+  color: #fff;
+  background: #1a6ea9;
+  border: 1px solid #1a6ea9;
+  cursor: pointer;
+  letter-spacing: .7px;
+  box-shadow: 0 3px 2px -2px #C9C6CB;
+  padding: 5px; }
+
+.singleSongPage .singleSongContainer .metaInfo .postTags .tag {
+  color: #fff;
+  background: #1a6ea9;
+  border: 1px solid #1a6ea9; }
+
+@media (max-width: 1075px) and (min-width: 800px) {
+  .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .postContent .topContentContainer .songInfo .artistName {
+    color: #545151;
+    font-size: 16px !important;
+    line-height: 26px;
+    height: 30px;
+    max-height: 30px; } }
+
+.discovery-container::-webkit-scrollbar {
+  display: none; }
