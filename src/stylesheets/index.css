@@ -18,6 +18,9 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #FF0000; }
 
+.search-wrapper {
+  display: none !important; }
+
 .discovery-container::-webkit-scrollbar-thumb {
   background: red; }
 
@@ -105,6 +108,10 @@ p {
   width: 80%; }
   .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info .song-title {
     font-weight: 700 !important;
+    color: black !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     max-height: 20px;
     overflow-x: hidden; }
 
@@ -318,9 +325,14 @@ p {
       font-size: 1.5em;
       line-height: 28px; }
       .homeContainer .feature-track .post-info .song-info .song-title {
-        font-weight: 700 !important; }
+        font-weight: 700 !important;
+        color: black;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
       .homeContainer .feature-track .post-info .song-info .song-artist {
-        font-weight: 400; }
+        font-weight: 400;
+        color: black; }
 
 @media (max-width: 800px) {
   #headerLogo {
@@ -374,7 +386,12 @@ p {
   .footer-player .artist-info {
     float: left;
     margin-left: 0px;
-    margin-bottom: 8px !important; }
+    margin-bottom: 8px !important;
+    max-width: 250px !important;
+    overflow: hidden;
+    overflow: hidden !important;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
     .footer-player .artist-info br {
       display: none; }
     .footer-player .artist-info a.songImageLink {
@@ -386,7 +403,10 @@ p {
         margin-top: 3px;
         line-height: 18px;
         margin-bottom: 5px;
-        font-weight: 700 !important; }
+        font-weight: 700 !important;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
       .footer-player .artist-info a.songImageLink span.artist-title {
         display: block; }
   .footer-player .player-info-image-wrapper {
@@ -820,7 +840,11 @@ p {
           display: inline-block;
           vertical-align: top;
           padding-left: 5px !important;
-          pointer-events: all; }
+          pointer-events: all;
+          max-width: 250px !important;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
         .discovery-section .songList .songContainer .postContent .topContentContainer .metaInfo {
           width: 100%;
           display: inline-block;
@@ -1144,7 +1168,11 @@ body {
 .artist-info {
   float: left;
   margin-left: 15px;
-  margin-bottom: 8px !important; }
+  margin-bottom: 8px !important;
+  max-width: 250px !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 .player-info-image-wrapper .player-img {
   height: 100%;
@@ -1338,13 +1366,17 @@ a.spotifyLink {
           margin-top: 10px; }
       .discovery-container .discover-full-song .pauseButton {
         max-width: 60px !important; }
+      .discovery-container .discover-full-song button.toggle-song:hover {
+        opacity: 1; }
       .discovery-container .discover-full-song button.toggle-song {
+        cursor: pointer !important;
         position: absolute;
         top: 0;
         height: 100%;
         max-height: 674px;
         width: 30px;
-        background-size: contain; }
+        background-size: contain;
+        opacity: .5; }
         .discovery-container .discover-full-song button.toggle-song img {
           top: 50%;
           height: 30px; }
@@ -1354,7 +1386,45 @@ a.spotifyLink {
           transform: rotate(180deg);
           transform: rotate(180deg); }
       .discovery-container .discover-full-song button.toggle-song.next {
-        right: 40px; }
+        right: 40px; } }
+    @media (min-width: 800px) and (max-width: 1500px) {
+      .discovery-container .discover-full-song button.toggle-song {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        max-height: 674px;
+        width: 30px;
+        background-size: contain; }
+        .discovery-container .discover-full-song button.toggle-song img {
+          top: 50%;
+          height: 20px; }
+      .discovery-container .discover-full-song button.toggle-song.previous {
+        left: 10px; }
+        .discovery-container .discover-full-song button.toggle-song.previous img {
+          transform: rotate(180deg);
+          transform: rotate(180deg); }
+      .discovery-container .discover-full-song button.toggle-song.next {
+        right: 10px; } }
+    @media (min-width: 800px) and (max-width: 1150px) {
+      .discovery-container .discover-full-song button.toggle-song {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        max-height: 674px;
+        width: 30px;
+        background-size: contain; }
+        .discovery-container .discover-full-song button.toggle-song img {
+          top: 50%;
+          height: 20px; }
+      .discovery-container .discover-full-song button.toggle-song.previous {
+        left: 0px; }
+        .discovery-container .discover-full-song button.toggle-song.previous img {
+          transform: rotate(180deg);
+          transform: rotate(180deg); }
+      .discovery-container .discover-full-song button.toggle-song.next {
+        right: 5px; } }
+
+@media (min-width: 800px) {
       .discovery-container .discover-full-song .ShareBox {
         display: block;
         width: 70%;
@@ -2203,7 +2273,10 @@ a.smsLink, .smsLink img {
       font-size: 1.2em;
       line-height: 22px; }
       .songImageInfoContainer .song-info .song-title {
-        font-weight: 700 !important; }
+        font-weight: 700 !important;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
   .singleSongPage.page .singleSongContainer .postContent {
     width: calc(100%) !important;
     display: inline-block;
@@ -2400,7 +2473,10 @@ footer .songSourceContainer .source.soundcloud {
     .fullGridLayout .songImageInfoContainer.grid .song-info p.song-title {
       font-weight: 700;
       font-size: 14px;
-      line-height: 16px; }
+      line-height: 16px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
     .fullGridLayout .songImageInfoContainer.grid .song-info p.song-artist {
       font-size: 14px;
       font-weight: 400;
@@ -2490,3 +2566,6 @@ footer .songSourceContainer .source.soundcloud {
 
 .songList {
   padding-bottom: 75px; }
+
+span.postTags:nth-of-type(3) {
+  display: none !important; }

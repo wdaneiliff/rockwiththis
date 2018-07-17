@@ -21,6 +21,10 @@ body::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
 
+.search-wrapper {
+    display: none !important;
+}
+
 .discovery-container::-webkit-scrollbar-thumb {
   background: red;
 }
@@ -143,6 +147,10 @@ p {
 
   .song-title {
     font-weight: 700 !important;
+    color: black !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     max-height: 20px;
     overflow-x: hidden;
@@ -304,7 +312,10 @@ p {
             font-size: .8em;
             line-height: 20px;
             width: 80%;
+
+
           }
+
         }
       }
     }
@@ -456,10 +467,15 @@ p {
         line-height: 28px;
         .song-title {
           font-weight: 700 !important;
+          color: black;
+          overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
         }
         .song-artist {
           font-weight: 400;
+          color: black;
         }
       }
     }
@@ -544,6 +560,11 @@ p {
     float: left;
     margin-left: 0px;
     margin-bottom: 8px !important;
+    max-width: 250px !important;
+overflow: hidden;
+overflow: hidden !important;
+white-space: nowrap;
+text-overflow: ellipsis;
 
     br {
       display: none;
@@ -561,6 +582,9 @@ p {
       line-height: 18px;
       margin-bottom: 5px;
       font-weight: 700 !important;
+      overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     }
     span.artist-title {
       display: block;
@@ -1253,6 +1277,10 @@ margin: 10px;
                     vertical-align: top;
                     padding-left: 5px !important;
                     pointer-events: all;
+                    max-width: 250px !important;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                   }
 
                   .metaInfo {
@@ -1616,7 +1644,13 @@ margin-right: 15px;
 .artist-info {
   float: left;
   margin-left: 15px;
-  margin-bottom: 8px !important; }
+  margin-bottom: 8px !important;
+  max-width: 250px !important;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+
+}
 
 .player-info-image-wrapper .player-img {
   height: 100%;
@@ -1867,14 +1901,19 @@ a.spotifyLink {
 
           }
 
+        button.toggle-song:hover {
+          opacity: 1;
+        }
 
       button.toggle-song {
+        cursor: pointer !important;
         position: absolute;
         top: 0;
         height: 100%;
         max-height: 674px;
         width: 30px;
         background-size: contain;
+        opacity: .5;
         img {
           top: 50%;
           height: 30px;
@@ -1889,6 +1928,55 @@ a.spotifyLink {
     }
       button.toggle-song.next {
         right: 40px;
+    }
+
+    @media(max-width: 1500px) {
+      button.toggle-song {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        max-height: 674px;
+        width: 30px;
+        background-size: contain;
+        img {
+          top: 50%;
+          height: 20px;
+        }
+      }
+      button.toggle-song.previous {
+        left: 10px;
+        img {
+          transform:rotate(180deg);
+          transform:rotate(180deg);
+        }
+    }
+      button.toggle-song.next {
+        right: 10px;
+    }
+    }
+    @media(max-width: 1150px) {
+      button.toggle-song {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        max-height: 674px;
+        width: 30px;
+        background-size: contain;
+        img {
+          top: 50%;
+          height: 20px;
+        }
+      }
+      button.toggle-song.previous {
+        left: 0px;
+        img {
+          transform:rotate(180deg);
+          transform:rotate(180deg);
+        }
+    }
+      button.toggle-song.next {
+        right: 5px;
+    }
     }
 
       .ShareBox {
@@ -3200,6 +3288,9 @@ line-height: 22px;
 
 .song-title {
     font-weight: 700 !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
   }
@@ -3478,6 +3569,9 @@ footer .songSourceContainer .source.soundcloud{
             font-weight: 700;
             font-size: 14px;
             line-height: 16px;
+            overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
         }
         p.song-artist {
             font-size: 14px;
@@ -3600,4 +3694,9 @@ footer .songSourceContainer .source.soundcloud{
 
 .songList {
   padding-bottom: 75px;
+}
+
+
+span.postTags:nth-of-type(3) {
+    display: none !important;
 }

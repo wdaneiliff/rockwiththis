@@ -12,7 +12,6 @@ export default function configureStore() {
     appReducer,
     composeEnhancers(
       applyMiddleware(...middleware),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   )
   store.subscribe(() => {
