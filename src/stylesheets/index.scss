@@ -81,7 +81,7 @@ p {
 
 
 .headerContainer {
-  height: 90px;
+  // height: 90px;
   background: linear-gradient(to right, #1e0c49, #0097d5);
   /* background-image: url('http://rockwiththis.com/wp-content/uploads/2018/01/light-to-dark-header.jpg');
   background-repeat: repeat-x;
@@ -109,7 +109,7 @@ p {
     width: 100%;
   }
   &.shrunk {
-    height: 70px;
+    height: 75px;
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
     #headerLogo {
       width: 340px;
@@ -180,7 +180,7 @@ p {
 .socialLinks {
   background: #d8d8d8;
   height: 45px;
-  margin-top: 90px;
+  margin-top: 75px;
 }
 
 .homeContainer {
