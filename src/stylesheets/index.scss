@@ -1537,7 +1537,7 @@ margin-right: 15px;
   /* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png); */
   margin: 0 !important; }
 
-.player-control-button {
+button.player-control-button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -1546,6 +1546,11 @@ margin-right: 15px;
   font-size: 18px;
   i {
     color: white;
+  }
+  &.disabled {
+    background: rgba(0,0,0,0) !important;
+    cursor: default;
+    opacity: .3;
   }
 }
 

@@ -1067,15 +1067,19 @@ body {
   /* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png); */
   margin: 0 !important; }
 
-.player-control-button {
+button.player-control-button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   cursor: pointer;
   flex: 0 0 10px;
   font-size: 18px; }
-  .player-control-button i {
+  button.player-control-button i {
     color: white; }
+  button.player-control-button.disabled {
+    background: rgba(0, 0, 0, 0) !important;
+    cursor: default;
+    opacity: .3; }
 
 .player-duration-bar-current-time, .player-duration-bar-song-duration {
   font-family: Open Sans;

@@ -35,7 +35,6 @@ class AppContainer extends Component {
     render() {
         return (
             <div>
-                <OffScreen {...this.props} />
                 <Header {...this.props} shrinkHeader={this.state.shrinkHeader} />
                 <SocialLinks />
                 {React.cloneElement(this.props.children, { ...this.props })}
