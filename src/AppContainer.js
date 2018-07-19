@@ -7,6 +7,8 @@ import OffScreen from './OffScreen'
 import SocialLinks from './SocialLinks.js'
 import Header from './Header'
 import MainPlayer from './MainPlayer'
+import { Element } from 'react-scroll'
+
 
 class AppContainer extends Component {
     constructor(props) {
@@ -35,11 +37,13 @@ class AppContainer extends Component {
     render() {
         return (
             <div>
+
                 <OffScreen {...this.props} />
                 <Header {...this.props} shrinkHeader={this.state.shrinkHeader} />
                 <SocialLinks />
                 {React.cloneElement(this.props.children, { ...this.props })}
                 <MainPlayer {...this.props} />
+
             </div>
         )
     }

@@ -18,7 +18,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className={`headerContainer shrunk`}>
+            <div className={`headerContainer shrunk `}>
                 <a className="nav-link" onClick={this.handleDiscoverClick}>Discover</a>
                 <Link id="headerLogo" to="/">
                   <img src="http://rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />

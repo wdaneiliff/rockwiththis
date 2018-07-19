@@ -6,6 +6,7 @@ import SingleSong from './SingleSong'
 import HeroSong from './HeroSong'
 
 
+
 class HeroPosts extends React.Component {
     constructor(props) {
         super(props)
@@ -72,13 +73,12 @@ class HeroPosts extends React.Component {
 
         return (
             <div>
-                <div id="hero-post" className='hero-posts' ref={node => this.postsWrapper = node}>
+                <div id="heroScroll" className='hero-posts' ref={node => this.postsWrapper = node}>
                     {featuredPost}
                     <div className='previous-week'>
                         {otherPosts}
                     </div>
                 </div>
-
             </div>
         )
     }
