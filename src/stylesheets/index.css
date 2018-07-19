@@ -112,6 +112,7 @@ p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    font-size: 14px;
     max-height: 20px;
     overflow-x: hidden; }
 
@@ -334,10 +335,25 @@ p {
         color: black;
         overflow: hidden;
         white-space: nowrap;
-        text-overflow: ellipsis; }
+        text-overflow: ellipsis;
+        font-size: 24px; }
       .homeContainer .feature-track .post-info .song-info .song-artist {
         font-weight: 400;
-        color: black; }
+        color: black;
+        font-size: 22px; }
+
+.homeContainer .less-featured-track-wrapper .song-info .song-title {
+  font-weight: 700 !important;
+  color: black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px !important; }
+
+.homeContainer .less-featured-track-wrapper .song-info .song-artist {
+  font-weight: 400;
+  color: black;
+  font-size: 14px !important; }
 
 @media (max-width: 800px) {
   #headerLogo {
@@ -401,14 +417,12 @@ p {
       display: none; }
     .footer-player .artist-info a.songImageLink {
       text-decoration: none;
-      display: block;
-      font-weight: 700 !important; }
+      display: block; }
       .footer-player .artist-info a.songImageLink span.song-title {
         display: block;
         margin-top: 3px;
         line-height: 18px;
         margin-bottom: 5px;
-        font-weight: 700 !important;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis; }
@@ -467,8 +481,7 @@ p {
 .footer-player {
   background: #282828 !important; }
   .footer-player .artist-info a.songImageLink {
-    text-decoration: none;
-    font-weight: 700 !important; }
+    text-decoration: none; }
     .footer-player .artist-info a.songImageLink span.artist-title {
       color: #fff;
       font-weight: 100; }
@@ -925,8 +938,9 @@ body {
   text-decoration: none;
   color: #fff;
   margin-bottom: 10px !important;
-  font-size: 16px;
-  line-height: 26px; }
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400px !important; }
 
 .songSourceContainer img {
   width: 75px;
@@ -1062,7 +1076,6 @@ body {
 .player-duration-bar {
   flex: 1;
   height: 100%;
-  margin-right: 18px;
   align-self: center;
   height: 5px;
   cursor: pointer; }
@@ -1073,6 +1086,7 @@ body {
 
 .player-duration-bar-wrapper {
   align-items: center;
+  text-align: center;
   display: flex;
   flex: 0 0 contain;
   background: transparent; }
@@ -1160,7 +1174,7 @@ body {
   display: flex;
   flex: 1 1 0;
   min-width: 0;
-  padding-right: 18px; }
+  padding-right: 0px; }
 
 .footer-player .player-info-image-wrapper {
   width: 60px;
@@ -2411,7 +2425,8 @@ a.smsLink, .smsLink img {
 
 footer .songSourceContainer {
   margin-right: 20px;
-  position: relative; }
+  position: relative;
+  display: none; }
 
 footer .songSourceContainer .source.soundcloud {
   color: #ff8800;
