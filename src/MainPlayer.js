@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { toggleSong, togglePlayPause } from './actions/queue'
+import  playButton  from './images/main-player-play-button.svg'
+import  pauseButton  from './images/pauseButton.png'
 
 const formatTime = (seconds = 0) => {
     const numMinutes = Math.floor(seconds / 60)
@@ -125,9 +127,10 @@ class MainPlayer extends Component {
         } = this.props
 
         const playPauseButton = this.props.isPlaying ? (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="main playButton" />
+            <img src={pauseButton} className="main playButton" />
         ) : (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="main playButton" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/></svg>
+
         )
 
         return (
