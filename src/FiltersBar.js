@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchFilters } from './actions/filters'
 import LoadingComponent from './LoadingComponent'
+import full from './images/full.svg'
+import grid from './images/grid.svg'
+import snapshot from './images/snapshot.svg'
+
 
 class FiltersBar extends Component {
     constructor(props) {
@@ -113,10 +117,30 @@ class FiltersBar extends Component {
         const disableClearAll = this.props.selectedFilters.length === 0
         return (
           <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
+
+          <button onClick={this.showToggleViewsDropdown} className="toggle-view">
+
+          <div>
+            <img src={full} />
+            <span>Full View</span>
+          </div>
+
+          <div>
+            <img src={snapshot} />
+            <span>Snapshot View</span>
+          </div>
+
+          <div>
+            <img src={grid} />
+            <span>Grid View</span>
+          </div>
+
+
+          </button>
+
           <button onClick={this.showSubGenreFilters} className="filters-button">
             Subgenres
           </button>
-          <button onClick={this.showToggleViewsDropdown} className="toggle-view"><i className="im im-menu-list"></i></button>
           <div className="search-wrapper">
                 <input className="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
           </div>
