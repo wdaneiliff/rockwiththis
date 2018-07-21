@@ -1183,7 +1183,7 @@ margin: 10px;
 
   .filters-bar {
     width: 100%;
-    height: 45px;
+    height: 70px;
     background: #fff;
     position: relative;
     padding: 0 30px;
@@ -4049,4 +4049,70 @@ span.postTags:nth-of-type(3) {
 
 .discovery-container::-webkit-scrollbar {
     display: none;
+}
+
+
+
+// FILTERS BAR
+
+.toggle-view.mobile {
+  display: none;
+}
+
+ul.toggleContainer {
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+
+        img {
+          display: inline-block;
+          margin: 0 15px;
+           cursor: pointer;
+           width: 30px;
+           margin-bottom: 2px;
+        }
+
+        span {
+          font-size: 10px;
+          display: block;
+          text-align: center;
+        }
+        .mobile {
+          display: none;
+
+
+        }
+}
+
+
+// FILTER BUTTON TEMPORARY STYLES
+.discovery-section .filters-bar button.filters-button {
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #000 !important;
+    border-radius: 4px;
+    padding: 6px 8px;
+    color: #000;
+    transition: all .3s ease;
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.discovery-section .filters-bar button.filters-button:hover {
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #000 !important;
+    border-radius: 4px;
+    padding: 6px 8px;
+    color: #fff;
+    background: #000 !important;
+    transition: all .3s ease;
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 50px;
 }

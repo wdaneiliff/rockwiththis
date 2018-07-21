@@ -118,25 +118,30 @@ class FiltersBar extends Component {
         return (
           <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
 
-          <button onClick={this.showToggleViewsDropdown} className="toggle-view">
+          <button onClick={this.showToggleViewsDropdown} className="toggle-view mobile"><i class="im im-menu-list"></i></button>
+          <ul className="toggleContainer">
 
-          <div>
-            <img src={full} />
-            <span>Full View</span>
-          </div>
+            <li className="desktop">
+                <img className="desktop" name='expanded' onClick={this.changeGridView} src={full} /><br/>
+                <span>Full</span>
+            </li>
 
-          <div>
-            <img src={snapshot} />
-            <span>Snapshot View</span>
-          </div>
+            <li className="desktop">
+                <img className="desktop" name='snapshot' onClick={this.changeGridView} src={snapshot} /><br/>
+                <span>Snapshot</span>
+            </li>
 
-          <div>
-            <img src={grid} />
-            <span>Grid View</span>
-          </div>
+            <li className="desktop">
+                <img className="desktop" name='fullGrid' onClick={this.changeGridView} src={grid} /><br/>
+                <span>Grid</span>
+            </li>
+          </ul>
 
 
-          </button>
+
+
+
+
 
           <button onClick={this.showSubGenreFilters} className="filters-button">
             Subgenres
