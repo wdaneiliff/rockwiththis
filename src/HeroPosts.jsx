@@ -73,7 +73,7 @@ class HeroPosts extends React.Component {
 
         return (
             <div>
-                <div id="heroScroll" className='hero-posts' ref={node => this.postsWrapper = node}>
+                <div id="hero-post" className='hero-posts' ref={node => this.postsWrapper = node}>
                     {featuredPost}
                     <div className='previous-week'>
                         {otherPosts}

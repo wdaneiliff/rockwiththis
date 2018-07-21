@@ -63,6 +63,7 @@ class FiltersBar extends Component {
         const scrollHeight = document.getElementById('hero-post').clientHeight + 45
         const fixedFilterBar = window.scrollY > scrollHeight
         this.setState({ fixedFilterBar })
+        console.log('scroll')
     }
 
     showSubGenreFilters(event) {
