@@ -71,13 +71,34 @@ p {
   top: 0;
   width: 100%;
   z-index: 500;
-  display: flex;
+  display: block;
   align-items: center;
   transition: 0.3s ease all; }
+  .headerContainer .content-wrapper {
+    position: relative;
+    max-width: 1685px;
+    height: 100%;
+    padding: 0 35px; }
+    .headerContainer .content-wrapper .navLink {
+      position: absolute; }
+    .headerContainer .content-wrapper a.nav-link.left {
+      position: absolute;
+      left: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%); }
+    .headerContainer .content-wrapper a.nav-link.right {
+      position: absolute;
+      right: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%); }
   .headerContainer #headerLogo {
-    width: 400px;
-    margin: 0 auto;
-    transition: 0.3s ease all; }
+    width: 340px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
   .headerContainer #headerLogoMobile {
     display: none; }
   .headerContainer #headerLogo img {
@@ -827,18 +848,36 @@ img.heroHoverGradient {
       padding: 15px; }
     .discovery-section .filters-bar .SubgenreFiltersDropDown.expand {
       max-height: 500px; }
-  .discovery-section .filters-bar .toggle-view {
-    color: #869194;
+  .discovery-section .filters-bar button.toggle-views-button {
+    display: inline-block;
+    font-size: 12px;
+    border: 1px solid #1a6ea9 !important;
+    border-radius: 4px;
+    padding: 10px;
+    color: #1a6ea9;
     transition: all .3s ease;
-    padding-top: 8px; }
-    .discovery-section .filters-bar .toggle-view img {
-      display: inline-block;
-      margin: 0 15px; }
-    .discovery-section .filters-bar .toggle-view span {
-      font-size: 8px; }
-  .discovery-section .filters-bar .toggle-view:hover {
-    cursor: pointer;
-    color: #000; }
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 0px;
+    position: absolute;
+    right: 35px; }
+    .discovery-section .filters-bar button.toggle-views-button i.im.im-angle-down {
+      font-size: 12px;
+      -webkit-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+      transform: translateY(2px);
+      margin-left: 10px; }
+  .discovery-section .filters-bar button.toggle-views-button:hover {
+    border: 1px solid #1a6ea9 !important;
+    background: #1a6ea9;
+    color: #fff;
+    cursor: pointer; }
+    .discovery-section .filters-bar button.toggle-views-button:hover i.im.im-angle-down {
+      font-size: 12px;
+      -webkit-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+      transform: translateY(2px);
+      margin-left: 10px; }
   .discovery-section .filters-bar button.filters-button {
     display: inline-block;
     font-size: 14px;
@@ -1450,7 +1489,6 @@ a.spotifyLink {
     color: rgba(255, 255, 255, 0.75);
     text-transform: uppercase;
     font-size: 16px;
-    margin: 0 5%;
     padding: 5px 10px;
     border: 2px solid rgba(255, 255, 255, 0);
     border-bottom: 2px solid rgba(255, 255, 255, 0.75);
@@ -1850,8 +1888,7 @@ button {
   position: absolute;
   border: 1px solid #C9C6CB;
   border-top: 0;
-  padding: 15px;
-  left: 30px;
+  right: 35px;
   background: #fff;
   z-index: 1000;
   max-width: 300px;
@@ -1859,7 +1896,33 @@ button {
   border-radius: 4px;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
-  box-shadow: 0 3px 2px -2px #C9C6CB; }
+  box-shadow: 0 3px 2px -2px #C9C6CB;
+  padding: 15px; }
+  .discovery-section .filters-bar .ToggleViewsDropDown button {
+    padding: 6px 15px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #1a6ea9;
+    margin-bottom: 15px;
+    border-radius: 8px; }
+    .discovery-section .filters-bar .ToggleViewsDropDown button svg {
+      width: 12px;
+      fill: #1a6ea9; }
+    .discovery-section .filters-bar .ToggleViewsDropDown button span {
+      font-size: 12px;
+      color: #1a6ea9;
+      vertical-align: top;
+      padding-top: 5px;
+      display: inline-block;
+      margin-left: 10px; }
+  .discovery-section .filters-bar .ToggleViewsDropDown button:hover {
+    background: #1a6ea9; }
+    .discovery-section .filters-bar .ToggleViewsDropDown button:hover svg {
+      width: 12px;
+      fill: #fff; }
+    .discovery-section .filters-bar .ToggleViewsDropDown button:hover span {
+      font-size: 12px;
+      color: #fff; }
 
 @media (max-width: 800px) {
   .discover-full-song {
@@ -2862,7 +2925,7 @@ ul.toggleContainer {
   font-size: 12px;
   border: 1px solid #1a6ea9 !important;
   border-radius: 4px;
-  padding: 8px;
+  padding: 10px;
   color: #1a6ea9;
   transition: all .3s ease;
   vertical-align: top;
@@ -2875,12 +2938,7 @@ ul.toggleContainer {
   border: 1px solid #1a6ea9 !important;
   background: #1a6ea9;
   border-radius: 4px;
-  padding: 8px;
-  color: #fff;
-  transition: all .3s ease;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 0px; }
+  color: #fff; }
 
 .discovery-section .filters-bar button.filters-button.active {
   display: inline-block;
@@ -2888,7 +2946,6 @@ ul.toggleContainer {
   border: 1px solid #1a6ea9 !important;
   background: #1a6ea9;
   border-radius: 4px;
-  padding: 8px;
   color: #fff;
   transition: all .3s ease;
   vertical-align: top;

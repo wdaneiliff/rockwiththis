@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchFilters } from './actions/filters'
 import LoadingComponent from './LoadingComponent'
-import full from './images/full.svg'
-import grid from './images/grid.svg'
-import snapshot from './images/snapshot.svg'
+// import full from './images/full.svg'
+// import grid from './images/grid.svg'
+// import snapshot from './images/snapshot.svg'
 
 
 class FiltersBar extends Component {
@@ -105,6 +105,10 @@ class FiltersBar extends Component {
 
 
     render() {
+      const full = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6h-6v-6h6v6zm18-6h-16v24h16v-24zm-18 9h-6v6h6v-6zm0 9h-6v6h6v-6z"/></svg>
+      const snapshot = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"/></svg>
+      const grid = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6h-6v-6h6v6zm9-6h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6z"/></svg>
+
         const filterTags = this.props.filters.map((filter, i) => {
           return (
             <button
@@ -142,24 +146,8 @@ class FiltersBar extends Component {
                 {selectedFilters}
               </div>
 
-              <button onClick={this.showToggleViewsDropdown} className="toggle-view mobile"><i class="im im-menu-list"></i></button>
-              <ul className="toggleContainer">
+              <button onClick={this.showToggleViewsDropdown} className="toggle-views-button ">Toggle Views <i class="im im-angle-down"></i></button>
 
-                <li className="desktop">
-                    <img className="desktop" name='expanded' onClick={this.changeGridView} src={full} /><br/>
-                    <span>Full</span>
-                </li>
-
-                <li className="desktop">
-                    <img className="desktop" name='snapshot' onClick={this.changeGridView} src={snapshot} /><br/>
-                    <span>Snapshot</span>
-                </li>
-
-                <li className="desktop">
-                    <img className="desktop" name='fullGrid' onClick={this.changeGridView} src={grid} /><br/>
-                    <span>Grid</span>
-                </li>
-              </ul>
           </div>
 
           <div className={`SubgenreFiltersDropDown ${this.state.showSubGenreFilters ? 'expand' : ''}`}>
@@ -189,13 +177,34 @@ class FiltersBar extends Component {
                       this.ToggleViewsDropDown = element;
                     }}
                     >
-                    <button className="desktop" name='expanded' onClick={this.changeGridView}>Expanded</button><br/>
-                    <button className="desktop" name='snapshot' onClick={this.changeGridView}>Snapshot</button><br/>
-                    <button className="desktop" name='fullGrid' onClick={this.changeGridView}>Full Grid</button>
+                    <button className="desktop" name='expanded' onClick={this.changeGridView}>
+                    {full}
+                    <span>Full</span>
+                    </button>
 
-                    <button className="mobile" name='snapshot' onClick={this.changeGridView}>Snapshot</button><br/>
-                    <button className="mobile" name='expanded' onClick={this.changeGridView}>Playlist</button><br/>
-                    <button className="mobile" name='fullGrid' onClick={this.changeGridView}>Grid</button>
+                    <button className="desktop" name='snapshot' onClick={this.changeGridView}>
+                    {snapshot}
+                    <span>Snap</span></button>
+                    <button className="desktop" name='fullGrid' onClick={this.changeGridView}>
+                    {grid}
+                    <span>Grid</span>
+                    </button>
+
+
+
+
+                    <button className="mobile" name='expanded' onClick={this.changeGridView}>
+                    <img src={full} />
+                    <span>Full</span>
+                    </button>
+
+                    <button className="mobile" name='snapshot' onClick={this.changeGridView}>
+                    <img src={snapshot} />
+                    <span>Snapshot</span></button>
+                    <button className="mobile" name='fullGrid' onClick={this.changeGridView}>
+                    <img src={grid} />
+                    <span>Grid</span>
+                    </button>
                   </div>
                 )
                 : (
