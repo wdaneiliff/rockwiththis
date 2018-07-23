@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
+import head from './images/head.png'
+
 
 class SongGrid extends Component {
     constructor(props) {
@@ -128,6 +130,9 @@ class SongGrid extends Component {
         return (
             <div id={song.slug} data-index={this.props.index} className={`songContainer ${this.props.activeDiscoverFullSong ? 'activeDiscoverFullSong' : ''}`} key={`${song.id}`} onClick={this.props.updateDiscoverFullSongIndex}>
                 <div className="imageContainer">
+                  <div className="imageHover">
+                    <img src={head} />
+                  </div>
                     <img className="songImage" src={song.better_featured_image.source_url} />
                 </div>
             </div>

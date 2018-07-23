@@ -4,6 +4,8 @@ import moment from 'moment'
 import Song from './Song'
 import SingleSong from './SingleSong'
 import HeroSong from './HeroSong'
+import hoverGradient from './images/rwt-hover-gradient.png'
+
 
 
 
@@ -44,6 +46,8 @@ class HeroPosts extends React.Component {
                   <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`} key={post.id}>
                       <div className='feature-track'>
                           <Link className='move-back-link' to={`/songs/${post.id}`}>
+                          <img className="heroHoverGradient" src={hoverGradient} />
+
                               <img src={image} />
                           </Link>
                           <div className="post-info">

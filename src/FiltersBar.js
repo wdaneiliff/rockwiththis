@@ -115,41 +115,53 @@ class FiltersBar extends Component {
             </button>
           )
         })
+
+        const selectedFilters = this.props.selectedFilters.map((filter, i) => {
+          return (
+            <button
+              className="tag"
+            >
+             #{filter.name}
+            </button>
+          )
+        })
         const disableClearAll = this.props.selectedFilters.length === 0
         return (
           <div className={`filters-bar ${this.state.fixedFilterBar ? 'fixedFiltersBar' : ''}`}>
+          <div className="filters-bar-content">
 
-          <button onClick={this.showToggleViewsDropdown} className="toggle-view mobile"><i class="im im-menu-list"></i></button>
-          <ul className="toggleContainer">
+              <button onClick={this.showSubGenreFilters} className={`filters-button ${this.state.showSubGenreFilters ? 'active' : ''}`}>
+              <i class="im im-angle-down"></i>
+                Filter Genres
+              </button>
+              <div className="search-wrapper">
+                    <input className="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
+              </div>
 
-            <li className="desktop">
-                <img className="desktop" name='expanded' onClick={this.changeGridView} src={full} /><br/>
-                <span>Full</span>
-            </li>
+              <div className="selectedFilters">
+                {selectedFilters}
+              </div>
 
-            <li className="desktop">
-                <img className="desktop" name='snapshot' onClick={this.changeGridView} src={snapshot} /><br/>
-                <span>Snapshot</span>
-            </li>
+              <button onClick={this.showToggleViewsDropdown} className="toggle-view mobile"><i class="im im-menu-list"></i></button>
+              <ul className="toggleContainer">
 
-            <li className="desktop">
-                <img className="desktop" name='fullGrid' onClick={this.changeGridView} src={grid} /><br/>
-                <span>Grid</span>
-            </li>
-          </ul>
+                <li className="desktop">
+                    <img className="desktop" name='expanded' onClick={this.changeGridView} src={full} /><br/>
+                    <span>Full</span>
+                </li>
 
+                <li className="desktop">
+                    <img className="desktop" name='snapshot' onClick={this.changeGridView} src={snapshot} /><br/>
+                    <span>Snapshot</span>
+                </li>
 
-
-
-
-
-
-          <button onClick={this.showSubGenreFilters} className="filters-button">
-            Subgenres
-          </button>
-          <div className="search-wrapper">
-                <input className="filter-search"  placeholder=" Search" type="text" value="" name="filter-search" id="search"/>
+                <li className="desktop">
+                    <img className="desktop" name='fullGrid' onClick={this.changeGridView} src={grid} /><br/>
+                    <span>Grid</span>
+                </li>
+              </ul>
           </div>
+
           <div className={`SubgenreFiltersDropDown ${this.state.showSubGenreFilters ? 'expand' : ''}`}>
             {this.state.loading && <LoadingComponent />}
             {this.state.showSubGenreFilters &&

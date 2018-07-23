@@ -9,6 +9,8 @@ import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
 import ShareBox from './ShareBox'
 
+
+
 class Song extends Component {
     constructor(props) {
         super(props)
@@ -134,21 +136,23 @@ class Song extends Component {
             <div id={song.slug} className="songContainer clearfix" key={`${song.id}`}>
             <div className="wrapper"  >
                 <div className="postContent" >
-                <div className="imageContainer" onClick={ () => this.onPressPlay(song)}>
-                        <img className="songImage" src={song.better_featured_image && song.better_featured_image.source_url} />
-                        <div className="songImageInfoContainer grid">
-                          <button
-                              className="singlePostPlayerButton"
-                              onClick={() => this.onPressPlay(song)}
-                          >
-                              {playPauseButton}
-                          </button>
-                          <div className="song-info">
-                              <p className="song-title">{song.acf.song_name}</p>
-                              <p className="song-artist">{song.acf.artist_name}</p>
-                          </div>
-                        </div>
-                </div>
+
+                    <div className="imageContainer" onClick={ () => this.onPressPlay(song)}>
+
+                            <img className="songImage" src={song.better_featured_image && song.better_featured_image.source_url} />
+                            <div className="songImageInfoContainer grid">
+                              <button
+                                  className="singlePostPlayerButton"
+                                  onClick={() => this.onPressPlay(song)}
+                              >
+                                  {playPauseButton}
+                              </button>
+                              <div className="song-info">
+                                  <p className="song-title">{song.acf.song_name}</p>
+                                  <p className="song-artist">{song.acf.artist_name}</p>
+                              </div>
+                            </div>
+                    </div>
                     {this.renderTop()}
                 </div>
             </div>

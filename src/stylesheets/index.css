@@ -111,6 +111,21 @@ p {
       height: auto;
       color: #282828; }
 
+img.heroHoverGradient {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  opacity: 0; }
+
+.feature-track .post-info {
+  z-index: 102; }
+
+.feature-track:hover img.heroHoverGradient {
+  opacity: .7; }
+
 .homeContainer .hero-posts .less-featured-track-wrapper .feature-track .post-info .song-info {
   font-size: .7em;
   line-height: 14px;
@@ -575,6 +590,8 @@ p {
   width: 100%;
   margin: 0 auto;
   text-align: left; }
+  .ShareBox i.im.im-paperplane {
+    color: #f85f27; }
   .ShareBox a {
     margin: 10px; }
   .ShareBox a:nth-of-type(1) {
@@ -586,6 +603,9 @@ p {
 
 .SocialMediaShareButton:hover {
   cursor: pointer; }
+
+.shareDropdown {
+  opacity: 1 !important; }
 
 .singleSongPage .singleSongContainer {
   width: 85%;
@@ -755,21 +775,43 @@ p {
     margin: 0 !important;
     border-radius: 6px; }
 
+.discovery-section .selectedFilters {
+  display: inline-block;
+  margin-left: 50px;
+  vertical-align: top;
+  margin-top: 20px; }
+  .discovery-section .selectedFilters .tag {
+    margin: 0 2px;
+    font-size: 12px;
+    border-radius: 6px;
+    transition: all .2s ease;
+    color: #fff;
+    background: #1a6ea9;
+    border: 1px solid #1a6ea9;
+    cursor: pointer;
+    letter-spacing: .7px;
+    box-shadow: 0 3px 2px -2px #C9C6CB;
+    padding: 8px; }
+
 .discovery-section .filters-bar {
   width: 100%;
   height: 70px;
   background: #fff;
   position: relative;
-  padding: 0 30px;
+  padding: 0px;
+  max-width: 1685px;
   border-bottom: 1px solid #C9C6CB;
   border-left: 1px solid #C9C6CB;
   border-right: 1px solid #C9C6CB;
   z-index: 100; }
+  .discovery-section .filters-bar .filters-bar-content {
+    padding: 0 35px;
+    position: relative; }
   .discovery-section .filters-bar .SubgenreFiltersDropDown {
     position: absolute;
     border: 1px solid #C9C6CB;
     border-top: 0;
-    left: 75px;
+    left: 15px;
     background: #fff;
     z-index: 1000;
     max-width: 300px;
@@ -800,15 +842,17 @@ p {
   .discovery-section .filters-bar button.filters-button {
     display: inline-block;
     font-size: 14px;
-    border: 1px solid #869194 !important;
-    border-width: 1px !important;
+    border: 1px solid #1a6ea9 !important;
     border-radius: 4px;
-    padding: 6px 8px;
-    color: #869194;
-    transition: all .3s ease; }
+    padding: 8px;
+    color: #1a6ea9;
+    transition: all .3s ease;
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 0px; }
   .discovery-section .filters-bar button.filters-button:hover {
-    border: 1px solid #869194 !important;
-    background: #869194 !important;
+    border: 1px solid #1a6ea9 !important;
+    background: #1a6ea9 !important;
     color: #fff;
     transition: all .3s ease;
     cursor: pointer; }
@@ -831,16 +875,34 @@ p {
   .discovery-section .songGrid .songContainer {
     width: 25%;
     display: inline-block; }
+    .discovery-section .songGrid .songContainer .imageHover {
+      background-image: url("../images/rwt-hover-gradient.png");
+      position: absolute;
+      top: 0;
+      bottom: 3px;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      background-size: cover; }
+      .discovery-section .songGrid .songContainer .imageHover img {
+        display: none; }
     .discovery-section .songGrid .songContainer .imageContainer {
-      width: 100%; }
+      width: 100%;
+      position: relative; }
       .discovery-section .songGrid .songContainer .imageContainer img {
         width: 100%; }
-    .discovery-section .songGrid .songContainer:hover {
-      -webkit-filter: brightness(1.1);
-      filter: brightness(1.1); }
-    .discovery-section .songGrid .songContainer.activeDiscoverFullSong {
-      -webkit-filter: brightness(1.1);
-      filter: brightness(1.1); }
+    .discovery-section .songGrid .songContainer:hover .imageHover {
+      opacity: 1; }
+    .discovery-section .songGrid .songContainer.activeDiscoverFullSong .imageHover {
+      opacity: 1; }
+      .discovery-section .songGrid .songContainer.activeDiscoverFullSong .imageHover img {
+        display: block;
+        position: absolute;
+        max-width: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -weblkit-transform: translate(-50%, -50%); }
 
 .discovery-section .songList .songContainer .postContent {
   display: inline-block;
@@ -2726,8 +2788,7 @@ span.postTags:nth-of-type(3) {
   transition: all .3s ease; }
 
 .ShareBox:hover {
-  cursor: pointer;
-  opacity: .8; }
+  cursor: pointer; }
 
 .spotify {
   z-index: 7 !important;
@@ -2772,7 +2833,10 @@ span.postTags:nth-of-type(3) {
 ul.toggleContainer {
   padding: 0;
   display: inline-block;
-  list-style: none; }
+  list-style: none;
+  position: absolute;
+  right: 0;
+  margin-right: 35px; }
   ul.toggleContainer li {
     display: inline-block; }
   ul.toggleContainer img {
@@ -2788,27 +2852,45 @@ ul.toggleContainer {
   ul.toggleContainer .mobile {
     display: none; }
 
+.filters-button i.im.im-angle-down {
+  font-size: 12px;
+  margin-right: 10px;
+  transform: translateY(2px); }
+
 .discovery-section .filters-bar button.filters-button {
   display: inline-block;
-  font-size: 14px;
-  border: 1px solid #000 !important;
+  font-size: 12px;
+  border: 1px solid #1a6ea9 !important;
   border-radius: 4px;
-  padding: 6px 8px;
-  color: #000;
+  padding: 8px;
+  color: #1a6ea9;
   transition: all .3s ease;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 50px; }
+  margin-left: 0px; }
 
 .discovery-section .filters-bar button.filters-button:hover {
   display: inline-block;
-  font-size: 14px;
-  border: 1px solid #000 !important;
+  font-size: 12px;
+  border: 1px solid #1a6ea9 !important;
+  background: #1a6ea9;
   border-radius: 4px;
-  padding: 6px 8px;
+  padding: 8px;
   color: #fff;
-  background: #000 !important;
   transition: all .3s ease;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 50px; }
+  margin-left: 0px; }
+
+.discovery-section .filters-bar button.filters-button.active {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid #1a6ea9 !important;
+  background: #1a6ea9;
+  border-radius: 4px;
+  padding: 8px;
+  color: #fff;
+  transition: all .3s ease;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-left: 0px; }
