@@ -130,6 +130,9 @@ class SingleSong extends Component {
                         <p className="song-title">{song.acf.song_name}</p>
                         <p className="song-artist">{song.acf.artist_name}</p>
                     </div>
+                    <div className="shareContainer">
+                      <ShareBox props={song.slug} />
+                    </div>
                   </div>
                 </div>
                 <div className="postContent" >
@@ -144,10 +147,15 @@ class SingleSong extends Component {
                     </div>
                     </div>
                         <p className="metaInfo">
-                            <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> </p>|
+                        <p className="leftInfo desktop">
+                        <span className="postDate "><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
+                        </p>
+                        <p className="leftInfo mobile">
+                        <span className="postDate "><Moment format="d/M/YY" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
+                        </p>|
                             {songTags}
                         </p>
-                        <ShareBox props={song.slug} />
+
                         <a href="#" className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
 
                     </div>

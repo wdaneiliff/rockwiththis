@@ -28,6 +28,10 @@ body::-webkit-scrollbar-thumb {
   padding-bottom: 0px;
   background: #fff; }
 
+@media (max-width: 800px) {
+  .fixedFiltersBarPadding {
+    padding-top: 80px !important; } }
+
 .connectPage {
   padding-top: 15px;
   max-width: 1685px;
@@ -242,6 +246,7 @@ img.heroHoverGradient {
     .homeContainer .hero-posts .post-square-wrapper.date .post-date {
       background: black;
       margin: 12.5%;
+      margin-top: 10px;
       color: #fff;
       font-weight: 400 !important; }
       .homeContainer .hero-posts .post-square-wrapper.date .post-date .month {
@@ -405,7 +410,7 @@ img.heroHoverGradient {
     width: 100%;
     height: auto;
     background: rgba(255, 255, 255, 0.7);
-    transition: .15s linear all; }
+    transition: 0s linear all; }
     .homeContainer .feature-track .post-info .post-square-wrapper {
       display: inline-block;
       height: 100%;
@@ -413,7 +418,7 @@ img.heroHoverGradient {
       color: #fff;
       text-align: center;
       vertical-align: top;
-      transition: .15s linear all; }
+      transition: 0s linear all; }
       .homeContainer .feature-track .post-info .post-square-wrapper.play {
         float: left; }
         .homeContainer .feature-track .post-info .post-square-wrapper.play img {
@@ -496,6 +501,270 @@ img.heroHoverGradient {
       max-height: 40px;
       overflow-x: hidden; }
 
+@media (max-width: 1250px) and (min-width: 1000px) {
+  .homeContainer .featured-track-wrapper .feature-track .post-info {
+    height: 100px; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date {
+      height: 100px !important;
+      width: 100px !important;
+      margin: 0; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date {
+        margin: 0;
+        padding: 16px; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .day {
+          font-size: 28px !important;
+          font-weight: 700; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .month {
+          font-size: 18px !important; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play {
+      float: none !important;
+      top: 50% !important;
+      position: absolute;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      width: 100px;
+      height: 100px; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton {
+        width: 100%;
+        height: 100%;
+        padding: 16px; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton img {
+          width: 100%;
+          height: 100%;
+          max-width: none !important;
+          max-height: none !important; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .song-info {
+      width: calc(100% - 200px) !important;
+      margin-left: 100px !important;
+      padding: 10px 0; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-title {
+        font-size: 24px;
+        line-height: 40px; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-artist {
+        font-size: 22px;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-height: 40px;
+        overflow-x: hidden; } }
+
+@media (max-width: 1000px) and (min-width: 800px) {
+  .homeContainer .featured-track-wrapper .feature-track .post-info {
+    height: 80px; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date {
+      height: 80px !important;
+      width: 80px !important;
+      margin: 0; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date {
+        margin: 0;
+        padding: 14px; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .day {
+          font-size: 22px !important;
+          font-weight: 700; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .month {
+          font-size: 16px !important; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play {
+      float: none !important;
+      top: 50% !important;
+      position: absolute;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      width: 80px;
+      height: 80px; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton {
+        width: 100%;
+        height: 100%;
+        padding: 16px; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton img {
+          width: 100%;
+          height: 100%;
+          max-width: none !important;
+          max-height: none !important; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .song-info {
+      width: calc(100% - 160px) !important;
+      margin-left: 80px !important;
+      padding: 10px 0; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-title {
+        font-size: 20px;
+        line-height: 30px; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-artist {
+        font-size: 18px;
+        line-height: 30px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-height: 40px;
+        overflow-x: hidden; } }
+
+@media (max-width: 800px) {
+  .homeContainer .featured-track-wrapper .feature-track span.song-of-day-tag {
+    position: absolute;
+    top: -39px;
+    display: inline-block;
+    padding: 10px;
+    background: rgba(236, 33, 33, 0.8);
+    color: #fff !important;
+    left: 0;
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    border-top-right-radius: 6px;
+    padding-left: 12px;
+    font-weight: 400; }
+  .homeContainer .featured-track-wrapper .feature-track .post-info {
+    height: 80px; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper {
+      display: inline-block !important; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date {
+        height: 80px !important;
+        width: 80px !important;
+        margin: 0; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date {
+          margin: 0;
+          padding: 14px; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .day {
+            font-size: 22px !important;
+            font-weight: 700; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .month {
+            font-size: 16px !important; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play {
+        float: none !important;
+        top: 50% !important;
+        position: absolute;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        width: 80px;
+        height: 80px; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton {
+          width: 100%;
+          height: 100%;
+          padding: 12px; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton img {
+            width: 100%;
+            height: 100%;
+            max-width: none !important;
+            max-height: none !important; } }
+
+@media (max-width: 600px) {
+  .homeContainer .featured-track-wrapper .feature-track span.song-of-day-tag {
+    position: absolute;
+    top: -36px;
+    display: inline-block;
+    padding: 10px;
+    background: rgba(236, 33, 33, 0.8);
+    color: #fff !important;
+    left: 0;
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    border-top-right-radius: 6px;
+    padding-left: 12px;
+    font-weight: 400; }
+  .homeContainer .featured-track-wrapper .feature-track .post-info {
+    height: 80px; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper {
+      display: inline-block !important; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date {
+        height: 80px !important;
+        width: 80px !important;
+        margin: 0; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date {
+          margin: 0;
+          padding: 14px; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .day {
+            font-size: 22px !important;
+            font-weight: 700; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .month {
+            font-size: 16px !important; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play {
+        float: none !important;
+        top: 50% !important;
+        position: absolute;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        width: 80px;
+        height: 80px; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton {
+          width: 100%;
+          height: 100%;
+          padding: 16px; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton img {
+            width: 100%;
+            height: 100%;
+            max-width: none !important;
+            max-height: none !important; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .song-info {
+      width: calc(100% - 160px) !important;
+      margin-left: 80px !important;
+      padding: 10px 0; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-title {
+        font-size: 20px;
+        line-height: 30px; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-artist {
+        font-size: 18px;
+        line-height: 30px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-height: 40px;
+        overflow-x: hidden; } }
+
+@media (max-width: 450px) {
+  .homeContainer .featured-track-wrapper .feature-track .post-info {
+    height: 70px; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper {
+      display: inline-block !important; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date {
+        height: 70px !important;
+        width: 70px !important;
+        margin: 0; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date {
+          margin: 0;
+          padding: 9px; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .day {
+            font-size: 20px !important;
+            font-weight: 700; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.date .post-date .month {
+            font-size: 14px !important; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play {
+        float: none !important;
+        top: 50% !important;
+        position: absolute;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        width: 70px;
+        height: 70px; }
+        .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton {
+          width: 100%;
+          height: 100%;
+          padding: 12px; }
+          .homeContainer .featured-track-wrapper .feature-track .post-info .post-square-wrapper.play .heroSongPlayerButton img {
+            width: 100%;
+            height: 100%;
+            max-width: none !important;
+            max-height: none !important; }
+    .homeContainer .featured-track-wrapper .feature-track .post-info .song-info {
+      width: calc(100% - 150px) !important;
+      margin-left: 70px !important;
+      padding: 5px 0; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-title {
+        font-size: 20px;
+        line-height: 30px; }
+      .homeContainer .featured-track-wrapper .feature-track .post-info .song-info .song-artist {
+        font-size: 18px;
+        line-height: 30px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-height: 40px;
+        overflow-x: hidden; } }
+
 .homeContainer .less-featured-track-wrapper .song-info .song-title {
   font-weight: 700 !important;
   color: black;
@@ -516,7 +785,13 @@ img.heroHoverGradient {
     display: inline-block !important;
     max-width: 70px;
     margin: 0 auto;
-    width: 70px; }
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
     #headerLogoMobile img {
       max-width: 70px;
       margin: 0 auto;
@@ -629,7 +904,6 @@ img.heroHoverGradient {
     z-index: 1000;
     margin-top: calc(100vw + 115px);
     z-index: 1000 !important;
-    height: 3000px;
     background: #fff; }
     .discovery-section .songList {
       overflow: visible !important; } }
@@ -693,7 +967,7 @@ img.heroHoverGradient {
       display: inline-block;
       color: #545151; }
     .singleSongPage .singleSongContainer .songContainer .postContent .metaInfo {
-      margin-top: 15px !important; }
+      margin-top: 15px; }
       .singleSongPage .singleSongContainer .songContainer .postContent .metaInfo .postDate, .singleSongPage .singleSongContainer .songContainer .postContent .metaInfo .postAuthor {
         font-size: 18px;
         font-weight: 700; }
@@ -792,7 +1066,7 @@ img.heroHoverGradient {
         color: #545151;
         text-align: left; }
     .song-of-day-description .postContent .metaInfo {
-      margin-top: 15px !important;
+      margin-top: 15px;
       text-align: left; }
       .song-of-day-description .postContent .metaInfo .postDate, .song-of-day-description .postContent .metaInfo .postAuthor {
         font-weight: bold;
@@ -1037,7 +1311,7 @@ img.heroHoverGradient {
     background: #fff;
     vertical-align: top;
     padding-top: 15px;
-    padding-bottom: 100PX; }
+    padding-bottom: 75px; }
   .discovery-section .songList .songContainer {
     display: inline-block;
     vertical-align: top;
@@ -1088,7 +1362,6 @@ img.heroHoverGradient {
           display: inline-block;
           margin-left: 5px !important;
           margin-top: 0px !important;
-          margin-top: 3px !important;
           text-align: left; }
           .discovery-section .songList .songContainer .postContent .topContentContainer .metaInfo p.leftInfo {
             display: inline-block;
@@ -1100,7 +1373,7 @@ img.heroHoverGradient {
           .discovery-section .songList .songContainer .postContent .topContentContainer .metaInfo .postTags {
             display: inline-block;
             margin: 0;
-            margin-left: 5px; }
+            margin-left: 0px; }
             .discovery-section .songList .songContainer .postContent .topContentContainer .metaInfo .postTags .tag {
               margin: 0 5px;
               padding: 6px 6px;
@@ -1796,7 +2069,9 @@ a.spotifyLink {
   .singleSongPage.page .singleSongContainer {
     width: 100%;
     display: inline-block;
-    margin-top: 115px; }
+    margin-top: 115px;
+    z-index: 80;
+    position: relative; }
     .singleSongPage.page .singleSongContainer .imageContainer {
       width: 100%;
       display: inline-block;
@@ -2524,7 +2799,7 @@ a.smsLink, .smsLink img {
     display: block;
     text-align: center; }
   p.metaInfo {
-    text-align: center; }
+    text-align: left; }
   .topSection {
     display: none; }
   .singleSongContainer .imageContainer img {
@@ -2533,7 +2808,7 @@ a.smsLink, .smsLink img {
     z-index: 2;
     left: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     width: 100%;
     padding: 3px 10px; }
     .songImageInfoContainer .player-button {
@@ -2559,7 +2834,10 @@ a.smsLink, .smsLink img {
     display: inline-block;
     vertical-align: top;
     padding: 15px;
-    padding-top: 0; }
+    z-index: 80;
+    position: relative;
+    background: #fff;
+    margin-top: -5px; }
   .singleSongPage.page .singleSongContainer .postContent .metaInfo .postDate, .singleSongPage.page .singleSongContainer .postContent .metaInfo .postAuthor {
     font-size: 16px !important;
     line-height: 22px; } }
@@ -2999,3 +3277,84 @@ ul.toggleContainer {
   vertical-align: top;
   margin-top: 20px;
   margin-left: 0px; }
+
+.leftInfo.mobile {
+  display: none !important; }
+
+@media (max-width: 800px) {
+  .heroHoverGradient {
+    display: none !important; }
+  .leftInfo.desktop {
+    display: none !important; }
+  .leftInfo.mobile {
+    display: inline-block !important; }
+  .singleSongContainer {
+    width: 85%;
+    display: inline-block; }
+    .singleSongContainer .songContainer .imageContainer {
+      width: 45%;
+      display: inline-block;
+      max-height: 674px;
+      max-width: 674px; }
+      .singleSongContainer .songContainer .imageContainer img {
+        width: 100%;
+        height: 100%;
+        max-height: 674px;
+        max-width: 674px; }
+    .singleSongContainer .songContainer .postContent {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+      padding: 25px; }
+      .singleSongContainer .songContainer .postContent .songInfo .singleSongInfo .songName {
+        font-size: 28px;
+        display: inline-block;
+        margin-bottom: 5px;
+        pointer-events: all;
+        font-weight: 700 !important; }
+      .singleSongContainer .songContainer .postContent .songInfo .singleSongInfo .artistName {
+        font-size: 25px;
+        display: inline-block;
+        color: #545151; }
+      .singleSongContainer .songContainer .postContent .metaInfo {
+        margin-top: 0px !important; }
+        .singleSongContainer .songContainer .postContent .metaInfo .postDate, .singleSongContainer .songContainer .postContent .metaInfo .postAuthor {
+          font-size: 18px;
+          font-weight: 700; }
+      .singleSongContainer .songContainer .postContent .songDescription {
+        font-size: 17px;
+        line-height: 28px;
+        margin-top: 10px; }
+        .singleSongContainer .songContainer .postContent .songDescription br {
+          height: 1px !important;
+          display: block;
+          margin: -4px 0 !important;
+          content: ''; }
+      .singleSongContainer .songContainer .postContent .player-button {
+        width: 12%;
+        display: inline-block; }
+        .singleSongContainer .songContainer .postContent .player-button img {
+          width: 60px;
+          height: 60px; }
+      .singleSongContainer .songContainer .postContent .singleSongInfo {
+        width: auto;
+        display: inline-block;
+        max-width: 80%;
+        width: 80%;
+        padding-left: 15px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-x: hidden; }
+      .singleSongContainer .songContainer .postContent .singleSongLinks {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 15px; }
+        .singleSongContainer .songContainer .postContent .singleSongLinks a {
+          margin: 0 10px;
+          font-size: 40px; }
+          .singleSongContainer .songContainer .postContent .singleSongLinks a.shareButton img {
+            max-width: 30px; } }
+
+@media (min-width: 800px) {
+  .singleSongContainer .metaInfo {
+    margin-top: 15px !important; } }
