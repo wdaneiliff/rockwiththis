@@ -3387,3 +3387,6 @@ ul.toggleContainer {
 @media (min-width: 800px) {
   .singleSongContainer .metaInfo {
     margin-top: 15px !important; } }
+
+.songContainer .spotify {
+  z-index: 2000 !important; }

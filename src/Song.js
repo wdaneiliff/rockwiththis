@@ -102,7 +102,7 @@ class Song extends Component {
                   </p>
                   {this.renderTags(song)}
                   <ShareBox song={song.slug} />
-                  <a href="#" className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                  <a target="_blank" href={song.acf.spotify_link}  className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
 
 
               </p>
