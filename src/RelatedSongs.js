@@ -16,7 +16,7 @@ class RelatedSongs extends Component {
     }
 
     relatedSongsStack () {
-      const relatedSongs = this.props.relatedSongs.map(this.renderRelatedSong)
+      const relatedSongs = this.props.relatedSongs.slice(0,10).map(this.renderRelatedSong)
 
       return (
         <div className="stack">{relatedSongs}</div>

@@ -28,30 +28,40 @@ body::-webkit-scrollbar-thumb {
   padding-bottom: 0px;
   background: #fff; }
 
-.connectPage .half {
-  width: calc(100% - 30px);
-  display: block;
-  padding: 15px;
-  vertical-align: top; }
-
-.connectPage .missionContainer h3 {
-  font-size: 24px;
-  line-height: 34px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 700; }
-
-.connectPage .missionContainer p {
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: 100 !important;
-  font-family: Open-Sans,sans-serif; }
-
-@media (min-width: 800px) {
+.connectPage {
+  padding-top: 15px;
+  max-width: 1685px;
+  margin: 0 auto; }
   .connectPage .half {
-    width: calc(50% - 30px);
-    display: inline-block;
-    padding: 15px; } }
+    width: calc(100% - 30px);
+    display: block;
+    padding: 15px;
+    vertical-align: top; }
+    .connectPage .half .content {
+      max-width: 500px;
+      margin: 0 auto; }
+  .connectPage .missionContainer h3 {
+    font-size: 24px;
+    line-height: 34px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    margin-top: 0; }
+  .connectPage .missionContainer p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 100 !important;
+    font-family: Open-Sans,sans-serif; }
+  .connectPage .emailContainer form.rwt-email-form {
+    max-width: 250px;
+    margin: 0 auto; }
+  .connectPage .emailContainer input[type="email"] {
+    width: 100%; }
+  @media (min-width: 800px) {
+    .connectPage .half {
+      width: calc(50% - 70px);
+      display: inline-block;
+      padding: 35px; } }
 
 body {
   padding-bottom: 75px !important; }
@@ -103,7 +113,8 @@ p {
     position: relative;
     max-width: 1685px;
     height: 100%;
-    padding: 0 35px; }
+    padding: 0 35px;
+    margin: 0 auto; }
     .headerContainer .content-wrapper .navLink {
       position: absolute; }
     .headerContainer .content-wrapper a.nav-link.left {
@@ -724,16 +735,20 @@ img.heroHoverGradient {
   width: 15%;
   display: inline-block;
   vertical-align: top;
-  padding-top: 15px;
   margin-top: 0px;
   width: 15%; }
   .singleSongPage .relatedSongs p.related-songs-title {
-    margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
-    font-weight: 700;
-    text-transform: capitalize;
-    letter-spacing: .7px; }
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 1px;
+    color: #fff !important;
+    background: linear-gradient(to right, #1985c0, #1898d2);
+    background: #1a6ea9; }
   .singleSongPage .relatedSongs .songImageLink img.songImage {
     max-width: 75px;
     margin: 0 !important;
@@ -814,8 +829,7 @@ img.heroHoverGradient {
 .relatedSongs {
   width: 14%;
   display: inline-block;
-  vertical-align: top;
-  padding-top: 25px; }
+  vertical-align: top; }
   .relatedSongs .songImageLink img.songImage {
     max-width: 75px;
     margin: 0 !important;
@@ -1513,14 +1527,13 @@ a.spotifyLink {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.75);
     text-transform: uppercase;
-    font-size: 16px;
-    padding: 5px 10px;
-    border: 2px solid rgba(255, 255, 255, 0);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.75);
-    transition: all .3s ease; }
+    font-size: 14px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    transition: all .3s ease;
+    border-radius: 4px; }
   .headerContainer a.nav-link:hover {
-    border-bottom: 2px solid white;
-    border: 2px solid white;
+    border: 1px solid white;
     color: white;
     cursor: pointer; }
   .songList {
@@ -1770,8 +1783,7 @@ a.spotifyLink {
   .singleSongPage.page .relatedSongs {
     width: 100%;
     display: inline-block;
-    vertical-align: top;
-    padding-top: 25px; }
+    vertical-align: top; }
     .singleSongPage.page .relatedSongs .relatedSongsContainer .songContainer {
       width: 100%;
       display: inline-block; }
@@ -1864,7 +1876,7 @@ button {
     width: 100%;
     display: inline-block;
     vertical-align: top;
-    padding-top: 15px;
+    padding-top: 0px;
     padding-left: 0%;
     padding-right: 0%; }
     .singleSongPage .relatedSongs .related-songs-title {
@@ -1872,7 +1884,8 @@ button {
       margin-bottom: 20px;
       font-weight: 700;
       text-transform: capitalize;
-      letter-spacing: .7px; }
+      letter-spacing: .7px;
+      padding-top: 15px; }
     .singleSongPage .relatedSongs .songContainer {
       max-width: calc(20% - 2px);
       display: inline-block;
@@ -1881,6 +1894,18 @@ button {
         max-width: 100%;
         margin: 0 !important;
         border-radius: 0px; } }
+
+@media (max-width: 1000px) and (min-width: 835px) {
+  .singleSongPage .singleSongContainer {
+    width: 100%; }
+    .singleSongPage .singleSongContainer .songContainer .postContent {
+      width: 49%; } }
+
+@media (max-width: 835px) and (min-width: 800px) {
+  .singleSongPage .singleSongContainer {
+    width: 100%; }
+    .singleSongPage .singleSongContainer .songContainer .postContent {
+      width: 48%; } }
 
 @media screen and (max-width: 600px) {
   .footer-player .artist-info a.songImageLink span.song-title {
@@ -2428,7 +2453,6 @@ button.large-bottom.tag {
   width: 14%;
   display: inline-block;
   vertical-align: top;
-  padding-top: 15px;
   float: right; }
 
 .relatedSongsContainer .stack {
@@ -2450,7 +2474,6 @@ button.large-bottom.tag {
     width: 100%;
     display: block;
     vertical-align: top;
-    padding-top: 15px;
     float: none; } }
 
 @media (max-width: 800px) {
@@ -2458,11 +2481,11 @@ button.large-bottom.tag {
     width: 100%;
     display: inline-block;
     vertical-align: top;
-    padding-top: 15px;
     float: none;
     padding-top: 40px;
     max-width: 674px;
-    margin: 0 auto !important; }
+    margin: 0 auto !important;
+    display: block !important; }
   .singleSongPage .relatedSongs .stack:nth-of-type(2) {
     display: none; }
   .relatedSongsContainer .stack {
