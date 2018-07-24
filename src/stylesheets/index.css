@@ -1720,7 +1720,6 @@ body {
 .postTags {
   display: inline-block;
   margin: 0;
-  margin-left: 5px;
   pointer-events: none; }
 
 p.leftInfo {
@@ -2141,11 +2140,10 @@ button {
   .singleSongPage .relatedSongs {
     margin-top: 20px; }
     .singleSongPage .relatedSongs p.related-songs-title {
-      margin-bottom: 15px;
+      margin-bottom: 5px;
       font-size: 18px;
       text-align: center;
-      font-weight: 700;
-      text-transform: capitalize;
+      text-transform: uppercase;
       letter-spacing: .7px; }
   .singleSongPage .relatedSongs {
     width: 100%;
@@ -2162,7 +2160,7 @@ button {
       letter-spacing: .7px;
       padding-top: 15px; }
     .singleSongPage .relatedSongs .songContainer {
-      max-width: calc(20% - 2px);
+      max-width: calc(33.3% - 2px);
       display: inline-block;
       margin: 1px; }
       .singleSongPage .relatedSongs .songContainer .songImageLink img.songImage {
@@ -2765,7 +2763,11 @@ button.large-bottom.tag {
     display: none; }
   .relatedSongsContainer .stack {
     width: calc(100% - 2px);
-    display: inline-block; } }
+    display: inline-block;
+    margin: 0 auto;
+    margin-left: 2px; }
+    .relatedSongsContainer .stack .songContainer:nth-of-type(10) {
+      display: none !important; } }
 
 .singleSongPage .ShareBox {
   display: block; }
@@ -2807,25 +2809,49 @@ a.smsLink, .smsLink img {
   .songImageInfoContainer {
     z-index: 2;
     left: 0;
-    bottom: 0;
+    bottom: 4px;
     background: rgba(255, 255, 255, 0.8);
     width: 100%;
-    padding: 3px 10px; }
+    padding: 0px;
+    height: 70px; }
+    .songImageInfoContainer .ShareBox {
+      height: 70px;
+      width: 50px !important;
+      position: relative; }
+      .songImageInfoContainer .ShareBox button.shareshareButton {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%); }
+        .songImageInfoContainer .ShareBox button.shareshareButton i.im.im-paperplane {
+          font-size: 30px;
+          padding-right: 5px; }
     .songImageInfoContainer .player-button {
       display: inline-block;
       height: 100%;
-      width: 12%;
+      width: 70px;
       text-align: center;
       vertical-align: top;
       transition: .15s linear all; }
+      .songImageInfoContainer .player-button button.singlePostPlayerButton {
+        width: 70px;
+        height: 70px;
+        padding: 7px; }
     .songImageInfoContainer .song-info {
       display: inline-block;
       height: 100%;
-      margin: 1.5%;
-      font-size: 1.2em;
-      line-height: 22px; }
+      padding: 5px 0;
+      width: calc(100% - 130px) !important; }
       .songImageInfoContainer .song-info .song-title {
         font-weight: 700 !important;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 20px;
+        line-height: 30px; }
+      .songImageInfoContainer .song-info .song-artist {
+        font-size: 18px;
+        line-height: 30px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis; }
@@ -2837,7 +2863,8 @@ a.smsLink, .smsLink img {
     z-index: 80;
     position: relative;
     background: #fff;
-    margin-top: -5px; }
+    margin-top: -5px;
+    padding-top: 15px; }
   .singleSongPage.page .singleSongContainer .postContent .metaInfo .postDate, .singleSongPage.page .singleSongContainer .postContent .metaInfo .postAuthor {
     font-size: 16px !important;
     line-height: 22px; } }
@@ -2953,8 +2980,8 @@ a.smsLink, .smsLink img {
 
 @media (max-width: 800px) {
   .singleSongPage .singleSongContainer .spotify {
-    top: 0px;
-    left: 0px; } }
+    top: -10px;
+    right: 0px; } }
 
 footer .songSourceContainer {
   margin-right: 20px;
@@ -3282,6 +3309,8 @@ ul.toggleContainer {
   display: none !important; }
 
 @media (max-width: 800px) {
+  .ss-sharebox-desktop {
+    display: none !important; }
   .heroHoverGradient {
     display: none !important; }
   .leftInfo.desktop {

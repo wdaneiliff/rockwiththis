@@ -152,11 +152,13 @@ class SingleSong extends Component {
                         </p>
                         <p className="leftInfo mobile">
                         <span className="postDate "><Moment format="d/M/YY" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
-                        </p>|
-                            {songTags}
                         </p>
+                            {songTags}
+                            <a href="#" className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                        </p>
+                        <span className="ss-sharebox-desktop"><ShareBox props={song.slug} /></span>
 
-                        <a href="#" className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+
 
                     </div>
                 </div>
