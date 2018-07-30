@@ -57,6 +57,10 @@ class Song extends Component {
         )
     }
 
+    // componentDidMount() {
+    //   this.isElementOverflowing()
+    // }
+
     renderTop() {
         const {
             song,
@@ -67,7 +71,8 @@ class Song extends Component {
         const playPauseButton = song.id === activeSong.id && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
-            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
+          <svg className="playButton" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/></svg>
+
         )
 
 
@@ -84,13 +89,18 @@ class Song extends Component {
 
               </div>
 
-              <div className="songInfo mobile" onClick={ () => this.onPressPlay(song)}>
+              <div className="marquee songInfo mobile" onClick={ () => this.onPressPlay(song)}>
                   <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
                     <span className="artistName">{song.acf.artist_name}</span>
               </div>
-              <div className="songInfo desktop">
-                  <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
-                    <span className="artistName">{song.acf.artist_name}</span>
+              <div className="marquee songInfo desktop">
+                <div id="checkOverFlowSong" className="marquee-inner songtitle">
+                <Link className="songName postTitleLink" to={`/songs/${song.id}`}>{song.acf.song_name}</Link>
+                </div>
+                  <br />
+                <div id="checkOverFlowArtist" className="marquee-inner artist">
+                  <span className="artistName">{song.acf.artist_name}</span>
+                </div>
               </div>
 
               <p className="metaInfo">
@@ -120,6 +130,16 @@ class Song extends Component {
     //               <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
     //           </div>
     //     )
+    // }
+
+    // isElementOverflowing() {
+    //     const songInfo = document.getElementById("checkOverFlowSong");
+    //     const songName = document.getElementById("checkOverFlowArtist");
+    //
+    //             if (songInfo.offsetWidth < songName.scrollWidth) {
+    //         return console.log('OVERFLOW')
+    //       }
+    //
     // }
 
     render() {

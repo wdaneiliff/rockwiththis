@@ -60,7 +60,7 @@ class ShareBox extends Component {
                     this.shareDropdown = element;
                   }}
                 >
-                    <p>Share</p>
+                    <p>Share </p>
                     <FacebookShareButton url={url}>
                       <FacebookIcon size={40} round={true} />
                     </FacebookShareButton>

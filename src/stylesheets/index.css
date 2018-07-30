@@ -18,6 +18,10 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #FF0000; }
 
+.pause-main {
+  width: 35px;
+  height: 35px; }
+
 .search-wrapper {
   display: none !important; }
 
@@ -1785,7 +1789,7 @@ a.spotifyLink {
   transition: all 0.3s ease; }
 
 .player-control-button:hover {
-  opacity: .7; }
+  opacity: .85; }
 
 @media (min-width: 800px) {
   .filters-bar {
@@ -1969,7 +1973,7 @@ a.spotifyLink {
           width: auto;
           box-shadow: 0 3px 2px -2px #C9C6CB;
           position: absolute;
-          left: -250%;
+          left: -300px;
           border: 1px solid #C9C6CB;
           padding: 15px;
           background: #fff;
@@ -2049,7 +2053,8 @@ a.spotifyLink {
 
 @media (max-width: 800px) {
   img.main.playButton {
-    max-width: 40px !important; }
+    max-width: 40px !important;
+    max-height: 40px !important; }
   a.nav-link {
     display: none; }
   .singleSongPage.page .relatedSongs {
@@ -2888,6 +2893,12 @@ a.smsLink, .smsLink img {
   .postTags span.tag:nth-of-type(5) {
     display: none; } }
 
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(-100%, 0); } }
+
 @media (max-width: 800px) {
   .songInfo.mobile {
     display: inline-block !important; }
@@ -2895,6 +2906,13 @@ a.smsLink, .smsLink img {
     display: none !important; } }
 
 @media (min-width: 800px) {
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0); }
+    50% {
+      transform: translate(0, 0); }
+    100% {
+      transform: translate(-100%, 0); } }
   .songInfo.mobile {
     display: none !important; }
   .songInfo.desktop {
@@ -2902,19 +2920,32 @@ a.smsLink, .smsLink img {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
-    max-width: 350px !important; } }
+    max-width: 350px !important;
+    position: relative; }
+    .songInfo.desktop span {
+      animation: marquee 15s linear infinite; } }
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0); }
+  50% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(-100%, 0); } }
 
 .shareDropdown {
   width: auto;
   box-shadow: 0 3px 2px -2px #C9C6CB;
   position: absolute;
-  left: -125%;
+  right: 15px;
   border: 1px solid #C9C6CB;
   padding: 15px;
   background: #fff;
   z-index: 2;
   letter-spacing: .5px;
-  top: 50px; }
+  top: 100px;
+  width: 300px;
+  text-align: center; }
   .shareDropdown p {
     margin-bottom: 5px;
     text-align: center;
@@ -3195,6 +3226,7 @@ span.postTags:nth-of-type(3) {
       line-height: 26px; }
   .discover-full-song .singlePostPlayerButton .pauseButton, .discover-full-song .singlePostPlayerButton .playButton {
     max-width: 40px !important;
+    max-height: 40px !important;
     margin-top: 8px; } }
 
 .ShareBox {
@@ -3388,5 +3420,162 @@ ul.toggleContainer {
   .singleSongContainer .metaInfo {
     margin-top: 15px !important; } }
 
-.songContainer .spotify {
-  z-index: 2000 !important; }
+@media (min-width: 800px) {
+  .marquee-inner.songtitle {
+    position: absolute;
+    display: block;
+    height: 30px; }
+  .marquee-inner.artist {
+    position: absolute;
+    display: block;
+    height: 30px;
+    top: 30px; }
+  .discover-full-song .songInfo.desktop {
+    width: 50%;
+    height: 60px; } }
+
+.discover-full-song .songContainer .spotify {
+  pointer-events: all; }
+
+@keyframes pulse {
+  0% {
+    background: rgba(165, 165, 165, 0.1); }
+  50% {
+    background: rgba(165, 165, 165, 0.4); }
+  100% {
+    background: rgba(165, 165, 165, 0.1); } }
+
+.placeholder-singleSongPage {
+  max-width: 1685px;
+  margin: 0 auto;
+  height: calc(100vh - 75px - 45px - 75px); }
+  .placeholder-singleSongPage .placeholder-relatedSongs {
+    width: 14vw;
+    display: inline-block;
+    vertical-align: top;
+    float: right; }
+    .placeholder-singleSongPage .placeholder-relatedSongs .placeholder-relatedSongsTop {
+      animation: pulse 1s infinite ease-in-out;
+      height: 45px;
+      margin-bottom: 2px; }
+    .placeholder-singleSongPage .placeholder-relatedSongs .placeholder-relatedSong {
+      animation: pulse 1s infinite ease-in-out;
+      width: calc(7vw - 2px);
+      height: calc(7vw - 2px);
+      display: inline-block;
+      margin: 1px;
+      margin-bottom: -2px; }
+  .placeholder-singleSongPage .placeholder-singleSongContainer {
+    width: 85%;
+    display: inline-block;
+    height: 100%; }
+    .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer {
+      height: 100%; }
+      .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-imageContainer {
+        animation: pulse 1s infinite ease-in-out;
+        background: rgba(165, 165, 165, 0.1);
+        position: relative;
+        width: 40vw;
+        height: 40vw;
+        display: inline-block; }
+      .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent {
+        width: calc(50% - 50px);
+        display: inline-block;
+        vertical-align: top;
+        padding: 25px;
+        padding-top: 0px; }
+        .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-bottomDescription .placeholder-text-lines {
+          height: 15px;
+          margin: 15px;
+          animation: pulse 1s infinite ease-in-out; }
+        .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-topContent {
+          height: 60px;
+          padding: 15px; }
+          .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-topContent .placeholder-play-button {
+            height: 60px;
+            width: 60px;
+            animation: pulse 1s infinite ease-in-out;
+            border-radius: 50%;
+            display: inline-block; }
+          .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-topContent .placeholder-postInfo {
+            width: calc(100% - 75px);
+            height: 60px;
+            display: inline-block;
+            margin-left: 15px; }
+            .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-topContent .placeholder-postInfo .placeholder-song {
+              height: 15px;
+              margin: 15px;
+              animation: pulse 1s infinite ease-in-out;
+              max-width: 250px; }
+            .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-topContent .placeholder-postInfo .placeholder-song.artist {
+              max-width: 200px; }
+        .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-metaInfo {
+          height: 25px;
+          padding: 10px 0;
+          margin-left: 15px; }
+          .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-metaInfo .placeholder-date {
+            height: 15px;
+            width: 100px;
+            animation: pulse 1s infinite ease-in-out;
+            margin-right: 15px;
+            display: inline-block; }
+          .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-metaInfo .placeholder-author {
+            height: 15px;
+            width: 85px;
+            animation: pulse 1s infinite ease-in-out;
+            margin-right: 15px;
+            display: inline-block; }
+          .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-metaInfo .placeholder-tags {
+            width: auto;
+            margin-right: 15px;
+            display: inline-block; }
+            .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent .placeholder-metaInfo .placeholder-tags .placeholder-tag {
+              height: 25px;
+              width: 75px;
+              animation: pulse 1s infinite ease-in-out;
+              margin-right: 15px;
+              display: inline-block;
+              border-radius: 6px; }
+
+@media (max-width: 1120px) and (min-width: 800px) {
+  .placeholder-tags {
+    display: none; }
+  .placeholder-metaInfo {
+    height: 15px; } }
+
+@media (max-width: 1200px) {
+  .placeholder-singleSongPage .placeholder-singleSongContainer {
+    width: 100%; }
+  .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-postContent {
+    width: 50vw; } }
+
+@media (max-width: 800px) {
+  .placeholder-singleSongContainer {
+    width: 100% !important; }
+  .placeholder-singleSongPage .placeholder-singleSongContainer .placeholder-songContainer .placeholder-imageContainer {
+    width: 100vw;
+    height: 100vw;
+    min-height: 400px;
+    max-height: 674px;
+    max-width: 674px;
+    margin: 0 auto !important;
+    display: block !important; }
+  .placeholder-postContent {
+    width: 100% !important;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block !important; }
+  .placeholder-relatedSongs, .placeholder-topContent, .placeholder-metaInfo {
+    display: none !important; } }
+
+@media (max-width: 550px) {
+  .placeholder-postContent {
+    width: 100% !important;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 !important;
+    display: block !important; } }
+
+@media (max-width: 400px) {
+  .placeholder-singleSongPage {
+    margin-top: 115px !important; } }

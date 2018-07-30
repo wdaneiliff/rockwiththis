@@ -10,6 +10,9 @@ import SingleSongContainer from './SingleSongContainer'
 import SidebarRight from './SidebarRight'
 import RelatedSongs from './RelatedSongs'
 import LoadingComponent from './LoadingComponent'
+import SingleSongPlaceholder from './SingleSongPlaceholder'
+
+
 
 class SingleSongPage extends Component {
     constructor(props) {
@@ -35,14 +38,16 @@ class SingleSongPage extends Component {
           song,
       } = this.props
 
+
       return (
           <div className="singleSongPage page">
-              {this.state.loading ? <LoadingComponent />
+              {this.state.loading ? <SingleSongPlaceholder />
                   :
                   <Fragment>
                       <SingleSongContainer {...this.props} />
                       <RelatedSongs {...this.props} />
                   </Fragment>
+
               }
           </div>
       )
