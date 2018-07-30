@@ -5,8 +5,7 @@ import Song from './Song'
 import SingleSong from './SingleSong'
 import HeroSong from './HeroSong'
 import hoverGradient from './images/rwt-hover-gradient.png'
-
-
+import HeroPostsPlaceholder from './HeroPostsPlaceholder'
 
 
 class HeroPosts extends React.Component {
@@ -87,10 +86,10 @@ class HeroPosts extends React.Component {
         return (
             <div>
                 <div id="hero-post" className='hero-posts' ref={node => this.postsWrapper = node}>
-                    {featuredPost}
-                    <div className='previous-week'>
-                        {otherPosts}
-                    </div>
+                  {featuredPost}
+                  <div className='previous-week'>
+                      {otherPosts}
+                  </div>
                 </div>
             </div>
         )
