@@ -1,11 +1,13 @@
 import React from 'react'
+import logo from './images/RWT-head-logo.png'
 
 const SingleSongPlaceHolder = () =>
   (
     <div className="placeholder-singleSongPage">
       <div className="placeholder-singleSongContainer">
         <div className="placeholder-songContainer">
-          <div className="placeholder-imageContainer"></div>
+          <div className="placeholder-imageContainer">
+          </div>
             <div className="placeholder-postContent">
               <div className="placeholder-topContent">
                 <div className="placeholder-play-button"></div>

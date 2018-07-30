@@ -5,9 +5,6 @@ import Song from './Song'
 import SingleSong from './SingleSong'
 import HeroSong from './HeroSong'
 import hoverGradient from './images/rwt-hover-gradient.png'
-import LoadingComponent from './LoadingComponent'
-
-
 
 
 
@@ -22,7 +19,11 @@ class HeroPosts extends React.Component {
     }
 
     componentWillMount() {
-
+      const callback = () => {
+        this.setState({
+          loading: false,
+        })
+      }
     }
 
     render() {
@@ -85,16 +86,12 @@ class HeroPosts extends React.Component {
 
         return (
             <div>
-            {!this.props.heroPosts ? <LoadingComponent />
-                :
                 <div id="hero-post" className='hero-posts' ref={node => this.postsWrapper = node}>
                     {featuredPost}
                     <div className='previous-week'>
                         {otherPosts}
                     </div>
                 </div>
-            }
-
             </div>
         )
     }
