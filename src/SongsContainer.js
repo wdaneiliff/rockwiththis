@@ -14,19 +14,27 @@ class SongsContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          discoverFullSongIndex: 0
+          discoverFullSongIndex: 0,
+          fixedFilterBar: false
         }
 
         this.handleScroll = this.handleScroll.bind(this)
         this.loadMoreSongs = this.loadMoreSongs.bind(this)
         this.changeDiscoverSong = this.changeDiscoverSong.bind(this)
         this.updateDiscoverFullSongIndex = this.updateDiscoverFullSongIndex.bind(this)
+        this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
+
     }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.isPlaying !== nextProps.isPlaying ||
             this.props.activeSong !== nextProps.activeSong) {
         }
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.fixedFiltersBar)
+        window.addEventListener('resize', this.fixedFiltersBar);
     }
 
     loadMoreSongs() {
@@ -58,6 +66,12 @@ class SongsContainer extends Component {
         this.setState({
             discoverFullSongIndex: Number(e.currentTarget.dataset.index)
         })
+    }
+
+    fixedFiltersBar() {
+        const scrollHeight = document.getElementById('hero-post').clientHeight + 45
+        const fixedFilterBar = window.scrollY > scrollHeight
+        this.setState({ fixedFilterBar })
     }
 
     render() {
@@ -104,7 +118,7 @@ class SongsContainer extends Component {
                           {songGrid}
                         <button className="toggle-song next" />
                       </div>}
-                    <div className="songList">
+                    <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
                       {songList}
                     </div>
 

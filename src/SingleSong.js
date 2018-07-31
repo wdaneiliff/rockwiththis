@@ -67,7 +67,8 @@ class SingleSong extends Component {
         const playPauseButton = song.id === activeSong.id && isPlaying ? (
             <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
         ) : (
-            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
+          <svg className="playButton" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/></svg>
+
         )
 
 
@@ -130,6 +131,9 @@ class SingleSong extends Component {
                         <p className="song-title">{song.acf.song_name}</p>
                         <p className="song-artist">{song.acf.artist_name}</p>
                     </div>
+                    <div className="shareContainer">
+                      <ShareBox props={song.slug} songName={song.acf.song_name} artist={song.acf.artist_name} />
+                    </div>
                   </div>
                 </div>
                 <div className="postContent" >
@@ -144,11 +148,18 @@ class SingleSong extends Component {
                     </div>
                     </div>
                         <p className="metaInfo">
-                            <p className="leftInfo"><span className="postDate"><Moment format="ll" date={song.date} /> | </span><span className="postAuthor">Jared Paul</span> </p>|
-                            {songTags}
+                        <p className="leftInfo desktop">
+                        <span className="postDate "><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
                         </p>
-                        <ShareBox props={song.slug} />
-                        <a href="#" className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                        <p className="leftInfo mobile">
+                        <span className="postDate "><Moment format="d/M/YY" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
+                        </p>
+                            {songTags}
+                            <a target="_blank" href={song.acf.spotify_link} className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                        </p>
+                        <span className="ss-sharebox-desktop"><ShareBox props={song.slug} /></span>
+
+
 
                     </div>
                 </div>

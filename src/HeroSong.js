@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
+import  playButton  from './images/playbutton.svg'
+import  pauseButton  from './images/pauseButton.png'
 import YouTube from 'react-youtube'
 import { toggleSong, togglePlayPause } from './actions/queue'
 
@@ -37,9 +39,9 @@ class HeroSong extends Component {
         } = this.props
 
         const playPauseButton = song.id === activeSong.id && isPlaying ? (
-            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
+            <img src={pauseButton} className="pauseButton" />
         ) : (
-            <img src="http://www.rockwiththis.com/wp-content/uploads/2018/04/unnamed.png" className="playButton" />
+            <img src={playButton} className="playButton" />
         )
 
           return (

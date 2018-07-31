@@ -4,6 +4,8 @@ import moment from 'moment'
 import Song from './Song'
 import SingleSong from './SingleSong'
 import HeroSong from './HeroSong'
+import hoverGradient from './images/rwt-hover-gradient.png'
+import HeroPostsPlaceholder from './HeroPostsPlaceholder'
 
 
 class HeroPosts extends React.Component {
@@ -11,7 +13,16 @@ class HeroPosts extends React.Component {
         super(props)
         this.state = {
             scrollPercentage: 0,
+            loading: true,
         }
+    }
+
+    componentWillMount() {
+      const callback = () => {
+        this.setState({
+          loading: false,
+        })
+      }
     }
 
     render() {
@@ -43,6 +54,8 @@ class HeroPosts extends React.Component {
                   <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`} key={post.id}>
                       <div className='feature-track'>
                           <Link className='move-back-link' to={`/songs/${post.id}`}>
+                          <img className="heroHoverGradient" src={hoverGradient} />
+
                               <img src={image} />
                           </Link>
                           <div className="post-info">
@@ -73,12 +86,11 @@ class HeroPosts extends React.Component {
         return (
             <div>
                 <div id="hero-post" className='hero-posts' ref={node => this.postsWrapper = node}>
-                    {featuredPost}
-                    <div className='previous-week'>
-                        {otherPosts}
-                    </div>
+                  {featuredPost}
+                  <div className='previous-week'>
+                      {otherPosts}
+                  </div>
                 </div>
-
             </div>
         )
     }

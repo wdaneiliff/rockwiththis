@@ -7,6 +7,8 @@ import OffScreen from './OffScreen'
 import SocialLinks from './SocialLinks.js'
 import Header from './Header'
 import MainPlayer from './MainPlayer'
+import { Element } from 'react-scroll'
+
 
 class AppContainer extends Component {
     constructor(props) {

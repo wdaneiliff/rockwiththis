@@ -16,10 +16,15 @@
     "react-fa": "^5.0.0",
     "react-helmet": "^5.2.0",
     "react-jsx": "^1.0.0",
-    "react-mailchimp-subscribe": "^1.0.3",
+    "react-mailchimp-form": "^1.0.1",
+    "react-mailchimp-subscribe": "^1.1.0",
     "react-moment": "^0.6.8",
     "react-motion": "^0.5.2",
+<<<<<<< HEAD
     "react-player": "^1.6.4",
+=======
+    "react-placeholder": "^3.0.1",
+>>>>>>> 8d30ed6be1818b71bb75710efc4b07fc0cb38662
     "react-player-controls": "^0.5.17",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",

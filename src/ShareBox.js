@@ -48,7 +48,7 @@ class ShareBox extends Component {
         return (
 
           <div className="ShareBox">
-          <button onClick={this.showShareDropdown} className="shareshareButton"><i className="im im-share"></i></button>
+          <button onClick={this.showShareDropdown} className="shareshareButton"><i className="im im-paperplane"></i></button>
 
 
           {
@@ -60,7 +60,7 @@ class ShareBox extends Component {
                     this.shareDropdown = element;
                   }}
                 >
-                    <p>Share</p>
+                    <p>Share </p>
                     <FacebookShareButton url={url}>
                       <FacebookIcon size={40} round={true} />
                     </FacebookShareButton>
