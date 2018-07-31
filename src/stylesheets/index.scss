@@ -3514,7 +3514,6 @@ button {
         }
     }
 
-<<<<<<< HEAD
 button.player-control-button {
   background-repeat: no-repeat;
   background-position: center;
@@ -3524,11 +3523,9 @@ button.player-control-button {
   font-size: 18px;
   i {
     color: white;
-=======
     .playButton, .pauseButton {
       width: 40px;
       height: 40px;
->>>>>>> 8d30ed6be1818b71bb75710efc4b07fc0cb38662
   }
   &.disabled {
     background: rgba(0,0,0,0) !important;
