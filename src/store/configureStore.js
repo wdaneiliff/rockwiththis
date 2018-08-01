@@ -2,7 +2,7 @@ import thunk from 'redux-thunk'
 import appReducer from '../reducers/index'
 import { createStore, applyMiddleware, compose } from 'redux'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = compose
 
 export default function configureStore() {
   const middleware = [
@@ -11,7 +11,7 @@ export default function configureStore() {
   const store = createStore(
     appReducer,
     composeEnhancers(
-      applyMiddleware(...middleware),
+      applyMiddleware(...middleware)
     )
   )
   store.subscribe(() => {

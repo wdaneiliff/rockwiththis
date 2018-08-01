@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import YouTube from 'react-youtube'
+import ReactPlayer from 'react-player'
 
-class OffScreen extends Component {
+class OffScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -15,7 +16,7 @@ class OffScreen extends Component {
         const activeSong = this.props.activeSong
         const nextActiveSong = nextProps.activeSong
         if (this.props.isPlaying !== nextProps.isPlaying || activeSong !== nextActiveSong) {
-            nextProps.isPlaying ? window.SC.Widget('sc-player').play() : window.SC.Widget('sc-player').pause()
+            // nextProps.isPlaying ? window.SC.Widget('sc-player').play() : window.SC.Widget('sc-player').pause()
         }
         if (activeSong && activeSong.id && activeSong !== nextActiveSong) {
             this.setState({ autoplay: true })
@@ -23,23 +24,39 @@ class OffScreen extends Component {
     }
 
     bindPlayNext() {
-        window.SC.Widget('sc-player').bind(window.SC.Widget.Events.FINISH, this.playNextSong)
+        // window.SC.Widget('sc-player').bind(window.SC.Widget.Events.FINISH, this.playNextSong)
     }
 
     playNextSong() {
         const activeSong = this.props.activeSong
         this.props.posts.find((post, i, arr) => {
-            if (post === activeSong) {
+            if (post.id === activeSong.id) {
                 this.props.actions.toggleSong(arr[i + 1])
             }
         })
     }
 
+
+
     render() {
         const activeSong = this.props.activeSong
+        const url = activeSong.acf.sc_track_id ? `https%3A//api.soundcloud.com/tracks/${activeSong.acf.sc_track_id}` : ''
+        const setSongDuration = (ref) => {
+          this.props.actions.setSongDuration(ref.getDuration())
+        }
         return (
             <div className='iframe-and-youtube-wrapper'>
-                <iframe
+                <ReactPlayer
+                    playing={this.props.isPlaying}
+                    onReady={setSongDuration}
+                    onProgress={this.props.actions.setSongProgress}
+                    onEnded={this.props.changeSong}
+                    url={url}
+                    ref={(e) => {
+                      this.player = e;
+                    }}
+                />
+                {/*<iframe
                     id="sc-player"
                     className="sc-player"
                     title={activeSong.acf && activeSong.acf.song_name}
@@ -55,7 +72,7 @@ class OffScreen extends Component {
                     videoId={activeSong && activeSong.youtube_track_id}
                     id="yt-player"
                     onEnd={() => this.props.playNextSong()}
-                />
+                />*/}
             </div>
         )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
+import OffScreen from './OffScreen'
 import { toggleSong, togglePlayPause } from './actions/queue'
 import  playButton  from './images/main-player-play-button.svg'
 import  pauseButton  from './images/pauseButton-main-player-new.png'
@@ -15,85 +16,25 @@ const formatTime = (seconds = 0) => {
 class MainPlayer extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            activeSongDuration: 0,
-            seekPosition: null,
-            rcSliderValue: 0,
-        }
 
-        this.checkSeekPosition = this.checkSeekPosition.bind(this)
         this.renderButtons = this.renderButtons.bind(this)
         this.changeSong = this.changeSong.bind(this)
-        this.onAfterChangeSlider = this.onAfterChangeSlider.bind(this)
         this.onChangeSlider = this.onChangeSlider.bind(this)
-        this.setDurationForSongId = this.setDurationForSongId.bind(this)
         this.updateStorePlayPause = this.updateStorePlayPause.bind(this)
-        setTimeout(this.checkSeekPosition, 1000)
     }
-
-    componentWillReceiveProps(nextProps) {
-        if (this.props.activeSong && this.props.activeSong.id && nextProps.activeSong !== this.props.activeSong) {
-            this.setDurationForSongId(nextProps.activeSong.id)
-        }
-    }
-
 
     onChangeSlider(progress) {
-        this.setState({
-            rcSliderValue: progress,
-        }, this.onAfterChangeSlider)
-    }
-
-
-    onAfterChangeSlider() {
-        if (this.props.activeSong) {
-            const newTime = this.state.activeSongDuration * (this.state.rcSliderValue / 100.0)
-            console.log(newTime)
-            window.SC.Widget('sc-player').seekTo(newTime * 1000)
-
-            this.setRcSliderValueForProgress(this.state.rcSliderValue, this.state.activeSongDuration)
-            this.checkSeekPosition(false)
-        }
-    }
-
-    setDurationForSongId(songId) {
-        window.SC.Widget('sc-player').getDuration(d => this.setState({ activeSongDuration: (d / 1000) }))
-    }
-
-    setRcSliderValueForProgress(seekPosition, duration) {
-        this.setState({
-            rcSliderValue: (seekPosition / duration) * 100,
-        })
+      this.offScreen.player.seekTo(progress)
     }
 
     updateStorePlayPause() {
         this.props.actions.togglePlayPause(!this.props.isPlaying)
     }
 
-    checkSeekPosition(repeat = true) {
-        if (this.props.activeSong && this.props.activeSong.id) {
-            window.SC.Widget('sc-player').getDuration((position) => {
-                const activeSongDuration = position / 1000
-                this.setState({ activeSongDuration })
-            })
-            window.SC.Widget('sc-player').getPosition((position) => {
-                const seekPosition = position / 1000
-                if (this.state.activeSongDuration) {
-                    this.setRcSliderValueForProgress(seekPosition, this.state.activeSongDuration)
-                }
-                this.setState({ seekPosition })
-            })
-        }
-
-        if (repeat) {
-            setTimeout(this.checkSeekPosition, 1000)
-        }
-    }
-
     changeSong(next) {
-        this.props.posts.find((post, i, arr) => {
-            const queuePosition = next ? i + 1 : i - 1
-            if (post === this.props.activeSong) {
+        this.props.posts.forEach((post, i, arr) => {
+            if (post.id === this.props.activeSong.id) {
+                const queuePosition = next ? i + 1 : i - 1
                 this.props.actions.toggleSong(arr[queuePosition])
             }
         })
@@ -101,6 +42,7 @@ class MainPlayer extends Component {
 
     renderInfo() {
         const { activeSong } = this.props
+
         return (
             <div className="player-info">
                 <div className="player-info-image-wrapper">
@@ -133,12 +75,14 @@ class MainPlayer extends Component {
 
         )
 
+        const disableBack = this.props.posts[0] && this.props.posts[0].id === this.props.activeSong.id
         return (
             <div className="player-controls">
                 <div className="player-controls-buttons">
                     <button
+                        disabled={disableBack}
                         id="player-control-button-back"
-                        className="player-control-button"
+                        className={`player-control-button ${disableBack ? 'disabled' : ''}`}
                         onClick={() => this.changeSong(false)}
                     >
                       <i className="fa fa-step-backward" aria-hidden="true" />
@@ -159,17 +103,17 @@ class MainPlayer extends Component {
                     </button>
                 </div>
                 <div className="player-duration-bar-wrapper">
-                    <div className="player-duration-bar-current-time">{formatTime(this.state.seekPosition)}</div>
+                    <div className="player-duration-bar-current-time">{formatTime(this.props.activeSongProgress.playedSeconds)}</div>
                     <div className="player-duration-bar">
                         <Slider
                             min={0}
-                            max={100}
-                            step={0.5}
-                            value={this.state.rcSliderValue}
+                            max={1}
+                            step={0.001}
+                            value={this.props.activeSongProgress.played}
                             onChange={this.onChangeSlider}
                         />
                     </div>
-                    <div className="player-duration-bar-song-duration">{formatTime(this.state.activeSongDuration)}</div>
+                    <div className="player-duration-bar-song-duration">{formatTime(this.props.activeSongDuration)}</div>
                 </div>
             </div>
         )
@@ -210,6 +154,12 @@ class MainPlayer extends Component {
                     </div>
                     {this.renderShareButtons()}
                 </div>
+                <OffScreen
+                  {...this.props}
+                  changeSong={() => this.changeSong(true)}
+                  ref={(e) => {
+                    this.offScreen = e;
+                  }} />
             </footer>
         )
     }

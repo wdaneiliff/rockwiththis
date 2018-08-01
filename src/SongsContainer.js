@@ -109,44 +109,47 @@ class SongsContainer extends Component {
                 <Element name='discoverySectionScroll'>
                   <FiltersBar {...this.props} />
                 </Element>
-                <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
-                  {this.props.discoverLayout !== 'snapshot' &&
-                    <div className="songGrid">
-                      <button className="toggle-song previous" />
-                        {songGrid}
-                      <button className="toggle-song next" />
-                    </div>}
-                  <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
-                    {songList}
-                  </div>
+                <div id='discoverSongsWrapper' className='discover-songs-wrapper'>
+                  <Element name='scrollToDiscoveryTop' />
+                  <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
+                    {this.props.discoverLayout !== 'snapshot' &&
+                      <div className="songGrid">
+                        <button className="toggle-song previous" />
+                          {songGrid}
+                        <button className="toggle-song next" />
+                      </div>}
+                    <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
+                      {songList}
+                    </div>
 
-                  {this.props.discoverLayout !== 'snapshot' &&
-                    <div className="discover-full-song">
-                      {this.props.filteredPosts[discoverFullSongIndex] &&
-                          <Fragment>
-                            <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
-                                  <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
-                            </button>
-                                  <Song
-                                      song={this.props.filteredPosts[discoverFullSongIndex]}
-                                  />
-                                <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
-                                      <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
-                                </button>
-                          </Fragment>
+                    {this.props.discoverLayout !== 'snapshot' &&
+                      <div className="discover-full-song">
+                        {this.props.filteredPosts[discoverFullSongIndex] &&
+                            <Fragment>
+                              <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
+                                    <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                              </button>
+                                    <Song
+                                        song={this.props.filteredPosts[discoverFullSongIndex]}
+                                    />
+                                  <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
+                                        <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                                  </button>
+                            </Fragment>
+                        }
+                        </div>
                       }
-                      </div>
-                    }
-                    {this.state.loadingMoreSongs && !this.state.noMorePosts &&
-                        <div className='loading-bottom'>
-                            <LoadingComponent />
-                        </div>
-                    }
-                    {this.state.noMorePosts &&
-                        <div className='loading-bottom'>
-                            <span>No more posts to load.</span>
-                        </div>
-                    }
+                      {this.state.loadingMoreSongs && !this.state.noMorePosts &&
+                          <div className='loading-bottom'>
+                              <LoadingComponent />
+                          </div>
+                      }
+                      {this.state.noMorePosts &&
+                          <div className='loading-bottom'>
+                              <span>No more posts to load.</span>
+                          </div>
+                      }
+                  </div>
                 </div>
               </div>
             </div>

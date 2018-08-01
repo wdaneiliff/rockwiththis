@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import * as Scroll from 'react-scroll'
 import { fetchFilters } from './actions/filters'
 import LoadingComponent from './LoadingComponent'
 // import full from './images/full.svg'
@@ -41,6 +42,16 @@ class FiltersBar extends Component {
           showSubGenreFilters: false,
           showToggleViewsDropdown: false,
           loading: false,
+        }, () => {
+          Scroll.scroller.scrollTo('discoverySectionScroll', {
+            duration: 500,
+            smooth: true
+          })
+          Scroll.scroller.scrollTo('scrollToDiscoveryTop', {
+            containerId: 'discoverSongsWrapper',
+            duration: 500,
+            smooth: true
+          })
         })
       }
       this.props.actions.fetchCurrentRequest(callback)

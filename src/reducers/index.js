@@ -19,6 +19,10 @@ export const INITIAL_STATE = {
     better_featured_image: '',
     acf: {}
   },
+  activeSongProgress: {
+    played: 0,
+    secondsPlayed: 0,
+  },
   posts: [],
   featuredPosts: [],
   filteredPosts: [],
@@ -61,6 +65,16 @@ const appReducers = handleActions({
   'app/CLEAR_SINGLE_SONG': (state, action) => {
     return update(state, {
       singleSong: { $set: {} }
+    })
+  },
+  'app/SET_SONG_PROGRESS': (state, action) => {
+    return update(state, {
+      activeSongProgress: { $set: action.payload }
+    })
+  },
+  'app/SET_SONG_DURATION': (state, action) => {
+    return update(state, {
+      activeSongDuration: { $set: action.payload }
     })
   },
   'app/SET_RELATED_SONGS': (state, action) => {

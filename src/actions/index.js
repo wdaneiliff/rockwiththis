@@ -107,6 +107,16 @@ export const clearSingleSong = () => (dispatch) => {
   dispatch(CLEAR_SINGLE_SONG())
 }
 
+export const SET_SONG_PROGRESS = createAction('app/SET_SONG_PROGRESS')
+export const setSongProgress = (played) => (dispatch) => {
+  dispatch(SET_SONG_PROGRESS(played))
+}
+
+export const SET_SONG_DURATION = createAction('app/SET_SONG_DURATION')
+export const setSongDuration = (duration) => (dispatch) => {
+  dispatch(SET_SONG_DURATION(duration))
+}
+
 export const FETCH_RELATED_SONGS = {
     IN_PROGRESS: 'FETCH_RELATED_SONGS_IN_PROGRESS',
     SUCCESS: 'FETCH_RELATED_SONGS_SUCCESS',
