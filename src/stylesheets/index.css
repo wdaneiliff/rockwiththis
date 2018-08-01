@@ -1607,19 +1607,15 @@ body {
   /* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png); */
   margin: 0 !important; }
 
-button.player-control-button {
+.player-control-button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   cursor: pointer;
   flex: 0 0 10px;
   font-size: 18px; }
-  button.player-control-button i {
+  .player-control-button i {
     color: white; }
-  button.player-control-button.disabled {
-    background: rgba(0, 0, 0, 0) !important;
-    cursor: default;
-    opacity: .3; }
   .player-control-button svg {
     fill: #fff; }
   .player-control-button img.main.playButton {

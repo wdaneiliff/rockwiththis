@@ -3514,23 +3514,9 @@ button {
         }
     }
 
-button.player-control-button {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  cursor: pointer;
-  flex: 0 0 10px;
-  font-size: 18px;
-  i {
-    color: white;
     .playButton, .pauseButton {
       width: 40px;
       height: 40px;
-  }
-  &.disabled {
-    background: rgba(0,0,0,0) !important;
-    cursor: default;
-    opacity: .3;
   }
 }
 
