@@ -60,9 +60,9 @@ class SongGrid extends Component {
         } = this.props
 
         const playPauseButton = song.id === activeSong && isPlaying ? (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
+            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
         ) : (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
+            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
         )
 
 
@@ -80,7 +80,7 @@ class SongGrid extends Component {
                 </p>
                 <div className="singlePostPlayerLinks">
                     <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
-                    <a href="#" className="shareButton"><img src="http://rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
+                    <a href="#" className="shareButton"><img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
 
                     </a>
                 </div>
@@ -122,9 +122,9 @@ class SongGrid extends Component {
         const { height } = this.state
 
         const imagePlayPauseButton = song.id === activeSong && isPlaying ? (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
+            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
         ) : (
-            <img src="http://rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
+            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
         )
 
         return (

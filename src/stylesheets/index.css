@@ -2684,11 +2684,7 @@ button {
   width: 100%; }
 
 button.disabled {
-  background: #fff !important;
-  color: #1a6ea9 !important;
-  border: 1px solid #1a6ea9 !important;
-  opacity: .8;
-  cursor: default !important; }
+  pointer-events: none; }
 
 button.large-bottom.tag {
   width: 45%;

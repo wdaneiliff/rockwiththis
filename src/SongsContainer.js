@@ -98,6 +98,8 @@ class SongsContainer extends Component {
             />
           )
         })
+        // const disableBack = this.props.posts[0] && this.props.posts[0].id === this.props.activeSong.id
+
 
         return (
             <div className="songsContainer clearfix">
@@ -115,6 +117,7 @@ class SongsContainer extends Component {
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                         <button className="toggle-song previous" />
+
                           {songGrid}
                         <button className="toggle-song next" />
                       </div>}
@@ -126,14 +129,16 @@ class SongsContainer extends Component {
                       <div className="discover-full-song">
                         {this.props.filteredPosts[discoverFullSongIndex] &&
                             <Fragment>
-                              <button className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
-                                    <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                              <button
+                              className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
+
+                                    <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                               </button>
                                     <Song
                                         song={this.props.filteredPosts[discoverFullSongIndex]}
                                     />
                                   <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
-                                        <img src='http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                                        <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                                   </button>
                             </Fragment>
                         }

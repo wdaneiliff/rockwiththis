@@ -8,7 +8,7 @@ export const fetchFilteredPosts = tag => (dispatch, getState) => {
     dispatch({
         type: FETCH_FILTERED_POSTS.IN_PROGRESS,
     })
-    const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/songs?tags=54'
+    const dataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?tags=54'
 
     fetch(dataURL).then(res => res.json()).then((res) => {
         dispatch({

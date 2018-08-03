@@ -8,13 +8,13 @@ export const fetchRelatedSongs = slug => (dispatch, getState) => {
     dispatch({
         type: FETCH_RELATED_SONGS.IN_PROGRESS,
     })
-    const dataURL = `https://rockwiththis.com/wp-json/wp/v2/songs/${slug}?_embed`
+    const dataURL = `https://dashboard.rockwiththis.com/wp-json/wp/v2/songs/${slug}?_embed`
     fetch(dataURL).then(res => res.json()).then((res) => {
         const tags = res.tags
         const tag1 = tags[0]
         const tag2 = tags[1]
-        const tag1Songs = `https://rockwiththis.com/wp-json/wp/v2/songs?tags=${tag1}`
-        const tag2Songs = `https://rockwiththis.com/wp-json/wp/v2/songs?tags=${tag2}`
+        const tag1Songs = `https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?tags=${tag1}`
+        const tag2Songs = `https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?tags=${tag2}`
         const relatedSongs = [];
 
         fetch(tag1Songs).then(res => res.json()).then((res) => {

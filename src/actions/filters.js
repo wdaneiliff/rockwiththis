@@ -8,7 +8,7 @@ export const fetchFilters = (pageNumber = 1) => (dispatch, getState) => {
     dispatch({
         type: FETCH_FILTERS.IN_PROGRESS,
     })
-    const dataURL = 'https://rockwiththis.com/wp-json/wp/v2/all-terms'
+    const dataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/all-terms'
     fetch(dataURL).then(res => res.json()).then(res => {
       dispatch({
               type: FETCH_FILTERS.SUCCESS,
