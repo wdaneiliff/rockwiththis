@@ -2042,7 +2042,9 @@ a.spotifyLink {
           line-height: 28px;
           font-weight: 100 !important; }
         .discovery-container .discover-full-song .songContainer hr {
-          display: none; } }
+          display: none; }
+  .disableScroll {
+    overflow: hidden !important; } }
 
 .songDescription {
   font-family: 'Open-Sans', sans-serif;
@@ -2273,6 +2275,8 @@ button {
     margin: 0 auto;
     overflow: auto;
     padding: 0 15px; }
+  .disableScroll {
+    overflow: hidden !important; }
   .previewScrollLayout .songList {
     display: block;
     max-width: 1400px;
@@ -2389,6 +2393,8 @@ button {
     .discovery-container.previewScrollLayout .playButton, .discovery-container.previewScrollLayout .pauseButton {
       width: 40px;
       height: 40px; }
+  .disableScroll {
+    overflow: hidden !important; }
   .previewScrollLayout .discover-full-song {
     display: none; }
   .previewScrollLayout .songGrid {

@@ -15,7 +15,8 @@ class SongsContainer extends Component {
         super(props)
         this.state = {
           discoverFullSongIndex: 0,
-          fixedFilterBar: false
+          fixedFilterBar: false,
+          disableScroll: true
         }
 
         this.handleScroll = this.handleScroll.bind(this)
@@ -23,6 +24,7 @@ class SongsContainer extends Component {
         this.changeDiscoverSong = this.changeDiscoverSong.bind(this)
         this.updateDiscoverFullSongIndex = this.updateDiscoverFullSongIndex.bind(this)
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
+        this.enableDiscoverScroll = this.enableDiscoverScroll.bind(this)
 
     }
 
@@ -35,6 +37,8 @@ class SongsContainer extends Component {
     componentDidMount() {
         window.addEventListener('scroll', this.fixedFiltersBar)
         window.addEventListener('resize', this.fixedFiltersBar);
+        window.addEventListener('scroll', this.enableDiscoverScroll)
+        window.addEventListener('resize', this.enableDiscoverScroll);
     }
 
     loadMoreSongs() {
@@ -72,6 +76,13 @@ class SongsContainer extends Component {
         const scrollHeight = document.getElementById('hero-post').clientHeight + 45
         const fixedFilterBar = window.scrollY > scrollHeight
         this.setState({ fixedFilterBar })
+    }
+
+    enableDiscoverScroll() {
+        const scrollHeight = document.getElementById('hero-post').clientHeight + 45
+        window.scrollY > scrollHeight ? this.setState({ disableScroll: false }) : ''
+        window.scrollY < scrollHeight ? this.setState({ disableScroll: true }) : ''
+
     }
 
     render() {
@@ -113,7 +124,7 @@ class SongsContainer extends Component {
                 </Element>
                 <div id='discoverSongsWrapper' className='discover-songs-wrapper'>
                   <Element name='scrollToDiscoveryTop' />
-                  <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
+                  <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.state.disableScroll ? 'disableScroll' : ''} ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                         <button className="toggle-song previous" />

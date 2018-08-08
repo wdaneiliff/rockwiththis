@@ -21,6 +21,8 @@ body::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
 
+
+
 .pause-main {
     width: 35px;
     height: 35px;
@@ -2991,6 +2993,8 @@ a.spotifyLink {
       }
     }
     }
+}&.disableScroll {
+  overflow: hidden !important;
 }
 }
 
@@ -3347,6 +3351,8 @@ button {
     margin: 0 auto;
     overflow: auto;
     padding: 0 15px;
+}&.disableScroll {
+  overflow: hidden !important;
 }
 
   .previewScrollLayout .songList {
@@ -3518,6 +3524,8 @@ button {
       width: 40px;
       height: 40px;
   }
+}&.disableScroll {
+  overflow: hidden !important;
 }
 
 
