@@ -52,6 +52,11 @@ const appReducers = handleActions({
       filteredPosts: { $set: action.payload }
     })
   },
+  'app/CURRENT_REQUEST_LOADING': (state, action) => {
+    return update(state, {
+      currentRequestLoading: { $set: action.payload }
+    })
+  },
   'app/LOAD_MORE_SONGS': (state, action) => {
     return update(state, {
       filteredPosts: { $set: [...state.filteredPosts, ...action.payload]}

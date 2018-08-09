@@ -12,8 +12,6 @@ import RelatedSongs from './RelatedSongs'
 import LoadingComponent from './LoadingComponent'
 import SingleSongPlaceholder from './SingleSongPlaceholder'
 
-
-
 class SingleSongPage extends Component {
     constructor(props) {
       super(props)
@@ -37,7 +35,6 @@ class SingleSongPage extends Component {
       const {
           song,
       } = this.props
-
 
       return (
           <div className="singleSongPage page">

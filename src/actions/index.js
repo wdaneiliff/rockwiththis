@@ -15,13 +15,16 @@ export const fetchPosts = (pageNumber = 1, callback) => (dispatch) => {
   })
 }
 
+export const CURRENT_REQUEST_LOADING = createAction('app/CURRENT_REQUEST_LOADING')
 export const FETCH_CURRENT_REQUEST = createAction('app/FETCH_CURRENT_REQUEST')
 export const fetchCurrentRequest = (callback) => (dispatch, getState) => {
+  dispatch(CURRENT_REQUEST_LOADING(true))
   const baseURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=16&tags[]='
   const filterIds = getState().selectedFilters.map(filter => filter.term_id)
   const filterParamsString = filterIds.join('&tags[]=')
   const fullURL = baseURL + filterParamsString
   fetch(fullURL).then(res => res.json()).then((res) => {
+    dispatch(CURRENT_REQUEST_LOADING(false))
     if (res.length > 0) {
       dispatch(FETCH_CURRENT_REQUEST(res))
       if (callback) callback()
@@ -181,30 +184,6 @@ export const fetchFeaturedPosts = (pageNumber = 1) => (dispatch, getState) => {
     }).catch((er) => {
         dispatch({
             type: FETCH_FEATURED_POSTS.FAILURE,
-        })
-    })
-}
-
-export const FETCH_FILTERED_POSTS = {
-    IN_PROGRESS: 'FETCH_FILTERED_POSTS_IN_PROGRESS',
-    SUCCESS: 'FETCH_FILTERED_POSTS_SUCCESS',
-    FAILURE: 'FETCH_FILTERED_POSTS_FAILURE',
-}
-
-export const fetchFilteredPosts = tag => (dispatch, getState) => {
-    dispatch({
-        type: FETCH_FILTERED_POSTS.IN_PROGRESS,
-    })
-    const dataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?tags=54'
-
-    fetch(dataURL).then(res => res.json()).then((res) => {
-        dispatch({
-            type: FETCH_FILTERS.SUCCESS,
-            filters: res.tags,
-        })
-    }).catch((er) => {
-        dispatch({
-            type: FETCH_FILTERS.FAILURE,
         })
     })
 }

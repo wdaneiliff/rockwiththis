@@ -14,6 +14,7 @@ class FiltersBar extends Component {
         super(props)
 
         this.state = {
+          filtersToShow: [],
           showSubGenreFilters: false,
           showToggleViewsDropdown: false,
           fixedFilterBar: false
@@ -41,6 +42,7 @@ class FiltersBar extends Component {
         this.setState({
           showSubGenreFilters: false,
           showToggleViewsDropdown: false,
+          filtersToShow: this.props.selectedFilters,
           loading: false,
         }, () => {
           Scroll.scroller.scrollTo('discoverySectionScroll', {
@@ -64,6 +66,7 @@ class FiltersBar extends Component {
         this.setState({
           showSubGenreFilters: false,
           showToggleViewsDropdown: false,
+          filtersToShow: [],
           loading: false,
         })
       }
@@ -110,6 +113,7 @@ class FiltersBar extends Component {
     }
 
     changeGridView(e) {
+      e.preventDefault()
       this.props.actions.changeGridView(e.target.name)
     }
 
@@ -130,7 +134,7 @@ class FiltersBar extends Component {
           )
         })
 
-        const selectedFilters = this.props.selectedFilters.map((filter, i) => {
+        const selectedFilters = this.state.filtersToShow.map((filter, i) => {
           return (
             <button
               className="tag"
@@ -154,7 +158,8 @@ class FiltersBar extends Component {
 
               <div className="selectedFilters">
                 {selectedFilters}
-                <button className={`clearButton ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.clearFilters}>Clear All</button>
+                {this.state.filtersToShow.length > 0 &&
+                  <button className={`clearButton ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.clearFilters}>Clear All</button>}
               </div>
 
               <button onClick={this.showToggleViewsDropdown} className="toggle-views-button ">Toggle Views <i class="im im-angle-down"></i></button>
@@ -188,18 +193,9 @@ class FiltersBar extends Component {
                       this.ToggleViewsDropDown = element;
                     }}
                     >
-                    <button className="desktop" name='expanded' onClick={this.changeGridView}>
-                    {full}
-                    <span>Full</span>
-                    </button>
-
-                    <button className="desktop" name='snapshot' onClick={this.changeGridView}>
-                    {snapshot}
-                    <span>Snap</span></button>
-                    <button className="desktop" name='fullGrid' onClick={this.changeGridView}>
-                    {grid}
-                    <span>Grid</span>
-                    </button>
+                    <button className="desktop" name='expanded' onClick={this.changeGridView}>Full</button>
+                    <button className="desktop" name='snapshot' onClick={this.changeGridView}>Snap</button>
+                    <button className="desktop" name='fullGrid' onClick={this.changeGridView}>Grid</button>
 
 
 
