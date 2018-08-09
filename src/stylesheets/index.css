@@ -836,8 +836,6 @@ img.heroHoverGradient {
     font-size: .7em;
     line-height: 14px;
     width: 80%; }
-  .songSourceContainer i {
-    display: none; }
   .footer-player .artist-info {
     float: left;
     margin-left: 0px;
@@ -1435,10 +1433,6 @@ body {
   font-size: 18px;
   line-height: 26px;
   font-weight: 400px !important; }
-
-.songSourceContainer img {
-  width: 75px;
-  margin-right: 15px; }
 
 /*MainPlayer*/
 @media (max-width: 1000px) {
@@ -2195,12 +2189,7 @@ button {
     font-weight: 700 !important; }
   .footer-player span.artist-title {
     color: #adb2a9;
-    font-size: 16px; }
-  .songSourceContainer {
-    max-width: 40px;
-    display: none; }
-    .songSourceContainer img {
-      max-width: 40px; } }
+    font-size: 16px; } }
 
 .songContainer .tag:nth-of-type(3) {
   display: none; }
@@ -3017,21 +3006,6 @@ a.smsLink, .smsLink img {
     top: -10px;
     right: 0px; } }
 
-footer .songSourceContainer {
-  margin-right: 20px;
-  position: relative;
-  display: none; }
-
-footer .songSourceContainer .source.soundcloud {
-  color: #ff8800;
-  text-align: center;
-  display: block;
-  width: 75px; }
-  footer .songSourceContainer .source.soundcloud span {
-    font-size: 12px; }
-  footer .songSourceContainer .source.soundcloud .im {
-    font-size: 50px; }
-
 .seeMore {
   display: none; }
 
@@ -3812,3 +3786,69 @@ form.rwt-email-form button {
   text-transform: uppercase;
   font-size: 14px;
   padding: 10px; }
+
+.singleSongPage p.metaInfo .postTags:nth-of-type(2) {
+  display: inline-block; }
+
+.singleSongPage p.metaInfo .postTags:nth-of-type(3) {
+  display: none; }
+
+.singleSongPage p.metaInfo .postTags:nth-of-type(4) {
+  display: none; }
+
+.singleSongPage p.metaInfo .postTags:nth-of-type(5) {
+  display: none; }
+
+footer .songSourceContainer {
+  margin-right: 20px;
+  position: absolute;
+  right: 0; }
+
+@media (min-width: 650px) {
+  footer .songSourceContainer {
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%); } }
+
+footer .songSourceContainer .source.soundcloud {
+  color: #fff;
+  text-align: center;
+  display: block;
+  font-weight: 400;
+  text-transform: uppercase; }
+  footer .songSourceContainer .source.soundcloud span {
+    font-size: 12px; }
+  footer .songSourceContainer .source.soundcloud .im {
+    font-size: 50px; }
+
+.songSourceContainer img {
+  width: 40px;
+  margin-top: 5px; }
+
+@media (max-width: 1000px) and (min-width: 650px) {
+  .player-controls-wrapper {
+    margin-right: 150px !important; } }
+
+@media (max-width: 650px) {
+  .songSourceContainer img {
+    width: 40px;
+    margin-right: 0px; }
+  footer .songSourceContainer {
+    margin-right: 0px;
+    position: absolute;
+    right: 0;
+    top: -65px;
+    padding: 5px; }
+    footer .songSourceContainer .source.soundcloud {
+      color: #fd4f1f;
+      text-align: center;
+      display: inline-block;
+      width: auto; }
+      footer .songSourceContainer .source.soundcloud img {
+        width: 40px !important;
+        height: 40px;
+        margin-right: 0px; }
+      footer .songSourceContainer .source.soundcloud span {
+        font-size: 12px;
+        display: none;
+        color: #fd4f1f !important; } }

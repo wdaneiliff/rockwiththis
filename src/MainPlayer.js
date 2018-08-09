@@ -6,6 +6,7 @@ import OffScreen from './OffScreen'
 import { toggleSong, togglePlayPause } from './actions/queue'
 import  playButton  from './images/main-player-play-button.svg'
 import  pauseButton  from './images/pauseButton-main-player-new.png'
+import  soundCloudImage  from './images/soundcloud-darker.png'
 
 const formatTime = (seconds = 0) => {
     const numMinutes = Math.floor(seconds / 60)
@@ -123,11 +124,9 @@ class MainPlayer extends Component {
         return (
             <div className="songSourceContainer">
             <a className="source soundcloud">
-              <span>Playing from</span>
-              <br/>
-              <i className="im im-soundcloud"></i>
+            
+              <img src={soundCloudImage} />
             </a>
-
 
             </div>
         )
