@@ -985,7 +985,7 @@ img.heroHoverGradient {
         margin: -4px 0 !important;
         content: ''; }
     .singleSongPage .singleSongContainer .songContainer .postContent .player-button {
-      width: 12%;
+      width: auto;
       display: inline-block; }
       .singleSongPage .singleSongContainer .songContainer .postContent .player-button img {
         width: 60px;
