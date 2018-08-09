@@ -123,10 +123,16 @@ class MainPlayer extends Component {
     renderShareButtons() {
         return (
             <div className="songSourceContainer">
-            <a className="source soundcloud">
-            
-              <img src={soundCloudImage} />
-            </a>
+
+            {this.props.activeSong.acf.sc_track_id ?
+              <a target="_blank" href={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${this.props.activeSong.acf.sc_track_id}`} className="source soundcloud">
+
+                <img src={soundCloudImage} />
+              </a>
+              :
+              <div> </div>
+            }
+
 
             </div>
         )
