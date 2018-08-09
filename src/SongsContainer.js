@@ -112,6 +112,10 @@ class SongsContainer extends Component {
         // const disableBack = this.props.posts[0] && this.props.posts[0].id === this.props.activeSong.id
 
 
+
+        // Make this section look at `this.props.currentRequestLoading` to change display
+        // when the filters are searched for.
+
         return (
             <div className="songsContainer clearfix">
                 <HeroPosts
@@ -129,7 +133,6 @@ class SongsContainer extends Component {
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                         <button className="toggle-song previous" />
-
                           {songGrid}
                         <button className="toggle-song next" />
                       </div>}

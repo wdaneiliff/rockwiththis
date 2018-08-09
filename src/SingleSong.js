@@ -132,7 +132,7 @@ class SingleSong extends Component {
                         <p className="song-artist">{song.acf.artist_name}</p>
                     </div>
                     <div className="shareContainer">
-                      <ShareBox props={song.slug} songName={song.acf.song_name} artist={song.acf.artist_name} />
+                      <ShareBox song={song} />
                     </div>
                   </div>
                 </div>
