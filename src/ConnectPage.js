@@ -8,6 +8,8 @@ import { fetchFeaturedPosts } from './actions/featuredPosts'
 import { fetchFilters } from './actions/filters'
 import { Helmet } from "react-helmet";
 import Mailchimp from 'react-mailchimp-form'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -20,6 +22,16 @@ class ConnectPage extends Component {
     render() {
 
       const url = "https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2";
+
+      const songGrid = this.props.filteredPosts.slice(0,9).map((song, index) => {
+        return (
+            <div className="songContainer" key={index}>
+                <Link className="songImageLink" to={`/songs/${song.id}`}>
+                    <img alt="songImage" className="songImage" src={song.better_featured_image && song.better_featured_image.source_url} />
+                </Link>
+            </div>
+        )
+      })
 
 
         return (
@@ -57,6 +69,9 @@ class ConnectPage extends Component {
 
                               className='rwt-email-form'
                             />
+                            <div className="connectSongGrid">
+                            </div>
+
                     </div>
                 </div>
               </div>

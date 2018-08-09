@@ -3798,3 +3798,17 @@ a.nav-link.is-active {
   color: #fff !important;
   border: 0px solid #fff;
   border-bottom: 1px solid #fff !important; }
+
+form.rwt-email-form input {
+  height: 25px; }
+
+form.rwt-email-form button {
+  height: 30px;
+  border: 1px solid black;
+  width: 100%;
+  color: #fff;
+  background: #1a6ea9;
+  border: 1px solid #1a6ea9;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 10px; }
