@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink, Nav } from 'react-router-dom'
 import * as Scroll from 'react-scroll'
 
 class Header extends Component {
@@ -20,14 +20,14 @@ class Header extends Component {
         return (
             <div className={`headerContainer shrunk `}>
               <div className="content-wrapper">
-                <a className="nav-link left" onClick={this.handleDiscoverClick}>Discover</a>
+                <NavLink className="nav-link left" to="/#discoverySectionScroll" activeClassName='is-active' onClick={this.handleDiscoverClick}>Discover</NavLink>
                 <Link id="headerLogo" to="/">
                   <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />
                 </Link>
                 <Link id="headerLogoMobile" to="/">
                   <img src="http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/RWT-head.png" />
                 </Link>
-                <a className="nav-link right" href="/connect">Connect</a>
+                <NavLink className="nav-link right" to="/connect" activeClassName='is-active' >Connect</NavLink>
               </div>
             </div>
         )

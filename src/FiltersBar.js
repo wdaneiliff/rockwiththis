@@ -125,7 +125,7 @@ class FiltersBar extends Component {
               className={`tag ${filter.selected ? 'selected' : ''}`}
               onClick={() => this.props.actions.toggleFilter(filter, i)}
             >
-              {filter.name}
+              #{filter.name}
             </button>
           )
         })
@@ -154,6 +154,7 @@ class FiltersBar extends Component {
 
               <div className="selectedFilters">
                 {selectedFilters}
+                <button className={`clearButton ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.clearFilters}>Clear All</button>
               </div>
 
               <button onClick={this.showToggleViewsDropdown} className="toggle-views-button ">Toggle Views <i class="im im-angle-down"></i></button>

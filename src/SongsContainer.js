@@ -118,6 +118,7 @@ class SongsContainer extends Component {
                     {...this.props}
                     heroPosts={heroPosts}
                 />
+
               <div id="discover" className="discovery-section">
                 <Element name='discoverySectionScroll'>
                   <FiltersBar {...this.props} />
