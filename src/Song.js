@@ -111,7 +111,7 @@ class Song extends Component {
                   <span className="postDate "><Moment format="d/M/YY" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
                   </p>
                   {this.renderTags(song)}
-                  <ShareBox song={song.slug} />
+                  <ShareBox song={song} />
                   <a target="_blank" href={song.acf.spotify_link}  className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
 
 

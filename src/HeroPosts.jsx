@@ -26,23 +26,7 @@ class HeroPosts extends React.Component {
     }
 
     render() {
-        const placeholderSong = {
-            better_featured_image: 'string',
-            date: moment(),
-            acf: {
-                song_name: 'Loading (feat. Slow App)',
-                artist_name: 'React'
-            },
-            content: {
-              rendered: 'Loading Description...'
-            },
-            _embedded: {
-              'wp:term': [
-                {name: "tag"},
-                {name:"tag"}
-              ]
-            }
-        }
+        const { heroPosts } = this.props
 
         const trackDisplay = (post, i, isSmall) => {
             const image = post.better_featured_image.source_url
@@ -78,18 +62,23 @@ class HeroPosts extends React.Component {
                   </div>
             )
         }
-        const { heroPosts } = this.props || [placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong,placeholderSong]
-        const featuredPostArg = heroPosts[0] || placeholderSong
-        const featuredPost = trackDisplay(featuredPostArg, false)
+        const featuredPostArg = heroPosts.length > 0 && heroPosts[0]
+        const featuredPost = featuredPostArg && trackDisplay(featuredPostArg, false)
         const otherPosts = heroPosts.slice(1).map((post, i) => trackDisplay(post, i, true))
 
         return (
             <div>
                 <div id="hero-post" className='hero-posts' ref={node => this.postsWrapper = node}>
-                  {featuredPost}
-                  <div className='previous-week'>
-                      {otherPosts}
-                  </div>
+                  {heroPosts.length > 0 ?
+                    <Fragment>
+                      {featuredPost}
+                      <div className='previous-week'>
+                          {otherPosts}
+                      </div>
+                    </Fragment>
+                    :
+                    <HeroPostsPlaceholder/>
+                  }
                 </div>
             </div>
         )
