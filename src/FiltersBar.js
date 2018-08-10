@@ -24,6 +24,7 @@ class FiltersBar extends Component {
         this.closeToggleViewsDropdown = this.closeToggleViewsDropdown.bind(this);
         this.showSubGenreFilters = this.showSubGenreFilters.bind(this);
         this.closeSubGenreFilters = this.closeSubGenreFilters.bind(this);
+        this.closeSubGenreFiltersX = this.closeSubGenreFiltersX.bind(this);
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
         this.changeGridView = this.changeGridView.bind(this)
         this.fetchCurrentRequest = this.fetchCurrentRequest.bind(this)
@@ -42,6 +43,7 @@ class FiltersBar extends Component {
         this.setState({
           showSubGenreFilters: false,
           showToggleViewsDropdown: false,
+          fixedFilterBar: true,
           filtersToShow: this.props.selectedFilters,
           loading: false,
         }, () => {
@@ -80,7 +82,20 @@ class FiltersBar extends Component {
     }
 
     showSubGenreFilters(event) {
+
+      const scrollHeight = document.getElementById('hero-post').clientHeight + 45
+
+      
+
       event.preventDefault();
+
+      // Scroll.scroller.scrollTo('discoverySectionScroll', {
+      //   duration: 500,
+      //   smooth: true
+      // })
+
+
+
       this.setState({
         showSubGenreFilters: true,
       });
@@ -94,6 +109,13 @@ class FiltersBar extends Component {
           document.removeEventListener('click', this.closeSubGenreFilters);
         });
       }
+    }
+
+    closeSubGenreFiltersX() {
+      this.setState({ showSubGenreFilters: false }, () => {
+        document.removeEventListener('click', this.closeSubGenreFilters);
+      });
+
     }
 
     showToggleViewsDropdown(event) {
@@ -157,9 +179,10 @@ class FiltersBar extends Component {
               </div>
 
               <div className="selectedFilters">
+              {this.state.filtersToShow.length > 0 &&
+                <button className={`clearButton ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.clearFilters}>Clear All ({this.state.filtersToShow.length})</button>}
                 {selectedFilters}
-                {this.state.filtersToShow.length > 0 &&
-                  <button className={`clearButton ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.clearFilters}>Clear All</button>}
+
               </div>
 
               <button onClick={this.showToggleViewsDropdown} className="toggle-views-button ">Toggle Views <i class="im im-angle-down"></i></button>
@@ -175,6 +198,7 @@ class FiltersBar extends Component {
                     this.SubgenreFiltersDropDown = element;
                   }}
                   >
+                  <button onClick={this.closeSubGenreFiltersX} className="closeDropdown"><i class="im im-x-mark"></i></button>
                   {filterTags}
                   <div className='bottom-buttons'>
                     <button className={`large-bottom tag ${disableClearAll ? 'disabled' : ''}`} disabled={disableClearAll} onClick={this.clearFilters}>Clear All</button>
@@ -200,18 +224,9 @@ class FiltersBar extends Component {
 
 
 
-                    <button className="mobile" name='expanded' onClick={this.changeGridView}>
-                    <img src={full} />
-                    <span>Full</span>
-                    </button>
-
-                    <button className="mobile" name='snapshot' onClick={this.changeGridView}>
-                    <img src={snapshot} />
-                    <span>Snapshot</span></button>
-                    <button className="mobile" name='fullGrid' onClick={this.changeGridView}>
-                    <img src={grid} />
-                    <span>Grid</span>
-                    </button>
+                    <button className="mobile" name='expanded' onClick={this.changeGridView}>Full</button>
+                    <button className="mobile" name='snapshot' onClick={this.changeGridView}>Snap</button>
+                    <button className="mobile" name='fullGrid' onClick={this.changeGridView}>Grid</button>
                   </div>
                 )
                 : (

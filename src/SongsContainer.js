@@ -124,11 +124,10 @@ class SongsContainer extends Component {
                 />
 
               <div id="discover" className="discovery-section">
-                <Element name='discoverySectionScroll'>
+                <Element >
                   <FiltersBar {...this.props} />
                 </Element>
                 <div id='discoverSongsWrapper' className='discover-songs-wrapper'>
-                  <Element name='scrollToDiscoveryTop' />
                   <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.state.disableScroll ? 'disableScroll' : ''} ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
@@ -137,6 +136,7 @@ class SongsContainer extends Component {
                         <button className="toggle-song next" />
                       </div>}
                     <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
+                    <div  className="discoverySectionScroll" name='discoverySectionScroll' />
                       {songList}
                     </div>
 

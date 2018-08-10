@@ -10,6 +10,10 @@ class Header extends Component {
     }
 
     handleDiscoverClick() {
+
+      const { match, location, history } = this.props
+
+      console.log(location)
       Scroll.scroller.scrollTo('discoverySectionScroll', {
         duration: 500,
         smooth: true
@@ -17,10 +21,12 @@ class Header extends Component {
     }
 
     render() {
+
         return (
             <div className={`headerContainer shrunk `}>
               <div className="content-wrapper">
-                <NavLink className="nav-link left" to="/#discoverySectionScroll" activeClassName='is-active' onClick={this.handleDiscoverClick}>Discover</NavLink>
+              <NavLink className="nav-link left" to="/#discoverySectionScroll" activeClassName='is-active' onClick={this.handleDiscoverClick}>Discover</NavLink>
+
                 <Link id="headerLogo" to="/">
                   <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />
                 </Link>

@@ -1825,8 +1825,26 @@ margin: 10px;
       max-height: 0;
       overflow: hidden;
       transition: .2s ease all;
+
+      .closeDropdown {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+        transition: all .3s ease;
+
+        i.im.im-x-mark {
+            font-size: 20px;
+            color: #1a6ea9;
+        }
+      }
+
+        .closeDropdown:hover {
+          opacity: .8;
+        }
       .dropdown-internal {
         padding: 15px;
+
       }
       &.expand {
         max-height: 500px;
@@ -3739,7 +3757,7 @@ button {
     display: none;
   }
   .ToggleViewsDropDown .mobile {
-    display: block;
+    display: inline-block;
   }
 }
 
@@ -5611,7 +5629,7 @@ button.clearButton:hover {
     border: 1px solid #1a6ea9 !important;
     border-radius: 4px;
     padding: 10px;
-    color: #fff;
+    color: #fff !important;
     background: #1a6ea9;
     cursor: pointer;
 }
@@ -5791,4 +5809,111 @@ footer .songSourceContainer .source.soundcloud{
 
     }
   }
+}
+
+
+@media (max-width: 1000px)  and (min-width: 800px) {
+  .discovery-section .discovery-container.previewScrollLayout  {
+
+      .songList .songContainer {
+
+        .pauseButton, .playButton {
+            width: 45px;
+            height: 45px;
+        }
+
+
+          .postContent {
+
+            .postTags {
+                display: block;
+                margin: 0;
+                pointer-events: none;
+                margin-top: 5px;
+            }
+
+              .songInfo {
+                height: 50px !important;
+                padding-left: 10px !important;
+
+
+                .marquee-inner.artist {
+                    position: absolute;
+                    display: block;
+                    height: 20px;
+                    top: 25px;
+                }
+              }
+
+            p.metaInfo {
+              height: 60px;
+            }
+          }
+
+      }
+
+  }
+}
+
+
+
+
+
+@media (max-width: 800px) {
+  .ToggleViewsDropDown {
+      width: 100%;
+      left: 0;
+      right: 0;
+      max-width: calc(100vw - 30px) !important;
+
+     button.mobile {
+    display: inline-block;
+    width: 23% !important;
+    text-align: center !important;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+  }
+
+  .discovery-section .selectedFilters {
+    display: none !important;
+  }
+
+
+  .discovery-section .filters-bar .SubgenreFiltersDropDown .dropdown-internal {
+    padding: 15px;
+    height: calc(100vh - 190px);
+    max-height: 500px;
+}
+}
+
+.discovery-section .selectedFilters {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+    margin-top: 18px;
+    width: calc(100% - 300px);
+    overflow: hidden;
+    height: 40px !important;
+
+    button.clearButton {
+      border: 1px solid #1a6ea9 !important;
+      border-radius: 4px;
+      padding: 10px;
+      color: #1a6ea9;
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+    button.clearButton {
+      border: 1px solid #1a6ea9 !important;
+      border-radius: 4px;
+      padding: 10px;
+      color: #1a6ea9;
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+
+    .tag {
+      margin-top: 5px;
+    }
 }
