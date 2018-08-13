@@ -10,6 +10,7 @@ import ShareBox from './ShareBox'
 import FiltersBar from './FiltersBar'
 import LoadingComponent from './LoadingComponent'
 import FullSongPlaceHolder from './FullSongPlaceHolder'
+import SongGridPlaceholder from './SongGridPlaceholder'
 
 
 
@@ -136,7 +137,7 @@ class SongsContainer extends Component {
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                         <button className="toggle-song previous" />
-                          {songGrid}
+                          <SongGridPlaceholder />
                         <button className="toggle-song next" />
                       </div>}
                     <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
