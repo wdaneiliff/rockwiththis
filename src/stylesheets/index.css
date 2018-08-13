@@ -1172,9 +1172,7 @@ img.heroHoverGradient {
     .discovery-section .filters-bar .SubgenreFiltersDropDown .dropdown-internal {
       padding: 15px; }
     .discovery-section .filters-bar .SubgenreFiltersDropDown.expand {
-      max-height: none;
-      height: calc(100vh - 132px);
-      z-index: 8500; }
+      max-height: 500px; }
   .discovery-section .filters-bar button.toggle-views-button {
     display: inline-block;
     font-size: 12px;
@@ -1317,6 +1315,10 @@ img.heroHoverGradient {
     border-radius: 4px; }
 
 @media (max-width: 800px) {
+  .SubgenreFiltersDropDown.expand {
+    height: calc(100vh - 132px);
+    z-index: 8500;
+    max-height: none !important; }
   .discovery-section .songGrid {
     display: none; }
   .discovery-section .songList {
@@ -2269,12 +2271,14 @@ button {
     display: none; } }
 
 .ToggleViewsDropDown button {
-  display: block; }
+  display: block;
+  color: #1a6ea9; }
 
 .ToggleViewsDropDown button:hover {
   display: block;
-  text-decoration: underline;
-  cursor: pointer; }
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff; }
 
 @media (min-width: 1000px) {
   .discovery-container.previewScrollLayout {
@@ -4010,10 +4014,7 @@ footer .songSourceContainer .source.soundcloud {
   .discovery-section .selectedFilters {
     display: none !important; }
   .discovery-section .filters-bar .SubgenreFiltersDropDown .dropdown-internal {
-    padding: 15px;
-    height: calc(100vh - 132px);
-    max-height: none;
-    z-index: 8500; } }
+    padding: 15px; } }
 
 .discovery-section .selectedFilters {
   display: inline-block;
