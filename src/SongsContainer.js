@@ -137,7 +137,7 @@ class SongsContainer extends Component {
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                         <button className="toggle-song previous" />
-                          <SongGridPlaceholder />
+                          {songGrid}
                         <button className="toggle-song next" />
                       </div>}
                     <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
