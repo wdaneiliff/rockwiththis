@@ -9,6 +9,9 @@ import Song from './Song'
 import ShareBox from './ShareBox'
 import FiltersBar from './FiltersBar'
 import LoadingComponent from './LoadingComponent'
+import FullSongPlaceHolder from './FullSongPlaceHolder'
+
+
 
 class SongsContainer extends Component {
     constructor(props) {
@@ -16,7 +19,8 @@ class SongsContainer extends Component {
         this.state = {
           discoverFullSongIndex: 0,
           fixedFilterBar: false,
-          disableScroll: true
+          disableScroll: true,
+          loading: true
         }
 
         this.handleScroll = this.handleScroll.bind(this)
@@ -149,9 +153,12 @@ class SongsContainer extends Component {
 
                                     <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                               </button>
-                                    <Song
-                                        song={this.props.filteredPosts[discoverFullSongIndex]}
-                                    />
+
+                                  <Song
+                                      song={this.props.filteredPosts[discoverFullSongIndex]}
+                                  />
+
+
                                   <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
                                         <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                                   </button>
