@@ -21,7 +21,8 @@ class SongsContainer extends Component {
           discoverFullSongIndex: 0,
           fixedFilterBar: false,
           disableScroll: true,
-          loading: true
+          loading: true,
+          gridPage: 1
         }
 
         this.handleScroll = this.handleScroll.bind(this)
@@ -30,7 +31,7 @@ class SongsContainer extends Component {
         this.updateDiscoverFullSongIndex = this.updateDiscoverFullSongIndex.bind(this)
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
         this.enableDiscoverScroll = this.enableDiscoverScroll.bind(this)
-
+        this.navGrid = this.navGrid.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -57,6 +58,14 @@ class SongsContainer extends Component {
       if (!this.state.loadingMoreSongs) {
         this.props.actions.loadMoreSongs(callback)
       }
+    }
+
+    navGrid(e) {
+      const num = e ? this.state.gridPage + 1 : this.state.gridPage - 1
+      this.setState({
+        gridPage: num,
+      })
+      this.loadMoreSongs()
     }
 
     handleScroll(e) {
@@ -87,13 +96,38 @@ class SongsContainer extends Component {
         const scrollHeight = document.getElementById('hero-post').clientHeight + 45
         window.scrollY > scrollHeight ? this.setState({ disableScroll: false }) : ''
         window.scrollY < scrollHeight ? this.setState({ disableScroll: true }) : ''
-
     }
 
     render() {
         const { discoverFullSongIndex } = this.state
         const heroPosts = this.props.posts.slice(0,7)
-        const songGrid = this.props.filteredPosts.slice(0,16).map((song, index) => {
+        const songGrids = []
+        let individualGrid = []
+        this.props.filteredPosts.forEach((post, index) => {
+          individualGrid.push(post)
+          if (index > 0 && (index % 15 === 0)) {
+            songGrids.push(individualGrid)
+            individualGrid = []
+          }
+        })
+        console.log(songGrids)
+        const songGridsFull = songGrids.map(thisGrid => {
+          return thisGrid.map((song, index) => {
+            return (
+                <SongGrid
+                    {...this.props}
+                    index={index}
+                    activeDiscoverFullSong={discoverFullSongIndex === index}
+                    updateDiscoverFullSongIndex={this.updateDiscoverFullSongIndex}
+                    key={song.id}
+                    song={song}
+                />
+            )
+          })
+        })
+        console.log(songGridsFull)
+
+        const songGrid = this.props.filteredPosts.map((song, index) => {
           return (
               <SongGrid
                   {...this.props}
@@ -136,9 +170,24 @@ class SongsContainer extends Component {
                   <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.state.disableScroll ? 'disableScroll' : ''} ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
-                        <button className="toggle-song previous" />
-                          {songGrid}
-                        <button className="toggle-song next" />
+                          <div className='grid-container-wrapper'>
+                            {songGridsFull.map(grid => {
+                              return (
+                                <div className='grid-container'>
+                                  {grid}
+                                </div>
+                              )
+                            })}
+                          </div>
+                          <div className='song-grid-footer'>
+
+                            <button className='grid-arrow previous' onClick={this.navGrid}>
+                              <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                            </button>
+                            <button className='grid-arrow next' onClick={() => this.navGrid(true)}>
+                              <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                            </button>
+                          </div>
                       </div>}
                     <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
                     <div  className="discoverySectionScroll" name='discoverySectionScroll' />
