@@ -1609,7 +1609,8 @@ body {
   margin: 0px;
   align-items: center;
   justify-content: center;
-  margin: 0 20px; }
+  margin: 0 20px;
+  text-align: center; }
 
 #player-control-button-next {
   /* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png); */
@@ -3923,12 +3924,6 @@ footer .songSourceContainer {
   margin-right: 20px;
   position: absolute;
   right: 0; }
-  footer .songSourceContainer img {
-    border: 2px solid rgba(255, 255, 255, 0);
-    border-radius: 50%; }
-  footer .songSourceContainer img:hover {
-    border: 2px solid #fff;
-    border-radius: 50%; }
 
 @media (min-width: 650px) {
   footer .songSourceContainer {
@@ -3942,10 +3937,9 @@ footer .songSourceContainer .source.soundcloud {
   display: block;
   font-weight: 400;
   text-transform: uppercase; }
-  footer .songSourceContainer .source.soundcloud span {
-    font-size: 12px; }
-  footer .songSourceContainer .source.soundcloud .im {
-    font-size: 50px; }
+  footer .songSourceContainer .source.soundcloud svg {
+    fill: #ff4e04;
+    fill: #fff; }
 
 .songSourceContainer img {
   width: 40px;
@@ -3956,28 +3950,30 @@ footer .songSourceContainer .source.soundcloud {
     margin-right: 150px !important; } }
 
 @media (max-width: 650px) {
+  .player-info {
+    -webkit-box-flex: 1 !important;
+    -ms-flex: 1 !important;
+    flex: .85 !important;
+    padding-right: 0 !important;
+    margin-right: 18px !important; }
   .songSourceContainer img {
     width: 40px;
     margin-right: 0px; }
   footer .songSourceContainer {
     margin-right: 0px;
     position: absolute;
-    right: 0;
-    top: -65px;
-    padding: 5px; }
+    padding: 5px;
+    padding-top: 15px; }
     footer .songSourceContainer .source.soundcloud {
       color: #fd4f1f;
       text-align: center;
       display: inline-block;
       width: auto; }
-      footer .songSourceContainer .source.soundcloud img {
-        width: 40px !important;
-        height: 40px;
-        margin-right: 0px; }
-      footer .songSourceContainer .source.soundcloud span {
-        font-size: 12px;
-        display: none;
-        color: #fd4f1f !important; } }
+      footer .songSourceContainer .source.soundcloud svg {
+        fill: #ff4e04;
+        fill: #fff;
+        width: 30px !important;
+        height: 30px !important; } }
 
 @media (max-width: 1000px) and (min-width: 800px) {
   .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .pauseButton, .discovery-section .discovery-container.previewScrollLayout .songList .songContainer .playButton {

@@ -2428,7 +2428,9 @@ body {
   margin: 0px;
   align-items: center;
   justify-content: center;
-  margin: 0 20px; }
+  margin: 0 20px;
+  text-align: center;
+}
 
 #player-control-button-next {
   /* background-image: url(https://rockwiththis.com/wp-content/uploads/2017/12/next.png); */
@@ -5896,14 +5898,7 @@ footer .songSourceContainer {
   position: absolute;
   right: 0;
 
-  img {
-    border: 2px solid rgba(255,255,255,0);
-    border-radius: 50%;
-  }
-  img:hover {
-    border: 2px solid #fff;
-    border-radius: 50%;
-  }
+
 }
 
 @media (min-width: 650px) {
@@ -5922,13 +5917,11 @@ footer .songSourceContainer .source.soundcloud{
     text-transform: uppercase;
     // width: 75px;
 
-    span {
-      font-size: 12px;
+    svg {
+      fill: #ff4e04;
+      fill: #fff;
     }
 
-    .im {
-      font-size: 50px;
-    }
 }
 
 
@@ -5950,6 +5943,14 @@ footer .songSourceContainer .source.soundcloud{
 
 @media (max-width: 650px) {
 
+  .player-info {
+    -webkit-box-flex: 1 !important;
+    -ms-flex: 1 !important;
+    flex: .85 !important;
+    padding-right: 0 !important;
+    margin-right: 18px !important;
+}
+
   .songSourceContainer img {
     width: 40px;
     margin-right: 0px;
@@ -5957,9 +5958,9 @@ footer .songSourceContainer .source.soundcloud{
   footer .songSourceContainer {
     margin-right: 0px;
     position: absolute;
-    right: 0;
-    top: -65px;
     padding: 5px;
+    padding-top: 15px;
+
 
     .source.soundcloud{
         color: #fd4f1f;
@@ -5969,18 +5970,13 @@ footer .songSourceContainer .source.soundcloud{
         // svg {
         //   fill: #fd4f1f;
         // }
-        img {
-          width: 40px !important;
-          height: 40px;
-          margin-right: 0px;
-        }
+        svg {
+            fill: #ff4e04;
+            fill: #fff;
+            width: 30px !important;
+            height: 30px !important;
 
-        span {
-          font-size: 12px;
-          display: none;
-          color: #fd4f1f !important;
         }
-
 
     }
   }
