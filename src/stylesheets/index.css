@@ -3420,7 +3420,14 @@ ul.toggleContainer {
 
 @media (min-width: 800px) {
   .singleSongContainer .metaInfo {
-    margin-top: 15px !important; } }
+    margin-top: 15px !important; }
+  .singleSongContainer .songInfo {
+    padding-bottom: 10px; }
+  .singleSongContainer .bottomContentContainer {
+    max-height: calc(100vh - 355px);
+    overflow-y: scroll; }
+  .postContent {
+    padding-bottom: 0 !important; } }
 
 @media (min-width: 800px) {
   .marquee-inner.songtitle {
@@ -3931,15 +3938,19 @@ footer .songSourceContainer {
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%); } }
 
-footer .songSourceContainer .source.soundcloud {
+footer .songSourceContainer .source.soundcloud, footer .songSourceContainer .source.youtube {
   color: #fff;
   text-align: center;
   display: block;
   font-weight: 400;
   text-transform: uppercase; }
-  footer .songSourceContainer .source.soundcloud svg {
-    fill: #ff4e04;
-    fill: #fff; }
+  footer .songSourceContainer .source.soundcloud svg, footer .songSourceContainer .source.youtube svg {
+    fill: #f5f3f3; }
+
+footer .songSourceContainer .source.youtube svg {
+  fill: #f5f3f3;
+  width: 35px;
+  height: 35px; }
 
 .songSourceContainer img {
   width: 40px;
@@ -3964,14 +3975,14 @@ footer .songSourceContainer .source.soundcloud {
     position: absolute;
     padding: 5px;
     padding-top: 15px; }
-    footer .songSourceContainer .source.soundcloud {
+    footer .songSourceContainer .source.soundcloud, footer .songSourceContainer .source.youtube {
       color: #fd4f1f;
       text-align: center;
       display: inline-block;
       width: auto; }
-      footer .songSourceContainer .source.soundcloud svg {
+      footer .songSourceContainer .source.soundcloud svg, footer .songSourceContainer .source.youtube svg {
         fill: #ff4e04;
-        fill: #fff;
+        fill: #f5f3f3;
         width: 30px !important;
         height: 30px !important; } }
 
@@ -4036,3 +4047,14 @@ footer .songSourceContainer .source.soundcloud {
     margin-right: 10px; }
   .discovery-section .selectedFilters .tag {
     margin-top: 5px; }
+
+.bottomContentContainer {
+  max-height: calc(100vh - 350px);
+  overflow-wrap: inherit;
+  text-overflow: ellipsis;
+  overflow-y: scroll;
+  padding-bottom: 0 !important;
+  pointer-events: all; }
+
+.disableScroll .bottomContentContainer {
+  pointer-events: none; }

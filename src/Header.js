@@ -18,6 +18,8 @@ class Header extends Component {
         duration: 500,
         smooth: true
       })
+      debugger
+
     }
 
     render() {
@@ -25,7 +27,14 @@ class Header extends Component {
         return (
             <div className={`headerContainer shrunk `}>
               <div className="content-wrapper">
-              <NavLink className="nav-link left" to="/#discoverySectionScroll" activeClassName='is-active' onClick={this.handleDiscoverClick}>Discover</NavLink>
+              {   location.pathname == "/" ?
+
+                <NavLink className="nav-link left" to="/#discoverySectionScroll" activeClassName='is-active' onClick={this.handleDiscoverClick}>Discover</NavLink>
+                :
+                <NavLink className="nav-link left" to="/#discoverySectionScroll" activeClassName='is-active'>HOME</NavLink>
+
+
+              }
 
                 <Link id="headerLogo" to="/">
                   <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />

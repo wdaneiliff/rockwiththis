@@ -5084,6 +5084,20 @@ ul.toggleContainer {
   .singleSongContainer .metaInfo {
     margin-top: 15px !important;
 }
+
+.singleSongContainer {
+  .songInfo {
+    padding-bottom: 10px;
+  }
+  .bottomContentContainer {
+    max-height: calc(100vh - 355px);
+    overflow-y: scroll;
+  }
+}
+
+.postContent {
+    padding-bottom: 0 !important;
+}
 }
 
 
@@ -5909,7 +5923,7 @@ footer .songSourceContainer {
   }
 }
 
-footer .songSourceContainer .source.soundcloud{
+footer .songSourceContainer .source.soundcloud, footer .songSourceContainer .source.youtube{
     color: #fff;
     text-align: center;
     display: block;
@@ -5918,8 +5932,17 @@ footer .songSourceContainer .source.soundcloud{
     // width: 75px;
 
     svg {
-      fill: #ff4e04;
-      fill: #fff;
+      // fill: #ff4e04;
+      fill: #f5f3f3;
+    }
+
+}
+footer .songSourceContainer .source.youtube {
+    svg {
+      // fill: #ff4e04;
+      fill: #f5f3f3;
+      width: 35px;
+      height:35px;
     }
 
 }
@@ -5962,7 +5985,7 @@ footer .songSourceContainer .source.soundcloud{
     padding-top: 15px;
 
 
-    .source.soundcloud{
+    .source.soundcloud, .source.youtube{
         color: #fd4f1f;
         text-align: center;
         display: inline-block;
@@ -5972,7 +5995,7 @@ footer .songSourceContainer .source.soundcloud{
         // }
         svg {
             fill: #ff4e04;
-            fill: #fff;
+            fill: #f5f3f3;
             width: 30px !important;
             height: 30px !important;
 
@@ -6086,4 +6109,20 @@ footer .songSourceContainer .source.soundcloud{
     .tag {
       margin-top: 5px;
     }
+}
+
+
+
+// DISCOVER FULL SONG SCROLL CSS
+
+.bottomContentContainer {
+    max-height: calc(100vh - 350px );
+    overflow-wrap: inherit;
+    text-overflow: ellipsis;
+    overflow-y: scroll;
+    padding-bottom: 0 !important;
+    pointer-events: all;
+}
+.disableScroll .bottomContentContainer {
+    pointer-events: none;
 }
