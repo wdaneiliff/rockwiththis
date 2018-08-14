@@ -1831,29 +1831,26 @@ a.spotifyLink {
     margin: 0 auto;
     overflow: auto; }
     .discovery-container .songGrid {
-      width: calc( 40% - 35px);
+      width: calc(40% - 35px);
       display: inline-block;
       max-height: 674px;
       padding: 0px;
       display: inline-block;
       vertical-align: top;
-      padding-left: 35px;
-      padding-top: 20px;
-      padding-bottom: 35px;
+      margin-left: 35px;
+      margin-top: 20px;
       position: relative;
       z-index: 3; }
       .discovery-container .songGrid button.toggle-song {
         display: none; }
-      .discovery-container .songGrid button.toggle-song.previous {
-        top: -20px;
-        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg); }
-      .discovery-container .songGrid button.toggle-song.next {
-        bottom: 0px;
-        background-image: url(http://www.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png);
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg); }
+      .discovery-container .songGrid .grid-container-wrapper {
+        height: calc(40vw - 30px);
+        overflow: scroll;
+        white-space: nowrap; }
+      .discovery-container .songGrid .grid-container {
+        position: relative;
+        white-space: normal;
+        display: inline-block; }
       .discovery-container .songGrid .songContainer {
         width: calc(25% - 2px);
         display: inline-block;
@@ -1861,6 +1858,19 @@ a.spotifyLink {
         margin-top: -3px;
         cursor: pointer;
         border: 1px solid #fff !important; }
+      .discovery-container .songGrid .song-grid-footer .grid-arrow {
+        height: 20px;
+        opacity: .5;
+        transition: .2s ease all; }
+        .discovery-container .songGrid .song-grid-footer .grid-arrow img {
+          height: 100%; }
+        .discovery-container .songGrid .song-grid-footer .grid-arrow.next {
+          right: 0; }
+        .discovery-container .songGrid .song-grid-footer .grid-arrow.previous {
+          transform: rotate(180deg); }
+        .discovery-container .songGrid .song-grid-footer .grid-arrow:hover {
+          opacity: 1;
+          cursor: pointer; }
     .discovery-container .discover-full-song {
       width: calc(52% - 0px);
       display: inline-block;
