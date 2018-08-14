@@ -6128,15 +6128,16 @@ footer .songSourceContainer .source.youtube {
 
 
 // DISCOVER FULL SONG SCROLL CSS
-
-.bottomContentContainer {
-    max-height: calc(100vh - 350px );
-    overflow-wrap: inherit;
-    text-overflow: ellipsis;
-    overflow-y: scroll;
-    padding-bottom: 0 !important;
-    pointer-events: all;
-}
-.disableScroll .bottomContentContainer {
-    pointer-events: none;
+@media (min-width: 800px) {
+  .bottomContentContainer {
+      max-height: calc(100vh - 350px );
+      overflow-wrap: inherit;
+      text-overflow: ellipsis;
+      overflow-y: scroll;
+      padding-bottom: 0 !important;
+      pointer-events: all;
+  }
+  .disableScroll .bottomContentContainer {
+      pointer-events: none;
+  }
 }
