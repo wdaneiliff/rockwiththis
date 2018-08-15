@@ -125,6 +125,17 @@ body {
   background: #fff;
 }
 
+.carousel.carousel-slider {
+  padding: 0 30px;
+  .slide {
+    background: transparent;
+    padding: 0 2px;
+  }
+  .carousel .control-next.control-arrow:before {
+
+  }
+}
+
 .socialLinks {
     background: #d8d8d8;
     height: 45px;
@@ -266,7 +277,6 @@ p {
 
 
 // DESKTOP HOME HERO
-
 
     img.heroHoverGradient {
       position: absolute !important;
@@ -2754,9 +2764,10 @@ a.spotifyLink {
       width: calc(52% - 0px);
       display: inline-block;
       height: auto;
-      padding-left: 4%;
-      padding-right: 4%;
+      // padding-left: 4%;
+      // padding-right: 4%;
       margin: 0 auto;
+      margin-left: 20px;
       position: relative;
           padding-top: 20px;
           padding-bottom: 35px;

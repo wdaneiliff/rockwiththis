@@ -77,6 +77,12 @@ body {
 .songsContainer {
   background: #fff; }
 
+.carousel.carousel-slider {
+  padding: 0 30px; }
+  .carousel.carousel-slider .slide {
+    background: transparent;
+    padding: 0 2px; }
+
 .socialLinks {
   background: #d8d8d8;
   height: 45px;
@@ -1875,9 +1881,8 @@ a.spotifyLink {
       width: calc(52% - 0px);
       display: inline-block;
       height: auto;
-      padding-left: 4%;
-      padding-right: 4%;
       margin: 0 auto;
+      margin-left: 20px;
       position: relative;
       padding-top: 20px;
       padding-bottom: 35px; }
