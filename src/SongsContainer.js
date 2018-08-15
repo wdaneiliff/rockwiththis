@@ -204,42 +204,49 @@ class SongsContainer extends Component {
 
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="discover-full-song">
-                        <button type='button' class='control-arrow-control-next' />
-                        {this.props.filteredPosts[discoverFullSongIndex] &&
-                            <Carousel
-                              showThumbs={false}
-                              showStatus={false}
-                              selectedItem={discoverFullSongIndex}
-                              onChange={this.handleCarousel}
-                              ref={(e) => this.carousel = e}
-                            >
-                                {
-                                  this.props.filteredPosts.map(post => {
-                                    return (
-                                      <div>
-                                        <Song
-                                            song={post}
-                                        />
-                                      </div>
-                                    )
-                                  })
-                                }
-
-
-                            </Carousel>
-                        }
+                        <button
+                        className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
+                            <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                        </button>
+                        <div className='carousel-wrapper'>
+                          {this.props.filteredPosts[discoverFullSongIndex] &&
+                              <Carousel
+                                showThumbs={false}
+                                showStatus={false}
+                                showArrows={false}
+                                selectedItem={discoverFullSongIndex}
+                                ref={(e) => this.carousel = e}
+                              >
+                                  {
+                                    this.props.filteredPosts.map(post => {
+                                      return (
+                                        <div>
+                                          <Song
+                                              song={post}
+                                          />
+                                        </div>
+                                      )
+                                    })
+                                  }
+                              </Carousel>
+                          }
                         </div>
-                      }
-                      {this.state.loadingMoreSongs && !this.state.noMorePosts &&
-                          <div className='loading-bottom'>
-                              <LoadingComponent />
-                          </div>
-                      }
-                      {this.state.noMorePosts &&
-                          <div className='loading-bottom'>
-                              <span>No more posts to load.</span>
-                          </div>
-                      }
+                        <button
+                        className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
+                            <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                        </button>
+                      </div>
+                    }
+                    {this.state.loadingMoreSongs && !this.state.noMorePosts &&
+                        <div className='loading-bottom'>
+                            <LoadingComponent />
+                        </div>
+                    }
+                    {this.state.noMorePosts &&
+                        <div className='loading-bottom'>
+                            <span>No more posts to load.</span>
+                        </div>
+                    }
                   </div>
                 </div>
               </div>
