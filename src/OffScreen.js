@@ -40,7 +40,7 @@ class OffScreen extends React.Component {
 
     render() {
         const activeSong = this.props.activeSong
-        const url = activeSong.acf.sc_track_id ? `https%3A//api.soundcloud.com/tracks/${activeSong.acf.sc_track_id}` : ''
+        const url = activeSong.acf.sc_track_id ? `https%3A//api.soundcloud.com/tracks/${activeSong.acf.sc_track_id}` : activeSong.acf.youtube_link
         const setSongDuration = (ref) => {
           this.props.actions.setSongDuration(ref.getDuration())
         }
@@ -50,7 +50,7 @@ class OffScreen extends React.Component {
                     playing={this.props.isPlaying}
                     onReady={setSongDuration}
                     onProgress={this.props.actions.setSongProgress}
-                    onEnded={this.props.changeSong}
+                    onEnded={this.props.changeSongOnEnd}
                     url={url}
                     ref={(e) => {
                       this.player = e;

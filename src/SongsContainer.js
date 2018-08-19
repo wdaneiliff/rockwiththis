@@ -179,13 +179,15 @@ class SongsContainer extends Component {
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                           <div className='grid-container-wrapper'>
-                            {songGridsFull.map(grid => {
-                              return (
-                                <div className='grid-container'>
-                                  {grid}
-                                </div>
-                              )
-                            })}
+                            <Carousel showThumbs={false}>
+                              {songGridsFull.map(grid => {
+                                return (
+                                  <div className='grid-container'>
+                                    {grid}
+                                  </div>
+                                )
+                              })}
+                            </Carousel>
                           </div>
                           <div className='song-grid-footer'>
 

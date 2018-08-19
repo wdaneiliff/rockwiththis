@@ -20,6 +20,7 @@ class MainPlayer extends Component {
 
         this.renderButtons = this.renderButtons.bind(this)
         this.changeSong = this.changeSong.bind(this)
+        this.changeSongOnEnd = this.changeSongOnEnd.bind(this)
         this.onChangeSlider = this.onChangeSlider.bind(this)
         this.updateStorePlayPause = this.updateStorePlayPause.bind(this)
     }
@@ -39,6 +40,16 @@ class MainPlayer extends Component {
                 this.props.actions.toggleSong(arr[queuePosition])
             }
         })
+    }
+
+    changeSongOnEnd() {
+      // this.props.actions.setSongDuration(0)
+      this.props.posts.forEach((post, i, arr) => {
+          if (post.id === this.props.activeSong.id) {
+              const queuePosition = i + 1
+              this.props.actions.toggleSong(arr[queuePosition])
+          }
+      })
     }
 
     renderInfo() {
@@ -161,7 +172,7 @@ class MainPlayer extends Component {
                 </div>
                 <OffScreen
                   {...this.props}
-                  changeSong={() => this.changeSong(true)}
+                  changeSongOnEnd={this.changeSongOnEnd}
                   ref={(e) => {
                     this.offScreen = e;
                   }} />

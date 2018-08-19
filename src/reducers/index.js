@@ -94,6 +94,7 @@ const appReducers = handleActions({
   },
   'app/TOGGLE_SONG': (state, action) => {
     return update(state, {
+      activeSongDuration: { $set: { played: 0 } },
       activeSong: { $set: action.payload }
     })
   },
