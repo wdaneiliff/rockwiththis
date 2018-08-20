@@ -11,7 +11,8 @@ import FiltersBar from './FiltersBar'
 import LoadingComponent from './LoadingComponent'
 import FullSongPlaceHolder from './FullSongPlaceHolder'
 import SongGridPlaceholder from './SongGridPlaceholder'
-
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 class SongsContainer extends Component {
@@ -32,6 +33,7 @@ class SongsContainer extends Component {
         this.fixedFiltersBar = this.fixedFiltersBar.bind(this)
         this.enableDiscoverScroll = this.enableDiscoverScroll.bind(this)
         this.navGrid = this.navGrid.bind(this)
+        this.handleCarousel = this.handleCarousel.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -66,6 +68,14 @@ class SongsContainer extends Component {
         gridPage: num,
       })
       this.loadMoreSongs()
+    }
+
+    handleCarousel() {
+      const things = this.carousel
+      console.log(things)
+      this.setState({
+        discoverFullSongIndex: this.carousel.state.selectedItem
+      })
     }
 
     handleScroll(e) {
@@ -117,7 +127,7 @@ class SongsContainer extends Component {
                 <SongGrid
                     {...this.props}
                     index={index}
-                    activeDiscoverFullSong={discoverFullSongIndex === index}
+                    activeDiscoverFullSong={this.state.discoverFullSongIndex === index}
                     updateDiscoverFullSongIndex={this.updateDiscoverFullSongIndex}
                     key={song.id}
                     song={song}
@@ -148,10 +158,8 @@ class SongsContainer extends Component {
             />
           )
         })
+
         // const disableBack = this.props.posts[0] && this.props.posts[0].id === this.props.activeSong.id
-
-
-
         // Make this section look at `this.props.currentRequestLoading` to change display
         // when the filters are searched for.
 
@@ -171,13 +179,15 @@ class SongsContainer extends Component {
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                           <div className='grid-container-wrapper'>
-                            {songGridsFull.map(grid => {
-                              return (
-                                <div className='grid-container'>
-                                  {grid}
-                                </div>
-                              )
-                            })}
+                            <Carousel showThumbs={false}>
+                              {songGridsFull.map(grid => {
+                                return (
+                                  <div className='grid-container'>
+                                    {grid}
+                                  </div>
+                                )
+                              })}
+                            </Carousel>
                           </div>
                           <div className='song-grid-footer'>
 
@@ -196,36 +206,49 @@ class SongsContainer extends Component {
 
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="discover-full-song">
-                        {this.props.filteredPosts[discoverFullSongIndex] &&
-                            <Fragment>
-                              <button
-                              className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
-
-                                    <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
-                              </button>
-
-                                  <Song
-                                      song={this.props.filteredPosts[discoverFullSongIndex]}
-                                  />
-
-
-                                  <button className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
-                                        <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
-                                  </button>
-                            </Fragment>
-                        }
+                        <button
+                        className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
+                            <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                        </button>
+                        <div className='carousel-wrapper'>
+                          {this.props.filteredPosts[discoverFullSongIndex] &&
+                              <Carousel
+                                showThumbs={false}
+                                showStatus={false}
+                                showArrows={false}
+                                selectedItem={discoverFullSongIndex}
+                                ref={(e) => this.carousel = e}
+                              >
+                                  {
+                                    this.props.filteredPosts.map(post => {
+                                      return (
+                                        <div>
+                                          <Song
+                                              song={post}
+                                          />
+                                        </div>
+                                      )
+                                    })
+                                  }
+                              </Carousel>
+                          }
                         </div>
-                      }
-                      {this.state.loadingMoreSongs && !this.state.noMorePosts &&
-                          <div className='loading-bottom'>
-                              <LoadingComponent />
-                          </div>
-                      }
-                      {this.state.noMorePosts &&
-                          <div className='loading-bottom'>
-                              <span>No more posts to load.</span>
-                          </div>
-                      }
+                        <button
+                        className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
+                            <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                        </button>
+                      </div>
+                    }
+                    {this.state.loadingMoreSongs && !this.state.noMorePosts &&
+                        <div className='loading-bottom'>
+                            <LoadingComponent />
+                        </div>
+                    }
+                    {this.state.noMorePosts &&
+                        <div className='loading-bottom'>
+                            <span>No more posts to load.</span>
+                        </div>
+                    }
                   </div>
                 </div>
               </div>

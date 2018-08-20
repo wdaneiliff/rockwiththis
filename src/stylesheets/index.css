@@ -77,6 +77,14 @@ body {
 .songsContainer {
   background: #fff; }
 
+.carousel-wrapper {
+  margin-left: 30px;
+  margin-right: 30px; }
+
+.carousel.carousel-slider .slide {
+  background: transparent;
+  padding: 0 2px; }
+
 .socialLinks {
   background: #d8d8d8;
   height: 45px;
@@ -1873,14 +1881,13 @@ a.spotifyLink {
           opacity: 1;
           cursor: pointer; }
     .discovery-container .discover-full-song {
-      width: calc(52% - 0px);
+      width: calc(56% - 0px);
       display: inline-block;
       height: auto;
-      padding-left: 4%;
-      padding-right: 4%;
       margin: 0 auto;
+      margin-left: 30px;
       position: relative;
-      padding-top: 20px;
+      margin-top: 20px;
       padding-bottom: 35px; }
       .discovery-container .discover-full-song .songContainer {
         height: auto;
@@ -1915,51 +1922,11 @@ a.spotifyLink {
         .discovery-container .discover-full-song button.toggle-song img {
           top: 50%;
           height: 30px; }
-      .discovery-container .discover-full-song button.toggle-song.previous {
-        left: 40px; }
-        .discovery-container .discover-full-song button.toggle-song.previous img {
-          transform: rotate(180deg);
-          transform: rotate(180deg); }
+      .discovery-container .discover-full-song button.toggle-song.previous img {
+        transform: rotate(180deg);
+        transform: rotate(180deg); }
       .discovery-container .discover-full-song button.toggle-song.next {
-        right: 40px; } }
-    @media (min-width: 800px) and (max-width: 1500px) {
-      .discovery-container .discover-full-song button.toggle-song {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        max-height: 674px;
-        width: 30px;
-        background-size: contain; }
-        .discovery-container .discover-full-song button.toggle-song img {
-          top: 50%;
-          height: 20px; }
-      .discovery-container .discover-full-song button.toggle-song.previous {
-        left: 10px; }
-        .discovery-container .discover-full-song button.toggle-song.previous img {
-          transform: rotate(180deg);
-          transform: rotate(180deg); }
-      .discovery-container .discover-full-song button.toggle-song.next {
-        right: 10px; } }
-    @media (min-width: 800px) and (max-width: 1150px) {
-      .discovery-container .discover-full-song button.toggle-song {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        max-height: 674px;
-        width: 30px;
-        background-size: contain; }
-        .discovery-container .discover-full-song button.toggle-song img {
-          top: 50%;
-          height: 20px; }
-      .discovery-container .discover-full-song button.toggle-song.previous {
-        left: 0px; }
-        .discovery-container .discover-full-song button.toggle-song.previous img {
-          transform: rotate(180deg);
-          transform: rotate(180deg); }
-      .discovery-container .discover-full-song button.toggle-song.next {
-        right: 5px; } }
-
-@media (min-width: 800px) {
+        right: 0; }
       .discovery-container .discover-full-song .ShareBox {
         display: block;
         width: 70%;

@@ -125,6 +125,17 @@ body {
   background: #fff;
 }
 
+.carousel-wrapper {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.carousel.carousel-slider {
+  .slide {
+    background: transparent;
+    padding: 0 2px;
+  }
+}
+
 .socialLinks {
     background: #d8d8d8;
     height: 45px;
@@ -266,7 +277,6 @@ p {
 
 
 // DESKTOP HOME HERO
-
 
     img.heroHoverGradient {
       position: absolute !important;
@@ -2753,47 +2763,43 @@ a.spotifyLink {
     }
 
     .discover-full-song {
-      width: calc(52% - 0px);
+      width: calc(56% - 0px);
       display: inline-block;
       height: auto;
-      padding-left: 4%;
-      padding-right: 4%;
       margin: 0 auto;
+      margin-left: 30px;
       position: relative;
-          padding-top: 20px;
-          padding-bottom: 35px;
-          .songContainer {
-              height: auto;
-              margin: 0 auto;
-              display: block;
-              max-width: 750px;
-
-              br {
-                height: 1px !important;
-                display: block;
-                margin: -4px 0 !important;
-                content: '';
-            }
-
-            .songDescription {
-                font-size: 16px;
-                line-height: 28px;
-                font-weight: 100 !important;
-                display: block;
-                // float: left;
-                text-align: left;
-                margin-top: 10px;
-            }
-          }
-
-          .pauseButton {
-              max-width: 60px !important;
-
-          }
-
-        button.toggle-song:hover {
-          opacity: 1;
+      margin-top: 20px;
+      padding-bottom: 35px;
+      .songContainer {
+          height: auto;
+          margin: 0 auto;
+          display: block;
+          max-width: 750px;
+          br {
+            height: 1px !important;
+            display: block;
+            margin: -4px 0 !important;
+            content: '';
         }
+        .songDescription {
+            font-size: 16px;
+            line-height: 28px;
+            font-weight: 100 !important;
+            display: block;
+            // float: left;
+            text-align: left;
+            margin-top: 10px;
+        }
+      }
+
+      .pauseButton {
+          max-width: 60px !important;
+      }
+
+      button.toggle-song:hover {
+        opacity: 1;
+      }
 
       button.toggle-song {
         cursor: pointer !important;
@@ -2810,63 +2816,13 @@ a.spotifyLink {
         }
       }
       button.toggle-song.previous {
-        left: 40px;
         img {
           transform:rotate(180deg);
           transform:rotate(180deg);
         }
     }
       button.toggle-song.next {
-        right: 40px;
-    }
-
-    @media(max-width: 1500px) {
-      button.toggle-song {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        max-height: 674px;
-        width: 30px;
-        background-size: contain;
-        img {
-          top: 50%;
-          height: 20px;
-        }
-      }
-      button.toggle-song.previous {
-        left: 10px;
-        img {
-          transform:rotate(180deg);
-          transform:rotate(180deg);
-        }
-    }
-      button.toggle-song.next {
-        right: 10px;
-    }
-    }
-    @media(max-width: 1150px) {
-      button.toggle-song {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        max-height: 674px;
-        width: 30px;
-        background-size: contain;
-        img {
-          top: 50%;
-          height: 20px;
-        }
-      }
-      button.toggle-song.previous {
-        left: 0px;
-        img {
-          transform:rotate(180deg);
-          transform:rotate(180deg);
-        }
-    }
-      button.toggle-song.next {
-        right: 5px;
-    }
+        right: 0;
     }
 
       .ShareBox {
