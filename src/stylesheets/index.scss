@@ -6136,6 +6136,10 @@ footer .songSourceContainer .source.youtube {
       overflow-y: scroll;
       padding-bottom: 0 !important;
       pointer-events: all;
+
+      .songDescription {
+        padding-bottom: 25px;
+      }
   }
   .disableScroll .bottomContentContainer {
       pointer-events: none;

@@ -9,6 +9,7 @@ import { fetchFilters } from './actions/filters'
 import { Helmet } from "react-helmet";
 import Mailchimp from 'react-mailchimp-form'
 import { Link } from 'react-router-dom'
+import introImage from './images/connect-background.png'
 
 
 
@@ -40,6 +41,7 @@ class ConnectPage extends Component {
             <title>Rock With This - Your New Favorite Song</title>
           </Helmet>
              <div className="connectPage">
+             <div className="intro" style={{backgroundImage: `url(${introImage})`}}>
                 <div className="missionContainer half">
                   <div className="content">
                     <h3>HUMAN RHYTHMS. NOT ALGORITHMS</h3>
@@ -73,6 +75,7 @@ class ConnectPage extends Component {
                             </div>
 
                     </div>
+                </div>
                 </div>
               </div>
 
