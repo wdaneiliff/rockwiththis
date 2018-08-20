@@ -57,6 +57,7 @@ export const togglePlayPause = playPause => (dispatch) => {
 
 export const TOGGLE_SONG = createAction('app/TOGGLE_SONG')
 export const toggleSong = song => (dispatch) => {
+  debugger
     dispatch(TOGGLE_SONG(song))
 }
 
