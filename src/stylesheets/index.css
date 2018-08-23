@@ -1180,7 +1180,7 @@ img.heroHoverGradient {
     .discovery-section .filters-bar .SubgenreFiltersDropDown .dropdown-internal {
       padding: 15px; }
     .discovery-section .filters-bar .SubgenreFiltersDropDown.expand {
-      max-height: 500px; }
+      max-height: none; }
   .discovery-section .filters-bar button.toggle-views-button {
     display: inline-block;
     font-size: 12px;
