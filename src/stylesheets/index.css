@@ -4037,3 +4037,32 @@ footer .songSourceContainer .source.youtube svg {
       padding-bottom: 25px; }
   .disableScroll .bottomContentContainer {
     pointer-events: none; } }
+
+.connectPage .intro {
+  background-image: url(/static/media/background-intro.b73b9d18.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  height: calc(100vh - 75px - 75px - 45px); }
+
+.connectPage .missionContainer .content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 4px; }
+
+.connectPage .emailContainer form.rwt-email-form {
+  max-width: 250px;
+  margin: 0 auto;
+  position: absolute;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  overflow-x: hidden;
+  border-width: 0 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); }
+
+.connectPage .half {
+  position: relative;
+  height: 100%; }

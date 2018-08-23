@@ -9,7 +9,7 @@ import { fetchFilters } from './actions/filters'
 import { Helmet } from "react-helmet";
 import Mailchimp from 'react-mailchimp-form'
 import { Link } from 'react-router-dom'
-import introImage from './images/connect-background.png'
+import introImage from './images/background-intro.jpg'
 
 
 
@@ -72,6 +72,7 @@ class ConnectPage extends Component {
                               className='rwt-email-form'
                             />
                             <div className="connectSongGrid">
+                            {songGrid}
                             </div>
 
                     </div>
