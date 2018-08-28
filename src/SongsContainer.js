@@ -23,7 +23,8 @@ class SongsContainer extends Component {
           fixedFilterBar: false,
           disableScroll: true,
           loading: true,
-          gridPage: 1
+          gridPage: 1,
+          totalCarouselPages: 1
         }
 
         this.handleScroll = this.handleScroll.bind(this)
@@ -49,13 +50,14 @@ class SongsContainer extends Component {
         window.addEventListener('resize', this.enableDiscoverScroll);
     }
 
-    loadMoreSongs() {
+    loadMoreSongs(altCallback) {
       this.setState({ loadingMoreSongs: true })
       const callback = (noMorePosts) => {
         this.setState({
           loadingMoreSongs: false,
           noMorePosts,
-        })
+          totalCarouselPages: this.state.totalCarouselPages + 1
+        }, altCallback)
       }
       if (!this.state.loadingMoreSongs) {
         this.props.actions.loadMoreSongs(callback)
@@ -64,10 +66,17 @@ class SongsContainer extends Component {
 
     navGrid(e) {
       const num = e ? this.state.gridPage + 1 : this.state.gridPage - 1
-      this.setState({
-        gridPage: num,
-      })
-      this.loadMoreSongs()
+      const changePage = () => {
+        this.setState({
+          gridPage: num,
+        })
+      }
+
+      if (e && num === this.state.totalCarouselPages + 1) {
+        this.loadMoreSongs(changePage)
+      } else {
+        changePage()
+      }
     }
 
     handleCarousel() {
@@ -120,7 +129,7 @@ class SongsContainer extends Component {
             individualGrid = []
           }
         })
-        console.log(songGrids)
+
         const songGridsFull = songGrids.map(thisGrid => {
           return thisGrid.map((song, index) => {
             return (
@@ -135,7 +144,6 @@ class SongsContainer extends Component {
             )
           })
         })
-        console.log(songGridsFull)
 
         const songGrid = this.props.filteredPosts.map((song, index) => {
           return (
@@ -162,7 +170,7 @@ class SongsContainer extends Component {
         // const disableBack = this.props.posts[0] && this.props.posts[0].id === this.props.activeSong.id
         // Make this section look at `this.props.currentRequestLoading` to change display
         // when the filters are searched for.
-
+        console.log(songGridsFull.length)
         return (
             <div className="songsContainer clearfix">
                 <HeroPosts
@@ -179,7 +187,12 @@ class SongsContainer extends Component {
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="songGrid">
                           <div className='grid-container-wrapper'>
-                            <Carousel showThumbs={false}>
+                            <Carousel
+                              showThumbs={false}
+                              showStatus={false}
+                              showArrows={false}
+                              selectedItem={songGridsFull.length > 1 ? this.state.gridPage : null}
+                              useKeyboardArrows={true}>
                               {songGridsFull.map(grid => {
                                 return (
                                   <div className='grid-container'>
@@ -191,10 +204,10 @@ class SongsContainer extends Component {
                           </div>
                           <div className='song-grid-footer'>
 
-                            <button className='grid-arrow previous' onClick={this.navGrid}>
+                            <button className='grid-arrow previous' onClick={() => this.navGrid(false)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>
-                            <button className='grid-arrow next' onClick={() => this.navGrid(true)}>
+                            <button className='grid-arrow next' onClick={() => this.navGrid(true, songGridsFull.length)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>
                           </div>
