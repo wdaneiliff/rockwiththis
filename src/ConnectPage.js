@@ -9,7 +9,17 @@ import { fetchFilters } from './actions/filters'
 import { Helmet } from "react-helmet";
 import Mailchimp from 'react-mailchimp-form'
 import { Link } from 'react-router-dom'
-import introImage from './images/background-intro.jpg'
+import introImage from './images/intro.png'
+import logo1 from './images/connect-logo.svg'
+import gridPic from './images/collage-full.png'
+import line from './images/gradient-line.png'
+import tickets from './images/tickets.svg'
+import songs from './images/songs.svg'
+import pic1 from './images/pic1.png'
+import pic2 from './images/pic2.png'
+import pic3 from './images/pic3.png'
+import color from './images/color.png'
+
 
 
 
@@ -24,7 +34,7 @@ class ConnectPage extends Component {
 
       const url = "https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2";
 
-      const songGrid = this.props.filteredPosts.slice(0,9).map((song, index) => {
+      const songGrid = this.props.filteredPosts.slice(0,16).map((song, index) => {
         return (
             <div className="songContainer" key={index}>
                 <Link className="songImageLink" to={`/songs/${song.id}`}>
@@ -41,44 +51,74 @@ class ConnectPage extends Component {
             <title>Rock With This - Your New Favorite Song</title>
           </Helmet>
              <div className="connectPage">
-             <div className="intro" style={{backgroundImage: `url(${introImage})`}}>
-                <div className="missionContainer half">
+             <div className="intro">
+                <div className="missionContainer ">
                   <div className="content">
-                    <h3>HUMAN RHYTHMS. NOT ALGORITHMS</h3>
-                    <p>Our mission is simple, to help you discover your new favorite songs. Our goal is to become the most trusted source of curated music in the world by delivering the best of what's breaking and uncover the left behind tracks that need to be heard.
-                    <br/>
-                    We post one song a day, hopefully you haven’t heard, but will love.
-
-                    Our team consists of huge music lovers who spend hours each day digging through tracks to uncover old and new gems. While dance music inspired us to create this site, we won't hesitate to post songs from any genre if we feel you'll dig it.
-                    <br/>
-                    RWT believes in the power of music. We believe music is often the foundation for memorable moments in our lives...hanging with friends and family, epic road trips, a simple day at the beach, and life's most important celebrations. Rock With This hopes to make those times a bit more memorable.
-
-                    Rock on and Rock With This.</p>
+                    <h3>HUMAN RHYTHMS. <br/>
+                    NOT ALGORITHMS
+                    </h3>
+                    <img className="line" src={line} />
+                    <p><i><b>Rock With This’ mission is simple, to help you discover your new favorite songs.</b></i> Our team consists of huge music lovers who spend hours each day digging through tracks, to deliver the best of what’s breaking and uncover the left behind tracks that need to be heard. Our goal is for people to have heard less than 20% of the tracks and to love 80% or more. </p>
                   </div>
                 </div>
-                <div className="emailContainer half">
-                    <div className="content">
-                          <Mailchimp
-                              action='https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2'
-                              fields={[
-                                {
-                                  name: 'EMAIL',
-                                  placeholder: 'Email',
-                                  type: 'email',
-                                  required: true
-                                }
-                              ]}
+                <div className="emailContainer ">
 
-                              className='rwt-email-form'
-                            />
-                            <div className="connectSongGrid">
-                            {songGrid}
-                            </div>
+                    <div className="email">
+                    <img className="email-logo" src={logo1} />
+                    <p>Join us for daily songs, fresh playlists, and free tix to sold out shows. </p>
+
+
+                    <Mailchimp
+                        action='https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2'
+                        fields={[
+                          {
+                            name: 'EMAIL',
+                            placeholder: 'Email',
+                            type: 'email',
+                            required: true
+                          }
+                        ]}
+
+                        className='rwt-email-form'
+                      />
+                    </div>
+
+                </div>
+                <img className="intro-pic pic1" src={pic1} />
+                <img className="intro-pic pic2" src={pic2} />
+                <img className="intro-pic pic3" src={pic3} />
+                <img className="intro1Image" src={introImage} />
+                <img className="logo1" src={logo1} />
+                <img className="color" src={color} />
+                </div>
+
+
+                <div className="middle">
+                  <div className="connectSongGrid">
+                    <img className="gridPic" src={gridPic} />
+                  </div>
+                  <div className="four-pillars">
+                    <div className="four-content">
+
+                      <h3>
+                      MUSIC <br/>
+                      INSIGHT <br/>
+                      ART <br/>
+                      DESIGN <br/>
+                      </h3>
+                      <p>
+                        We want to not only be the best sounding website in the world, but the best looking. We believe music inspires art and vice versa. Cover art is getting more sick by the day and we seek to highlight the best of what’s being designed.
+                      </p>
 
                     </div>
-                </div>
+                  </div>
+
                 </div>
               </div>
+
+
+
+
 
            </div>
         )

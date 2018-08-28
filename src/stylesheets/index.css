@@ -36,41 +36,6 @@ body::-webkit-scrollbar-thumb {
   .fixedFiltersBarPadding {
     padding-top: 80px !important; } }
 
-.connectPage {
-  padding-top: 15px;
-  max-width: 1685px;
-  margin: 0 auto; }
-  .connectPage .half {
-    width: calc(100% - 30px);
-    display: block;
-    padding: 15px;
-    vertical-align: top; }
-    .connectPage .half .content {
-      max-width: 500px;
-      margin: 0 auto; }
-  .connectPage .missionContainer h3 {
-    font-size: 24px;
-    line-height: 34px;
-    text-decoration: none;
-    color: #000;
-    font-weight: 700;
-    margin-top: 0; }
-  .connectPage .missionContainer p {
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 100 !important;
-    font-family: Open-Sans,sans-serif; }
-  .connectPage .emailContainer form.rwt-email-form {
-    max-width: 250px;
-    margin: 0 auto; }
-  .connectPage .emailContainer input[type="email"] {
-    width: 100%; }
-  @media (min-width: 800px) {
-    .connectPage .half {
-      width: calc(50% - 70px);
-      display: inline-block;
-      padding: 35px; } }
-
 body {
   padding-bottom: 75px !important; }
 
@@ -1660,9 +1625,14 @@ body {
   display: flex;
   flex: 1 1 550px; }
 
+@media (min-width: 800px) {
+  .footer-player {
+    position: fixed !important;
+    z-index: 7000 !important; } }
+
 .footer-player {
   position: fixed !important;
-  z-index: 7000 !important;
+  z-index: 7000;
   height: 75px !important;
   bottom: 0 !important;
   width: 100%;
@@ -1675,7 +1645,6 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 1;
   width: 100%;
   height: 75px;
   display: flex;
@@ -2670,7 +2639,7 @@ button {
       margin-left: 0px; } }
 
 .SubgenreFiltersDropDown {
-  max-width: 350px !important; }
+  max-width: 400px !important; }
   .SubgenreFiltersDropDown .tag {
     margin: 5px;
     cursor: pointer;
@@ -3878,20 +3847,6 @@ a.nav-link.is-active {
   border: 0px solid #fff;
   border-bottom: 1px solid #fff !important; }
 
-form.rwt-email-form input {
-  height: 25px; }
-
-form.rwt-email-form button {
-  height: 30px;
-  border: 1px solid black;
-  width: 100%;
-  color: #fff;
-  background: #1a6ea9;
-  border: 1px solid #1a6ea9;
-  text-transform: uppercase;
-  font-size: 14px;
-  padding: 10px; }
-
 .singleSongPage p.metaInfo .postTags:nth-of-type(2) {
   display: inline-block; }
 
@@ -4038,31 +3993,183 @@ footer .songSourceContainer .source.youtube svg {
   .disableScroll .bottomContentContainer {
     pointer-events: none; } }
 
+.socialLinks {
+  z-index: 2;
+  position: relative; }
+
 .connectPage .intro {
-  background-image: url(/static/media/background-intro.b73b9d18.jpg);
-  background-size: cover;
-  background-position: center bottom;
-  height: calc(100vh - 75px - 75px - 45px); }
+  min-height: calc(100vh - 75px - 75px - 45px);
+  position: relative;
+  background: rgba(0, 0, 0, 0) !important;
+  background: linear-gradient(210deg, #fafafa 25%, #ffffff 25%) !important; }
+  .connectPage .intro img.intro1Image {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0; }
+  .connectPage .intro img.logo1 {
+    position: absolute;
+    z-index: 2;
+    width: 900px;
+    bottom: -60px;
+    left: -200px; }
+  .connectPage .intro .intro-pic {
+    position: absolute;
+    border: 2px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px !important;
+    height: 300px;
+    width: 300px; }
+  .connectPage .intro .intro-pic.pic1 {
+    top: 377px;
+    right: 550px;
+    z-index: 6; }
+  .connectPage .intro .intro-pic.pic2 {
+    top: 450px;
+    right: 208px;
+    z-index: 4; }
+  .connectPage .intro .intro-pic.pic3 {
+    top: 200px;
+    right: 100px;
+    z-index: 3; }
+  .connectPage .intro img.color {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 400px; }
+  .connectPage .intro .missionContainer {
+    padding: 15px 45px;
+    position: relative;
+    z-index: 10;
+    width: calc(50% - 90px);
+    display: inline-block;
+    vertical-align: top; }
+    .connectPage .intro .missionContainer h3 {
+      font-size: 40px;
+      line-height: 45px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 10px; }
+    .connectPage .intro .missionContainer img.line {
+      margin-bottom: 10px;
+      max-height: 8px; }
+    .connectPage .intro .missionContainer p {
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 100 !important;
+      font-family: Open-Sans,sans-serif; }
+
+form.rwt-email-form input {
+  height: 25px; }
+
+form.rwt-email-form button {
+  height: 30px;
+  border: 1px solid black;
+  width: 100%;
+  color: #fff;
+  background: #1a6ea9;
+  border: 1px solid #1a6ea9;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 10px; }
+
+.middle {
+  min-height: calc(100vh - 75px - 75px);
+  position: relative;
+  background: rgba(0, 0, 0, 0) !important;
+  padding: 15px;
+  padding-top: 75px;
+  background: linear-gradient(-190deg, #ffffff 25%, #fafafa 25%) !important; }
+  .middle .four-pillars {
+    display: inline-block;
+    width: 50%; }
+    .middle .four-pillars h3 {
+      font-size: 40px;
+      color: #000;
+      font-weight: 700;
+      margin-top: 0;
+      line-height: 45px;
+      text-align: left; }
+    .middle .four-pillars p {
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 100 !important;
+      font-family: Open-Sans,sans-serif; }
+    .middle .four-pillars .four-content {
+      max-width: 600px;
+      margin: 0 auto; }
+  .middle .connectSongGrid {
+    position: relative;
+    display: inline-block; }
+    .middle .connectSongGrid .gridPic {
+      width: 60vw;
+      max-width: 700px;
+      margin: 0 auto; }
+    .middle .connectSongGrid .songContainer {
+      max-width: calc(25% - 2px);
+      max-height: 25%;
+      display: inline-block;
+      border: 1px solid #fff; }
+      .middle .connectSongGrid .songContainer .songImageLink img {
+        width: 100%;
+        height: 100%; }
+
+.connectPage {
+  padding-top: 0px;
+  max-width: 1685px;
+  margin: 0 auto; }
+  .connectPage .emailContainer {
+    position: absolute;
+    padding: 15px;
+    height: 300px;
+    width: 300px;
+    top: 30px;
+    text-align: left;
+    background: linear-gradient(to right, #0097d5, #1a6ea9);
+    border-radius: 0px;
+    border: 2px solid #fff;
+    box-shadow: 0 3px 2px -2px #C9C6CB;
+    right: 25%;
+    z-index: 7; }
+    .connectPage .emailContainer .email {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 250px;
+      text-align: center; }
+      .connectPage .emailContainer .email .email-logo {
+        width: 100px;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 15px; }
+      .connectPage .emailContainer .email p {
+        color: #fff;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 15px; }
+    .connectPage .emailContainer form.rwt-email-form {
+      max-width: 250px;
+      margin: 0 auto; }
+    .connectPage .emailContainer input[type="email"] {
+      width: 100%; }
 
 .connectPage .missionContainer .content {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px;
-  background: white;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  border-radius: 4px; }
+  max-width: 600px; }
+  .connectPage .missionContainer .content h3 {
+    font-size: 40px;
+    color: #000;
+    font-weight: 700;
+    margin-top: 0;
+    line-height: 45px;
+    text-align: left; }
 
 .connectPage .emailContainer form.rwt-email-form {
-  max-width: 250px;
+  max-width: 300px;
   margin: 0 auto;
-  position: absolute;
-  top: 25%;
-  transform: translate(-50%, -50%);
-  left: 50%;
   overflow-x: hidden;
   border-width: 0 !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); }
-
-.connectPage .half {
-  position: relative;
-  height: 100%; }
