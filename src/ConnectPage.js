@@ -18,7 +18,7 @@ import songs from './images/songs.svg'
 import pic1 from './images/pic1.png'
 import pic2 from './images/pic2.png'
 import pic3 from './images/pic3.png'
-import color from './images/color.png'
+import color from './images/connect-colors.png'
 
 
 

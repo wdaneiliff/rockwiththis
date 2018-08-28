@@ -4036,7 +4036,7 @@ footer .songSourceContainer .source.youtube svg {
     z-index: 2;
     top: 0;
     right: 0;
-    width: 400px; }
+    height: 1200px; }
   .connectPage .intro .missionContainer {
     padding: 15px 45px;
     position: relative;
@@ -4158,7 +4158,7 @@ form.rwt-email-form button {
       width: 100%; }
 
 .connectPage .missionContainer .content {
-  max-width: 600px; }
+  max-width: 450px; }
   .connectPage .missionContainer .content h3 {
     font-size: 40px;
     color: #000;
