@@ -6005,7 +6005,7 @@ footer .songSourceContainer .source.youtube {
       max-height: calc(100vh - 350px );
       overflow-wrap: inherit;
       text-overflow: ellipsis;
-      overflow-y: scroll;
+      // overflow-y: scroll;
       padding-bottom: 0 !important;
       pointer-events: all;
 
@@ -6291,4 +6291,22 @@ text-align: left;
 border-width: 0 !important;
 box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 
+}
+
+
+
+
+// DISCOVER GRID STYLES
+.discover-full-song {
+
+  ul.control-dots {
+    display: none;
+  }
+
+
+}
+
+
+.postInfoContainer {
+    text-align: left;
 }

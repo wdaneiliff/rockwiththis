@@ -79,43 +79,45 @@ class Song extends Component {
         return (
 
             <div className="topContentContainer" >
-              <div className="singlePostPlayer hideMobile">
-                  <button
-                      className="singlePostPlayerButton"
-                      onClick={() => this.onPressPlay(song)}
-                  >
-                      {playPauseButton}
-                  </button>
+              <div className="postInfoContainer" >
+                <div className="singlePostPlayer hideMobile">
+                    <button
+                        className="singlePostPlayerButton"
+                        onClick={() => this.onPressPlay(song)}
+                    >
+                        {playPauseButton}
+                    </button>
 
-              </div>
+                </div>
 
-              <div className="marquee songInfo mobile" onClick={ () => this.onPressPlay(song)}>
-                  <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
+                <div className="marquee songInfo mobile" onClick={ () => this.onPressPlay(song)}>
+                    <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
+                      <span className="artistName">{song.acf.artist_name}</span>
+                </div>
+                <div className="marquee songInfo desktop">
+                  <div id="checkOverFlowSong" className="marquee-inner songtitle">
+                  <Link className="songName postTitleLink" to={`/songs/${song.id}`}>{song.acf.song_name}</Link>
+                  </div>
+                    <br />
+                  <div id="checkOverFlowArtist" className="marquee-inner artist">
                     <span className="artistName">{song.acf.artist_name}</span>
-              </div>
-              <div className="marquee songInfo desktop">
-                <div id="checkOverFlowSong" className="marquee-inner songtitle">
-                <Link className="songName postTitleLink" to={`/songs/${song.id}`}>{song.acf.song_name}</Link>
+                  </div>
                 </div>
-                  <br />
-                <div id="checkOverFlowArtist" className="marquee-inner artist">
-                  <span className="artistName">{song.acf.artist_name}</span>
-                </div>
+
+                <p className="metaInfo">
+                    <p className="leftInfo desktop">
+                    <span className="postDate "><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
+                    </p>
+                    <p className="leftInfo mobile">
+                    <span className="postDate "><Moment format="d/M/YY" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
+                    </p>
+                    {this.renderTags(song)}
+                    <ShareBox song={song} />
+                    <a target="_blank" href={song.acf.spotify_link}  className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+
+
+                </p>
               </div>
-
-              <p className="metaInfo">
-                  <p className="leftInfo desktop">
-                  <span className="postDate "><Moment format="ll" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
-                  </p>
-                  <p className="leftInfo mobile">
-                  <span className="postDate "><Moment format="d/M/YY" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
-                  </p>
-                  {this.renderTags(song)}
-                  <ShareBox song={song} />
-                  <a target="_blank" href={song.acf.spotify_link}  className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
-
-
-              </p>
               <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
                   <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
               </div>
