@@ -131,11 +131,14 @@ class SongsContainer extends Component {
         let individualGrid = []
         this.props.filteredPosts.forEach((post, index) => {
           individualGrid.push(post)
-          if (index > 0 && (index % 15 === 0)) {
+          if ((this.props.filteredPosts.length % 16 != 0)? (index % 15 == 0) ? true : (this.props.filteredPosts.length == index) : individualGrid.length == 16) {
             songGrids.push(individualGrid)
             individualGrid = []
           }
         })
+        console.log(this.props.filteredPosts)
+        console.log(individualGrid)
+        console.log(songGrids)
         const songGridsFull = songGrids.map((thisGrid, indexTop) => {
           return thisGrid.map((song, index) => {
             return (
