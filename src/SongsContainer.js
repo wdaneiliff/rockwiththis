@@ -37,17 +37,18 @@ class SongsContainer extends Component {
         this.handleCarousel = this.handleCarousel.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.isPlaying !== nextProps.isPlaying ||
-            this.props.activeSong !== nextProps.activeSong) {
-        }
-    }
-
     componentDidMount() {
         window.addEventListener('scroll', this.fixedFiltersBar)
         window.addEventListener('resize', this.fixedFiltersBar);
         window.addEventListener('scroll', this.enableDiscoverScroll)
         window.addEventListener('resize', this.enableDiscoverScroll);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.isPlaying !== nextProps.isPlaying ||
+            this.props.activeSong !== nextProps.activeSong) {
+              
+        }
     }
 
     loadMoreSongs(altCallback) {
@@ -94,8 +95,14 @@ class SongsContainer extends Component {
     }
 
     changeDiscoverSong(increment) {
-        const newIndex = increment ? this.state.discoverFullSongIndex + 1 :
+        let newIndex = increment ? this.state.discoverFullSongIndex + 1 :
           this.state.discoverFullSongIndex - 1
+        if(newIndex == this.props.filteredPosts.length){
+          this.loadMoreSongs()
+        }
+        if(newIndex == -1){
+          newIndex = this.props.filteredPosts.length - 1
+        }
         this.setState({ discoverFullSongIndex: newIndex })
     }
 
@@ -129,14 +136,13 @@ class SongsContainer extends Component {
             individualGrid = []
           }
         })
-
-        const songGridsFull = songGrids.map(thisGrid => {
+        const songGridsFull = songGrids.map((thisGrid, indexTop) => {
           return thisGrid.map((song, index) => {
             return (
                 <SongGrid
                     {...this.props}
-                    index={index}
-                    activeDiscoverFullSong={this.state.discoverFullSongIndex === index}
+                    index={(indexTop == 0) ? index : index + (indexTop)*16}
+                    activeDiscoverFullSong={this.state.discoverFullSongIndex === ((indexTop == 0) ? index : index + (indexTop)*16)}
                     updateDiscoverFullSongIndex={this.updateDiscoverFullSongIndex}
                     key={song.id}
                     song={song}
@@ -161,6 +167,8 @@ class SongsContainer extends Component {
           return(
             <Song
                 {...this.props}
+                activeSong={this.props.activeSong}
+                isPlaying={true}
                 key={`${song.id}`}
                 song={song}
             />
@@ -170,7 +178,6 @@ class SongsContainer extends Component {
         // const disableBack = this.props.posts[0] && this.props.posts[0].id === this.props.activeSong.id
         // Make this section look at `this.props.currentRequestLoading` to change display
         // when the filters are searched for.
-        console.log(songGridsFull.length)
         return (
             <div className="songsContainer clearfix">
                 <HeroPosts
@@ -229,6 +236,7 @@ class SongsContainer extends Component {
                                 showThumbs={false}
                                 showStatus={false}
                                 showArrows={false}
+                                infiniteLoop
                                 selectedItem={discoverFullSongIndex}
                                 ref={(e) => this.carousel = e}
                               >
@@ -237,6 +245,7 @@ class SongsContainer extends Component {
                                       return (
                                         <div>
                                           <Song
+                                              {...this.props}
                                               song={post}
                                           />
                                         </div>

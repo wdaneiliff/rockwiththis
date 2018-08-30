@@ -52,11 +52,14 @@ export const loadMoreSongs = (callback) => (dispatch, getState) => {
 
 export const TOGGLE_PLAY_PAUSE = createAction('app/TOGGLE_PLAY_PAUSE')
 export const togglePlayPause = playPause => (dispatch) => {
+    console.log("toggling")
     dispatch(TOGGLE_PLAY_PAUSE(playPause))
 }
 
 export const TOGGLE_SONG = createAction('app/TOGGLE_SONG')
 export const toggleSong = song => (dispatch) => {
+    console.log("the song is")
+    console.log(song)
     dispatch(TOGGLE_SONG(song))
 }
 

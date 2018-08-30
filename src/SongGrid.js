@@ -57,6 +57,7 @@ class SongGrid extends Component {
             song,
             activeSong,
             isPlaying,
+            key
         } = this.props
 
         const playPauseButton = song.id === activeSong && isPlaying ? (

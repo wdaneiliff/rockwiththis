@@ -6,8 +6,10 @@ import Moment from 'react-moment'
 import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
-import { toggleSong, togglePlayPause } from './actions/queue'
+//import { toggleSong, togglePlayPause } from './actions/queue'
 import ShareBox from './ShareBox'
+import  playButton  from './images/playbutton.svg'
+import  pauseButton  from './images/pauseButton.png'
 
 
 
@@ -26,12 +28,14 @@ class Song extends Component {
     }
 
     onPressPlay(song) {
+        console.log("things")
+        console.log(song.id !== this.props.activeSong.id)
         this.updateStorePlayPause(song.id !== this.props.activeSong.id)
-        this.props.toggleSong(song)
+        this.props.actions.toggleSong(song)
     }
 
     updateStorePlayPause(newSong) {
-        this.props.togglePlayPause(newSong ? true : !this.props.isPlaying)
+        this.props.actions.togglePlayPause((newSong) ? true : !this.props.isPlaying)
     }
 
     toggleDescription() {
@@ -69,10 +73,9 @@ class Song extends Component {
         } = this.props
 
         const playPauseButton = song.id === activeSong.id && isPlaying ? (
-            <img src="http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/05/16427.png" className="pauseButton" />
+            <img src={pauseButton} className="pauseButton" />
         ) : (
-          <svg className="playButton" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/></svg>
-
+            <img src={playButton} className="playButton" />
         )
 
 
@@ -222,12 +225,12 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleSong: postId => dispatch(toggleSong(postId)),
-    togglePlayPause: (playPause) => dispatch(togglePlayPause(playPause)),
-})
+/*const mapDispatchToProps = (dispatch, ownProps) => ({
+    toggleSong: postId => dispatch(this.props.actions.toggleSong(postId)),
+    togglePlayPause: (playPause) => dispatch(this.props.actions.togglePlayPause(playPause)),
+})*/
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    null
 )(Song)
