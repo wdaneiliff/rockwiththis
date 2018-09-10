@@ -6088,12 +6088,12 @@ footer .songSourceContainer .source.youtube {
 
 
     .missionContainer {
-      padding: 15px 45px;
-      position: relative;
-      z-index: 10;
-        width: calc(50% - 90px);
-      display: inline-block;
-      vertical-align: top;
+      padding: 15px 15px 0px 50px;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
 
         h3 {
           font-size: 40px;
@@ -6120,7 +6120,9 @@ footer .songSourceContainer .source.youtube {
 
     }
 }
-
+form.rwt-email-form {
+  display: none;
+}
 form.rwt-email-form input {
     height: 25px;
 }
@@ -6138,72 +6140,70 @@ form.rwt-email-form button {
 
 
 .middle {
-  min-height: calc(100vh - 75px - 75px);
     position: relative;
     background: rgba(0,0,0,0) !important;
-    padding: 15px;
     background: linear-gradient(-190deg, #ffffff 25%, #fafafa 25%) !important;
+        // min-height: calc(100vh - 75px - 75px);
+        padding-bottom: 511px;
 
-
-
-    .four-pillars {
-        display: inline-block;
-        width: 50%;
-
-        h3 {
-          font-size: 40px;
-          color: #000;
-          font-weight: 700;
-          margin-top: 0;
-          line-height: 45px;
-          text-align: left;
+        img.diagblue {
+          position: absolute;
+          bottom: 0;
         }
 
-        p {
-          font-size: 20px;
-    line-height: 30px;
-    font-weight: 100 !important;
-    font-family: Open-Sans,sans-serif;
-        }
+        img.logo2 {
+    position: absolute;
+    position: absolute;
+    z-index: 2;
+    width: 900px;
+    bottom: -60px;
+    right: -200px;
+}
+img.color2 {
+    transform: rotate(180deg);
+    width: 700px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 48;
+}
+img.diagblue.cover {
+    z-index: 45;
+}
 
+    .middle-content {
+    margin: 0 auto;
+    width: 1100px;
+    padding-top: 50px;
+}
 
-        .four-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    }
+.four-content {
+  transform: translateY(-15px);
+  position: relative;
+z-index: 499;
+  h3 {
+    font-size: 40px;
+  color: #000;
+  font-weight: 700;
+  margin-top: 0;
+  line-height: 45px;
+  text-align: left;
+  margin-bottom: 20px;
+  }
 
-
-    .connectSongGrid {
-        // width: calc(500px + 4px);
-        // width: 40vw;
-        //     height: 40vw;
-            position: relative;
-        display: inline-block;
+  p {
+    font-size: 20px;
+line-height: 30px;
+font-weight: 100 !important;
+font-family: Open-Sans,sans-serif;
+  }
+}
 
         .gridPic {
-          width: 60vw;
-          max-width: 700px;
-          margin: 0 auto;
-
+          max-width: 600px;
+          z-index: 499;
+position: relative;
         }
-
-      .songContainer {
-        max-width: calc(25% - 2px);
-    max-height: 25%;
-    display: inline-block;
-    border: 1px solid #fff;
-
-        .songImageLink {
-
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-    }
 }
 
 // ABOUT / CONNECT page
@@ -6292,6 +6292,29 @@ box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 
 }
 
+
+
+// CONNECT MIDDLE
+.middle  h3 {
+    font-size: 40px;
+    color: #000;
+    font-weight: 700;
+    margin-top: 0;
+    line-height: 45px;
+    text-align: left;
+    display: inline-block;
+}
+
+.four-content {
+    max-width: 500px;
+    display: inline-block;
+}
+
+.middle img.cross {
+    height: 180px;
+    display: inline-block;
+    vertical-align: top;
+}
 
 
 

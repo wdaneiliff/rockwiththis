@@ -10,7 +10,10 @@ import { Helmet } from "react-helmet";
 import Mailchimp from 'react-mailchimp-form'
 import { Link } from 'react-router-dom'
 import introImage from './images/intro.png'
+import diag2 from './images/diagblue.png'
+import diagcover from './images/diagcoversharp.png'
 import logo1 from './images/connect-logo.svg'
+import logo2 from './images/connect-logo.svg'
 import gridPic from './images/collage-full.png'
 import line from './images/gradient-line.png'
 import tickets from './images/tickets.svg'
@@ -19,6 +22,7 @@ import pic1 from './images/pic1.png'
 import pic2 from './images/pic2.png'
 import pic3 from './images/pic3.png'
 import color from './images/connect-colors.png'
+import cross from './images/cross.svg'
 
 
 
@@ -54,10 +58,9 @@ class ConnectPage extends Component {
              <div className="intro">
                 <div className="missionContainer ">
                   <div className="content">
-                    <h3>HUMAN RHYTHMS. <br/>
+                    <h3>HUMAN RHYTHMS <br/>
                     NOT ALGORITHMS
                     </h3>
-                    <img className="line" src={line} />
                     <p><i><b>Rock With This’ mission is simple, to help you discover your new favorite songs.</b></i> Our team consists of huge music lovers who spend hours each day digging through tracks, to deliver the best of what’s breaking and uncover the left behind tracks that need to be heard. Our goal is for people to have heard less than 20% of the tracks and to love 80% or more. </p>
                   </div>
                 </div>
@@ -94,10 +97,8 @@ class ConnectPage extends Component {
 
 
                 <div className="middle">
-                  <div className="connectSongGrid">
+                  <div className="middle-content">
                     <img className="gridPic" src={gridPic} />
-                  </div>
-                  <div className="four-pillars">
                     <div className="four-content">
 
                       <h3>
@@ -106,6 +107,7 @@ class ConnectPage extends Component {
                       ART <br/>
                       DESIGN <br/>
                       </h3>
+                      <img className="cross" src={cross} />
                       <p>
                         We want to not only be the best sounding website in the world, but the best looking. We believe music inspires art and vice versa. Cover art is getting more sick by the day and we seek to highlight the best of what’s being designed.
                       </p>
@@ -113,7 +115,14 @@ class ConnectPage extends Component {
                     </div>
                   </div>
 
+                  <img className="diagblue"src={diag2} />
+                  <img className="diagblue cover"src={diagcover} />
+                  <img className="logo2" src={logo1} />
+                  <img className="color2" src={color} />
+
+
                 </div>
+
               </div>
 
 
