@@ -136,9 +136,6 @@ class SongsContainer extends Component {
             individualGrid = []
           }
         })
-        console.log(this.props.filteredPosts)
-        console.log(individualGrid)
-        console.log(songGrids)
         const songGridsFull = songGrids.map((thisGrid, indexTop) => {
           return thisGrid.map((song, index) => {
             return (

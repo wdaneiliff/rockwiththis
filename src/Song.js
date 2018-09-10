@@ -28,8 +28,6 @@ class Song extends Component {
     }
 
     onPressPlay(song) {
-        console.log("things")
-        console.log(song.id !== this.props.activeSong.id)
         this.updateStorePlayPause(song.id !== this.props.activeSong.id)
         this.props.actions.toggleSong(song)
     }
