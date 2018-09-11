@@ -4012,7 +4012,8 @@ footer .songSourceContainer .source.youtube svg {
     z-index: 6;
     width: 900px;
     bottom: -60px;
-    left: -200px; }
+    left: -200px;
+    display: none; }
   .connectPage .intro .intro-pic {
     position: absolute;
     border: 2px solid #fff;
