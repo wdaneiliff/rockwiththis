@@ -26,6 +26,7 @@ import colorTop from './images/connectColorsTop.png'
 import colorBottom from './images/connectColorsBottom.png'
 import colorIntroLong from './images/connectColorsIntroLong.png'
 import cross from './images/cross.svg'
+import logoWriting from './images/logo-writing-black.png'
 
 
 
@@ -61,16 +62,14 @@ class ConnectPage extends Component {
              <div className="intro">
                 <div className="missionContainer ">
                   <div className="content">
-                    <h3>HUMAN RHYTHMS <br/>
-                    NOT ALGORITHMS
-                    </h3>
-                    <p><i><b>Rock With This’ mission is simple, to help you discover your new favorite songs.</b></i> Our team consists of huge music lovers who spend hours each day digging through tracks, to deliver the best of what’s breaking and uncover the left behind tracks that need to be heard. Our goal is for people to have heard less than 20% of the tracks and to love 80% or more. </p>
+                    <img className="logoWriting" src={logoWriting} />
+                    <p><b><i>Our mission is simple, to help you discover your new favorite songs.<br/></i></b> Our team consists of huge music lovers who spend hours each day digging through tracks, to deliver the best of what’s breaking and uncover the left behind tracks that need to be heard. Our goal is for people to have heard less than 20% of the tracks and to love 80% or more. </p>
                   </div>
                 </div>
                 <div className="emailContainer ">
 
                     <div className="email">
-                    <img className="email-logo" src={logo1} />
+                    <h3 className="tagline">HUMAN RHYTHMS. <br/>NOT ALGORITHMS.</h3>
                     <p>Join us for daily songs, fresh playlists, and free tix to sold out shows. </p>
 
 

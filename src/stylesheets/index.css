@@ -4065,7 +4065,12 @@ footer .songSourceContainer .source.youtube svg {
       font-size: 20px;
       line-height: 30px;
       font-weight: 100 !important;
-      font-family: Open-Sans,sans-serif; }
+      font-family: Open-Sans,sans-serif;
+      border-top: 5px solid black;
+      padding-top: 10px; }
+      .connectPage .intro .missionContainer p b {
+        margin-bottom: 10px;
+        display: block; }
 
 form.rwt-email-form {
   display: none; }
@@ -4159,7 +4164,7 @@ form.rwt-email-form button {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
-      max-width: 250px;
+      max-width: 300px;
       text-align: center; }
       .connectPage .emailContainer .email .email-logo {
         width: 100px;
@@ -4178,7 +4183,7 @@ form.rwt-email-form button {
       width: 100%; }
 
 .connectPage .missionContainer .content {
-  max-width: 450px; }
+  max-width: 500px; }
   .connectPage .missionContainer .content h3 {
     font-size: 40px;
     color: #000;
@@ -4248,6 +4253,21 @@ form.rwt-email-form button {
   width: 1200px;
   bottom: -222px;
   left: -200px; }
+
+.logoWriting {
+  max-width: 500px;
+  margin: 15px 0 10px; }
+
+.emailContainer h3.tagline {
+  color: #fff;
+  font-size: 30px;
+  line-height: 40px; }
+
+.emailContainer .email p {
+  color: #fff;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 15px; }
 
 .discover-full-song ul.control-dots {
   display: none; }

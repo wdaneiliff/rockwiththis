@@ -6123,6 +6123,13 @@ img.colorbottom2 {
         line-height: 30px;
         font-weight: 100 !important;
         font-family: Open-Sans,sans-serif;
+        border-top: 5px solid black;
+padding-top: 10px;
+
+        b {
+          margin-bottom: 10px;
+          display: block;
+        }
         }
 
 
@@ -6246,7 +6253,7 @@ position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     text-align: center;
 
     .email-logo {
@@ -6262,6 +6269,7 @@ position: relative;
       line-height: 30px;
       margin-bottom: 15px;
       // font-weight: 700;
+
 
     }
 }
@@ -6280,7 +6288,7 @@ position: relative;
 
 
 .connectPage .missionContainer .content {
-  max-width: 450px;
+  max-width: 500px;
 
   h3 {
     font-size: 40px;
@@ -6384,8 +6392,38 @@ img.color.bottomMiddle {
 //     transform: rotate(-10deg);
 // }
 }
+
+
+.logoWriting {
+  max-width: 500px;
+  margin: 15px 0 10px;
+}
+
+// .tagline {
+//   text-align: center;
+// font-size: 22px;
+// display: block;
+// margin-bottom: 5px;
+// }
 // CONNECT INTRO Z INDEX
 
+
+.emailContainer  {
+
+  h3.tagline {
+      color: #fff;
+      font-size: 30px;
+      line-height: 40px;
+  }
+
+  .email p {
+    color: #fff;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+}
 
 
 
