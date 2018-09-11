@@ -6043,13 +6043,14 @@ footer .songSourceContainer .source.youtube {
       z-index: 1;
       bottom: 0;
           left: 0;
+              bottom: -360px;
     }
     img.logo1 {
-    position: absolute;
-    z-index: 2;
-    width: 900px;
-    bottom: -60px;
-    left: -200px;
+      position: absolute;
+  z-index: 6;
+  width: 900px;
+  bottom: -60px;
+  left: -200px;
   }
 
   .intro-pic {
@@ -6084,6 +6085,13 @@ footer .songSourceContainer .source.youtube {
     height: 1200px;
 }
 
+img.colorbottom2 {
+    position: absolute;
+    height: 344px;
+    left: 350px;
+    bottom: 0;
+    z-index: 4;
+}
 
 
 
@@ -6142,7 +6150,7 @@ form.rwt-email-form button {
 .middle {
     position: relative;
     background: rgba(0,0,0,0) !important;
-    background: linear-gradient(-190deg, #ffffff 25%, #fafafa 25%) !important;
+    background: linear-gradient(-190deg, rgba(255,255,255,.0) 25%, #fafafa 25%) !important;
         // min-height: calc(100vh - 75px - 75px);
         padding-bottom: 511px;
 
@@ -6170,6 +6178,9 @@ img.color2 {
 img.diagblue.cover {
     z-index: 45;
 }
+img.color.bottom {
+    top: 50px !important;
+}
 
     .middle-content {
     margin: 0 auto;
@@ -6185,8 +6196,8 @@ z-index: 499;
     font-size: 40px;
   color: #000;
   font-weight: 700;
-  margin-top: 0;
-  line-height: 45px;
+  margin-top: 25px;
+  line-height: 50px;
   text-align: left;
   margin-bottom: 20px;
   }
@@ -6311,10 +6322,70 @@ box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .middle img.cross {
-    height: 180px;
+    height: 250px;
     display: inline-block;
     vertical-align: top;
 }
+
+.connectPage {
+
+ .intro img.color.bottom {
+    z-index: 5;
+}
+
+.middle {
+      z-index: 4;
+}
+
+.intro .intro-pic.pic1 {
+    top: 377px;
+    right: 550px;
+    z-index: 7;
+}
+
+.intro .intro-pic.pic2 {
+    top: 450px;
+    right: 208px;
+    z-index: 6;
+}
+
+.intro img.colorbottom2 {
+    position: absolute;
+    height: auto;
+    left: 350px;
+    bottom: -250px;
+    z-index: 4;
+    width: 630px;
+}
+
+img.color.bottomMiddle {
+    position: absolute;
+    top: -685px;
+    right: 0;
+    height: 1200px;
+}
+
+.intro img.logo1 {
+    position: absolute;
+    z-index: 4;
+    width: 1200px;
+    bottom: -222px;
+    left: -200px;
+    //     z-index: 4;
+
+}
+
+// .intro img.logo1 {
+//     position: absolute;
+//     z-index: 4;
+//     width: 900px;
+//     bottom: -262px;
+//     left: -100px;
+//     transform: rotate(-10deg);
+// }
+}
+// CONNECT INTRO Z INDEX
+
 
 
 

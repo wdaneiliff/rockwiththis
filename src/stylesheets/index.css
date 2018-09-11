@@ -4005,10 +4005,11 @@ footer .songSourceContainer .source.youtube svg {
     position: absolute;
     z-index: 1;
     bottom: 0;
-    left: 0; }
+    left: 0;
+    bottom: -360px; }
   .connectPage .intro img.logo1 {
     position: absolute;
-    z-index: 2;
+    z-index: 6;
     width: 900px;
     bottom: -60px;
     left: -200px; }
@@ -4036,6 +4037,12 @@ footer .songSourceContainer .source.youtube svg {
     top: 0;
     right: 0;
     height: 1200px; }
+  .connectPage .intro img.colorbottom2 {
+    position: absolute;
+    height: 344px;
+    left: 350px;
+    bottom: 0;
+    z-index: 4; }
   .connectPage .intro .missionContainer {
     padding: 15px 15px 0px 50px;
     position: relative;
@@ -4080,7 +4087,7 @@ form.rwt-email-form button {
 .middle {
   position: relative;
   background: rgba(0, 0, 0, 0) !important;
-  background: linear-gradient(-190deg, #ffffff 25%, #fafafa 25%) !important;
+  background: linear-gradient(-190deg, rgba(255, 255, 255, 0) 25%, #fafafa 25%) !important;
   padding-bottom: 511px; }
   .middle img.diagblue {
     position: absolute;
@@ -4101,6 +4108,8 @@ form.rwt-email-form button {
     z-index: 48; }
   .middle img.diagblue.cover {
     z-index: 45; }
+  .middle img.color.bottom {
+    top: 50px !important; }
   .middle .middle-content {
     margin: 0 auto;
     width: 1100px;
@@ -4113,8 +4122,8 @@ form.rwt-email-form button {
       font-size: 40px;
       color: #000;
       font-weight: 700;
-      margin-top: 0;
-      line-height: 45px;
+      margin-top: 25px;
+      line-height: 50px;
       text-align: left;
       margin-bottom: 20px; }
     .middle .four-content p {
@@ -4199,9 +4208,46 @@ form.rwt-email-form button {
   display: inline-block; }
 
 .middle img.cross {
-  height: 180px;
+  height: 250px;
   display: inline-block;
   vertical-align: top; }
+
+.connectPage .intro img.color.bottom {
+  z-index: 5; }
+
+.connectPage .middle {
+  z-index: 4; }
+
+.connectPage .intro .intro-pic.pic1 {
+  top: 377px;
+  right: 550px;
+  z-index: 7; }
+
+.connectPage .intro .intro-pic.pic2 {
+  top: 450px;
+  right: 208px;
+  z-index: 6; }
+
+.connectPage .intro img.colorbottom2 {
+  position: absolute;
+  height: auto;
+  left: 350px;
+  bottom: -250px;
+  z-index: 4;
+  width: 630px; }
+
+.connectPage img.color.bottomMiddle {
+  position: absolute;
+  top: -685px;
+  right: 0;
+  height: 1200px; }
+
+.connectPage .intro img.logo1 {
+  position: absolute;
+  z-index: 4;
+  width: 1200px;
+  bottom: -222px;
+  left: -200px; }
 
 .discover-full-song ul.control-dots {
   display: none; }

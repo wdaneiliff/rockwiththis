@@ -9,7 +9,7 @@ import { fetchFilters } from './actions/filters'
 import { Helmet } from "react-helmet";
 import Mailchimp from 'react-mailchimp-form'
 import { Link } from 'react-router-dom'
-import introImage from './images/intro.png'
+import introImage from './images/intro-bigger.png'
 import diag2 from './images/diagblue.png'
 import diagcover from './images/diagcoversharp.png'
 import logo1 from './images/connect-logo.svg'
@@ -21,7 +21,10 @@ import songs from './images/songs.svg'
 import pic1 from './images/pic1.png'
 import pic2 from './images/pic2.png'
 import pic3 from './images/pic3.png'
-import color from './images/connect-colors.png'
+import colorFull from './images/connectColorsFull.png'
+import colorTop from './images/connectColorsTop.png'
+import colorBottom from './images/connectColorsBottom.png'
+import colorIntroLong from './images/connectColorsIntroLong.png'
 import cross from './images/cross.svg'
 
 
@@ -92,11 +95,14 @@ class ConnectPage extends Component {
                 <img className="intro-pic pic3" src={pic3} />
                 <img className="intro1Image" src={introImage} />
                 <img className="logo1" src={logo1} />
-                <img className="color" src={color} />
+                <img className="color top" src={colorTop} />
+                <img className="colorbottom2" src={colorIntroLong} />
                 </div>
 
 
                 <div className="middle">
+                <img className="color bottomMiddle" src={colorBottom} />
+
                   <div className="middle-content">
                     <img className="gridPic" src={gridPic} />
                     <div className="four-content">
@@ -118,7 +124,7 @@ class ConnectPage extends Component {
                   <img className="diagblue"src={diag2} />
                   <img className="diagblue cover"src={diagcover} />
                   <img className="logo2" src={logo1} />
-                  <img className="color2" src={color} />
+                  <img className="color2" src={colorFull} />
 
 
                 </div>
