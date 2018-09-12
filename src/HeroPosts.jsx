@@ -25,6 +25,8 @@ class HeroPosts extends React.Component {
       }
     }
 
+
+
     render() {
         const { heroPosts } = this.props
 
@@ -35,13 +37,19 @@ class HeroPosts extends React.Component {
             const day = moment(post.date).format('ddd');
             const title = post.acf.song_name
             const artist = post.acf.artist_name
+            const tags = post._embedded['wp:term'][1].map(tag =>
+                <span key={tag.name} className="hero-tag">#{tag.name}</span>)
+
             return (
                   <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`} key={post.id}>
                       <div className='feature-track'>
                           <Link className='move-back-link' to={`/songs/${post.id}`}>
+                          <div className="tagWrapper">
+                            {tags}
+                          </div>
                           <img className="heroHoverGradient" src={hoverGradient} />
 
-                              <img src={image} />
+                          <img src={image} />
                           </Link>
                           <div className="post-info">
                           {!isSmall && <span className="song-of-day-tag">Song of the day</span>}
