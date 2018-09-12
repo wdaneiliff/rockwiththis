@@ -227,7 +227,7 @@ img.heroHoverGradient {
       color: #fff;
       font-weight: 400 !important; }
       .homeContainer .hero-posts .post-square-wrapper.date .post-date .month {
-        font-size: .7em;
+        font-size: .8em;
         line-height: 16px;
         font-weight: 400; }
       .homeContainer .hero-posts .post-square-wrapper.date .post-date .day {
@@ -1945,7 +1945,7 @@ a.spotifyLink {
       .discovery-container .discover-full-song .songContainer {
         height: auto; }
         .discovery-container .discover-full-song .songContainer .imageContainer {
-          width: 30%;
+          width: 37%;
           float: left;
           padding-right: 15px; }
           .discovery-container .discover-full-song .songContainer .imageContainer img {
@@ -3999,8 +3999,7 @@ footer .songSourceContainer .source.youtube svg {
 .connectPage .intro {
   min-height: calc(100vh - 75px - 75px - 45px);
   position: relative;
-  background: rgba(0, 0, 0, 0) !important;
-  background: linear-gradient(210deg, #fafafa 25%, #ffffff 25%) !important; }
+  background: #fafafa !important; }
   .connectPage .intro img.intro1Image {
     position: absolute;
     z-index: 1;
@@ -4050,7 +4049,7 @@ footer .songSourceContainer .source.youtube svg {
     z-index: 10;
     display: inline-block;
     vertical-align: top;
-    background: #fff; }
+    background: #fafafa; }
     .connectPage .intro .missionContainer h3 {
       font-size: 40px;
       line-height: 45px;
@@ -4066,9 +4065,7 @@ footer .songSourceContainer .source.youtube svg {
       font-size: 20px;
       line-height: 30px;
       font-weight: 100 !important;
-      font-family: Open-Sans,sans-serif;
-      border-top: 5px solid black;
-      padding-top: 10px; }
+      font-family: Open-Sans,sans-serif; }
       .connectPage .intro .missionContainer p b {
         margin-bottom: 10px;
         display: block; }
@@ -4174,8 +4171,8 @@ form.rwt-email-form button {
         margin-bottom: 15px; }
       .connectPage .emailContainer .email p {
         color: #fff;
-        font-size: 20px;
-        line-height: 30px;
+        font-size: 24px;
+        line-height: 34px;
         margin-bottom: 15px; }
     .connectPage .emailContainer form.rwt-email-form {
       max-width: 250px;
@@ -4275,3 +4272,25 @@ form.rwt-email-form button {
 
 .postInfoContainer {
   text-align: left; }
+
+a.nav-link.active {
+  background: rgba(255, 255, 255, 0);
+  color: #fff !important;
+  border: 0px solid #fff;
+  border-bottom: 1px solid #fff !important; }
+
+.nav-right {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%); }
+
+.nav-left {
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%); }

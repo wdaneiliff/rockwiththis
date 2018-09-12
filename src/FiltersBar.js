@@ -82,10 +82,15 @@ class FiltersBar extends Component {
     }
 
     showSubGenreFilters(event) {
+      // scroller.scrollTo('scroll-to-element', {
+      //    duration: 800,
+      //    delay: 0,
+      //    smooth: 'easeInOutQuart'
+      // })
 
       const scrollHeight = document.getElementById('hero-post').clientHeight + 45
 
-      
+
 
       event.preventDefault();
 

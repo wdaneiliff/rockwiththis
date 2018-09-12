@@ -30,8 +30,9 @@ class HeroPosts extends React.Component {
 
         const trackDisplay = (post, i, isSmall) => {
             const image = post.better_featured_image.source_url
-            const month = moment(post.date).format('MMM')
+            // const month = moment(post.date).format('MMM')
             const date = moment(post.date).format('D')
+            const day = moment(post.date).format('ddd');
             const title = post.acf.song_name
             const artist = post.acf.artist_name
             return (
@@ -52,7 +53,7 @@ class HeroPosts extends React.Component {
                                 </div>
                                 <div className="post-square-wrapper date">
                                     <div className='post-date'>
-                                        <p className="month">{month}</p>
+                                        <p className="month">{day}</p>
                                         <p className="day">{date}</p>
                                     </div>
                                 </div>

@@ -339,7 +339,7 @@ p {
         color: #fff;
         font-weight: 400 !important;
         .month {
-          font-size: .7em;
+          font-size: .8em;
           line-height: 16px;
           font-weight: 400;
         }
@@ -2846,7 +2846,9 @@ a.spotifyLink {
       height: auto;
 
       .imageContainer {
-        width: 30%;
+        // width: 30%;
+        width: 37%;
+
         float: left;
         padding-right: 15px;
 
@@ -6034,8 +6036,9 @@ footer .songSourceContainer .source.youtube {
 .connectPage .intro {
   min-height: calc(100vh - 75px - 75px - 45px);
     position: relative;
-    background: rgba(0,0,0,0) !important;
-    background: linear-gradient(210deg, #fafafa 25%, #ffffff 25%) !important;
+    // background: rgba(0,0,0,0) !important;
+    // background: linear-gradient(210deg, #fafafa 25%, #ffffff 25%) !important;
+    background: #fafafa !important;
 
 
     img.intro1Image {
@@ -6102,7 +6105,7 @@ img.colorbottom2 {
     z-index: 10;
     display: inline-block;
     vertical-align: top;
-    background: #fff;
+    background: #fafafa;
 
         h3 {
           font-size: 40px;
@@ -6124,8 +6127,7 @@ img.colorbottom2 {
         line-height: 30px;
         font-weight: 100 !important;
         font-family: Open-Sans,sans-serif;
-        border-top: 5px solid black;
-padding-top: 10px;
+// padding-top: 10px;
 
         b {
           margin-bottom: 10px;
@@ -6266,8 +6268,8 @@ position: relative;
 
     p {
       color: #fff;
-      font-size: 20px;
-      line-height: 30px;
+      font-size: 24px;
+      line-height: 34px;
       margin-bottom: 15px;
       // font-weight: 700;
 
@@ -6441,4 +6443,35 @@ img.color.bottomMiddle {
 
 .postInfoContainer {
     text-align: left;
+}
+
+
+
+
+
+
+
+a.nav-link.active {
+    background: rgba(255, 255, 255, 0);
+    color: #fff !important;
+    border: 0px solid #fff;
+    border-bottom: 1px solid #fff !important;
+}
+
+
+.nav-right {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.nav-left {
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
