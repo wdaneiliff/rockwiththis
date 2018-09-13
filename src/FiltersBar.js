@@ -191,6 +191,22 @@ class FiltersBar extends Component {
               </div>
 
               <button onClick={this.showToggleViewsDropdown} className="toggle-views-button ">Toggle Views <i class="im im-angle-down"></i></button>
+              <div className="ToggleViewsWrapper">
+              <a className="viewButton" name='expanded' onClick={this.changeGridView}>
+                Full
+              </a>
+              <svg className="viewIcon active" width="30" height="30" viewBox="0 0 24 24"><path d="M24 3h-11v-2h11v2zm0 3h-11v2h11v-2zm0 5h-11v2h11v-2zm0 5h-11v2h11v-2zm0 5h-11v2h11v-2zm-13-20h-11v22h11v-22z"/></svg>
+
+              <a className="viewButton" name='snapshot' onClick={this.changeGridView}>
+              Snap
+              </a>
+              <svg className="viewIcon" width="30" height="30" viewBox="0 0 24 24"><path d="M24 3h-12v-2h12v2zm0 3h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm-14-20h-10v10h10v-10zm0 12h-10v10h10v-10z"/></svg>
+              <a className="viewButton" name='fullGrid' onClick={this.changeGridView}>
+              Grid
+              </a>
+              <svg className="viewIcon" width="30" height="30" viewBox="0 0 24 24"><path d="M6 6h-6v-6h6v6zm9-6h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6z"/></svg>
+
+              </div>
 
           </div>
 

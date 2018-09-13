@@ -58,7 +58,7 @@ class Header extends Component {
 
                     :
                     <div className="nav-left">
-                      <NavLink className="nav-link" to="/" activeClassName='is-active'>HOME</NavLink>
+                      <NavLink className="nav-link" to="/" activeClassName='none'>HOME</NavLink>
                     </div>
 
 
@@ -89,7 +89,7 @@ class Header extends Component {
 
               }
               <div className="nav-right">
-                <NavLink className="nav-link" to="/connect" activeClassName='is-active' >Submit</NavLink>
+                <NavLink className="nav-link" to="/submit" activeClassName='is-active' >Submit</NavLink>
                 <NavLink className="nav-link" to="/connect" activeClassName='is-active' >About</NavLink>
               </div>
               </div>
