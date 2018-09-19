@@ -44,9 +44,16 @@ class HeroPosts extends React.Component {
                   <div className={`${isSmall ? 'less-' : ''}featured-track-wrapper index-${i}`} key={post.id}>
                       <div className='feature-track'>
                           <Link className='move-back-link' to={`/songs/${post.id}`}>
-                          <div className="tagWrapper">
-                            {tags}
+                          <div className="hover-content">
+                            <div className="tagWrapper">
+                              {tags}
+                            </div>
+                            <p className="goToPage">
+                              Read More
+                            </p>
                           </div>
+
+
                           <img className="heroHoverGradient" src={hoverGradient} />
 
                           <img src={image} />

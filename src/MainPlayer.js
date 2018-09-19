@@ -98,7 +98,8 @@ class MainPlayer extends Component {
                         className={`player-control-button ${disableBack ? 'disabled' : ''}`}
                         onClick={() => this.changeSong(false)}
                     >
-                      <i className="fa fa-step-backward" aria-hidden="true" />
+                    <i className="im im-previous"></i>
+
                     </button>
                     <div
                         id="player-control-button-play"
@@ -112,7 +113,8 @@ class MainPlayer extends Component {
                         className="player-control-button"
                         onClick={() => this.changeSong(true)}
                     >
-                        <i className="fa fa-step-forward" aria-hidden="true" />
+                    <i className="im im-next"></i>
+
                     </button>
                 </div>
                 <div className="player-duration-bar-wrapper">

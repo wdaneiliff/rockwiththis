@@ -52,8 +52,11 @@ class Header extends Component {
 
                   {   location.pathname == "/" ?
                   <div className="nav-left">
-                    <Link className={`nav-link ${!this.state.thisWeek ? 'active' : ''}`} onClick={this.scrollToDiscover} to="/" >Discover</Link>
-                    <Link className={`nav-link ${this.state.thisWeek ? 'active' : ''}`} onClick={this.scrollToTop} to="/" >This Week</Link>
+                  <Link className={`nav-link nav-week ${this.state.thisWeek ? 'active' : ''}`} onClick={this.scrollToTop} to="/" >This Week</Link>
+
+                    <Link className={`nav-link nav-discover ${!this.state.thisWeek ? 'active' : ''}`} onClick={this.scrollToDiscover} to="/" >Discover</Link>
+                    <NavLink className="nav-link nav-submit" to="/submit" activeClassName='is-active' >Submit</NavLink>
+
                   </div>
 
                     :
@@ -89,8 +92,8 @@ class Header extends Component {
 
               }
               <div className="nav-right">
-                <NavLink className="nav-link" to="/submit" activeClassName='is-active' >Submit</NavLink>
-                <NavLink className="nav-link" to="/connect" activeClassName='is-active' >About</NavLink>
+                <NavLink className="nav-link nav-submit" to="/submit" activeClassName='is-active' >Submit</NavLink>
+                <NavLink className="nav-link nav-about" to="/connect" activeClassName='is-active' >About</NavLink>
               </div>
               </div>
             </div>

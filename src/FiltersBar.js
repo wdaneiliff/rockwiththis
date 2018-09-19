@@ -195,18 +195,20 @@ class FiltersBar extends Component {
               <a className="viewButton" name='expanded' onClick={this.changeGridView}>
                 Full
               </a>
-              <svg className="viewIcon active" width="30" height="30" viewBox="0 0 24 24"><path d="M24 3h-11v-2h11v2zm0 3h-11v2h11v-2zm0 5h-11v2h11v-2zm0 5h-11v2h11v-2zm0 5h-11v2h11v-2zm-13-20h-11v22h11v-22z"/></svg>
+              <svg className={`viewIcon ${this.props.discoverLayout == 'expanded' ? 'active' : ''}`} width="20" height="20" viewBox="0 0 24 24"><path d="M24 3h-11v-2h11v2zm0 3h-11v2h11v-2zm0 5h-11v2h11v-2zm0 5h-11v2h11v-2zm0 5h-11v2h11v-2zm-13-20h-11v22h11v-22z"/></svg>
 
               <a className="viewButton" name='snapshot' onClick={this.changeGridView}>
               Snap
               </a>
-              <svg className="viewIcon" width="30" height="30" viewBox="0 0 24 24"><path d="M24 3h-12v-2h12v2zm0 3h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm-14-20h-10v10h10v-10zm0 12h-10v10h10v-10z"/></svg>
+              <svg className={`viewIcon ${this.props.discoverLayout == 'snapshot' ? 'active' : ''}`} width="20" height="20" viewBox="0 0 24 24"><path d="M24 3h-12v-2h12v2zm0 3h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm-14-20h-10v10h10v-10zm0 12h-10v10h10v-10z"/></svg>
               <a className="viewButton" name='fullGrid' onClick={this.changeGridView}>
               Grid
               </a>
-              <svg className="viewIcon" width="30" height="30" viewBox="0 0 24 24"><path d="M6 6h-6v-6h6v6zm9-6h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6z"/></svg>
+              <svg className={`viewIcon ${this.props.discoverLayout == 'fullGrid' ? 'active' : ''}`} width="20" height="20" viewBox="0 0 24 24"><path d="M6 6h-6v-6h6v6zm9-6h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6z"/></svg>
 
               </div>
+
+
 
           </div>
 
@@ -238,13 +240,6 @@ class FiltersBar extends Component {
                       this.ToggleViewsDropDown = element;
                     }}
                     >
-                    <button className="desktop" name='expanded' onClick={this.changeGridView}>Full</button>
-                    <button className="desktop" name='snapshot' onClick={this.changeGridView}>Snap</button>
-                    <button className="desktop" name='fullGrid' onClick={this.changeGridView}>Grid</button>
-
-
-
-
                     <button className="mobile" name='expanded' onClick={this.changeGridView}>Full</button>
                     <button className="mobile" name='snapshot' onClick={this.changeGridView}>Snap</button>
                     <button className="mobile" name='fullGrid' onClick={this.changeGridView}>Grid</button>
