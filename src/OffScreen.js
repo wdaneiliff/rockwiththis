@@ -24,7 +24,7 @@ class OffScreen extends React.Component {
     }
 
     bindPlayNext() {
-      // window.SC.Widget('sc-player').bind(window.SC.Widget.Events.FINISH, this.playNextSong)
+        // window.SC.Widget('sc-player').bind(window.SC.Widget.Events.FINISH, this.playNextSong)
     }
 
     playNextSong() {
