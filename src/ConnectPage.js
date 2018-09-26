@@ -22,11 +22,12 @@ import pic1 from './images/pic1.png'
 import pic2 from './images/pic2.png'
 import pic3 from './images/pic3.png'
 import colorFull from './images/connectColors.png'
-import colorTop from './images/connectColorsTop.png'
-import colorBottom from './images/connectColorsBottom.png'
+import color1 from './images/connectColors.png'
+import colorTop from './images/connectColors.png'
 import colorIntroLong from './images/connectColorsIntroLong.png'
 import cross from './images/cross.svg'
 import logoWriting from './images/logo-writing-black.png'
+import blackLogo from './images/rwt-head-black.png'
 
 
 
@@ -62,24 +63,22 @@ class ConnectPage extends Component {
 
 
                 <div className="middle">
-                <img className="color bottomMiddle" src={colorBottom} />
+                <img className="color bottomMiddle" src={color1} />
 
                   <div className="middle-content">
                     <img className="gridPic" src={gridPic} />
                     <div className="four-content">
+                        <h3>
+                          HUMAN RHYTHMS. <br/>
+                          NOT ALGORITHMS. <br/>
+                        </h3>
 
-                      <h3>
-                      HUMAN RHYTHMS <br/>
-                      NOT ALGORITHMS <br/>
-                      </h3>
                       <p className="mission-tagline">
-                      <b><i>{"Rock With This'"} mission is simple, to help you discover your new favorite songs.</i></b>
+                      <b>{"Rock With This'"} mission is simple, to help you discover your new favorite songs.</b>
                       </p>
-                      <p>
-                        Our team consists of huge music lovers who spend hours each day digging through tracks,
-                        to deliver the best of what’s breaking and uncover the left behind tracks that need to be
-                        heard. Join us for daily songs, fresh playlists, and free tix to sold out shows.
-                      </p>
+                      <hr />
+
+                      <p className="email-text"><i>Join us for daily songs, fresh playlists, and free tix to sold out shows!</i></p>
 
                       <Mailchimp
                           action='https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2'
