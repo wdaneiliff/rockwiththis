@@ -4098,15 +4098,17 @@ footer .songSourceContainer .source.youtube :hover {
         display: block; }
 
 form.rwt-email-form {
-  display: none; }
+  margin-top: 15px; }
 
 form.rwt-email-form input {
-  height: 25px; }
+  height: 50px;
+  border: none;
+  width: 69%; }
 
 form.rwt-email-form button {
-  height: 30px;
+  height: 50px;
   border: 1px solid black;
-  width: 100%;
+  width: 30%;
   color: #fff;
   background: #1a6ea9;
   border: 1px solid #1a6ea9;
@@ -4117,8 +4119,8 @@ form.rwt-email-form button {
 .middle {
   position: relative;
   background: rgba(0, 0, 0, 0) !important;
-  background: linear-gradient(-190deg, rgba(255, 255, 255, 0) 25%, #fafafa 25%) !important;
-  padding-bottom: 511px; }
+  background: linear-gradient(-193deg, rgba(255, 255, 255, 0) 25%, #fafafa 25%) !important;
+  padding-bottom: 475px; }
   .middle img.diagblue {
     position: absolute;
     bottom: 0; }
@@ -4131,10 +4133,10 @@ form.rwt-email-form button {
     right: -200px; }
   .middle img.color2 {
     transform: rotate(180deg);
-    width: 700px;
+    width: 650px;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 315px;
     z-index: 48; }
   .middle img.diagblue.cover {
     z-index: 45; }
@@ -4142,10 +4144,11 @@ form.rwt-email-form button {
     top: 50px !important; }
   .middle .middle-content {
     margin: 0 auto;
-    width: 1100px;
-    padding-top: 50px; }
+    width: 1150px;
+    padding-top: 20px; }
   .middle .four-content {
-    transform: translateY(-15px);
+    margin-left: 25px;
+    transform: translateY(-40px);
     position: relative;
     z-index: 499; }
     .middle .four-content h3 {
@@ -4155,16 +4158,19 @@ form.rwt-email-form button {
       margin-top: 25px;
       line-height: 50px;
       text-align: left;
-      margin-bottom: 20px; }
+      margin-bottom: 5px; }
     .middle .four-content p {
       font-size: 20px;
       line-height: 30px;
       font-weight: 100 !important;
       font-family: Open-Sans,sans-serif; }
+    .middle .four-content p.mission-tagline {
+      margin-bottom: 5px; }
   .middle .gridPic {
     max-width: 600px;
     z-index: 499;
-    position: relative; }
+    position: relative;
+    margin-right: 25px; }
 
 .connectPage {
   padding-top: 0px;
@@ -4245,9 +4251,6 @@ form.rwt-email-form button {
 .connectPage .intro img.color.bottom {
   z-index: 5; }
 
-.connectPage .middle {
-  z-index: 4; }
-
 .connectPage .intro .intro-pic.pic1 {
   top: 377px;
   right: 550px;
@@ -4270,7 +4273,7 @@ form.rwt-email-form button {
   position: absolute;
   top: -685px;
   right: 0;
-  height: 1200px; }
+  height: 1150px; }
 
 .connectPage .intro img.logo1 {
   position: absolute;
