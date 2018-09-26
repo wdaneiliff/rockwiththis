@@ -44,13 +44,18 @@ class MainPlayer extends Component {
 
     changeSongOnEnd() {
       // this.props.actions.setSongDuration(0)
-      let queuePosition
-      this.props.posts.forEach((post, i, arr) => {
-          if (post.id === this.props.activeSong.id) {
-              queuePosition = i + 1
-          }
-      })
-      this.props.actions.toggleSong(this.props.posts[queuePosition])
+
+      // NOTE(@josephwilliams): switched from this.props.posts to this.props.filteredPosts as the latter includes all posts, combined, from 'fetchPosts' smallDataURL and bigDataURL.
+      // find current song in queue
+      const isCurrentSong = (song) => (song.id === this.props.activeSong.id)
+      const currentQueuePosition = this.props.filteredPosts.findIndex(isCurrentSong)
+
+      // determine next song in queue, or reset queue position to 0 if at end of queue
+      let nextQueuePosition = (currentQueuePosition + 1);
+      const isEndOfQueue = (nextQueuePosition >= this.props.filteredPosts.length)
+      nextQueuePosition = (isEndOfQueue ? 0 : nextQueuePosition)
+
+      this.props.actions.toggleSong(this.props.filteredPosts[nextQueuePosition])
     }
 
     renderInfo() {
