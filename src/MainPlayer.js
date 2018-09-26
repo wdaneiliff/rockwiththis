@@ -44,13 +44,15 @@ class MainPlayer extends Component {
 
     changeSongOnEnd() {
       // this.props.actions.setSongDuration(0)
-      let queuePosition
-      this.props.posts.forEach((post, i, arr) => {
-          if (post.id === this.props.activeSong.id) {
-              queuePosition = i + 1
-          }
-      })
-      this.props.actions.toggleSong(this.props.posts[queuePosition])
+
+      const isCurrentSong = (song) => (song.id === this.props.activeSong.id)
+      const currentQueuePosition = this.props.posts.findIndex(isCurrentSong)
+
+      let nextQueuePosition = (currentQueuePosition + 1);
+      const isEndOfQueue = (nextQueuePosition >= this.props.posts.length)
+      nextQueuePosition = (isEndOfQueue ? 0 : nextQueuePosition)
+
+      this.props.actions.toggleSong(this.props.posts[nextQueuePosition])
     }
 
     renderInfo() {
