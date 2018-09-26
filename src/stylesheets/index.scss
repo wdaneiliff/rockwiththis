@@ -72,6 +72,7 @@ body {
   margin-right: 30px;
 }
 .carousel.carousel-slider {
+  overflow: visible;
   .slide {
     background: transparent;
     padding: 0 2px;
@@ -1882,6 +1883,7 @@ margin: 10px;
 
       .songGrid {
           width: calc(40% - 50px);
+          width: calc(39% - 50px);
           padding: 25px;
           display: inline-block;
           vertical-align: top;
@@ -2695,6 +2697,7 @@ a.spotifyLink {
     overflow: auto;
     .songGrid {
       width: calc(40% - 35px);
+      width: calc(39% - 35px);
       display: inline-block;
       max-height: 674px;
       padding: 0px;
@@ -6480,13 +6483,26 @@ img.color.bottomMiddle {
 
 
 
+
+ul.control-dots {
+  bottom: -30px !important;
+  padding-left: 0 !important;
+  margin: 0 auto;
+width: 150px;
+left: 50%;
+transform: translateX(-50%);
+
+  .dot {
+    background: #000 !important;
+  }
+}
+
 // DISCOVER GRID STYLES
 .discover-full-song {
 
   ul.control-dots {
     display: none;
   }
-
 
 }
 

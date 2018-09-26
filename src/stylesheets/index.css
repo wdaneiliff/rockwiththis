@@ -46,9 +46,11 @@ body {
   margin-left: 30px;
   margin-right: 30px; }
 
-.carousel.carousel-slider .slide {
-  background: transparent;
-  padding: 0 2px; }
+.carousel.carousel-slider {
+  overflow: visible; }
+  .carousel.carousel-slider .slide {
+    background: transparent;
+    padding: 0 2px; }
 
 .socialLinks {
   background: #d8d8d8;
@@ -1206,6 +1208,7 @@ img.heroHoverGradient {
 
 .discovery-section .songGrid {
   width: calc(40% - 50px);
+  width: calc(39% - 50px);
   padding: 25px;
   display: inline-block;
   vertical-align: top; }
@@ -1828,6 +1831,7 @@ a.spotifyLink {
     overflow: auto; }
     .discovery-container .songGrid {
       width: calc(40% - 35px);
+      width: calc(39% - 35px);
       display: inline-block;
       max-height: 674px;
       padding: 0px;
@@ -4289,6 +4293,16 @@ form.rwt-email-form button {
   font-size: 24px;
   line-height: 30px;
   margin-bottom: 15px; }
+
+ul.control-dots {
+  bottom: -30px !important;
+  padding-left: 0 !important;
+  margin: 0 auto;
+  width: 150px;
+  left: 50%;
+  transform: translateX(-50%); }
+  ul.control-dots .dot {
+    background: #000 !important; }
 
 .discover-full-song ul.control-dots {
   display: none; }

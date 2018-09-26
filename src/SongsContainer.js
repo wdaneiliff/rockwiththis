@@ -37,17 +37,24 @@ class SongsContainer extends Component {
         this.handleCarousel = this.handleCarousel.bind(this)
     }
 
+    componentWillMount() {
+      this.setState({
+        loading: false,
+      })
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this.fixedFiltersBar)
         window.addEventListener('resize', this.fixedFiltersBar);
         window.addEventListener('scroll', this.enableDiscoverScroll)
         window.addEventListener('resize', this.enableDiscoverScroll);
+
     }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.isPlaying !== nextProps.isPlaying ||
             this.props.activeSong !== nextProps.activeSong) {
-              
+
         }
     }
 
@@ -192,7 +199,9 @@ class SongsContainer extends Component {
                 <div id='discoverSongsWrapper' className='discover-songs-wrapper'>
                   <div onScroll={(e) => this.props.discoverLayout === 'snapshot' && !this.state.loadingMore && this.handleScroll(e)} className={`discovery-container ${this.state.disableScroll ? 'disableScroll' : ''} ${this.props.discoverLayout === 'snapshot' ? 'previewScrollLayout' : ''} ${this.props.discoverLayout === 'fullGrid' ? 'fullGridLayout' : ''}`}>
                     {this.props.discoverLayout !== 'snapshot' &&
+
                       <div className="songGrid">
+
                           <div className='grid-container-wrapper'>
                             <Carousel
                               showThumbs={false}
@@ -218,7 +227,10 @@ class SongsContainer extends Component {
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>
                           </div>
-                      </div>}
+                      </div>
+
+
+                    }
                     <div className={`songList ${this.state.fixedFilterBar ? 'fixedFiltersBarPadding' : ''}`}>
                     <div  className="discoverySectionScroll" name='discoverySectionScroll' />
                       {songList}
@@ -226,39 +238,47 @@ class SongsContainer extends Component {
 
                     {this.props.discoverLayout !== 'snapshot' &&
                       <div className="discover-full-song">
-                        <button
-                        className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
-                            <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
-                        </button>
-                        <div className='carousel-wrapper'>
-                          {this.props.filteredPosts[discoverFullSongIndex] &&
-                              <Carousel
-                                showThumbs={false}
-                                showStatus={false}
-                                showArrows={false}
-                                infiniteLoop
-                                selectedItem={discoverFullSongIndex}
-                                ref={(e) => this.carousel = e}
-                              >
-                                  {
-                                    this.props.filteredPosts.map(post => {
-                                      return (
-                                        <div>
-                                          <Song
-                                              {...this.props}
-                                              song={post}
-                                          />
-                                        </div>
-                                      )
-                                    })
-                                  }
-                              </Carousel>
-                          }
-                        </div>
-                        <button
-                        className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
-                            <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
-                        </button>
+
+                      {this.state.loading ? <FullSongPlaceHolder />
+
+                        :
+                        <div>
+                            <button
+                            className="toggle-song previous" onClick={() => this.changeDiscoverSong(false)}>
+                                <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                            </button>
+                            <div className='carousel-wrapper'>
+                              {this.props.filteredPosts[discoverFullSongIndex] &&
+                                  <Carousel
+                                    showThumbs={false}
+                                    showStatus={false}
+                                    showArrows={false}
+                                    infiniteLoop
+                                    selectedItem={discoverFullSongIndex}
+                                    ref={(e) => this.carousel = e}
+                                  >
+                                      {
+                                        this.props.filteredPosts.map(post => {
+                                          return (
+                                            <div>
+                                              <Song
+                                                  {...this.props}
+                                                  song={post}
+                                              />
+                                            </div>
+                                          )
+                                        })
+                                      }
+                                  </Carousel>
+                              }
+                            </div>
+                            <button
+                            className="toggle-song next" onClick={() => this.changeDiscoverSong(true)}>
+                                <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
+                            </button>
+                          </div>
+                      }
+
                       </div>
                     }
                     {this.state.loadingMoreSongs && !this.state.noMorePosts &&
