@@ -78,7 +78,7 @@ class ConnectPage extends Component {
                       </p>
                       <hr />
 
-                      <p className="email-text"><i>Join us for daily songs, fresh playlists, and free tix to sold out shows!</i></p>
+                      <p className="email-text">Join us for daily songs, fresh playlists, and free tix to sold out shows!</p>
 
                       <Mailchimp
                           action='https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2'

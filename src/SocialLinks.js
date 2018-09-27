@@ -4,7 +4,7 @@ class SocialLinks extends Component {
 
     render() {
         return (
-          <div className="socialLinks">
+          <div className={`socialLinks ${location.pathname == "/submit" ? 'submit' : ''}`}>
             <ul>
             <li><a target="_blank" href="https://open.spotify.com/user/jaredp21/playlist/2eWK5PGSTEl8I5ZvMG5VPS"><i className="im im-spotify"></i></a></li>
 

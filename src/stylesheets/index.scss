@@ -2641,7 +2641,11 @@ a.spotifyLink {
 
 .playButton, .pauseButton {
   display: flex !important;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  width: 60px;
+  height: 60px;
+
+}
 
 // .player-control-button:hover {
 //   opacity: .85;
@@ -6834,4 +6838,34 @@ max-width: 40%;
     padding-top: 115px;
 }
 
+}
+
+
+
+
+
+
+
+
+
+// SUBMIT A SONG PAGE
+.submitSongPage.page {
+    min-height: calc(100vh - 45px - 150px);
+    background: linear-gradient(to right, #1e0c49, #0097d5);
+}
+
+
+.socialLinks.submit {
+    background: linear-gradient(to right, #1e0c49, #0097d5);
+
+     ul li i {
+      font-size: 22px;
+      height: auto;
+      color: #fff !important;
+    }
+}
+
+img.hands1 {
+    position: fixed;
+    bottom: 30px;
 }

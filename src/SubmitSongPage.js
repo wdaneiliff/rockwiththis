@@ -27,6 +27,8 @@ import colorBottom from './images/connectColorsBottom.png'
 import colorIntroLong from './images/connectColorsIntroLong.png'
 import cross from './images/cross.svg'
 import logoWriting from './images/logo-writing-black.png'
+import hands1 from './images/hands.svg'
+
 
 
 
@@ -46,6 +48,16 @@ class SubmitSongPage extends Component {
           <Helmet>
             <title>Rock With This - Your New Favorite Song</title>
           </Helmet>
+          <div className="submitSongPage page">
+            <div className="left-content">
+            <h3>SHOW US WHAT YOU GOT.</h3>
+            <p>Want your song shared with tens of thousands of people all over the world?</p>
+            <p>Send us your email and a link for us to check it out.</p>
+            <p>If we dig it, we’ll post it on our social channels, website, and on our email newsletter. If we don't, we'll still give you some feedback.</p>
+            </div>
+
+            <img className="hands1" src={hands1} />
+          </div>
 
            </div>
         )
