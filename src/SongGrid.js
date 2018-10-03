@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
 import head from './images/head.png'
+import  pauseButton  from './images/PAUSE-BUTTON.png'
+import  playButton  from './images/playbutton.svg'
 
 
 class SongGrid extends Component {
@@ -52,43 +54,6 @@ class SongGrid extends Component {
         )
     }
 
-    renderPlayer() {
-        const {
-            song,
-            activeSong,
-            isPlaying,
-            key
-        } = this.props
-
-        const playPauseButton = song.id === activeSong && isPlaying ? (
-            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/01/pause-thin.svg" className="pauseButton" />
-        ) : (
-            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/01/play-white.svg" className="playButton" />
-        )
-
-
-        return (
-            <div className="singlePostPlayer">
-                <button
-                    className="singlePostPlayerButton"
-                    onClick={() => this.onPressPlay(song)}
-                >
-                    {playPauseButton}
-                </button>
-                <p className="singlePostPlayerInfo">
-                    <span className="songName">{song.acf.song_name}</span>
-                    <span className="artistName">{song.acf.artist_name}</span>
-                </p>
-                <div className="singlePostPlayerLinks">
-                    <a href="#" className="spotifyLink"><i className="fa fa-spotify" aria-hidden="true" /></a>
-                    <a href="#" className="shareButton"><img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/01/iconmonstr-share-2-48.png" />
-
-                    </a>
-                </div>
-            </div>
-        )
-    }
-
     renderDescription() {
         const { song } = this.props
         return (
@@ -122,11 +87,7 @@ class SongGrid extends Component {
 
         const { height } = this.state
 
-        const imagePlayPauseButton = song.id === activeSong && isPlaying ? (
-            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-7-96.png" className="imageButton imagePauseButton" />
-        ) : (
-            <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/iconmonstr-media-control-3-96.png" className="imageButton imagePlayButton" />
-        )
+
 
         return (
             <div id={song.slug} data-index={this.props.index} className={`songContainer ${this.props.activeDiscoverFullSong ? 'activeDiscoverFullSong' : ''}`} key={`${song.id}`} onClick={this.props.updateDiscoverFullSongIndex}>

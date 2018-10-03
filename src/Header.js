@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link, NavLink, Nav } from 'react-router-dom'
 // import * as Scroll from 'react-scroll'
 import {  Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import desktopLogo from './images/logo-desktop.png'
+import mobileLogo from './images/logo-mobile.png'
 
 
 class Header extends Component {
@@ -70,11 +72,11 @@ class Header extends Component {
               {   location.pathname == "/" ?
 
               <Link id="headerLogo" onClick={this.scrollToTop}  to="/">
-                <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />
+                <img src={desktopLogo} />
               </Link>
                 :
                 <Link id="headerLogo" to="/">
-                  <img src="http://dashboard.rockwiththis.com/wp-content/uploads/2018/03/logo-hi-res.png" />
+                  <img src={desktopLogo} />
                 </Link>
 
 
@@ -82,11 +84,11 @@ class Header extends Component {
               {   location.pathname == "/" ?
 
               <Link id="headerLogoMobile" onClick={this.scrollToTop} to="/">
-                <img src="http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/RWT-head.png" />
+                <img src={mobileLogo} />
               </Link>
                 :
                 <Link id="headerLogoMobile" to="/">
-                  <img src="http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/RWT-head.png" />
+                  <img src={mobileLogo} />
                 </Link>
 
 

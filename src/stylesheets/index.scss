@@ -75,7 +75,7 @@ body {
   overflow: visible;
   .slide {
     background: transparent;
-    padding: 0 3px;
+    padding: 0 3 px;
   }
 }
 
@@ -1969,7 +1969,7 @@ margin: 10px;
           }
 
             .playButton, .pauseButton {
-              width: 60px;
+              width: 60px ;
               height: 60px;
              }
              button:focus {
@@ -2249,6 +2249,7 @@ body {
   }
   .player-controls-wrapper {
     flex: 0 0 100px !important;
+    flex: 0 0 75px !important;
     margin-right: 10px !important; }
   .rc-slider .rc-slider-handle {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(83, 83, 92, 0.11) !important;
@@ -2794,7 +2795,7 @@ a.spotifyLink {
       }
 
       .pauseButton {
-          max-width: 60px !important;
+          width: 60px !important;
       }
 
       button.toggle-song:hover {
@@ -5924,7 +5925,7 @@ footer .songSourceContainer .source.youtube {
     margin-right: 0px;
 }
   footer .songSourceContainer {
-    margin-right: 0px;
+        margin-right: 15px;
     position: absolute;
     padding: 5px;
     padding-top: 15px;
@@ -5957,8 +5958,8 @@ footer .songSourceContainer .source.youtube {
       .songList .songContainer {
 
         .pauseButton, .playButton {
-            width: 45px;
-            height: 45px;
+            width: 45px !important;
+            height: 45px !important;
         }
 
 
