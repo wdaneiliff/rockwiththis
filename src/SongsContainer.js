@@ -161,19 +161,8 @@ class SongsContainer extends Component {
           })
         })
 
-        const songGrid = this.props.filteredPosts.map((song, index) => {
-          return (
-              <SongGrid
-                  {...this.props}
-                  index={index}
-                  activeDiscoverFullSong={discoverFullSongIndex === index}
-                  updateDiscoverFullSongIndex={this.updateDiscoverFullSongIndex}
-                  key={song.id}
-                  song={song}
-              />
-          )
-        })
-        
+    
+
         const songList = this.props.filteredPosts.map((song, index) => {
           return(
             <Song
