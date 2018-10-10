@@ -2725,7 +2725,8 @@ a.spotifyLink {
         }
         .grid-container-wrapper {
           height: calc(40vw - 30px);
-          overflow: scroll;
+          width: calc(40vw - 30px);
+          overflow: hidden;
           white-space: nowrap;
         }
         .grid-container {
@@ -2742,6 +2743,7 @@ a.spotifyLink {
           border: 1px solid #fff !important;
         }
         .song-grid-footer {
+          text-align: center;
           .grid-arrow {
             height: 20px;
             opacity: .5;
