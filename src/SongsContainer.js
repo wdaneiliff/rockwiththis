@@ -170,6 +170,7 @@ class SongsContainer extends Component {
               />
           )
         })
+        
         const songList = this.props.filteredPosts.map((song, index) => {
           return(
             <Song
