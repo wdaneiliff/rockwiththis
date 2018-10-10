@@ -1848,7 +1848,7 @@ a.spotifyLink {
         display: none; }
       .discovery-container .songGrid .grid-container-wrapper {
         height: calc(40vw - 30px);
-        overflow: scroll;
+        overflow: hidden;
         white-space: nowrap; }
       .discovery-container .songGrid .grid-container {
         position: relative;
@@ -1861,7 +1861,26 @@ a.spotifyLink {
         margin-top: -3px;
         cursor: pointer;
         border: 1px solid #fff !important; }
-      .discovery-container .songGrid .song-grid-footer .grid-arrow {
+        .discovery-container .songGrid .song-grid-footer {
+          justify-content: center;
+          text-align: center;
+        } 
+        .discovery-container .songGrid .song-grid-footer .shit-ball {
+          border-radius: 50%;
+          border-color: #000;
+          border-width: 5px;
+          border: #000;
+          color: black;
+          width: 15px;
+          height: 15px;
+          background-color: aqua;
+          right: 0;
+          bottom: 10px;
+          margin-bottom: 15px!important;
+          margin-left: 5px;
+          padding-top: 10px
+        }
+        .discovery-container .songGrid .song-grid-footer .grid-arrow {
         height: 20px;
         opacity: .5;
         transition: .2s ease all; }
