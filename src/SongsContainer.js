@@ -35,6 +35,9 @@ class SongsContainer extends Component {
         this.enableDiscoverScroll = this.enableDiscoverScroll.bind(this)
         this.navGrid = this.navGrid.bind(this)
         this.handleCarousel = this.handleCarousel.bind(this)
+        this.loadMoreSongs()
+        this.loadMoreSongs()
+        this.loadMoreSongs()
     }
 
     componentWillMount() {
@@ -207,7 +210,7 @@ class SongsContainer extends Component {
                             <Carousel
                               showThumbs={false}
                               showStatus={false}
-                              showArrows={false}
+                              showIndicators={false}
                               selectedItem={songGridsFull.length > 1 ? this.state.gridPage : null}
                               useKeyboardArrows={true}>
                               {songGridsFull.map(grid => {
@@ -220,10 +223,13 @@ class SongsContainer extends Component {
                             </Carousel>
                           </div>
                           <div className='song-grid-footer'>
-
                             <button className='grid-arrow previous' onClick={() => this.navGrid(false)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>
+                            <button className='shit-ball'> </button>
+                            <button className='shit-ball'> </button>
+                            <button className='shit-ball'> </button>
+                            <button className='shit-ball'> </button>
                             <button className='grid-arrow next' onClick={() => this.navGrid(true, songGridsFull.length)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>

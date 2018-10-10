@@ -1848,7 +1848,8 @@ a.spotifyLink {
         display: none; }
       .discovery-container .songGrid .grid-container-wrapper {
         height: calc(40vw - 30px);
-        overflow: scroll;
+        width: calc(40vw - 30px);
+        overflow: hidden;
         white-space: nowrap; }
       .discovery-container .songGrid .grid-container {
         position: relative;
@@ -1861,19 +1862,34 @@ a.spotifyLink {
         margin-top: -3px;
         cursor: pointer;
         border: 1px solid #fff !important; }
-      .discovery-container .songGrid .song-grid-footer .grid-arrow {
-        height: 20px;
-        opacity: .5;
-        transition: .2s ease all; }
-        .discovery-container .songGrid .song-grid-footer .grid-arrow img {
-          height: 100%; }
-        .discovery-container .songGrid .song-grid-footer .grid-arrow.next {
-          right: 0; }
-        .discovery-container .songGrid .song-grid-footer .grid-arrow.previous {
-          transform: rotate(180deg); }
-        .discovery-container .songGrid .song-grid-footer .grid-arrow:hover {
-          opacity: 1;
-          cursor: pointer; }
+      .discovery-container .songGrid .shit-ball {
+        border-radius: 50%;
+        border-color: #000;
+        border-width: 5px;
+        color: black;
+        width: 15px;
+        height: 15px;
+        background-color: black;
+        right: 0;
+        top: 0;
+        margin-bottom: 15px !important;
+        margin-left: 5px;
+        padding-top: 10px; }
+      .discovery-container .songGrid .song-grid-footer {
+        text-align: center; }
+        .discovery-container .songGrid .song-grid-footer .grid-arrow {
+          height: 20px;
+          opacity: .5;
+          transition: .2s ease all; }
+          .discovery-container .songGrid .song-grid-footer .grid-arrow img {
+            height: 100%; }
+          .discovery-container .songGrid .song-grid-footer .grid-arrow.next {
+            right: 0; }
+          .discovery-container .songGrid .song-grid-footer .grid-arrow.previous {
+            transform: rotate(180deg); }
+          .discovery-container .songGrid .song-grid-footer .grid-arrow:hover {
+            opacity: 1;
+            cursor: pointer; }
     .discovery-container .discover-full-song {
       width: calc(56% - 0px);
       display: inline-block;
