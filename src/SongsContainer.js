@@ -161,7 +161,7 @@ class SongsContainer extends Component {
           })
         })
 
-    
+
 
         const songList = this.props.filteredPosts.map((song, index) => {
           return(
@@ -215,10 +215,10 @@ class SongsContainer extends Component {
                             <button className='grid-arrow previous' onClick={() => this.navGrid(false)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>
-                            <button className='shit-ball'> </button>
-                            <button className='shit-ball'> </button>
-                            <button className='shit-ball'> </button>
-                            <button className='shit-ball'> </button>
+                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
                             <button className='grid-arrow next' onClick={() => this.navGrid(true, songGridsFull.length)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>
