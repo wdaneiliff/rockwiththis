@@ -75,8 +75,6 @@ class SongsContainer extends Component {
 
     navGrid(e) {
       let num = 0
-      console.log("asdf")
-      console.log(e)
       if (e){
         num = this.state.gridPage + 1
       } else if (!e && this.state.gridPage != 0){
@@ -85,10 +83,6 @@ class SongsContainer extends Component {
           gridPage: this.state.gridPage - 1,
         })
       }
-      console.log("this.state.gridPage")
-      console.log(num)
-      console.log("this.state.totalCarouselPages")
-      console.log(this.state.totalCarouselPages)
       const changePage = () => {
         this.setState({
           gridPage: num,
