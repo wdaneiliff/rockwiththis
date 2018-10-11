@@ -35,15 +35,16 @@ class SongsContainer extends Component {
         this.enableDiscoverScroll = this.enableDiscoverScroll.bind(this)
         this.navGrid = this.navGrid.bind(this)
         this.handleCarousel = this.handleCarousel.bind(this)
-        this.loadMoreSongs()
-        this.loadMoreSongs()
-        this.loadMoreSongs()
     }
 
     componentWillMount() {
       this.setState({
         loading: false,
       })
+      console.log("Pulling la stuff")
+      this.loadMoreSongs()
+      this.loadMoreSongs()
+      this.loadMoreSongs()
     }
 
     componentDidMount() {
