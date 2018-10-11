@@ -77,7 +77,13 @@ class SongsContainer extends Component {
     }
 
     navGrid(e) {
-      const num = e ? this.state.gridPage + 1 : this.state.gridPage - 1
+      let num = 1
+      if (e){
+        num = this.state.gridPage + 1
+      } else if (e == false && this.state.gridPage != 1){
+        num = this.state.gridPage - 1
+      }
+      //const num = e ? this.state.gridPage + 1 : this.state.gridPage - 1
       const changePage = () => {
         this.setState({
           gridPage: num,
@@ -133,6 +139,65 @@ class SongsContainer extends Component {
         const scrollHeight = document.getElementById('hero-post').clientHeight + 45
         window.scrollY > scrollHeight ? this.setState({ disableScroll: false }) : ''
         window.scrollY < scrollHeight ? this.setState({ disableScroll: true }) : ''
+    }
+
+    renderPaginationDots() {
+      if (this.state.gridPage == 1) {
+        return(
+          <div className="pagination-container">
+            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot-small'/>
+          </div>
+        );
+      }
+      if (this.state.gridPage == 2) {
+        return(
+          <div className="pagination-container">
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot-small'/>
+          </div>
+        );
+      }
+      if (this.state.gridPage == 3) {
+        return(
+          <div className="pagination-container">
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot-small'/>
+          </div>
+        );
+      }
+      if (this.state.gridPage == 4) {
+        return(
+          <div className="pagination-container">
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot-small'/>
+          </div>
+        );
+      }
+      if (this.state.gridPage > 4) {
+        return(
+          <div className="pagination-container">
+            <button className='pagination-dot-small'/>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot-small'/>
+          </div>
+        );
+      }
     }
 
     render() {
@@ -216,10 +281,7 @@ class SongsContainer extends Component {
                             <button className='grid-arrow previous' onClick={() => this.navGrid(false)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>
-                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
-                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
-                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
-                            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+                            {this.renderPaginationDots()}
                             <button className='grid-arrow next' onClick={() => this.navGrid(true, songGridsFull.length)}>
                               <img src='http://www.dashboard.rockwiththis.com/wp-content/uploads/2018/06/iconmonstr-arrow-25-48.png' />
                             </button>

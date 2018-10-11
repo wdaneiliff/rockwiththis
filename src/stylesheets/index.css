@@ -1862,18 +1862,40 @@ a.spotifyLink {
         margin-top: -3px;
         cursor: pointer;
         border: 1px solid #fff !important; }
+      .discovery-container .songGrid .pagination-container {
+        width: 125px;
+        flex-direction: row;
+        margin: 0;
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        text-align: center; }
+      .discovery-container .songGrid .pagination-dot-small {
+        margin-left: 2.5px;
+        margin-right: 2.5px;
+        height: 8px;
+        width: 8px;
+        background-color: #D8D8D8;
+        border-radius: 50%; }
+        .discovery-container .songGrid .pagination-dot-small i {
+          color: #D8D8D8; }
       .discovery-container .songGrid .pagination-dot {
         right: 0;
         top: 0;
-        margin-bottom: 15px !important;
         margin-left: 5px;
-        padding-top: 10px; }
+        margin-right: 5px; }
         .discovery-container .songGrid .pagination-dot i {
           color: #D8D8D8; }
         .discovery-container .songGrid .pagination-dot i.active {
           color: #4A90E2; }
+      .discovery-container .songGrid .pagination-dot-active i {
+        color: #4A90E2; }
       .discovery-container .songGrid .song-grid-footer {
-        text-align: center; }
+        text-align: center;
+        flex-direction: row;
+        height: 20px;
+        display: flex;
+        justify-content: center; }
         .discovery-container .songGrid .song-grid-footer .grid-arrow {
           height: 20px;
           opacity: .5;

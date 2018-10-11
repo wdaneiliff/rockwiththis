@@ -2742,12 +2742,31 @@ a.spotifyLink {
           cursor: pointer;
           border: 1px solid #fff !important;
         }
+        .pagination-container{
+          width: 125px;
+          flex-direction: row;
+          margin: 0;
+          margin-right: 0;
+          margin-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+        .pagination-dot-small {
+          margin-left: 2.5px;
+          margin-right: 2.5px;
+          height: 8px;
+          width:  8px;
+          background-color: #D8D8D8;
+          border-radius: 50%;
+          i {
+            color: #D8D8D8;
+          }
+        }
         .pagination-dot {
           right: 0;
           top: 0;
-          margin-bottom: 15px !important;
           margin-left: 5px;
-          padding-top: 10px;
+          margin-right: 5px;
 
           i {
             color: #D8D8D8;
@@ -2759,8 +2778,17 @@ a.spotifyLink {
 
 
         }
+        .pagination-dot-active{
+          i {
+            color: #4A90E2;
+          }
+        }
         .song-grid-footer {
           text-align: center;
+          flex-direction: row;
+          height: 20px;
+          display: flex;
+          justify-content: center;
           .grid-arrow {
             height: 20px;
             opacity: .5;
