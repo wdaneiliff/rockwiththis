@@ -23,7 +23,7 @@ class SongsContainer extends Component {
           fixedFilterBar: false,
           disableScroll: true,
           loading: true,
-          gridPage: 1,
+          gridPage: 0,
           totalCarouselPages: 1
         }
 
@@ -42,9 +42,6 @@ class SongsContainer extends Component {
         loading: false,
       })
       console.log("Pulling la stuff")
-      this.loadMoreSongs()
-      this.loadMoreSongs()
-      this.loadMoreSongs()
     }
 
     componentDidMount() {
@@ -77,24 +74,33 @@ class SongsContainer extends Component {
     }
 
     navGrid(e) {
-      let num = 1
+      let num = 0
+      console.log("asdf")
+      console.log(e)
       if (e){
         num = this.state.gridPage + 1
-      } else if (e == false && this.state.gridPage != 1){
-        num = this.state.gridPage - 1
+      } else if (!e && this.state.gridPage != 0){
+        console.log("bakcing")
+        this.setState({
+          gridPage: this.state.gridPage - 1,
+        })
       }
-      //const num = e ? this.state.gridPage + 1 : this.state.gridPage - 1
+      console.log("this.state.gridPage")
+      console.log(num)
+      console.log("this.state.totalCarouselPages")
+      console.log(this.state.totalCarouselPages)
       const changePage = () => {
         this.setState({
           gridPage: num,
         })
       }
-
-      if (e && num === this.state.totalCarouselPages + 1) {
+      if (num + 1 > this.state.totalCarouselPages && num > this.state.gridPage) {
         this.loadMoreSongs(changePage)
-      } else {
+      } else if (num > this.state.gridPage) {
         changePage()
       }
+      //const num = e ? this.state.gridPage + 1 : this.state.gridPage - 1
+
     }
 
     handleCarousel() {
@@ -142,11 +148,22 @@ class SongsContainer extends Component {
     }
 
     renderPaginationDots() {
-      if (this.state.gridPage == 1) {
+      if (this.state.gridPage == 0) {
         return(
           <div className="pagination-container">
             <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot-small'/>
+          </div>
+        );
+      }
+      if (this.state.gridPage == 1) {
+        return(
+          <div className="pagination-container">
+            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot-small'/>
@@ -157,8 +174,8 @@ class SongsContainer extends Component {
         return(
           <div className="pagination-container">
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
-            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
+            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot-small'/>
           </div>
@@ -169,24 +186,13 @@ class SongsContainer extends Component {
           <div className="pagination-container">
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
-            <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
-            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
-            <button className='pagination-dot-small'/>
-          </div>
-        );
-      }
-      if (this.state.gridPage == 4) {
-        return(
-          <div className="pagination-container">
-            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
-            <button className='pagination-dot'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot pagination-dot-active'><i className="fas fa-circle"></i></button>
             <button className='pagination-dot-small'/>
           </div>
         );
       }
-      if (this.state.gridPage > 4) {
+      if (this.state.gridPage > 3) {
         return(
           <div className="pagination-container">
             <button className='pagination-dot-small'/>
