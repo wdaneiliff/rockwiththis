@@ -26,8 +26,5 @@ const database = new Pool({
   port: DB_PORT
 });
 
+
 module.exports = database;
-
-
-
-

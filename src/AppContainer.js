@@ -5,7 +5,7 @@ import * as Actions from './actions/index'
 import { bindActionCreators } from 'redux'
 import OffScreen from './OffScreen'
 import SocialLinks from './SocialLinks.js'
-import Header from './Header'
+import Header from './components/Header/Header.js'
 import MainPlayer from './MainPlayer'
 import { Element } from 'react-scroll'
 

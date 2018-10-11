@@ -2742,19 +2742,22 @@ a.spotifyLink {
           cursor: pointer;
           border: 1px solid #fff !important;
         }
-        .shit-ball{
-          border-radius: 50%;
-          border-color: #000;
-          border-width: 5px;
-          color: black;
-          width: 15px;
-          height: 15px;
-          background-color: black;
+        .pagination-dot {
           right: 0;
           top: 0;
-          margin-bottom: 15px!important;
+          margin-bottom: 15px !important;
           margin-left: 5px;
-          padding-top: 10px
+          padding-top: 10px;
+
+          i {
+            color: #D8D8D8;
+          }
+
+          i.active {
+            color: #4A90E2;
+          }
+
+
         }
         .song-grid-footer {
           text-align: center;

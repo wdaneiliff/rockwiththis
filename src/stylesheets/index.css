@@ -1862,19 +1862,16 @@ a.spotifyLink {
         margin-top: -3px;
         cursor: pointer;
         border: 1px solid #fff !important; }
-      .discovery-container .songGrid .shit-ball {
-        border-radius: 50%;
-        border-color: #000;
-        border-width: 5px;
-        color: black;
-        width: 15px;
-        height: 15px;
-        background-color: black;
+      .discovery-container .songGrid .pagination-dot {
         right: 0;
         top: 0;
         margin-bottom: 15px !important;
         margin-left: 5px;
         padding-top: 10px; }
+        .discovery-container .songGrid .pagination-dot i {
+          color: #D8D8D8; }
+        .discovery-container .songGrid .pagination-dot i.active {
+          color: #4A90E2; }
       .discovery-container .songGrid .song-grid-footer {
         text-align: center; }
         .discovery-container .songGrid .song-grid-footer .grid-arrow {
