@@ -4572,7 +4572,8 @@ img.hands1 {
   .discovery-container .songGrid .grid-container-wrapper {
     overflow: scroll;
     white-space: nowrap;
-    height: auto; }
+    height: auto;
+    width: 100% !important; }
   .discovery-container .discover-full-song {
     width: calc(66% - 0px);
     display: inline-block;
