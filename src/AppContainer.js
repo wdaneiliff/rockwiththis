@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import * as Actions from './actions/index'
+import * as Actions from 'actions/index'
 import { bindActionCreators } from 'redux'
-import OffScreen from './OffScreen'
-import SocialLinks from './SocialLinks.js'
+import OffScreen from './components/OffScreenPlayer/OffScreen'
+import SocialLinks from './components/SocialLinks/SocialLinks.js'
 import Header from './components/Header/Header.js'
-import MainPlayer from './MainPlayer'
+import MainPlayer from './components/FooterPlayer/MainPlayer'
 import { Element } from 'react-scroll'
 
 

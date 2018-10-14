@@ -3,14 +3,12 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as Scroll from 'react-scroll';
-import { fetchRelatedSongs } from './actions/relatedSongs'
-import { fetchFeaturedPosts } from './actions/featuredPosts'
-import SocialLinks from './SocialLinks'
-import SingleSongContainer from './SingleSongContainer'
-import SidebarRight from './SidebarRight'
-import RelatedSongs from './RelatedSongs'
-import LoadingComponent from './LoadingComponent'
-import SingleSongPlaceholder from './SingleSongPlaceholder'
+import { fetchRelatedSongs } from 'actions/relatedSongs'
+import { fetchFeaturedPosts } from 'actions/featuredPosts'
+import SingleSongContainer from '../SingleSongContainer'
+import RelatedSongs from 'components/RelatedSongs/RelatedSongs'
+import LoadingComponent from 'components/Loading/LoadingComponent'
+import SingleSongPlaceholder from '../SingleSongPlaceholder'
 
 class SingleSongPage extends Component {
     constructor(props) {
