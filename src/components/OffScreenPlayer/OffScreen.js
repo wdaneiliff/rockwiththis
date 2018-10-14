@@ -56,23 +56,6 @@ class OffScreen extends React.Component {
                       this.player = e;
                     }}
                 />
-                {/*<iframe
-                    id="sc-player"
-                    className="sc-player"
-                    title={activeSong.acf && activeSong.acf.song_name}
-                    width="100"
-                    height="100"
-                    scrolling="no"
-                    frameBorder="no"
-                    onLoad={this.bindPlayNext}
-                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${activeSong && activeSong.acf.sc_track_id}?auto_play=${this.state.autoplay}`}
-                />
-                <YouTube
-                    ref={(ytPlayer) => { this.ytPlayer = ytPlayer }}
-                    videoId={activeSong && activeSong.youtube_track_id}
-                    id="yt-player"
-                    onEnd={() => this.props.playNextSong()}
-                />*/}
             </div>
         )
     }

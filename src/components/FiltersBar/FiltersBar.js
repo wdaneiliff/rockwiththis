@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as Scroll from 'react-scroll'
-import { fetchFilters } from './actions/filters'
-import LoadingComponent from './LoadingComponent'
-// import full from './images/full.svg'
-// import grid from './images/grid.svg'
-// import snapshot from './images/snapshot.svg'
+import { fetchFilters } from 'actions/filters'
+import LoadingComponent from 'components/Loading/LoadingComponent'
 
 
 class FiltersBar extends Component {

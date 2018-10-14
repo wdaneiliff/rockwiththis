@@ -1,11 +1,9 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
-import Song from './Song'
-import SingleSong from './SingleSong'
 import HeroSong from './HeroSong'
-import hoverGradient from './images/rwt-hover-gradient.png'
-import HeroPostsPlaceholder from './HeroPostsPlaceholder'
+import hoverGradient from 'images/rwt-hover-gradient.png'
+import HeroPostsPlaceholder from 'components/HeroGridPlaceholder/HeroGridPlaceholder'
 
 
 class HeroPosts extends React.Component {

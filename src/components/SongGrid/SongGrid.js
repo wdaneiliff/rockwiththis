@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 import YouTube from 'react-youtube'
-import head from './images/head.png'
-import  pauseButton  from './images/PAUSE-BUTTON.png'
-import  playButton  from './images/playbutton.svg'
+import head from 'images/head.png'
+import  pauseButton  from 'images/PAUSE-BUTTON.png'
+import  playButton  from 'images/playbutton.svg'
 
 
 class SongGrid extends Component {
