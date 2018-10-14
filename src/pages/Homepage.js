@@ -23,7 +23,6 @@ class Homepage extends Component {
           </Helmet>
              <div className="homeContainer">
                     <SongsContainer {...this.props} />
-                    {/*<SidebarRight />*/}
                  </div>
            </div>
         )

@@ -7,10 +7,10 @@ import AnimateHeight from 'react-animate-height'
 import { Icon } from 'react-fa'
 import YouTube from 'react-youtube'
 //import { toggleSong, togglePlayPause } from './actions/queue'
-import ShareBox from './ShareBox'
-import  playButton  from './images/playbutton.svg'
-import  pauseButton  from './images/pauseButton.png'
-import pauseButtonWhite from './images/PAUSE-BUTTON.png'
+import ShareBox from 'components/ShareBox/ShareBox'
+import  playButton  from 'images/playbutton.svg'
+import  pauseButton  from 'images/pauseButton.png'
+import pauseButtonWhite from 'images/PAUSE-BUTTON.png'
 
 
 

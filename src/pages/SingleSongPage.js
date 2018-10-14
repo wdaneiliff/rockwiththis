@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 import * as Scroll from 'react-scroll';
 import { fetchRelatedSongs } from 'actions/relatedSongs'
 import { fetchFeaturedPosts } from 'actions/featuredPosts'
-import SingleSongContainer from '../SingleSongContainer'
+import SingleSong from 'components/SingleSong/SingleSong'
 import RelatedSongs from 'components/RelatedSongs/RelatedSongs'
 import LoadingComponent from 'components/Loading/LoadingComponent'
-import SingleSongPlaceholder from '../SingleSongPlaceholder'
+import SingleSongPlaceholder from 'components/SingleSongPlaceholder/SingleSongPlaceholder'
 
 class SingleSongPage extends Component {
     constructor(props) {
@@ -39,7 +39,9 @@ class SingleSongPage extends Component {
               {this.state.loading ? <SingleSongPlaceholder />
                   :
                   <Fragment>
-                      <SingleSongContainer {...this.props} />
+                  <div className="singleSongContainer">
+                      <SingleSong {...this.props} />
+                  </div>
                       <RelatedSongs {...this.props} />
                   </Fragment>
 
