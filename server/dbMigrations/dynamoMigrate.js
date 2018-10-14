@@ -23,9 +23,19 @@ songs.forEach((song, index) => {
     Item: {
       'song_id' : {S: song.id.toString()},
       'name' : {S: song.acf.song_name},
+      'artist' : {S: song.acf.artist_name},
       'description' : {S: song.content.rendered},
-      'subgenres' : {L: Array.from(song.tags)}
-
+      'subgenres' : {L: Array.from(song.tags)},
+      'image' : {S: song.better_featured_image.source_url},
+      'curator_id' : {S: song._embedded.author.id},
+      'spotify_link' : {S: song.acf.spotify_link},
+      'soundcloud_link' : {S: song.acf.soundcloud_link},
+      'soundcloud_track_id' : {S: song.acf.sc_track_id},
+      'youtube_link' : {S: song.acf.youtube_link},
+      'youtube_track_id' : {S: song.acf.youtube_track_id},
+      'bpm' : {S: song.acf.bpm},
+      'artist_location' : {S: song.acf.location},
+      'post_date' : {S: song.date}    
     }
   };
   ddb.putItem(params, function(err, data) {
