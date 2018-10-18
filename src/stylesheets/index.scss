@@ -6145,6 +6145,39 @@ footer .songSourceContainer .source.youtube {
     // background: linear-gradient(210deg, #fafafa 25%, #ffffff 25%) !important;
     background: #fafafa !important;
 
+    .intro-mission {
+    width: calc(50% - 75px);
+    display: inline-block;
+    padding: 25px;
+    max-width: 500px;
+    padding-left: 50px;
+
+
+    h3 {
+      font-size: 40px;
+    color: #000;
+    font-weight: 700;
+    margin-top: 0px;
+    line-height: 50px;
+    text-align: left;
+    margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    p.mission-tagline b {
+    margin-bottom: 10px !important;
+    display: block;
+}
+  }
+    .intro-email {
+    width: calc(50% - 50px);
+    display: inline-block;
+    padding: 25px;
+  }
+
 
     img.intro1Image {
       position: absolute;
@@ -6162,29 +6195,6 @@ footer .songSourceContainer .source.youtube {
   display: none;
   }
 
-  .intro-pic {
-    position: absolute;
-    border: 2px solid #fff;
-    box-shadow: rgba(0,0,0,.4) 0 1px 3px !important;
-    height: 300px;
-    width: 300px;
-  }
-
-  .intro-pic.pic1 {
-    top: 377px;
-    right: 550px;
-    z-index: 6;
-  }
-  .intro-pic.pic2 {
-    top: 450px;
-    right: 208px;
-    z-index: 4;
-  }
-  .intro-pic.pic3 {
-    top: 200px;
-    right: 100px;
-    z-index: 3;
-  }
 
   img.color {
     position: absolute;
@@ -6230,7 +6240,8 @@ padding: 10px;
 .middle {
     position: relative;
     background: rgba(0,0,0,0) !important;
-    background: linear-gradient(-193deg, rgba(255,255,255,.0) 25%, #fafafa 25%) !important;
+    // background: linear-gradient(-193deg, rgba(255,255,255,.0) 25%, #fafafa 25%) !important;
+    background: linear-gradient(-193deg,#fafafa 25%, rgba(255, 255, 255, 0) 25% ) !important;
         // min-height: calc(100vh - 75px - 75px);
         padding-bottom: 475px;
 
@@ -6249,7 +6260,7 @@ padding: 10px;
 }
 img.color2 {
   transform: rotate(180deg);
-  width: 650px;
+  width: 450px;
   position: absolute;
   left: 0;
   bottom: 315px;
@@ -6282,6 +6293,14 @@ z-index: 499;
   line-height: 50px;
   text-align: left;
   margin-bottom: 8px;
+  margin-top: 0;
+    vertical-align: top;
+  }
+
+  .art-top {
+    img {
+      width: 42%;
+    }
   }
 
   p {
@@ -6292,7 +6311,7 @@ font-family: Open-Sans,sans-serif;
 
   }
 
-  p.mission-tagline {
+  p.art-tagline {
     margin-bottom: 10px;
 }
 p.email-text {
@@ -6451,7 +6470,7 @@ img.color.bottomMiddle {
   position: absolute;
 top: -200px;
 right: 0;
-width: 800px;
+width: 600px;
 }
 
 .intro img.logo1 {

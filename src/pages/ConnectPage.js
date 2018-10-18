@@ -22,7 +22,7 @@ import pic3 from 'images/pic3.png'
 import colorFull from 'images/connectColors.png'
 import color1 from 'images/connectColors.png'
 import colorIntroLong from 'images/connectColorsIntroLong.png'
-import cross from 'images/cross.svg'
+import cross from 'images/cross.png'
 import logoWriting from 'images/logo-writing-black.png'
 import blackLogo from 'images/rwt-head-black.png'
 
@@ -58,6 +58,47 @@ class ConnectPage extends Component {
           </Helmet>
              <div className="connectPage">
 
+                <div className="intro">
+
+                <div className="intro-mission">
+
+                  <h3>
+                    HUMAN RHYTHMS. <br/>
+                    NOT ALGORITHMS. <br/>
+                  </h3>
+
+
+
+
+                  <p className="mission-tagline">
+                  <b>{"Rock With This'"} mission is simple, to help you discover your new favorite songs.</b>
+                  </p>
+                  <p>Our team consists of huge music lovers who spend hours each day digging through tracks, to deliver the best of {`what's`} breaking and uncover the left behind tracks that need to be heard. Our goal is for people to have heard less than 20% of the tracks and to love 80% or more. </p>
+
+
+                </div>
+
+                <div className="intro-email">
+
+                <p className="email-text">Join us for daily songs, fresh playlists, and free tix to sold out shows!</p>
+
+                <Mailchimp
+                    action='https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2'
+                    fields={[
+                      {
+                        name: 'EMAIL',
+                        placeholder: 'Email',
+                        type: 'email',
+                        required: true
+                      }
+                    ]}
+
+                    className='rwt-email-form'
+                  />
+                  </div>
+
+                </div>
+
 
                 <div className="middle">
                 <img className="color bottomMiddle" src={color1} />
@@ -65,31 +106,25 @@ class ConnectPage extends Component {
                   <div className="middle-content">
                     <img className="gridPic" src={gridPic} />
                     <div className="four-content">
-                        <h3>
-                          HUMAN RHYTHMS. <br/>
-                          NOT ALGORITHMS. <br/>
-                        </h3>
+                    <div className="art-top">
+                    <h3>
+                      MUSIC.<br/>
+                      INSIGHT.<br/>
+                      ART.<br/>
+                      DESIGN. <br/>
+                    </h3>
+
+                    <img src={cross} />
+                    </div>
+
 
                       <p className="mission-tagline">
-                      <b>{"Rock With This'"} mission is simple, to help you discover your new favorite songs.</b>
+
                       </p>
-                      <hr />
 
-                      <p className="email-text">Join us for daily songs, fresh playlists, and free tix to sold out shows!</p>
+                      <p className="email-text">We believe music inspires art and vice versa. Cover art is getting more sick by the day and we seek to highlight the best of what’s being designed.</p>
 
-                      <Mailchimp
-                          action='https://rockwiththis.us17.list-manage.com/subscribe/post?u=bfac2b1c3906a8dba6db52ab1&amp;id=ddc17b51d2'
-                          fields={[
-                            {
-                              name: 'EMAIL',
-                              placeholder: 'Email',
-                              type: 'email',
-                              required: true
-                            }
-                          ]}
 
-                          className='rwt-email-form'
-                        />
 
                     </div>
 
