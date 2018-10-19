@@ -25,8 +25,7 @@ songs.forEach((song, index) => {
       'name' : {S: song.acf.song_name},
       'artist' : {S: song.acf.artist_name},
       'description' : {S: song.content.rendered},
-      'subgenres' : {L: Array.from(song.tags)},
-      'image' : {S: song.better_featured_image.source_url},
+      'image' : {S: (song.better_featured_image) ? song.better_featured_image.source_url : null},
       'curator_id' : {S: song._embedded.author.id},
       'spotify_link' : {S: song.acf.spotify_link},
       'soundcloud_link' : {S: song.acf.soundcloud_link},
@@ -35,7 +34,7 @@ songs.forEach((song, index) => {
       'youtube_track_id' : {S: song.acf.youtube_track_id},
       'bpm' : {S: song.acf.bpm},
       'artist_location' : {S: song.acf.location},
-      'post_date' : {S: song.date}    
+      'post_date' : {S: song.date}
     }
   };
   ddb.putItem(params, function(err, data) {
@@ -71,3 +70,38 @@ songs.forEach((song, index) => {
 //   database.query(query)
 //     .then(() => console.log('BITCH WE DONE!', index));
 });
+
+
+//
+// songs.forEach((song, index) => {
+//   console.log(song.tags)
+//   var params = {
+//     TableName: 'Songs',
+//     Item: {
+//       'song_id' : {S: song.id.toString()},
+//       'name' : {S: song.acf.song_name},
+//       'artist' : {S: song.acf.artist_name},
+//       'description' : {S: song.content.rendered},
+//       'subgenres' : {L: Array.from(song.tags)},
+//       'image' : {S: (song.better_featured_image) ? song.better_featured_image.source_url : null},
+//       'curator_id' : {S: song._embedded.author.id},
+//       'spotify_link' : {S: song.acf.spotify_link},
+//       'soundcloud_link' : {S: song.acf.soundcloud_link},
+//       'soundcloud_track_id' : {S: song.acf.sc_track_id},
+//       'youtube_link' : {S: song.acf.youtube_link},
+//       'youtube_track_id' : {S: song.acf.youtube_track_id},
+//       'bpm' : {S: song.acf.bpm},
+//       'artist_location' : {S: song.acf.location},
+//       'post_date' : {S: song.date}
+//     }
+//   };
+//   ddb.putItem(params, function(err, data) {
+//   if (err) {
+//     console.log("Error", err);
+//   } else {
+//     console.log("Success", data);
+//   }
+// });
+//
+//
+// });

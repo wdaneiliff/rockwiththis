@@ -97,6 +97,7 @@ class SingleSong extends Component {
     }
 
     render() {
+      console.log(this.props)
         const {
             activeSong,
             isPlaying,

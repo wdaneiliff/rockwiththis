@@ -4,7 +4,8 @@ import { Link, NavLink, Nav } from 'react-router-dom'
 import {  Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import desktopLogo from 'images/logo-desktop.png'
 import mobileLogo from 'images/logo-mobile.png'
-
+import './Header.scss'
+/* eslint-disable */
 
 class Header extends Component {
     constructor(props) {

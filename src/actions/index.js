@@ -99,7 +99,9 @@ export const fetchSingleSong = (songId, callback) => (dispatch) => {
   const songURL = `https://dashboard.rockwiththis.com/wp-json/wp/v2/songs/${songId}`
   fetch(songURL).then(res => res.json()).then((res) => {
     dispatch(FETCH_SINGLE_SONG(res))
-    callback()
+    if (callback) {
+      callback()
+    }
     const baseURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=35&tags[]='
     const filterIds = res.pure_taxonomies.tags.map(filter => filter.term_id)
     const filterParamsString = filterIds.join('&tags[]=')

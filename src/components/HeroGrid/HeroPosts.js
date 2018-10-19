@@ -26,6 +26,7 @@ class HeroPosts extends React.Component {
 
 
     render() {
+      console.log(this.props)
         const { heroPosts } = this.props
 
         const trackDisplay = (post, i, isSmall) => {

@@ -105,7 +105,7 @@ class FiltersBar extends Component {
       document.addEventListener('click', this.closeSubGenreFilters);
     }
 
-    closeSubGenreFilters() {
+    closeSubGenreFilters(event) {
       if (this.SubgenreFiltersDropDown && !this.SubgenreFiltersDropDown.contains(event.target)) {
         this.setState({ showSubGenreFilters: false }, () => {
           document.removeEventListener('click', this.closeSubGenreFilters);

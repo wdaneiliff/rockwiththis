@@ -26,7 +26,16 @@ class SingleSongPage extends Component {
           Scroll.animateScroll.scrollToTop()
         })
       }
+
       this.props.actions.fetchSingleSong(this.props.match.params.id, callback)
+    }
+
+    componentDidUpdate(prevProps) {
+        const {scrollTop} = this.state;
+        if(this.props.match.params.id !== prevProps.match.params.id){
+            this.props.actions.fetchSingleSong(this.props.match.params.id)
+        }
+
     }
 
     render() {

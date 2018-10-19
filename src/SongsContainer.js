@@ -14,6 +14,7 @@ import SongGridPlaceholder from 'components/SongGridPlaceholder/SongGridPlacehol
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+/* eslint-disable */
 
 class SongsContainer extends Component {
     constructor(props) {
