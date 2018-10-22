@@ -1,0 +1,120 @@
+
+// PLACEHOLDER FULLSONG STYLES
+
+.placeholder-FullSongContainer {
+  height: 100%;
+  margin: 0 auto;
+display: block;
+max-width: 750px;
+
+  .placeholder-imageContainer {
+    animation: pulse 1s infinite ease-in-out;
+    background: rgba(165, 165, 165, .1);
+    position: relative;
+    width: 16vw;
+      height: 16vw;
+      float: left;
+      display: inline-block;
+      margin-right: 15px;
+      max-width: 330px;
+
+
+      img {
+            width: 16vw;
+            opacity: 0;
+      }
+  }
+  .placeholder-postContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0px;
+
+    .placeholder-bottomDescription
+
+      .placeholder-text-lines {
+        height: 15px;
+        margin: 15px 0;
+        animation: pulse 1s infinite ease-in-out;
+      }
+    }
+
+
+      .placeholder-topContent {
+        height: 16vw;
+        overflow-y: hidden;
+
+        .placeholder-text-lines {
+          height: 15px;
+          margin: 15px 0;
+          animation: pulse 1s infinite ease-in-out;
+        }
+
+
+          .placeholder-play-button {
+              height: 60px;
+              width: 60px;
+              animation: pulse 1s infinite ease-in-out;
+              border-radius: 50%;
+              display: inline-block;
+              display: inline-block;
+              padding-right: 5px;
+          }
+
+          .placeholder-postInfo {
+            width: 50%;
+            height: 60px;
+                display: inline-block !important;
+
+              .placeholder-song {
+                  height: 15px;
+                  margin: 15px;
+                  animation: pulse 1s infinite ease-in-out;
+                  max-width: 250px;
+              }
+              .placeholder-song.artist {
+                max-width: 200px;
+              }
+          }
+
+
+      }
+
+      .placeholder-metaInfo {
+        height: 25px;
+        padding: 10px 0;
+        margin-left: 15px;
+
+        .placeholder-date {
+          height: 15px;
+          width: 100px;
+          animation: pulse 1s infinite ease-in-out;
+          margin-right: 15px;
+          display: inline-block;
+        }
+        .placeholder-author {
+          height: 15px;
+          width: 85px;
+          animation: pulse 1s infinite ease-in-out;
+          margin-right: 15px;
+          display: inline-block;
+        }
+        .placeholder-tags {
+          width: auto;
+          margin-right: 15px;
+          display: inline-block;
+          .placeholder-tag {
+            height: 25px;
+            width: 75px;
+            animation: pulse 1s infinite ease-in-out;
+            margin-right: 15px;
+            display: inline-block;
+            border-radius: 6px;
+          }
+
+
+        }
+
+
+  }
+}

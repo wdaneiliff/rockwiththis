@@ -1,0 +1,281 @@
+
+  // HERO POSTS PLACEHOLDER LOADING CONTENT
+
+
+  .placeholder-heroPosts {
+    height: 100%;
+    width: 100%;
+
+    .placeholder-featuredTrack {
+      width: 40vw;
+      height: 40vw;
+      display: inline-block;
+      max-height: 674px;
+      max-width: 674px;
+      animation: pulse 1s infinite ease-in-out;
+      position: relative;
+
+      .placeholder-post-info {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: auto;
+          background: hsla(0,0%,100%,.7);
+          transition: all 0s linear;
+          height: 100px;
+
+          .placeholder-play-button {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            position: relative;
+
+
+            .placeholder-play  {
+              border-radius: 50%;
+              animation: pulse 1s infinite ease-in-out;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 75px;
+              height: 75px;
+            }
+
+          }
+
+          .placeholder-song-info {
+            width: calc(100% - 200px)!important;
+            display: inline-block;
+            height: 100%;
+
+            .placeholder-song-name {
+                animation: pulse 1s infinite ease-in-out;
+                height: 25px;
+                margin: 15px;
+                max-width: 55%;
+
+            }
+
+            .placeholder-artist-name {
+                animation: pulse 1s infinite ease-in-out;
+                height: 25px;
+                margin: 15px;
+                max-width: 45%;
+            }
+          }
+
+          .placeholder-date-box {
+              display: inline-block;
+              width: 100px;
+              height: 100%;
+              animation: pulse 1s infinite ease-in-out;
+          }
+
+      }
+  }
+
+    .placeholder-previous-week {
+        max-height: 674px;
+        width: 60%;
+        height: 100%;
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+        white-space: normal;
+        margin-left: 1px;
+
+        .placeholder-less-featured-track-wrapper {
+          max-height: 337px;
+          max-width: 337px;
+          width: 20vw;
+          height: 20vw;
+          display: inline-block;
+          vertical-align: top;
+
+          .placeholder-less-featured-track {
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+            max-height: 337px;
+            max-width: 337px;
+            margin: 0 auto;
+            animation: pulse 1s infinite ease-in-out;
+            position: relative;
+
+
+            .placeholder-post-info {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: auto;
+                background: hsla(0,0%,100%,.7);
+                transition: all 0s linear;
+                height: 50px;
+
+                .placeholder-play-button {
+                  width: 50px;
+                  height: 50px;
+                  display: inline-block;
+                  position: relative;
+
+
+                  .placeholder-play  {
+                    border-radius: 50%;
+                    animation: pulse 1s infinite ease-in-out;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 35px;
+                    height: 35px;
+                  }
+
+                }
+
+                .placeholder-song-info {
+                  width: calc(100% - 100px)!important;
+                  display: inline-block;
+                  height: 100%;
+
+                  .placeholder-song-name {
+                      animation: pulse 1s infinite ease-in-out;
+                      height: 10px;
+                      margin: 10px;
+                      max-width: 55%;
+
+                  }
+
+                  .placeholder-artist-name {
+                      animation: pulse 1s infinite ease-in-out;
+                      height: 10px;
+                      margin: 10px;
+                      max-width: 45%;
+                  }
+                }
+
+                .placeholder-date-box {
+                    display: inline-block;
+                    width: 50px;
+                    height: 100%;
+                    animation: pulse 1s infinite ease-in-out;
+                }
+
+            }
+
+
+          }
+
+        }
+    }
+
+    @media (max-width: 1200px) {
+
+      .placeholder-heroPosts {
+            height: calc(50vw - 2px);
+      }
+
+      .placeholder-featuredTrack {
+          width: 50vw;
+          height: 50vw;
+      }
+
+      .placeholder-previous-week {
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        vertical-align: top;
+
+          .placeholder-less-featured-track-wrapper {
+            width: 25vw;
+            height: 25vw;
+          }
+          .placeholder-less-featured-track-wrapper:nth-of-type(5), .placeholder-less-featured-track-wrapper:nth-of-type(6) {
+            display: none;
+          }
+
+      }
+    }
+    @media (max-width: 800px) {
+
+      .placeholder-previous-week {
+        display: none;
+      }
+
+      .placeholder-featuredTrack {
+        width: calc(100% - 1px);
+        height: calc(100% - 1px);
+      }
+    }
+
+
+    }
+
+    @media (max-width: 800px) {
+      .placeholder-heroPosts {
+          width: 100%;
+          height: 100vw !important;
+          max-height: 650px !important;
+
+          .placeholder-featuredTrack {
+            .placeholder-post-info {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: auto;
+                background: hsla(0,0%,100%,.7);
+                transition: all 0s linear;
+                height: 70px !important;
+
+                .placeholder-play-button {
+                  width: 70px;
+                  height: 70px;
+                  display: inline-block;
+                  position: relative;
+
+
+                  .placeholder-play  {
+                    border-radius: 50%;
+                    animation: pulse 1s infinite ease-in-out;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 50px;
+                    height: 50px;
+                  }
+
+                }
+
+                .placeholder-song-info {
+                  width: calc(100% - 140px)!important;
+                  display: inline-block;
+                  height: 100%;
+
+                  .placeholder-song-name {
+                      animation: pulse 1s infinite ease-in-out;
+                      height: 15px;
+                      margin: 15px;
+                      max-width: 70%;
+                  }
+
+                  .placeholder-artist-name {
+                      animation: pulse 1s infinite ease-in-out;
+                      height: 15px;
+                      margin: 15px;
+                      max-width: 60%;
+                  }
+                }
+
+                .placeholder-date-box {
+                    display: inline-block;
+                    width: 70px;
+                    height: 100%;
+                    animation: pulse 1s infinite ease-in-out;
+
+                }
+
+            }
+          }
+      }
+
+    }

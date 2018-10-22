@@ -22,8 +22,16 @@ class Header extends Component {
     }
 
     componentDidMount() {
+      console.log("location.pathname")
+      console.log(location.pathname)
+      if (location.pathname === "/") {
         window.addEventListener('scroll', this.checkDiscoverOrThisWeek)
-        window.addEventListener('resize', this.checkDiscoverOrThisWeek);
+        window.addEventListener('resize', this.checkDiscoverOrThisWeek)
+      }
+      if (location.pathname !== "/") {
+        window.removeEventListener('scroll', this.checkDiscoverOrThisWeek)
+        window.removeEventListener('resize', this.checkDiscoverOrThisWeek)
+      }
     }
 
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './SocialLinks.scss'
 /* eslint-disable */
 
 class SocialLinks extends Component {

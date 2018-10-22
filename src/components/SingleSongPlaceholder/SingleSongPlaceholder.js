@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from 'images/RWT-head-logo.png'
+import './SingleSongPlaceHolder.scss'
 
 const SingleSongPlaceHolder = () =>
   (

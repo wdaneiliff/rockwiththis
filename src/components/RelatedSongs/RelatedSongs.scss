@@ -1,0 +1,80 @@
+
+  .relatedSongs {
+    width: 14%;
+    display: inline-block;
+    vertical-align: top;
+
+    .songImageLink {
+      img.songImage {
+      max-width: 75px;
+      margin: 0 !important;
+      border-radius: 6px;
+    }
+
+    }
+
+  }
+
+
+  // RELATED SONGS SINGLE SONG PAGE DESKTOP STYLES
+  .singleSongPage .relatedSongs {
+      width: 14%;
+      display: inline-block;
+      vertical-align: top;
+      // padding-top: 15px;
+      float: right;
+  }
+
+  .relatedSongsContainer .stack {
+      width: 100%;
+      display: inline-block;
+  }
+  .relatedSongsContainer .stack .songContainer{
+      width: calc(50% - 2px);
+      display: inline-block;
+      margin: 1px;
+  }
+
+  .singleSongPage .relatedSongs .songImageLink img.songImage {
+      max-width: 100%;
+      margin: 0 !important;
+      border-radius: 0;
+  }
+
+
+  @media (max-width: 1200px) {
+    .singleSongPage .relatedSongs {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+        // padding-top: 15px;
+        float: none;
+    }
+  }
+  @media (max-width: 800px) {
+    .singleSongPage .relatedSongs {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        // padding-top: 15px;
+        float: none;
+        padding-top: 40px;
+        max-width: 674px;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    .singleSongPage .relatedSongs .stack:nth-of-type(2) {
+      display: none;
+    }
+
+    .relatedSongsContainer .stack {
+      width: calc(100% - 2px);
+      display: inline-block;
+      margin: 0 auto;
+      margin-left: 2px;
+
+      .songContainer:nth-of-type(10) {
+        display: none !important;
+      }
+    }
+  }

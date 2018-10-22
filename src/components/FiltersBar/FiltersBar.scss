@@ -1,0 +1,391 @@
+ .filters-bar .ToggleViewsDropDown {
+    position: absolute;
+    border: 1px solid #C9C6CB;
+    border-top: 0;
+    right: 35px;
+    background: #fff;
+    z-index: 1000;
+    max-width: 300px;
+    top: 70px;
+    border-radius: 4px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    box-shadow: 0 3px 2px -2px #C9C6CB;
+    padding: 15px;
+
+    button {
+      padding: 6px 15px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #1a6ea9;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: block;
+    color: #1a6ea9;
+
+          svg {
+            width: 12px;
+            fill: #1a6ea9;
+          }
+
+      span {
+        font-size: 12px;
+        color: #1a6ea9;
+        vertical-align: top;
+        padding-top: 5px;
+        // padding: 10px;
+            display: inline-block;
+                margin-left: 10px;
+      }
+
+    }button:hover {
+      background: #1a6ea9;
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+
+      svg {
+        width: 12px;
+        fill: #fff;
+      }
+
+      span {
+        font-size: 12px;
+        color: #fff;
+
+      }
+
+    }
+
+        img {
+        // margin-right: 10px;
+        // padding: 10px;
+    }
+}
+
+
+
+@media (min-width: 800px) {
+  .filters-bar {
+        max-width: 1685px;
+        margin: 0 auto;
+
+        .toggle-view {
+          height: 30px;
+          img {
+            height: 30px;
+          }
+        }
+  }
+}
+
+
+@media(max-width: 800px) {
+  .fixedFiltersBar {
+    position: fixed !important;
+    top: 70px;
+  }
+}
+
+
+
+@media (min-width: 800px) {
+  .ToggleViewsDropDown .desktop {
+    display: block;
+  }
+  .ToggleViewsDropDown .mobile {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .ToggleViewsDropDown .desktop {
+    display: none;
+  }
+  .ToggleViewsDropDown .mobile {
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+
+
+
+// DROPDOWN FILTER TAG STYLES
+.SubgenreFiltersDropDown {
+  max-width: 400px !important;
+  .tag {
+      margin: 5px;
+      cursor: pointer;
+      display: inline-block;
+      &.selected {
+        background: #1a6ea9;
+      }
+    }
+}
+
+.bottom-buttons {
+  width: 100%;
+}
+
+button.disabled {
+  // background: #fff !important;
+  // color: #1a6ea9 !important;
+  // border: 1px solid #1a6ea9 !important;
+  // opacity: .8;
+  // cursor: default !important;
+  pointer-events: none;
+}
+
+button.large-bottom.tag {
+    width: 45%;
+    font-weight: 400;
+    padding: 10px;
+    &:hover {
+      background: #1a6ea9;
+      font-weight: 400;
+      padding: 10px !important;
+    }
+}
+
+
+
+
+@media (max-width: 800px) {
+  .SubgenreFiltersDropDown {
+    max-width: 100% !important;
+    left: 0 !important;
+}
+}
+
+
+
+// FILTERS BAR
+
+.toggle-view.mobile {
+  display: none;
+}
+
+ul.toggleContainer {
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    margin-right: 35px;
+
+    li {
+      display: inline-block;
+    }
+
+        img {
+          display: inline-block;
+          margin: 0 15px;
+           cursor: pointer;
+           width: 30px;
+           margin-bottom: 2px;
+        }
+
+        span {
+          font-size: 10px;
+          display: block;
+          text-align: center;
+        }
+        .mobile {
+          display: none;
+
+
+        }
+}
+
+
+
+// FILTER BUTTON TEMPORARY STYLES
+
+.filters-button i.im.im-angle-down {
+    font-size: 12px;
+    margin-right: 10px;
+    transform: translateY(2px);
+}
+
+.discovery-section .filters-bar button.filters-button {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid #1a6ea9 !important;
+  border-radius: 4px;
+  padding: 10px;
+  color: #1a6ea9;
+  transition: all .3s ease;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+.discovery-section .filters-bar button.filters-button:hover {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid #1a6ea9 !important;
+  background: #1a6ea9;
+  border-radius: 4px;
+  color: #fff;
+}
+.discovery-section .filters-bar button.filters-button.active {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid #1a6ea9 !important;
+  background: #1a6ea9;
+  border-radius: 4px;
+  color: #fff;
+  transition: all .3s ease;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+
+
+// SELECTED FILTERS STYLING
+.selectedFilters button.disabled {
+display: none !important;
+}
+
+button.clearButton {
+border: 1px solid #1a6ea9 !important;
+border-radius: 4px;
+padding: 10px;
+color: #1a6ea9;
+margin-left: 15px;
+}
+button.clearButton:hover {
+border: 1px solid #1a6ea9 !important;
+border-radius: 4px;
+padding: 10px;
+color: #fff !important;
+background: #1a6ea9;
+cursor: pointer;
+}
+
+
+
+
+@media (max-width: 800px) {
+  .ToggleViewsDropDown {
+      width: 100%;
+      left: 0;
+      right: 0;
+      max-width: calc(100vw - 30px) !important;
+
+     button.mobile {
+    display: inline-block;
+    width: 23% !important;
+    text-align: center !important;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+  }
+
+  .discovery-section .selectedFilters {
+    display: none !important;
+  }
+
+
+  .discovery-section .filters-bar .SubgenreFiltersDropDown .dropdown-internal {
+    padding: 15px;
+
+}
+}
+
+.discovery-section .selectedFilters {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+    margin-top: 18px;
+    width: calc(100% - 300px);
+    overflow: hidden;
+    height: 40px !important;
+
+    button.clearButton {
+      border: 1px solid #1a6ea9 !important;
+      border-radius: 4px;
+      padding: 10px;
+      color: #1a6ea9;
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+    button.clearButton {
+      border: 1px solid #1a6ea9 !important;
+      border-radius: 4px;
+      padding: 10px;
+      color: #1a6ea9;
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+
+    .tag {
+      margin-top: 5px;
+    }
+}
+
+.ToggleViewsWrapper {
+    display: none;
+}
+
+
+@media(min-width: 800px) {
+
+  .discovery-section .filters-bar button.filters-button {
+    margin-left: 165px !important;
+}
+
+
+  button.toggle-views-button {
+    display: none !important;
+}
+
+.ToggleViewsWrapper {
+  display: block;
+    position: absolute;
+    left: 40px;
+    vertical-align: top;
+    top: 50%;
+}
+
+a.viewButton {
+    width: 30px;
+    height: 50px;
+    margin-left: 0px;
+    display: inline-block;
+    vertical-align: top;
+    transform: translateY(-13px);
+    // border: 1px solid black;
+    color: rgba(255,255,255,0) !important;
+    position: relative;
+    z-index: 6;
+    cursor: pointer;
+}
+
+a.viewButton:hover + svg path {
+  fill: #1a6ea9;
+}
+
+a.viewButton svg path {
+  fill: #d1d1d1;
+}
+
+.ToggleViewsWrapper svg {
+    transform: translateX(-135%);
+    z-index: 5;
+    position: relative;
+}
+.ToggleViewsWrapper svg path {
+    fill: #e1e1e1;
+}
+.ToggleViewsWrapper svg.active path {
+    fill: #1a6ea9;
+}
+
+}

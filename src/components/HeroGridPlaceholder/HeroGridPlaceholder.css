@@ -1,0 +1,186 @@
+.placeholder-heroPosts {
+  height: 100%;
+  width: 100%; }
+  .placeholder-heroPosts .placeholder-featuredTrack {
+    width: 40vw;
+    height: 40vw;
+    display: inline-block;
+    max-height: 674px;
+    max-width: 674px;
+    animation: pulse 1s infinite ease-in-out;
+    position: relative; }
+    .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      background: rgba(255, 255, 255, 0.7);
+      transition: all 0s linear;
+      height: 100px; }
+      .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-play-button {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        position: relative; }
+        .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-play-button .placeholder-play {
+          border-radius: 50%;
+          animation: pulse 1s infinite ease-in-out;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 75px;
+          height: 75px; }
+      .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-song-info {
+        width: calc(100% - 200px) !important;
+        display: inline-block;
+        height: 100%; }
+        .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-song-info .placeholder-song-name {
+          animation: pulse 1s infinite ease-in-out;
+          height: 25px;
+          margin: 15px;
+          max-width: 55%; }
+        .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-song-info .placeholder-artist-name {
+          animation: pulse 1s infinite ease-in-out;
+          height: 25px;
+          margin: 15px;
+          max-width: 45%; }
+      .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-date-box {
+        display: inline-block;
+        width: 100px;
+        height: 100%;
+        animation: pulse 1s infinite ease-in-out; }
+  .placeholder-heroPosts .placeholder-previous-week {
+    max-height: 674px;
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    white-space: normal;
+    margin-left: 1px; }
+    .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper {
+      max-height: 337px;
+      max-width: 337px;
+      width: 20vw;
+      height: 20vw;
+      display: inline-block;
+      vertical-align: top; }
+      .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track {
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        max-height: 337px;
+        max-width: 337px;
+        margin: 0 auto;
+        animation: pulse 1s infinite ease-in-out;
+        position: relative; }
+        .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track .placeholder-post-info {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: auto;
+          background: rgba(255, 255, 255, 0.7);
+          transition: all 0s linear;
+          height: 50px; }
+          .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track .placeholder-post-info .placeholder-play-button {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            position: relative; }
+            .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track .placeholder-post-info .placeholder-play-button .placeholder-play {
+              border-radius: 50%;
+              animation: pulse 1s infinite ease-in-out;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 35px;
+              height: 35px; }
+          .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track .placeholder-post-info .placeholder-song-info {
+            width: calc(100% - 100px) !important;
+            display: inline-block;
+            height: 100%; }
+            .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track .placeholder-post-info .placeholder-song-info .placeholder-song-name {
+              animation: pulse 1s infinite ease-in-out;
+              height: 10px;
+              margin: 10px;
+              max-width: 55%; }
+            .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track .placeholder-post-info .placeholder-song-info .placeholder-artist-name {
+              animation: pulse 1s infinite ease-in-out;
+              height: 10px;
+              margin: 10px;
+              max-width: 45%; }
+          .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper .placeholder-less-featured-track .placeholder-post-info .placeholder-date-box {
+            display: inline-block;
+            width: 50px;
+            height: 100%;
+            animation: pulse 1s infinite ease-in-out; }
+  @media (max-width: 1200px) {
+    .placeholder-heroPosts .placeholder-heroPosts {
+      height: calc(50vw - 2px); }
+    .placeholder-heroPosts .placeholder-featuredTrack {
+      width: 50vw;
+      height: 50vw; }
+    .placeholder-heroPosts .placeholder-previous-week {
+      width: 50%;
+      height: 100%;
+      margin: 0;
+      vertical-align: top; }
+      .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper {
+        width: 25vw;
+        height: 25vw; }
+      .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper:nth-of-type(5), .placeholder-heroPosts .placeholder-previous-week .placeholder-less-featured-track-wrapper:nth-of-type(6) {
+        display: none; } }
+  @media (max-width: 800px) {
+    .placeholder-heroPosts .placeholder-previous-week {
+      display: none; }
+    .placeholder-heroPosts .placeholder-featuredTrack {
+      width: calc(100% - 1px);
+      height: calc(100% - 1px); } }
+
+@media (max-width: 800px) {
+  .placeholder-heroPosts {
+    width: 100%;
+    height: 100vw !important;
+    max-height: 650px !important; }
+    .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      background: rgba(255, 255, 255, 0.7);
+      transition: all 0s linear;
+      height: 70px !important; }
+      .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-play-button {
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+        position: relative; }
+        .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-play-button .placeholder-play {
+          border-radius: 50%;
+          animation: pulse 1s infinite ease-in-out;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50px;
+          height: 50px; }
+      .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-song-info {
+        width: calc(100% - 140px) !important;
+        display: inline-block;
+        height: 100%; }
+        .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-song-info .placeholder-song-name {
+          animation: pulse 1s infinite ease-in-out;
+          height: 15px;
+          margin: 15px;
+          max-width: 70%; }
+        .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-song-info .placeholder-artist-name {
+          animation: pulse 1s infinite ease-in-out;
+          height: 15px;
+          margin: 15px;
+          max-width: 60%; }
+      .placeholder-heroPosts .placeholder-featuredTrack .placeholder-post-info .placeholder-date-box {
+        display: inline-block;
+        width: 70px;
+        height: 100%;
+        animation: pulse 1s infinite ease-in-out; } }

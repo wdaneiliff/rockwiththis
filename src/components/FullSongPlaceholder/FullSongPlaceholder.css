@@ -1,0 +1,81 @@
+.placeholder-FullSongContainer {
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 750px; }
+  .placeholder-FullSongContainer .placeholder-imageContainer {
+    animation: pulse 1s infinite ease-in-out;
+    background: rgba(165, 165, 165, 0.1);
+    position: relative;
+    width: 16vw;
+    height: 16vw;
+    float: left;
+    display: inline-block;
+    margin-right: 15px;
+    max-width: 330px; }
+    .placeholder-FullSongContainer .placeholder-imageContainer img {
+      width: 16vw;
+      opacity: 0; }
+  .placeholder-FullSongContainer .placeholder-postContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0px; }
+    .placeholder-FullSongContainer .placeholder-postContent .placeholder-bottomDescription
+.placeholder-text-lines {
+      height: 15px;
+      margin: 15px 0;
+      animation: pulse 1s infinite ease-in-out; }
+  .placeholder-FullSongContainer .placeholder-topContent {
+    height: 16vw;
+    overflow-y: hidden; }
+    .placeholder-FullSongContainer .placeholder-topContent .placeholder-text-lines {
+      height: 15px;
+      margin: 15px 0;
+      animation: pulse 1s infinite ease-in-out; }
+    .placeholder-FullSongContainer .placeholder-topContent .placeholder-play-button {
+      height: 60px;
+      width: 60px;
+      animation: pulse 1s infinite ease-in-out;
+      border-radius: 50%;
+      display: inline-block;
+      display: inline-block;
+      padding-right: 5px; }
+    .placeholder-FullSongContainer .placeholder-topContent .placeholder-postInfo {
+      width: 50%;
+      height: 60px;
+      display: inline-block !important; }
+      .placeholder-FullSongContainer .placeholder-topContent .placeholder-postInfo .placeholder-song {
+        height: 15px;
+        margin: 15px;
+        animation: pulse 1s infinite ease-in-out;
+        max-width: 250px; }
+      .placeholder-FullSongContainer .placeholder-topContent .placeholder-postInfo .placeholder-song.artist {
+        max-width: 200px; }
+  .placeholder-FullSongContainer .placeholder-metaInfo {
+    height: 25px;
+    padding: 10px 0;
+    margin-left: 15px; }
+    .placeholder-FullSongContainer .placeholder-metaInfo .placeholder-date {
+      height: 15px;
+      width: 100px;
+      animation: pulse 1s infinite ease-in-out;
+      margin-right: 15px;
+      display: inline-block; }
+    .placeholder-FullSongContainer .placeholder-metaInfo .placeholder-author {
+      height: 15px;
+      width: 85px;
+      animation: pulse 1s infinite ease-in-out;
+      margin-right: 15px;
+      display: inline-block; }
+    .placeholder-FullSongContainer .placeholder-metaInfo .placeholder-tags {
+      width: auto;
+      margin-right: 15px;
+      display: inline-block; }
+      .placeholder-FullSongContainer .placeholder-metaInfo .placeholder-tags .placeholder-tag {
+        height: 25px;
+        width: 75px;
+        animation: pulse 1s infinite ease-in-out;
+        margin-right: 15px;
+        display: inline-block;
+        border-radius: 6px; }

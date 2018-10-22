@@ -10,6 +10,8 @@ import {
   WhatsappIcon
 } from 'react-share';
 
+import './ShareBox.scss'
+
 class ShareBox extends Component {
 
   constructor(props) {

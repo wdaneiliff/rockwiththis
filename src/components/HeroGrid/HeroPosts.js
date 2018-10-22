@@ -4,6 +4,8 @@ import moment from 'moment'
 import HeroSong from './HeroSong'
 import hoverGradient from 'images/rwt-hover-gradient.png'
 import HeroPostsPlaceholder from 'components/HeroGridPlaceholder/HeroGridPlaceholder'
+import './HeroGrid.scss'
+
 
 
 class HeroPosts extends React.Component {

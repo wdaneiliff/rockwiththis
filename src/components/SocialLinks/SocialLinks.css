@@ -1,0 +1,27 @@
+.socialLinks {
+  background: #f5f3f3;
+  height: 45px;
+  margin-top: 75px; }
+  .socialLinks ul {
+    width: 324px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none; }
+    .socialLinks ul li {
+      display: inline-block;
+      margin: 11px 30px 0; }
+      .socialLinks ul li.sc {
+        margin: 10px 25px 0; }
+      .socialLinks ul li i.im.im-soundcloud {
+        font-size: 27px;
+        margin-top: 0px;
+        transform: translateY(4px); }
+      .socialLinks ul li i.im.im-instagram {
+        font-size: 23px;
+        transform: translateY(1px); }
+      .socialLinks ul li i.im.im-spotify {
+        transform: translateY(1px); }
+      .socialLinks ul li i {
+        font-size: 22px;
+        height: auto;
+        color: #282828; }
