@@ -5,6 +5,7 @@ const database = require('../../db');
 router.get('/', (req, res) => {
   database.query('SELECT * FROM songs')
     .then(results => {
+      console.log(results.rows)
       res.json({ songs: results.rows });
     });
 });

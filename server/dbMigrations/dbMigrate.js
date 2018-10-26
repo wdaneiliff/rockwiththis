@@ -33,7 +33,7 @@ songs.forEach((song, index) => {
     song.acf.song_name,
     song.content.rendered,
     (song.better_featured_image) ? song.better_featured_image.source_url : null,
-    song._embedded.author.id,
+    2,
     song.acf.artist_name,
     song.acf.spotify_link,
     song.acf.soundcloud_link,
