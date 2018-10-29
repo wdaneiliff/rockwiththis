@@ -40,7 +40,7 @@ class OffScreen extends React.Component {
 
     render() {
         const activeSong = this.props.activeSong
-        const url = activeSong.acf.sc_track_id ? `https%3A//api.soundcloud.com/tracks/${activeSong.acf.sc_track_id}` : activeSong.acf.youtube_link
+        const url = activeSong.soundcloud_track_id ? `https%3A//api.soundcloud.com/tracks/${activeSong.soundcloud_track_id}` : activeSong.youtube_link
         const setSongDuration = (ref) => {
           this.props.actions.setSongDuration(ref.getDuration())
         }

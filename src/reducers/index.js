@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
 import { FETCH_POSTS } from '../actions/index'
-import { FETCH_FEATURED_POSTS } from '../actions/featuredPosts'
 import { FETCH_FILTERS } from '../actions/filters'
 import { FETCH_RELATED_SONGS } from '../actions/relatedSongs'
 import posts from './posts'
-import featuredPosts from './featuredPosts'
 import queue from './queue'
 import relatedSongs from './relatedSongs'
 import filters from './filters'
@@ -24,7 +22,6 @@ export const INITIAL_STATE = {
     secondsPlayed: 0,
   },
   posts: [],
-  featuredPosts: [],
   filteredPosts: [],
   queue: [],
   relatedSongs: [],

@@ -213,6 +213,7 @@ class SongsContainer extends Component {
             individualGrid = []
           }
         })
+        console.log(songGrids)
         const songGridsFull = songGrids.map((thisGrid, indexTop) => {
           return thisGrid.map((song, index) => {
             return (
@@ -228,6 +229,8 @@ class SongsContainer extends Component {
           })
         })
 
+        console.log("SONG GRIDS FULL: " + songGridsFull)
+
 
 
         const songList = this.props.filteredPosts.map((song, index) => {
@@ -241,6 +244,14 @@ class SongsContainer extends Component {
             />
           )
         })
+
+        console.log(songGridsFull.map(grid => {
+          return (
+            <div className='grid-container'>
+              {grid}
+            </div>
+          )
+        }));
 
         // const disableBack = this.props.posts[0] && this.props.posts[0].id === this.props.activeSong.id
         // Make this section look at `this.props.currentRequestLoading` to change display
@@ -270,6 +281,7 @@ class SongsContainer extends Component {
                               selectedItem={songGridsFull.length > 1 ? this.state.gridPage : null}
                               useKeyboardArrows={true}>
                               {songGridsFull.map(grid => {
+                                console.log('grid', grid)
                                 return (
                                   <div className='grid-container'>
                                     {grid}

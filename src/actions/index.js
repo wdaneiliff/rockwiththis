@@ -4,10 +4,10 @@ export const FETCH_POSTS = createAction('app/FETCH_POSTS')
 export const SET_REMAINING_POSTS = createAction('app/SET_REMAINING_POSTS')
 export const fetchPosts = (pageNumber = 1, callback) => (dispatch) => {
   dispatch(CLEAR_FILTERS())
-  const smallDataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=7'
-  const bigDataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=9&offset=7'
-  // const smallDataURL = 'http://localhost:9292/v1/songs'
-  // const bigDataURL = 'http://localhost:9292/v1/songs'
+  // const smallDataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=7'
+  // const bigDataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=9&offset=7'
+  const smallDataURL = 'http://localhost:9292/v1/songs'
+  const bigDataURL = 'http://localhost:9292/v1/songs'
 
   fetch(smallDataURL).then(res => res.json()).then((res) => {
 
@@ -175,28 +175,28 @@ export const fetchRelatedSongs = slug => (dispatch, getState) => {
     })
 }
 
-export const FETCH_FEATURED_POSTS = {
-    IN_PROGRESS: 'FETCH_FEATURED_POSTS_IN_PROGRESS',
-    SUCCESS: 'FETCH_FEATURED_POSTS_SUCCESS',
-    FAILURE: 'FETCH_FEATURED_POSTS_FAILURE',
-}
-
-export const fetchFeaturedPosts = (pageNumber = 1) => (dispatch, getState) => {
-    dispatch({
-        type: FETCH_FEATURED_POSTS.IN_PROGRESS,
-    })
-    const dataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?categories=93'
-    fetch(dataURL).then(res => res.json()).then((res) => {
-        dispatch({
-            type: FETCH_FEATURED_POSTS.SUCCESS,
-            featuredPosts: res,
-        })
-    }).catch((er) => {
-        dispatch({
-            type: FETCH_FEATURED_POSTS.FAILURE,
-        })
-    })
-}
+// export const FETCH_FEATURED_POSTS = {
+//     IN_PROGRESS: 'FETCH_FEATURED_POSTS_IN_PROGRESS',
+//     SUCCESS: 'FETCH_FEATURED_POSTS_SUCCESS',
+//     FAILURE: 'FETCH_FEATURED_POSTS_FAILURE',
+// }
+//
+// export const fetchFeaturedPosts = (pageNumber = 1) => (dispatch, getState) => {
+//     dispatch({
+//         type: FETCH_FEATURED_POSTS.IN_PROGRESS,
+//     })
+//     const dataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?categories=93'
+//     fetch(dataURL).then(res => res.json()).then((res) => {
+//         dispatch({
+//             type: FETCH_FEATURED_POSTS.SUCCESS,
+//             featuredPosts: res,
+//         })
+//     }).catch((er) => {
+//         dispatch({
+//             type: FETCH_FEATURED_POSTS.FAILURE,
+//         })
+//     })
+// }
 
 export const playNextSong = () => (dispatch, getState) => {
     const nextSong = getState().queue.queue[0]

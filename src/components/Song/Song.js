@@ -51,7 +51,7 @@ class Song extends Component {
             song,
         } = this.props
 
-        const tags = song._embedded['wp:term'][1].map(tag =>
+        const tags = song.sub_genres.map(tag =>
             <span key={tag.name} className="tag">#{tag.name}</span>)
 
         return (
@@ -95,16 +95,16 @@ class Song extends Component {
                 </div>
 
                 <div className="marquee songInfo mobile" onClick={ () => this.onPressPlay(song)}>
-                    <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.acf.song_name}</span></Link><br />
-                      <span className="artistName">{song.acf.artist_name}</span>
+                    <Link className="postTitleLink" to={`/songs/${song.id}`}><span className="songName">{song.name}</span></Link><br />
+                      <span className="artistName">{song.artist_name}</span>
                 </div>
                 <div className="marquee songInfo desktop">
                   <div id="checkOverFlowSong" className="marquee-inner songtitle">
-                  <Link className="songName postTitleLink" to={`/songs/${song.id}`}>{song.acf.song_name}</Link>
+                  <Link className="songName postTitleLink" to={`/songs/${song.id}`}>{song.name}</Link>
                   </div>
                     <br />
                   <div id="checkOverFlowArtist" className="marquee-inner artist">
-                    <span className="artistName">{song.acf.artist_name}</span>
+                    <span className="artistName">{song.artist_name}</span>
                   </div>
                 </div>
 
@@ -117,36 +117,18 @@ class Song extends Component {
                     </p>
                     {this.renderTags(song)}
                     <ShareBox song={song} />
-                    <a target="_blank" href={song.acf.spotify_link}  className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                    <a target="_blank" href={song.spotify_link}  className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
 
 
                 </p>
               </div>
               <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
-                  <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
+                  <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.description }} />
               </div>
             </div>
         )
     }
 
-    // renderDescription() {
-    //     const { song } = this.props
-    //     return (
-    //           <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
-    //               <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
-    //           </div>
-    //     )
-    // }
-
-    // isElementOverflowing() {
-    //     const songInfo = document.getElementById("checkOverFlowSong");
-    //     const songName = document.getElementById("checkOverFlowArtist");
-    //
-    //             if (songInfo.offsetWidth < songName.scrollWidth) {
-    //         return console.log('OVERFLOW')
-    //       }
-    //
-    // }
 
     render() {
         const {
@@ -170,7 +152,7 @@ class Song extends Component {
 
                     <div className="imageContainer" onClick={ () => this.onPressPlay(song)}>
 
-                            <img className="songImage" src={song.better_featured_image && song.better_featured_image.source_url} />
+                            <img className="songImage" src={song.image_url} />
                             <div className="songImageInfoContainer grid">
                               <button
                                   className="singlePostPlayerButton"
@@ -179,8 +161,8 @@ class Song extends Component {
                                   {playPauseButton}
                               </button>
                               <div className="song-info">
-                                  <p className="song-title">{song.acf.song_name}</p>
-                                  <p className="song-artist">{song.acf.artist_name}</p>
+                                  <p className="song-title">{song.name}</p>
+                                  <p className="song-artist">{song.artist_name}</p>
                               </div>
                             </div>
                     </div>

@@ -32,13 +32,13 @@ class HeroPosts extends React.Component {
         const { heroPosts } = this.props
 
         const trackDisplay = (post, i, isSmall) => {
-            const image = post.better_featured_image.source_url
+            const image = post.image_url
             // const month = moment(post.date).format('MMM')
             const date = moment(post.date).format('D')
             const day = moment(post.date).format('ddd');
-            const title = post.acf.song_name
-            const artist = post.acf.artist_name
-            const tags = post._embedded['wp:term'][1].map(tag =>
+            const title = post.name
+            const artist = post.artist_name
+            const tags = post.sub_genres.map(tag =>
                 <span key={tag.name} className="hero-tag">#{tag.name}</span>)
 
             return (

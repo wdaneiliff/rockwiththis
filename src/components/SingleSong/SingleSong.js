@@ -50,7 +50,7 @@ class SingleSong extends Component {
             song,
         } = this.props
 
-        const tags = song._embedded['wp:term'][1].map(tag =>
+        const tags = song.sub_genres.map(tag =>
             <span key={tag.name} className="tag" dangerouslySetInnerHTML={{ __html: tag.name }} />)
 
         return (
@@ -92,7 +92,7 @@ class SingleSong extends Component {
         const song = this.props.singleSong
         return (
               <div className={`bottomContentContainer ${this.state.expanded ? 'expanded' : ''}`}>
-                  <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.content.rendered }} />
+                  <p className="songDescription" dangerouslySetInnerHTML={{ __html: song.description }} />
               </div>
         )
     }
@@ -106,10 +106,10 @@ class SingleSong extends Component {
         const song = this.props.singleSong
 
         const { height } = this.state
-        const songTagsMeta = song.pure_taxonomies.tags.map(tag => {
+        const songTagsMeta = song.sub_genres.map(tag => {
           return (<meta name="tag" content={tag.name} />)
         })
-        const songTags = song.pure_taxonomies.tags.map(tag => {
+        const songTags = song.sub_genres.map(tag => {
           return (
             <span className="postTags">
               <span key={tag.id} className="tag">{tag.name}</span>
@@ -119,22 +119,22 @@ class SingleSong extends Component {
         return (
             <div id={song.slug} className="songContainer" key={`${song.id}`}>
             <Helmet>
-              <title>Rock With This - {song.acf.song_name} by {song.acf.artist_name}</title>
-              <meta name="song" content={song.acf.song_name} />
-              <meta name="artist" content={song.acf.artist_name} />
-              <meta name="description" content={song.content.rendered} />
-              <meta name="og:image" content={song.better_featured_image.source_url} />
+              <title>Rock With This - {song.name} by {song.name}</title>
+              <meta name="song" content={song.name} />
+              <meta name="artist" content={song.artist_name} />
+              <meta name="description" content={song.description} />
+              <meta name="og:image" content={song.image_url} />
               {songTagsMeta}
               <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             </Helmet>
             <div className="wrapper">
                 <div className="imageContainer">
-                  <img className="songImage" src={song.better_featured_image.source_url} />
+                  <img className="songImage" src={song.image_url} />
                   <div className="songImageInfoContainer">
                   {this.renderPlayer()}
                     <div className="song-info">
-                        <p className="song-title">{song.acf.song_name}</p>
-                        <p className="song-artist">{song.acf.artist_name}</p>
+                        <p className="song-title">{song.name}</p>
+                        <p className="song-artist">{song.artist_name}</p>
                     </div>
                     <div className="shareContainer">
                       <ShareBox song={song} />
@@ -148,8 +148,8 @@ class SingleSong extends Component {
                     <div className="topSection">
                     {this.renderPlayer()}
                     <div className="singleSongInfo">
-                        <span className="songName">{song.acf.song_name}</span><br />
-                        <span className="artistName">{song.acf.artist_name}</span>
+                        <span className="songName">{song.name}</span><br />
+                        <span className="artistName">{song.artist_name}</span>
                     </div>
                     </div>
                         <p className="metaInfo">
@@ -160,7 +160,7 @@ class SingleSong extends Component {
                         <span className="postDate "><Moment format="d/M/YY" date={song.date} /> | <span className="postAuthor">Jared Paul</span> | </span>
                         </p>
                             {songTags}
-                            <a target="_blank" href={song.acf.spotify_link} className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
+                            <a target="_blank" href={song.spotify_link} className="spotify"><i className="fa fa-spotify" aria-hidden="true" /></a>
                         </p>
                         <span className="ss-sharebox-desktop"><ShareBox props={song.slug} /></span>
 
