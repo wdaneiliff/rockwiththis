@@ -14,8 +14,6 @@ class SongGrid extends Component {
 
         this.ytPlayer = null
 
-        this.toggleDescription = this.toggleDescription.bind(this)
-
         this.state = {
             expanded: false
         }

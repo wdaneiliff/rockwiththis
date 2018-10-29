@@ -213,7 +213,7 @@ class SongsContainer extends Component {
             individualGrid = []
           }
         })
-        console.log(songGrids)
+        console.log("songGrids" + songGrids)
         const songGridsFull = songGrids.map((thisGrid, indexTop) => {
           return thisGrid.map((song, index) => {
             return (
@@ -280,14 +280,22 @@ class SongsContainer extends Component {
                               showIndicators={false}
                               selectedItem={songGridsFull.length > 1 ? this.state.gridPage : null}
                               useKeyboardArrows={true}>
-                              {songGridsFull.map(grid => {
-                                console.log('grid', grid)
+
+                              {songGridsFull.length > 0 ?
+                                songGridsFull.map(grid => {
                                 return (
                                   <div className='grid-container'>
                                     {grid}
                                   </div>
                                 )
-                              })}
+                              })
+                                :
+                                <p>loading...</p>
+                              }
+
+
+
+
                             </Carousel>
                           </div>
                           <div className='song-grid-footer'>
