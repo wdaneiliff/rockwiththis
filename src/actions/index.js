@@ -3,11 +3,14 @@ import { createAction } from 'redux-actions'
 export const FETCH_POSTS = createAction('app/FETCH_POSTS')
 export const SET_REMAINING_POSTS = createAction('app/SET_REMAINING_POSTS')
 export const fetchPosts = (pageNumber = 1, callback) => (dispatch) => {
-  console.log("HELLOO")
   dispatch(CLEAR_FILTERS())
   const smallDataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=7'
   const bigDataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?_embed&per_page=9&offset=7'
+  // const smallDataURL = 'http://localhost:9292/v1/songs'
+  // const bigDataURL = 'http://localhost:9292/v1/songs'
+
   fetch(smallDataURL).then(res => res.json()).then((res) => {
+
     console.log("res", res)
     dispatch(FETCH_POSTS(res))
     fetch(bigDataURL).then(resBig => resBig.json()).then((resBig) => {
