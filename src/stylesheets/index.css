@@ -252,6 +252,7 @@ p {
     width: 25%;
     display: inline-block; }
     .discovery-section .songGrid .songContainer .imageHover {
+      background-image: url("../images/rwt-hover-gradient.png");
       position: absolute;
       top: 0;
       bottom: 3px;

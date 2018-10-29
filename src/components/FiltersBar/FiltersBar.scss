@@ -227,7 +227,6 @@ ul.toggleContainer {
 
 .discovery-section .filters-bar button.filters-button:hover {
   display: inline-block;
-  font-size: 12px;
   border: 1px solid #1a6ea9 !important;
   background: #1a6ea9;
   border-radius: 4px;
@@ -235,7 +234,6 @@ ul.toggleContainer {
 }
 .discovery-section .filters-bar button.filters-button.active {
   display: inline-block;
-  font-size: 12px;
   border: 1px solid #1a6ea9 !important;
   background: #1a6ea9;
   border-radius: 4px;
@@ -351,7 +349,8 @@ cursor: pointer;
     position: absolute;
     left: 40px;
     vertical-align: top;
-    top: 50%;
+    // top: 50%;
+    top: 30px;
 }
 
 a.viewButton {
